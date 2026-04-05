@@ -27,9 +27,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
 .header-brand { font-size: 1.05rem; font-weight: 700; }
 .header-brand span { color: var(--gold); }
 .header-sub { font-size: 0.78rem; opacity: 0.7; }
-.layout { display: grid; grid-template-columns: 1fr 320px; max-width: 1800px; margin: 0 auto; min-height: calc(100vh - 56px); }
-.main { background: #fff; border-right: 1px solid var(--border); display: flex; flex-direction: column; }
-.sidebar { background: #f8fafc; overflow-y: auto; }
+.layout { max-width: 900px; margin: 0 auto; min-height: calc(100vh - 56px); }
+.main { background: #fff; display: flex; flex-direction: column; }
 .video-box { background: var(--dark); aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px; }
 .video-box h3 { color: white; font-size: 1rem; text-align: center; padding: 0 20px; }
 .video-box p { color: rgba(255,255,255,0.6); font-size: 0.8rem; }
@@ -38,29 +37,24 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
 .tabs { display: flex; border-bottom: 1px solid var(--border); background: #fff; }
 .tab { flex: 1; padding: 10px 8px; text-align: center; border: none; background: none; cursor: pointer; font-size: 0.82rem; color: var(--muted); border-bottom: 3px solid transparent; transition: all 0.2s; }
 .tab.active { color: var(--gold); border-bottom-color: var(--gold); font-weight: 600; }
-.content { display: none; flex: 1; overflow-y: auto; padding: 14px; }
+.content { display: none; flex: 1; overflow-y: auto; }
 .content.active { display: block; }
 .controls { padding: 10px 14px; border-bottom: 1px solid var(--border); display: flex; gap: 8px; background: #f9fafb; }
 .controls input { flex: 1; padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.82rem; }
 .controls select { padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.78rem; background: white; }
-.transcript-scroll { flex: 1; overflow-y: auto; padding: 12px; }
-.seg { padding: 12px 14px; margin-bottom: 8px; border-radius: 10px; border-left: 4px solid transparent; cursor: pointer; transition: all 0.15s; font-size: 0.85rem; }
+.scroll { flex: 1; overflow-y: auto; padding: 14px; }
+.seg { padding: 14px 16px; margin-bottom: 10px; border-radius: 12px; border-left: 5px solid transparent; cursor: pointer; transition: all 0.15s; }
 .seg:hover { background: #fef9e7; border-left-color: var(--gold); }
 .seg.green { background: var(--green); border-left-color: #16a34a; }
 .seg.blue { background: var(--blue2); border-left-color: #3b82f6; }
 .seg.purple { background: var(--purple); border-left-color: #9333ea; }
 .seg.yellow { background: var(--yellow); border-left-color: var(--gold); }
-.seg-time { font-size: 0.72rem; font-weight: 600; color: var(--gold); margin-bottom: 3px; }
-.seg-speaker { font-size: 0.72rem; font-weight: 700; color: var(--blue); margin-bottom: 4px; }
-.seg-text { color: #4b5563; font-size: 0.82rem; line-height: 1.65; }
-.outline-header { padding: 14px 16px; background: linear-gradient(135deg, var(--dark), var(--blue)); color: white; font-weight: 700; font-size: 0.88rem; }
-.outline-header small { display: block; font-size: 0.72rem; opacity: 0.7; font-weight: 400; margin-top: 2px; }
-.outline-scroll { padding: 10px; }
-.outline-item { padding: 10px 12px; margin-bottom: 6px; border-radius: 8px; cursor: pointer; background: #fff; border-left: 3px solid transparent; transition: all 0.15s; }
-.outline-item:hover { background: #fef9e7; border-left-color: var(--gold); transform: translateX(2px); }
-.outline-time { font-size: 0.7rem; font-weight: 600; color: var(--gold); margin-bottom: 2px; }
-.outline-title { font-size: 0.85rem; font-weight: 600; color: var(--dark); margin-bottom: 2px; }
-.outline-speaker { font-size: 0.7rem; color: var(--muted); }
+.seg-time { font-size: 0.72rem; font-weight: 700; color: var(--gold); margin-bottom: 4px; }
+.seg-speaker { font-size: 0.75rem; font-weight: 700; color: var(--blue); margin-bottom: 6px; }
+.seg-label { font-size: 0.9rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.seg-summary { color: #374151; font-size: 0.85rem; line-height: 1.75; margin-bottom: 8px; }
+.seg-watch { display: inline-block; font-size: 0.75rem; color: var(--gold); font-weight: 600; text-decoration: none; padding: 4px 12px; border: 1px solid var(--gold); border-radius: 20px; transition: all 0.2s; }
+.seg-watch:hover { background: var(--gold); color: var(--dark); }
 .note-input { margin-bottom: 14px; }
 .note-input textarea { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 10px; font-size: 0.85rem; resize: vertical; min-height: 70px; font-family: inherit; }
 .note-input textarea:focus { outline: none; border-color: var(--gold); }
@@ -75,10 +69,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
 .footer a { color: var(--gold); text-decoration: none; }
 .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--dark); color: white; padding: 8px 20px; border-radius: 30px; font-size: 0.85rem; opacity: 0; transition: opacity 0.3s; z-index: 1000; pointer-events: none; }
 .toast.show { opacity: 1; }
-.insight-card { background: linear-gradient(135deg, var(--dark), var(--blue)); color: white; border-radius: 12px; padding: 16px 18px; margin-bottom: 12px; }
-.insight-card h4 { color: var(--gold); font-size: 0.88rem; margin-bottom: 8px; }
-.insight-card p { font-size: 0.85rem; line-height: 1.7; color: #e5e7eb; }
-@media(max-width: 900px) { .layout { grid-template-columns: 1fr; } .sidebar { border-top: 1px solid var(--border); } }
 </style>
 </head>
 <body>
@@ -89,8 +79,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
     <div class="header-sub">CCBC Fireside Chat · Value Investing in China · 1小时32分</div>
   </div>
   <div style="display:flex;gap:6px;">
-    <button class="tab active" onclick="switchTab('transcript')">📝 原文</button>
-    <button class="tab" onclick="switchTab('insights')">💡 要点</button>
+    <button class="tab active" onclick="switchTab('list')">📝 原文</button>
     <button class="tab" onclick="switchTab('notes')">📓 笔记</button>
   </div>
 </div>
@@ -103,11 +92,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
       <a href="https://www.youtube.com/watch?v=FiHrWy2jGbA" target="_blank" class="btn-watch">▶ 在 YouTube 观看</a>
     </div>
 
-    <!-- Transcript -->
-    <div id="tab-transcript" class="content active">
+    <!-- Segment List -->
+    <div id="tab-list" class="content active">
       <div class="controls">
-        <input type="text" id="searchInput" placeholder="搜索内容..." oninput="renderTranscript()">
-        <select id="topicFilter" onchange="renderTranscript()">
+        <input type="text" id="searchInput" placeholder="搜索..." oninput="renderList()">
+        <select id="topicFilter" onchange="renderList()">
           <option value="">全部话题</option>
           <option value="moat">护城河</option>
           <option value="china">中国市场</option>
@@ -115,34 +104,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
           <option value="value">估值</option>
         </select>
       </div>
-      <div class="transcript-scroll" id="transcriptList"></div>
-    </div>
-
-    <!-- Insights -->
-    <div id="tab-insights" class="content">
-      <div style="padding:12px;">
-        <div class="insight-card">
-          <h4>🟢 护城河 (Moat)</h4>
-          <p>真正好的企业有高于平均的资本回报率，并能抵御竞争对手。找到后长期持有。</p>
-        </div>
-        <div class="insight-card">
-          <h4>🟣 品性 (Character)</h4>
-          <p>芒格对我影响最深的是人生品性——面对成败都保持理性和平和。文明的最高形式是无缝的信任网络。</p>
-        </div>
-        <div class="insight-card">
-          <h4>🔵 中国市场 (China)</h4>
-          <p>中国是世界上最活跃的经济体。信息不对称创造机会。选人比选行业更重要。</p>
-        </div>
-        <div class="insight-card">
-          <h4>🟡 估值 (Valuation)</h4>
-          <p>用DCF作为核心工具，关键假设要保守。好公司打折时买更多。不用杠杆。</p>
-        </div>
-      </div>
+      <div class="scroll" id="segmentList"></div>
     </div>
 
     <!-- Notes -->
     <div id="tab-notes" class="content">
-      <div style="padding:12px;">
+      <div style="padding:14px;">
         <div class="note-input">
           <textarea id="noteText" placeholder="写下你的思考..."></textarea>
           <button class="btn-save" onclick="saveNote()">💾 保存笔记</button>
@@ -156,81 +123,71 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #
       <a href="index.html">← 研究首页</a>
     </div>
   </div>
-
-  <div class="sidebar">
-    <div class="outline-header">
-      🗺 章节导览
-      <small>点击跳转到YouTube对应位置</small>
-    </div>
-    <div class="outline-scroll" id="outlineList"></div>
-  </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// ─── Simple segment data ───
 const SEGMENTS = [
-  {id: 1,  time: "02:24", speaker: "Host",    topic: null,   label: "开场介绍",                                 summary: "主持人开场，介绍Bruce Greenwald和李录。"},
-  {id: 2,  time: "04:37", speaker: "Bruce",   topic: null,   label: "Q1: 投资哲学演变",                          summary: "Bruce开场：投资哲学如何演变？芒格的影响？"},
-  {id: 3,  time: "08:00", speaker: "Li Lu",   topic: "moat", label: "从Graham到芒格：哲学进化",                  summary: "从烟蒂法到寻找伟大企业。28年进化，核心哲学不变。"},
-  {id: 4,  time: "12:30", speaker: "Bruce",   topic: null,   label: "Q2: 什么是伟大企业？",                        summary: "Bruce追问：伟大企业的具体特征？如何估值？"},
-  {id: 5,  time: "12:42", speaker: "Li Lu",   topic: "moat", label: "ROIC与护城河",                            summary: "资本回报率高于平均+持久护城河+长期增长跑道。真正伟大的企业极其稀少。"},
-  {id: 6,  time: "15:00", speaker: "Li Lu",   topic: "character", label: "信任护城河",                         summary: "文明的最高形式是无缝的信任网络。管理层诚信是最核心的护城河。"},
-  {id: 7,  time: "19:00", speaker: "Li Lu",   topic: "moat", label: "constant change：护城河持续挑战",           summary: "所有伟大企业都在变化，护城河需要不断被重新建立。"},
-  {id: 8,  time: "21:51", speaker: "Bruce",   topic: null,   label: "Q3: 投资方法的差异",                        summary: "Bruce追问：你的方法与其他价值投资者有何不同？"},
-  {id: 9,  time: "26:30", speaker: "Li Lu",   topic: "moat", label: "从小企业到伟大企业",                       summary: "从寻找统计便宜到深度理解管理层。花大量时间与管理团队在一起。"},
-  {id: 10, time: "33:00", speaker: "Li Lu",   topic: "value", label: "安全边际与DCF估值",                      summary: "DCF是核心工具，关键假设要保守。好公司打折时买更多。"},
-  {id: 11, time: "38:00", speaker: "Bruce",    topic: null,   label: "Q4: 通才还是专才？",                        summary: "Bruce问：在投资中偏好通才还是专才？在中国市场呢？"},
-  {id: 12, time: "44:49", speaker: "Li Lu",   topic: "china", label: "中国：全球最活跃消费市场",                summary: "中国正在成为全球最大最活跃的消费市场，未来数十年将持续。"},
-  {id: 13, time: "50:00", speaker: "Li Lu",   topic: "china", label: "中国各行业投资机会",                       summary: "住房、服务等几乎所有行业都处于快速增长阶段。"},
-  {id: 14, time: "55:00", speaker: "Bruce",   topic: null,   label: "Q5: 服务经济与人才",                       summary: "Bruce问：中国服务经济中你看到哪些机会和挑战？"},
-  {id: 15, time: "62:00", speaker: "Bruce",   topic: null,   label: "Q6: 投资失误与教训",                        summary: "Bruce问：回顾你的职业生涯，有哪些失误和教训？"},
-  {id: 16, time: "62:01", speaker: "Li Lu",   topic: "china", label: "失误与对中国青年的建议",                   summary: "错误是学习的一部分。年轻人：广泛阅读、找导师、从基础上理解企业。"},
-  {id: 17, time: "85:00", speaker: "Li Lu",   topic: "china", label: "Asian-American的桥梁角色",                 summary: "Asian-American应成为美国与亚洲经济联系的桥梁。"},
+  {id:1,  time:"02:24", speaker:"Host",   topic:null,    label:"开场介绍",
+   summary:"主持人介绍Bruce Greenwald和李录。Bruce是哥伦比亚商学院价值投资之父，培养了包括李录在内的整整一代价值投资者。李录是喜马拉雅资本创始人，管理数十亿美元资产，专注亚洲和北美长期投资。" },
+  {id:2,  time:"04:37", speaker:"Bruce",  topic:null,    label:"Q1: 投资哲学演变",
+   summary:"Bruce开场：你的投资哲学在过去28年如何演变？受查理·芒格哪些影响？两者在方法上有何异同？" },
+  {id:3,  time:"08:00", speaker:"Li Lu", topic:"moat",  label:"从Graham到芒格：哲学进化",
+   summary:"李录分享三阶段进化路径：①最初受格雷厄姆影响寻找"烟蒂"（统计便宜，看资产负债表）②中期转向优质小企业（深度理解运营）③最终聚焦具有持久护城河的长跑道伟大企业。核心框架：买价格低于内在价值的东西本身就是聪明的。芒格对他的影响远超投资，深入人生品性层面。" },
+  {id:4,  time:"12:30", speaker:"Bruce",  topic:null,   label:"Q2: 什么是伟大企业？",
+   summary:"Bruce追问：什么样的企业才算"伟大"？具体有哪些可量化的特征？估值方法是什么？" },
+  {id:5,  time:"12:42", speaker:"Li Lu", topic:"moat",  label:"ROIC与护城河：伟大企业的标准",
+   summary:"李录的三条标准：①资本回报率（ROIC）持续高于平均水平 ②有护城河能真正抵御竞争对手 ③有长持续增长跑道。真正符合这三条的企业凤毛麟角、极其稀少。一旦找到，长期持有就是最好的策略。回报与公司资本回报率完美相关。" },
+  {id:6,  time:"15:00", speaker:"Li Lu", topic:"character", label:"信任护城河：最核心的要素",
+   summary:"李录最强调的护城河是信任。"文明的最高形式是无缝的信任网络"——可靠的人彼此信任，不需要复杂流程。管理层正直诚信、对待所有利益相关者公平，这样的文化是最核心、最持久的护城河。选股要先学会读人。" },
+  {id:7,  time:"19:00", speaker:"Li Lu", topic:"moat",  label:"constant change：护城河的持续挑战",
+   summary:"所有伟大企业都在不断变化，护城河必须持续重建才能保持。这是分析企业最有趣的维度——竞争优势不是一劳永逸的。" },
+  {id:8,  time:"21:51", speaker:"Bruce",  topic:null,   label:"Q3: 投资方法的差异",
+   summary:"Bruce追问：你的投资方法与巴菲特/芒格路线有何本质不同？你是如何发展出自己独特的能力圈的？" },
+  {id:9,  time:"26:30", speaker:"Li Lu", topic:"moat",  label:"从小企业到伟大企业：选股进化",
+   summary:"李录从早期不懂商业、只会看财务报表，发展到深度理解管理层。他花大量时间与管理团队在一起，无论顺境逆境。理解一个人是否正直诚信，比看懂财务数字更重要。这需要多年经验积累，是一种艺术而非科学。" },
+  {id:10, time:"33:00", speaker:"Li Lu", topic:"value", label:"安全边际与DCF估值",
+   summary:"DCF是李录估值核心工具，但关键是假设要保守。好公司打折时要敢于加仓。"如果你对了，回报随时间放大；如果你错了，折扣保护你"——这就是安全边际的真正含义。宁可正确把握大事，对噪音保持宽容。" },
+  {id:11, time:"38:00", speaker:"Bruce",  topic:null,   label:"Q4: 通才还是专才？",
+   summary:"Bruce问：做投资应该成为通才（广泛学习各行业）还是专才（深耕某一领域）？在中国市场这个策略是否有所不同？" },
+  {id:12, time:"44:49", speaker:"Li Lu", topic:"china", label:"中国：全球最活跃消费市场",
+   summary:"中国是过去30年全球最活跃的经济体，正在从投资驱动转向消费驱动。消费市场仍处于早期，未来数十年将是全球最大消费市场。东西方投资者的信息不对称创造独特机会——深入理解文化、语言、治理的人有显著优势。" },
+  {id:13, time:"50:00", speaker:"Li Lu", topic:"china", label:"中国各行业投资机会",
+   summary:"住房、服务业等几乎所有行业都在快速增长。中国市场的问题不是找不到机会，而是机会太多、资源有限，必须高度选择性。关键是找到有护城河的好公司。" },
+  {id:14, time:"55:00", speaker:"Bruce",  topic:null,   label:"Q5: 服务经济与人才",
+   summary:"Bruce问：中国服务经济有哪些独特机会？人才培训和管理面临哪些挑战？本土化特征如何理解？" },
+  {id:15, time:"62:00", speaker:"Bruce",  topic:null,   label:"Q6: 投资失误与教训",
+   summary:"Bruce问：回顾你的职业生涯，最大的投资失误是什么？有哪些教训可以分享？普通人能从中学到什么？" },
+  {id:16, time:"62:01", speaker:"Li Lu", topic:"china", label:"失误与对中国青年的建议",
+   summary:"错误是投资的必要组成部分，关键是能从错误中快速学习。对中国年轻人的建议：广泛阅读经典、找真正好的导师、从基础上理解企业。中国下一代面临的历史性机遇是前所未有的——中国将成为全球最大消费市场。" },
+  {id:17, time:"85:00", speaker:"Li Lu", topic:"china", label:"Asian-American的桥梁角色",
+   summary:"李录最后呼吁：全球经济的中心正在从大西洋转向太平洋。2000万亚裔美国人在美国与亚洲之间可以发挥独特的桥梁作用——这不仅有利于个人，更有利于整个美国社会的长期繁荣。" },
 ];
 
-// ─── Render ───
-function renderTranscript() {
+function renderList() {
   const q = document.getElementById('searchInput').value.toLowerCase();
   const filter = document.getElementById('topicFilter').value;
-  const list = document.getElementById('transcriptList');
+  const list = document.getElementById('segmentList');
   const filtered = SEGMENTS.filter(s => {
     if (filter && s.topic !== filter) return false;
-    if (q && !s.label.includes(q) && !s.summary.includes(q) && !s.speaker.toLowerCase().includes(q)) return false;
+    if (q && !s.label.toLowerCase().includes(q) && !s.summary.includes(q)) return false;
     return true;
   });
+  const colors = {moat:'#16a34a', china:'#3b82f6', character:'#9333ea', value:'#c9a227'};
   list.innerHTML = filtered.map(s => {
     const cls = s.topic ? `seg ${s.topic}` : 'seg';
-    const color = {moat:'#16a34a', china:'#3b82f6', character:'#9333ea', value:'#c9a227'}[s.topic] || 'var(--gold)';
-    return `<div class="${cls}" onclick="seek(${s.id})">
+    const color = colors[s.topic] || 'var(--gold)';
+    const [mm, ss] = s.time.split(':').map(Number);
+    const totalSec = mm * 60 + ss;
+    const ytUrl = `https://www.youtube.com/watch?v=FiHrWy2jGbA&t=${totalSec}`;
+    return `<div class="${cls}">
       <div class="seg-time" style="color:${color}">⏱ ${s.time} · ${s.speaker}</div>
       <div class="seg-speaker">${s.label}</div>
-      <div class="seg-text">${s.summary}</div>
+      <div class="seg-summary">${s.summary}</div>
+      <a href="${ytUrl}" target="_blank" class="seg-watch">▶ 跳转到 ${s.time}</a>
     </div>`;
   }).join('');
-}
-
-function renderOutline() {
-  const list = document.getElementById('outlineList');
-  list.innerHTML = SEGMENTS.map(s => {
-    const color = {moat:'#16a34a', china:'#3b82f6', character:'#9333ea', value:'#c9a227'}[s.topic] || '#6b7280';
-    return `<div class="outline-item" onclick="seek(${s.id})">
-      <div class="outline-time" style="color:${color}">${s.time}</div>
-      <div class="outline-title">${s.label}</div>
-      <div class="outline-speaker">${s.speaker}</div>
-    </div>`;
-  }).join('');
-}
-
-function seek(id) {
-  const s = SEGMENTS.find(x => x.id === id);
-  if (!s) return;
-  const [mm, ss] = s.time.split(':').map(Number);
-  const totalSec = mm * 60 + ss;
-  const url = `https://www.youtube.com/watch?v=FiHrWy2jGbA&t=${totalSec}`;
-  window.open(url, '_blank');
-  showToast(`⏱ ${s.time} · ${s.label}`);
 }
 
 function switchTab(name) {
@@ -275,9 +232,7 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 2500);
 }
 
-// Init
-renderTranscript();
-renderOutline();
+renderList();
 renderNotes();
 </script>
 </body>
