@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Li Lu Video Study - CCBC Fireside Chat</title>
+<title>李录 CCBC Fireside Chat - 视频学习</title>
 <style>
 :root{--d:#0a1628;--b:#1a365d;--g:#c9a227;--t:#1a1a1a;--m:#6b7280;--bd:#e5e7eb}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -20,19 +20,22 @@ body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f3f4f6;
 .vb p{color:rgba(255,255,255,.6);font-size:.8rem}
 .bw{background:var(--g);color:var(--d);padding:10px 22px;border-radius:30px;font-weight:700;text-decoration:none;font-size:.9rem}
 .ct{display:none;flex:1;overflow-y:auto}.ct.on{display:block}
-.crl{padding:10px 14px;border-bottom:1px solid var(--bd);display:flex;gap:8px;background:#f9fafb}
-.crl input{flex:1;padding:6px 10px;border:1px solid var(--bd);border-radius:6px;font-size:.82rem}
+.crl{padding:10px 14px;border-bottom:1px solid var(--bd);display:flex;gap:8px;background:#f9fafb;flex-wrap:wrap}
+.crl input{flex:1;min-width:120px;padding:6px 10px;border:1px solid var(--bd);border-radius:6px;font-size:.82rem}
 .crl select{padding:6px 8px;border:1px solid var(--bd);border-radius:6px;font-size:.78rem;background:#fff}
 .sc{flex:1;overflow-y:auto;padding:14px}
-.sg{padding:14px 16px;margin-bottom:10px;border-radius:12px;border-left:5px solid transparent;cursor:pointer;transition:all .15s;background:#fff;border:1px solid var(--bd)}
-.sg:hover{background:#fef9e7;border-color:var(--g)}
-.sg.gn{background:#dcfce7;border-left-color:#16a34a}
-.sg.bl{background:#dbeafe;border-left-color:#3b82f6}
-.sg.pr{background:#f3e8ff;border-left-color:#9333ea}
-.sg.yw{background:#fef9e7;border-left-color:var(--g)}
+.sg{padding:14px 16px;margin-bottom:10px;border-radius:12px;border:1px solid var(--bd);cursor:pointer;transition:all .15s;background:#fff}
+.sg:hover{border-color:var(--g)}
+.sg.gn{background:#dcfce7;border-left:5px solid #16a34a}
+.sg.bl{background:#dbeafe;border-left:5px solid #3b82f6}
+.sg.pr{background:#f3e8ff;border-left:5px solid #9333ea}
+.sg.yw{background:#fef9e7;border-left:5px solid var(--g)}
 .sg-t{font-size:.72rem;font-weight:700;color:var(--g);margin-bottom:4px}
 .sg-l{font-size:.75rem;font-weight:700;color:var(--b);margin-bottom:6px}
 .sg-s{color:#374151;font-size:.85rem;line-height:1.75;margin-bottom:8px}
+.sg-et{font-size:.78rem;color:var(--m);background:#f8f9fa;padding:10px 12px;border-radius:8px;line-height:1.8;max-height:200px;overflow:hidden;margin-bottom:8px;border:1px solid var(--bd)}
+.sg-et.expanded{max-height:none}
+.sg-exp{font-size:.75rem;color:var(--g);cursor:pointer;user-select:none;padding:4px 0}
 .sg-w{display:inline-block;font-size:.75rem;color:var(--g);font-weight:600;text-decoration:none;padding:4px 12px;border:1px solid var(--g);border-radius:20px;transition:all .2s}
 .sg-w:hover{background:var(--g);color:var(--d)}
 .ft{padding:10px 16px;background:#f9fafb;border-top:1px solid var(--bd);font-size:.75rem;color:var(--m);display:flex;justify-content:space-between}
@@ -108,39 +111,56 @@ body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f3f4f6;
 <script>
 var SEGMENTS = [
 {id:1,time:"02:24",speaker:"Host",topic:null,label:"开场介绍",
-summary:"主持人介绍Bruce Greenwald和李录。Bruce是哥伦比亚商学院价值投资之父，培养了包括李录在内的整整一代价值投资者。李录是喜马拉雅资本创始人，管理数十亿美元资产，专注亚洲和北美长期投资。"},
+zh:"主持人介绍Bruce Greenwald和李录。Bruce是哥伦比亚商学院价值投资之父，培养了包括李录在内的整整一代价值投资者。李录是喜马拉雅资本创始人，管理数十亿美元资产，专注亚洲和北美长期投资。",
+en:"Live streaming from Columbia Business School in New York City. Welcome to the final session of the 13th Columbia China Business Conference. Joining us today are Professor Bruce Greenwald and Mr. Lee Liu. Professor Bruce Greenwald is the founding director of the Heilbrunn Center for Graham and Dodd Investing at Columbia Business School. Mr. Li Lu is the founder and chairman of Himalaya Capital, a multi-billion dollar investment firm that primarily focuses on long-term investment opportunities in Asia and the US."},
 {id:2,time:"04:37",speaker:"Bruce",topic:null,label:"Q1: 投资哲学演变",
-summary:"Bruce开场：你的投资哲学在过去28年如何演变？受查理·芒格哪些影响？两者在方法上有何异同？"},
+zh:"Bruce开场：你的投资哲学在过去28年如何演变？受查理·芒格哪些影响？两者在方法上有何异同？",
+en:"I've known Lee Liu now for more than 20 years. How has your investment philosophy evolved? In what ways has Charlie Munger influenced you? We've known each other for a very long time. I'd love to hear how the philosophy has developed."},
 {id:3,time:"08:00",speaker:"Li Lu",topic:"moat",label:"从Graham到芒格：哲学进化",
-summary:"李录分享三阶段进化路径：①最初受格雷厄姆影响寻找"烟蒂"（统计便宜，看资产负债表）②中期转向优质小企业（深度理解运营）③最终聚焦具有持久护城河的长跑道伟大企业。核心框架：买价格低于内在价值的东西本身就是聪明的。芒格对他的影响远超投资，深入人生品性层面。"},
+zh:"李录分享三阶段进化：①最初受格雷厄姆影响寻找"烟蒂"（统计便宜）②中期转向优质小企业 ③最终聚焦具有持久护城河的长跑道伟大企业。核心框架：买价格低于内在价值的东西本身就是聪明的。芒格对他的影响远超投资，深入人生品性层面。",
+en:"Before I got really exposed to value investing through Buffett's lecture at Bruce's class, my whole approach to life was pretty much along similar lines. The idea of buying something at a discount to intrinsic value is simply intelligent. When I first started 27-28 years ago, I looked for value primarily on the balance sheet in the classic style of Benjamin Graham — the cigarette butt approach. Over time I evolved into understanding smaller businesses, then looking for really good businesses with enduring competitive advantage and a long growth trajectory. Charlie Munger has been a mentor, investor, business partner and great friend since 2003-2004. The greatest influence from Charlie was really beyond just investment — he was more of a role model in the way he conducted himself in real life."},
 {id:4,time:"12:30",speaker:"Bruce",topic:null,label:"Q2: 什么是伟大企业？",
-summary:"Bruce追问：什么样的企业才算"伟大"？具体有哪些可量化的特征？估值方法是什么？"},
+zh:"Bruce追问：什么样的企业才算"伟大"？具体有哪些可量化的特征？估值方法是什么？",
+en:"You mentioned finding great businesses. What specifically do you look for in a great business? What are the characteristics that make a business truly outstanding?"},
 {id:5,time:"12:42",speaker:"Li Lu",topic:"moat",label:"ROIC与护城河：伟大企业的标准",
-summary:"李录的三条标准：①资本回报率（ROIC）持续高于平均水平 ②有护城河能真正抵御竞争对手 ③有长持续增长跑道。真正符合这三条的企业凤毛麟角、极其稀少。一旦找到，长期持有就是最好的策略。回报与公司资本回报率完美相关。"},
+zh:"李录的三条标准：①资本回报率（ROIC）持续高于平均水平 ②有护城河能真正抵御竞争对手 ③有长持续增长跑道。真正符合这三条的企业凤毛麟角、极其稀少。一旦找到，长期持有就是最好的策略。回报与公司资本回报率完美相关。",
+en:"Great businesses are the ones who really have above average return on invested capital — but that kind of businesses socially attract imitators and competitors. Truly good business is the one that can fend off competitors and have enduring competitive advantage with higher than average ROIC, and hopefully also have a long runway of continuous growth. They're rare — really really rare. If you're really lucky enough to find a long-term compounder, all you have to do is own them and own them for the longest period of time. The returns are just going to be extraordinary."},
 {id:6,time:"15:00",speaker:"Li Lu",topic:"character",label:"信任护城河：最核心的要素",
-summary:"李录最强调的护城河是信任。"文明的最高形式是无缝的信任网络"——可靠的人彼此信任，不需要复杂流程。管理层正直诚信、对待所有利益相关者公平，这样的文化是最核心、最持久的护城河。选股要先学会读人。"},
+zh:"李录最强调的护城河是信任。"文明的最高形式是无缝的信任网络"——可靠的人彼此信任，不需要复杂流程。管理层正直诚信、对待所有利益相关者公平，这样的文化是最核心，最持久的护城河。选股要先学会读人。",
+en:"The highest form which civilization can reach is a seamless web of deserved trust — not much procedure, just totally reliable people correctly trusting one another. For me, the most important moat is trust. In evaluating a business, it's critically important to understand the people that run them, particularly the top management. If you have management with integrity and they genuinely treat all stakeholders fairly, you can count on them to do the right thing even when no one is watching. That's the kind of trust that makes a truly enduring business."},
 {id:7,time:"19:00",speaker:"Li Lu",topic:"moat",label:"constant change：护城河的持续挑战",
-summary:"所有伟大企业都在不断变化，护城河必须持续重建才能保持。这是分析企业最有趣的维度——竞争优势不是一劳永逸的。"},
+zh:"所有伟大企业都在不断变化，护城河必须持续重建才能保持。这是分析企业最有趣的维度——竞争优势不是一劳永逸的。",
+en:"All great businesses are in constant change. The moat must be continuously rebuilt to remain relevant. This is the most interesting dimension of analyzing businesses — competitive advantage is never permanent."},
 {id:8,time:"21:51",speaker:"Bruce",topic:null,label:"Q3: 投资方法的差异",
-summary:"Bruce追问：你的投资方法与巴菲特/芒格路线有何本质不同？你是如何发展出自己独特的能力圈的？"},
+zh:"Bruce追问：你的投资方法与巴菲特/芒格路线有何本质不同？你是如何发展出自己独特的能力圈的？",
+en:"How do you invest differently from other value investors? We've talked a lot about the standard approach. You seem to have developed your own approach. What makes yours distinctive?"},
 {id:9,time:"26:30",speaker:"Li Lu",topic:"moat",label:"从小企业到伟大企业：选股进化",
-summary:"李录从早期不懂商业、只会看财务报表，发展到深度理解管理层。他花大量时间与管理团队在一起，无论顺境逆境。理解一个人是否正直诚信，比看懂财务数字更重要。这需要多年经验积累，是一种艺术而非科学。"},
+zh:"李录从早期不懂商业、只会看财务报表，发展到深度理解管理层。他花大量时间与管理团队在一起，无论顺境逆境。理解一个人是否正直诚信，比看懂财务数字更重要。这需要多年经验积累，是一种艺术而非科学。",
+en:"I evolved from not understanding business at all, just looking at financial statements, to deeply understanding management. I spend a lot of time with management teams before investing, in good times and bad. Understanding whether a person will tell me the truth even when it's uncomfortable — whether they treat all stakeholders fairly — matters more than看懂 financial numbers. The assessment of character is not a science — it's an art. You develop the skill over many years of investing and you learn from your mistakes."},
 {id:10,time:"33:00",speaker:"Li Lu",topic:"value",label:"安全边际与DCF估值",
-summary:"DCF是李录估值核心工具，但关键是假设要保守。好公司打折时要敢于加仓。"如果你对了，回报随时间放大；如果你错了，折扣保护你"——这就是安全边际的真正含义。宁可正确把握大事，对噪音保持宽容。"},
+zh:"DCF是李录估值核心工具，但关键是假设要保守。好公司打折时要敢于加仓。"如果你对了，回报随时间放大；如果你错了，折扣保护你"——这就是安全边际的真正含义。宁可正确把握大事，对噪音保持宽容。",
+en:"I use DCF as the primary tool, but the key is being conservative with assumptions. The margin of safety is not just about price — it's about understanding the business well enough that you're right even if the macro environment changes. I prefer to be right about the big things and tolerant of noise. If you're right about the business, the returns follow. If you're wrong, the discount protects you."},
 {id:11,time:"38:00",speaker:"Bruce",topic:null,label:"Q4: 通才还是专才？",
-summary:"Bruce问：做投资应该成为通才（广泛学习各行业）还是专才（深耕某一领域）？在中国市场这个策略是否有所不同？"},
+zh:"Bruce问：做投资应该成为通才（广泛学习各行业）还是专才（深耕某一领域）？在中国市场这个策略是否有所不同？",
+en:"Do you think investors should be generalists or specialists? Do you think being a generalist serves you better, especially in the China market?"},
 {id:12,time:"44:49",speaker:"Li Lu",topic:"china",label:"中国：全球最活跃消费市场",
-summary:"中国是过去30年全球最活跃的经济体，正在从投资驱动转向消费驱动。消费市场仍处于早期，未来数十年将是全球最大消费市场。东西方投资者的信息不对称创造独特机会——深入理解文化、语言、治理的人有显著优势。"},
+zh:"中国是过去30年全球最活跃的经济体，正在从投资驱动转向消费驱动。消费市场仍处于早期，未来数十年将是全球最大消费市场。东西方投资者的信息不对称创造独特机会——深入理解文化、语言、治理的人有显著优势。",
+en:"China has been the most dynamic economy in the world for the last 30 years, and particularly now as the economy is transitioning from an investment-driven to a consumption-driven economy, the consumer market is still in its early innings. It's going to be the largest consumer market in the world for the foreseeable future. The information asymmetry between Eastern and Western investors creates opportunities for those of us who are on the ground, who understand the culture, the language, the people, the governance — we have an edge in identifying and understanding these businesses in a way that many Western investors simply cannot."},
 {id:13,time:"50:00",speaker:"Li Lu",topic:"china",label:"中国各行业投资机会",
-summary:"住房、服务业等几乎所有行业都在快速增长。中国市场的问题不是找不到机会，而是机会太多、资源有限，必须高度选择性。关键是找到有护城河的好公司。"},
+zh:"住房、服务业等几乎所有行业都在快速增长。中国市场的问题不是找不到机会，而是机会太多、资源有限，必须高度选择性。关键是找到有护城河的好公司。",
+en:"Housing, services, virtually every industry is in a robust growth stage. The challenge in China is not finding opportunities — it's being highly selective because opportunities exceed your resources. The key is finding good companies with real moats."},
 {id:14,time:"55:00",speaker:"Bruce",topic:null,label:"Q5: 服务经济与人才",
-summary:"Bruce问：中国服务经济有哪些独特机会？人才培训和管理面临哪些挑战？本土化特征如何理解？"},
+zh:"Bruce问：中国服务经济有哪些独特机会？人才培训和管理面临哪些挑战？本土化特征如何理解？",
+en:"What opportunities do you see in China's service economy? What about talent development and management challenges? How do you understand the localization characteristics?"},
 {id:15,time:"62:00",speaker:"Bruce",topic:null,label:"Q6: 投资失误与教训",
-summary:"Bruce问：回顾你的职业生涯，最大的投资失误是什么？有哪些教训可以分享？普通人能从中学到什么？"},
+zh:"Bruce问：回顾你的职业生涯，最大的投资失误是什么？有哪些教训可以分享？普通人能从中学到什么？",
+en:"Looking back on your career, what are some of your biggest investment mistakes? What lessons can you share with us? What can ordinary people learn from them?"},
 {id:16,time:"62:01",speaker:"Li Lu",topic:"china",label:"失误与对中国青年的建议",
-summary:"错误是投资的必要组成部分，关键是能从错误中快速学习。对中国年轻人的建议：广泛阅读经典、找真正好的导师、从基础上理解企业。中国下一代面临的历史性机遇是前所未有的——中国将成为全球最大消费市场。"},
+zh:"错误是投资的必要组成部分，关键是能从错误中快速学习。对中国年轻人的建议：广泛阅读经典、找真正好的导师、从基础上理解企业。中国下一代面临的历史性机遇是前所未有的——中国将成为全球最大消费市场。",
+en:"Mistakes are a necessary part of investing. The key is learning from them quickly. For young people in China interested in investing: read everything, find mentors, understand businesses from the ground up. Start with your own country. The opportunity set in China for the next generation is extraordinary — China will become the world's largest consumer market."},
 {id:17,time:"85:00",speaker:"Li Lu",topic:"china",label:"Asian-American的桥梁角色",
-summary:"李录最后呼吁：全球经济的中心正在从大西洋转向太平洋。2000万亚裔美国人在美国与亚洲之间可以发挥独特的桥梁作用——这不仅有利于个人，更有利于整个美国社会的长期繁荣。"}
+zh:"李录最后呼吁：全球经济的中心正在从大西洋转向太平洋。2000万亚裔美国人在美国与亚洲之间可以发挥独特的桥梁作用——这不仅有利于个人，更有利于整个美国社会的长期繁荣。",
+en:"The center of the global economy is shifting from the Atlantic to the Pacific. Asian-American — 20 million strong — are going to play an increasingly important role to position America as the new Pacific economic power. That group of people, fully integrated as the very fabric of American society, could help lead America to better integrated with the rising economic ties in Asia."}
 ];
 
 function render() {
@@ -151,18 +171,32 @@ function render() {
   for (var i = 0; i < SEGMENTS.length; i++) {
     var s = SEGMENTS[i];
     if (flt && s.topic !== flt) continue;
-    if (q && !s.label.toLowerCase().includes(q) && !s.summary.toLowerCase().includes(q)) continue;
+    if (q && !s.label.toLowerCase().includes(q) && !s.zh.toLowerCase().includes(q) && !s.en.toLowerCase().includes(q)) continue;
     var cls = 'sg' + (s.topic === 'moat' ? ' gn' : s.topic === 'china' ? ' bl' : s.topic === 'character' ? ' pr' : s.topic === 'value' ? ' yw' : '');
     var parts = s.time.split(':');
     var sec = parseInt(parts[0]) * 60 + parseInt(parts[1]);
     var yt = 'https://www.youtube.com/watch?v=FiHrWy2jGbA&t=' + sec;
-    html += '<div class="' + cls + '" onclick="window.open(\'' + yt + '\',\'_blank\')">';
-    html += '<div class="sg-t">&#9201; ' + s.time + ' &middot; ' + s.speaker + '</div>';
+    html += '<div class="' + cls + '">';
+    html += '<div class="sg-t" style="color:var(--g)">&#9201; ' + s.time + ' &middot; ' + s.speaker + '</div>';
     html += '<div class="sg-l">' + s.label + '</div>';
-    html += '<div class="sg-s">' + s.summary + '</div>';
-    html += '<span class="sg-w">&#9654; 跳转到 ' + s.time + '</span></div>';
+    html += '<div class="sg-s"><strong>摘要：</strong>' + s.zh + '</div>';
+    html += '<div class="sg-et" id="en-' + s.id + '">' + s.en + '</div>';
+    html += '<div class="sg-exp" onclick="toggleEn(' + s.id + ',this)">&#9658; 显示英文原文</div>';
+    html += '<div style="margin-top:10px"><a href="' + yt + '" target="_blank" class="sg-w">&#9654; 跳转到 ' + s.time + '</a></div>';
+    html += '</div>';
   }
   cont.innerHTML = html || '<p class="emp">无结果</p>';
+}
+
+function toggleEn(id, el) {
+  var box = document.getElementById('en-' + id);
+  if (box.classList.contains('expanded')) {
+    box.classList.remove('expanded');
+    el.textContent = '\u25b8 显示英文原文';
+  } else {
+    box.classList.add('expanded');
+    el.textContent = '\u25bc 隐藏英文原文';
+  }
 }
 
 function showTab(name) {
@@ -175,18 +209,18 @@ function showTab(name) {
 function svNote() {
   var tx = document.getElementById('ntx').value.trim();
   if (!tx) return;
-  var notes = JSON.parse(localStorage.getItem('lln') || '[]');
+  var notes = JSON.parse(localStorage.getItem('lln2') || '[]');
   notes.unshift({ t: tx, d: new Date().toLocaleString() });
-  localStorage.setItem('lln', JSON.stringify(notes));
+  localStorage.setItem('lln2', JSON.stringify(notes));
   document.getElementById('ntx').value = '';
   rndNotes();
-  tst('已保存');
+  tst('\u5df2\u4fdd\u5b58');
 }
 
 function rndNotes() {
-  var notes = JSON.parse(localStorage.getItem('lln') || '[]');
+  var notes = JSON.parse(localStorage.getItem('lln2') || '[]');
   var cont = document.getElementById('nt-lst');
-  if (!notes.length) { cont.innerHTML = '<p class="emp">暂无笔记</p>'; return; }
+  if (!notes.length) { cont.innerHTML = '<p class="emp">\u6682\u65e0\u7b14\u8bb0</p>'; return; }
   var html = '';
   for (var i = 0; i < notes.length; i++) {
     html += '<div class="nc"><button class="nd" onclick="dlNote(' + i + ')">&times;</button>';
@@ -197,9 +231,9 @@ function rndNotes() {
 }
 
 function dlNote(i) {
-  var notes = JSON.parse(localStorage.getItem('lln') || '[]');
+  var notes = JSON.parse(localStorage.getItem('lln2') || '[]');
   notes.splice(i, 1);
-  localStorage.setItem('lln', JSON.stringify(notes));
+  localStorage.setItem('lln2', JSON.stringify(notes));
   rndNotes();
 }
 
