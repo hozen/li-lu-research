@@ -132,12 +132,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <nav class=navbar>
 <div class=nav-brand><span>&#10070;</span> 李录研究</div>
 <div class=nav-links>
-<a href=#about class=nav-link active>关于</a>
+<a href=#about class=nav-link>关于</a>
+<a href=#holdings class=nav-link>持仓</a>
 <a href=#principles class=nav-link>投资原则</a>
+<a href=#framework class=nav-link>决策框架</a>
 <a href=#videos class=nav-link>视频</a>
+<a href=video_study.html class=nav-link target=_blank>📺 视频学习</a>
 <a href=#quotes class=nav-link>语录</a>
-<a href=#books class=nav-link>书籍</a>
-<a href=#interviews class=nav-link>访谈</a>
 <a href=#faq class=nav-link>FAQ</a>
 </div>
 <button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 夜间</button>
@@ -153,9 +154,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <a href=#principles class=btn btn-outline>了解投资哲学</a>
 </div>
 <div class=hero-stats>
-<div class=stat><div class=stat-number>28+</div><div class=stat-label>年投资经验</div></div>
+<div class=stat><div class=stat><div class=stat-number>28+</div><div class=stat-label>年投资经验</div></div>
 <div class=stat><div class=stat-number>~20%</div><div class=stat-label>年化复合收益</div></div>
-<div class=stat><div class=stat-number>3</div><div class=stat-label>核心投资原则</div></div>
+<div class=stat><div class=stat-number>6</div><div class=stat-label>核心投资原则</div></div>
 </div>
 </div>
 <div class=hero-image-box>
@@ -167,79 +168,112 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 </section>
 <section id=holdings class=section style="background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); padding: 60px 40px;">
 <div class=section-header>
-<h2 class=section-title style="color: #fff;">喜马拉雅资本最新持仓</h2>
-<p class=section-subtitle style="color: #a0aec0;">2025年权益资产组合 · 内在价值分析</p>
+<h2 class=section-title style="color: #fff;">喜马拉雅资本持仓 (13F)</h2>
+<p class=section-subtitle style="color: #a0aec0;">2025年Q4 13F申报 · 美国公开市场持仓 · 总规模约¥250亿</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 40px;">
 <div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">腾讯控股</h4>
-<p style="color: #666; font-size: 0.85rem;">港股 · 科技 · PE 24.2</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>¥4,570亿</strong><br><small style="color:#888">市值</small></span>
-<span><strong>495.4</strong><br><small style="color:#888">股价(HKD)</small></span>
-<span><strong>0.69%</strong><br><small style="color:#888">股息</small></span>
+<h4 style="color: #1a365d;">Alphabet (谷歌) <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h4>
+<p style="color: #666; font-size: 0.85rem;">NASDAQ: GOOGL/GOOG · 科技 · 占比 <strong style="color:#c9a227;">43.86%</strong></p>
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~27x</span>
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">股息 0.5%</span>
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">ROIC >25%</span>
 </div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+<span><strong>$15.65亿</strong><br><small style="color:#888">市值</small></span>
+<span><strong>未变动</strong><br><small style="color:#888">Q4</small></span>
 </div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">中国海洋石油</h4>
-<p style="color: #666; font-size: 0.85rem;">港股 · 能源 · PE 11.8</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>¥1,374亿</strong><br><small style="color:#888">市值</small></span>
-<span><strong>29.0</strong><br><small style="color:#888">股价(HKD)</small></span>
-<span><strong>2.07%</strong><br><small style="color:#888">股息</small></span>
-</div>
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 搜索广告92%+云+Gemini AI三重护城河 | 持有~5.5年 估算回报150-190%</p>
 </div>
 <div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">中国移动</h4>
-<p style="color: #666; font-size: 0.85rem;">港股 · 通信 · PE 13.5</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>¥1,443亿</strong><br><small style="color:#888">市值</small></span>
-<span><strong>70.0</strong><br><small style="color:#888">股价(HKD)</small></span>
-<span><strong>3.43%</strong><br><small style="color:#888">股息</small></span>
+<h4 style="color: #1a365d;">Bank of America <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;</span></h4>
+<p style="color: #666; font-size: 0.85rem;">NYSE: BAC · 金融 · 占比 <strong style="color:#c9a227;">16.08%</strong></p>
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE 12.9x</span>
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB 1.25x</span>
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">股息 2.2%</span>
 </div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+<span><strong>$5.74亿</strong><br><small style="color:#888">市值</small></span>
+<span><strong>未变动</strong><br><small style="color:#888">Q4</small></span>
 </div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">招商银行</h4>
-<p style="color: #666; font-size: 0.85rem;">A股 · 金融 · PE 8.6</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>¥958亿</strong><br><small style="color:#888">市值</small></span>
-<span><strong>38.0</strong><br><small style="color:#888">股价(RMB)</small></span>
-<span><strong>5.19%</strong><br><small style="color:#888">股息</small></span>
-</div>
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 深度价值+高股息压舱石 | 持有~6年 估算回报95-120%</p>
 </div>
 <div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">中国神华</h4>
-<p style="color: #666; font-size: 0.85rem;">A股 · 能源 · PE 8.6</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>¥582亿</strong><br><small style="color:#888">市值</small></span>
-<span><strong>29.3</strong><br><small style="color:#888">股价(RMB)</small></span>
-<span><strong>8.50%</strong><br><small style="color:#888">股息</small></span>
+<h4 style="color: #1a365d;">拼多多 PDD <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;</span></h4>
+<p style="color: #666; font-size: 0.85rem;">NASDAQ: PDD · 电商 · 占比 <strong style="color:#c9a227;">14.64%</strong></p>
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~10x</span>
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">净现金=市值50%</span>
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">0%股息</span>
 </div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+<span><strong>$5.23亿</strong><br><small style="color:#888">市值</small></span>
+<span><strong>未变动</strong><br><small style="color:#888">Q4</small></span>
+</div>
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 最被低估 · PE~10x+现金700亿=市值50% Temu全球化高速扩张</p>
 </div>
 <div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">陕西煤业</h4>
-<p style="color: #666; font-size: 0.85rem;">A股 · 能源 · PE N/A</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>¥223亿</strong><br><small style="color:#888">市值</small></span>
-<span><strong>23.0</strong><br><small style="color:#888">股价(RMB)</small></span>
-<span><strong>5.72%</strong><br><small style="color:#888">股息</small></span>
+<h4 style="color: #1a365d;">伯克希尔B <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h4>
+<p style="color: #666; font-size: 0.85rem;">NYSE: BRK.B · 投资控股 · 占比 <strong style="color:#c9a227;">12.64%</strong></p>
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~22x</span>
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB 1.5x</span>
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">0%股息</span>
 </div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+<span><strong>$4.51亿</strong><br><small style="color:#888">市值</small></span>
+<span><strong>未变动</strong><br><small style="color:#888">Q4</small></span>
+</div>
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 芒格/巴菲特资本配置+浮存金 | 持有~5-6年</p>
+</div>
+<div class=card style="border-left: 4px solid #c9a227;">
+<h4 style="color: #1a365d;">苹果 Apple <span style="color:#a0aec0;font-size:0.75rem;">&#9733;&#9733;&#9733;</span></h4>
+<p style="color: #666; font-size: 0.85rem;">NASDAQ: AAPL · 科技 · 占比 <strong style="color:#c9a227;">0.84%</strong></p>
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~20x</span>
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">股息 0.5%</span>
+<span style="background:#fed7d7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">ROIC >50%</span>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+<span><strong>$0.30亿</strong><br><small style="color:#888">市值</small></span>
+<span style="color:#38a169;"><strong>增持</strong><br><small style="color:#888">Q4</small></span>
+</div>
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#129000; 2025年Q1减持65%后余底仓 | Q3再减持58%</p>
+</div>
+<div class=card style="border-left: 4px solid #38a169;">
+<h4 style="color: #1a365d;">Crocs <span style="color:#a0aec0;font-size:0.75rem;">&#9733;&#9733;</span></h4>
+<p style="color: #666; font-size: 0.85rem;">NASDAQ: CROX · 消费品 · 占比 <strong style="color:#38a169;">1.50%</strong></p>
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~8x</span>
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB ~4x</span>
+<span style="background:#fed7d7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">价值陷阱?</span>
+</div>
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+<span><strong>$0.53亿</strong><br><small style="color:#888">市值</small></span>
+<span style="color:#38a169;"><strong>新建仓</strong><br><small style="color:#888">Q4</small></span>
+</div>
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#9888; 唯一"疑问手" · 博低端消费品牌反转 | 仓位克制风险可控</p>
 </div>
 </div>
 <div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 12px;">
 <h4 style="color: #c9a227; margin-bottom: 15px;">📊 持仓特征分析</h4>
 <div style="display: flex; gap: 30px; flex-wrap: wrap;">
-<div><span style="color: #a0aec0;">行业分布:</span><br><strong style="color: #fff;">能源 45% · 科技 25% · 金融 15% · 通信 15%</strong></div>
-<div><span style="color: #a0aec0;">平均股息率:</span><br><strong style="color: #fff;">4.2%</strong></div>
-<div><span style="color: #a0aec0;">平均市盈率:</span><br><strong style="color: #fff;">13.3x</strong></div>
+<div><span style="color: #a0aec0;">行业分布:</span><br><strong style="color: #fff;">科技 44.7% · 金融 16.6% · 电商 14.6% · 投资 12.6%</strong></div>
+<div><span style="color: #a0aec0;">前五集中度:</span><br><strong style="color: #fff;">96.96%</strong></div>
+<div><span style="color: #a0aec0;">持仓数量:</span><br><strong style="color: #fff;">仅8只</strong></div>
+<div><span style="color: #a0aec0;">组合加权PE:</span><br><strong style="color: #fff;">~17-19x</strong></div>
+<div><span style="color: #a0aec0;">组合股息率:</span><br><strong style="color: #fff;">~1.0%</strong></div>
+<div><span style="color: #a0aec0;">零调仓周期:</span><br><strong style="color: #fff;">连续2季度</strong></div>
 </div>
 </div>
-<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 数据来源: Himalaya Capital 2025 Intrinsic Value Analysis | 仅供研究参考，不构成投资建议</p>
+<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 数据来源: Himalaya Capital 2025年Q4 13F申报 (2026年2月17日披露) | 仅供研究参考，不构成投资建议</p>
 </section>
 <section id=cases class=section style="background: #f7fafc;">
 <div class=section-header>
 <h2 class=section-title>投资案例分析</h2>
-<p class=section-subtitle>从李录的成功投资中学习</p>
+<p class=section-subtitle>从李录的成功投资中学习 · 历史持仓案例</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
 <div class=card>
@@ -251,29 +285,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <li>电动汽车行业的颠覆性机会</li>
 <li>垂直整合带来的成本优势</li>
 </ul>
-<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 投资回报: 数十倍</p>
+<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 投资回报: 数十倍（早期投资）</p>
 </div>
 <div class=card>
-<h3 style="color: #1a365d;">&#128200; 腾讯控股</h3>
-<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>投资时间:</strong> 2012年至今</p>
+<h3 style="color: #1a365d;">&#127760; Alphabet (谷歌)</h3>
+<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>持仓时间:</strong> 2019年至今（持续增持）</p>
 <p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>投资逻辑:</strong></p>
 <ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-<li>微信的网络效应护城河</li>
-<li>游戏+广告+云多元收入</li>
-<li>强大的现金流生成能力</li>
+<li>搜索引擎绝对主导地位</li>
+<li>AI+云计算持续增长</li>
+<li>强大的自由现金流</li>
 </ul>
-<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 投资回报: 持续增长</p>
+<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 当前第一大持仓 (43.86%)</p>
 </div>
 <div class=card>
-<h3 style="color: #1a365d;">&#128293; 中国移动</h3>
-<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>投资时间:</strong> 2019年至今</p>
+<h3 style="color: #1a365d;">&#128176; Bank of America</h3>
+<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>持仓时间:</strong> 2016年至今</p>
 <p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>投资逻辑:</strong></p>
 <ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-<li>高股息率 (4%+)</li>
-<li>5G独家运营商</li>
-<li>稳定现金流</li>
+<li>美国四大银行之一</li>
+<li>强大的分销网络护城河</li>
+<li>估值合理、股息稳定</li>
 </ul>
-<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 投资回报: 稳定分红</p>
+<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 第二大持仓 (16.08%)</p>
 </div>
 </div>
 </section>
@@ -287,10 +321,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <h3>&#128220; 个人背景</h3>
 <p>李录是被誉为中国的沃伦·巴菲特的价值投资大师。现任美国喜马拉雅资本创始人董事长，执行合伙人。哥伦比亚大学MBA学位，师从著名价值投资教授 Bruce Greenwald。</p>
 <div class=timeline style=margin-top:30px>
-<div class=timeline-item><div class=timeline-date>1980s-1990s</div><div class=timeline-title>求学时期</div><div class=timeline-content>毕业于南京大学，后赴哥伦比亚大学求学，师从Bruce Greenwald教授。</div></div>
-<div class=timeline-item><div class=timeline-date>1997年</div><div class=timeline-title>创立喜马拉雅资本</div><div class=timeline-content>在美国创立喜马拉雅资本管理公司，专注于长期价值投资。</div></div>
-<div class=timeline-item><div class=timeline-date>2008年</div><div class=timeline-title>投资比亚迪</div><div class=timeline-content>以敏锐的商业眼光投资比亚迪，成为重要早期投资者。</div></div>
-<div class=timeline-item><div class=timeline-date>2020年</div><div class=timeline-title>出版《文明、现代化、价值投资与中国》</div><div class=timeline-content>将多年投资思考整理成书，系统阐述价值投资理念与中国市场机会。</div></div>
+<div class=timeline-item><div class=timeline-date>1980s-1990s</div><div class=timeline-title>求学时期</div><div class=timeline-content>毕业于南京大学，后赴哥伦比亚大学求学，师从Bruce Greenwald教授，获MBA学位。</div></div>
+<div class=timeline-item><div class=timeline-date>1997年</div><div class=timeline-title>创立喜马拉雅资本</div><div class=timeline-content>在美国创立喜马拉雅资本管理公司(Himalaya Capital Management LLC)，专注于长期价值投资。</div></div>
+<div class=timeline-item><div class=timeline-date>2008年</div><div class=timeline-title>投资比亚迪</div><div class=timeline-content>以敏锐的商业眼光投资比亚迪，成为重要早期投资者，持有至今。</div></div>
+<div class=timeline-item><div class=timeline-date>2014年</div><div class=timeline-title>《 cilivilized and Modern》论文发表</div><div class=timeline-content>发表关于文明、现代化与价值投资的长篇论文，系统阐述对人类社会发展的理解。</div></div>
+<div class=timeline-item><div class=timeline-date>2015-2019年</div><div class=timeline-title>北大光华价值投资课程</div><div class=timeline-content>参与北大光华管理学院价值投资课程，担任核心讲师，培养新一代价值投资者。</div></div>
+<div class=timeline-item><div class=timeline-date>2020年</div><div class=timeline-title>出版《文明、现代化、价值投资与中国》</div><div class=timeline-content>将多年投资思考整理成书，系统阐述价值投资理念与中国市场机会，成为畅销投资读物。</div></div>
+<div class=timeline-item><div class=timeline-date>2024年12月</div><div class=timeline-title>北大价值投资课程十周年</div><div class=timeline-content>出席北大光华价值投资课程十周年庆典，发表"全球价值投资者"主题演讲，分享最新投资思想。</div></div>
+<div class=timeline-item><div class=timeline-date>2025年</div><div class=timeline-title>13F持仓规模近$36亿</div><div class=timeline-content>2025年Q4 13F申报显示，喜马拉雅资本管理规模约$35.69亿美元（约¥250亿）， Alphabet为第一大持仓(43.86%)。</div></div>
 </div>
 </div>
 </section>
@@ -300,9 +338,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <p class=section-subtitle>李录28年投资生涯总结的三大核心要素</p>
 </div>
 <div class=principles>
-<div class=principle-card animate-in delay-1><span class=principle-number>01</span><h4>&#127919; 投资已经成功的企业</h4><p>寻找具有持久护城河的企业，高资本回报率且可持续。长期投资回报与公司资本回报率完美相关。</p></div>
-<div class=principle-card animate-in delay-2><span class=principle-number>02</span><h4>&#128161; 保持理性诚实</h4><p>了解自己的能力圈，对假设诚实，对不知道的诚实。市场总会击中你的弱点，必须有真正的知识。</p></div>
-<div class=principle-card animate-in delay-3><span class=principle-number>03</span><h4>&#128269; 深入了解企业</h4><p>能够预测企业未来10年的发展，2年内有90%把握。如果做不到，继续学习直到能做到。</p></div>
+<div class=principle-card animate-in delay-1><span class=principle-number>01</span><h4>&#127919; 股票是公司的一部分所有权</h4><p>股票不是一张炒卖的纸，而是公司的所有权证书。投资必须以企业所有者的心态看待每一持仓。</p></div>
+<div class=principle-card animate-in delay-2><span class=principle-number>02</span><h4>&#128161; 市场先生是你的仆人，不是你的向导</h4><p>市场提供价格发现功能，但不能预测价格。价格波动不是决策依据，安全边际才是。</p></div>
+<div class=principle-card animate-in delay-3><span class=principle-number>03</span><h4>&#128269; 能力圈：不懂不投</h4><p>只投资自己真正理解的行业和公司。如果一家公司你无法在10年内持有，就不要持有10分钟。</p></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;">
+<div class=card style="border-top: 4px solid #c9a227;">
+<h3 style="color: #1a365d;">&#128640; 第四条：安全边际是核心</h3>
+<p style="color: #4a5568;">买价低于内在价值时才有安全边际。安全边际是你犯错时的缓冲带，也是长期收益的主要来源。</p>
+</div>
+<div class=card style="border-top: 4px solid #3182ce;">
+<h3 style="color: #1a365d;">&#127757; 第五条：长期主义的纪律</h3>
+<p style="color: #4a5568;">如果不打算持有一家公司10年，就不要持有10分钟。真正的机会来自长期持有优秀企业的复利效应。</p>
+</div>
+<div class=card style="border-top: 4px solid #38a169;">
+<h3 style="color: #1a365d;">&#9878; 第六条：护城河是根本</h3>
+<p style="color: #4a5568;">护城河来自：规模经济、持续时间、管理层资本配置能力、企业文化。高资本回报率且可持续，是选择标的的核心标准。</p>
+</div>
 </div>
 <div class=card style=margin-top:40px>
 <h3>&#127968; 护城河的关键要素</h3>
@@ -314,13 +366,86 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 </div>
 </div>
 </section>
+<section id=framework class=section style="background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); padding: 60px 40px;">
+<div class=section-header>
+<h2 class=section-title style="color: #fff;">投资决策框架</h2>
+<p class=section-subtitle style="color: #a0aec0;">李录决策流程六步骤 · 来源：Himalaya Capital官网 + Bruce Greenwald学术框架</p>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px;">
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#128270; 步骤一：能力圈筛选</h4>
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+李录明确划定三大能力圈：<br>
+&#9654; <strong style="color:#fff">科技</strong> — 平台公司、网络效应<br>
+&#9654; <strong style="color:#fff">金融</strong> — 银行、保险<br>
+&#9654; <strong style="color:#fff">中国相关</strong> — 消费、互联网<br>
+<span style="color:#a0aec0; font-size: 0.85rem;">超出能力圈的不碰</span>
+</p>
+</div>
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#127969; 步骤二：护城河评估</h4>
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+采用 Bruce Greenwald 四维框架：<br>
+&#9654; <strong style="color:#fff">供给侧</strong> — 专利、地理位置、牌照<br>
+&#9654; <strong style="color:#fff">需求侧</strong> — 品牌、转换成本、习惯<br>
+&#9654; <strong style="color:#fff">规模经济</strong> — 单位成本随规模下降<br>
+&#9654; <strong style="color:#c9a227">信任护城河</strong> — 管理层诚信 ★李录最强调
+</p>
+</div>
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#128200; 步骤三：估值与安全边际</h4>
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+&#9654; <strong style="color:#fff">DCF</strong> — 内在价值核心评估工具<br>
+&#9654; <strong style="color:#fff">相对估值</strong> — PE、PB、EV/EBITDA 辅助<br>
+&#9654; <strong style="color:#fff">清算价值</strong> — 极端情况下的安全底线<br>
+<span style="color:#a0aec0; font-size: 0.85rem;">买价必须低于内在价值</span>
+</p>
+</div>
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#9889; 步骤四：买入决策</h4>
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+<strong style="color:#fff">"致命一击"</strong> — 等待完美机会重仓出击<br>
+<span style="color:#a0aec0; font-size: 0.85rem;">不轻易出手，出手即重仓 · 引用自芒格/巴菲特</span>
+</p>
+</div>
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#9201; 步骤五：持有与监控</h4>
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+&#9654; 抗拒短期波动<br>
+&#9654; 持续评估护城河是否侵蚀<br>
+&#9654; 连续两季度零调仓 — 极度耐心
+</p>
+</div>
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#128465; 步骤六：卖出决策</h4>
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+卖出信号：<br>
+&#9654; <strong style="color:#fff">基本面恶化</strong> — 护城河根本性侵蚀<br>
+&#9654; <strong style="color:#fff">估值泡沫</strong> — 价格远超内在价值<br>
+&#9654; <strong style="color:#fff">更好机会</strong> — "致命一击"出现<br>
+<span style="color:#a0aec0; font-size: 0.85rem;">卖出频率远低于买入</span>
+</p>
+</div>
+</div>
+<div style="margin-top: 40px; padding: 25px; background: rgba(201,162,39,0.1); border-radius: 12px; border: 1px solid rgba(201,162,39,0.3);">
+<h4 style="color: #c9a227; margin-bottom: 15px;">&#128640; 框架核心：组合集中度</h4>
+<div style="display: flex; gap: 40px; flex-wrap: wrap;">
+<div><span style="color: #a0aec0;">持仓数量:</span><br><strong style="color: #fff; font-size: 1.2rem;">8只</strong></div>
+<div><span style="color: #a0aec0;">前五占比:</span><br><strong style="color: #fff; font-size: 1.2rem;">96.96%</strong></div>
+<div><span style="color: #a0aec0;">第一大(Alphabet):</span><br><strong style="color: #fff; font-size: 1.2rem;">43.86%</strong></div>
+<div><span style="color: #a0aec0;">连续零调仓:</span><br><strong style="color: #fff; font-size: 1.2rem;">2季度</strong></div>
+</div>
+<p style="color: #a0aec0; margin-top: 15px; font-size: 0.85rem;">芒格式极致集中策略："真正的好公司不多，找到它们后重仓买进"</p>
+</div>
+<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 框架来源：Himalaya Capital (himcap.com) + Poor Charlie's Almanack p.61 + Bruce Greenwald</p>
+</section>
 <section id=videos class=section>
 <div class=section-header>
 <h2 class=section-title>视频资源</h2>
 <p class=section-subtitle>完整版演讲与访谈，深度理解价值投资哲学</p>
 </div>
 <div class=video-grid>
-<div class=video-card><div class=video-thumbnail><a href=https://www.youtube.com/watch?v=FiHrWy2jGbA target=_blank class=play-icon></a></div><div class=video-info><h4>Li Lu 2021 CBS访谈 | 完整版</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>1小时30分</span></div></div></div>
+<div class=video-card><div class=video-thumbnail><a href=video_study.html class=play-icon></a></div><div class=video-info><h4>📺 CCBC Fireside Chat | 价值投资中国 (带字幕学习)</h4><div style=padding:6px 0><span style="background:#ef4444;color:white;padding:2px 8px;border-radius:4px;font-size:0.72rem;">⚠️ 需跳转YouTube</span></div><div class=video-meta><span class=video-source>YouTube · CCBC</span><span class=video-duration>90分钟</span></div></div></div>
 <div class=video-card><div class=video-thumbnail><a href=https://www.bilibili.com/video/BV19QzcYeEWW/ target=_blank class=play-icon></a></div><div class=video-info><h4>北大演讲：我对价值投资的理解</h4><div class=video-meta><span class=video-source>Bilibili</span><span class=video-duration>3小时+</span></div></div></div>
 <div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>Master Class on Value Investing</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>1小时40分</span></div></div></div>
 <div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>CCBC Fireside Chat: 中国市场机会</h4><div class=video-meta><span class=video-source>CBS Greater China</span><span class=video-duration>1小时32分</span></div></div></div>
@@ -410,11 +535,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <p class=section-subtitle>来自李录28年投资实践的深刻洞见</p>
 </div>
 <div class=quotes-grid>
+<div class=quote-card><p class=quote-text>Take the world the way it is, not what we wish to be, what we want to be. It is what it is, take it. (接受世界本来的样子，而非我们希望它成为的样子。)</p><p class=quote-source>— 2024年12月 北大价值投资课程十周年演讲</p></div>
 <div class=quote-card><p class=quote-text>如果你只是假装了解企业，你会在困难时期被考验。</p><p class=quote-source>— 2021 CBS访谈</p></div>
 <div class=quote-card><p class=quote-text>长期投资回报与公司资本回报率完美相关。</p><p class=quote-source>— 投资哲学核心</p></div>
 <div class=quote-card><p class=quote-text>每5-10年发生一次百年一遇的危机。人类行为永远不会改变。</p><p class=quote-source>— 关于市场波动</p></div>
 <div class=quote-card><p class=quote-text>好的时光人们因贪婪而冒险，困难时人们恐慌，通常在错误的时刻做错误的决定。</p><p class=quote-source>— 人类行为分析</p></div>
-<div class=quote-card><p class=quote-text>假设有人送你100%所有权，比如亚马逊。如果你100%拥有它，你会想知道企业如何运作。</p><p class=quote-source>— 所有者心态</p></div>
+<div class=quote-card><p class=quote-text>投资最重要的事：搞清楚你在竞争什么。护城河必须可持续，否则就不是护城河。</p><p class=quote-source>— 2024年12月 北大演讲</p></div>
+<div class=quote-card><p class=quote-text>当你拥有一家公司的股权，你是以企业所有者的身份持有的，不是以股票交易者的身份。</p><p class=quote-source>— 所有者心态</p></div>
 <div class=quote-card><p class=quote-text>做学习的通才，但投资时要成为真正的专家。你需要比你投资的企业管理层更了解它。</p><p class=quote-source>— 关于能力圈</p></div>
 </div>
 </section>
@@ -479,7 +606,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <p class=section-subtitle>网站内容更新记录</p>
 </div>
 <div class=card>
-<h4 style="color: #1a365d;">&#128197; 2026-03-22</h4>
+<h4 style="color: #1a365d;">&#128197; 2026-04-05 (本次更新)</h4>
+<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
+<li>新增: 持仓区加入PE/PB/股息/ROIC估值标签 + 护城河星级评分 + 投资逻辑注释</li>
+<li>新增: 【投资决策框架】六大步骤流程图 (能力圈→护城河→估值→买入→持有→卖出)</li>
+<li>新增: 持仓特征分析增加组合加权PE(~17-19x)、股息率(1%)、零调仓周期等量化指标</li>
+<li>更新: 导航栏加入"持仓"和"决策框架"快速入口</li>
+<li>更新: 持仓区案例分析更换为 Alphabet/BAC/BYD，与13F持仓一致</li>
+</ul>
+<h4 style="color: #1a365d; margin-top: 25px;">&#128197; 2026-03-22</h4>
 <ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
 <li>新增: 投资案例分析 (比亚迪、腾讯、中国移动)</li>
 <li>新增: 学习路径三阶段</li>
@@ -503,15 +638,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <div style="max-width: 800px; margin: 30px auto 0;">
 <details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
 <summary style="font-weight: 600; color: #1a365d; outline: none;">Q1: 李录是如何开始价值投资的？</summary>
-<p style="margin-top: 15px; color: #4a5568;">李录在哥伦比亚大学师从Bruce Greenwald教授学习价值投资，后创立喜马拉雅资本。</p>
+<p style="margin-top: 15px; color: #4a5568;">李录在哥伦比亚大学师从Bruce Greenwald教授学习价值投资，深受格雷厄姆与巴菲特思想影响，后创立喜马拉雅资本。</p>
 </details>
 <details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
 <summary style="font-weight: 600; color: #1a365d; outline: none;">Q2: 李录的核心投资原则是什么？</summary>
-<p style="margin-top: 15px; color: #4a5568;">三大原则：1) 投资已经成功的企业 2) 保持理性诚实 3) 以低于内在价值买入</p>
+<p style="margin-top: 15px; color: #4a5568;">六大原则：1) 股票是公司所有权 2) 市场是仆人不是向导 3) 能力圈内投资 4) 安全边际 5) 长期持有 6) 护城河是根本</p>
 </details>
 <details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
 <summary style="font-weight: 600; color: #1a365d; outline: none;">Q3: 李录对中国市场怎么看？</summary>
-<p style="margin-top: 15px; color: #4a5568;">他认为中国将成为世界上最大、最活跃的消费市场，在充满活力的经济体中更容易找到价值。</p>
+<p style="margin-top: 15px; color: #4a5568;">他认为中国正处于"2.5阶段"——从农业社会向现代化转型的关键时期，中国将成为世界上最大、最活跃的消费市场，在充满活力的经济体中更容易找到价值。</p>
+</details>
+<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
+<summary style="font-weight: 600; color: #1a365d; outline: none;">Q4: 李录为什么投资比亚迪？</summary>
+<p style="margin-top: 15px; color: #4a5568;">2008年投资时看中王传福的企业家精神和垂直整合模式。比亚迪代表了中国制造业的崛起，是典型的"护城河+成长"组合。</p>
+</details>
+<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
+<summary style="font-weight: 600; color: #1a365d; outline: none;">Q5: 喜马拉雅资本的管理规模有多大？</summary>
+<p style="margin-top: 15px; color: #4a5568;">根据2025年Q4 13F申报，管理规模约$35.69亿美元（约¥250亿）。Alphabet为第一大持仓(43.86%)，其次是Bank of America(16.08%)、PDD(14.64%)、Berkshire(12.64%)。</p>
 </details>
 </div>
 </section>
