@@ -2160,12 +2160,12 @@ function searchContent() {
 </style>
 
 <script>
-function toggleMenu(){var m=document.getElementById('mobile-menu');m.style.display=m.style.display==='flex'?'none':'flex'}
-function closeMenu(){document.getElementById('mobile-menu').style.display='none'}
+function toggleMenu(){var m=document.getElementById('mobile-menu');if(m)m.style.display=m.style.display==='flex'?'none':'flex'}
+function closeMenu(){var m=document.getElementById('mobile-menu');if(m)m.style.display='none'}
 function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
-window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.className=b.className.replace('show','');if(window.scrollY>500)b.className+=' show'})
-function toggleMobileNav(){var w=Math.max(document.documentElement.clientWidth,window.innerWidth);var h=document.getElementById('hamburger');var m=document.getElementById('mobile-menu');if(w<768){h.style.display='block';m.style.display='none'}else{h.style.display='none';m.style.display='none';document.getElementById('nav-links').style.display='flex'}}
-window.addEventListener('resize',toggleMobileNav);toggleMobileNav();
+window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');if(b){if(window.scrollY>500){b.className='show'}else{b.className=''}}})
+function toggleMobileNav(){var w=Math.max(document.documentElement.clientWidth,window.innerWidth);var h=document.getElementById('hamburger');var m=document.getElementById('mobile-menu');var n=document.getElementById('nav-links');if(w<768){if(h)h.style.display='block';if(m)m.style.display='none';if(n)n.style.display='none'}else{if(h)h.style.display='none';if(m)m.style.display='none';if(n)n.style.display='flex'}}
+window.addEventListener('resize',toggleMobileNav);document.addEventListener('DOMContentLoaded',toggleMobileNav);
 </script>
 
 </html>
