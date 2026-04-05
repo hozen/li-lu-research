@@ -1,2165 +1,2126 @@
-﻿<!DOCTYPE html>
-
-
-<html lang=zh-CN>
-
-
-<head>
-
-
-<meta charset=UTF-8>
-
-
-<meta name=viewport content=width=device-width,initial-scale=1.0>
-
-
-<title>鏉庡綍 (Li Lu) - 浠峰€兼姇璧勭爺绌</title>
-
-
-<style>
-
-
-:root{--primary-dark:#0a1628;--primary-blue:#1a365d;--accent-gold:#b8860b;--accent-gold-light:#daa520;--text-dark:#1a1a1a;--text-light:#f5f5f5;--text-muted:#4a5568;--bg-light:#ffffff;--bg-off-white:#f8f9fa;--card-bg:#ffffff;--shadow:0 4px 20px rgba(0,0,0,0.15)}
-
-
-/* High contrast light mode */
-
-
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#111111;background:#ffffff}
-
-
-.card{background:#ffffff;border-radius:12px;padding:25px;box-shadow:var(--shadow);margin-bottom:20px;color:#222222;border:1px solid #e0e0e0}
-
-
-.card h3,.card h4{color:#000000;margin-bottom:15px}
-
-
-/* Dark Mode - High Contrast for Night Reading */
-
-
-body.dark-mode{background:#000000;color:#ffffff}
-
-
-body.dark-mode .card{background:#1a1a1a;color:#ffffff;border:1px solid #444}
-
-
-body.dark-mode .card h3,body.dark-mode .card h4{color:#ffff00}
-
-
-body.dark-mode .section{background:#000000}
-
-
-body.dark-mode .footer{background:#0a0a0a}
-
-
-body.dark-mode .quote-card{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .book-card{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .video-card{background:#1a1a1a}
-
-
-body.dark-mode .timeline-item{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .hero{background:linear-gradient(135deg,#000000 0%,#111111 100%)}
-
-
-body.dark-mode .hero-text h1{color:#ffff00}
-
-
-body.dark-mode .section-title{color:#ffff00}
-
-
-body.dark-mode .quote-text{color:#ffffff}
-
-
-body.dark-mode details{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode p,body.dark-mode li{color:#e0e0e0}
-
-
-body.dark-mode a{color:#64b5f6}
-
-
-body.dark-mode .nav-link{color:#e0e0e0}
-
-
-/* Light mode fixes */
-
-
-.card p,.card li{color:#222222}
-
-
-/* Dark Mode */
-
-
-body.dark-mode{background:#0a1628;color:#e2e8f0}
-
-
-body.dark-mode .card{background:#1a365d;color:#e2e8f0}
-
-
-body.dark-mode .card h3,body.dark-mode .card h4{color:#c9a227}
-
-
-body.dark-mode .section{background:#0a1628}
-
-
-body.dark-mode .footer{background:#0a1628}
-
-
-body.dark-mode .quote-card{background:#1a365d}
-
-
-body.dark-mode .book-card{background:#1a365d}
-
-
-body.dark-mode .video-card{background:#1a365d}
-
-
-body.dark-mode .timeline-item{background:#1a365d}
-
-
-body.dark-mode .hero{background:linear-gradient(135deg,#000 0%,#1a365d 100%)}
-
-
-body.dark-mode .hero-text h1{color:#fff}
-
-
-body.dark-mode .section-title{color:#c9a227}
-
-
-body.dark-mode details{background:#1a365d;color:#e2e8f0}
-
-
-*{box-sizing:border-box;margin:0;padding:0}
-
-
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#2d3748;background:var(--bg-light)}
-
-
-.navbar{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.95);backdrop-filter:blur(10px);z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,0.2)}
-
-
-.nav-brand{color:var(--text-light);font-size:1.3rem;font-weight:600}
-
-
-.nav-brand span{color:var(--accent-gold)}
-
-
-.nav-links{display:flex;gap:8px}
-
-
-.nav-link{color:var(--text-muted);text-decoration:none;padding:10px 18px;border-radius:8px;font-size:0.9rem;font-weight:500;transition:all 0.3s}
-
-
-.nav-link:hover,.nav-link.active{color:var(--text-light);background:rgba(201,162,39,0.15)}
-
-
-.nav-link.active{color:var(--accent-gold)}
-
-
-.search-box{display:flex;align-items:center;background:rgba(255,255,255,0.1);border-radius:20px;padding:5px 15px;margin-left:20px;}
-
-
-.search-box input{background:transparent;border:none;color:#fff;outline:none;width:120px;font-size:0.85rem;}
-
-
-.search-box input::placeholder{color:rgba(255,255,255,0.5);}
-
-
-.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
-
-
-.hero::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
-
-
-.hero-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
-
-
-.hero-text h1{font-size:3.5rem;color:var(--text-light);margin-bottom:20px;line-height:1.2}
-
-
-.hero-text h1 .highlight{color:var(--accent-gold)}
-
-
-.hero-text .subtitle{font-size:1.4rem;color:var(--text-muted);margin-bottom:30px;font-weight:300}
-
-
-.hero-text .tagline{font-size:1.1rem;color:var(--accent-gold-light);margin-bottom:40px;padding-left:20px;border-left:3px solid var(--accent-gold)}
-
-
-.hero-stats{display:flex;gap:50px;margin-top:40px}
-
-
-.stat{text-align:left}
-
-
-.stat-number{font-size:2.5rem;font-weight:700;color:var(--accent-gold)}
-
-
-.stat-label{font-size:0.9rem;color:var(--text-muted)}
-
-
-.hero-image-box{width:400px;height:500px;background:linear-gradient(145deg,rgba(201,162,39,0.2),rgba(26,54,93,0.3));border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--accent-gold)}
-
-
-.hero-image-box .placeholder-icon{font-size:120px}
-
-
-.hero-image-box .placeholder-text{color:var(--text-muted);font-size:1rem}
-
-
-.main-content{max-width:1200px;margin:0 auto;padding:80px 40px}
-
-
-.section{margin-bottom:80px;scroll-margin-top:100px}
-
-
-.section-header{margin-bottom:40px}
-
-
-.section-title{font-size:2rem;color:var(--primary-dark);margin-bottom:15px;display:flex;align-items:center;gap:15px}
-
-
-.section-title::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--accent-gold),transparent)}
-
-
-.section-subtitle{color:var(--text-muted)}
-
-
-.card{background:var(--card-bg);border-radius:16px;padding:30px;box-shadow:var(--shadow);margin-bottom:25px;border:1px solid #e2e8f0}
-
-
-.card h3{color:var(--primary-blue);margin-bottom:15px;font-size:1.3rem}
-
-
-.card p{color:#4a5568;margin-bottom:15px}
-
-
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px}
-
-
-.principle-card{background:linear-gradient(135deg,var(--primary-dark),var(--primary-blue));border-radius:16px;padding:35px;color:var(--text-light);text-align:center;position:relative}
-
-
-.principle-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent-gold)}
-
-
-.principle-number{font-size:3rem;font-weight:700;color:var(--accent-gold);opacity:0.3;position:absolute;top:15px;right:20px}
-
-
-.principle-card h4{font-size:1.3rem;margin-bottom:15px}
-
-
-.principle-card p{color:var(--text-muted);font-size:0.95rem;margin:0}
-
-
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
-
-
-.video-card{background:var(--card-bg);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #e2e8f0}
-
-
-.video-thumbnail{height:180px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));display:flex;align-items:center;justify-content:center}
-
-
-.play-icon{width:60px;height:60px;background:var(--accent-gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
-
-
-.play-icon::after{content:'';border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
-
-
-.video-info{padding:20px}
-
-
-.video-info h4{color:var(--primary-dark);font-size:1rem;margin-bottom:8px}
-
-
-.video-meta{display:flex;justify-content:space-between}
-
-
-.video-duration{background:#edf2f7;color:var(--primary-blue);padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600}
-
-
-.video-source{color:var(--text-muted);font-size:0.85rem}
-
-
-.quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:25px}
-
-
-.quote-card{background:var(--card-bg);border-radius:16px;padding:30px;box-shadow:var(--shadow);border-left:4px solid var(--accent-gold)}
-
-
-.quote-text{font-size:1.1rem;color:#2d3748;font-style:italic;margin-bottom:15px}
-
-
-.quote-source{color:var(--text-muted);font-size:0.9rem;text-align:right}
-
-
-.books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-
-
-.book-card{background:var(--card-bg);border-radius:16px;padding:25px;box-shadow:var(--shadow);display:flex;gap:20px;border:1px solid #e2e8f0}
-
-
-.book-cover{width:80px;height:110px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center}
-
-
-.book-cover span{font-size:2rem}
-
-
-.book-info h4{color:var(--primary-dark);font-size:1.1rem;margin-bottom:8px}
-
-
-.book-info p{color:var(--text-muted);font-size:0.9rem;margin:0}
-
-
-.timeline{position:relative;padding-left:30px}
-
-
-.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent-gold),var(--primary-blue))}
-
-
-.timeline-item{position:relative;margin-bottom:30px;padding-left:25px}
-
-
-.timeline-item::before{content:'';position:absolute;left:-26px;top:5px;width:14px;height:14px;background:var(--accent-gold);border-radius:50%;border:3px solid var(--card-bg)}
-
-
-.timeline-date{font-size:0.85rem;color:var(--accent-gold);font-weight:600;margin-bottom:5px}
-
-
-.timeline-title{font-size:1.1rem;color:var(--primary-dark);margin-bottom:8px}
-
-
-.timeline-content{color:#4a5568;font-size:0.95rem}
-
-
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;border:none}
-
-
-.btn-primary{background:var(--accent-gold);color:var(--primary-dark)}
-
-
-.btn-primary:hover{background:#b8941f;transform:translateY(-2px)}
-
-
-.btn-outline{background:transparent;border:2px solid var(--accent-gold);color:var(--accent-gold)}
-
-
-.btn-outline:hover{background:var(--accent-gold);color:var(--primary-dark)}
-
-
-.footer{background:var(--primary-dark);color:var(--text-muted);padding:60px 40px 30px}
-
-
-.footer-content{max-width:1200px;margin:0 auto}
-
-
-.footer h3{color:var(--text-light);font-size:1.5rem;margin-bottom:15px}
-
-
-.footer h3 span{color:var(--accent-gold)}
-
-
-.footer p{font-size:0.95rem;line-height:1.8}
-
-
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;text-align:center;font-size:0.85rem;margin-top:40px}
-
-
-@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.nav-links{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
-
-
-@media(max-width:768px){.navbar{padding:0 20px}.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}}
-
-
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate-in{animation:fadeInUp 0.6s ease forwards}.delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.2s}.delay-3{animation-delay:0.3s}
-
-
-</style>
-
-
-</head>
-
-
-<body>
-
-
-<nav class=navbar>
-
-
-<div class=nav-brand><span>&#10070;</span> 鏉庡綍鐮旂┒</div>
-
-
-<div class=nav-links>
-
-
-<a href=#about class=nav-link>鍏充簬</a>
-
-
-<a href=#holdings class=nav-link>鎸佷粨</a>
-
-
-<a href=#principles class=nav-link>鎶曡祫鍘熷垯</a>
-
-
-<a href=#framework class=nav-link>鍐崇瓥妗嗘灦</a>
-
-
-<a href=#videos class=nav-link>瑙嗛</a>
-
-
-<a href=video_study.html class=nav-link target=_blank>馃摵 瑙嗛瀛︿範</a>
-<a href=bookshelf.html class=nav-link>馃摎 涔﹀崟</a>
-<a href=downloads.html class=nav-link>馃摜 涓嬭浇</a><a href=glossary.html class=nav-link>📖 核心概念</a>
-<a href=timeline.html class=nav-link>⏱️ 时间线</a>
-<a href=quotes.html class=nav-link>💬 语录</a>
-
-
-<a href=#quotes class=nav-link>璇綍</a>
-
-
-<a href=#faq class=nav-link>FAQ</a>
-
-
-</div>
-
-
-<button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 澶滈棿</button>
-
-
-</nav>
-
-
-<section class=hero>
-
-
-<div class=hero-content>
-
-
-<div class=hero-text>
-
-
-<h1>鏉庡綍 <span class=highlight>(Li Lu)</span></h1>
-
-
-<p class=subtitle>涓浗浠峰€兼姇璧勭殑浠ｈ〃鎬т汉鐗?/p>
-
-
-<p class=tagline>涓浗鐨勬矁浼β峰反鑿茬壒 鈥?鍝ヤ鸡姣斾簹鍟嗗闄㈡暀鎺?Bruce Greenwald</p>
-
-
-<div style=margin-top:30px;display:flex;gap:15px;flex-wrap:wrap>
-
-
-<a href=#videos class=btn btn-primary>瑙傜湅瑙嗛 &#8594;</a>
-
-
-<a href=#principles class=btn btn-outline>浜嗚В鎶曡祫鍝插</a>
-
-
-</div>
-
-
-<div class=hero-stats>
-
-
-<div class=stat><div class=stat><div class=stat-number>28+</div><div class=stat-label>骞存姇璧勭粡楠?/div></div>
-
-
-<div class=stat><div class=stat-number>~20%</div><div class=stat-label>骞村寲澶嶅悎鏀剁泭锛堜及绠楋級*</div></div>
-
-
-<div class=stat><div class=stat-number>6</div><div class=stat-label>鏍稿績鎶曡祫鍘熷垯</div></div>
-
-
-</div>
-
-
-</div>
-
-
-<div class=hero-image-box>
-
-
-<div class=placeholder-icon>&#128200;</div>
-
-
-<p class=placeholder-text>鏉庡綍鐓х墖</p>
-
-
-<p style=color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:10px>(鐓х墖寰呮浛鎹?</p>
-
-
-</div>
-
-
-</div>
-
-
-<section id=quickstats class=section style="background:#f7fafc;padding:50px 40px;text-align:center;">
-<div style="display:flex;gap:50px;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto;">
-<div style="text-align:center"><div style="font-size:2.2rem;font-weight:700;color:#1a365d;">28+</div><div style="font-size:0.85rem;color:#4a5568;margin-top:4px">年投资经验</div></div>
-<div style="text-align:center"><div style="font-size:2.2rem;font-weight:700;color:#1a365d;">~$3.57B</div><div style="font-size:0.85rem;color:#4a5568;margin-top:4px">管理规模 (13F)</div></div>
-<div style="text-align:center"><div style="font-size:2.2rem;font-weight:700;color:#c9a227;">43.86%</div><div style="font-size:0.85rem;color:#4a5568;margin-top:4px">Alphabet 第一持仓</div></div>
-<div style="text-align:center"><div style="font-size:2.2rem;font-weight:700;color:#1a365d;">20+</div><div style="font-size:0.85rem;color:#4a5568;margin-top:4px">芒格合作年数</div></div>
-</div>
-</section>
-
-<section id=holdings class=section style="background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); padding: 60px 40px;">
-
-
-<div class=section-header>
-
-
-<h2 class=section-title style="color: #fff;">鍠滈┈鎷夐泤璧勬湰鎸佷粨 (13F)</h2>
-
-
-<p class=section-subtitle style="color: #a0aec0;">2025骞碤4 13F鐢虫姤 路 缇庡浗鍏紑甯傚満鎸佷粨 路 鎬昏妯＄害楼250浜?/p>
-
-
-</div>
-
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 40px;">
-
-
-<div class=card style="border-left: 4px solid #c9a227;">
-
-
-<h4 style="color: #1a365d;">Alphabet (璋锋瓕) <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h4>
-
-
+﻿<!DOCTYPE html>
+
+
+<html lang=zh-CN>
+
+
+<head>
+
+
+<meta charset=UTF-8>
+
+
+<meta name=viewport content=width=device-width,initial-scale=1.0>
+
+
+<title>鏉庡綍 (Li Lu) - 浠峰€兼姇璧勭爺绌</title>
+
+
+<style>
+
+
+:root{--primary-dark:#0a1628;--primary-blue:#1a365d;--accent-gold:#b8860b;--accent-gold-light:#daa520;--text-dark:#1a1a1a;--text-light:#f5f5f5;--text-muted:#4a5568;--bg-light:#ffffff;--bg-off-white:#f8f9fa;--card-bg:#ffffff;--shadow:0 4px 20px rgba(0,0,0,0.15)}
+
+
+/* High contrast light mode */
+
+
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#111111;background:#ffffff}
+
+
+.card{background:#ffffff;border-radius:12px;padding:25px;box-shadow:var(--shadow);margin-bottom:20px;color:#222222;border:1px solid #e0e0e0}
+
+
+.card h3,.card h4{color:#000000;margin-bottom:15px}
+
+
+/* Dark Mode - High Contrast for Night Reading */
+
+
+body.dark-mode{background:#000000;color:#ffffff}
+
+
+body.dark-mode .card{background:#1a1a1a;color:#ffffff;border:1px solid #444}
+
+
+body.dark-mode .card h3,body.dark-mode .card h4{color:#ffff00}
+
+
+body.dark-mode .section{background:#000000}
+
+
+body.dark-mode .footer{background:#0a0a0a}
+
+
+body.dark-mode .quote-card{background:#1a1a1a;color:#ffffff}
+
+
+body.dark-mode .book-card{background:#1a1a1a;color:#ffffff}
+
+
+body.dark-mode .video-card{background:#1a1a1a}
+
+
+body.dark-mode .timeline-item{background:#1a1a1a;color:#ffffff}
+
+
+body.dark-mode .hero{background:linear-gradient(135deg,#000000 0%,#111111 100%)}
+
+
+body.dark-mode .hero-text h1{color:#ffff00}
+
+
+body.dark-mode .section-title{color:#ffff00}
+
+
+body.dark-mode .quote-text{color:#ffffff}
+
+
+body.dark-mode details{background:#1a1a1a;color:#ffffff}
+
+
+body.dark-mode p,body.dark-mode li{color:#e0e0e0}
+
+
+body.dark-mode a{color:#64b5f6}
+
+
+body.dark-mode .nav-link{color:#e0e0e0}
+
+
+/* Light mode fixes */
+
+
+.card p,.card li{color:#222222}
+
+
+/* Dark Mode */
+
+
+body.dark-mode{background:#0a1628;color:#e2e8f0}
+
+
+body.dark-mode .card{background:#1a365d;color:#e2e8f0}
+
+
+body.dark-mode .card h3,body.dark-mode .card h4{color:#c9a227}
+
+
+body.dark-mode .section{background:#0a1628}
+
+
+body.dark-mode .footer{background:#0a1628}
+
+
+body.dark-mode .quote-card{background:#1a365d}
+
+
+body.dark-mode .book-card{background:#1a365d}
+
+
+body.dark-mode .video-card{background:#1a365d}
+
+
+body.dark-mode .timeline-item{background:#1a365d}
+
+
+body.dark-mode .hero{background:linear-gradient(135deg,#000 0%,#1a365d 100%)}
+
+
+body.dark-mode .hero-text h1{color:#fff}
+
+
+body.dark-mode .section-title{color:#c9a227}
+
+
+body.dark-mode details{background:#1a365d;color:#e2e8f0}
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#2d3748;background:var(--bg-light)}
+
+
+.navbar{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.95);backdrop-filter:blur(10px);z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,0.2)}
+
+
+.nav-brand{color:var(--text-light);font-size:1.3rem;font-weight:600}
+
+
+.nav-brand span{color:var(--accent-gold)}
+
+
+.nav-links{display:flex;gap:8px}
+
+
+.nav-link{color:var(--text-muted);text-decoration:none;padding:10px 18px;border-radius:8px;font-size:0.9rem;font-weight:500;transition:all 0.3s}
+
+
+.nav-link:hover,.nav-link.active{color:var(--text-light);background:rgba(201,162,39,0.15)}
+
+
+.nav-link.active{color:var(--accent-gold)}
+
+
+.search-box{display:flex;align-items:center;background:rgba(255,255,255,0.1);border-radius:20px;padding:5px 15px;margin-left:20px;}
+
+
+.search-box input{background:transparent;border:none;color:#fff;outline:none;width:120px;font-size:0.85rem;}
+
+
+.search-box input::placeholder{color:rgba(255,255,255,0.5);}
+
+
+.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
+
+
+.hero::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
+
+
+.hero-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+
+
+.hero-text h1{font-size:3.5rem;color:var(--text-light);margin-bottom:20px;line-height:1.2}
+
+
+.hero-text h1 .highlight{color:var(--accent-gold)}
+
+
+.hero-text .subtitle{font-size:1.4rem;color:var(--text-muted);margin-bottom:30px;font-weight:300}
+
+
+.hero-text .tagline{font-size:1.1rem;color:var(--accent-gold-light);margin-bottom:40px;padding-left:20px;border-left:3px solid var(--accent-gold)}
+
+
+.hero-stats{display:flex;gap:50px;margin-top:40px}
+
+
+.stat{text-align:left}
+
+
+.stat-number{font-size:2.5rem;font-weight:700;color:var(--accent-gold)}
+
+
+.stat-label{font-size:0.9rem;color:var(--text-muted)}
+
+
+.hero-image-box{width:400px;height:500px;background:linear-gradient(145deg,rgba(201,162,39,0.2),rgba(26,54,93,0.3));border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--accent-gold)}
+
+
+.hero-image-box .placeholder-icon{font-size:120px}
+
+
+.hero-image-box .placeholder-text{color:var(--text-muted);font-size:1rem}
+
+
+.main-content{max-width:1200px;margin:0 auto;padding:80px 40px}
+
+
+.section{margin-bottom:80px;scroll-margin-top:100px}
+
+
+.section-header{margin-bottom:40px}
+
+
+.section-title{font-size:2rem;color:var(--primary-dark);margin-bottom:15px;display:flex;align-items:center;gap:15px}
+
+
+.section-title::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--accent-gold),transparent)}
+
+
+.section-subtitle{color:var(--text-muted)}
+
+
+.card{background:var(--card-bg);border-radius:16px;padding:30px;box-shadow:var(--shadow);margin-bottom:25px;border:1px solid #e2e8f0}
+
+
+.card h3{color:var(--primary-blue);margin-bottom:15px;font-size:1.3rem}
+
+
+.card p{color:#4a5568;margin-bottom:15px}
+
+
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px}
+
+
+.principle-card{background:linear-gradient(135deg,var(--primary-dark),var(--primary-blue));border-radius:16px;padding:35px;color:var(--text-light);text-align:center;position:relative}
+
+
+.principle-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent-gold)}
+
+
+.principle-number{font-size:3rem;font-weight:700;color:var(--accent-gold);opacity:0.3;position:absolute;top:15px;right:20px}
+
+
+.principle-card h4{font-size:1.3rem;margin-bottom:15px}
+
+
+.principle-card p{color:var(--text-muted);font-size:0.95rem;margin:0}
+
+
+.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+
+
+.video-card{background:var(--card-bg);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #e2e8f0}
+
+
+.video-thumbnail{height:180px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));display:flex;align-items:center;justify-content:center}
+
+
+.play-icon{width:60px;height:60px;background:var(--accent-gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+
+.play-icon::after{content:'';border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
+
+
+.video-info{padding:20px}
+
+
+.video-info h4{color:var(--primary-dark);font-size:1rem;margin-bottom:8px}
+
+
+.video-meta{display:flex;justify-content:space-between}
+
+
+.video-duration{background:#edf2f7;color:var(--primary-blue);padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600}
+
+
+.video-source{color:var(--text-muted);font-size:0.85rem}
+
+
+.quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:25px}
+
+
+.quote-card{background:var(--card-bg);border-radius:16px;padding:30px;box-shadow:var(--shadow);border-left:4px solid var(--accent-gold)}
+
+
+.quote-text{font-size:1.1rem;color:#2d3748;font-style:italic;margin-bottom:15px}
+
+
+.quote-source{color:var(--text-muted);font-size:0.9rem;text-align:right}
+
+
+.books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
+
+
+.book-card{background:var(--card-bg);border-radius:16px;padding:25px;box-shadow:var(--shadow);display:flex;gap:20px;border:1px solid #e2e8f0}
+
+
+.book-cover{width:80px;height:110px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center}
+
+
+.book-cover span{font-size:2rem}
+
+
+.book-info h4{color:var(--primary-dark);font-size:1.1rem;margin-bottom:8px}
+
+
+.book-info p{color:var(--text-muted);font-size:0.9rem;margin:0}
+
+
+.timeline{position:relative;padding-left:30px}
+
+
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent-gold),var(--primary-blue))}
+
+
+.timeline-item{position:relative;margin-bottom:30px;padding-left:25px}
+
+
+.timeline-item::before{content:'';position:absolute;left:-26px;top:5px;width:14px;height:14px;background:var(--accent-gold);border-radius:50%;border:3px solid var(--card-bg)}
+
+
+.timeline-date{font-size:0.85rem;color:var(--accent-gold);font-weight:600;margin-bottom:5px}
+
+
+.timeline-title{font-size:1.1rem;color:var(--primary-dark);margin-bottom:8px}
+
+
+.timeline-content{color:#4a5568;font-size:0.95rem}
+
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;border:none}
+
+
+.btn-primary{background:var(--accent-gold);color:var(--primary-dark)}
+
+
+.btn-primary:hover{background:#b8941f;transform:translateY(-2px)}
+
+
+.btn-outline{background:transparent;border:2px solid var(--accent-gold);color:var(--accent-gold)}
+
+
+.btn-outline:hover{background:var(--accent-gold);color:var(--primary-dark)}
+
+
+.footer{background:var(--primary-dark);color:var(--text-muted);padding:60px 40px 30px}
+
+
+.footer-content{max-width:1200px;margin:0 auto}
+
+
+.footer h3{color:var(--text-light);font-size:1.5rem;margin-bottom:15px}
+
+
+.footer h3 span{color:var(--accent-gold)}
+
+
+.footer p{font-size:0.95rem;line-height:1.8}
+
+
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;text-align:center;font-size:0.85rem;margin-top:40px}
+
+
+@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.nav-links{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
+
+
+@media(max-width:768px){.navbar{padding:0 20px}.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}}
+
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate-in{animation:fadeInUp 0.6s ease forwards}.delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.2s}.delay-3{animation-delay:0.3s}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<nav class=navbar>
+
+
+<div class=nav-brand><span>&#10070;</span> 鏉庡綍鐮旂┒</div>
+
+
+<div class=nav-links>
+
+
+<a href=#about class=nav-link>鍏充簬</a>
+
+
+<a href=#holdings class=nav-link>鎸佷粨</a>
+
+
+<a href=#principles class=nav-link>鎶曡祫鍘熷垯</a>
+
+
+<a href=#framework class=nav-link>鍐崇瓥妗嗘灦</a>
+
+
+<a href=#videos class=nav-link>瑙嗛</a>
+
+
+<a href=video_study.html class=nav-link target=_blank>馃摵 瑙嗛瀛︿範</a>
+<a href=bookshelf.html class=nav-link>馃摎 涔﹀崟</a>
+<a href=downloads.html class=nav-link>馃摜 涓嬭浇</a><a href=glossary.html class=nav-link>📖 核心概念</a>
+<a href=timeline.html class=nav-link>⏱️ 时间线</a>
+<a href=quotes.html class=nav-link>💬 语录</a>
+
+
+<a href=#quotes class=nav-link>璇綍</a>
+
+
+<a href=#faq class=nav-link>FAQ</a>
+
+
+</div>
+
+
+<button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 澶滈棿</button>
+
+
+</nav>
+
+
+<section class=hero>
+
+
+<div class=hero-content>
+
+
+<div class=hero-text>
+
+
+<h1>鏉庡綍 <span class=highlight>(Li Lu)</span></h1>
+
+
+<p class=subtitle>涓浗浠峰€兼姇璧勭殑浠ｈ〃鎬т汉鐗?/p>
+
+
+<p class=tagline>涓浗鐨勬矁浼β峰反鑿茬壒 鈥?鍝ヤ鸡姣斾簹鍟嗗闄㈡暀鎺?Bruce Greenwald</p>
+
+
+<div style=margin-top:30px;display:flex;gap:15px;flex-wrap:wrap>
+
+
+<a href=#videos class=btn btn-primary>瑙傜湅瑙嗛 &#8594;</a>
+
+
+<a href=#principles class=btn btn-outline>浜嗚В鎶曡祫鍝插</a>
+
+
+</div>
+
+
+<div class=hero-stats>
+
+
+<div class=stat><div class=stat><div class=stat-number>28+</div><div class=stat-label>骞存姇璧勭粡楠?/div></div>
+
+
+<div class=stat><div class=stat-number>~20%</div><div class=stat-label>骞村寲澶嶅悎鏀剁泭锛堜及绠楋級*</div></div>
+
+
+<div class=stat><div class=stat-number>6</div><div class=stat-label>鏍稿績鎶曡祫鍘熷垯</div></div>
+
+
+</div>
+
+
+</div>
+
+
+<div class=hero-image-box>
+
+
+<div class=placeholder-icon>&#128200;</div>
+
+
+<p class=placeholder-text>鏉庡綍鐓х墖</p>
+
+
+<p style=color:rgba(255,255,255,0.4);font-size:0.8rem;margin-top:10px>(鐓х墖寰呮浛鎹?</p>
+
+
+</div>
+
+
+</div>
+
+
+<section id=quickstats class=section style="background:#f7fafc;padding:50px 40px;text-align:center;">
+<div style="display:flex;gap:50px;justify-content:center;flex-wrap:wrap;max-width:1000px;margin:0 auto;">
+<div style="text-align:center"><div style="font-size:2.2rem;font-weight:700;color:#1a365d;">28+</div><div style="font-size:0.85rem;color:#4a5568;margin-top:4px">年投资经验</div></div>
+<div style="text-align:center"><div style="font-size:2.2rem;font-weight:700;color:#1a365d;">~$3.57B</div><div style="font-size:0.85rem;color:#4a5568;margin-top:4px">管理规模 (13F)</div></div>
+<div style="text-align:center"><div style="font-size:2.2rem;font-weight:700;color:#c9a227;">43.86%</div><div style="font-size:0.85rem;color:#4a5568;margin-top:4px">Alphabet 第一持仓</div></div>
+<div style="text-align:center"><div style="font-size:2.2rem;font-weight:700;color:#1a365d;">20+</div><div style="font-size:0.85rem;color:#4a5568;margin-top:4px">芒格合作年数</div></div>
+</div>
+</section>
+
+<section id=holdings class=section style="background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); padding: 60px 40px;">
+
+
+<div class=section-header>
+
+
+<h2 class=section-title style="color: #fff;">鍠滈┈鎷夐泤璧勬湰鎸佷粨 (13F)</h2>
+
+
+<p class=section-subtitle style="color: #a0aec0;">2025骞碤4 13F鐢虫姤 路 缇庡浗鍏紑甯傚満鎸佷粨 路 鎬昏妯＄害楼250浜?/p>
+
+
+</div>
+
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-top: 40px;">
+
+
+<div class=card style="border-left: 4px solid #c9a227;">
+
+
+<h4 style="color: #1a365d;">Alphabet (璋锋瓕) <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h4>
+
+
 <p style="color: #666; font-size: 0.85rem;">NASDAQ: GOOGL/GOOG 路 绉戞妧 路 鍗犳瘮 <strong style="color:#c9a227;">43.86%</strong></p>
-
-
-<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~27x</span>
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">鑲℃伅 0.5%</span>
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">ROIC >25%</span>
-
-
-</div>
-
-
-<div style="margin-top: 10px; display: flex; justify-content: space-between;">
-
-
-<span><strong>$15.65浜?/strong><br><small style="color:#888">甯傚€?/small></span>
-
-
-<span><strong>鏈彉鍔?/strong><br><small style="color:#888">Q4</small></span>
-
-
-</div>
-
-
-<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 鎼滅储骞垮憡92%+浜?Gemini AI涓夐噸鎶ゅ煄娌?| 鎸佹湁~5.5骞?浼扮畻鍥炴姤150-190%</p>
-
-
-</div>
-
-
-<div class=card style="border-left: 4px solid #c9a227;">
-
-
-<h4 style="color: #1a365d;">Bank of America <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;</span></h4>
-
-
-<p style="color: #666; font-size: 0.85rem;">NYSE: BAC 路 閲戣瀺 路 鍗犳瘮 <strong style="color:#c9a227;">16.08%</strong></p>
-
-
-<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
-
-
-<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE 12.9x</span>
-
-
-<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB 1.25x</span>
-
-
-<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">鑲℃伅 2.2%</span>
-
-
-</div>
-
-
-<div style="margin-top: 10px; display: flex; justify-content: space-between;">
-
-
-<span><strong>$5.74浜?/strong><br><small style="color:#888">甯傚€?/small></span>
-
-
-<span><strong>鏈彉鍔?/strong><br><small style="color:#888">Q4</small></span>
-
-
-</div>
-
-
-<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 娣卞害浠峰€?楂樿偂鎭帇鑸辩煶 | 鎸佹湁~6骞?浼扮畻鍥炴姤95-120%</p>
-
-
-</div>
-
-
-<div class=card style="border-left: 4px solid #c9a227;">
-
-
-<h4 style="color: #1a365d;">鎷煎澶?PDD <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;</span></h4>
-
-
-<p style="color: #666; font-size: 0.85rem;">NASDAQ: PDD 路 鐢靛晢 路 鍗犳瘮 <strong style="color:#c9a227;">14.64%</strong></p>
-
-
-<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
-
-
-<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~10x</span>
-
-
-<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">鍑€鐜伴噾=甯傚€?0%</span>
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">0%鑲℃伅</span>
-
-
-</div>
-
-
-<div style="margin-top: 10px; display: flex; justify-content: space-between;">
-
-
-<span><strong>$5.23浜?/strong><br><small style="color:#888">甯傚€?/small></span>
-
-
-<span><strong>鏈彉鍔?/strong><br><small style="color:#888">Q4</small></span>
-
-
-</div>
-
-
-<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 鏈€琚綆浼?路 PE~10x+鐜伴噾700浜?甯傚€?0% Temu鍏ㄧ悆鍖栭珮閫熸墿寮?/p>
-
-
-</div>
-
-
-<div class=card style="border-left: 4px solid #c9a227;">
-
-
-<h4 style="color: #1a365d;">浼厠甯屽皵B <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h4>
-
-
-<p style="color: #666; font-size: 0.85rem;">NYSE: BRK.B 路 鎶曡祫鎺ц偂 路 鍗犳瘮 <strong style="color:#c9a227;">12.64%</strong></p>
-
-
-<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~22x</span>
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB 1.5x</span>
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">0%鑲℃伅</span>
-
-
-</div>
-
-
-<div style="margin-top: 10px; display: flex; justify-content: space-between;">
-
-
-<span><strong>$4.51浜?/strong><br><small style="color:#888">甯傚€?/small></span>
-
-
-<span><strong>鏈彉鍔?/strong><br><small style="color:#888">Q4</small></span>
-
-
-</div>
-
-
-<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 鑺掓牸/宸磋彶鐗硅祫鏈厤缃?娴瓨閲?| 鎸佹湁~5-6骞?/p>
-
-
-</div>
-
-
-<div class=card style="border-left: 4px solid #c9a227;">
-
-
-<h4 style="color: #1a365d;">鑻规灉 Apple <span style="color:#a0aec0;font-size:0.75rem;">&#9733;&#9733;&#9733;</span></h4>
-
-
-<p style="color: #666; font-size: 0.85rem;">NASDAQ: AAPL 路 绉戞妧 路 鍗犳瘮 <strong style="color:#c9a227;">0.84%</strong></p>
-
-
-<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~20x</span>
-
-
-<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">鑲℃伅 0.5%</span>
-
-
-<span style="background:#fed7d7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">ROIC >50%</span>
-
-
-</div>
-
-
-<div style="margin-top: 10px; display: flex; justify-content: space-between;">
-
-
-<span><strong>$0.30浜?/strong><br><small style="color:#888">甯傚€?/small></span>
-
-
-<span style="color:#38a169;"><strong>澧炴寔</strong><br><small style="color:#888">Q4</small></span>
-
-
-</div>
-
-
-<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#129000; 2025骞碤1鍑忔寔65%鍚庝綑搴曚粨 | Q3鍐嶅噺鎸?8%</p>
-
-
-</div>
-
-
-<div class=card style="border-left: 4px solid #38a169;">
-
-
-<h4 style="color: #1a365d;">Crocs <span style="color:#a0aec0;font-size:0.75rem;">&#9733;&#9733;</span></h4>
-
-
-<p style="color: #666; font-size: 0.85rem;">NASDAQ: CROX 路 娑堣垂鍝?路 鍗犳瘮 <strong style="color:#38a169;">1.50%</strong></p>
-
-
-<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
-
-
-<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~8x</span>
-
-
-<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB ~4x</span>
-
-
-<span style="background:#fed7d7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">浠峰€奸櫡闃?</span>
-
-
-</div>
-
-
-<div style="margin-top: 10px; display: flex; justify-content: space-between;">
-
-
-<span><strong>$0.53浜?/strong><br><small style="color:#888">甯傚€?/small></span>
-
-
-<span style="color:#38a169;"><strong>鏂板缓浠?/strong><br><small style="color:#888">Q4</small></span>
-
-
-</div>
-
-
-<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#9888; 鍞竴"鐤戦棶鎵? 路 鍗氫綆绔秷璐瑰搧鐗屽弽杞?| 浠撲綅鍏嬪埗椋庨櫓鍙帶</p>
-
-
-</div>
-
-
-</div>
-
-
-<div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 12px;">
-
-
-<h4 style="color: #c9a227; margin-bottom: 15px;">馃搳 鎸佷粨鐗瑰緛鍒嗘瀽</h4>
-
-
-<div style="display: flex; gap: 30px; flex-wrap: wrap;">
-
-
-<div><span style="color: #a0aec0;">琛屼笟鍒嗗竷:</span><br><strong style="color: #fff;">绉戞妧 44.7% 路 閲戣瀺 16.6% 路 鐢靛晢 14.6% 路 鎶曡祫 12.6%</strong></div>
-
-
-<div><span style="color: #a0aec0;">鍓嶄簲闆嗕腑搴?</span><br><strong style="color: #fff;">96.96%</strong></div>
-
-
-<div><span style="color: #a0aec0;">鎸佷粨鏁伴噺:</span><br><strong style="color: #fff;">浠?鍙?/strong></div>
-
-
-<div><span style="color: #a0aec0;">缁勫悎鍔犳潈PE:</span><br><strong style="color: #fff;">~17-19x</strong></div>
-
-
-<div><span style="color: #a0aec0;">缁勫悎鑲℃伅鐜?</span><br><strong style="color: #fff;">~1.0%</strong></div>
-
-
-<div><span style="color: #a0aec0;">闆惰皟浠撳懆鏈?</span><br><strong style="color: #fff;">杩炵画2瀛ｅ害</strong></div>
-
-
-</div>
-
-
-</div>
-
-
-<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 鏁版嵁鎴锛?025骞碤4 13F (2026骞?鏈?7鏃ユ姭闇? | 椤甸潰鏇存柊锛?026-04-05 | 浠呬緵鐮旂┒鍙傝€冿紝涓嶆瀯鎴愭姇璧勫缓璁?/p>
-
-
-</section>
-
-
-<section id=cases class=section style="background: #f7fafc;">
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>鎶曡祫妗堜緥鍒嗘瀽</h2>
-
-
-<p class=section-subtitle>浠庢潕褰曠殑鎴愬姛鎶曡祫涓涔?路 鍘嗗彶鎸佷粨妗堜緥</p>
-
-
-</div>
-
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
-
-
-<div class=card>
-
-
-<h3 style="color: #1a365d;">&#128663; 姣斾簹杩?(BYD)</h3>
-
-
-<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>棣栨鐮旂┒:</strong> 绾?002-2003骞达紙鏉庡綍寮€濮嬫繁鍏ョ爺绌舵瘮浜氳开锛?br><strong>鎶曡祫鍐崇瓥:</strong> 2008骞村墠宸插畬鎴愭寔鑲★紙鑺掓牸/宸磋彶鐗?008骞存墠鎶曡祫姣斾簹杩紝鏉庡綍鏇存棭鍏虫敞锛?/p>
-
-
-<p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>鎶曡祫閫昏緫:</strong></p>
-
-
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-
-
-<li>鐪嬩腑鐜嬩紶绂忕殑浼佷笟瀹剁簿绁?/li>
-
-
-<li>鐢靛姩姹借溅琛屼笟鐨勯瑕嗘€ф満浼?/li>
-
-
-<li>鍨傜洿鏁村悎甯︽潵鐨勬垚鏈紭鍔?/li>
-
-
-</ul>
-
-
-<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 鎶曡祫鍥炴姤: 鏁板崄鍊嶏紙鏃╂湡鎶曡祫锛?/p>
-
-
-</div>
-
-
-<div class=card>
-
-
-<h3 style="color: #1a365d;">&#127760; Alphabet (璋锋瓕)</h3>
-
-
-<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>鎸佷粨鏃堕棿:</strong> 2019骞磋嚦浠婏紙鎸佺画澧炴寔锛?/p>
-
-
-<p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>鎶曡祫閫昏緫:</strong></p>
-
-
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-
-
-<li>鎼滅储寮曟搸缁濆涓诲鍦颁綅</li>
-
-
-<li>AI+浜戣绠楁寔缁闀?/li>
-
-
-<li>寮哄ぇ鐨勮嚜鐢辩幇閲戞祦</li>
-
-
-</ul>
-
-
-<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 褰撳墠绗竴澶ф寔浠?(43.86%)</p>
-
-
-</div>
-
-
-<div class=card>
-
-
-<h3 style="color: #1a365d;">&#128176; Bank of America</h3>
-
-
-<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>鎸佷粨鏃堕棿:</strong> 2016骞磋嚦浠?/p>
-
-
-<p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>鎶曡祫閫昏緫:</strong></p>
-
-
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-
-
-<li>缇庡浗鍥涘ぇ閾惰涔嬩竴</li>
-
-
-<li>寮哄ぇ鐨勫垎閿€缃戠粶鎶ゅ煄娌?/li>
-
-
-<li>浼板€煎悎鐞嗐€佽偂鎭ǔ瀹?/li>
-
-
-</ul>
-
-
-<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 绗簩澶ф寔浠?(16.08%)</p>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-<main class=main-content>
-
-
-<section id=about class=section>
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>鍏充簬鏉庡綍</h2>
-
-
-<p class=section-subtitle>浠庨噾铻嶅鑰呭埌浠峰€兼姇璧勫ぇ甯堢殑鎴愰暱鍘嗙▼</p>
-
-
-</div>
-
-
-<div class=card>
-
-
-<h3>&#128220; 涓汉鑳屾櫙</h3>
-
-
-<p>鏉庡綍鏄瑾変负涓浗鐨勬矁浼β峰反鑿茬壒鐨勪环鍊兼姇璧勫ぇ甯堛€傜幇浠荤編鍥藉枩椹媺闆呰祫鏈垱濮嬩汉钁ｄ簨闀匡紝鎵ц鍚堜紮浜恒€傚摜浼︽瘮浜氬ぇ瀛﹁幏JD娉曞緥鍗氬＋+MBA宸ュ晢绠＄悊纭曞＋+MA缁忔祹瀛︾澹笁瀛︿綅锛屽笀浠庤憲鍚嶄环鍊兼姇璧勬暀鎺?Bruce Greenwald銆?/p>
-
-
-<div class=timeline style=margin-top:30px>
-
-
-<div class=timeline-item><div class=timeline-date>1980s-1990s</div><div class=timeline-title>姹傚鏃舵湡</div><div class=timeline-content>姣曚笟浜庡崡浜ぇ瀛︼紝鍚庤荡鍝ヤ鸡姣斾簹澶у姹傚锛屽笀浠嶣ruce Greenwald鏁欐巿锛屽摜浼︽瘮浜氬ぇ瀛﹁幏JD娉曞緥鍗氬＋+MBA宸ュ晢绠＄悊纭曞＋+MA缁忔祹瀛︾澹笁瀛︿綅銆?/div></div>
-
-
-<div class=timeline-item><div class=timeline-date>1997骞?/div><div class=timeline-title>鍒涚珛鍠滈┈鎷夐泤璧勬湰</div><div class=timeline-content>鍦ㄧ編鍥藉垱绔嬪枩椹媺闆呰祫鏈鐞嗗叕鍙?Himalaya Capital Management LLC)锛屼笓娉ㄤ簬闀挎湡浠峰€兼姇璧勩€?/div></div>
-
-
-<div class=timeline-item><div class=timeline-date>2002-2003骞?/div><div class=timeline-title>娣卞叆鐮旂┒姣斾簹杩?/div><div class=timeline-content>鏉庡綍寮€濮嬫繁鍏ョ爺绌舵瘮浜氳开锛岀湅涓帇浼犵鐨勪紒涓氬绮剧锛?008骞村墠宸插畬鎴愭姇璧勫竷灞€锛堝反鑿茬壒/鑺掓牸2008骞存墠鎶曡祫姣斾簹杩紝鏉庡綍鏇存棭鍏虫敞骞舵姇璧勶級銆?/div></div>
-
-
-<div class=timeline-item><div class=timeline-date>2014骞?/div><div class=timeline-title>銆奀ivilizations, Modernization, Value Investing and China銆嬭鏂囧彂琛?/div><div class=timeline-content>鍙戣〃鍏充簬鏂囨槑銆佺幇浠ｅ寲涓庝环鍊兼姇璧勭殑闀跨瘒璁烘枃锛岀郴缁熼槓杩板浜虹被绀句細鍙戝睍鐨勭悊瑙ｃ€?/div></div>
-
-
-<div class=timeline-item><div class=timeline-date>2015-2019骞?/div><div class=timeline-title>鍖楀ぇ鍏夊崕浠峰€兼姇璧勮绋?/div><div class=timeline-content>鍙備笌鍖楀ぇ鍏夊崕绠＄悊瀛﹂櫌浠峰€兼姇璧勮绋嬶紝鎷呬换鏍稿績璁插笀锛屽煿鍏绘柊涓€浠ｄ环鍊兼姇璧勮€呫€?/div></div>
-
-
-<div class=timeline-item><div class=timeline-date>2020骞?/div><div class=timeline-title>鍑虹増銆婃枃鏄庛€佺幇浠ｅ寲銆佷环鍊兼姇璧勪笌涓浗銆?/div><div class=timeline-content>灏嗗骞存姇璧勬€濊€冩暣鐞嗘垚涔︼紝绯荤粺闃愯堪浠峰€兼姇璧勭悊蹇典笌涓浗甯傚満鏈轰細锛屾垚涓虹晠閿€鎶曡祫璇荤墿銆?/div></div>
-
-
-<div class=timeline-item><div class=timeline-date>2024骞?2鏈?/div><div class=timeline-title>鍖楀ぇ浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾</div><div class=timeline-content>鍑哄腑鍖楀ぇ鍏夊崕浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾搴嗗吀锛屽彂琛?鍏ㄧ悆浠峰€兼姇璧勮€?涓婚婕旇锛屽垎浜渶鏂版姇璧勬€濇兂銆?/div></div>
-
-
-<div class=timeline-item><div class=timeline-date>2025骞?/div><div class=timeline-title>13F鎸佷粨瑙勬ā杩?36浜?/div><div class=timeline-content>2025骞碤4 13F鐢虫姤鏄剧ず锛屽枩椹媺闆呰祫鏈鐞嗚妯＄害$35.69浜跨編鍏冿紙绾β?50浜匡級锛?Alphabet涓虹涓€澶ф寔浠?43.86%)銆?/div></div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-<section id=principles class=section>
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>鏍稿績鎶曡祫鍘熷垯</h2>
-
-
-<p class=section-subtitle>鏉庡綍28骞存姇璧勭敓娑€荤粨鐨勪笁澶ф牳蹇冭绱?/p>
-
-
-</div>
-
-
-<div class=principles>
-
-
-<div class=principle-card animate-in delay-1><span class=principle-number>01</span><h4>&#127919; 鑲＄エ鏄叕鍙哥殑涓€閮ㄥ垎鎵€鏈夋潈</h4><p>鑲＄エ涓嶆槸涓€寮犵倰鍗栫殑绾革紝鑰屾槸鍏徃鐨勬墍鏈夋潈璇佷功銆傛姇璧勫繀椤讳互浼佷笟鎵€鏈夎€呯殑蹇冩€佺湅寰呮瘡涓€鎸佷粨銆?/p></div>
-
-
-<div class=principle-card animate-in delay-2><span class=principle-number>02</span><h4>&#128161; 甯傚満鍏堢敓鏄綘鐨勪粏浜猴紝涓嶆槸浣犵殑鍚戝</h4><p>甯傚満鎻愪緵浠锋牸鍙戠幇鍔熻兘锛屼絾涓嶈兘棰勬祴浠锋牸銆備环鏍兼尝鍔ㄤ笉鏄喅绛栦緷鎹紝瀹夊叏杈归檯鎵嶆槸銆?/p></div>
-
-
-<div class=principle-card animate-in delay-3><span class=principle-number>03</span><h4>&#128269; 鑳藉姏鍦堬細涓嶆噦涓嶆姇</h4><p>鍙姇璧勮嚜宸辩湡姝ｇ悊瑙ｇ殑琛屼笟鍜屽叕鍙搞€傚鏋滀竴瀹跺叕鍙镐綘鏃犳硶鍦?0骞村唴鎸佹湁锛屽氨涓嶈鎸佹湁10鍒嗛挓銆?/p></div>
-
-
-</div>
-
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;">
-
-
-<div class=card style="border-top: 4px solid #c9a227;">
-
-
-<h3 style="color: #1a365d;">&#128640; 绗洓鏉★細瀹夊叏杈归檯鏄牳蹇?/h3>
-
-
-<p style="color: #4a5568;">涔颁环浣庝簬鍐呭湪浠峰€兼椂鎵嶆湁瀹夊叏杈归檯銆傚畨鍏ㄨ竟闄呮槸浣犵姱閿欐椂鐨勭紦鍐插甫锛屼篃鏄暱鏈熸敹鐩婄殑涓昏鏉ユ簮銆?/p>
-
-
-</div>
-
-
-<div class=card style="border-top: 4px solid #3182ce;">
-
-
-<h3 style="color: #1a365d;">&#127757; 绗簲鏉★細闀挎湡涓讳箟鐨勭邯寰?/h3>
-
-
-<p style="color: #4a5568;">濡傛灉涓嶆墦绠楁寔鏈変竴瀹跺叕鍙?0骞达紝灏变笉瑕佹寔鏈?0鍒嗛挓銆傜湡姝ｇ殑鏈轰細鏉ヨ嚜闀挎湡鎸佹湁浼樼浼佷笟鐨勫鍒╂晥搴斻€?/p>
-
-
-</div>
-
-
-<div class=card style="border-top: 4px solid #38a169;">
-
-
-<h3 style="color: #1a365d;">&#9878; 绗叚鏉★細鎶ゅ煄娌虫槸鏍规湰</h3>
-
-
-<p style="color: #4a5568;">鎶ゅ煄娌虫潵鑷細瑙勬ā缁忔祹銆佹寔缁椂闂淬€佺鐞嗗眰璧勬湰閰嶇疆鑳藉姏銆佷紒涓氭枃鍖栥€傞珮璧勬湰鍥炴姤鐜囦笖鍙寔缁紝鏄€夋嫨鏍囩殑鐨勬牳蹇冩爣鍑嗐€?/p>
-
-
-</div>
-
-
-</div>
-
-
-<div class=card style=margin-top:40px>
-
-
-<h3>&#127968; 鎶ゅ煄娌崇殑鍏抽敭瑕佺礌</h3>
-
-
-<div style=display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:20px>
-
-
-<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>瑙勬ā缁忔祹</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>鎴愭湰浼樺娍鏉ヨ嚜瑙勬ā</p></div>
-
-
-<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>鎸佺画鏃堕棿</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>闀挎湡绔炰簤浼樺娍</p></div>
-
-
-<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>绠＄悊灞傝祫鏈厤缃?/strong><p style=margin-top:8px;font-size:0.9rem;color:#666>鍏抽敭鐨勬姢鍩庢渤瑕佺礌</p></div>
-
-
-<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>浼佷笟鏂囧寲</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>鍐呭湪椹卞姩鍔?/p></div>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-<section id=framework class=section style="background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); padding: 60px 40px;">
-
-
-<div class=section-header>
-
-
-<h2 class=section-title style="color: #fff;">鎶曡祫鍐崇瓥妗嗘灦</h2>
-
-
-<p class=section-subtitle style="color: #a0aec0;">鏉庡綍鍐崇瓥娴佺▼鍏楠?路 鏉ユ簮锛欻imalaya Capital瀹樼綉 + Bruce Greenwald瀛︽湳妗嗘灦</p>
-
-
-</div>
-
-
-<div style="margin-top:30px;padding:24px;background:rgba(255,255,255,0.05);border-radius:16px;border:1px solid rgba(201,162,39,0.4);text-align:center;">
-<div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
-<div style="background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;">能力圈筛选</div>
-<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
-<div style="background:rgba(201,162,39,0.2);color:#c9a227;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;border:1px solid #c9a227;">护城河评估</div>
-<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
-<div style="background:rgba(201,162,39,0.2);color:#c9a227;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;border:1px solid #c9a227;">DCF估值</div>
-<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
-<div style="background:rgba(201,162,39,0.2);color:#c9a227;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;border:1px solid #c9a227;">重仓买入</div>
-<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
-<div style="background:rgba(201,162,39,0.2);color:#c9a227;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;border:1px solid #c9a227;">长期持有</div>
-<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
-<div style="background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;">卖出决策</div>
-</div>
-<p style="color:#a0aec0;font-size:0.85rem;">能力圈筛选 → 护城河评估 → DCF估值 → 重仓买入 → 长期持有 → 卖出决策</p>
-</div>
-
-\
-
-
-<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
-
-
-<h4 style="color: #c9a227; margin-bottom: 20px;">&#128270; 姝ラ涓€锛氳兘鍔涘湀绛涢€?/h4>
-
-
-<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
-
-
-鏉庡綍鏄庣‘鍒掑畾涓夊ぇ鑳藉姏鍦堬細<br>
-
-
-&#9654; <strong style="color:#fff">绉戞妧</strong> 鈥?骞冲彴鍏徃銆佺綉缁滄晥搴?br>
-
-
-&#9654; <strong style="color:#fff">閲戣瀺</strong> 鈥?閾惰銆佷繚闄?br>
-
-
-&#9654; <strong style="color:#fff">涓浗鐩稿叧</strong> 鈥?娑堣垂銆佷簰鑱旂綉<br>
-
-
-<span style="color:#a0aec0; font-size: 0.85rem;">瓒呭嚭鑳藉姏鍦堢殑涓嶇</span>
-
-
-</p>
-
-
-</div>
-
-
-<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
-
-
-<h4 style="color: #c9a227; margin-bottom: 20px;">&#127969; 姝ラ浜岋細鎶ゅ煄娌宠瘎浼?/h4>
-
-
-<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
-
-
-閲囩敤 Bruce Greenwald 鍥涚淮妗嗘灦锛?br>
-
-
-&#9654; <strong style="color:#fff">渚涚粰渚?/strong> 鈥?涓撳埄銆佸湴鐞嗕綅缃€佺墝鐓?br>
-
-
-&#9654; <strong style="color:#fff">闇€姹備晶</strong> 鈥?鍝佺墝銆佽浆鎹㈡垚鏈€佷範鎯?br>
-
-
-&#9654; <strong style="color:#fff">瑙勬ā缁忔祹</strong> 鈥?鍗曚綅鎴愭湰闅忚妯′笅闄?br>
-
-
-&#9654; <strong style="color:#c9a227">淇′换鎶ゅ煄娌?/strong> 鈥?绠＄悊灞傝瘹淇?鈽呮潕褰曟渶寮鸿皟
-
-
-</p>
-
-
-</div>
-
-
-<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
-
-
-<h4 style="color: #c9a227; margin-bottom: 20px;">&#128200; 姝ラ涓夛細浼板€间笌瀹夊叏杈归檯</h4>
-
-
-<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
-
-
-&#9654; <strong style="color:#fff">DCF</strong> 鈥?鍐呭湪浠峰€兼牳蹇冭瘎浼板伐鍏?br>
-
-
-&#9654; <strong style="color:#fff">鐩稿浼板€?/strong> 鈥?PE銆丳B銆丒V/EBITDA 杈呭姪<br>
-
-
-&#9654; <strong style="color:#fff">娓呯畻浠峰€?/strong> 鈥?鏋佺鎯呭喌涓嬬殑瀹夊叏搴曠嚎<br>
-
-
-<span style="color:#a0aec0; font-size: 0.85rem;">涔颁环蹇呴』浣庝簬鍐呭湪浠峰€?/span>
-
-
-</p>
-
-
-</div>
-
-
-<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
-
-
-<h4 style="color: #c9a227; margin-bottom: 20px;">&#9889; 姝ラ鍥涳細涔板叆鍐崇瓥</h4>
-
-
-<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
-
-
-<strong style="color:#fff">"鑷村懡涓€鍑?</strong> 鈥?绛夊緟瀹岀編鏈轰細閲嶄粨鍑哄嚮<br>
-
-
-<span style="color:#a0aec0; font-size: 0.85rem;">涓嶈交鏄撳嚭鎵嬶紝鍑烘墜鍗抽噸浠?路 寮曠敤鑷姃鏍?宸磋彶鐗?/span>
-
-
-</p>
-
-
-</div>
-
-
-<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
-
-
-<h4 style="color: #c9a227; margin-bottom: 20px;">&#9201; 姝ラ浜旓細鎸佹湁涓庣洃鎺?/h4>
-
-
-<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
-
-
-&#9654; 鎶楁嫆鐭湡娉㈠姩<br>
-
-
-&#9654; 鎸佺画璇勪及鎶ゅ煄娌虫槸鍚︿镜铓€<br>
-
-
-&#9654; 杩炵画涓ゅ搴﹂浂璋冧粨 鈥?鏋佸害鑰愬績
-
-
-</p>
-
-
-</div>
-
-
-<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
-
-
-<h4 style="color: #c9a227; margin-bottom: 20px;">&#128465; 姝ラ鍏細鍗栧嚭鍐崇瓥</h4>
-
-
-<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
-
-
-鍗栧嚭淇″彿锛?br>
-
-
-&#9654; <strong style="color:#fff">鍩烘湰闈㈡伓鍖?/strong> 鈥?鎶ゅ煄娌虫牴鏈€т镜铓€<br>
-
-
-&#9654; <strong style="color:#fff">浼板€兼场娌?/strong> 鈥?浠锋牸杩滆秴鍐呭湪浠峰€?br>
-
-
-&#9654; <strong style="color:#fff">鏇村ソ鏈轰細</strong> 鈥?"鑷村懡涓€鍑?鍑虹幇<br>
-
-
-<span style="color:#a0aec0; font-size: 0.85rem;">鍗栧嚭棰戠巼杩滀綆浜庝拱鍏?/span>
-
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-<div style="margin-top: 40px; padding: 25px; background: rgba(201,162,39,0.1); border-radius: 12px; border: 1px solid rgba(201,162,39,0.3);">
-
-
-<h4 style="color: #c9a227; margin-bottom: 15px;">&#128640; 妗嗘灦鏍稿績锛氱粍鍚堥泦涓害</h4>
-
-
-<div style="display: flex; gap: 40px; flex-wrap: wrap;">
-
-
-<div><span style="color: #a0aec0;">鎸佷粨鏁伴噺:</span><br><strong style="color: #fff; font-size: 1.2rem;">8鍙?/strong></div>
-
-
-<div><span style="color: #a0aec0;">鍓嶄簲鍗犳瘮:</span><br><strong style="color: #fff; font-size: 1.2rem;">96.96%</strong></div>
-
-
-<div><span style="color: #a0aec0;">绗竴澶?Alphabet):</span><br><strong style="color: #fff; font-size: 1.2rem;">43.86%</strong></div>
-
-
-<div><span style="color: #a0aec0;">杩炵画闆惰皟浠?</span><br><strong style="color: #fff; font-size: 1.2rem;">2瀛ｅ害</strong></div>
-
-
-</div>
-
-
-<p style="color: #a0aec0; margin-top: 15px; font-size: 0.85rem;">鑺掓牸寮忔瀬鑷撮泦涓瓥鐣ワ細"鐪熸鐨勫ソ鍏徃涓嶅锛屾壘鍒板畠浠悗閲嶄粨涔拌繘"</p>
-
-
-</div>
-
-
-<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 妗嗘灦鏉ユ簮锛欻imalaya Capital (himcap.com) + Poor Charlie's Almanack p.61 + Bruce Greenwald</p>
-
-
-</section>
-
-
-<section id=videos class=section>
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>瑙嗛璧勬簮</h2>
-
-
-<p class=section-subtitle>瀹屾暣鐗堟紨璁蹭笌璁胯皥锛屾繁搴︾悊瑙ｄ环鍊兼姇璧勫摬瀛?/p>
-
-
-</div>
-
-
-<div class=video-grid>
-
-
-<div class=video-card><div class=video-thumbnail><a href=video_study.html class=play-icon></a></div><div class=video-info><h4>馃摵 CCBC Fireside Chat | 浠峰€兼姇璧勪腑鍥?(甯﹀瓧骞曞涔?</h4><div style=padding:6px 0><span style="background:#ef4444;color:white;padding:2px 8px;border-radius:4px;font-size:0.72rem;">鈿狅笍 闇€璺宠浆YouTube</span></div><div class=video-meta><span class=video-source>YouTube 路 CCBC</span><span class=video-duration>90鍒嗛挓</span></div></div></div>
-
-
-<div class=video-card><div class=video-thumbnail><a href=https://www.bilibili.com/video/BV19QzcYeEWW/ target=_blank class=play-icon></a></div><div class=video-info><h4>鍖楀ぇ婕旇锛氭垜瀵逛环鍊兼姇璧勭殑鐞嗚В</h4><div class=video-meta><span class=video-source>Bilibili</span><span class=video-duration>3灏忔椂+</span></div></div></div>
-
-
-<div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>Master Class on Value Investing</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>1灏忔椂40鍒?/span></div></div></div>
-
-
-<div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>CCBC Fireside Chat: 涓浗甯傚満鏈轰細</h4><div class=video-meta><span class=video-source>CBS Greater China</span><span class=video-duration>1灏忔椂32鍒?/span></div></div></div>
-
-
-<div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>The Chinese Warren Buffett: Li Lu</h4><div class=video-meta><span class=video-source>We Study Billionaires</span><span class=video-duration>51鍒嗛挓</span></div></div></div>
-
-
-<div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>鍖楀ぇ浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾婕旇</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>25鍒嗛挓</span></div></div></div>
-
-
-</div>
-
-
-<div class=card style=margin-top:30px>
-
-
-<h3>&#9889; 蹇€熷叆闂?(鐭増)</h3>
-
-
-<div style=display:flex;flex-wrap:wrap;gap:15px;margin-top:20px>
-
-
-<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Li Lus 3 Important Rules - 7鍒嗛挓</span>
-
-
-<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Why Only 5% Win - 5鍒嗛挓</span>
-
-
-<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Munger on Li Lu - 2鍒嗛挓</span>
-
-
-<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Holy Grail of Investing - 3鍒嗛挓</span>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-<section id=glossary class=section>
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>鎶曡祫鏈琛?/h2>
-
-
-<p class=section-subtitle>浠峰€兼姇璧勬牳蹇冩蹇甸€熸煡</p>
-
-
-</div>
-
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 25px;">
-
-
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-
-
-<strong style="color: #1a365d;">鎶ゅ煄娌?(Moat)</strong>
-
-
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">浼佷笟绔炰簤浼樺娍锛屽彲鎸佺画闃绘绔炰簤瀵规墜銆?/p>
-
-
-</div>
-
-
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-
-
-<strong style="color: #1a365d;">ROE</strong>
-
-
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Return on Equity锛岃偂涓滄潈鐩婂洖鎶ョ巼銆?/p>
-
-
-</div>
-
-
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-
-
-<strong style="color: #1a365d;">瀹夊叏杈归檯 (Margin of Safety)</strong>
-
-
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">涔板叆浠蜂笌鍐呭湪浠峰€肩殑宸銆?/p>
-
-
-</div>
-
-
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-
-
-<strong style="color: #1a365d;">鍐呭湪浠峰€?(Intrinsic Value)</strong>
-
-
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">浼佷笟鐨勭湡瀹炰环鍊硷紝鍩轰簬鐜伴噾娴佹姌鐜般€?/p>
-
-
-</div>
-
-
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-
-
-<strong style="color: #1a365d;">PE (甯傜泩鐜?</strong>
-
-
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Price to Earnings锛岃偂浠蜂笌鐩堝埄姣旂巼銆?/p>
-
-
-</div>
-
-
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-
-
-<strong style="color: #1a365d;">鑳藉姏鍦?(Circle of Competence)</strong>
-
-
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">浣犵湡姝ｇ悊瑙ｇ殑琛屼笟鍜屽叕鍙歌寖鍥淬€?/p>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-<section id=learning class=section style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>瀛︿範璺緞</h2>
-
-
-<p class=section-subtitle>浠庡叆闂ㄥ埌瀹炶返鐨勭郴缁熷涔犺矾绾?/p>
-
-
-</div>
-
-
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
-
-
-<div class=card style="border-top: 4px solid #3182ce;">
-
-
-<h3 style="color: #3182ce;">&#128218; 绗竴闃舵: 鍏ラ棬 (1-2鍛?</h3>
-
-
-<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
-
-
-<li>闃呰銆婃枃鏄庛€佺幇浠ｅ寲銆佷环鍊兼姇璧勪笌涓浗銆?/li>
-
-
-<li>瀛︿範璐㈠姟鎶ヨ〃鍩虹 (鍒╂鼎琛ㄣ€佽祫浜ц礋鍊鸿〃)</li>
-
-
-<li>鐞嗚ВPE銆丳B銆丷OE鍩烘湰姒傚康</li>
-
-
-<li>瑙傜湅Li Lu鐭増瑙嗛 (30鍒嗛挓鍐?</li>
-
-
-</ul>
-
-
-</div>
-
-
-<div class=card style="border-top: 4px solid #38a169;">
-
-
-<h3 style="color: #38a169;">&#128218; 绗簩闃舵: 杩涢樁 (1-2鏈?</h3>
-
-
-<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
-
-
-<li>闃呰銆婅瘉鍒稿垎鏋愩€嬪墠6绔?/li>
-
-
-<li>鐮旂┒Li Lu鎸佷粨鍏徃骞存姤</li>
-
-
-<li>缁冧範鍒嗘瀽浼佷笟鍟嗕笟妯″紡</li>
-
-
-<li>瀛︿範琛屼笟鐮旂┒鏂规硶</li>
-
-
-</ul>
-
-
-</div>
-
-
-<div class=card style="border-top: 4px solid #d69e2e;">
-
-
-<h3 style="color: #d69e2e;">&#128218; 绗笁闃舵: 瀹炶返 (3-6鏈?</h3>
-
-
-<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
-
-
-<li>寤虹珛妯℃嫙缁勫悎</li>
-
-
-<li>璺熻釜Li Lu鎸佷粨鍙樺寲</li>
-
-
-<li>褰㈡垚鑷繁鐨勬姇璧勪綋绯?/li>
-
-
-<li>鎸佺画瀛︿範涓庡鐩?/li>
-
-
-</ul>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-<section id=quotes class=section>
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>鎶曡祫鏅烘収璇綍</h2>
-
-
-<p class=section-subtitle>鏉ヨ嚜鏉庡綍28骞存姇璧勫疄璺电殑娣卞埢娲炶</p>
-
-
-</div>
-
-
-<div class=quotes-grid>
-
-
-<div class=quote-card><p class=quote-text>Take the world the way it is, not what we wish to be, what we want to be. It is what it is, take it. (鎺ュ彈涓栫晫鏈潵鐨勬牱瀛愶紝鑰岄潪鎴戜滑甯屾湜瀹冩垚涓虹殑鏍峰瓙銆?</p><p class=quote-source>鈥?2024骞?2鏈?鍖楀ぇ浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾婕旇</p></div>
-
-
-<div class=quote-card><p class=quote-text>濡傛灉浣犲彧鏄亣瑁呬簡瑙ｄ紒涓氾紝浣犱細鍦ㄥ洶闅炬椂鏈熻鑰冮獙銆?/p><p class=quote-source>鈥?2021 CBS璁胯皥</p></div>
-
-
-<div class=quote-card><p class=quote-text>闀挎湡鎶曡祫鍥炴姤涓庡叕鍙歌祫鏈洖鎶ョ巼瀹岀編鐩稿叧銆?/p><p class=quote-source>鈥?鎶曡祫鍝插鏍稿績</p></div>
-
-
-<div class=quote-card><p class=quote-text>姣?-10骞村彂鐢熶竴娆＄櫨骞翠竴閬囩殑鍗辨満銆備汉绫昏涓烘案杩滀笉浼氭敼鍙樸€?/p><p class=quote-source>鈥?鍏充簬甯傚満娉㈠姩</p></div>
-
-
-<div class=quote-card><p class=quote-text>濂界殑鏃跺厜浜轰滑鍥犺椽濠€屽啋闄╋紝鍥伴毦鏃朵汉浠亹鎱岋紝閫氬父鍦ㄩ敊璇殑鏃跺埢鍋氶敊璇殑鍐冲畾銆?/p><p class=quote-source>鈥?浜虹被琛屼负鍒嗘瀽</p></div>
-
-
-<div class=quote-card><p class=quote-text>鎶曡祫鏈€閲嶈鐨勪簨锛氭悶娓呮浣犲湪绔炰簤浠€涔堛€傛姢鍩庢渤蹇呴』鍙寔缁紝鍚﹀垯灏变笉鏄姢鍩庢渤銆?/p><p class=quote-source>鈥?2024骞?2鏈?鍖楀ぇ婕旇</p></div>
-
-
-<div class=quote-card><p class=quote-text>褰撲綘鎷ユ湁涓€瀹跺叕鍙哥殑鑲℃潈锛屼綘鏄互浼佷笟鎵€鏈夎€呯殑韬唤鎸佹湁鐨勶紝涓嶆槸浠ヨ偂绁ㄤ氦鏄撹€呯殑韬唤銆?/p><p class=quote-source>鈥?鎵€鏈夎€呭績鎬?/p></div>
-
-
-<div class=quote-card><p class=quote-text>鍋氬涔犵殑閫氭墠锛屼絾鎶曡祫鏃惰鎴愪负鐪熸鐨勪笓瀹躲€備綘闇€瑕佹瘮浣犳姇璧勭殑浼佷笟绠＄悊灞傛洿浜嗚В瀹冦€?/p><p class=quote-source>鈥?鍏充簬鑳藉姏鍦?/p></div>
-
-
-</div>
-
-
-</section>
-
-
-<section id=books class=section>
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>鎺ㄨ崘涔︾睄</h2>
-
-
-<p class=section-subtitle>鏉庡綍鎺ㄨ崘鍙婁环鍊兼姇璧勫繀璇荤粡鍏?/p>
-
-
-</div>
-
-
-<div class=books-grid>
-
-
-<div class=book-card><div class=book-cover><span>&#128214;</span></div><div class=book-info><h4>銆婃枃鏄庛€佺幇浠ｅ寲銆佷环鍊兼姇璧勪笌涓浗銆?/h4><p>鏉庡綍 钁?br>2020骞村嚭鐗?/p></div></div>
-
-
-<div class=book-card><div class=book-cover><span>&#128218;</span></div><div class=book-info><h4>銆婅瘉鍒稿垎鏋愩€?/h4><p>Benjamin Graham<br>浠峰€兼姇璧勫鍩轰箣浣?/p></div></div>
-
-
-<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><h4>銆婅仾鏄庣殑鎶曡祫鑰呫€?/h4><p>Benjamin Graham<br>鎶曡祫缁忓吀蹇呰</p></div></div>
-
-
-<div class=book-card><div class=book-cover><span>&#128220;</span></div><div class=book-info><h4>銆婄┓鏌ョ悊瀹濆吀銆?/h4><p>Charlie Munger<br>鑺掓牸鏅烘収绠磋█</p></div></div>
-
-
-<div class=book-card><div class=book-cover><span>&#128221;</span></div><div class=book-info><h4>銆婂反鑿茬壒鑷磋偂涓滅殑淇°€?/h4><p>Warren Buffett<br>鑲＄鎶曡祫鍝插</p></div></div>
-
-
-<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><h4>銆婃粴闆悆銆?/h4><p>Warren Buffett浼犺<br>鎶曡祫鐢熸动鍏ㄦ櫙</p></div></div>
-
-
-</div>
-
-
-</section>
-
-
-<section id=interviews class=section>
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>璁胯皥涓庢枃绔?/h2>
-
-
-<p class=section-subtitle>娣卞叆浜嗚В鏉庡綍鐨勬姇璧勬€濇兂涓庝腑鍥藉競鍦鸿鐐?/p>
-
-
-</div>
-
-
-<div class=card>
-
-
-<h3>&#128221; 2021骞村摜浼︽瘮浜氬晢瀛﹂櫌璁胯皥瑕佺偣</h3>
-
-
-<p><strong>鏉ユ簮:</strong> Columbia Business School Greater China Society<br><strong>閲囪鑰?</strong> Bruce Greenwald (钁楀悕浠峰€兼姇璧勬暀鎺?</p>
-
-
-<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>鎶曡祫鏍囧噯</h4>
-
-
-<ul style=padding-left:20px;color:#4a5568>
-
-
-<li style=margin-bottom:8px>鎸佷箙鎶ゅ煄娌?(Durable Moat)</li>
-
-
-<li style=margin-bottom:8px>楂樿祫鏈洖鎶ョ巼 (鍙寔缁?</li>
-
-
-<li style=margin-bottom:8px>浠ヤ綆浜庡唴鍦ㄤ环鍊间拱鍏?(瀹夊叏杈归檯)</li>
-
-
-<li style=margin-bottom:8px>闀挎湡鎸佹湁锛屽湪涓嬭穼鏃跺姞浠?/li>
-
-
-</ul>
-
-
-<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>瀵逛腑鍥藉競鍦鸿鐐?/h4>
-
-
-<ul style=padding-left:20px;color:#4a5568>
-
-
-<li style=margin-bottom:8px>涓浗灏嗘垚涓轰笘鐣屼笂鏈€澶с€佹渶娲昏穬銆佸闀挎渶蹇殑娑堣垂甯傚満</li>
-
-
-<li style=margin-bottom:8px>涓浗甯傚満浠嶇劧涓嶅彂杈撅紝鍦ㄤ竴涓厖婊℃椿鍔涚殑缁忔祹浣撲腑鏇村鏄撴壘鍒颁环鍊?/li>
-
-
-<li style=margin-bottom:8px>閲戣瀺鏈嶅姟灏氭湭寮€鍙戯紝璁稿棰嗗煙鍗冲皢璧烽</li>
-
-
-<li style=margin-bottom:8px>鐜板湪鏄姇璧勪腑鍥界殑濂芥椂鏈?/li>
-
-
-</ul>
-
-
-<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>鍏充簬鏂版妧鏈?/h4>
-
-
-<ul style=padding-left:20px;color:#4a5568>
-
-
-<li style=margin-bottom:8px>浣犻渶瑕佷簡瑙ｆ柊鎶€鏈浣犳姇璧勭殑浼佷笟鐨勫奖鍝?/li>
-
-
-<li style=margin-bottom:8px>姹借溅琛屼笟閬彈4涓瑕嗘€ц秼鍔? 鍏变韩鍑鸿銆佺數姹犮€佹櫤鑳借璁°€佽嚜鍔ㄩ┚椹?/li>
-
-
-<li style=margin-bottom:8px>鏉庡綍鏄瘮浜氳开鐨勯暱鏈熸姇璧勮€?/li>
-
-
-</ul>
-
-
-</div>
-
-
-</section>
-
-
-<section id=resources class=section style="background: linear-gradient(135deg, #1a365d 0%, #0a1628 100%); padding: 60px 40px;">
-
-
-<div class=section-header>
-
-
-<h2 class=section-title style="color: #fff;">涓嬭浇璧勬簮</h2>
-
-
-<p class=section-subtitle style="color: #a0aec0;">瀛︿範璧勬枡鎵撳寘涓嬭浇</p>
-
-
-</div>
-
-
-<div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
-
-
-<a href="li-lu-study-guide.md" download style="padding: 20px 40px; background: #c9a227; color: #0a1628; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block;">&#128196; 瀛︿範鎸囧崡 (Markdown)</a>
-
-
-<a href="li-lu-qa.md" download style="padding: 20px 40px; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block; border: 2px solid #c9a227;">&#128196; 闂瓟闆?(Markdown)</a>
-
-
-<a href="li-lu-2021-interview-summary.md" download style="padding: 20px 40px; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block; border: 2px solid #c9a227;">&#128196; 璁胯皥鎽樿 (Markdown)</a>
-
-
-</div>
-
-<p style="color: #a0aec0; text-align: center; margin-top: 25px; font-size: 0.85rem;">娉細浠ヤ笅涓烘簮鏂囦欢涓嬭浇锛屽疄闄呮暟鎹浠ョ綉椤电増涓哄噯</p>
-
-
-</section>
-
-
-<section id=updates class=section>
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>鏇存柊鏃ュ織</h2>
-
-
-<p class=section-subtitle>缃戠珯鍐呭鏇存柊璁板綍</p>
-
-
-</div>
-
-
-<div class=card>
-
-
-<h4 style="color: #1a365d;">&#128197; 2026-04-05 (鏈鏇存柊)</h4>
-
-
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-
-
-<li>鏂板: 鎸佷粨鍖哄姞鍏E/PB/鑲℃伅/ROIC浼板€兼爣绛?+ 鎶ゅ煄娌虫槦绾ц瘎鍒?+ 鎶曡祫閫昏緫娉ㄩ噴</li>
-
-
-<li>鏂板: 銆愭姇璧勫喅绛栨鏋躲€戝叚澶ф楠ゆ祦绋嬪浘 (鑳藉姏鍦堚啋鎶ゅ煄娌斥啋浼板€尖啋涔板叆鈫掓寔鏈夆啋鍗栧嚭)</li>
-
-
-<li>鏂板: 鎸佷粨鐗瑰緛鍒嗘瀽澧炲姞缁勫悎鍔犳潈PE(~17-19x)銆佽偂鎭巼(1%)銆侀浂璋冧粨鍛ㄦ湡绛夐噺鍖栨寚鏍?/li>
-
-
-<li>鏇存柊: 瀵艰埅鏍忓姞鍏?鎸佷粨"鍜?鍐崇瓥妗嗘灦"蹇€熷叆鍙?/li>
-
-
-<li>鏇存柊: 鎸佷粨鍖烘渚嬪垎鏋愭洿鎹负 Alphabet/BAC/BYD锛屼笌13F鎸佷粨涓€鑷?/li>
-
-
-</ul>
-
-
-<h4 style="color: #1a365d; margin-top: 25px;">&#128197; 2026-03-22</h4>
-
-
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-
-
-<li>鏂板: 鎶曡祫妗堜緥鍒嗘瀽 (姣斾簹杩€佽吘璁€佷腑鍥界Щ鍔?</li>
-
-
-<li>鏂板: 瀛︿範璺緞涓夐樁娈?/li>
-
-
-<li>鏂板: 鎸佷粨PE鍙婅偂鎭暟鎹垎鏋?/li>
-
-
-<li>鏂板: 瑙嗛宓屽叆鎾斁</li>
-
-
-<li>鏂板: 鎼滅储鍔熻兘</li>
-
-
-<li>鏂板: 涓嬭浇璧勬簮鍖?/li>
-
-
-</ul>
-
-
-<h4 style="color: #1a365d; margin-top: 25px;">&#128197; 2026-03-21</h4>
-
-
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-
-
-<li>鍒濆鐗堟湰鍙戝竷</li>
-
-
-<li>鍖呭惈鎸佷粨鏁版嵁銆佽璋堟憳瑕併€佹帹鑽愪功绫?/li>
-
-
-</ul>
-
-
-</div>
-
-
-</section>
-
-
-<section id=faq class=section style="background: #edf2f7;">
-
-
-<div class=section-header>
-
-
-<h2 class=section-title>甯歌闂</h2>
-
-
-<p class=section-subtitle>鍏充簬鏉庡綍涓庝环鍊兼姇璧?/p>
-
-
-</div>
-
-
-<div style="max-width: 800px; margin: 30px auto 0;">
-
-
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-
-
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q1: 鏉庡綍鏄浣曞紑濮嬩环鍊兼姇璧勭殑锛?/summary>
-
-
-<p style="margin-top: 15px; color: #4a5568;">鏉庡綍鍦ㄥ摜浼︽瘮浜氬ぇ瀛﹁幏JD+MBA+MA涓夊浣嶏紝甯堜粠Bruce Greenwald鏁欐巿瀛︿範浠峰€兼姇璧勶紝娣卞彈鏍奸浄鍘勫涓庡反鑿茬壒鎬濇兂褰卞搷锛屽悗鍒涚珛鍠滈┈鎷夐泤璧勬湰銆?/p>
-
-
-</details>
-
-
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-
-
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q2: 鏉庡綍鐨勬牳蹇冩姇璧勫師鍒欐槸浠€涔堬紵</summary>
-
-
-<p style="margin-top: 15px; color: #4a5568;">鍏ぇ鍘熷垯锛?) 鑲＄エ鏄叕鍙告墍鏈夋潈 2) 甯傚満鏄粏浜轰笉鏄悜瀵?3) 鑳藉姏鍦堝唴鎶曡祫 4) 瀹夊叏杈归檯 5) 闀挎湡鎸佹湁 6) 鎶ゅ煄娌虫槸鏍规湰</p>
-
-
-</details>
-
-
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-
-
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q3: 鏉庡綍瀵逛腑鍥藉競鍦烘€庝箞鐪嬶紵</summary>
-
-
-<p style="margin-top: 15px; color: #4a5568;">浠栬涓轰腑鍥芥澶勪簬"2.5闃舵"鈥斺€斾粠鍐滀笟绀句細鍚戠幇浠ｅ寲杞瀷鐨勫叧閿椂鏈燂紝涓浗灏嗘垚涓轰笘鐣屼笂鏈€澶с€佹渶娲昏穬鐨勬秷璐瑰競鍦猴紝鍦ㄥ厖婊℃椿鍔涚殑缁忔祹浣撲腑鏇村鏄撴壘鍒颁环鍊笺€?/p>
-
-
-</details>
-
-
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-
-
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q4: 鏉庡綍涓轰粈涔堟姇璧勬瘮浜氳开锛?/summary>
-
-
-<p style="margin-top: 15px; color: #4a5568;">鏉庡綍鍦?002-2003骞翠究寮€濮嬫繁鍏ョ爺绌舵瘮浜氳开锛岀湅涓帇浼犵鐨勪紒涓氬绮剧鍜屽瀭鐩存暣鍚堟ā寮忋€?008骞村墠宸插畬鎴愭姇璧勫竷灞€锛堝反鑿茬壒/鑺掓牸2008骞存墠鎶曡祫姣斾簹杩紝鏉庡綍鏇存棭鍏虫敞骞舵姇璧勶級銆傛瘮浜氳开浠ｈ〃浜嗕腑鍥藉埗閫犱笟鐨勫礇璧凤紝鏄吀鍨嬬殑"鎶ゅ煄娌?鎴愰暱"缁勫悎銆?/p>
-
-
-</details>
-
-
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-
-
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q5: 鍠滈┈鎷夐泤璧勬湰鐨勭鐞嗚妯℃湁澶氬ぇ锛?/summary>
-
-
-<p style="margin-top: 15px; color: #4a5568;">鏍规嵁2025骞碤4 13F鐢虫姤锛岀鐞嗚妯＄害$35.69浜跨編鍏冿紙绾β?50浜匡級銆侫lphabet涓虹涓€澶ф寔浠?43.86%)锛屽叾娆℃槸Bank of America(16.08%)銆丳DD(14.64%)銆丅erkshire(12.64%)銆?/p>
-
-
-</details>
-
-
-</div>
-
-
-</section>
-
-
-</main>
-
-
-<footer class=footer>
-
-
-<div class=footer-content>
-
-
-<h3>鏉庡綍 <span>浠峰€兼姇璧?/span> 鐮旂┒</h3>
-
-
-<p>涓撴敞浜庢潕褰曚环鍊兼姇璧勬€濇兂鐮旂┒涓庡涔犵殑璧勬枡姹囨€汇€?/p>
-
-
-<div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-
-
-<a href=#about style="color: #c9a227; text-decoration: none;">鍏充簬</a> 路
-
-
-<a href=#holdings style="color: #c9a227; text-decoration: none;">鎸佷粨</a> 路
-
-
-<a href=#principles style="color: #c9a227; text-decoration: none;">鍘熷垯</a> 路
-
-
-<a href=#videos style="color: #c9a227; text-decoration: none;">瑙嗛</a> 路
-
-
-<a href=#books style="color: #c9a227; text-decoration: none;">涔︾睄</a> 路
-
-
-<a href=#learning style="color: #c9a227; text-decoration: none;">瀛︿範</a> 路
-
-
-<a href=#faq style="color: #c9a227; text-decoration: none;">FAQ</a>
-
-
-</div>
-
-
-</div>
-
-
-<div class=footer-bottom>
-<p>© 2026 李录价值投资研究 · 仅供学习研究，不构成投资建议 · <a href="index.html" style="color:#c9a227;">返回首页</a></p>
-
-<p>&#128197; 鏈€鍚庢洿鏂? 2026-03-22 | &#128221; 鏉庡綍浠峰€兼姇璧勭爺绌?| 鍏?0杞骇鍝佷紭鍖栧畬鎴?/p>
-
-
-</div>
-
-
-</footer>
-
-
-<script>
-
-
-// Auto dark mode based on system preference
-
-
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-
-
-  document.body.classList.add('dark-mode');
-
-
-}
-
-
-
-
-
-// Dark mode toggle
-
-
-function toggleTheme() {
-
-
-  document.body.classList.toggle('dark-mode');
-
-
-}
-
-
-
-
-
-// Quick search function
-
-
-function searchContent() {
-
-
-  const input = document.getElementById('searchInput');
-
-
-  const filter = input.value.toUpperCase();
-
-
-  const sections = document.querySelectorAll('section, .card, .quote-card, .book-card, .video-card');
-
-
-  
-
-
-  sections.forEach(section => {
-
-
-    const text = section.textContent || section.innerText;
-
-
-    if (text.toUpperCase().indexOf(filter) > -1) {
-
-
-      section.style.display = "";
-
-
-    } else {
-
-
-      section.style.display = "none";
-
-
-    }
-
-
-  });
-
-
-  
-
-
-  if (filter === '') {
-
-
-    sections.forEach(s => s.style.display = '');
-
-
-  }
-
-
-}
-
-
-</script>
-
-
-</body>
-
-
-</html>
-
-
+<p style="color: #c9a227; text-align: center; margin-top: 15px; font-size: 0.85rem; font-weight: 600;">数据来源: SEC 13F (2025年Q4, 披露日期2026-02-17)</p>
+
+
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~27x</span>
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">鑲℃伅 0.5%</span>
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">ROIC >25%</span>
+
+
+</div>
+
+
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+
+
+<span><strong>$15.65浜?/strong><br><small style="color:#888">甯傚€?/small></span>
+
+
+<span><strong>鏈彉鍔?/strong><br><small style="color:#888">Q4</small></span>
+
+
+</div>
+
+
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 鎼滅储骞垮憡92%+浜?Gemini AI涓夐噸鎶ゅ煄娌?| 鎸佹湁~5.5骞?浼扮畻鍥炴姤150-190%</p>
+
+
+</div>
+
+
+<div class=card style="border-left: 4px solid #c9a227;">
+
+
+<h4 style="color: #1a365d;">Bank of America <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;</span></h4>
+
+
+<p style="color: #666; font-size: 0.85rem;">NYSE: BAC 路 閲戣瀺 路 鍗犳瘮 <strong style="color:#c9a227;">16.08%</strong></p>
+
+
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+
+
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE 12.9x</span>
+
+
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB 1.25x</span>
+
+
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">鑲℃伅 2.2%</span>
+
+
+</div>
+
+
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+
+
+<span><strong>$5.74浜?/strong><br><small style="color:#888">甯傚€?/small></span>
+
+
+<span><strong>鏈彉鍔?/strong><br><small style="color:#888">Q4</small></span>
+
+
+</div>
+
+
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 娣卞害浠峰€?楂樿偂鎭帇鑸辩煶 | 鎸佹湁~6骞?浼扮畻鍥炴姤95-120%</p>
+
+
+</div>
+
+
+<div class=card style="border-left: 4px solid #c9a227;">
+
+
+<h4 style="color: #1a365d;">鎷煎澶?PDD <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;</span></h4>
+
+
+<p style="color: #666; font-size: 0.85rem;">NASDAQ: PDD 路 鐢靛晢 路 鍗犳瘮 <strong style="color:#c9a227;">14.64%</strong></p>
+
+
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+
+
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~10x</span>
+
+
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">鍑€鐜伴噾=甯傚€?0%</span>
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">0%鑲℃伅</span>
+
+
+</div>
+
+
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+
+
+<span><strong>$5.23浜?/strong><br><small style="color:#888">甯傚€?/small></span>
+
+
+<span><strong>鏈彉鍔?/strong><br><small style="color:#888">Q4</small></span>
+
+
+</div>
+
+
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 鏈€琚綆浼?路 PE~10x+鐜伴噾700浜?甯傚€?0% Temu鍏ㄧ悆鍖栭珮閫熸墿寮?/p>
+
+
+</div>
+
+
+<div class=card style="border-left: 4px solid #c9a227;">
+
+
+<h4 style="color: #1a365d;">浼厠甯屽皵B <span style="color:#38a169;font-size:0.75rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</span></h4>
+
+
+<p style="color: #666; font-size: 0.85rem;">NYSE: BRK.B 路 鎶曡祫鎺ц偂 路 鍗犳瘮 <strong style="color:#c9a227;">12.64%</strong></p>
+
+
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~22x</span>
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB 1.5x</span>
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">0%鑲℃伅</span>
+
+
+</div>
+
+
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+
+
+<span><strong>$4.51浜?/strong><br><small style="color:#888">甯傚€?/small></span>
+
+
+<span><strong>鏈彉鍔?/strong><br><small style="color:#888">Q4</small></span>
+
+
+</div>
+
+
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#128992; 鑺掓牸/宸磋彶鐗硅祫鏈厤缃?娴瓨閲?| 鎸佹湁~5-6骞?/p>
+
+
+</div>
+
+
+<div class=card style="border-left: 4px solid #c9a227;">
+
+
+<h4 style="color: #1a365d;">鑻规灉 Apple <span style="color:#a0aec0;font-size:0.75rem;">&#9733;&#9733;&#9733;</span></h4>
+
+
+<p style="color: #666; font-size: 0.85rem;">NASDAQ: AAPL 路 绉戞妧 路 鍗犳瘮 <strong style="color:#c9a227;">0.84%</strong></p>
+
+
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~20x</span>
+
+
+<span style="background:#edf2f7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">鑲℃伅 0.5%</span>
+
+
+<span style="background:#fed7d7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">ROIC >50%</span>
+
+
+</div>
+
+
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+
+
+<span><strong>$0.30浜?/strong><br><small style="color:#888">甯傚€?/small></span>
+
+
+<span style="color:#38a169;"><strong>澧炴寔</strong><br><small style="color:#888">Q4</small></span>
+
+
+</div>
+
+
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#129000; 2025骞碤1鍑忔寔65%鍚庝綑搴曚粨 | Q3鍐嶅噺鎸?8%</p>
+
+
+</div>
+
+
+<div class=card style="border-left: 4px solid #38a169;">
+
+
+<h4 style="color: #1a365d;">Crocs <span style="color:#a0aec0;font-size:0.75rem;">&#9733;&#9733;</span></h4>
+
+
+<p style="color: #666; font-size: 0.85rem;">NASDAQ: CROX 路 娑堣垂鍝?路 鍗犳瘮 <strong style="color:#38a169;">1.50%</strong></p>
+
+
+<div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+
+
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PE ~8x</span>
+
+
+<span style="background:#c6f6d5;padding:3px 8px;border-radius:6px;font-size:0.75rem;">PB ~4x</span>
+
+
+<span style="background:#fed7d7;padding:3px 8px;border-radius:6px;font-size:0.75rem;">浠峰€奸櫡闃?</span>
+
+
+</div>
+
+
+<div style="margin-top: 10px; display: flex; justify-content: space-between;">
+
+
+<span><strong>$0.53浜?/strong><br><small style="color:#888">甯傚€?/small></span>
+
+
+<span style="color:#38a169;"><strong>鏂板缓浠?/strong><br><small style="color:#888">Q4</small></span>
+
+
+</div>
+
+
+<p style="color:#4a5568;font-size:0.78rem;margin-top:10px;">&#9888; 鍞竴"鐤戦棶鎵? 路 鍗氫綆绔秷璐瑰搧鐗屽弽杞?| 浠撲綅鍏嬪埗椋庨櫓鍙帶</p>
+
+
+</div>
+
+
+</div>
+
+
+<div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 12px;">
+
+
+<h4 style="color: #c9a227; margin-bottom: 15px;">馃搳 鎸佷粨鐗瑰緛鍒嗘瀽</h4>
+
+
+<div style="display: flex; gap: 30px; flex-wrap: wrap;">
+
+
+<div><span style="color: #a0aec0;">琛屼笟鍒嗗竷:</span><br><strong style="color: #fff;">绉戞妧 44.7% 路 閲戣瀺 16.6% 路 鐢靛晢 14.6% 路 鎶曡祫 12.6%</strong></div>
+
+
+<div><span style="color: #a0aec0;">鍓嶄簲闆嗕腑搴?</span><br><strong style="color: #fff;">96.96%</strong></div>
+
+
+<div><span style="color: #a0aec0;">鎸佷粨鏁伴噺:</span><br><strong style="color: #fff;">浠?鍙?/strong></div>
+
+
+<div><span style="color: #a0aec0;">缁勫悎鍔犳潈PE:</span><br><strong style="color: #fff;">~17-19x</strong></div>
+
+
+<div><span style="color: #a0aec0;">缁勫悎鑲℃伅鐜?</span><br><strong style="color: #fff;">~1.0%</strong></div>
+
+
+<div><span style="color: #a0aec0;">闆惰皟浠撳懆鏈?</span><br><strong style="color: #fff;">杩炵画2瀛ｅ害</strong></div>
+
+
+</div>
+
+
+</div>
+
+
+<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 鏁版嵁鎴锛?025骞碤4 13F (2026骞?鏈?7鏃ユ姭闇? | 椤甸潰鏇存柊锛?026-04-05 | 浠呬緵鐮旂┒鍙傝€冿紝涓嶆瀯鎴愭姇璧勫缓璁?/p>
+
+
+</section>
+
+
+<section id=cases class=section style="background: #f7fafc;">
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>鎶曡祫妗堜緥鍒嗘瀽</h2>
+
+
+<p class=section-subtitle>浠庢潕褰曠殑鎴愬姛鎶曡祫涓涔?路 鍘嗗彶鎸佷粨妗堜緥</p>
+
+
+</div>
+
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
+
+
+<div class=card>
+
+
+<h3 style="color: #1a365d;">&#128663; 姣斾簹杩?(BYD)</h3>
+
+
+<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>棣栨鐮旂┒:</strong> 绾?002-2003骞达紙鏉庡綍寮€濮嬫繁鍏ョ爺绌舵瘮浜氳开锛?br><strong>鎶曡祫鍐崇瓥:</strong> 2008骞村墠宸插畬鎴愭寔鑲★紙鑺掓牸/宸磋彶鐗?008骞存墠鎶曡祫姣斾簹杩紝鏉庡綍鏇存棭鍏虫敞锛?/p>
+
+
+<p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>鎶曡祫閫昏緫:</strong></p>
+
+
+<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
+
+
+<li>鐪嬩腑鐜嬩紶绂忕殑浼佷笟瀹剁簿绁?/li>
+
+
+<li>鐢靛姩姹借溅琛屼笟鐨勯瑕嗘€ф満浼?/li>
+
+
+<li>鍨傜洿鏁村悎甯︽潵鐨勬垚鏈紭鍔?/li>
+
+
+</ul>
+
+
+<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 鎶曡祫鍥炴姤: 鏁板崄鍊嶏紙鏃╂湡鎶曡祫锛?/p>
+
+
+</div>
+
+
+<div class=card>
+
+
+<h3 style="color: #1a365d;">&#127760; Alphabet (璋锋瓕)</h3>
+
+
+<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>鎸佷粨鏃堕棿:</strong> 2019骞磋嚦浠婏紙鎸佺画澧炴寔锛?/p>
+
+
+<p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>鎶曡祫閫昏緫:</strong></p>
+
+
+<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
+
+
+<li>鎼滅储寮曟搸缁濆涓诲鍦颁綅</li>
+
+
+<li>AI+浜戣绠楁寔缁闀?/li>
+
+
+<li>寮哄ぇ鐨勮嚜鐢辩幇閲戞祦</li>
+
+
+</ul>
+
+
+<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 褰撳墠绗竴澶ф寔浠?(43.86%)</p>
+
+
+</div>
+
+
+<div class=card>
+
+
+<h3 style="color: #1a365d;">&#128176; Bank of America</h3>
+
+
+<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>鎸佷粨鏃堕棿:</strong> 2016骞磋嚦浠?/p>
+
+
+<p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>鎶曡祫閫昏緫:</strong></p>
+
+
+<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
+
+
+<li>缇庡浗鍥涘ぇ閾惰涔嬩竴</li>
+
+
+<li>寮哄ぇ鐨勫垎閿€缃戠粶鎶ゅ煄娌?/li>
+
+
+<li>浼板€煎悎鐞嗐€佽偂鎭ǔ瀹?/li>
+
+
+</ul>
+
+
+<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 绗簩澶ф寔浠?(16.08%)</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<main class=main-content>
+
+
+<section id=about class=section>
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>鍏充簬鏉庡綍</h2>
+
+
+<p class=section-subtitle>浠庨噾铻嶅鑰呭埌浠峰€兼姇璧勫ぇ甯堢殑鎴愰暱鍘嗙▼</p>
+
+
+</div>
+
+
+<div class=card>
+
+
+<h3>&#128220; 涓汉鑳屾櫙</h3>
+
+
+<p>鏉庡綍鏄瑾変负涓浗鐨勬矁浼β峰反鑿茬壒鐨勪环鍊兼姇璧勫ぇ甯堛€傜幇浠荤編鍥藉枩椹媺闆呰祫鏈垱濮嬩汉钁ｄ簨闀匡紝鎵ц鍚堜紮浜恒€傚摜浼︽瘮浜氬ぇ瀛﹁幏JD娉曞緥鍗氬＋+MBA宸ュ晢绠＄悊纭曞＋+MA缁忔祹瀛︾澹笁瀛︿綅锛屽笀浠庤憲鍚嶄环鍊兼姇璧勬暀鎺?Bruce Greenwald銆?/p>
+
+
+<div class=timeline style=margin-top:30px>
+
+
+<div class=timeline-item><div class=timeline-date>1980s-1990s</div><div class=timeline-title>姹傚鏃舵湡</div><div class=timeline-content>姣曚笟浜庡崡浜ぇ瀛︼紝鍚庤荡鍝ヤ鸡姣斾簹澶у姹傚锛屽笀浠嶣ruce Greenwald鏁欐巿锛屽摜浼︽瘮浜氬ぇ瀛﹁幏JD娉曞緥鍗氬＋+MBA宸ュ晢绠＄悊纭曞＋+MA缁忔祹瀛︾澹笁瀛︿綅銆?/div></div>
+
+
+<div class=timeline-item><div class=timeline-date>1997骞?/div><div class=timeline-title>鍒涚珛鍠滈┈鎷夐泤璧勬湰</div><div class=timeline-content>鍦ㄧ編鍥藉垱绔嬪枩椹媺闆呰祫鏈鐞嗗叕鍙?Himalaya Capital Management LLC)锛屼笓娉ㄤ簬闀挎湡浠峰€兼姇璧勩€?/div></div>
+
+
+<div class=timeline-item><div class=timeline-date>2002-2003骞?/div><div class=timeline-title>娣卞叆鐮旂┒姣斾簹杩?/div><div class=timeline-content>鏉庡綍寮€濮嬫繁鍏ョ爺绌舵瘮浜氳开锛岀湅涓帇浼犵鐨勪紒涓氬绮剧锛?008骞村墠宸插畬鎴愭姇璧勫竷灞€锛堝反鑿茬壒/鑺掓牸2008骞存墠鎶曡祫姣斾簹杩紝鏉庡綍鏇存棭鍏虫敞骞舵姇璧勶級銆?/div></div>
+
+
+<div class=timeline-item><div class=timeline-date>2014骞?/div><div class=timeline-title>銆奀ivilizations, Modernization, Value Investing and China銆嬭鏂囧彂琛?/div><div class=timeline-content>鍙戣〃鍏充簬鏂囨槑銆佺幇浠ｅ寲涓庝环鍊兼姇璧勭殑闀跨瘒璁烘枃锛岀郴缁熼槓杩板浜虹被绀句細鍙戝睍鐨勭悊瑙ｃ€?/div></div>
+
+
+<div class=timeline-item><div class=timeline-date>2015-2019骞?/div><div class=timeline-title>鍖楀ぇ鍏夊崕浠峰€兼姇璧勮绋?/div><div class=timeline-content>鍙備笌鍖楀ぇ鍏夊崕绠＄悊瀛﹂櫌浠峰€兼姇璧勮绋嬶紝鎷呬换鏍稿績璁插笀锛屽煿鍏绘柊涓€浠ｄ环鍊兼姇璧勮€呫€?/div></div>
+
+
+<div class=timeline-item><div class=timeline-date>2020骞?/div><div class=timeline-title>鍑虹増銆婃枃鏄庛€佺幇浠ｅ寲銆佷环鍊兼姇璧勪笌涓浗銆?/div><div class=timeline-content>灏嗗骞存姇璧勬€濊€冩暣鐞嗘垚涔︼紝绯荤粺闃愯堪浠峰€兼姇璧勭悊蹇典笌涓浗甯傚満鏈轰細锛屾垚涓虹晠閿€鎶曡祫璇荤墿銆?/div></div>
+
+
+<div class=timeline-item><div class=timeline-date>2024骞?2鏈?/div><div class=timeline-title>鍖楀ぇ浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾</div><div class=timeline-content>鍑哄腑鍖楀ぇ鍏夊崕浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾搴嗗吀锛屽彂琛?鍏ㄧ悆浠峰€兼姇璧勮€?涓婚婕旇锛屽垎浜渶鏂版姇璧勬€濇兂銆?/div></div>
+
+
+<div class=timeline-item><div class=timeline-date>2025骞?/div><div class=timeline-title>13F鎸佷粨瑙勬ā杩?36浜?/div><div class=timeline-content>2025骞碤4 13F鐢虫姤鏄剧ず锛屽枩椹媺闆呰祫鏈鐞嗚妯＄害$35.69浜跨編鍏冿紙绾β?50浜匡級锛?Alphabet涓虹涓€澶ф寔浠?43.86%)銆?/div></div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<section id=principles class=section>
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>鏍稿績鎶曡祫鍘熷垯</h2>
+
+
+<p class=section-subtitle>鏉庡綍28骞存姇璧勭敓娑€荤粨鐨勪笁澶ф牳蹇冭绱?/p>
+
+
+</div>
+
+
+<div class=principles>
+
+
+<div class=principle-card animate-in delay-1><span class=principle-number>01</span><h4>&#127919; 鑲＄エ鏄叕鍙哥殑涓€閮ㄥ垎鎵€鏈夋潈</h4><p>鑲＄エ涓嶆槸涓€寮犵倰鍗栫殑绾革紝鑰屾槸鍏徃鐨勬墍鏈夋潈璇佷功銆傛姇璧勫繀椤讳互浼佷笟鎵€鏈夎€呯殑蹇冩€佺湅寰呮瘡涓€鎸佷粨銆?/p></div>
+
+
+<div class=principle-card animate-in delay-2><span class=principle-number>02</span><h4>&#128161; 甯傚満鍏堢敓鏄綘鐨勪粏浜猴紝涓嶆槸浣犵殑鍚戝</h4><p>甯傚満鎻愪緵浠锋牸鍙戠幇鍔熻兘锛屼絾涓嶈兘棰勬祴浠锋牸銆備环鏍兼尝鍔ㄤ笉鏄喅绛栦緷鎹紝瀹夊叏杈归檯鎵嶆槸銆?/p></div>
+
+
+<div class=principle-card animate-in delay-3><span class=principle-number>03</span><h4>&#128269; 鑳藉姏鍦堬細涓嶆噦涓嶆姇</h4><p>鍙姇璧勮嚜宸辩湡姝ｇ悊瑙ｇ殑琛屼笟鍜屽叕鍙搞€傚鏋滀竴瀹跺叕鍙镐綘鏃犳硶鍦?0骞村唴鎸佹湁锛屽氨涓嶈鎸佹湁10鍒嗛挓銆?/p></div>
+
+
+</div>
+
+
+<div class=principle-card><span class=principle-number>04</span><h4>&#128640; 绗洓鏉★細瀹夊叏杈归檯鏄牳蹇?/h4><p>涔颁环浣庝簬鍐呭湪浠峰€兼椂鎵嶆湁瀹夊叏杈归檯銆傚畨鍏ㄨ竟闄呮槸浣犵姱閿欐椂鐨勭紦鍐插甫锛屼篃鏄暱鏈熸敹鐩婄殑涓昏鏉ユ簮銆?/p></div>
+<div class=principle-card><span class=principle-number>05</span><h4>&#127757; 绗簲鏉★細闀挎湡涓讳箟鐨勭邯寰?/h4><p>濡傛灉涓嶆墦绠楁寔鏈変竴瀹跺叕鍙?0骞达紝灏变笉瑕佹寔鏈?0鍒嗛挓銆傜湡姝ｇ殑鏈轰細鏉ヨ嚜闀挎湡鎸佹湁浼樼浼佷笟鐨勫鍒╂晥搴斻€?/p></div>
+<div class=principle-card><span class=principle-number>06</span><h4>&#9878; 绗叚鏉★細鎶ゅ煄娌虫槸鏍规湰</h4><p>鎶ゅ煄娌虫潵鑷細瑙勬ā缁忔祹銆佹寔缁椂闂淬€佺鐞嗗眰璧勬湰閰嶇疆鑳藉姏銆佷紒涓氭枃鍖栥€傞珮璧勬湰鍥炴姤鐜囦笖鍙寔缁紝鏄€夋嫨鏍囩殑鐨勬牳蹇冩爣鍑嗐€?/p></div><div class=card style=margin-top:40px>
+
+
+<h3>&#127968; 鎶ゅ煄娌崇殑鍏抽敭瑕佺礌</h3>
+
+
+<div style=display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:20px>
+
+
+<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>瑙勬ā缁忔祹</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>鎴愭湰浼樺娍鏉ヨ嚜瑙勬ā</p></div>
+
+
+<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>鎸佺画鏃堕棿</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>闀挎湡绔炰簤浼樺娍</p></div>
+
+
+<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>绠＄悊灞傝祫鏈厤缃?/strong><p style=margin-top:8px;font-size:0.9rem;color:#666>鍏抽敭鐨勬姢鍩庢渤瑕佺礌</p></div>
+
+
+<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>浼佷笟鏂囧寲</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>鍐呭湪椹卞姩鍔?/p></div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<section id=framework class=section style="background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); padding: 60px 40px;">
+
+
+<div class=section-header>
+
+
+<h2 class=section-title style="color: #fff;">鎶曡祫鍐崇瓥妗嗘灦</h2>
+
+
+<p class=section-subtitle style="color: #a0aec0;">鏉庡綍鍐崇瓥娴佺▼鍏楠?路 鏉ユ簮锛欻imalaya Capital瀹樼綉 + Bruce Greenwald瀛︽湳妗嗘灦</p>
+
+
+</div>
+
+
+<div style="margin-top:30px;padding:24px;background:rgba(255,255,255,0.05);border-radius:16px;border:1px solid rgba(201,162,39,0.4);text-align:center;">
+<div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+<a href="glossary.html#id-circle-of-competence" title="查看术语解释" style="background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-block;">能力圈筛选</a>
+<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
+<a href="glossary.html#id-moat" title="查看术语解释" style="background:rgba(201,162,39,0.2);color:#c9a227;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;border:1px solid #c9a227;text-decoration:none;display:inline-block;">护城河评估</a>
+<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
+<a href="glossary.html#id-dcf" title="查看术语解释" style="background:rgba(201,162,39,0.2);color:#c9a227;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;border:1px solid #c9a227;text-decoration:none;display:inline-block;">DCF估值</a>
+<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
+<a href="glossary.html#id-margin-of-safety" title="查看术语解释" style="background:rgba(201,162,39,0.2);color:#c9a227;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;border:1px solid #c9a227;text-decoration:none;display:inline-block;">重仓买入</a>
+<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
+<a href="glossary.html#id-compounders" title="查看术语解释" style="background:rgba(201,162,39,0.2);color:#c9a227;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;border:1px solid #c9a227;text-decoration:none;display:inline-block;">长期持有</a>
+<div style="color:#c9a227;font-size:1.5rem;">&#8594;</div>
+<a href="glossary.html#id-value-trap" title="查看术语解释" style="background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:30px;font-weight:700;font-size:0.95rem;text-decoration:none;display:inline-block;">卖出决策</a>
+</div>
+<p style="color:#a0aec0;font-size:0.85rem;">能力圈筛选 → 护城河评估 → DCF估值 → 重仓买入 → 长期持有 → 卖出决策</p>
+</div>
+
+\
+
+
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+
+
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#128270; 姝ラ涓€锛氳兘鍔涘湀绛涢€?/h4>
+
+
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+
+
+鏉庡綍鏄庣‘鍒掑畾涓夊ぇ鑳藉姏鍦堬細<br>
+
+
+&#9654; <strong style="color:#fff">绉戞妧</strong> 鈥?骞冲彴鍏徃銆佺綉缁滄晥搴?br>
+
+
+&#9654; <strong style="color:#fff">閲戣瀺</strong> 鈥?閾惰銆佷繚闄?br>
+
+
+&#9654; <strong style="color:#fff">涓浗鐩稿叧</strong> 鈥?娑堣垂銆佷簰鑱旂綉<br>
+
+
+<span style="color:#a0aec0; font-size: 0.85rem;">瓒呭嚭鑳藉姏鍦堢殑涓嶇</span>
+
+
+</p>
+
+
+</div>
+
+
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+
+
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#127969; 姝ラ浜岋細鎶ゅ煄娌宠瘎浼?/h4>
+
+
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+
+
+閲囩敤 Bruce Greenwald 鍥涚淮妗嗘灦锛?br>
+
+
+&#9654; <strong style="color:#fff">渚涚粰渚?/strong> 鈥?涓撳埄銆佸湴鐞嗕綅缃€佺墝鐓?br>
+
+
+&#9654; <strong style="color:#fff">闇€姹備晶</strong> 鈥?鍝佺墝銆佽浆鎹㈡垚鏈€佷範鎯?br>
+
+
+&#9654; <strong style="color:#fff">瑙勬ā缁忔祹</strong> 鈥?鍗曚綅鎴愭湰闅忚妯′笅闄?br>
+
+
+&#9654; <strong style="color:#c9a227">淇′换鎶ゅ煄娌?/strong> 鈥?绠＄悊灞傝瘹淇?鈽呮潕褰曟渶寮鸿皟
+
+
+</p>
+
+
+</div>
+
+
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+
+
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#128200; 姝ラ涓夛細浼板€间笌瀹夊叏杈归檯</h4>
+
+
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+
+
+&#9654; <strong style="color:#fff">DCF</strong> 鈥?鍐呭湪浠峰€兼牳蹇冭瘎浼板伐鍏?br>
+
+
+&#9654; <strong style="color:#fff">鐩稿浼板€?/strong> 鈥?PE銆丳B銆丒V/EBITDA 杈呭姪<br>
+
+
+&#9654; <strong style="color:#fff">娓呯畻浠峰€?/strong> 鈥?鏋佺鎯呭喌涓嬬殑瀹夊叏搴曠嚎<br>
+
+
+<span style="color:#a0aec0; font-size: 0.85rem;">涔颁环蹇呴』浣庝簬鍐呭湪浠峰€?/span>
+
+
+</p>
+
+
+</div>
+
+
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+
+
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#9889; 姝ラ鍥涳細涔板叆鍐崇瓥</h4>
+
+
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+
+
+<strong style="color:#fff">"鑷村懡涓€鍑?</strong> 鈥?绛夊緟瀹岀編鏈轰細閲嶄粨鍑哄嚮<br>
+
+
+<span style="color:#a0aec0; font-size: 0.85rem;">涓嶈交鏄撳嚭鎵嬶紝鍑烘墜鍗抽噸浠?路 寮曠敤鑷姃鏍?宸磋彶鐗?/span>
+
+
+</p>
+
+
+</div>
+
+
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+
+
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#9201; 姝ラ浜旓細鎸佹湁涓庣洃鎺?/h4>
+
+
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+
+
+&#9654; 鎶楁嫆鐭湡娉㈠姩<br>
+
+
+&#9654; 鎸佺画璇勪及鎶ゅ煄娌虫槸鍚︿镜铓€<br>
+
+
+&#9654; 杩炵画涓ゅ搴﹂浂璋冧粨 鈥?鏋佸害鑰愬績
+
+
+</p>
+
+
+</div>
+
+
+<div style="background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; border: 1px solid rgba(201,162,39,0.3);">
+
+
+<h4 style="color: #c9a227; margin-bottom: 20px;">&#128465; 姝ラ鍏細鍗栧嚭鍐崇瓥</h4>
+
+
+<p style="color: #e2e8f0; font-size: 0.95rem; line-height: 1.8;">
+
+
+鍗栧嚭淇″彿锛?br>
+
+
+&#9654; <strong style="color:#fff">鍩烘湰闈㈡伓鍖?/strong> 鈥?鎶ゅ煄娌虫牴鏈€т镜铓€<br>
+
+
+&#9654; <strong style="color:#fff">浼板€兼场娌?/strong> 鈥?浠锋牸杩滆秴鍐呭湪浠峰€?br>
+
+
+&#9654; <strong style="color:#fff">鏇村ソ鏈轰細</strong> 鈥?"鑷村懡涓€鍑?鍑虹幇<br>
+
+
+<span style="color:#a0aec0; font-size: 0.85rem;">鍗栧嚭棰戠巼杩滀綆浜庝拱鍏?/span>
+
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+<div style="margin-top: 40px; padding: 25px; background: rgba(201,162,39,0.1); border-radius: 12px; border: 1px solid rgba(201,162,39,0.3);">
+
+
+<h4 style="color: #c9a227; margin-bottom: 15px;">&#128640; 妗嗘灦鏍稿績锛氱粍鍚堥泦涓害</h4>
+
+
+<div style="display: flex; gap: 40px; flex-wrap: wrap;">
+
+
+<div><span style="color: #a0aec0;">鎸佷粨鏁伴噺:</span><br><strong style="color: #fff; font-size: 1.2rem;">8鍙?/strong></div>
+
+
+<div><span style="color: #a0aec0;">鍓嶄簲鍗犳瘮:</span><br><strong style="color: #fff; font-size: 1.2rem;">96.96%</strong></div>
+
+
+<div><span style="color: #a0aec0;">绗竴澶?Alphabet):</span><br><strong style="color: #fff; font-size: 1.2rem;">43.86%</strong></div>
+
+
+<div><span style="color: #a0aec0;">杩炵画闆惰皟浠?</span><br><strong style="color: #fff; font-size: 1.2rem;">2瀛ｅ害</strong></div>
+
+
+</div>
+
+
+<p style="color: #a0aec0; margin-top: 15px; font-size: 0.85rem;">鑺掓牸寮忔瀬鑷撮泦涓瓥鐣ワ細"鐪熸鐨勫ソ鍏徃涓嶅锛屾壘鍒板畠浠悗閲嶄粨涔拌繘"</p>
+
+
+</div>
+
+
+<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 妗嗘灦鏉ユ簮锛欻imalaya Capital (himcap.com) + Poor Charlie's Almanack p.61 + Bruce Greenwald</p>
+
+
+</section>
+
+
+<section id=videos class=section>
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>瑙嗛璧勬簮</h2>
+
+
+<p class=section-subtitle>瀹屾暣鐗堟紨璁蹭笌璁胯皥锛屾繁搴︾悊瑙ｄ环鍊兼姇璧勫摬瀛?/p>
+
+
+</div>
+
+
+<div class=video-grid>
+
+
+<div class=video-card><div class=video-thumbnail><a href=video_study.html class=play-icon></a></div><div class=video-info><h4>馃摵 CCBC Fireside Chat | 浠峰€兼姇璧勪腑鍥?(甯﹀瓧骞曞涔?</h4><div style=padding:6px 0><span style="background:#ef4444;color:white;padding:2px 8px;border-radius:4px;font-size:0.72rem;">鈿狅笍 闇€璺宠浆YouTube</span></div><div class=video-meta><span class=video-source>YouTube 路 CCBC</span><span class=video-duration>90鍒嗛挓</span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=https://www.bilibili.com/video/BV19QzcYeEWW/ target=_blank class=play-icon></a></div><div class=video-info><h4>鍖楀ぇ婕旇锛氭垜瀵逛环鍊兼姇璧勭殑鐞嗚В</h4><div class=video-meta><span class=video-source>Bilibili</span><span class=video-duration>3灏忔椂+</span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>Master Class on Value Investing</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>1灏忔椂40鍒?/span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>CCBC Fireside Chat: 涓浗甯傚満鏈轰細</h4><div class=video-meta><span class=video-source>CBS Greater China</span><span class=video-duration>1灏忔椂32鍒?/span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>The Chinese Warren Buffett: Li Lu</h4><div class=video-meta><span class=video-source>We Study Billionaires</span><span class=video-duration>51鍒嗛挓</span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=# class=play-icon></a></div><div class=video-info><h4>鍖楀ぇ浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾婕旇</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>25鍒嗛挓</span></div></div></div>
+
+
+</div>
+
+
+<div class=card style=margin-top:30px>
+
+
+<h3>&#9889; 蹇€熷叆闂?(鐭増)</h3>
+
+
+<div style=display:flex;flex-wrap:wrap;gap:15px;margin-top:20px>
+
+
+<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Li Lus 3 Important Rules - 7鍒嗛挓</span>
+
+
+<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Why Only 5% Win - 5鍒嗛挓</span>
+
+
+<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Munger on Li Lu - 2鍒嗛挓</span>
+
+
+<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Holy Grail of Investing - 3鍒嗛挓</span>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<section id=glossary class=section>
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>鎶曡祫鏈琛?/h2>
+
+
+<p class=section-subtitle>浠峰€兼姇璧勬牳蹇冩蹇甸€熸煡</p>
+
+
+</div>
+
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 25px;">
+
+
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+
+
+<strong style="color: #1a365d;">鎶ゅ煄娌?(Moat)</strong>
+
+
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">浼佷笟绔炰簤浼樺娍锛屽彲鎸佺画闃绘绔炰簤瀵规墜銆?/p>
+
+
+</div>
+
+
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+
+
+<strong style="color: #1a365d;">ROE</strong>
+
+
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Return on Equity锛岃偂涓滄潈鐩婂洖鎶ョ巼銆?/p>
+
+
+</div>
+
+
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+
+
+<strong style="color: #1a365d;">瀹夊叏杈归檯 (Margin of Safety)</strong>
+
+
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">涔板叆浠蜂笌鍐呭湪浠峰€肩殑宸銆?/p>
+
+
+</div>
+
+
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+
+
+<strong style="color: #1a365d;">鍐呭湪浠峰€?(Intrinsic Value)</strong>
+
+
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">浼佷笟鐨勭湡瀹炰环鍊硷紝鍩轰簬鐜伴噾娴佹姌鐜般€?/p>
+
+
+</div>
+
+
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+
+
+<strong style="color: #1a365d;">PE (甯傜泩鐜?</strong>
+
+
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Price to Earnings锛岃偂浠蜂笌鐩堝埄姣旂巼銆?/p>
+
+
+</div>
+
+
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+
+
+<strong style="color: #1a365d;">鑳藉姏鍦?(Circle of Competence)</strong>
+
+
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">浣犵湡姝ｇ悊瑙ｇ殑琛屼笟鍜屽叕鍙歌寖鍥淬€?/p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<section id=learning class=section style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>瀛︿範璺緞</h2>
+
+
+<p class=section-subtitle>浠庡叆闂ㄥ埌瀹炶返鐨勭郴缁熷涔犺矾绾?/p>
+
+
+</div>
+
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+
+
+<div class=card style="border-top: 4px solid #3182ce;">
+
+
+<h3 style="color: #3182ce;">&#128218; 绗竴闃舵: 鍏ラ棬 (1-2鍛?</h3>
+
+
+<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
+
+
+<li>闃呰銆婃枃鏄庛€佺幇浠ｅ寲銆佷环鍊兼姇璧勪笌涓浗銆?/li>
+
+
+<li>瀛︿範璐㈠姟鎶ヨ〃鍩虹 (鍒╂鼎琛ㄣ€佽祫浜ц礋鍊鸿〃)</li>
+
+
+<li>鐞嗚ВPE銆丳B銆丷OE鍩烘湰姒傚康</li>
+
+
+<li>瑙傜湅Li Lu鐭増瑙嗛 (30鍒嗛挓鍐?</li>
+
+
+</ul>
+
+
+</div>
+
+
+<div class=card style="border-top: 4px solid #38a169;">
+
+
+<h3 style="color: #38a169;">&#128218; 绗簩闃舵: 杩涢樁 (1-2鏈?</h3>
+
+
+<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
+
+
+<li>闃呰銆婅瘉鍒稿垎鏋愩€嬪墠6绔?/li>
+
+
+<li>鐮旂┒Li Lu鎸佷粨鍏徃骞存姤</li>
+
+
+<li>缁冧範鍒嗘瀽浼佷笟鍟嗕笟妯″紡</li>
+
+
+<li>瀛︿範琛屼笟鐮旂┒鏂规硶</li>
+
+
+</ul>
+
+
+</div>
+
+
+<div class=card style="border-top: 4px solid #d69e2e;">
+
+
+<h3 style="color: #d69e2e;">&#128218; 绗笁闃舵: 瀹炶返 (3-6鏈?</h3>
+
+
+<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
+
+
+<li>寤虹珛妯℃嫙缁勫悎</li>
+
+
+<li>璺熻釜Li Lu鎸佷粨鍙樺寲</li>
+
+
+<li>褰㈡垚鑷繁鐨勬姇璧勪綋绯?/li>
+
+
+<li>鎸佺画瀛︿範涓庡鐩?/li>
+
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+<section id=quotes class=section>
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>鎶曡祫鏅烘収璇綍</h2>
+
+
+<p class=section-subtitle>鏉ヨ嚜鏉庡綍28骞存姇璧勫疄璺电殑娣卞埢娲炶</p>
+
+
+</div>
+
+
+<div class=quotes-grid>
+
+
+<div class=quote-card><p class=quote-text>Take the world the way it is, not what we wish to be, what we want to be. It is what it is, take it. (鎺ュ彈涓栫晫鏈潵鐨勬牱瀛愶紝鑰岄潪鎴戜滑甯屾湜瀹冩垚涓虹殑鏍峰瓙銆?</p><p class=quote-source>鈥?2024骞?2鏈?鍖楀ぇ浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾婕旇</p></div>
+
+
+<div class=quote-card><p class=quote-text>濡傛灉浣犲彧鏄亣瑁呬簡瑙ｄ紒涓氾紝浣犱細鍦ㄥ洶闅炬椂鏈熻鑰冮獙銆?/p><p class=quote-source>鈥?2021 CBS璁胯皥</p></div>
+
+
+<div class=quote-card><p class=quote-text>闀挎湡鎶曡祫鍥炴姤涓庡叕鍙歌祫鏈洖鎶ョ巼瀹岀編鐩稿叧銆?/p><p class=quote-source>鈥?鎶曡祫鍝插鏍稿績</p></div>
+
+
+<div class=quote-card><p class=quote-text>姣?-10骞村彂鐢熶竴娆＄櫨骞翠竴閬囩殑鍗辨満銆備汉绫昏涓烘案杩滀笉浼氭敼鍙樸€?/p><p class=quote-source>鈥?鍏充簬甯傚満娉㈠姩</p></div>
+
+
+<div class=quote-card><p class=quote-text>濂界殑鏃跺厜浜轰滑鍥犺椽濠€屽啋闄╋紝鍥伴毦鏃朵汉浠亹鎱岋紝閫氬父鍦ㄩ敊璇殑鏃跺埢鍋氶敊璇殑鍐冲畾銆?/p><p class=quote-source>鈥?浜虹被琛屼负鍒嗘瀽</p></div>
+
+
+<div class=quote-card><p class=quote-text>鎶曡祫鏈€閲嶈鐨勪簨锛氭悶娓呮浣犲湪绔炰簤浠€涔堛€傛姢鍩庢渤蹇呴』鍙寔缁紝鍚﹀垯灏变笉鏄姢鍩庢渤銆?/p><p class=quote-source>鈥?2024骞?2鏈?鍖楀ぇ婕旇</p></div>
+
+
+<div class=quote-card><p class=quote-text>褰撲綘鎷ユ湁涓€瀹跺叕鍙哥殑鑲℃潈锛屼綘鏄互浼佷笟鎵€鏈夎€呯殑韬唤鎸佹湁鐨勶紝涓嶆槸浠ヨ偂绁ㄤ氦鏄撹€呯殑韬唤銆?/p><p class=quote-source>鈥?鎵€鏈夎€呭績鎬?/p></div>
+
+
+<div class=quote-card><p class=quote-text>鍋氬涔犵殑閫氭墠锛屼絾鎶曡祫鏃惰鎴愪负鐪熸鐨勪笓瀹躲€備綘闇€瑕佹瘮浣犳姇璧勭殑浼佷笟绠＄悊灞傛洿浜嗚В瀹冦€?/p><p class=quote-source>鈥?鍏充簬鑳藉姏鍦?/p></div>
+
+
+</div>
+
+
+</section>
+
+
+<section id=books class=section>
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>鎺ㄨ崘涔︾睄</h2>
+
+
+<p class=section-subtitle>鏉庡綍鎺ㄨ崘鍙婁环鍊兼姇璧勫繀璇荤粡鍏?/p>
+
+
+</div>
+
+
+<div class=books-grid>
+
+
+<div class=book-card><div class=book-cover><span>&#128214;</span></div><div class=book-info><h4>銆婃枃鏄庛€佺幇浠ｅ寲銆佷环鍊兼姇璧勪笌涓浗銆?/h4><p>鏉庡綍 钁?br>2020骞村嚭鐗?/p></div></div>
+
+
+<div class=book-card><div class=book-cover><span>&#128218;</span></div><div class=book-info><h4>銆婅瘉鍒稿垎鏋愩€?/h4><p>Benjamin Graham<br>浠峰€兼姇璧勫鍩轰箣浣?/p></div></div>
+
+
+<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><h4>銆婅仾鏄庣殑鎶曡祫鑰呫€?/h4><p>Benjamin Graham<br>鎶曡祫缁忓吀蹇呰</p></div></div>
+
+
+<div class=book-card><div class=book-cover><span>&#128220;</span></div><div class=book-info><h4>銆婄┓鏌ョ悊瀹濆吀銆?/h4><p>Charlie Munger<br>鑺掓牸鏅烘収绠磋█</p></div></div>
+
+
+<div class=book-card><div class=book-cover><span>&#128221;</span></div><div class=book-info><h4>銆婂反鑿茬壒鑷磋偂涓滅殑淇°€?/h4><p>Warren Buffett<br>鑲＄鎶曡祫鍝插</p></div></div>
+
+
+<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><h4>銆婃粴闆悆銆?/h4><p>Warren Buffett浼犺<br>鎶曡祫鐢熸动鍏ㄦ櫙</p></div></div>
+
+
+</div>
+
+
+</section>
+
+
+<section id=interviews class=section>
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>璁胯皥涓庢枃绔?/h2>
+
+
+<p class=section-subtitle>娣卞叆浜嗚В鏉庡綍鐨勬姇璧勬€濇兂涓庝腑鍥藉競鍦鸿鐐?/p>
+
+
+</div>
+
+
+<div class=card>
+
+
+<h3>&#128221; 2021骞村摜浼︽瘮浜氬晢瀛﹂櫌璁胯皥瑕佺偣</h3>
+
+
+<p><strong>鏉ユ簮:</strong> Columbia Business School Greater China Society<br><strong>閲囪鑰?</strong> Bruce Greenwald (钁楀悕浠峰€兼姇璧勬暀鎺?</p>
+
+
+<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>鎶曡祫鏍囧噯</h4>
+
+
+<ul style=padding-left:20px;color:#4a5568>
+
+
+<li style=margin-bottom:8px>鎸佷箙鎶ゅ煄娌?(Durable Moat)</li>
+
+
+<li style=margin-bottom:8px>楂樿祫鏈洖鎶ョ巼 (鍙寔缁?</li>
+
+
+<li style=margin-bottom:8px>浠ヤ綆浜庡唴鍦ㄤ环鍊间拱鍏?(瀹夊叏杈归檯)</li>
+
+
+<li style=margin-bottom:8px>闀挎湡鎸佹湁锛屽湪涓嬭穼鏃跺姞浠?/li>
+
+
+</ul>
+
+
+<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>瀵逛腑鍥藉競鍦鸿鐐?/h4>
+
+
+<ul style=padding-left:20px;color:#4a5568>
+
+
+<li style=margin-bottom:8px>涓浗灏嗘垚涓轰笘鐣屼笂鏈€澶с€佹渶娲昏穬銆佸闀挎渶蹇殑娑堣垂甯傚満</li>
+
+
+<li style=margin-bottom:8px>涓浗甯傚満浠嶇劧涓嶅彂杈撅紝鍦ㄤ竴涓厖婊℃椿鍔涚殑缁忔祹浣撲腑鏇村鏄撴壘鍒颁环鍊?/li>
+
+
+<li style=margin-bottom:8px>閲戣瀺鏈嶅姟灏氭湭寮€鍙戯紝璁稿棰嗗煙鍗冲皢璧烽</li>
+
+
+<li style=margin-bottom:8px>鐜板湪鏄姇璧勪腑鍥界殑濂芥椂鏈?/li>
+
+
+</ul>
+
+
+<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>鍏充簬鏂版妧鏈?/h4>
+
+
+<ul style=padding-left:20px;color:#4a5568>
+
+
+<li style=margin-bottom:8px>浣犻渶瑕佷簡瑙ｆ柊鎶€鏈浣犳姇璧勭殑浼佷笟鐨勫奖鍝?/li>
+
+
+<li style=margin-bottom:8px>姹借溅琛屼笟閬彈4涓瑕嗘€ц秼鍔? 鍏变韩鍑鸿銆佺數姹犮€佹櫤鑳借璁°€佽嚜鍔ㄩ┚椹?/li>
+
+
+<li style=margin-bottom:8px>鏉庡綍鏄瘮浜氳开鐨勯暱鏈熸姇璧勮€?/li>
+
+
+</ul>
+
+
+</div>
+
+
+</section>
+
+
+<section id=resources class=section style="background: linear-gradient(135deg, #1a365d 0%, #0a1628 100%); padding: 60px 40px;">
+
+
+<div class=section-header>
+
+
+<h2 class=section-title style="color: #fff;">涓嬭浇璧勬簮</h2>
+
+
+<p class=section-subtitle style="color: #a0aec0;">瀛︿範璧勬枡鎵撳寘涓嬭浇</p>
+
+
+</div>
+
+
+<div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
+
+
+<a href="li-lu-study-guide.md" download style="padding: 20px 40px; background: #c9a227; color: #0a1628; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block;">&#128196; 瀛︿範鎸囧崡 (Markdown)</a>
+
+
+<a href="li-lu-qa.md" download style="padding: 20px 40px; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block; border: 2px solid #c9a227;">&#128196; 闂瓟闆?(Markdown)</a>
+
+
+<a href="li-lu-2021-interview-summary.md" download style="padding: 20px 40px; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block; border: 2px solid #c9a227;">&#128196; 璁胯皥鎽樿 (Markdown)</a>
+
+
+</div>
+
+<p style="color: #a0aec0; text-align: center; margin-top: 25px; font-size: 0.85rem;">娉細浠ヤ笅涓烘簮鏂囦欢涓嬭浇锛屽疄闄呮暟鎹浠ョ綉椤电増涓哄噯</p>
+
+
+</section>
+
+
+<section id=updates class=section>
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>鏇存柊鏃ュ織</h2>
+
+
+<p class=section-subtitle>缃戠珯鍐呭鏇存柊璁板綍</p>
+
+
+</div>
+
+
+<div class=card>
+
+
+<h4 style="color: #1a365d;">&#128197; 2026-04-05 (鏈鏇存柊)</h4>
+
+
+<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
+
+
+<li>鏂板: 鎸佷粨鍖哄姞鍏E/PB/鑲℃伅/ROIC浼板€兼爣绛?+ 鎶ゅ煄娌虫槦绾ц瘎鍒?+ 鎶曡祫閫昏緫娉ㄩ噴</li>
+
+
+<li>鏂板: 銆愭姇璧勫喅绛栨鏋躲€戝叚澶ф楠ゆ祦绋嬪浘 (鑳藉姏鍦堚啋鎶ゅ煄娌斥啋浼板€尖啋涔板叆鈫掓寔鏈夆啋鍗栧嚭)</li>
+
+
+<li>鏂板: 鎸佷粨鐗瑰緛鍒嗘瀽澧炲姞缁勫悎鍔犳潈PE(~17-19x)銆佽偂鎭巼(1%)銆侀浂璋冧粨鍛ㄦ湡绛夐噺鍖栨寚鏍?/li>
+
+
+<li>鏇存柊: 瀵艰埅鏍忓姞鍏?鎸佷粨"鍜?鍐崇瓥妗嗘灦"蹇€熷叆鍙?/li>
+
+
+<li>鏇存柊: 鎸佷粨鍖烘渚嬪垎鏋愭洿鎹负 Alphabet/BAC/BYD锛屼笌13F鎸佷粨涓€鑷?/li>
+
+
+</ul>
+
+
+<h4 style="color: #1a365d; margin-top: 25px;">&#128197; 2026-03-22</h4>
+
+
+<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
+
+
+<li>鏂板: 鎶曡祫妗堜緥鍒嗘瀽 (姣斾簹杩€佽吘璁€佷腑鍥界Щ鍔?</li>
+
+
+<li>鏂板: 瀛︿範璺緞涓夐樁娈?/li>
+
+
+<li>鏂板: 鎸佷粨PE鍙婅偂鎭暟鎹垎鏋?/li>
+
+
+<li>鏂板: 瑙嗛宓屽叆鎾斁</li>
+
+
+<li>鏂板: 鎼滅储鍔熻兘</li>
+
+
+<li>鏂板: 涓嬭浇璧勬簮鍖?/li>
+
+
+</ul>
+
+
+<h4 style="color: #1a365d; margin-top: 25px;">&#128197; 2026-03-21</h4>
+
+
+<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
+
+
+<li>鍒濆鐗堟湰鍙戝竷</li>
+
+
+<li>鍖呭惈鎸佷粨鏁版嵁銆佽璋堟憳瑕併€佹帹鑽愪功绫?/li>
+
+
+</ul>
+
+
+</div>
+
+
+</section>
+
+
+<section id=faq class=section style="background: #edf2f7;">
+
+
+<div class=section-header>
+
+
+<h2 class=section-title>甯歌闂</h2>
+
+
+<p class=section-subtitle>鍏充簬鏉庡綍涓庝环鍊兼姇璧?/p>
+
+
+</div>
+
+
+<div style="max-width: 800px; margin: 30px auto 0;">
+
+
+<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
+
+
+<summary style="font-weight: 600; color: #1a365d; outline: none;">Q1: 鏉庡綍鏄浣曞紑濮嬩环鍊兼姇璧勭殑锛?/summary>
+
+
+<p style="margin-top: 15px; color: #4a5568;">鏉庡綍鍦ㄥ摜浼︽瘮浜氬ぇ瀛﹁幏JD+MBA+MA涓夊浣嶏紝甯堜粠Bruce Greenwald鏁欐巿瀛︿範浠峰€兼姇璧勶紝娣卞彈鏍奸浄鍘勫涓庡反鑿茬壒鎬濇兂褰卞搷锛屽悗鍒涚珛鍠滈┈鎷夐泤璧勬湰銆?/p>
+
+
+</details>
+
+
+<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
+
+
+<summary style="font-weight: 600; color: #1a365d; outline: none;">Q2: 鏉庡綍鐨勬牳蹇冩姇璧勫師鍒欐槸浠€涔堬紵</summary>
+
+
+<p style="margin-top: 15px; color: #4a5568;">鍏ぇ鍘熷垯锛?) 鑲＄エ鏄叕鍙告墍鏈夋潈 2) 甯傚満鏄粏浜轰笉鏄悜瀵?3) 鑳藉姏鍦堝唴鎶曡祫 4) 瀹夊叏杈归檯 5) 闀挎湡鎸佹湁 6) 鎶ゅ煄娌虫槸鏍规湰</p>
+
+
+</details>
+
+
+<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
+
+
+<summary style="font-weight: 600; color: #1a365d; outline: none;">Q3: 鏉庡綍瀵逛腑鍥藉競鍦烘€庝箞鐪嬶紵</summary>
+
+
+<p style="margin-top: 15px; color: #4a5568;">浠栬涓轰腑鍥芥澶勪簬"2.5闃舵"鈥斺€斾粠鍐滀笟绀句細鍚戠幇浠ｅ寲杞瀷鐨勫叧閿椂鏈燂紝涓浗灏嗘垚涓轰笘鐣屼笂鏈€澶с€佹渶娲昏穬鐨勬秷璐瑰競鍦猴紝鍦ㄥ厖婊℃椿鍔涚殑缁忔祹浣撲腑鏇村鏄撴壘鍒颁环鍊笺€?/p>
+
+
+</details>
+
+
+<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
+
+
+<summary style="font-weight: 600; color: #1a365d; outline: none;">Q4: 鏉庡綍涓轰粈涔堟姇璧勬瘮浜氳开锛?/summary>
+
+
+<p style="margin-top: 15px; color: #4a5568;">鏉庡綍鍦?002-2003骞翠究寮€濮嬫繁鍏ョ爺绌舵瘮浜氳开锛岀湅涓帇浼犵鐨勪紒涓氬绮剧鍜屽瀭鐩存暣鍚堟ā寮忋€?008骞村墠宸插畬鎴愭姇璧勫竷灞€锛堝反鑿茬壒/鑺掓牸2008骞存墠鎶曡祫姣斾簹杩紝鏉庡綍鏇存棭鍏虫敞骞舵姇璧勶級銆傛瘮浜氳开浠ｈ〃浜嗕腑鍥藉埗閫犱笟鐨勫礇璧凤紝鏄吀鍨嬬殑"鎶ゅ煄娌?鎴愰暱"缁勫悎銆?/p>
+
+
+</details>
+
+
+<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
+
+
+<summary style="font-weight: 600; color: #1a365d; outline: none;">Q5: 鍠滈┈鎷夐泤璧勬湰鐨勭鐞嗚妯℃湁澶氬ぇ锛?/summary>
+
+
+<p style="margin-top: 15px; color: #4a5568;">鏍规嵁2025骞碤4 13F鐢虫姤锛岀鐞嗚妯＄害$35.69浜跨編鍏冿紙绾β?50浜匡級銆侫lphabet涓虹涓€澶ф寔浠?43.86%)锛屽叾娆℃槸Bank of America(16.08%)銆丳DD(14.64%)銆丅erkshire(12.64%)銆?/p>
+
+
+</details>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<footer class=footer>
+
+
+<div class=footer-content>
+
+
+<h3>鏉庡綍 <span>浠峰€兼姇璧?/span> 鐮旂┒</h3>
+
+
+<p>涓撴敞浜庢潕褰曚环鍊兼姇璧勬€濇兂鐮旂┒涓庡涔犵殑璧勬枡姹囨€汇€?/p>
+
+
+<div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+
+
+<a href=#about style="color: #c9a227; text-decoration: none;">鍏充簬</a> 路
+
+
+<a href=#holdings style="color: #c9a227; text-decoration: none;">鎸佷粨</a> 路
+
+
+<a href=#principles style="color: #c9a227; text-decoration: none;">鍘熷垯</a> 路
+
+
+<a href=#videos style="color: #c9a227; text-decoration: none;">瑙嗛</a> 路
+
+
+<a href=#books style="color: #c9a227; text-decoration: none;">涔︾睄</a> 路
+
+
+<a href=#learning style="color: #c9a227; text-decoration: none;">瀛︿範</a> 路
+
+
+<a href=#faq style="color: #c9a227; text-decoration: none;">FAQ</a>
+
+
+</div>
+
+
+</div>
+
+
+<div class=footer-bottom>
+<p>© 2026 李录价值投资研究 · 仅供学习研究，不构成投资建议 · <a href="index.html" style="color:#c9a227;">返回首页</a></p>
+
+<p>&#128197; 鏈€鍚庢洿鏂? 2026-03-22 | &#128221; 鏉庡綍浠峰€兼姇璧勭爺绌?| 鍏?0杞骇鍝佷紭鍖栧畬鎴?/p>
+
+
+</div>
+
+
+</footer>
+
+
+<script>
+
+
+// Auto dark mode based on system preference
+
+
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+
+
+  document.body.classList.add('dark-mode');
+
+
+}
+
+
+
+
+
+// Dark mode toggle
+
+
+function toggleTheme() {
+
+
+  document.body.classList.toggle('dark-mode');
+
+
+}
+
+
+
+
+
+// Quick search function
+
+
+function searchContent() {
+
+
+  const input = document.getElementById('searchInput');
+
+
+  const filter = input.value.toUpperCase();
+
+
+  const sections = document.querySelectorAll('section, .card, .quote-card, .book-card, .video-card');
+
+
+  
+
+
+  sections.forEach(section => {
+
+
+    const text = section.textContent || section.innerText;
+
+
+    if (text.toUpperCase().indexOf(filter) > -1) {
+
+
+      section.style.display = "";
+
+
+    } else {
+
+
+      section.style.display = "none";
+
+
+    }
+
+
+  });
+
+
+  
+
+
+  if (filter === '') {
+
+
+    sections.forEach(s => s.style.display = '');
+
+
+  }
+
+
+}
+
+
+</script>
+
+
+</body>
+
+
+</html>
+
+
