@@ -25,7 +25,7 @@
 /* High contrast light mode */
 
 
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#111111;background:#ffffff}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#111111;background:#ffffff;overflow-x:hidden}
 
 
 .card{background:#ffffff;border-radius:12px;padding:25px;box-shadow:var(--shadow);margin-bottom:20px;color:#222222;border:1px solid #e0e0e0}
@@ -428,6 +428,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 
 
 <button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 夜间</button>
+
+<button id="hamburger" onclick="toggleMenu()" style="display:none;padding:8px 12px;background:none;border:none;color:#fff;cursor:pointer;font-size:1.4rem;line-height:1">&#9776;</button>
 
 
 </nav>
@@ -2132,6 +2134,39 @@ function searchContent() {
 
 </body>
 
+
+<a id="back-to-top" href="#" onclick="scrollToTop();return false;">&#8679;</a>
+
+<div id="mobile-menu" style="display:none;position:fixed;top:70px;left:0;right:0;background:#0a1628;z-index:999;padding:16px;flex-direction:column;gap:4px;border-top:1px solid rgba(255,255,255,.1)">
+<a href=#about class="nav-link" onclick="closeMenu()">关于</a>
+<a href=#holdings class="nav-link" onclick="closeMenu()">持仓</a>
+<a href=#principles class="nav-link" onclick="closeMenu()">投资原则</a>
+<a href=#framework class="nav-link" onclick="closeMenu()">决策框架</a>
+<a href=#videos class="nav-link" onclick="closeMenu()">视频</a>
+<a href=bookshelf.html class="nav-link" onclick="closeMenu()">书单</a>
+<a href=downloads.html class="nav-link" onclick="closeMenu()">下载</a>
+<a href=glossary.html class="nav-link" onclick="closeMenu()">术语表</a>
+<a href=timeline.html class="nav-link" onclick="closeMenu()">时间线</a>
+<a href=quotes.html class="nav-link" onclick="closeMenu()">语录</a>
+<a href=#faq class="nav-link" onclick="closeMenu()">FAQ</a>
+</div>
+
+<style>
+#back-to-top{position:fixed;bottom:24px;right:24px;background:#c9a227;color:#0a1628;width:44px;height:44px;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;z-index:998;box-shadow:0 4px 12px rgba(0,0,0,.3);transition:opacity .3s}
+#back-to-top.show{display:flex}
+#mobile-menu a.nav-link{padding:12px 16px;color:rgba(255,255,255,.75);text-decoration:none;border-radius:8px;font-size:.95rem}
+#mobile-menu a.nav-link:hover{background:rgba(255,255,255,.1);color:#fff}
+#hamburger{font-size:1.5rem}
+</style>
+
+<script>
+function toggleMenu(){var m=document.getElementById('mobile-menu');m.style.display=m.style.display==='flex'?'none':'flex'}
+function closeMenu(){document.getElementById('mobile-menu').style.display='none'}
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+window.addEventListener('scroll',function(){var b=document.getElementById('back-to-top');b.className=b.className.replace('show','');if(window.scrollY>500)b.className+=' show'})
+function toggleMobileNav(){var w=Math.max(document.documentElement.clientWidth,window.innerWidth);var h=document.getElementById('hamburger');var m=document.getElementById('mobile-menu');if(w<768){h.style.display='block';m.style.display='none'}else{h.style.display='none';m.style.display='none';document.getElementById('nav-links').style.display='flex'}}
+window.addEventListener('resize',toggleMobileNav);toggleMobileNav();
+</script>
 
 </html>
 
