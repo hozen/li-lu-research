@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>核心概念 - 李录价值投资研究</title>
+<style>
+:root {
+  --primary-dark: #0a1628;
+  --primary-blue: #1a365d;
+  --accent-gold: #b8860b;
+  --accent-gold-light: #daa520;
+  --accent-gold-hover: #c9a227;
+  --text-dark: #1a1a1a;
+  --text-light: #f5f5f5;
+  --text-muted: #4a5568;
+  --bg-light: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 20px rgba(0,0,0,0.15);
+  --border-radius: 16px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.7;
+  color: #2d3748;
+  background: var(--bg-light);
+}
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0 40px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+.nav-brand { color: var(--text-light); font-size: 1.3rem; font-weight: 600; }
+.nav-brand span { color: var(--accent-gold); }
+.nav-links { display: flex; gap: 8px; }
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--text-light);
+  background: rgba(201,162,39,0.15);
+}
+.nav-link.active { color: var(--accent-gold); }
+
+/* Dark Mode */
+body.dark-mode { background: #0a1628; color: #e2e8f0; }
+body.dark-mode .card { background: #1a365d; color: #e2e8f0; border-color: #2d4a7c; }
+body.dark-mode .card h3, body.dark-mode .card h4 { color: var(--accent-gold-hover); }
+body.dark-mode .term-card { background: #1a365d; border-color: #2d4a7c; }
+body.dark-mode .term-card .term-name { color: #e2e8f0; }
+body.dark-mode .term-card .term-def { color: #cbd5e0; }
+body.dark-mode .term-card .term-quote { background: rgba(201,162,39,0.1); border-color: rgba(201,162,39,0.3); color: #e2e8f0; }
+body.dark-mode .section { background: #0a1628; }
+body.dark-mode .footer { background: #0a1628; }
+body.dark-mode .hero { background: linear-gradient(135deg, #000 0%, #1a365d 100%); }
+body.dark-mode .hero h1 { color: #fff; }
+body.dark-mode .section-title { color: var(--accent-gold-hover); }
+body.dark-mode .back-link { color: var(--accent-gold-hover); border-color: var(--accent-gold-hover); }
+body.dark-mode .no-results { background: #1a365d; color: #e2e8f0; }
+body.dark-mode .filter-bar { background: #1a365d; border-color: #2d4a7c; }
+body.dark-mode .filter-bar input { background: #0a1628; color: #e2e8f0; border-color: #2d4a7c; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 60px 60px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);
+  opacity: 0.5;
+}
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+.hero-content h1 span { color: var(--accent-gold); }
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.hero-tagline {
+  font-size: 1rem;
+  color: var(--accent-gold-light);
+  padding: 15px 30px;
+  border-left: 3px solid var(--accent-gold);
+  display: inline-block;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+.section { margin-bottom: 80px; scroll-margin-top: 100px; }
+.section-header { margin-bottom: 40px; }
+.section-title {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+.section-subtitle { color: var(--text-muted); }
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-bottom: 30px;
+}
+.filter-bar label { font-weight: 600; color: var(--primary-dark); white-space: nowrap; }
+.filter-bar input {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+  outline: none;
+  transition: border-color 0.3s;
+}
+.filter-bar input:focus { border-color: var(--accent-gold); }
+.filter-bar input::placeholder { color: #a0aec0; }
+.filter-bar .tag-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.filter-bar .tag-btn:hover, .filter-bar .tag-btn.active {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  border-color: var(--accent-gold);
+}
+
+/* Term Cards */
+.terms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 25px;
+}
+.term-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid var(--accent-gold);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.term-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+}
+.term-card.hidden { display: none; }
+.term-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.term-name .term-icon {
+  font-size: 1.4rem;
+}
+.term-def {
+  color: #4a5568;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+.term-quote {
+  background: #fffbeb;
+  border-left: 3px solid var(--accent-gold);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin-top: 14px;
+  font-size: 0.88rem;
+  font-style: italic;
+  color: #744210;
+  line-height: 1.7;
+}
+.term-quote::before { content: '" '; }
+.term-quote::after { content: ' "'; }
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f7fafc;
+  border-radius: var(--border-radius);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  display: none;
+}
+.no-results.show { display: block; }
+
+/* Back Link */
+.back-section {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #e2e8f0;
+}
+.back-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 30px;
+  border: 2px solid var(--accent-gold);
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+.back-link:hover {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+}
+
+/* Footer */
+.footer {
+  background: var(--primary-dark);
+  color: var(--text-muted);
+  padding: 60px 40px 30px;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer h3 { color: var(--text-light); font-size: 1.5rem; margin-bottom: 15px; }
+.footer h3 span { color: var(--accent-gold); }
+.footer p { font-size: 0.95rem; line-height: 1.8; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 25px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar { padding: 0 20px; }
+  .hero { padding: 100px 20px 60px; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .main-content { padding: 50px 20px; }
+  .section-title { font-size: 1.5rem; }
+  .terms-grid { grid-template-columns: 1fr; }
+  .filter-bar { flex-wrap: wrap; }
+  .footer { padding: 40px 20px 20px; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeInUp 0.6s ease forwards; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand"><span>&#10070;</span> 李录研究</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">首页</a>
+    <a href="index.html#about" class="nav-link">关于</a>
+    <a href="index.html#holdings" class="nav-link">持仓</a>
+    <a href="index.html#principles" class="nav-link">投资原则</a>
+    <a href="index.html#videos" class="nav-link">视频</a>
+    <a href="glossary.html" class="nav-link active">核心概念</a>
+    <a href="timeline.html" class="nav-link">时间线</a>
+    <a href="quotes.html" class="nav-link">语录</a>
+    <a href="bookshelf.html" class="nav-link">书单</a>
+  </div>
+  <button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 夜间</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>核心<span>概念</span></h1>
+    <p class="hero-subtitle">价值投资关键术语与理念速查</p>
+    <p class="hero-tagline">"投资最重要的事：搞清楚你在竞争什么。护城河必须可持续，否则就不是护城河。" — 李录</p>
+  </div>
+</section>
+
+<main class="main-content">
+
+  <div class="filter-bar">
+    <label for="searchInput">&#128269; 搜索：</label>
+    <input type="text" id="searchInput" placeholder="输入关键词搜索术语…" oninput="filterTerms()">
+    <button class="tag-btn active" onclick="setTagFilter('all', this)">全部</button>
+    <button class="tag-btn" onclick="setTagFilter('philosophy', this)">哲学</button>
+    <button class="tag-btn" onclick="setTagFilter('finance', this)">财务</button>
+    <button class="tag-btn" onclick="setTagFilter('business', this)">商业</button>
+    <button class="tag-btn" onclick="setTagFilter('behavior', this)">行为</button>
+  </div>
+
+  <div class="terms-grid" id="termsGrid">
+
+    <!-- Circle of Competence -->
+    <div class="term-card animate-in" data-tags="philosophy business" data-search="circle of competence 能力圈">
+      <div class="term-name"><span class="term-icon">&#127919;</span> 能力圈 (Circle of Competence)</div>
+      <p class="term-def">沃伦·巴菲特提出的概念，指投资者真正理解的行业和公司范围。每个人的知识、经验和能力都是有限的，聪明的投资者只在自己能力圈内行动，在圈外保持谦逊和克制。不懂不投，只买自己真正理解的企业。</p>
+      <div class="term-quote">做学习的通才，但投资时要成为真正的专家。你需要比你投资的企业管理层更了解它。— 李录</div>
+    </div>
+
+    <!-- Margin of Safety -->
+    <div class="term-card animate-in" data-tags="finance philosophy" data-search="margin of safety 安全边际">
+      <div class="term-name"><span class="term-icon">&#128737;</span> 安全边际 (Margin of Safety)</div>
+      <p class="term-def">以低于内在价值的价格买入证券所提供的缓冲空间。安全边际是你犯错时的保护垫，也是长期投资回报的主要来源。格雷厄姆的核心原则：只有在价格大幅低于价值时才买入，确保有足够的容错空间。</p>
+      <div class="term-quote">买价必须低于内在价值才有安全边际。安全边际是你犯错时的缓冲带，也是长期收益的主要来源。— 李录</div>
+    </div>
+
+    <!-- Moat -->
+    <div class="term-card animate-in" data-tags="business" data-search="moat economic moat 护城河">
+      <div class="term-name"><span class="term-icon">&#127968;</span> 护城河 (Moat)</div>
+      <p class="term-def">企业阻止竞争对手复制其商业模式的持久竞争优势。李录强调四大护城河来源：供给侧优势（专利、地理、牌照）、需求侧优势（品牌、转换成本）、规模经济效应、以及管理层诚信与资本配置能力。真正的护城河必须可持续，否则就不是护城河。</p>
+      <div class="term-quote">投资最重要的事：搞清楚你在竞争什么。护城河必须可持续，否则就不是护城河。— 李录（2024北大演讲）</div>
+    </div>
+
+    <!-- ROIC -->
+    <div class="term-card animate-in" data-tags="finance" data-search="roic return on invested capital 资本回报率">
+      <div class="term-name"><span class="term-icon">&#128200;</span> ROIC (资本回报率)</div>
+      <p class="term-def">Return on Invested Capital，衡量公司运用所有资本（债务+权益）创造利润的效率。高且可持续的ROIC是优质企业的标志，也是李录选股的核心标准之一。长期投资回报与公司ROIC完美相关，这是价值投资的基本规律。</p>
+      <div class="term-quote">长期投资回报与公司资本回报率完美相关。— 李录</div>
+    </div>
+
+    <!-- DCF -->
+    <div class="term-card animate-in" data-tags="finance" data-search="dcf discounted cash flow 现金流折现">
+      <div class="term-name"><span class="term-icon">&#128176;</span> DCF (现金流折现)</div>
+      <p class="term-def">Discounted Cash Flow，将企业未来自由现金流按合理折现率折算为现值的估值方法。DCF是评估内在价值最根本的理论工具，但需要对公司未来现金流做出长期预测，因此李录强调DCF只应在护城河清晰可见时才使用，否则输入变量误差会导致结论失真。</p>
+      <div class="term-quote">内在价值评估，DCF是最根本的工具，但只有在护城河清晰时才有效。— 李录</div>
+    </div>
+
+    <!-- Economic Moat -->
+    <div class="term-card animate-in" data-tags="business" data-search="economic moat 经济护城河 持久性">
+      <div class="term-name"><span class="term-icon">&#127757;</span> 经济护城河 (Economic Moat)</div>
+      <p class="term-def">与普通"护城河"概念同义，强调竞争优势的经济学本质——企业能够持续以高于资本成本回报率创造价值的能力。经济护城河的持久性是关键：短暂的竞争优势不是真正的护城河，只有能够持续数十年保护企业免受竞争侵蚀的优势才是。</p>
+      <div class="term-quote">护城河必须可持续，否则就不是护城河。— 李录（2024年12月北大演讲）</div>
+    </div>
+
+    <!-- Compounders -->
+    <div class="term-card animate-in" data-tags="business philosophy" data-search="compounders 复利 长期">
+      <div class="term-name"><span class="term-icon">&#10070;</span> 复利机器 (Compounders)</div>
+      <p class="term-def">指那些能够以高ROIC持续 reinvest（再投资）自身业务、让复利效应长期滚动的优质公司。这类公司是价值投资者的圣杯：业务本身持续增长，同时资本市场不断给予奖励。比亚迪是典型案例——早期投资数亿美元最终变成数十亿美元。</p>
+      <div class="term-quote">真正的机会来自长期持有优秀企业的复利效应。— 李录</div>
+    </div>
+
+    <!-- Value Trap -->
+    <div class="term-card animate-in" data-tags="business behavior" data-search="value trap 价值陷阱 低估值">
+      <div class="term-name"><span class="term-icon">&#9888;</span> 价值陷阱 (Value Trap)</div>
+      <p class="term-def">看似便宜但实际正在走向衰败的公司。表面估值低廉（低PE/PB），但基本面持续恶化，股价可能继续下跌数年。价值陷阱的危险在于：便宜有理由，问题不是"现在便宜"，而是"未来会更便宜"。识别价值陷阱需要深入理解企业竞争优势是否真的存在。</p>
+      <div class="term-quote">如果你只是假装了解企业，你会在困难时期被考验。— 李录</div>
+    </div>
+
+    <!-- Mr. Market -->
+    <div class="term-card animate-in" data-tags="philosophy behavior" data-search="mr market 市场先生 情绪">
+      <div class="term-name"><span class="term-icon">&#128200;</span> 市场先生 (Mr. Market)</div>
+      <p class="term-def">格雷厄姆在《聪明的投资者》中提出的人格化比喻：市场每天报出价格，像一个情绪化的商业伙伴，时而狂热，时而抑郁。聪明的投资者利用他的情绪波动（低价买入，高价卖出），而不是被他牵着走。市场先生提供价格发现功能，但不能预测价格。</p>
+      <div class="term-quote">市场提供价格发现功能，但不能预测价格。价格波动不是决策依据，安全边际才是。— 李录</div>
+    </div>
+
+    <!-- Inner Scorecard -->
+    <div class="term-card animate-in" data-tags="philosophy behavior" data-search="inner scorecard 内在记分卡 独立思考">
+      <div class="term-name"><span class="term-icon">&#127939;</span> 内在记分卡 (Inner Scorecard)</div>
+      <p class="term-def">沃伦·巴菲特提出的概念，指投资者用自己的标准（内在价值）评判投资成败，而不是用短期股价或市场波动作为标准。拥有内在记分卡的人不会因市场恐慌而抛售，也不会因短期上涨而得意忘形——他们关注的是企业基本面的真实进步，而非外界的评价和噪音。</p>
+      <div class="term-quote">好时光人们因贪婪而冒险，困难时人们恐慌，通常在错误的时刻做错误的决定。— 李录</div>
+    </div>
+
+    <!-- Seamless Web of Trust -->
+    <div class="term-card animate-in" data-tags="business philosophy" data-search="seamless web of trust 信任护城河 管理层">
+      <div class="term-name"><span class="term-icon">&#128276;</span> 无缝信任网 (Seamless Web of Trust)</div>
+      <p class="term-def">李录在Bruce Greenwald框架基础上特别强调的第四维护城河：消费者、供应商、员工对品牌和管理层的信任。这种信任难以复制、无法购买，是企业最坚固的无形资产。诚信的管理层会做正确的事，即使短期内付出代价，长期来看信任护城河会持续加深。</p>
+      <div class="term-quote">管理层诚信是护城河最关键的要素。信任护城河是李录最强调的。— Bruce Greenwald框架</div>
+    </div>
+
+  </div>
+
+  <div class="no-results" id="noResults">
+    <p>没有找到匹配的术语，请尝试其他关键词。</p>
+  </div>
+
+  <!-- Back Link -->
+  <div class="back-section">
+    <a href="index.html" class="back-link">&#8592; 返回首页</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <h3>李录 <span>价值投资</span> 研究</h3>
+    <p>专注于李录价值投资思想研究与学习的资料汇总。</p>
+    <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <a href="index.html" style="color: var(--accent-gold); text-decoration: none;">首页</a> ·
+      <a href="glossary.html" style="color: var(--accent-gold); text-decoration: none;">核心概念</a> ·
+      <a href="timeline.html" style="color: var(--accent-gold); text-decoration: none;">时间线</a> ·
+      <a href="quotes.html" style="color: var(--accent-gold); text-decoration: none;">语录</a> ·
+      <a href="bookshelf.html" style="color: var(--accent-gold); text-decoration: none;">书单</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#128197; 最后更新: 2026-04-05 | &#128221; 李录价值投资研究</p>
+  </div>
+</footer>
+
+<script>
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.body.classList.add('dark-mode');
+}
+function toggleTheme() { document.body.classList.toggle('dark-mode'); }
+
+let currentTag = 'all';
+
+function setTagFilter(tag, btn) {
+  currentTag = tag;
+  document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterTerms();
+}
+
+function filterTerms() {
+  const query = document.getElementById('searchInput').value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.term-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    const tags = card.dataset.tags || '';
+    const search = card.dataset.search || '';
+    const text = card.textContent.toLowerCase();
+
+    const matchesTag = currentTag === 'all' || tags.split(' ').includes(currentTag);
+    const matchesSearch = query === '' || text.includes(query) || search.includes(query);
+
+    if (matchesTag && matchesSearch) {
+      card.classList.remove('hidden');
+      visible++;
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+
+  document.getElementById('noResults').classList.toggle('show', visible === 0);
+}
+</script>
+
+</body>
+</html>

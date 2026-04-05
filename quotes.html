@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智慧语录 - 李录价值投资研究</title>
+<style>
+:root {
+  --primary-dark: #0a1628;
+  --primary-blue: #1a365d;
+  --accent-gold: #b8860b;
+  --accent-gold-light: #daa520;
+  --accent-gold-hover: #c9a227;
+  --text-dark: #1a1a1a;
+  --text-light: #f5f5f5;
+  --text-muted: #4a5568;
+  --bg-light: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 20px rgba(0,0,0,0.15);
+  --border-radius: 16px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.7;
+  color: #2d3748;
+  background: var(--bg-light);
+}
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0 40px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+.nav-brand { color: var(--text-light); font-size: 1.3rem; font-weight: 600; }
+.nav-brand span { color: var(--accent-gold); }
+.nav-links { display: flex; gap: 8px; }
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--text-light);
+  background: rgba(201,162,39,0.15);
+}
+.nav-link.active { color: var(--accent-gold); }
+
+/* Dark Mode */
+body.dark-mode { background: #0a1628; color: #e2e8f0; }
+body.dark-mode .card { background: #1a365d; color: #e2e8f0; border-color: #2d4a7c; }
+body.dark-mode .card h3, body.dark-mode .card h4 { color: var(--accent-gold-hover); }
+body.dark-mode .card p { color: #cbd5e0; }
+body.dark-mode .section { background: #0a1628; }
+body.dark-mode .footer { background: #0a1628; }
+body.dark-mode .hero { background: linear-gradient(135deg, #000 0%, #1a365d 100%); }
+body.dark-mode .hero h1 { color: #fff; }
+body.dark-mode .section-title { color: var(--accent-gold-hover); }
+body.dark-mode .back-link { color: var(--accent-gold-hover); border-color: var(--accent-gold-hover); }
+body.dark-mode .quote-card { background: #1a365d; border-color: #2d4a7c; }
+body.dark-mode .quote-card .quote-text { color: #e2e8f0; }
+body.dark-mode .quote-card .quote-source { color: #a0aec0; }
+body.dark-mode .quote-card .quote-context { color: #cbd5e0; }
+body.dark-mode .theme-header { background: rgba(201,162,39,0.1); border-color: rgba(201,162,39,0.2); }
+body.dark-mode .theme-header h2 { color: var(--accent-gold-hover); }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 60px 60px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);
+  opacity: 0.5;
+}
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+.hero-content h1 span { color: var(--accent-gold); }
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.hero-tagline {
+  font-size: 1rem;
+  color: var(--accent-gold-light);
+  padding: 15px 30px;
+  border-left: 3px solid var(--accent-gold);
+  display: inline-block;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main */
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+.section { margin-bottom: 80px; scroll-margin-top: 100px; }
+.section-header { margin-bottom: 40px; }
+.section-title {
+  font-size: 2rem;
+  color: var(--primary-dark);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+.section-subtitle { color: var(--text-muted); }
+
+/* Theme Sections */
+.theme-section { margin-bottom: 60px; }
+.theme-header {
+  background: linear-gradient(135deg, rgba(201,162,39,0.08), rgba(201,162,39,0.03));
+  border: 1px solid rgba(201,162,39,0.2);
+  border-radius: 12px;
+  padding: 20px 28px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.theme-header .theme-icon { font-size: 1.8rem; }
+.theme-header h2 {
+  font-size: 1.3rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+  margin: 0;
+}
+.theme-header .theme-count {
+  margin-left: auto;
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Quote Cards */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 25px;
+}
+.quote-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 28px 30px;
+  box-shadow: var(--shadow);
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid var(--accent-gold);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+.quote-text {
+  font-size: 1.05rem;
+  color: #2d3748;
+  font-style: italic;
+  line-height: 1.8;
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 5px;
+}
+.quote-text::before { content: '\201C'; font-size: 2.5rem; color: var(--accent-gold); position: absolute; top: -10px; left: -5px; font-style: normal; line-height: 1; }
+.quote-context {
+  font-size: 0.85rem;
+  color: #718096;
+  background: #f7fafc;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-top: 14px;
+  line-height: 1.65;
+}
+.quote-source {
+  color: var(--accent-gold);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: right;
+  margin-top: 12px;
+  display: block;
+}
+.quote-source::before { content: '— '; }
+
+/* Munger Quotes Section */
+.munger-section .theme-header {
+  background: linear-gradient(135deg, rgba(184,134,11,0.1), rgba(184,134,11,0.03));
+  border-color: rgba(184,134,11,0.25);
+}
+.munger-section .quote-card { border-left-color: #b8860b; }
+.munger-section .quote-card:hover { box-shadow: 0 12px 35px rgba(184,134,11,0.15); }
+
+/* Back Link */
+.back-section {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid #e2e8f0;
+}
+.back-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 30px;
+  border: 2px solid var(--accent-gold);
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+.back-link:hover {
+  background: var(--accent-gold);
+  color: var(--primary-dark);
+}
+
+/* Footer */
+.footer {
+  background: var(--primary-dark);
+  color: var(--text-muted);
+  padding: 60px 40px 30px;
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer h3 { color: var(--text-light); font-size: 1.5rem; margin-bottom: 15px; }
+.footer h3 span { color: var(--accent-gold); }
+.footer p { font-size: 0.95rem; line-height: 1.8; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 25px;
+  margin-top: 40px;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar { padding: 0 20px; }
+  .hero { padding: 100px 20px 60px; }
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .main-content { padding: 50px 20px; }
+  .section-title { font-size: 1.5rem; }
+  .quotes-grid { grid-template-columns: 1fr; }
+  .theme-header { flex-wrap: wrap; }
+  .theme-header .theme-count { margin-left: 0; }
+  .footer { padding: 40px 20px 20px; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeInUp 0.6s ease forwards; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-brand"><span>&#10070;</span> 李录研究</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">首页</a>
+    <a href="index.html#about" class="nav-link">关于</a>
+    <a href="index.html#holdings" class="nav-link">持仓</a>
+    <a href="index.html#principles" class="nav-link">投资原则</a>
+    <a href="index.html#videos" class="nav-link">视频</a>
+    <a href="glossary.html" class="nav-link">核心概念</a>
+    <a href="timeline.html" class="nav-link">时间线</a>
+    <a href="quotes.html" class="nav-link active">语录</a>
+    <a href="bookshelf.html" class="nav-link">书单</a>
+  </div>
+  <button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 夜间</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>智慧<span>语录</span></h1>
+    <p class="hero-subtitle">来自李录与芒格的深刻洞见</p>
+    <p class="hero-tagline">"长期投资回报与公司资本回报率完美相关。" — 李录</p>
+  </div>
+</section>
+
+<main class="main-content">
+
+  <!-- Theme 1: Philosophy -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <span class="theme-icon">&#127919;</span>
+      <h2>投资哲学</h2>
+      <span class="theme-count">5条</span>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card animate-in">
+        <p class="quote-text">Take the world the way it is, not what we wish to be, what we want to be. It is what it is, take it.</p>
+        <p class="quote-context">接受世界本来的样子，而非我们希望它成为的样子。世界有其运行的规律，投资者应顺势而为，而非一厢情愿。</p>
+        <span class="quote-source">2024年12月 北大价值投资课程十周年演讲</span>
+      </div>
+      <div class="quote-card animate-in delay-1">
+        <p class="quote-text">当你拥有一家公司的股权，你是以企业所有者的身份持有的，不是以股票交易者的身份。</p>
+        <p class="quote-context">投资的核心心态转变：不是买卖证券，而是拥有企业的一部分所有权。股票不是炒卖的纸，而是公司所有权的证书。</p>
+        <span class="quote-source">投资哲学核心原则</span>
+      </div>
+      <div class="quote-card animate-in delay-2">
+        <p class="quote-text">每5-10年发生一次百年一遇的危机。人类行为永远不会改变。</p>
+        <p class="quote-context">市场危机的必然性。投资者必须学会在恐惧中保持理性，在危机中看到机会，而不是被情绪左右。</p>
+        <span class="quote-source">关于市场波动</span>
+      </div>
+      <div class="quote-card animate-in delay-3">
+        <p class="quote-text">做学习的通才，但投资时要成为真正的专家。你需要比你投资的企业管理层更了解它。</p>
+        <p class="quote-context">强调能力圈的重要性。广泛学习跨学科知识，但在投资决策时只在自己真正理解的领域行动。</p>
+        <span class="quote-source">关于能力圈</span>
+      </div>
+      <div class="quote-card animate-in">
+        <p class="quote-text">真正的好公司不多，找到它们后重仓买进。</p>
+        <p class="quote-context">集中投资策略的思想根源。与其分散投资于许多平庸公司，不如集中持仓于少数真正具有持久护城河的优质企业。</p>
+        <span class="quote-source">芒格式集中投资策略</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme 2: Character -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <span class="theme-icon">&#128104;</span>
+      <h2>品格与心态</h2>
+      <span class="theme-count">5条</span>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card animate-in">
+        <p class="quote-text">好时光人们因贪婪而冒险，困难时人们恐慌，通常在错误的时刻做错误的决定。</p>
+        <p class="quote-context">人类行为的周期性与投资反人性本质。多数人在市场高点过度乐观，在低点过度悲观，这正是价值投资者超额收益的来源。</p>
+        <span class="quote-source">人类行为分析</span>
+      </div>
+      <div class="quote-card animate-in delay-1">
+        <p class="quote-text">如果你只是假装了解企业，你会在困难时期被考验。</p>
+        <p class="quote-context">投资需要对企业的深度理解，而不是表面的了解。真正的理解使投资者在市场恐慌时保持坚定，而假装了解则会暴露无遗。</p>
+        <span class="quote-source">2021年 CBS Greater China 访谈</span>
+      </div>
+      <div class="quote-card animate-in delay-2">
+        <p class="quote-text">护城河必须可持续，否则就不是护城河。</p>
+        <p class="quote-context">护城河的核心在于持久性。短暂的竞争优势不是真正的护城河，只有能够持续数十年保护企业免受竞争侵蚀的优势才是。</p>
+        <span class="quote-source">2024年12月 北大演讲</span>
+      </div>
+      <div class="quote-card animate-in delay-3">
+        <p class="quote-text">买价必须低于内在价值才有安全边际。安全边际是你犯错时的缓冲带，也是长期收益的主要来源。</p>
+        <p class="quote-context">安全边际的双重作用：容错保护和收益来源。价值投资的本质是以低于价值的价格买入，等待价格向价值回归。</p>
+        <span class="quote-source">投资决策框架</span>
+      </div>
+      <div class="quote-card animate-in">
+        <p class="quote-text">长期投资回报与公司资本回报率完美相关。</p>
+        <p class="quote-context">ROIC是评估企业质量最核心的财务指标。真正优质的企业能够以高回报率持续 reinvest 资本，创造长期复利效应。</p>
+        <span class="quote-source">投资哲学核心</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme 3: China -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <span class="theme-icon">&#127757;</span>
+      <h2>中国市场</h2>
+      <span class="theme-count">4条</span>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card animate-in">
+        <p class="quote-text">中国将成为世界上最大、最活跃、增长最快的消费市场。</p>
+        <p class="quote-context">李录长期看好中国市场的核心逻辑。一个拥有14亿人口的消费市场，其规模和活力是前所未有的，其中蕴含着巨大的价值投资机会。</p>
+        <span class="quote-source">2021年 哥伦比亚商学院访谈</span>
+      </div>
+      <div class="quote-card animate-in delay-1">
+        <p class="quote-text">中国市场仍然不发达，在一个充满活力的经济体中更容易找到价值。</p>
+        <p class="quote-context">相比成熟的美国市场，中国市场定价效率较低，这为价值投资者提供了更多错误定价的机会。发展中国家市场的不成熟性是价值投资的沃土。</p>
+        <span class="quote-source">2021年 哥伦比亚商学院访谈</span>
+      </div>
+      <div class="quote-card animate-in delay-2">
+        <p class="quote-text">金融服务尚未开发，许多领域即将起飞。</p>
+        <p class="quote-context">中国金融行业的结构性机会。银行、保险等金融服务领域在中国仍有巨大的发展空间，为价值投资者提供了独特的机遇。</p>
+        <span class="quote-source">2021年 哥伦比亚商学院访谈</span>
+      </div>
+      <div class="quote-card animate-in delay-3">
+        <p class="quote-text">中国正处于从农业文明向现代文明转型的关键阶段，在这样的背景下，价值投资将在中国迸发出巨大生命力。</p>
+        <p class="quote-context">李录论文《Civilizations, Modernization, Value Investing and China》的核心论点。现代化进程中的中国为价值投资提供了独特的历史性机遇。</p>
+        <span class="quote-source">2014年 论文</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme 4: Investing -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <span class="theme-icon">&#128200;</span>
+      <h2>投资实务</h2>
+      <span class="theme-count">5条</span>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card animate-in">
+        <p class="quote-text">投资最重要的事：搞清楚你在竞争什么。</p>
+        <p class="quote-context">投资决策的第一步是理解竞争格局。护城河分析的核心是回答"为什么这家公司能在竞争中持续获胜"，而非简单地看财务数据。</p>
+        <span class="quote-source">2024年12月 北大演讲</span>
+      </div>
+      <div class="quote-card animate-in delay-1">
+        <p class="quote-text">你需要了解新技术对你投资的企业的影响。</p>
+        <p class="quote-context">科技颠覆性对投资的影响。汽车行业正遭受四大颠覆性趋势（共享出行、电池、智能设计、自动驾驶）的冲击，投资者必须理解技术变化对企业护城河的影响。</p>
+        <span class="quote-source">2021年 哥伦比亚商学院访谈</span>
+      </div>
+      <div class="quote-card animate-in delay-2">
+        <p class="quote-text">持久的护城河、高资本回报率、以低于内在价值的价格买入、长期持有、在下跌时加仓。</p>
+        <p class="quote-context">李录投资标准的核心四要素。四个条件缺一不可，只有同时满足时才构成理想的投资标的。</p>
+        <span class="quote-source">2021年 哥伦比亚商学院访谈</span>
+      </div>
+      <div class="quote-card animate-in delay-3">
+        <p class="quote-text">真正的好公司不多，找到它们后重仓买进。持续学习是价值投资者最重要的习惯。</p>
+        <p class="quote-context">集中持仓+终身学习。投资组合的集中度来自对投资标的的信心，而持续学习则是维持这种信心的基础。</p>
+        <span class="quote-source">书单推荐序言</span>
+      </div>
+      <div class="quote-card animate-in">
+        <p class="quote-text">当你发现真正的好公司，价格合理，管理层诚信，而且你了解它的业务——在这种情况下，你应该大举买入。</p>
+        <p class="quote-context">李录的"致命一击"哲学。机会来临时要果断重仓，而不是浅尝辄止。前提是充分的理解和耐心的等待。</p>
+        <span class="quote-source">Himalaya Capital 投资理念</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theme 5: Patience -->
+  <section class="theme-section">
+    <div class="theme-header">
+      <span class="theme-icon">&#9201;</span>
+      <h2>耐心与等待</h2>
+      <span class="theme-count">4条</span>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card animate-in">
+        <p class="quote-text">如果不打算持有一家公司十年，就不要持有十分钟。</p>
+        <p class="quote-context">长期主义的纪律约束。这句话迫使投资者在做决策前进行更深入的思考，而不是被短期波动牵着走。</p>
+        <span class="quote-source">投资哲学核心原则</span>
+      </div>
+      <div class="quote-card animate-in delay-1">
+        <p class="quote-text">真正的机会来自长期持有优秀企业的复利效应。</p>
+        <p class="quote-context">复利的力量。短期的买卖交易只会消耗收益，只有长期持有优质企业才能充分享受复利带来的财富增长。</p>
+        <span class="quote-source">投资哲学核心</span>
+      </div>
+      <div class="quote-card animate-in delay-2">
+        <p class="quote-text">抗拒短期波动的定力，是区分普通投资者和伟大投资者的关键。</p>
+        <p class="quote-context">市场每天都在波动，但优秀企业的价值增长需要时间来实现。能够忽略短期噪音、专注于长期价值的投资者，才能获得超额回报。</p>
+        <span class="quote-source">投资心态</span>
+      </div>
+      <div class="quote-card animate-in delay-3">
+        <p class="quote-text">等待也是一种行动。知道何时不行动，可能是投资者最重要的品质。</p>
+        <p class="quote-context">耐心等待完美机会。多数时候市场的定价是合理的，真正的好机会需要等待。在机会出现之前持有现金或优质债券是明智的选择。</p>
+        <span class="quote-source">投资纪律</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charlie Munger Section -->
+  <section class="theme-section munger-section">
+    <div class="theme-header">
+      <span class="theme-icon">&#129309;</span>
+      <h2>查理·芒格的话</h2>
+      <span class="theme-count">3条</span>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote-card animate-in">
+        <p class="quote-text"> Berkshire Hathaway's ideal configuration is a wonderful business run by honest and competent people at a fair price.</p>
+        <p class="quote-context">伯克希尔·哈撒韦的理想配置：优秀的企业，由诚信且有能力的人管理，价格合理。这三个条件缺一不可。</p>
+        <span class="quote-source">Charlie Munger 伯克希尔股东大会</span>
+      </div>
+      <div class="quote-card animate-in delay-1">
+        <p class="quote-text">The safest way to get a 20% return on capital over the years is to buy a very large equity stake in one or a few wonderful businesses at a price that is not absurd.</p>
+        <p class="quote-context">获得长期20%资本回报最安全的方法是：以非荒谬的价格，买入一两个优秀企业的大量股权。这与李录的集中持仓策略一脉相承。</p>
+        <span class="quote-source">Charlie Munger</span>
+      </div>
+      <div class="quote-card animate-in delay-2">
+        <p class="quote-text">All intelligent investing is value investing — acquiring more than you are paying for. You must value the business in order to value the stock.</p>
+        <p class="quote-context">所有聪明的投资都是价值投资——获取比你所支付的更多的价值。要评估股票，必须先评估企业。这是价值投资的哲学根基。</p>
+        <span class="quote-source">Charlie Munger</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Back Link -->
+  <div class="back-section">
+    <a href="index.html" class="back-link">&#8592; 返回首页</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <h3>李录 <span>价值投资</span> 研究</h3>
+    <p>专注于李录价值投资思想研究与学习的资料汇总。</p>
+    <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <a href="index.html" style="color: var(--accent-gold); text-decoration: none;">首页</a> ·
+      <a href="glossary.html" style="color: var(--accent-gold); text-decoration: none;">核心概念</a> ·
+      <a href="timeline.html" style="color: var(--accent-gold); text-decoration: none;">时间线</a> ·
+      <a href="quotes.html" style="color: var(--accent-gold); text-decoration: none;">语录</a> ·
+      <a href="bookshelf.html" style="color: var(--accent-gold); text-decoration: none;">书单</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#128197; 最后更新: 2026-04-05 | &#128221; 李录价值投资研究</p>
+  </div>
+</footer>
+
+<script>
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.body.classList.add('dark-mode');
+}
+function toggleTheme() { document.body.classList.toggle('dark-mode'); }
+</script>
+
+</body>
+</html>

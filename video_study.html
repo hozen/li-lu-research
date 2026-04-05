@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -50,12 +50,22 @@ main{max-width:900px;margin:0 auto;background:#fff;min-height:calc(100vh - 56px)
 .note-del:hover{color:#ef4444}
 .note-time{font-size:.7rem;color:#c9a227;font-weight:600;margin-bottom:3px}
 .note-text{font-size:.85rem;color:#374151;line-height:1.6}
-.emp{text-align:center;color:#6b7280;font-size:.85rem;margin-top:40px}
+.seg.watched{border-color:#16a34a;background:#f0fdf4}.seg.watched .seg-time{color:#16a34a}
+
+\;color:#6b7280;font-size:.85rem;margin-top:40px}
 footer{padding:10px 16px;background:#f9fafc;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
 footer a{color:#c9a227;text-decoration:none}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0a1628;color:#fff;padding:8px 20px;border-radius:30px;font-size:.85rem;opacity:0;transition:opacity .3s;z-index:1000;pointer-events:none}
 .toast.on{opacity:1}
-</style>
+.progress-tracker{padding:14px 16px;border-top:1px solid #e5e7eb;background:#f9fafc;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.progress-info{display:flex;align-items:center;gap:10px;flex:1}
+.progress-bar-wrap{flex:1;min-width:120px;height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden}
+.progress-bar-fill{height:100%;background:#16a34a;border-radius:4px;transition:width .4s ease;width:0%}
+.progress-label{font-size:.82rem;font-weight:700;color:#1a365d;white-space:nowrap}
+.progress-btn{background:#ef4444;color:#fff;border:none;padding:6px 14px;border-radius:20px;font-size:.78rem;font-weight:600;cursor:pointer}
+.progress-btn:hover{background:#dc2626}
+
+\
 </head>
 <body>
 <header>
@@ -99,10 +109,18 @@ footer a{color:#c9a227;text-decoration:none}
     </div>
   </div>
 
-  <footer>
-    <span>&#128202; CCBC &middot; Study use only</span>
-    <a href="index.html">&larr; Home</a>
-  </footer>
+  <div class=progress-tracker id=progTracker>
+<span class=progress-label id=progLabel>0/17 已观看</span>
+<span class=progress-label id=progLabel>0/17 已观看</span>
+<div class=progress-bar-wrap><div class=progress-bar-fill id=progFill></div></div>
+<button class=progress-btn id=clearProg onclick="clearProgress()">清除进度</button>
+<button class=progress-btn id=clearProg onclick="clearProgress()">清除进度</button>
+</div>
+<footer>
+<div style="padding:10px 16px;background:#f9fafc;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+<span>&#128202; CCBC &middot; Li Lu &middot; 仅供学习研究，不构成投资建议</span>
+<a href="index.html" style="color:#c9a227;text-decoration:none;">&#8592; 返回首页</a>
+</div></footer>
 </main>
 <div class="toast" id="toast"></div>
 <script>
@@ -169,20 +187,22 @@ function render() {
     var s = S[i];
     if (flt && s.tp !== flt) continue;
     if (q && !s.lb.toLowerCase().includes(q) && !s.zh.toLowerCase().includes(q) && !s.en.toLowerCase().includes(q)) continue;
-    var cls = "seg" + (s.tp === "moat" ? " gn" : s.tp === "china" ? " bl" : s.tp === "character" ? " pr" : s.tp === "value" ? " yw" : "");
+    var watched = watchedSet.has(s.id);
+    var cls = "seg" + (s.tp === "moat" ? " gn" : s.tp === "china" ? " bl" : s.tp === "character" ? " pr" : s.tp === "value" ? " yw" : "") + (watched ? " watched" : "");
     var parts = s.t.split(":");
     var sec = parseInt(parts[0]) * 60 + parseInt(parts[1]);
     var yt = "https://www.youtube.com/watch?v=FiHrWy2jGbA&t=" + sec;
     html += "<div class=\"" + cls + "\">";
-    html += "<div class=\"seg-time\">&#9201; " + s.t + " &middot; " + s.sp + "</div>";
+    html += "<div class=\"seg-time\">" + (watched ? "<span style=\"color:#16a34a;font-weight:700;\">&#10003; </span>" : "") + "&#9201; " + s.t + " &middot; " + s.sp + "</div>";
     html += "<div class=\"seg-lbl\">" + s.lb + "</div>";
     html += "<div class=\"seg-zh\">" + s.zh + "</div>";
     html += "<div class=\"seg-en\" id=\"en" + s.id + "\">" + s.en + "</div>";
     html += "<div class=\"seg-exp\" onclick=\"toggleEn(" + s.id + ")\">&#9658; Show English</div>";
-    html += "<div style=\"margin-top:10px\"><a href=\"" + yt + "\" target=\"_blank\" class=\"seg-jmp\">&#9654; Jump to " + s.t + "</a></div>";
+    html += "<div style=\"margin-top:10px\"><a href=\"" + yt + "\" target=\"_blank\" class=\"seg-jmp\" onclick=\"markWatched(" + s.id + ")\">&#9654; Jump to " + s.t + "</a></div>";
     html += "</div>";
   }
   cont.innerHTML = html || "<p class=\"emp\">No results</p>";
+  updateProgress();
 }
 
 function toggleEn(id) {
@@ -240,7 +260,17 @@ function tst(msg) {
   setTimeout(function() { t.className = "toast"; }, 2500);
 }
 
-render();
+var watchedSet = new Set(JSON.parse(localStorage.getItem("llwp") || "[]"));
+function markWatched(id) { watchedSet.add(id); localStorage.setItem("llwp", JSON.stringify([...watchedSet])); updateProgress(); render(); }
+function updateProgress() {
+  var total = 17;
+  var count = watchedSet.size;
+  document.getElementById("progLabel").textContent = count + "/" + total + " \u5df2\u89c2\u770b";
+  document.getElementById("progFill").style.width = (count / total * 100) + "%";
+}
+function clearProgress() { watchedSet.clear(); localStorage.removeItem("llwp"); updateProgress(); render(); }
+
+\
 renderNotes();
 </script>
 </body>
