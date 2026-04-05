@@ -2081,6 +2081,9 @@ function searchContent() {
   const input = document.getElementById('searchInput');
 
 
+  if (!input) return;
+
+
   const filter = input.value.toUpperCase();
 
 
