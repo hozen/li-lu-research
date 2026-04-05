@@ -55,32 +55,32 @@ body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f3f4f6;
 
 <div class="h">
   <div>
-    <div class="h-brand">&#128200; <span>Li Lu</span> Video Study</div>
-    <div class="h-sub">CCBC Fireside Chat &middot; Value Investing in China &middot; 1h32m</div>
+    <div class="h-brand">&#128200; <span>李录</span> 视频学习</div>
+    <div class="h-sub">CCBC Fireside Chat &middot; 价值投资中国 &middot; 1小时32分</div>
   </div>
   <div class="h-tabs">
-    <button class="tb on" id="btn-list" onclick="showTab('list')">&#128203; Segments</button>
-    <button class="tb" id="btn-notes" onclick="showTab('notes')">&#128214; Notes</button>
+    <button class="tb on" id="btn-list" onclick="showTab('list')">&#128203; 原文</button>
+    <button class="tb" id="btn-notes" onclick="showTab('notes')">&#128214; 笔记</button>
   </div>
 </div>
 
 <div class="lay">
   <div class="m">
     <div class="vb">
-      <h3>CCBC Fireside Chat: Value Investing in China</h3>
-      <p>Li Lu &times; Bruce Greenwald &middot; Columbia &middot; 1h32m</p>
-      <a href="https://www.youtube.com/watch?v=FiHrWy2jGbA" target="_blank" class="bw">&#9654; Watch on YouTube</a>
+      <h3>CCBC Fireside Chat: 价值投资在中国</h3>
+      <p>李录 &times; Bruce Greenwald &middot; 哥伦比亚大学 &middot; 1小时32分</p>
+      <a href="https://www.youtube.com/watch?v=FiHrWy2jGbA" target="_blank" class="bw">&#9654; 在 YouTube 观看</a>
     </div>
 
     <div id="tab-list" class="ct on">
       <div class="crl">
-        <input type="text" id="srch" placeholder="Search..." oninput="render()">
+        <input type="text" id="srch" placeholder="搜索..." oninput="render()">
         <select id="flt" onchange="render()">
-          <option value="">All Topics</option>
-          <option value="moat">Moat</option>
-          <option value="china">China</option>
-          <option value="character">Character</option>
-          <option value="value">Valuation</option>
+          <option value="">全部话题</option>
+          <option value="moat">护城河</option>
+          <option value="china">中国市场</option>
+          <option value="character">品性</option>
+          <option value="value">估值</option>
         </select>
       </div>
       <div class="sc" id="sg-list"></div>
@@ -89,16 +89,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f3f4f6;
     <div id="tab-notes" class="ct">
       <div style="padding:14px">
         <div class="ni">
-          <textarea id="ntx" placeholder="Your notes..."></textarea>
-          <button class="bs" onclick="svNote()">&#128190; Save</button>
+          <textarea id="ntx" placeholder="写下你的笔记..."></textarea>
+          <button class="bs" onclick="svNote()">&#128190; 保存笔记</button>
         </div>
         <div id="nt-lst"></div>
       </div>
     </div>
 
     <div class="ft">
-      <span>&#128202; CCBC &middot; Columbia China Business Conference &middot; Study use only</span>
-      <a href="index.html">&larr; Research Home</a>
+      <span>&#128202; CCBC &middot; 哥伦比亚中国商业会议 &middot; 仅供学习研究</span>
+      <a href="index.html">&larr; 研究首页</a>
     </div>
   </div>
 </div>
@@ -107,40 +107,40 @@ body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f3f4f6;
 
 <script>
 var SEGMENTS = [
-{id:1,time:"02:24",speaker:"Host",topic:null,label:"Opening Introduction",
-summary:"Host introduces Bruce Greenwald and Li Lu. Bruce is the godfather of value investing at Columbia Business School, having trained a generation of value investors including Li Lu. Li Lu is founder of Himalaya Capital, managing billions in assets, focused on long-term investments in Asia and North America."},
-{id:2,time:"04:37",speaker:"Bruce",topic:null,label:"Q1: Evolution of Investment Philosophy",
-summary:"Bruce opens: How has your investment philosophy evolved over the past 28 years? What influences from Charlie Munger? How does your approach differ from Buffett/Munger's?"},
-{id:3,time:"08:00",speaker:"Li Lu",topic:"moat",label:"From Graham to Munger: Philosophy Evolution",
-summary:"Li Lu shares his three-stage evolution: 1) Initially influenced by Graham's 'cigar butt' approach (statistical cheapness, balance sheet focus) 2) Mid-stage shift to quality small businesses (deep understanding of operations) 3) Final focus on businesses with durable competitive advantages and long runways. Core framework: buying below intrinsic value is simply intelligent. Munger's influence extends far beyond investing into life philosophy."},
-{id:4,time:"12:30",speaker:"Bruce",topic:null,label:"Q2: What Makes a Great Business?",
-summary:"Bruce probes: What specific characteristics make a business 'great'? What are the quantifiable metrics? How do you value them?"},
-{id:5,time:"12:42",speaker:"Li Lu",topic:"moat",label:"ROIC & Moat: Standards for Great Businesses",
-summary:"Li Lu's three criteria: 1) ROIC consistently above average 2) True moat that fends off competitors 3) Long continuous growth runway. Truly great businesses meeting all three are extremely rare - like finding a needle in a haystack. Once found, holding long-term is the best strategy. Returns perfectly correlate with company's ROIC."},
-{id:6,time:"15:00",speaker:"Li Lu",topic:"character",label:"Trust Moat: The Most Critical Factor",
-summary:"The moat Li Lu emphasizes most: trust. 'The highest form of civilization is a seamless web of deserved trust' - reliable people trusting each other without complex procedures. Management integrity and treating all stakeholders fairly creates the most durable moat. Picking stocks requires first learning to read people."},
-{id:7,time:"19:00",speaker:"Li Lu",topic:"moat",label:"Constant Change: Sustaining Competitive Advantage",
-summary:"All great businesses are in constant flux. The moat must be continuously rebuilt to remain relevant. This is the most interesting dimension of business analysis - competitive advantage is never permanent."},
-{id:8,time:"21:51",speaker:"Bruce",topic:null,label:"Q3: How Do You Invest Differently?",
-summary:"Bruce probes: What is the essential difference between your approach and Buffett/Munger's approach? How did you develop your own unique circle of competence?"},
-{id:9,time:"26:30",speaker:"Li Lu",topic:"moat",label:"From Small to Great Businesses: Stock Selection Evolution",
-summary:"Li Lu evolved from不懂商业, only reading financial statements, to deeply understanding management. He spends extensive time with management teams in good times and bad. Understanding whether a person is upright and trustworthy matters more than看懂 financial numbers. This requires years of experience - it's an art, not a science."},
-{id:10,time:"33:00",speaker:"Li Lu",topic:"value",label:"Margin of Safety & DCF Valuation",
-summary:"DCF is Li Lu's core valuation tool, but the key is conservative assumptions. Buy more when good companies are on sale. 'If you're right, returns compound over time; if you're wrong, the discount protects you' - that's the true meaning of margin of safety. Be right about the big things, tolerant of noise."},
-{id:11,time:"38:00",speaker:"Bruce",topic:null,label:"Q4: Generalist or Specialist Investor?",
-summary:"Bruce asks: Should investors become generalists (broad learning across industries) or specialists (deep expertise in one area)? Does this strategy work differently in the China market?"},
-{id:12,time:"44:49",speaker:"Li Lu",topic:"china",label:"China: World's Most Dynamic Consumer Market",
-summary:"China has been the world's most dynamic economy for the past 30 years, transitioning from investment-driven to consumption-driven. The consumer market is still in early innings and will be the world's largest for decades to come. Information asymmetry between Eastern and Western investors creates unique opportunities for those who deeply understand the culture, language, and governance."},
-{id:13,time:"50:00",speaker:"Li Lu",topic:"china",label:"Investment Opportunities Across China Sectors",
-summary:"Housing, services, and nearly every industry are growing rapidly. The challenge in China isn't finding opportunities - it's being highly selective because opportunities exceed resources. The key is finding good companies with moats."},
-{id:14,time:"55:00",speaker:"Bruce",topic:null,label:"Q5: Service Economy & Talent in China",
-summary:"Bruce asks: What unique opportunities do you see in China's service economy? What talent development and management challenges exist? How do you understand localization characteristics?"},
-{id:15,time:"62:00",speaker:"Bruce",topic:null,label:"Q6: Investment Mistakes & Lessons",
-summary:"Bruce asks: Looking back on your career, what were your biggest investment mistakes? What lessons can you share? What can ordinary people learn from them?"},
-{id:16,time:"62:01",speaker:"Li Lu",topic:"china",label:"Mistakes & Advice for Young Chinese Investors",
-summary:"Mistakes are a necessary part of investing - the key is learning quickly from them. Advice for young Chinese: read widely, find truly good mentors, understand businesses from the ground up. The next generation in China faces unprecedented historic opportunities - China will become the world's largest consumer market."},
-{id:17,time:"85:00",speaker:"Li Lu",topic:"china",label:"Asian-American: The Bridge Role",
-summary:"Li Lu's final call: The center of global economy is shifting from Atlantic to Pacific. 20 million Asian-Americans can serve as a unique bridge between America and Asia - beneficial not just for individuals but for America's long-term prosperity."}
+{id:1,time:"02:24",speaker:"Host",topic:null,label:"开场介绍",
+summary:"主持人介绍Bruce Greenwald和李录。Bruce是哥伦比亚商学院价值投资之父，培养了包括李录在内的整整一代价值投资者。李录是喜马拉雅资本创始人，管理数十亿美元资产，专注亚洲和北美长期投资。"},
+{id:2,time:"04:37",speaker:"Bruce",topic:null,label:"Q1: 投资哲学演变",
+summary:"Bruce开场：你的投资哲学在过去28年如何演变？受查理·芒格哪些影响？两者在方法上有何异同？"},
+{id:3,time:"08:00",speaker:"Li Lu",topic:"moat",label:"从Graham到芒格：哲学进化",
+summary:"李录分享三阶段进化路径：①最初受格雷厄姆影响寻找"烟蒂"（统计便宜，看资产负债表）②中期转向优质小企业（深度理解运营）③最终聚焦具有持久护城河的长跑道伟大企业。核心框架：买价格低于内在价值的东西本身就是聪明的。芒格对他的影响远超投资，深入人生品性层面。"},
+{id:4,time:"12:30",speaker:"Bruce",topic:null,label:"Q2: 什么是伟大企业？",
+summary:"Bruce追问：什么样的企业才算"伟大"？具体有哪些可量化的特征？估值方法是什么？"},
+{id:5,time:"12:42",speaker:"Li Lu",topic:"moat",label:"ROIC与护城河：伟大企业的标准",
+summary:"李录的三条标准：①资本回报率（ROIC）持续高于平均水平 ②有护城河能真正抵御竞争对手 ③有长持续增长跑道。真正符合这三条的企业凤毛麟角、极其稀少。一旦找到，长期持有就是最好的策略。回报与公司资本回报率完美相关。"},
+{id:6,time:"15:00",speaker:"Li Lu",topic:"character",label:"信任护城河：最核心的要素",
+summary:"李录最强调的护城河是信任。"文明的最高形式是无缝的信任网络"——可靠的人彼此信任，不需要复杂流程。管理层正直诚信、对待所有利益相关者公平，这样的文化是最核心、最持久的护城河。选股要先学会读人。"},
+{id:7,time:"19:00",speaker:"Li Lu",topic:"moat",label:"constant change：护城河的持续挑战",
+summary:"所有伟大企业都在不断变化，护城河必须持续重建才能保持。这是分析企业最有趣的维度——竞争优势不是一劳永逸的。"},
+{id:8,time:"21:51",speaker:"Bruce",topic:null,label:"Q3: 投资方法的差异",
+summary:"Bruce追问：你的投资方法与巴菲特/芒格路线有何本质不同？你是如何发展出自己独特的能力圈的？"},
+{id:9,time:"26:30",speaker:"Li Lu",topic:"moat",label:"从小企业到伟大企业：选股进化",
+summary:"李录从早期不懂商业、只会看财务报表，发展到深度理解管理层。他花大量时间与管理团队在一起，无论顺境逆境。理解一个人是否正直诚信，比看懂财务数字更重要。这需要多年经验积累，是一种艺术而非科学。"},
+{id:10,time:"33:00",speaker:"Li Lu",topic:"value",label:"安全边际与DCF估值",
+summary:"DCF是李录估值核心工具，但关键是假设要保守。好公司打折时要敢于加仓。"如果你对了，回报随时间放大；如果你错了，折扣保护你"——这就是安全边际的真正含义。宁可正确把握大事，对噪音保持宽容。"},
+{id:11,time:"38:00",speaker:"Bruce",topic:null,label:"Q4: 通才还是专才？",
+summary:"Bruce问：做投资应该成为通才（广泛学习各行业）还是专才（深耕某一领域）？在中国市场这个策略是否有所不同？"},
+{id:12,time:"44:49",speaker:"Li Lu",topic:"china",label:"中国：全球最活跃消费市场",
+summary:"中国是过去30年全球最活跃的经济体，正在从投资驱动转向消费驱动。消费市场仍处于早期，未来数十年将是全球最大消费市场。东西方投资者的信息不对称创造独特机会——深入理解文化、语言、治理的人有显著优势。"},
+{id:13,time:"50:00",speaker:"Li Lu",topic:"china",label:"中国各行业投资机会",
+summary:"住房、服务业等几乎所有行业都在快速增长。中国市场的问题不是找不到机会，而是机会太多、资源有限，必须高度选择性。关键是找到有护城河的好公司。"},
+{id:14,time:"55:00",speaker:"Bruce",topic:null,label:"Q5: 服务经济与人才",
+summary:"Bruce问：中国服务经济有哪些独特机会？人才培训和管理面临哪些挑战？本土化特征如何理解？"},
+{id:15,time:"62:00",speaker:"Bruce",topic:null,label:"Q6: 投资失误与教训",
+summary:"Bruce问：回顾你的职业生涯，最大的投资失误是什么？有哪些教训可以分享？普通人能从中学到什么？"},
+{id:16,time:"62:01",speaker:"Li Lu",topic:"china",label:"失误与对中国青年的建议",
+summary:"错误是投资的必要组成部分，关键是能从错误中快速学习。对中国年轻人的建议：广泛阅读经典、找真正好的导师、从基础上理解企业。中国下一代面临的历史性机遇是前所未有的——中国将成为全球最大消费市场。"},
+{id:17,time:"85:00",speaker:"Li Lu",topic:"china",label:"Asian-American的桥梁角色",
+summary:"李录最后呼吁：全球经济的中心正在从大西洋转向太平洋。2000万亚裔美国人在美国与亚洲之间可以发挥独特的桥梁作用——这不仅有利于个人，更有利于整个美国社会的长期繁荣。"}
 ];
 
 function render() {
@@ -160,9 +160,9 @@ function render() {
     html += '<div class="sg-t">&#9201; ' + s.time + ' &middot; ' + s.speaker + '</div>';
     html += '<div class="sg-l">' + s.label + '</div>';
     html += '<div class="sg-s">' + s.summary + '</div>';
-    html += '<span class="sg-w">&#9654; Jump to ' + s.time + '</span></div>';
+    html += '<span class="sg-w">&#9654; 跳转到 ' + s.time + '</span></div>';
   }
-  cont.innerHTML = html || '<p class="emp">No results</p>';
+  cont.innerHTML = html || '<p class="emp">无结果</p>';
 }
 
 function showTab(name) {
@@ -180,13 +180,13 @@ function svNote() {
   localStorage.setItem('lln', JSON.stringify(notes));
   document.getElementById('ntx').value = '';
   rndNotes();
-  tst('Saved');
+  tst('已保存');
 }
 
 function rndNotes() {
   var notes = JSON.parse(localStorage.getItem('lln') || '[]');
   var cont = document.getElementById('nt-lst');
-  if (!notes.length) { cont.innerHTML = '<p class="emp">No notes yet</p>'; return; }
+  if (!notes.length) { cont.innerHTML = '<p class="emp">暂无笔记</p>'; return; }
   var html = '';
   for (var i = 0; i < notes.length; i++) {
     html += '<div class="nc"><button class="nd" onclick="dlNote(' + i + ')">&times;</button>';
