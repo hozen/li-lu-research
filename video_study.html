@@ -3,245 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Li Lu CCBC - Video Study</title>
+<title>Li Lu - Video Study</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#f3f4f6;color:#1a1a1a;line-height:1.6}
-header{background:linear-gradient(135deg,#0a1628,#1a365d);color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.h-lft{font-size:1.05rem;font-weight:700}
-.h-lft span{color:#c9a227}
-.h-sub{font-size:.78rem;opacity:.7}
-.h-nav{display:flex;gap:6px}
-.h-btn{flex:1;padding:10px 8px;text-align:center;border:none;background:none;cursor:pointer;font-size:.82rem;color:rgba(255,255,255,.6);border-bottom:3px solid transparent;transition:all .2s}
-.h-btn.on{color:#c9a227;border-bottom-color:#c9a227;font-weight:600}
-main{max-width:900px;margin:0 auto;background:#fff;min-height:calc(100vh - 56px)}
-.vid-box{background:#0a1628;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px}
-.vid-box h3{color:#fff;font-size:1rem;text-align:center;padding:0 20px}
-.vid-box p{color:rgba(255,255,255,.6);font-size:.8rem}
-.vid-btn{background:#c9a227;color:#0a1628;padding:10px 22px;border-radius:30px;font-weight:700;text-decoration:none;font-size:.9rem}
-.panels{display:none;flex:1;overflow-y:auto}
-.panels.on{display:block}
-.ctrl{padding:10px 14px;border-bottom:1px solid #e5e7eb;display:flex;gap:8px;background:#f9fafc;flex-wrap:wrap}
-.ctrl input{flex:1;min-width:120px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:6px;font-size:.82rem}
-.ctrl select{padding:6px 8px;border:1px solid #e5e7eb;border-radius:6px;font-size:.78rem;background:#fff}
-.scroller{flex:1;overflow-y:auto;padding:14px}
-.seg{padding:14px 16px;margin-bottom:10px;border-radius:12px;border:1px solid #e5e7eb;cursor:pointer;transition:all .15s;background:#fff}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f3f4f6;color:#1a1a1a;line-height:1.6}
+header{background:#0a1628;color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.h-brand{font-size:1rem;font-weight:700}
+.h-sub{font-size:.72rem;opacity:.6;margin-top:2px}
+.h-nav{display:flex;gap:6px;align-items:center}
+.h-nav a{color:rgba(255,255,255,.65);text-decoration:none;padding:8px 12px;border-radius:6px;font-size:.8rem;transition:all .2s}
+.h-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+main{max-width:900px;margin:0 auto;background:#fff;min-height:calc(100vh - 60px)}
+.vid-list{padding:16px;display:grid;gap:16px}
+.vid-card{background:#fff;border-radius:12px;border:1px solid #e5e7eb;overflow:hidden;cursor:pointer;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.vid-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12);border-color:#c9a227}
+.vid-card.active{border-color:#c9a227;box-shadow:0 0 0 2px rgba(201,162,39,.2)}
+.vid-thumb{width:100%;aspect-ratio:16/9;background:#0a1628;display:flex;align-items:center;justify-content:center;position:relative}
+.vid-thumb img{width:100%;height:100%;object-fit:cover}
+.vid-thumb .play-icon{position:absolute;background:rgba(201,162,39,.9);width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#0a1628}
+.vid-info{padding:14px 16px}
+.vid-title{font-size:.95rem;font-weight:600;color:#1a1a2e;margin-bottom:6px;line-height:1.4}
+.vid-meta{font-size:.78rem;color:#6b7280;display:flex;gap:12px;flex-wrap:wrap}
+.vid-meta span{display:flex;align-items:center;gap:4px}
+.vid-yt-link{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin-top:8px}
+.vid-yt-link:hover{background:#b8922a}
+.vid-segments{padding:16px;border-top:1px solid #e5e7eb}
+.seg{padding:12px;margin-bottom:8px;border-radius:8px;border:1px solid #e5e7eb;background:#fafafa;cursor:pointer;transition:all .15s}
 .seg:hover{border-color:#c9a227}
-.seg.gn{background:#dcfce7;border-left:5px solid #16a34a}
-.seg.bl{background:#dbeafe;border-left:5px solid #3b82f6}
-.seg.pr{background:#f3e8ff;border-left:5px solid #9333ea}
-.seg.yw{background:#fef9e7;border-left:5px solid #c9a227}
 .seg-time{font-size:.72rem;font-weight:700;color:#c9a227;margin-bottom:4px}
-.seg-lbl{font-size:.75rem;font-weight:700;color:#1a365d;margin-bottom:6px}
-.seg-zh{color:#374151;font-size:.85rem;line-height:1.75;margin-bottom:8px}
-.seg-en{font-size:.78rem;color:#555;background:#f8f9fa;padding:10px 12px;border-radius:8px;line-height:1.8;max-height:0;overflow:hidden;transition:max-height .3s;margin-bottom:8px;border:1px solid #e5e7eb}
+.seg-zh{font-size:.85rem;color:#374151;line-height:1.7}
+.seg-en{font-size:.78rem;color:#555;background:#f3f4f6;padding:8px 10px;border-radius:6px;line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s;margin-top:8px}
 .seg-en.open{max-height:400px}
-.seg-exp{font-size:.75rem;color:#c9a227;cursor:pointer;user-select:none;padding:4px 0}
-.seg-jmp{display:inline-block;font-size:.75rem;color:#c9a227;font-weight:600;text-decoration:none;padding:4px 12px;border:1px solid #c9a227;border-radius:20px;transition:all .2s}
+.seg-exp{font-size:.75rem;color:#c9a227;cursor:pointer;user-select:none;margin-top:4px;display:inline-block}
+.seg-jmp{font-size:.75rem;color:#c9a227;font-weight:600;text-decoration:none;padding:4px 10px;border:1px solid #c9a227;border-radius:20px;display:inline-block;margin-top:8px;transition:all .2s}
 .seg-jmp:hover{background:#c9a227;color:#0a1628}
-.notes{padding:14px}
-.notes-in{margin-bottom:14px}
-.notes-in textarea{width:100%;padding:10px;border:1px solid #e5e7eb;border-radius:10px;font-size:.85rem;resize:vertical;min-height:70px;font-family:inherit}
-.notes-in textarea:focus{outline:none;border-color:#c9a227}
-.notes-save{margin-top:6px;background:#c9a227;color:#0a1628;border:none;padding:7px 16px;border-radius:8px;font-weight:600;cursor:pointer;font-size:.82rem}
-.notes-list{margin-top:14px}
-.note-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:12px 14px;margin-bottom:8px;position:relative}
-.note-del{position:absolute;top:8px;right:10px;background:none;border:none;color:#9ca3af;cursor:pointer;font-size:1.1rem}
-.note-del:hover{color:#ef4444}
-.note-time{font-size:.7rem;color:#c9a227;font-weight:600;margin-bottom:3px}
-.note-text{font-size:.85rem;color:#374151;line-height:1.6}
-.emp{text-align:center;color:#6b7280;font-size:.85rem;margin-top:40px}
-footer{padding:10px 16px;background:#f9fafc;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
+.back-link{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;color:#c9a227;text-decoration:none;font-size:.85rem;font-weight:500}
+.back-link:hover{text-decoration:underline}
+.empty-seg{padding:24px;text-align:center;color:#9ca3af;font-size:.85rem}
+footer{padding:10px 16px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
 footer a{color:#c9a227;text-decoration:none}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0a1628;color:#fff;padding:8px 20px;border-radius:30px;font-size:.85rem;opacity:0;transition:opacity .3s;z-index:1000;pointer-events:none}
 .toast.on{opacity:1}
+@media(max-width:600px){.vid-list{padding:12px}.vid-info{padding:12px}}
+@media(prefers-color-scheme:dark){
+body{background:#1a1a2e;color:#e0e0e0}
+.vid-card{background:#162032;border-color:#333}
+.vid-title{color:#e0e0e0}
+.vid-meta{color:#9ca3af}
+.vid-segments{border-color:#333}
+.seg{background:#1a2744;border-color:#333}
+.seg-zh{color:#c0c0c0}
+.seg-en{background:#0f0f23;border-color:#444;color:#b0b0b0}
+footer{background:#0d1b2a;color:#888}
+.back-link{color:#c9a227}
+}
 </style>
 </head>
 <body>
 <header>
   <div>
-    <div class="h-lft">&#128200; <span>Li Lu</span> Video Study</div>
-    <div class="h-sub">CCBC Fireside Chat &middot; 1h32m</div>
+    <div class="h-brand">&#128202; Li Lu Video Study</div>
+    <div class="h-sub">9 videos &middot; CCBC transcript available</div>
   </div>
-  <div class="h-nav">
-    <button class="h-btn on" id="btn-seg" onclick="showTab('seg')">&#128203; Segments</button>
-    <button class="h-btn" id="btn-notes" onclick="showTab('notes')">&#128214; Notes</button>
-  </div>
+  <nav class="h-nav">
+    <a href="index.html">&#127968; Home</a>
+    <a href="bookshelf.html">&#128218; Books</a>
+    <a href="downloads.html">&#128206; Downloads</a>
+  </nav>
 </header>
 <main>
-  <div class="vid-box">
-    <h3>CCBC Fireside Chat: Value Investing in China</h3>
-    <p>Li Lu &times; Bruce Greenwald &middot; Columbia &middot; 1h32m</p>
-    <a href="https://www.youtube.com/watch?v=FiHrWy2jGbA" target="_blank" class="vid-btn">&#9654; Watch on YouTube</a>
+  <div style="padding:12px 16px 0">
+    <a href="index.html" class="back-link">&#8592; Back to Home</a>
   </div>
 
-  <div id="panels-seg" class="panels on">
-    <div class="ctrl">
-      <input type="text" id="srch" placeholder="Search..." oninput="render()">
-      <select id="flt" onchange="render()">
-        <option value="">All Topics</option>
-        <option value="moat">Moat</option>
-        <option value="china">China</option>
-        <option value="character">Character</option>
-        <option value="value">Valuation</option>
-      </select>
-    </div>
-    <div class="scroller" id="seg-list"></div>
-  </div>
-
-  <div id="panels-notes" class="panels">
-    <div class="notes">
-      <div class="notes-in">
-        <textarea id="note-txt" placeholder="Your notes..."></textarea>
-        <button class="notes-save" onclick="saveNote()">&#128190; Save</button>
-      </div>
-      <div class="notes-list" id="note-list"></div>
-    </div>
-  </div>
-
-  <footer>
-    <span>&#128202; CCBC &middot; Study use only</span>
-    <a href="index.html">&larr; Home</a>
-  </footer>
+  <div class="vid-list" id="vid-list"></div>
 </main>
+
+<footer>
+  <span>Study use only &middot; <a href="index.html">Home</a></span>
+  <span style="color:#ef4444">Not investment advice</span>
+</footer>
+
 <div class="toast" id="toast"></div>
+
 <script>
-var S = [
-{id:1,t:"02:24",sp:"Host",tp:null,lb:"Opening Introduction",
-zh:"Host introduces Bruce Greenwald and Li Lu. Bruce is the godfather of value investing at Columbia Business School, having trained a generation of value investors including Li Lu. Li Lu is founder of Himalaya Capital, managing billions in assets, focused on long-term investments in Asia and North America.",
-en:"Live streaming from Columbia Business School in New York City. Welcome to the final session of the 13th Columbia China Business Conference. Joining us today are Professor Bruce Greenwald and Mr. Lee Liu."},
-{id:2,t:"04:37",sp:"Bruce",tp:null,lb:"Q1: Evolution of Investment Philosophy",
-zh:"Bruce opens: How has your investment philosophy evolved over the past 28 years? What influences from Charlie Munger? How does your approach differ from Buffett/Munger's?",
-en:"I've known Lee Liu now for more than 20 years. How has your investment philosophy evolved? In what ways has Charlie Munger influenced you?"},
-{id:3,t:"08:00",sp:"Li Lu",tp:"moat",lb:"From Graham to Munger: Philosophy Evolution",
-zh:"Li Lu shares three-stage evolution: 1) Graham cigar butt approach (statistical cheapness) 2) Quality small businesses 3) Great businesses with durable moats and long runways. Core: buying below intrinsic value is simply intelligent. Munger's influence goes far beyond investing into life philosophy.",
-en:"Before I got exposed to value investing through Buffett's lecture at Bruce's class, my whole approach was along similar lines. The idea of buying something at a discount to intrinsic value is simply intelligent. I looked for value on the balance sheet in the classic style of Benjamin Graham. Over time I evolved into understanding smaller businesses, then looking for really good businesses with enduring competitive advantage and a long growth trajectory."},
-{id:4,t:"12:30",sp:"Bruce",tp:null,lb:"Q2: What Makes a Great Business?",
-zh:"Bruce probes: What specific characteristics make a business 'great'? What are the quantifiable metrics? How do you value them?",
-en:"You mentioned finding great businesses. What specifically do you look for in a great business? What are the characteristics that make a business truly outstanding?"},
-{id:5,t:"12:42",sp:"Li Lu",tp:"moat",lb:"ROIC and Moat: Standards for Great Businesses",
-zh:"Three criteria: 1) ROIC consistently above average 2) True moat that fends off competitors 3) Long continuous growth runway. Truly great businesses meeting all three are extremely rare - like finding a needle in a haystack. Once found, holding long-term is the best strategy.",
-en:"Great businesses are the ones who really have above average return on invested capital - but that kind of businesses socially attract imitators and competitors. Truly good business is the one that can fend off competitors and have enduring competitive advantage with higher than average ROIC, and hopefully also have a long runway of continuous growth. They're rare - really really rare."},
-{id:6,t:"15:00",sp:"Li Lu",tp:"character",lb:"Trust Moat: The Most Critical Factor",
-zh:"The moat Li Lu emphasizes most: trust. The highest form of civilization is a seamless web of deserved trust. Management integrity and treating all stakeholders fairly creates the most durable moat. Picking stocks requires learning to read people.",
-en:"The highest form which civilization can reach is a seamless web of deserved trust - not much procedure, just totally reliable people correctly trusting one another. For me, the most important moat is trust. In evaluating a business, it is critically important to understand the people that run them, particularly the top management."},
-{id:7,t:"19:00",sp:"Li Lu",tp:"moat",lb:"Constant Change: Sustaining Competitive Advantage",
-zh:"All great businesses are in constant flux. The moat must be continuously rebuilt to remain relevant. Competitive advantage is never permanent.",
-en:"All great businesses are in constant change. The moat must be continuously rebuilt to remain relevant. This is the most interesting dimension of business analysis."},
-{id:8,t:"21:51",sp:"Bruce",tp:null,lb:"Q3: How Do You Invest Differently?",
-zh:"Bruce probes: What is the essential difference between your approach and Buffett/Munger's? How did you develop your own unique circle of competence?",
-en:"How do you invest differently from other value investors? We've talked a lot about the standard approach. You seem to have developed your own approach. What makes yours distinctive?"},
-{id:9,t:"26:30",sp:"Li Lu",tp:"moat",lb:"From Small to Great Businesses: Stock Selection Evolution",
-zh:"Li Lu evolved from not understanding business at all, only reading financial statements, to deeply understanding management. He spends extensive time with management teams in good times and bad. Understanding whether a person is upright matters more than reading financial numbers. Assessment of character is an art, not a science.",
-en:"I evolved from not understanding business at all, just looking at financial statements, to deeply understanding management. I spend a lot of time with management teams before investing, in good times and bad. Understanding whether a person will tell me the truth even when it is uncomfortable matters more than financial numbers."},
-{id:10,t:"33:00",sp:"Li Lu",tp:"value",lb:"Margin of Safety and DCF Valuation",
-zh:"DCF is Li Lu's core valuation tool, but key is conservative assumptions. Buy more when good companies are on sale. If you are right, returns compound; if wrong, the discount protects you.",
-en:"I use DCF as the primary tool, but the key is being conservative with assumptions. The margin of safety is not just about price - it is about understanding the business well enough that you are right even if the macro environment changes. I prefer to be right about the big things and tolerant of noise."},
-{id:11,t:"38:00",sp:"Bruce",tp:null,lb:"Q4: Generalist or Specialist Investor?",
-zh:"Bruce asks: Should investors become generalists or specialists? Does it work differently in the China market?",
-en:"Do you think investors should be generalists or specialists? Do you think being a generalist serves you better, especially in the China market?"},
-{id:12,t:"44:49",sp:"Li Lu",tp:"china",lb:"China: Worlds Most Dynamic Consumer Market",
-zh:"China has been the worlds most dynamic economy for 30 years, transitioning from investment-driven to consumption-driven. Consumer market still in early innings, will be the worlds largest for decades. Information asymmetry between East and West creates opportunity for those who understand the culture, language, and governance.",
-en:"China has been the most dynamic economy in the world for the last 30 years, transitioning from investment-driven to consumption-driven economy. The consumer market is still in its early innings. The information asymmetry between Eastern and Western investors creates opportunities for those who are on the ground."},
-{id:13,t:"50:00",sp:"Li Lu",tp:"china",lb:"Investment Opportunities Across China Sectors",
-zh:"Housing, services, virtually every industry are in robust growth. Challenge in China is not finding opportunities - it is being highly selective because opportunities exceed resources. Key is finding good companies with moats.",
-en:"Housing, services, virtually every industry is in a robust growth stage. The challenge in China is not finding opportunities - it is being highly selective because opportunities exceed your resources."},
-{id:14,t:"55:00",sp:"Bruce",tp:null,lb:"Q5: Service Economy and Talent in China",
-zh:"Bruce asks: What opportunities and talent challenges do you see in Chinas service economy? How do you understand localization characteristics?",
-en:"What opportunities do you see in Chinas service economy? What about talent development and management challenges?"},
-{id:15,t:"62:00",sp:"Bruce",tp:null,lb:"Q6: Investment Mistakes and Lessons",
-zh:"Bruce asks: Looking back on your career, what were your biggest investment mistakes? What lessons can you share? What can ordinary people learn?",
-en:"Looking back on your career, what are some of your biggest investment mistakes? What lessons can you share with us?"},
-{id:16,t:"62:01",sp:"Li Lu",tp:"china",lb:"Mistakes and Advice for Young Chinese Investors",
-zh:"Mistakes are a necessary part of investing - key is learning quickly. For young Chinese: read widely, find good mentors, understand businesses from the ground up. Next generation faces unprecedented historic opportunities.",
-en:"Mistakes are a necessary part of investing. The key is learning from them quickly. For young people in China interested in investing: read everything, find mentors, understand businesses from the ground up."},
-{id:17,t:"85:00",sp:"Li Lu",tp:"china",lb:"Asian-American: The Bridge Role",
-zh:"Li Lus final call: The center of global economy is shifting from Atlantic to Pacific. 20 million Asian-Americans can serve as a unique bridge between America and Asia.",
-en:"The center of the global economy is shifting from the Atlantic to the Pacific. Asian-American - 20 million strong - are going to play an increasingly important role."}
+var VIDEOS=[
+{id:"FiHrWy2jGbA",title:"CCBC Fireside Chat: Value Investing in China",channel:"Columbia Business School",desc:"Li Lu x Bruce Greenwald at Columbia. The definitive Li Lu interview covering moat, trust, DCF, China opportunities.",duration:"1h32m",hasTranscript:true},
+{id:"-gfRCGZ0zf4",title:"How I Got Started In Value Investing? | CBS 2021",channel:"YAPSS Archive",desc:"Li Lu shares how he discovered value investing through Buffett's lecture at Columbia.",duration:"~10min",hasTranscript:false},
+{id:"9qSMMIw6cT8",title:"My Role Model Charlie Munger | CBS 2021",channel:"YAPSS Archive",desc:"Li Lu discusses Charlie Munger's influence on his investment philosophy and life.",duration:"~10min",hasTranscript:false},
+{id:"ajMy9LkQQlw",title:"Li Lu Master Class on Value Investing",channel:"economicwhispers",desc:"Comprehensive master class on value investing principles.",duration:"~45min",hasTranscript:false},
+{id:"Z2UpZfopZQI",title:"Roasting Discount Cash Flow Statements",channel:"Modern Money Clips",desc:"Li Lu critiques common DCF valuation mistakes.",duration:"~15min",hasTranscript:false},
+{id:"G0tcChYJHw4",title:"The Mistake That Cost Millions",channel:"Mike the Value Investor",desc:"Li Lu shares his biggest investment mistakes and lessons.",duration:"~15min",hasTranscript:false},
+{id:"_-M1HFuqus0",title:"Li Lu Explains Value Investing",channel:"Bald Investor",desc:"Clear explanation of value investing concepts.",duration:"~10min",hasTranscript:false},
+{id:"c6r9xZNG3BI",title:"How Warren Buffett Changed Li Lu's Financial Future",channel:"Mystery Money Tube",desc:"The story of how Buffett and Munger shaped Li Lu's path.",duration:"~12min",hasTranscript:false},
+{id:"H2oXBxS3kss",title:"95% Doesn't Understand The Stock Market",channel:"Timeless Gain",desc:"Li Lu on why most people misunderstand markets.",duration:"~10min",hasTranscript:false},
+{id:"0aq5aCEAigA",title:"Li Lu's Best Advice on Successful Investing | FAME 2012",channel:"YAPSS",desc:"Li Lu's key advice for successful investing from FAME 2012 conference.",duration:"~12min",hasTranscript:false}
 ];
 
-function render() {
-  var q = document.getElementById("srch").value.toLowerCase();
-  var flt = document.getElementById("flt").value;
-  var cont = document.getElementById("seg-list");
-  var html = "";
-  for (var i = 0; i < S.length; i++) {
-    var s = S[i];
-    if (flt && s.tp !== flt) continue;
-    if (q && !s.lb.toLowerCase().includes(q) && !s.zh.toLowerCase().includes(q) && !s.en.toLowerCase().includes(q)) continue;
-    var cls = "seg" + (s.tp === "moat" ? " gn" : s.tp === "china" ? " bl" : s.tp === "character" ? " pr" : s.tp === "value" ? " yw" : "");
-    var parts = s.t.split(":");
-    var sec = parseInt(parts[0]) * 60 + parseInt(parts[1]);
-    var yt = "https://www.youtube.com/watch?v=FiHrWy2jGbA&t=" + sec;
-    html += "<div class=\"" + cls + "\">";
-    html += "<div class=\"seg-time\">&#9201; " + s.t + " &middot; " + s.sp + "</div>";
-    html += "<div class=\"seg-lbl\">" + s.lb + "</div>";
-    html += "<div class=\"seg-zh\">" + s.zh + "</div>";
-    html += "<div class=\"seg-en\" id=\"en" + s.id + "\">" + s.en + "</div>";
-    html += "<div class=\"seg-exp\" onclick=\"toggleEn(" + s.id + ")\">&#9658; Show English</div>";
-    html += "<div style=\"margin-top:10px\"><a href=\"" + yt + "\" target=\"_blank\" class=\"seg-jmp\">&#9654; Jump to " + s.t + "</a></div>";
-    html += "</div>";
+var SEGMENTS={
+"FiHrWy2jGbA":[
+{id:1,t:"02:24",sp:"Host",lb:"Opening Introduction",zh:"主持人介绍 Bruce Greenwald 和李录。Bruce 是哥伦比亚商学院价值投资之父，培养了一代价值投资者包括李录在内。",en:"Live streaming from Columbia Business School. Welcome to the 13th Columbia China Business Conference. Joining us today are Professor Bruce Greenwald and Mr. Lee Liu."},
+{id:2,t:"04:37",sp:"Bruce",lb:"Evolution of Investment",zh:"Bruce 开场：您的投资理念在过去28年是如何演变的？查理·芒格对您有什么影响？",en:"I've known Lee Liu for more than 20 years. How has your investment philosophy evolved? In what ways has Charlie Munger influenced you?"},
+{id:3,t:"08:00",sp:"Li Lu",tp:"moat",lb:"From Graham to Munger",zh:"李录分享三阶段演进：1) 格雷厄姆雪茄烟蒂法 2) 优质小企业 3) 具有持久护城河的伟大企业。芒格的影响远超投资。",en:"Before I got exposed to value investing through Buffett's lecture at Bruce's class, my whole approach was along similar lines."},
+{id:4,t:"12:30",sp:"Bruce",lb:"What Makes a Great Business",zh:"Bruce 追问：什么是伟大企业的具体特征？有哪些可量化的指标？",en:"What specifically do you look for in a great business? What are the characteristics that make a business truly outstanding?"},
+{id:5,t:"12:42",sp:"Li Lu",tp:"moat",lb:"ROIC and Moat",zh:"三个标准：1) ROIC 持续高于平均水平 2) 真正的护城河 3) 长期持续增长赛道。符合这三个条件的伟大企业极其罕见。",en:"Great businesses are the ones who really have above average return on invested capital - but that kind of businesses socially attract imitators."},
+{id:6,t:"15:00",sp:"Li Lu",tp:"character",lb:"Trust Moat",zh:"李录最强调的护城河：信任。最高形式的文明是无缝的、值得信赖的信任之网。",en:"The highest form which civilization can reach is a seamless web of deserved trust - not much procedure, just totally reliable people correctly trusting one another."},
+{id:7,t:"19:00",sp:"Li Lu",tp:"moat",lb:"Constant Change",zh:"所有伟大企业都处于不断变化中。护城河必须不断重建才能保持相关性。",en:"All great businesses are in constant change. The moat must be continuously rebuilt to remain relevant."},
+{id:8,t:"21:51",sp:"Bruce",lb:"How Do You Invest Differently",zh:"Bruce 提问：您的方法与其他价值投资者有什么本质区别？",en:"How do you invest differently from other value investors?"},
+{id:9,t:"26:30",sp:"Li Lu",tp:"moat",lb:"From Small to Great",zh:"李录从完全不懂企业只看财报，演进到深入理解管理层。性格评估是艺术，不是科学。",en:"I evolved from not understanding business at all, just looking at financial statements, to deeply understanding management."},
+{id:10,t:"33:00",sp:"Li Lu",tp:"value",lb:"Margin of Safety and DCF",zh:"DCF 是李录的核心估值工具，但关键是保守假设。",en:"I use DCF as the primary tool, but the key is being conservative with assumptions."},
+{id:11,t:"38:00",sp:"Bruce",lb:"Generalist or Specialist",zh:"Bruce 提问：投资者应该是通才还是专才？在中国市场运作方式是否不同？",en:"Do you think investors should be generalists or specialists?"},
+{id:12,t:"44:49",sp:"Li Lu",tp:"china",lb:"China World's Most Dynamic",zh:"中国30年来一直是全球最具活力的经济体，正在从投资驱动转向消费驱动。",en:"China has been the most dynamic economy in the world for the last 30 years, transitioning from investment-driven to consumption-driven economy."},
+{id:13,t:"50:00",sp:"Li Lu",tp:"china",lb:"Opportunities Across Sectors",zh:"住房、服务、几乎所有行业都处于强劲增长阶段。关键是找到有护城河的好公司。",en:"Housing, services, virtually every industry is in a robust growth stage. The challenge in China is not finding opportunities."},
+{id:14,t:"55:00",sp:"Bruce",lb:"Service Economy",zh:"Bruce 提问：中国的服务业有哪些机会和人才挑战？",en:"What opportunities do you see in China's service economy?"},
+{id:15,t:"62:00",sp:"Bruce",lb:"Investment Mistakes",zh:"Bruce 提问：回顾您的职业生涯，您最大的投资错误是什么？",en:"Looking back on your career, what are some of your biggest investment mistakes?"},
+{id:16,t:"62:01",sp:"Li Lu",tp:"china",lb:"Mistakes and Advice",zh:"错误是投资的必要部分——关键是快速学习。",en:"Mistakes are a necessary part of investing. The key is learning from them quickly."},
+{id:17,t:"85:00",sp:"Li Lu",tp:"china",lb:"Asian-American Bridge",zh:"李录最后呼吁：全球经济中心正在从大西洋转向太平洋。",en:"The center of the global economy is shifting from the Atlantic to the Pacific."}
+]};
+
+function renderVideoList(){
+  var list=document.getElementById("vid-list");
+  var html="";
+  for(var i=0;i<VIDEOS.length;i++){
+    var v=VIDEOS[i];
+    var ytUrl="https://www.youtube.com/watch?v="+v.id;
+    var thumbUrl="https://img.youtube.com/vi/"+v.id+"/mqdefault.jpg";
+    html+='<div class="vid-card" id="card-'+v.id+'" onclick="selectVideo(\''+v.id+'\')">';
+    html+='<div class="vid-thumb">';
+    html+='<img src="'+thumbUrl+'" alt="'+v.title+'" loading="lazy" onerror="this.style.display=\'none\'">';
+    html+='<div class="play-icon">&#9654;</div>';
+    html+='</div>';
+    html+='<div class="vid-info">';
+    html+='<div class="vid-title">'+v.title+'</div>';
+    html+='<div class="vid-meta">';
+    html+='<span>&#127916; '+v.channel+'</span>';
+    html+='<span>&#9202; '+v.duration+'</span>';
+    if(v.hasTranscript) html+='<span style="color:#c9a227">&#10003; Transcript</span>';
+    html+='</div>';
+    html+='<div style="font-size:.82rem;color:#6b7280;margin-top:8px">'+v.desc+'</div>';
+    html+='<a href="'+ytUrl+'" target="_blank" class="vid-yt-link" onclick="event.stopPropagation()">&#9654; Watch on YouTube</a>';
+    html+='</div></div>';
   }
-  cont.innerHTML = html || "<p class=\"emp\">No results</p>";
+  list.innerHTML=html;
 }
 
-function toggleEn(id) {
-  var el = document.getElementById("en" + id);
-  if (el.classList.contains("open")) {
+function selectVideo(id){
+  var card=document.getElementById("card-"+id);
+  document.querySelectorAll(".vid-card").forEach(function(c){c.classList.remove("active")});
+  card.classList.add("active");
+  card.scrollIntoView({behavior:"smooth",block:"start"});
+  var segs=SEGMENTS[id];
+  var html='<div class="vid-segments">';
+  if(segs&&segs.length>0){
+    for(var i=0;i<segs.length;i++){
+      var s=segs[i];
+      var parts=s.t.split(":");
+      var sec=parseInt(parts[0])*60+parseInt(parts[1]);
+      var yt="https://www.youtube.com/watch?v="+id+"&t="+sec;
+      html+='<div class="seg" id="seg-'+s.id+'">';
+      html+='<div class="seg-time">&#9201; '+s.t+(s.sp?' &middot; '+s.sp:'')+'</div>';
+      html+='<div class="seg-zh">'+s.zh+'</div>';
+      html+='<div class="seg-en" id="en-'+s.id+'">'+s.en+'</div>';
+      html+='<div class="seg-exp" onclick="toggleEn('+s.id+')">&#9658; Show English</div>';
+      html+='<a href="'+yt+'" target="_blank" class="seg-jmp">&#9654; '+s.t+'</a>';
+      html+='</div>';
+    }
+  }else{
+    var yt="https://www.youtube.com/watch?v="+id;
+    html+='<div class="empty-seg">No transcript segments available for this video yet. <a href="'+yt+'" target="_blank" class="vid-yt-link" style="margin-top:12px;display:inline-flex">&#9654; Watch on YouTube</a></div>';
+  }
+  html+='</div>';
+  card.querySelector(".vid-info").insertAdjacentHTML("beforeend",html);
+}
+
+function toggleEn(id){
+  var el=document.getElementById("en-"+id);
+  if(!el)return;
+  if(el.classList.contains("open")){
     el.classList.remove("open");
-    el.previousElementSibling.textContent = "\u25b8 Show English";
-  } else {
+    el.previousElementSibling.textContent="\u25b8 Show English";
+  }else{
     el.classList.add("open");
-    el.previousElementSibling.textContent = "\u25bc Hide English";
+    el.previousElementSibling.textContent="\u25bc Hide English";
   }
 }
 
-function showTab(name) {
-  document.getElementById("panels-seg").className = name === "seg" ? "panels on" : "panels";
-  document.getElementById("panels-notes").className = name === "notes" ? "panels on" : "panels";
-  document.getElementById("btn-seg").className = name === "seg" ? "h-btn on" : "h-btn";
-  document.getElementById("btn-notes").className = name === "notes" ? "h-btn on" : "h-btn";
+function tst(msg){
+  var t=document.getElementById("toast");
+  t.textContent=msg;t.className="toast on";
+  setTimeout(function(){t.className="toast";},2500);
 }
 
-function saveNote() {
-  var tx = document.getElementById("note-txt").value.trim();
-  if (!tx) return;
-  var notes = JSON.parse(localStorage.getItem("lln3") || "[]");
-  notes.unshift({ t: tx, d: new Date().toLocaleString() });
-  localStorage.setItem("lln3", JSON.stringify(notes));
-  document.getElementById("note-txt").value = "";
-  renderNotes();
-  tst("Saved");
-}
-
-function renderNotes() {
-  var notes = JSON.parse(localStorage.getItem("lln3") || "[]");
-  var cont = document.getElementById("note-list");
-  if (!notes.length) { cont.innerHTML = "<p class=\"emp\">No notes yet</p>"; return; }
-  var html = "";
-  for (var i = 0; i < notes.length; i++) {
-    html += "<div class=\"note-card\"><button class=\"note-del\" onclick=\"delNote(" + i + ")\">&times;</button>";
-    html += "<div class=\"note-time\">&#128214; " + notes[i].d + "</div>";
-    html += "<div class=\"note-text\">" + notes[i].t + "</div></div>";
-  }
-  cont.innerHTML = html;
-}
-
-function delNote(i) {
-  var notes = JSON.parse(localStorage.getItem("lln3") || "[]");
-  notes.splice(i, 1);
-  localStorage.setItem("lln3", JSON.stringify(notes));
-  renderNotes();
-}
-
-function tst(msg) {
-  var t = document.getElementById("toast");
-  t.textContent = msg; t.className = "toast on";
-  setTimeout(function() { t.className = "toast"; }, 2500);
-}
-
-render();
-renderNotes();
+renderVideoList();
 </script>
 </body>
 </html>
