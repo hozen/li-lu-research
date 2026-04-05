@@ -69,9 +69,17 @@ footer a{color:#c9a227;text-decoration:none}
 </head>
 <body>
 <header>
-  <div>
-    <div class="h-lft">&#128200; <span>Li Lu</span> Video Study</div>
-    <div class="h-sub">CCBC Fireside Chat &middot; 1h32m</div>
+  <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+    <a href="index.html" style="text-decoration:none;">
+      <div class="h-lft">&#128200; <span>李录研究</span></div>
+    </a>
+    <div style="display:flex;gap:4px;margin-left:10px;">
+      <a href="index.html" class="h-btn">首页</a>
+      <a href="bookshelf.html" class="h-btn">书单</a>
+      <a href="downloads.html" class="h-btn">下载</a>
+      <a href="glossary.html" class="h-btn">术语表</a>
+      <a href="timeline.html" class="h-btn">时间线</a>
+    </div>
   </div>
   <div class="h-nav">
     <button class="h-btn on" id="btn-seg" onclick="showTab('seg')">&#128203; Segments</button>
@@ -268,9 +276,8 @@ function updateProgress() {
   document.getElementById("progLabel").textContent = count + "/" + total + " \u5df2\u89c2\u770b";
   document.getElementById("progFill").style.width = (count / total * 100) + "%";
 }
-function clearProgress() { watchedSet.clear(); localStorage.removeItem("llwp"); updateProgress(); render(); }
+function clearProgress() { watchedSet.clear(); localStorage.removeItem("llwp"updateProgress(); render(); }
 
-\
 renderNotes();
 </script>
 </body>
