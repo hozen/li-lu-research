@@ -983,6 +983,18 @@ body.dark-mode .faq-section details summary {
 body.dark-mode .faq-section details p {
   color: var(--text-secondary);
 }
+
+body.dark-mode details.faq-details {
+  background: var(--md-surface);
+  color: var(--text-primary);
+  border-color: var(--md-outline);
+}
+body.dark-mode details.faq-details summary {
+  color: var(--md-on-surface);
+}
+body.dark-mode details.faq-details p {
+  color: var(--text-secondary);
+}
 </style>
 </head>
 <body>
@@ -999,7 +1011,7 @@ body.dark-mode .faq-section details p {
     <a href="#quotes" class="nav-link">语录</a>
     <a href="#faq" class="nav-link">FAQ</a>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()">&#9790; 夜间</button>
+  <button class="theme-toggle" onclick="toggleTheme()">&#127769; 夜间</button>
   <button class="hamburger" onclick="toggleDrawer()" aria-label="菜单">
     <span></span><span></span><span></span>
   </button>
@@ -1429,23 +1441,23 @@ id="faq" class="section faq-section">
       <p class="section-subtitle">关于李录与价值投资</p>
     </div>
     <div class="faq-list">
-      <details>
+      <details class="faq-details">
         <summary>Q1: 李录是如何开始价值投资的？</summary>
         <p>李录在哥伦比亚大学获JD+MBA+MA三学位，师从 Bruce Greenwald 教授学习价值投资，深受格雷厄姆与巴菲特思想影响，后创立喜马拉雅资本。</p>
       </details>
-      <details>
+      <details class="faq-details">
         <summary>Q2: 李录的核心投资原则是什么？</summary>
         <p>六大原则：1) 股票是公司所有权 2) 市场是仆人不是向导 3) 能力圈内投资 4) 安全边际 5) 长期持有 6) 护城河是根本</p>
       </details>
-      <details>
+      <details class="faq-details">
         <summary>Q3: 李录对中国市场怎么看？</summary>
         <p>他认为中国将成为世界上最大、最活跃的消费市场，在充满活力的经济体中更容易找到价值。金融服务尚未充分开发，许多领域即将起飞。</p>
       </details>
-      <details>
+      <details class="faq-details">
         <summary>Q4: 喜马拉雅资本的管理规模有多大？</summary>
         <p>根据2025年Q4 13F申报，管理规模约$35.69亿美元（约¥250亿）。Alphabet为第一大持仓(43.86%)，其次是Bank of America(16.08%)、PDD(14.64%)、Berkshire(12.64%)。</p>
       </details>
-      <details>
+      <details class="faq-details">
         <summary>Q5: 李录为什么投资比亚迪？</summary>
         <p>2008年投资时看中王传福的企业家精神和垂直整合模式。比亚迪代表了中国制造业的崛起，是典型的"护城河+成长"组合，最终获得数十倍回报。</p>
       </details>
@@ -1477,7 +1489,7 @@ id="faq" class="section faq-section">
 function toggleTheme() {
   document.body.classList.toggle('dark-mode');
   const btn = document.querySelector('.theme-toggle');
-  btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ 白天' : '&#9790; 夜间';
+  btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ 白天' : '&#127769; 夜间';
 }
 
 // Mobile drawer
