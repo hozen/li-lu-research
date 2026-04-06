@@ -13,6 +13,11 @@ header{background:#0a1628;color:#fff;padding:14px 24px;display:flex;align-items:
 .h-nav{display:flex;gap:6px;align-items:center}
 .h-nav a{color:rgba(255,255,255,.65);text-decoration:none;padding:8px 12px;border-radius:6px;font-size:.8rem;transition:all .2s}
 .h-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.hamburger{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:4px}
+.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#0a1628;flex-direction:column;padding:10px 20px;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.mobile-nav.open{display:flex}
+.mobile-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.9rem}
+.mobile-nav a:last-child{border-bottom:none}
 main{max-width:900px;margin:0 auto;background:#fff;min-height:calc(100vh - 60px)}
 .vid-list{padding:16px;display:grid;gap:16px}
 .vid-card{background:#fff;border-radius:12px;border:1px solid #e5e7eb;overflow:hidden;cursor:pointer;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.08)}
@@ -45,6 +50,7 @@ footer a{color:#c9a227;text-decoration:none}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0a1628;color:#fff;padding:8px 20px;border-radius:30px;font-size:.85rem;opacity:0;transition:opacity .3s;z-index:1000;pointer-events:none}
 .toast.on{opacity:1}
 @media(max-width:600px){.vid-list{padding:12px}.vid-info{padding:12px}}
+@media(max-width:768px){.h-nav{display:none}.hamburger{display:block}.mobile-nav{top:56px}}
 @media(prefers-color-scheme:dark){
 body{background:#1a1a2e;color:#e0e0e0}
 .vid-card{background:#162032;border-color:#333}
@@ -70,7 +76,13 @@ footer{background:#0d1b2a;color:#888}
     <a href="bookshelf.html">&#128218; Books</a>
     <a href="downloads.html">&#128206; Downloads</a>
   </nav>
+  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">&#9776;</button>
 </header>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">&#127968; Home</a>
+  <a href="bookshelf.html">&#128218; Books</a>
+  <a href="downloads.html">&#128206; Downloads</a>
+</div>
 <main>
   <div style="padding:12px 16px 0">
     <a href="index.html" class="back-link">&#8592; Back to Home</a>
@@ -192,6 +204,9 @@ function tst(msg){
   var t=document.getElementById("toast");
   t.textContent=msg;t.className="toast on";
   setTimeout(function(){t.className="toast";},2500);
+}
+function toggleMobile(){
+  document.getElementById("mobileNav").classList.toggle("open");
 }
 
 renderVideoList();
