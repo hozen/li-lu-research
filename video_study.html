@@ -5,20 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Li Lu - Video Study</title>
 <style>
+/* ============================================================
+   M3 Design System — aligned with index.html
+   ============================================================ */
+:root {
+  --md-primary:        #0a1628;
+  --md-primary-rgb:   10,22,40;
+  --md-primary-container: #1a365d;
+  --md-on-primary:     #ffffff;
+  --md-secondary:      #c9a227;
+  --md-secondary-container: #fef3c7;
+  --md-on-secondary:   #1a1a2e;
+  --md-surface:         #ffffff;
+  --md-surface-variant: #f3f4f6;
+  --md-surface-dark:    #162032;
+  --md-surface-variant-dark: #1a2744;
+  --md-background:     #ffffff;
+  --md-background-dark: #1a1a2e;
+  --md-on-surface:     #1a1a2e;
+  --md-on-surface-muted: #4a5568;
+  --md-outline:         #d1d5db;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs:  0.75rem; --font-size-sm: 0.875rem;
+  --font-size-base: 1rem; --font-size-lg: 1.125rem;
+  --text-primary: #1a1a2e; --text-secondary: #4a5568; --text-muted: #6b7280;
+  --text-inverse: #f5f5f5; --text-accent: #c9a227;
+  --navbar-height: 64px;
+  --shadow-card: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-elevated: 0 4px 12px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-primary:        #1a365d;
+    --md-surface:        #162032;
+    --md-surface-variant: #1a2744;
+    --md-background:    #1a1a2e;
+    --md-on-surface:     #e0e0e0;
+    --md-on-surface-muted: #9ca3af;
+    --md-outline:       #374151;
+    --text-primary:     #e0e0e0;
+    --text-secondary:   #9ca3af;
+    --text-muted:       #6b7280;
+  }
+  body { background-color: var(--md-background); color: var(--md-on-surface); }
+}
+
+body.dark-mode {
+  --md-surface:       #162032;
+  --md-surface-variant: #1a2744;
+  --md-background:   #1a1a2e;
+  --md-on-surface:   #e0e0e0;
+  --md-on-surface-muted: #9ca3af;
+  --md-outline:       #374151;
+  --text-primary:     #e0e0e0;
+  --text-secondary:   #9ca3af;
+  --text-muted:       #6b7280;
+  background-color: var(--md-background);
+  color: var(--md-on-surface);
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f3f4f6;color:#1a1a1a;line-height:1.6}
-header{background:#0a1628;color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.h-brand{font-size:1rem;font-weight:700}
-.h-sub{font-size:.72rem;opacity:.6;margin-top:2px}
-.h-nav{display:flex;gap:6px;align-items:center}
-.h-nav a{color:rgba(255,255,255,.65);text-decoration:none;padding:8px 12px;border-radius:6px;font-size:.8rem;transition:all .2s}
-.h-nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
-.hamburger{display:none;background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:4px}
-.mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;background:#0a1628;flex-direction:column;padding:10px 20px;z-index:99;box-shadow:0 4px 12px rgba(0,0,0,.3)}
-.mobile-nav.open{display:flex}
-.mobile-nav a{color:rgba(255,255,255,.8);text-decoration:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.9rem}
-.mobile-nav a:last-child{border-bottom:none}
-main{max-width:900px;margin:0 auto;background:#fff;min-height:calc(100vh - 60px)}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-family);background:#f3f4f6;color:#1a1a1a;line-height:1.6;min-height:100vh}
+a{color:var(--md-secondary);text-decoration:none;transition:color .2s}
+a:hover{color:var(--md-secondary-container)}
+*:focus-visible{outline:2px solid var(--md-secondary);outline-offset:2px}
+
+/* ============================================================
+   Navbar — aligned with index.html
+   ============================================================ */
+.navbar{
+  position:fixed;top:0;left:0;right:0;height:var(--navbar-height);
+  background:rgba(var(--md-primary-rgb),.97);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--sp-10);box-shadow:0 2px 8px rgba(0,0,0,.15)
+}
+.nav-brand{color:var(--text-inverse);font-size:var(--font-size-lg);font-weight:600;white-space:nowrap}
+.nav-brand span{color:var(--md-secondary)}
+.nav-links{display:flex;align-items:center;gap:var(--sp-1)}
+.nav-link{
+  color:rgba(255,255,255,.65);text-decoration:none;padding:var(--sp-2) var(--sp-3);
+  border-radius:var(--radius-sm);font-size:var(--font-size-sm);font-weight:500;
+  transition:background .2s,color .2s;white-space:nowrap
+}
+.nav-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+.nav-link.active{color:var(--md-secondary)}
+.theme-toggle{
+  padding:var(--sp-2) var(--sp-4);background:var(--md-secondary);border:none;
+  border-radius:var(--radius-sm);cursor:pointer;font-size:var(--font-size-sm);
+  font-weight:500;color:var(--md-on-secondary);transition:opacity .2s;white-space:nowrap
+}
+.theme-toggle:hover{opacity:.85}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:var(--sp-2)}
+.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.nav-drawer{
+  display:none;position:fixed;top:var(--navbar-height);left:0;right:0;
+  background:rgba(var(--md-primary-rgb),.98);padding:var(--sp-4) var(--sp-6);
+  flex-direction:column;gap:var(--sp-2);z-index:999;
+  box-shadow:0 4px 12px rgba(0,0,0,.2)
+}
+.nav-drawer.open{display:flex}
+.nav-drawer .nav-link{color:rgba(255,255,255,.8);font-size:var(--font-size-base);padding:var(--sp-3) var(--sp-4)}
+
+/* ============================================================
+   Video Study Layout
+   ============================================================ */
+.main-content{padding-top:var(--navbar-height);max-width:900px;margin:0 auto;background:var(--md-surface);min-height:100vh}
 .vid-list{padding:16px;display:grid;gap:16px}
 .vid-card{background:#fff;border-radius:12px;border:1px solid #e5e7eb;overflow:hidden;cursor:pointer;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .vid-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12);border-color:#c9a227}
@@ -42,17 +142,20 @@ main{max-width:900px;margin:0 auto;background:#fff;min-height:calc(100vh - 60px)
 .seg-exp{font-size:.75rem;color:#c9a227;cursor:pointer;user-select:none;margin-top:4px;display:inline-block}
 .seg-jmp{font-size:.75rem;color:#c9a227;font-weight:600;text-decoration:none;padding:4px 10px;border:1px solid #c9a227;border-radius:20px;display:inline-block;margin-top:8px;transition:all .2s}
 .seg-jmp:hover{background:#c9a227;color:#0a1628}
-.back-link{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;color:#c9a227;text-decoration:none;font-size:.85rem;font-weight:500}
-.back-link:hover{text-decoration:underline}
 .empty-seg{padding:24px;text-align:center;color:#9ca3af;font-size:.85rem}
 footer{padding:10px 16px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
 footer a{color:#c9a227;text-decoration:none}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0a1628;color:#fff;padding:8px 20px;border-radius:30px;font-size:.85rem;opacity:0;transition:opacity .3s;z-index:1000;pointer-events:none}
 .toast.on{opacity:1}
 @media(max-width:600px){.vid-list{padding:12px}.vid-info{padding:12px}}
-@media(max-width:768px){.h-nav{display:none}.hamburger{display:block}.mobile-nav{top:56px}}
+@media(max-width:768px){
+  :root{--sp-10:20px}
+  .navbar{padding:0 var(--sp-5)}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .main-content{padding-top:var(--navbar-height)}
+}
 @media(prefers-color-scheme:dark){
-body{background:#1a1a2e;color:#e0e0e0}
 .vid-card{background:#162032;border-color:#333}
 .vid-title{color:#e0e0e0}
 .vid-meta{color:#9ca3af}
@@ -61,39 +164,45 @@ body{background:#1a1a2e;color:#e0e0e0}
 .seg-zh{color:#c0c0c0}
 .seg-en{background:#0f0f23;border-color:#444;color:#b0b0b0}
 footer{background:#0d1b2a;color:#888}
-.back-link{color:#c9a227}
 }
 </style>
 </head>
 <body>
-<header>
-  <div>
-    <div class="h-brand">&#128202; Li Lu Video Study</div>
-    <div class="h-sub">9 videos &middot; CCBC transcript available</div>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-brand"><span>&#10070;</span> 李录研究</div>
+  <div class="nav-links">
+    <a href="index.html#about"      class="nav-link">关于</a>
+    <a href="index.html#holdings"   class="nav-link">持仓</a>
+    <a href="index.html#principles" class="nav-link">投资原则</a>
+    <a href="index.html#framework"  class="nav-link">决策框架</a>
+    <a href="video_study.html"      class="nav-link active">📺 视频学习</a>
+    <a href="index.html#quotes"     class="nav-link">语录</a>
+    <a href="index.html#faq"        class="nav-link">FAQ</a>
   </div>
-  <nav class="h-nav">
-    <a href="index.html">&#127968; Home</a>
-    <a href="bookshelf.html">&#128218; Books</a>
-    <a href="downloads.html">&#128206; Downloads</a>
-  </nav>
-  <button class="hamburger" onclick="toggleMobile()" aria-label="Menu">&#9776;</button>
-</header>
-<div class="mobile-nav" id="mobileNav">
-  <a href="index.html">&#127968; Home</a>
-  <a href="bookshelf.html">&#128218; Books</a>
-  <a href="downloads.html">&#128206; Downloads</a>
+  <button class="theme-toggle" onclick="toggleTheme()">&#9790; 夜间</button>
+  <button class="hamburger" onclick="toggleDrawer()" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html#about"      class="nav-link" onclick="closeDrawer()">关于</a>
+  <a href="index.html#holdings"   class="nav-link" onclick="closeDrawer()">持仓</a>
+  <a href="index.html#principles" class="nav-link" onclick="closeDrawer()">投资原则</a>
+  <a href="index.html#framework"  class="nav-link" onclick="closeDrawer()">决策框架</a>
+  <a href="video_study.html"      class="nav-link active">📺 视频学习</a>
+  <a href="index.html#quotes"     class="nav-link" onclick="closeDrawer()">语录</a>
+  <a href="index.html#faq"        class="nav-link" onclick="closeDrawer()">FAQ</a>
 </div>
 <main>
-  <div style="padding:12px 16px 0">
-    <a href="index.html" class="back-link">&#8592; Back to Home</a>
-  </div>
-
   <div class="vid-list" id="vid-list"></div>
 </main>
 
 <footer>
-  <span>Study use only &middot; <a href="index.html">Home</a></span>
-  <span style="color:#ef4444">Not investment advice</span>
+  <span>仅供学习参考 · <a href="index.html">返回首页</a></span>
+  <span style="color:#ef4444">不构成投资建议</span>
 </footer>
 
 <div class="toast" id="toast"></div>
@@ -205,8 +314,18 @@ function tst(msg){
   t.textContent=msg;t.className="toast on";
   setTimeout(function(){t.className="toast";},2500);
 }
-function toggleMobile(){
-  document.getElementById("mobileNav").classList.toggle("open");
+// Theme toggle
+function toggleTheme(){
+  document.body.classList.toggle('dark-mode');
+  var btn=document.querySelector('.theme-toggle');
+  btn.textContent=document.body.classList.contains('dark-mode')?'☀️ 白天':'&#9790; 夜间';
+}
+// Mobile drawer
+function toggleDrawer(){
+  document.getElementById('navDrawer').classList.toggle('open');
+}
+function closeDrawer(){
+  document.getElementById('navDrawer').classList.remove('open');
 }
 
 renderVideoList();
