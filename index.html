@@ -963,6 +963,26 @@ details p {
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
+
+/* FAQ Section */
+.faq-section {
+  background: var(--md-surface-variant);
+  padding: var(--sp-12) var(--sp-10);
+}
+body.dark-mode .faq-section {
+  background: var(--md-surface);
+}
+body.dark-mode .faq-section details {
+  background: var(--md-surface);
+  color: var(--md-on-surface);
+  border-color: var(--md-outline);
+}
+body.dark-mode .faq-section details summary {
+  color: var(--md-on-surface);
+}
+body.dark-mode .faq-section details p {
+  color: var(--text-secondary);
+}
 </style>
 </head>
 <body>
@@ -1403,7 +1423,7 @@ details p {
     <p style="color: var(--text-secondary); margin-top: var(--sp-4); font-size: var(--font-size-sm);">群号: 560559464</p>
   </div>
 </section>
-id="faq" class="section">
+id="faq" class="section faq-section">
     <div class="section-header">
       <h2 class="section-title">常见问题</h2>
       <p class="section-subtitle">关于李录与价值投资</p>
