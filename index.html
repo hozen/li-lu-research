@@ -34,60 +34,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 .card h3,.card h4{color:#000000;margin-bottom:15px}
 
 
-/* Dark Mode - High Contrast for Night Reading */
-
-
-body.dark-mode{background:#000000;color:#ffffff}
-
-
-body.dark-mode .card{background:#1a1a1a;color:#ffffff;border:1px solid #444}
-
-
-body.dark-mode .card h3,body.dark-mode .card h4{color:#ffff00}
-
-
-body.dark-mode .section{background:#000000}
-
-
-body.dark-mode .footer{background:#0a0a0a}
-
-
-body.dark-mode .quote-card{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .book-card{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .video-card{background:#1a1a1a}
-
-
-body.dark-mode .timeline-item{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .hero{background:linear-gradient(135deg,#000000 0%,#111111 100%)}
-
-
-body.dark-mode .hero-text h1{color:#ffff00}
-
-
-body.dark-mode .section-title{color:#ffff00}
-
-
-body.dark-mode .quote-text{color:#ffffff}
-
-
-body.dark-mode details{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode p,body.dark-mode li{color:#e0e0e0}
-
-
-body.dark-mode a{color:#64b5f6}
-
-
-body.dark-mode .nav-link{color:#e0e0e0}
-
-
 /* Light mode fixes */
 
 
@@ -124,10 +70,10 @@ body.dark-mode .video-card{background:#1a365d}
 body.dark-mode .timeline-item{background:#1a365d}
 
 
-body.dark-mode .hero{background:linear-gradient(135deg,#000 0%,#1a365d 100%)}
+body.dark-mode .hero{background:linear-gradient(135deg,#0a1628 0%,#1a365d 100%)}
 
 
-body.dark-mode .hero-text h1{color:#fff}
+body.dark-mode .hero-text h1{color:#ffffff}
 
 
 body.dark-mode .section-title{color:#c9a227}
@@ -136,6 +82,24 @@ body.dark-mode .section-title{color:#c9a227}
 body.dark-mode details{background:#1a365d;color:#e2e8f0}
 
 
+
+body.dark-mode p,body.dark-mode li{color:#e2e8f0}
+
+body.dark-mode a{color:#64b5f6}
+
+body.dark-mode .nav-link{color:#e2e8f0}
+
+body.dark-mode .stat-number{color:#c9a227}
+
+body.dark-mode .stat-label{color:#94a3b8}
+
+body.dark-mode .subtitle{color:#94a3b8}
+
+body.dark-mode .tagline{color:#c9a227}
+
+body.dark-mode .placeholder-text{color:#94a3b8}
+
+body.dark-mode .hero-image-box{border-color:#c9a227}
 *{box-sizing:border-box;margin:0;padding:0}
 
 
@@ -172,7 +136,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 .search-box input::placeholder{color:rgba(255,255,255,0.5);}
 
 
-.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
+.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:60vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
 
 
 .hero::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
@@ -473,7 +437,7 @@ a, button { transition: all 0.2s ease-out; }
 </div>
 
 
-<button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 夜间</button>
+<button id="theme-toggle" onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem; color: #0a1628; font-weight: 600;">&#9728; 日间</button>
 
 
 </nav>
@@ -2108,12 +2072,19 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 
 
 function toggleTheme() {
-
-
   document.body.classList.toggle('dark-mode');
-
-
+  updateThemeToggle();
 }
+
+function updateThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const isDark = document.body.classList.contains('dark-mode');
+  btn.innerHTML = isDark ? '&#9790; 夜间' : '&#9728; 日间';
+}
+
+// Initialize theme toggle button state
+document.addEventListener('DOMContentLoaded', updateThemeToggle);
 
 
 
