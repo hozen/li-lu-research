@@ -2,317 +2,190 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>李录 (Li Lu) - 价值投资研究</title>
 <style>
-/* ============================================================
-   M3 Design System — Single source of truth
-   ============================================================ */
+/* ============================================
+   M3 CSS Variables — Color System
+   ============================================ */
 :root {
-  /* M3 Surface palette */
-  --md-primary:        #0a1628;
-  --md-primary-rgb:    10,22,40;
+  --md-primary: #0a1628;
   --md-primary-container: #1a365d;
-  --md-on-primary:     #ffffff;
-  --md-secondary:       #c9a227;
+  --md-on-primary: #ffffff;
+  --md-secondary: #c9a227;
   --md-secondary-container: #fef3c7;
-  --md-on-secondary:   #1a1a2e;
-  --md-surface:         #ffffff;
+  --md-on-secondary: #1a1a2e;
+  --md-surface: #ffffff;
   --md-surface-variant: #f3f4f6;
-  --md-surface-dark:    #162032;
-  --md-surface-variant-dark: #1a2744;
-  --md-background:      #ffffff;
-  --md-background-dark: #1a1a2e;
-  --md-on-surface:      #1a1a2e;
-  --md-on-surface-muted: #4a5568;
-  --md-outline:          #d1d5db;
-  --md-error:            #dc2626;
+  --md-background: #ffffff;
+  --md-on-surface: #1a1a2e;
+  --md-outline: #d1d5db;
+  --md-error: #dc2626;
+  --md-on-error: #ffffff;
 
-  /* Spacing (4dp grid) */
+  /* M3 Spacing (4dp grid) */
   --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
-  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
-  --sp-12: 48px; --sp-16: 64px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-9: 36px;
+  --sp-10: 40px; --sp-12: 48px; --sp-16: 64px;
 
-  /* Corner radii */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
+  /* M3 Radius */
+  --radius-sm: 4px; --radius-md: 12px; --radius-lg: 16px;
+  --radius-xl: 28px; --radius-full: 9999px;
 
-  /* Shadows */
+  /* M3 Shadow */
   --shadow-card: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
-  --shadow-elevated: 0 4px 12px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
+  --shadow-nav: 0 2px 4px rgba(0,0,0,.1);
 
-  /* Typography */
-  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-size-xs:  0.75rem;
-  --font-size-sm:  0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg:  1.125rem;
-  --font-size-xl:  1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 2rem;
-  --font-size-4xl: 2.5rem;
-  --font-size-5xl: 3.5rem;
-
-  --text-primary:   #1a1a2e;
-  --text-secondary: #4a5568;
-  --text-muted:     #6b7280;
-  --text-inverse:   #f5f5f5;
-  --text-accent:    #c9a227;
-
-  /* Layout */
-  --navbar-height: 64px;
-  --max-width: 1200px;
+  /* Legacy tokens */
+  --primary-dark: #0a1628;
+  --primary-blue: #1a365d;
+  --accent-gold: #c9a227;
+  --text-muted: #6b7280;
+  --card-bg: #ffffff;
+  --shadow: var(--shadow-card);
 }
 
-/* Dark mode via prefers-color-scheme */
+/* ============================================
+   Dark Mode
+   ============================================ */
 @media (prefers-color-scheme: dark) {
   :root {
-    --md-primary:       #1a365d;
-    --md-surface:       #162032;
+    --md-primary: #1a365d;
+    --md-primary-container: #0a1628;
+    --md-surface: #162032;
     --md-surface-variant: #1a2744;
-    --md-background:    #1a1a2e;
-    --md-on-surface:    #e0e0e0;
-    --md-on-surface-muted: #9ca3af;
-    --md-outline:       #374151;
+    --md-background: #1a1a2e;
+    --md-on-surface: #e0e0e0;
+    --md-outline: #374151;
+    --card-bg: #162032;
   }
-  body {
-    background-color: var(--md-background);
-    color: var(--md-on-surface);
-  }
-}
-
-/* ============================================================
-   Reset & Base
-   ============================================================ */
-*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  line-height: 1.7;
-  color: var(--text-primary);
-  background: var(--md-background);
-  overflow-x: hidden;
-  min-height: 100vh;
 }
 
 body.dark-mode {
-  --md-surface:       #162032;
-  --md-surface-variant: #1a2744;
-  --md-background:    #1a1a2e;
-  --md-on-surface:    #e0e0e0;
-  --md-on-surface-muted: #9ca3af;
-  --md-outline:       #374151;
-  background-color: var(--md-background);
-  color: var(--md-on-surface);
+  --md-background: #1a1a2e;
+  --md-on-surface: #e0e0e0;
+  --md-surface: #162032;
+  --card-bg: #162032;
 }
 
-p, li { line-height: 1.7; }
+/* ============================================
+   Base Reset
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-a { color: var(--md-primary-container); text-decoration: none; transition: color 0.2s; }
-a:hover { color: var(--md-secondary); }
+body {
+  font-family: Georgia, 'Times New Roman', serif, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  line-height: 1.6;
+  background-color: var(--md-background);
+  color: var(--md-on-surface);
+  overflow-x: hidden;
+}
 
-*:focus-visible { outline: 2px solid var(--md-secondary); outline-offset: 2px; }
+a { color: var(--md-secondary); text-decoration: none; }
+a:hover { opacity: 0.8; }
 
-/* ============================================================
-   Navbar
-   ============================================================ */
+a, button { transition: opacity 0.2s ease-out, color 0.2s ease-out; }
+
+/* ============================================
+   Navigation
+   ============================================ */
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: var(--navbar-height);
-  background: rgba(var(--md-primary-rgb), 0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(10px);
   z-index: 1000;
+  padding: 0 var(--sp-10);
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--sp-10);
-  box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  box-shadow: var(--shadow-nav);
 }
 
 .nav-brand {
-  color: var(--text-inverse);
-  font-size: var(--font-size-lg);
+  color: var(--md-on-primary);
+  font-size: 1.2rem;
   font-weight: 600;
-  white-space: nowrap;
+  letter-spacing: 0.02em;
 }
 .nav-brand span { color: var(--md-secondary); }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-1);
-}
+.nav-links { display: flex; gap: var(--sp-2); }
 
 .nav-link {
-  color: rgba(255,255,255,.65);
+  color: #9ca3af;
   text-decoration: none;
-  padding: var(--sp-2) var(--sp-3);
+  padding: var(--sp-2) var(--sp-4);
   border-radius: var(--radius-sm);
-  font-size: var(--font-size-sm);
+  font-size: 0.88rem;
   font-weight: 500;
-  transition: background 0.2s, color 0.2s;
-  white-space: nowrap;
 }
-.nav-link:hover { color: #fff; background: rgba(201,162,39,.15); }
+.nav-link:hover, .nav-link.active { color: var(--md-on-primary); opacity: 1; }
 .nav-link.active { color: var(--md-secondary); }
 
-/* Theme toggle */
 .theme-toggle {
   padding: var(--sp-2) var(--sp-4);
   background: var(--md-secondary);
   border: none;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  font-size: var(--font-size-sm);
-  font-weight: 500;
+  font-size: 0.85rem;
   color: var(--md-on-secondary);
-  transition: opacity 0.2s;
-  white-space: nowrap;
-}
-.theme-toggle:hover { opacity: 0.85; }
-
-/* Hamburger — mobile only */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: var(--sp-2);
-}
-.hamburger span {
-  width: 24px; height: 2px;
-  background: #fff;
-  border-radius: 2px;
-  transition: all 0.3s;
+  font-weight: 500;
+  font-family: inherit;
 }
 
-/* Mobile nav drawer */
-.nav-drawer {
-  display: none;
-  position: fixed;
-  top: var(--navbar-height); left: 0; right: 0;
-  background: rgba(var(--md-primary-rgb), 0.98);
-  padding: var(--sp-4) var(--sp-6);
-  flex-direction: column;
-  gap: var(--sp-2);
-  z-index: 999;
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
-}
-.nav-drawer.open { display: flex; }
-.nav-drawer .nav-link { color: rgba(255,255,255,.8); font-size: var(--font-size-base); padding: var(--sp-3) var(--sp-4); }
-
-/* ============================================================
-   Hero
-   ============================================================ */
+/* ============================================
+   Hero Section — Simplified
+   ============================================ */
 .hero {
-  background: linear-gradient(135deg, var(--md-primary) 0%, var(--md-primary-container) 100%);
+  background-color: var(--md-primary);
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(var(--navbar-height) + var(--sp-16)) var(--sp-10) var(--sp-16);
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c9a227' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.5;
+  padding: calc(64px + var(--sp-16)) var(--sp-16) var(--sp-16);
 }
 
 .hero-content {
-  max-width: var(--max-width);
+  max-width: 900px;
   margin: 0 auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--sp-16);
-  align-items: center;
-  position: relative;
-  z-index: 1;
 }
 
 .hero-text h1 {
-  font-size: var(--font-size-5xl);
-  color: #fff;
-  margin-bottom: var(--sp-5);
-  line-height: 1.2;
+  font-size: 3.2rem;
+  color: var(--md-on-primary);
+  margin-bottom: var(--sp-4);
+  line-height: 1.15;
+  font-weight: 400;
 }
+
 .hero-text h1 .highlight { color: var(--md-secondary); }
 
 .hero-text .subtitle {
-  font-size: var(--font-size-xl);
-  color: rgba(255,255,255,.7);
-  margin-bottom: var(--sp-5);
-  font-weight: 300;
+  font-size: 1.25rem;
+  color: #9ca3af;
+  margin-bottom: var(--sp-6);
+  font-weight: 400;
 }
 
 .hero-text .tagline {
-  font-size: var(--font-size-base);
+  font-size: 1rem;
   color: var(--md-secondary);
-  margin-bottom: var(--sp-8);
-  padding-left: var(--sp-5);
-  border-left: 3px solid var(--md-secondary);
-}
-
-.hero-actions {
-  display: flex;
-  gap: var(--sp-4);
-  flex-wrap: wrap;
   margin-bottom: var(--sp-10);
+  padding-left: var(--sp-4);
+  border-left: 2px solid var(--md-secondary);
+  line-height: 1.6;
 }
 
-/* Fixed hero stats — no nested divs */
-.hero-stats {
+.hero-cta {
   display: flex;
-  gap: var(--sp-10);
-}
-
-.stat-number {
-  font-size: var(--font-size-4xl);
-  font-weight: 700;
-  color: var(--md-secondary);
-  display: block;
-  line-height: 1.1;
-}
-
-.stat-label {
-  font-size: var(--font-size-sm);
-  color: rgba(255,255,255,.6);
-  display: block;
-}
-
-.hero-image-box {
-  width: 100%;
-  max-width: 380px;
-  height: 460px;
-  background: linear-gradient(145deg, rgba(201,162,39,.2), rgba(26,54,93,.3));
-  border-radius: var(--radius-xl);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--md-secondary);
   gap: var(--sp-3);
-  margin: 0 auto;
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-12);
 }
 
-.hero-image-box .placeholder-icon { font-size: 100px; }
-.hero-image-box .placeholder-text { color: rgba(255,255,255,.5); font-size: var(--font-size-sm); }
-
-/* ============================================================
-   Buttons
-   ============================================================ */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -321,100 +194,76 @@ a:hover { color: var(--md-secondary); }
   border-radius: var(--radius-md);
   text-decoration: none;
   font-weight: 500;
-  font-size: var(--font-size-sm);
-  transition: all 0.2s ease-out;
-  border: 2px solid transparent;
+  font-size: 0.9rem;
+  font-family: inherit;
+  border: none;
   cursor: pointer;
-  min-height: 44px;
-  white-space: nowrap;
 }
 
-.btn-primary {
-  background: var(--md-secondary);
-  color: var(--md-on-secondary);
-  border-color: var(--md-secondary);
-}
-.btn-primary:hover {
-  background: #b8941f;
-  border-color: #b8941f;
-  transform: translateY(-1px);
-  color: var(--md-on-secondary);
-}
+.btn-primary { background: var(--md-secondary); color: var(--md-on-secondary); }
+.btn-primary:hover { opacity: 0.85; }
 
 .btn-outline {
   background: transparent;
-  border-color: var(--md-secondary);
+  border: 1px solid var(--md-secondary);
   color: var(--md-secondary);
 }
-.btn-outline:hover {
-  background: var(--md-secondary);
-  color: var(--md-on-secondary);
-  transform: translateY(-1px);
+.btn-outline:hover { opacity: 0.75; }
+
+.hero-stats {
+  display: flex;
+  gap: var(--sp-12);
+  flex-wrap: wrap;
 }
 
-/* ============================================================
-   Main Layout
-   ============================================================ */
-.main-content {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--sp-16) var(--sp-10);
+.stat-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: var(--sp-1);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.section {
-  margin-bottom: var(--sp-16);
-  scroll-margin-top: calc(var(--navbar-height) + var(--sp-6));
+.stat-number {
+  font-size: 2rem;
+  color: var(--md-secondary);
+  font-weight: 400;
+  line-height: 1;
 }
 
-.section-header { margin-bottom: var(--sp-8); }
+/* ============================================
+   Main Content
+   ============================================ */
+.main-content { max-width: 1200px; margin: 0 auto; padding: var(--sp-16) var(--sp-10); }
+
+.section { margin-bottom: var(--sp-16); scroll-margin-top: 80px; }
+
+.section-header { margin-bottom: var(--sp-10); }
 
 .section-title {
-  font-size: var(--font-size-3xl);
+  font-size: 1.75rem;
   color: var(--md-primary);
   margin-bottom: var(--sp-3);
+  font-weight: 400;
   display: flex;
   align-items: center;
   gap: var(--sp-4);
 }
+
 .section-title::after {
   content: '';
   flex: 1;
-  height: 2px;
-  background: linear-gradient(90deg, var(--md-secondary), transparent);
+  height: 1px;
+  background: var(--md-outline);
 }
 
-.section-subtitle {
-  color: var(--text-secondary);
-  font-size: var(--font-size-base);
-}
+.section-subtitle { color: var(--text-muted); font-size: 0.95rem; }
 
-.section-dark {
-  background: linear-gradient(135deg, var(--md-primary) 0%, var(--md-primary-container) 100%);
-  padding: var(--sp-12) var(--sp-10);
-  border-radius: var(--radius-lg);
-  margin: 0 calc(-1 * var(--sp-10));
-  padding-left: var(--sp-10);
-  padding-right: var(--sp-10);
-}
-
-.section-dark .section-title { color: #fff; }
-.section-dark .section-title::after { background: linear-gradient(90deg, var(--md-secondary), transparent); }
-.section-dark .section-subtitle { color: rgba(255,255,255,.65); }
-
-.section-light {
-  background: var(--md-surface-variant);
-  padding: var(--sp-12) var(--sp-10);
-  border-radius: var(--radius-lg);
-  margin: 0 calc(-1 * var(--sp-10));
-  padding-left: var(--sp-10);
-  padding-right: var(--sp-10);
-}
-
-/* ============================================================
-   Cards
-   ============================================================ */
+/* ============================================
+   Card
+   ============================================ */
 .card {
-  background: var(--md-surface);
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   padding: var(--sp-6);
   box-shadow: var(--shadow-card);
@@ -423,79 +272,29 @@ a:hover { color: var(--md-secondary); }
   color: var(--md-on-surface);
 }
 
-.card h3, .card h4 {
-  color: var(--md-primary);
-  margin-bottom: var(--sp-3);
-  font-size: var(--font-size-xl);
-  line-height: 1.3;
+.card h3 { color: var(--md-primary-container); margin-bottom: var(--sp-3); font-size: 1.2rem; font-weight: 600; }
+.card h4 { color: var(--md-primary-container); margin-bottom: var(--sp-3); font-size: 1.05rem; font-weight: 600; }
+.card p  { color: var(--text-muted); margin-bottom: var(--sp-3); }
+.card ul { padding-left: var(--sp-5); color: var(--text-muted); }
+.card li { margin-bottom: var(--sp-2); }
+
+/* ============================================
+   Holdings Section
+   ============================================ */
+#holdings {
+  background: var(--md-primary);
+  padding: var(--sp-12) var(--sp-10);
+  scroll-margin-top: 80px;
 }
 
-.card p, .card li {
-  color: var(--md-on-surface-muted);
-  font-size: var(--font-size-base);
-}
+#holdings .section-title { color: var(--md-on-primary); }
+#holdings .section-title::after { background: rgba(255,255,255,0.15); }
+#holdings .section-subtitle { color: #6b7280; }
 
-.card-accent {
-  border-left: 4px solid var(--md-secondary);
-}
-
-.card-accent-green {
-  border-left: 4px solid #38a169;
-}
-
-/* ============================================================
-   Principles
-   ============================================================ */
-.principles {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-6);
-  margin-top: var(--sp-6);
-}
-
-.principle-card {
-  background: linear-gradient(135deg, var(--md-primary), var(--md-primary-container));
-  border-radius: var(--radius-md);
-  padding: var(--sp-8);
-  color: #fff;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.principle-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: var(--md-secondary);
-}
-.principle-number {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--md-secondary);
-  opacity: 0.25;
-  position: absolute;
-  top: var(--sp-4); right: var(--sp-5);
-  line-height: 1;
-}
-.principle-card h4 {
-  color: #fff;
-  font-size: var(--font-size-lg);
-  margin-bottom: var(--sp-3);
-}
-.principle-card p {
-  color: rgba(255,255,255,.65);
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
-}
-
-/* ============================================================
-   Holdings
-   ============================================================ */
 .holdings-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--sp-5);
+  gap: var(--sp-4);
   margin-top: var(--sp-8);
 }
 
@@ -503,27 +302,19 @@ a:hover { color: var(--md-secondary); }
   background: var(--md-surface);
   border-radius: var(--radius-md);
   padding: var(--sp-5);
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--md-outline);
-  border-left: 4px solid var(--md-secondary);
+  border-left: 3px solid var(--md-secondary);
+  color: var(--md-on-surface);
 }
 
-.holding-card.green-accent { border-left-color: #38a169; }
-.holding-card.orange-accent { border-left-color: #dd6b20; }
-
-.holding-name {
-  font-size: var(--font-size-lg);
-  font-weight: 600;
-  color: var(--md-primary);
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
+.holding-card h4 {
+  color: var(--md-primary-container);
+  font-size: 1rem;
   margin-bottom: var(--sp-1);
 }
 
 .holding-meta {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
+  font-size: 0.82rem;
+  color: var(--text-muted);
   margin-bottom: var(--sp-3);
 }
 
@@ -537,97 +328,243 @@ a:hover { color: var(--md-secondary); }
 }
 
 .tag {
+  background: var(--md-surface-variant);
+  color: var(--text-muted);
   padding: 2px var(--sp-2);
-  border-radius: 6px;
-  font-size: var(--font-size-xs);
-  font-weight: 500;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
 }
-.tag-gray { background: #edf2f7; color: #4a5568; }
-.tag-green { background: #c6f6d5; color: #276749; }
-.tag-red { background: #fed7d7; color: #c53030; }
-.tag-blue { background: #bee3f8; color: #2b6cb0; }
 
-.moat-stars { color: #38a169; font-size: var(--font-size-xs); }
+.tag-green { background: #d1fae5; color: #065f46; }
+.tag-red   { background: #fee2e2; color: #991b1b; }
 
-.holding-row {
+.holding-footer {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: var(--sp-2);
-}
-.holding-row strong { color: var(--md-on-surface); }
-.holding-row small { color: var(--text-muted); }
-
-.holding-note {
-  font-size: var(--font-size-xs);
-  color: var(--text-secondary);
-  margin-top: var(--sp-2);
-  padding-top: var(--sp-2);
+  align-items: flex-end;
+  padding-top: var(--sp-3);
   border-top: 1px solid var(--md-outline);
+  font-size: 0.82rem;
+  color: var(--text-muted);
 }
 
-/* Holdings summary bar */
+.holding-footer strong { color: var(--md-on-surface); }
+
 .holdings-summary {
-  margin-top: var(--sp-8);
-  padding: var(--sp-5);
-  background: rgba(255,255,255,.08);
+  margin-top: var(--sp-10);
+  padding: var(--sp-6);
+  background: rgba(255,255,255,0.05);
   border-radius: var(--radius-md);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.holdings-summary h4 {
+  color: var(--md-secondary);
+  margin-bottom: var(--sp-4);
+  font-size: 0.95rem;
+}
+
+.summary-grid {
   display: flex;
-  gap: var(--sp-8);
+  gap: var(--sp-10);
   flex-wrap: wrap;
 }
-.holdings-summary .summary-item span { color: rgba(255,255,255,.55); font-size: var(--font-size-sm); display: block; }
-.holdings-summary .summary-item strong { color: #fff; font-size: var(--font-size-lg); }
 
-.holdings-disclaimer {
-  color: rgba(255,255,255,.5);
+.summary-item span {
+  display: block;
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-bottom: var(--sp-1);
+}
+
+.summary-item strong {
+  font-size: 1.1rem;
+  color: var(--md-on-primary);
+  font-weight: 400;
+}
+
+.disclaimer {
   text-align: center;
-  font-size: var(--font-size-xs);
+  color: #6b7280;
+  font-size: 0.8rem;
   margin-top: var(--sp-8);
 }
 
-/* ============================================================
+/* ============================================
+   Principles
+   ============================================ */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-8);
+}
+
+.principle-card {
+  background: var(--md-primary);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  color: var(--md-on-primary);
+  border-top: 3px solid var(--md-secondary);
+}
+
+.principle-card h4 {
+  color: var(--md-on-primary);
+  font-size: 1.05rem;
+  margin-bottom: var(--sp-3);
+}
+
+.principle-card p {
+  color: #9ca3af;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.moat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+  margin-top: var(--sp-5);
+}
+
+.moat-item {
+  padding: var(--sp-4);
+  background: var(--md-surface-variant);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.moat-item strong { font-size: 0.9rem; color: var(--md-on-surface); }
+.moat-item p { font-size: 0.82rem; color: var(--text-muted); margin: var(--sp-2) 0 0; }
+
+/* ============================================
+   Framework Section
+   ============================================ */
+#framework {
+  background: var(--md-primary);
+  padding: var(--sp-12) var(--sp-10);
+  scroll-margin-top: 80px;
+}
+
+#framework .section-title { color: var(--md-on-primary); }
+#framework .section-title::after { background: rgba(255,255,255,0.15); }
+#framework .section-subtitle { color: #6b7280; }
+
+.framework-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  margin-top: var(--sp-8);
+}
+
+.framework-step {
+  background: rgba(255,255,255,0.04);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  border: 1px solid rgba(201,162,39,0.2);
+}
+
+.framework-step h4 {
+  color: var(--md-secondary);
+  margin-bottom: var(--sp-3);
+  font-size: 0.95rem;
+}
+
+.framework-step p, .framework-step li {
+  color: #d1d5db;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.framework-step li { margin-bottom: var(--sp-1); }
+
+.framework-summary {
+  margin-top: var(--sp-10);
+  padding: var(--sp-6);
+  background: rgba(201,162,39,0.08);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(201,162,39,0.2);
+}
+
+.framework-summary h4 { color: var(--md-secondary); margin-bottom: var(--sp-4); font-size: 0.95rem; }
+
+.framework-stats {
+  display: flex;
+  gap: var(--sp-10);
+  flex-wrap: wrap;
+}
+
+.framework-stats .stat-item span { display: block; font-size: 0.78rem; color: #6b7280; margin-bottom: 2px; }
+.framework-stats .stat-item strong { font-size: 1.2rem; color: var(--md-on-primary); font-weight: 400; }
+
+.framework-note { color: #6b7280; font-size: 0.82rem; margin-top: var(--sp-4); }
+
+/* ============================================
+   Timeline
+   ============================================ */
+.timeline { position: relative; padding-left: var(--sp-8); }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 6px; top: 0; bottom: 0;
+  width: 1px;
+  background: var(--md-outline);
+}
+
+.timeline-item { position: relative; margin-bottom: var(--sp-6); }
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: calc(-1 * var(--sp-8) + 2px);
+  top: 6px;
+  width: 9px; height: 9px;
+  background: var(--md-secondary);
+  border-radius: 50%;
+}
+
+.timeline-date { font-size: 0.8rem; color: var(--md-secondary); margin-bottom: 2px; }
+.timeline-title { font-size: 1rem; color: var(--md-on-surface); margin-bottom: var(--sp-2); }
+.timeline-content { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; }
+
+/* ============================================
    Quotes
-   ============================================================ */
+   ============================================ */
 .quotes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: var(--sp-5);
 }
 
 .quote-card {
-  background: var(--md-surface);
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   padding: var(--sp-6);
   box-shadow: var(--shadow-card);
-  border-left: 4px solid var(--md-secondary);
+  border-left: 3px solid var(--md-secondary);
 }
 
 .quote-text {
-  font-size: var(--font-size-base);
+  font-size: 1rem;
   color: var(--md-on-surface);
   font-style: italic;
   margin-bottom: var(--sp-3);
   line-height: 1.7;
 }
 
-.quote-source {
-  color: var(--text-muted);
-  font-size: var(--font-size-sm);
-  text-align: right;
-}
+.quote-source { color: var(--text-muted); font-size: 0.82rem; text-align: right; }
 
-/* ============================================================
+/* ============================================
    Books
-   ============================================================ */
+   ============================================ */
 .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--sp-5);
+  gap: var(--sp-4);
 }
 
 .book-card {
-  background: var(--md-surface);
+  background: var(--card-bg);
   border-radius: var(--radius-md);
   padding: var(--sp-5);
   box-shadow: var(--shadow-card);
@@ -637,169 +574,42 @@ a:hover { color: var(--md-secondary); }
 }
 
 .book-cover {
-  width: 64px;
-  height: 90px;
-  background: linear-gradient(135deg, var(--md-primary-container), var(--md-primary));
+  width: 60px; height: 80px;
+  background: var(--md-primary);
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.5rem;
   flex-shrink: 0;
-  font-size: 1.75rem;
 }
 
-.book-info h4 {
-  color: var(--md-primary);
-  font-size: var(--font-size-base);
-  margin-bottom: var(--sp-2);
-}
-.book-info p { color: var(--text-secondary); font-size: var(--font-size-sm); }
+.book-info h4 { color: var(--md-primary-container); font-size: 0.95rem; margin-bottom: var(--sp-2); }
+.book-info p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
 
-/* ============================================================
-   Timeline
-   ============================================================ */
-.timeline {
-  position: relative;
-  padding-left: var(--sp-8);
+/* ============================================
+   Glossary
+   ============================================ */
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--sp-3);
   margin-top: var(--sp-6);
 }
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 8px; top: 0; bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, var(--md-secondary), var(--md-primary-container));
-}
 
-.timeline-item { position: relative; margin-bottom: var(--sp-6); }
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: calc(-1 * var(--sp-8) + 3px);
-  top: 6px;
-  width: 12px; height: 12px;
-  background: var(--md-secondary);
-  border-radius: 50%;
-  border: 3px solid var(--md-surface);
-}
-
-.timeline-date {
-  font-size: var(--font-size-sm);
-  color: var(--md-secondary);
-  font-weight: 600;
-  margin-bottom: var(--sp-1);
-}
-.timeline-title { font-size: var(--font-size-base); color: var(--md-primary); margin-bottom: var(--sp-1); font-weight: 600; }
-.timeline-content { color: var(--md-on-surface-muted); font-size: var(--font-size-sm); }
-
-/* ============================================================
-   FAQ
-   ============================================================ */
-.faq-list { max-width: 760px; margin: var(--sp-6) auto 0; }
-
-details {
-  background: var(--md-surface);
+.glossary-item {
+  background: var(--card-bg);
+  padding: var(--sp-4);
   border-radius: var(--radius-sm);
-  padding: var(--sp-4) var(--sp-5);
-  margin-bottom: var(--sp-3);
-  border: 1px solid var(--md-outline);
-  cursor: pointer;
-  transition: background 0.2s;
+  border-left: 2px solid var(--md-secondary);
 }
 
-summary {
-  font-weight: 600;
-  color: var(--md-primary);
-  font-size: var(--font-size-base);
-  outline: none;
-  list-style: none;
-}
-summary::-webkit-details-marker { display: none; }
-summary::before { content: '▸ '; color: var(--md-secondary); }
-details[open] summary::before { content: '▾ '; }
+.glossary-item strong { color: var(--md-primary-container); font-size: 0.88rem; }
+.glossary-item p { font-size: 0.8rem; color: var(--text-muted); margin-top: 3px; }
 
-details p {
-  margin-top: var(--sp-3);
-  color: var(--md-on-surface-muted);
-  font-size: var(--font-size-base);
-  line-height: 1.7;
-}
-
-/* ============================================================
-   Framework (Decision steps)
-   ============================================================ */
-.framework-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-5);
-  margin-top: var(--sp-8);
-}
-
-.framework-step {
-  background: rgba(255,255,255,.05);
-  border-radius: var(--radius-md);
-  padding: var(--sp-6);
-  border: 1px solid rgba(201,162,39,.25);
-}
-
-.framework-step h4 {
-  color: var(--md-secondary);
-  font-size: var(--font-size-base);
-  margin-bottom: var(--sp-3);
-}
-
-.framework-step p, .framework-step li {
-  color: rgba(255,255,255,.75);
-  font-size: var(--font-size-sm);
-  line-height: 1.6;
-}
-
-.framework-step li { padding-left: var(--sp-4); margin-bottom: var(--sp-1); }
-.framework-step strong { color: #fff; }
-
-.framework-callout {
-  margin-top: var(--sp-8);
-  padding: var(--sp-5);
-  background: rgba(201,162,39,.08);
-  border-radius: var(--radius-md);
-  border: 1px solid rgba(201,162,39,.2);
-}
-
-.framework-callout h4 { color: var(--md-secondary); margin-bottom: var(--sp-3); }
-.framework-callout-item {
-  display: flex;
-  gap: var(--sp-6);
-  flex-wrap: wrap;
-}
-.framework-callout-item .ci-label { color: rgba(255,255,255,.5); font-size: var(--font-size-sm); }
-.framework-callout-item .ci-value { color: #fff; font-size: var(--font-size-lg); font-weight: 600; }
-
-/* ============================================================
-   Case Studies
-   ============================================================ */
-.cases-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--sp-5);
-  margin-top: var(--sp-6);
-}
-
-.case-card {
-  background: var(--md-surface);
-  border-radius: var(--radius-md);
-  padding: var(--sp-5);
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--md-outline);
-}
-.case-card h3 { color: var(--md-primary); font-size: var(--font-size-lg); margin-bottom: var(--sp-3); }
-.case-card p { color: var(--md-on-surface-muted); font-size: var(--font-size-sm); margin-bottom: var(--sp-2); }
-.case-card ul { padding-left: var(--sp-5); color: var(--md-on-surface-muted); font-size: var(--font-size-sm); }
-.case-card li { margin-bottom: var(--sp-1); }
-.case-return { color: #38a169; font-weight: 600; margin-top: var(--sp-3); }
-
-/* ============================================================
-   Learning Path
-   ============================================================ */
+/* ============================================
+   Learning
+   ============================================ */
 .learning-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -808,148 +618,178 @@ details p {
 }
 
 .learning-card {
-  background: var(--md-surface);
+  background: var(--card-bg);
   border-radius: var(--radius-md);
-  padding: var(--sp-6);
+  padding: var(--sp-5);
   box-shadow: var(--shadow-card);
+  border-top: 3px solid var(--md-secondary);
   border: 1px solid var(--md-outline);
-  border-top: 4px solid var(--md-secondary);
-}
-.learning-card h3 { color: var(--md-primary); font-size: var(--font-size-lg); margin-bottom: var(--sp-3); }
-.learning-card ul { padding-left: var(--sp-5); color: var(--md-on-surface-muted); font-size: var(--font-size-sm); line-height: 1.8; }
-
-/* ============================================================
-   Glossary
-   ============================================================ */
-.glossary-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: var(--sp-4);
-  margin-top: var(--sp-6);
 }
 
-.glossary-item {
-  background: var(--md-surface);
-  padding: var(--sp-4);
+.learning-card h3 { color: var(--md-primary-container); font-size: 1rem; margin-bottom: var(--sp-3); }
+.learning-card ul { padding-left: var(--sp-5); }
+.learning-card li { font-size: 0.85rem; color: var(--text-muted); margin-bottom: var(--sp-2); }
+
+/* ============================================
+   FAQ
+   ============================================ */
+#faq { background: var(--md-surface-variant); padding: var(--sp-12) var(--sp-10); scroll-margin-top: 80px; }
+#faq .section-title { color: var(--md-primary); }
+
+.faq-list { max-width: 800px; margin: var(--sp-8) auto 0; }
+
+details {
+  background: var(--card-bg);
   border-radius: var(--radius-sm);
-  border-left: 3px solid var(--md-secondary);
+  padding: var(--sp-4) var(--sp-5);
+  margin-bottom: var(--sp-3);
+  cursor: pointer;
   border: 1px solid var(--md-outline);
+  color: var(--md-on-surface);
 }
-.glossary-item strong { color: var(--md-primary); font-size: var(--font-size-sm); display: block; margin-bottom: var(--sp-1); }
-.glossary-item p { color: var(--md-on-surface-muted); font-size: var(--font-size-xs); }
 
-/* ============================================================
+summary {
+  font-weight: 600;
+  color: var(--md-primary-container);
+  outline: none;
+  font-size: 0.95rem;
+}
+
+details p {
+  margin-top: var(--sp-3);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+/* ============================================
    Footer
-   ============================================================ */
+   ============================================ */
 .footer {
   background: var(--md-primary);
-  color: rgba(255,255,255,.6);
-  padding: var(--sp-12) var(--sp-10) var(--sp-6);
+  color: #6b7280;
+  padding: var(--sp-12) var(--sp-10) var(--sp-8);
 }
 
-.footer-content { max-width: var(--max-width); margin: 0 auto; }
-.footer h3 { color: #fff; font-size: var(--font-size-xl); margin-bottom: var(--sp-3); }
+.footer-content { max-width: 1200px; margin: 0 auto; }
+
+.footer h3 { color: var(--md-on-primary); font-size: 1.3rem; margin-bottom: var(--sp-3); font-weight: 400; }
 .footer h3 span { color: var(--md-secondary); }
-.footer p { font-size: var(--font-size-sm); line-height: 1.8; }
+.footer p { font-size: 0.88rem; line-height: 1.8; }
+
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: var(--sp-5);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: var(--sp-6);
   text-align: center;
-  font-size: var(--font-size-xs);
-  margin-top: var(--sp-8);
+  font-size: 0.8rem;
+  margin-top: var(--sp-10);
 }
 
-/* ============================================================
-   Back to top
-   ============================================================ */
+/* ============================================
+   Downloads
+   ============================================ */
+#resources {
+  background: var(--md-primary);
+  padding: var(--sp-12) var(--sp-10);
+  scroll-margin-top: 80px;
+}
+
+#resources .section-title { color: var(--md-on-primary); }
+#resources .section-title::after { background: rgba(255,255,255,0.15); }
+#resources .section-subtitle { color: #6b7280; }
+
+.downloads {
+  display: flex;
+  gap: var(--sp-4);
+  justify-content: center;
+  margin-top: var(--sp-8);
+  flex-wrap: wrap;
+}
+
+.download-link {
+  padding: var(--sp-4) var(--sp-8);
+  background: var(--md-secondary);
+  color: var(--md-on-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.download-link-outline {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid var(--md-secondary);
+  color: var(--md-on-primary);
+}
+
+/* ============================================
+   Interviews
+   ============================================ */
+.interview-section h4 {
+  color: var(--md-primary-container);
+  margin: var(--sp-6) 0 var(--sp-3);
+  font-size: 1rem;
+}
+
+/* ============================================
+   Updates
+   ============================================ */
+.update-date { font-size: 0.82rem; color: var(--md-secondary); font-weight: 600; margin: var(--sp-5) 0 var(--sp-3); }
+.update-date:first-of-type { margin-top: 0; }
+
+/* ============================================
+   Back to Top
+   ============================================ */
 .back-to-top {
   position: fixed;
   bottom: var(--sp-6);
   right: var(--sp-6);
-  width: 44px;
-  height: 44px;
+  width: 44px; height: 44px;
   background: var(--md-secondary);
   color: var(--md-on-secondary);
   border: none;
   border-radius: 50%;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-elevated);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s, transform 0.2s;
+  box-shadow: var(--shadow-card);
   z-index: 900;
 }
-.back-to-top.visible { opacity: 1; pointer-events: auto; }
-.back-to-top:hover { transform: translateY(-2px); }
+.back-to-top.visible { display: flex; }
 
-/* ============================================================
-   Utilities
-   ============================================================ */
-.text-center { text-align: center; }
-.mt-8 { margin-top: var(--sp-8); }
-.mb-4 { margin-bottom: var(--sp-4); }
+/* ============================================
+   Focus
+   ============================================ */
+*:focus-visible { outline: 2px solid var(--md-secondary); outline-offset: 2px; }
 
-/* ============================================================
-   Responsive — Mobile-first
-   ============================================================ */
+/* ============================================
+   Responsive
+   ============================================ */
 @media (max-width: 1024px) {
-  .hero-content { grid-template-columns: 1fr; gap: var(--sp-10); }
-  .hero-image-box { display: none; }
+  .principles { grid-template-columns: 1fr; }
+  .framework-grid { grid-template-columns: 1fr; }
   .hero-stats { gap: var(--sp-8); }
-  .principles { grid-template-columns: 1fr 1fr; }
-  .framework-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
-  :root { --sp-10: 20px; }
-
-  .navbar { padding: 0 var(--sp-5); }
+  .navbar { padding: 0 var(--sp-4); }
   .nav-links { display: none; }
-  .hamburger { display: flex; }
-
-  .hero { min-height: auto; padding: calc(var(--navbar-height) + var(--sp-10)) var(--sp-5) var(--sp-10); }
-  .hero-text h1 { font-size: var(--font-size-4xl); }
-  .hero-stats { flex-direction: column; gap: var(--sp-5); }
-  .stat-number { font-size: var(--font-size-3xl); }
-
-  .section { margin-bottom: var(--sp-12); }
-  .section-title { font-size: var(--font-size-2xl); }
-  .section-dark, .section-light {
-    margin: 0 calc(-1 * var(--sp-5));
-    padding-left: var(--sp-5);
-    padding-right: var(--sp-5);
-    border-radius: 0;
-  }
-  .main-content { padding: var(--sp-10) var(--sp-5); }
-
-  .principles { grid-template-columns: 1fr; }
-  .framework-grid { grid-template-columns: 1fr; }
+  .hero { padding: calc(64px + var(--sp-12)) var(--sp-4) var(--sp-12); }
+  .hero-text h1 { font-size: 2.2rem; }
+  .main-content { padding: var(--sp-12) var(--sp-4); }
+  #holdings, #framework, #resources, #faq { padding-left: var(--sp-4); padding-right: var(--sp-4); }
+  .section-title { font-size: 1.4rem; }
+  .footer { padding: var(--sp-10) var(--sp-4) var(--sp-6); }
   .quotes-grid { grid-template-columns: 1fr; }
-  .holdings-grid { grid-template-columns: 1fr; }
-  .footer { padding: var(--sp-10) var(--sp-5) var(--sp-5); }
-
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; justify-content: center; }
+  .summary-grid { gap: var(--sp-6); }
 }
-
-/* Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.animate-in { animation: fadeInUp 0.5s ease forwards; }
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- Navigation -->
 <nav class="navbar">
   <div class="nav-brand"><span>&#10070;</span> 李录研究</div>
   <div class="nav-links">
@@ -957,340 +797,298 @@ details p {
     <a href="#holdings" class="nav-link">持仓</a>
     <a href="#principles" class="nav-link">投资原则</a>
     <a href="#framework" class="nav-link">决策框架</a>
-    <a href="video_study.html" class="nav-link" target="_blank" rel="noopener">📺 视频学习</a>
     <a href="#quotes" class="nav-link">语录</a>
     <a href="#faq" class="nav-link">FAQ</a>
+    <a href="video_study.html" class="nav-link" target="_blank">视频学习</a>
   </div>
-  <button class="theme-toggle" onclick="toggleTheme()">&#9790; 夜间</button>
-  <button class="hamburger" onclick="toggleDrawer()" aria-label="菜单">
-    <span></span><span></span><span></span>
-  </button>
+  <button onclick="toggleTheme()" class="theme-toggle">夜间模式</button>
 </nav>
 
-<!-- Mobile drawer -->
-<div class="nav-drawer" id="navDrawer">
-  <a href="#about"      class="nav-link" onclick="closeDrawer()">关于</a>
-  <a href="#holdings"   class="nav-link" onclick="closeDrawer()">持仓</a>
-  <a href="#principles" class="nav-link" onclick="closeDrawer()">投资原则</a>
-  <a href="#framework"  class="nav-link" onclick="closeDrawer()">决策框架</a>
-  <a href="video_study.html" class="nav-link" target="_blank" rel="noopener">📺 视频学习</a>
-  <a href="#quotes"     class="nav-link" onclick="closeDrawer()">语录</a>
-  <a href="#faq"        class="nav-link" onclick="closeDrawer()">FAQ</a>
-</div>
-
-<!-- ===== HERO ===== -->
+<!-- Hero -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-text">
       <h1>李录 <span class="highlight">(Li Lu)</span></h1>
       <p class="subtitle">中国价值投资的代表性人物</p>
-      <p class="tagline">"中国的沃伦·巴菲特" — Bruce Greenwald，哥伦比亚商学院教授</p>
-      <div class="hero-actions">
-        <a href="video_study.html" class="btn btn-primary" target="_blank" rel="noopener">观看视频 &#8594;</a>
-        <a href="#principles" class="btn btn-outline">了解投资哲学</a>
+      <p class="tagline">"中国的沃伦·巴菲特" — 哥伦比亚商学院 Bruce Greenwald 教授</p>
+      <div class="hero-cta">
+        <a href="#about" class="btn btn-primary">了解更多 &#8594;</a>
+        <a href="#principles" class="btn btn-outline">投资哲学</a>
       </div>
       <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">28+</span>
-          <span class="stat-label">年投资经验</span>
+        <div>
+          <div class="stat-label">年投资经验</div>
+          <div class="stat-number">28+</div>
         </div>
-        <div class="stat">
-          <span class="stat-number">~20%</span>
-          <span class="stat-label">年化复合收益*</span>
+        <div>
+          <div class="stat-label">年化复合收益</div>
+          <div class="stat-number">~20%</div>
         </div>
-        <div class="stat">
-          <span class="stat-number">6</span>
-          <span class="stat-label">核心投资原则</span>
+        <div>
+          <div class="stat-label">核心投资原则</div>
+          <div class="stat-number">6</div>
         </div>
       </div>
-    </div>
-    <div class="hero-image-box">
-      <div class="placeholder-icon">&#128200;</div>
-      <p class="placeholder-text">李录照片</p>
-      <p class="placeholder-text" style="font-size:0.75rem;opacity:0.5">(照片待替换)</p>
     </div>
   </div>
 </section>
 
-<!-- ===== MAIN ===== -->
+<!-- Main Content -->
 <main class="main-content">
 
-  <!-- ABOUT -->
+  <!-- About -->
   <section id="about" class="section">
     <div class="section-header">
       <h2 class="section-title">关于李录</h2>
       <p class="section-subtitle">从金融学者到价值投资大师的成长历程</p>
     </div>
     <div class="card">
-      <h3>&#128220; 个人背景</h3>
-      <p>李录是被誉为"中国的沃伦·巴菲特"的价值投资大师。现任美国喜马拉雅资本创始人兼董事长。哥伦比亚大学三学位（JD+MBA+MA），师从著名价值投资教授 Bruce Greenwald。</p>
-      <div class="timeline">
+      <h3>个人背景</h3>
+      <p>李录是被誉为中国沃伦·巴菲特的价值投资大师。现任美国喜马拉雅资本创始人兼董事长。哥伦比亚大学MBA学位，师从著名价值投资教授 Bruce Greenwald，获 JD 法律博士 + MBA 工商管理硕士 + MA 经济学硕士三学位。</p>
+      <div class="timeline" style="margin-top: var(--sp-8);">
         <div class="timeline-item">
-          <div class="timeline-date">1980s–1990s</div>
+          <div class="timeline-date">1980s-1990s</div>
           <div class="timeline-title">求学时期</div>
-          <div class="timeline-content">毕业于南京大学，后赴哥伦比亚大学求学，师从 Bruce Greenwald 教授，获三学位。</div>
+          <div class="timeline-content">毕业于南京大学，后赴哥伦比亚大学求学，师从 Bruce Greenwald 教授。</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">1997年</div>
           <div class="timeline-title">创立喜马拉雅资本</div>
-          <div class="timeline-content">在美国创立喜马拉雅资本管理公司（Himalaya Capital Management LLC），专注长期价值投资。</div>
+          <div class="timeline-content">在美国创立喜马拉雅资本管理公司（Himalaya Capital Management LLC），专注于长期价值投资。</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">2008年</div>
           <div class="timeline-title">投资比亚迪</div>
-          <div class="timeline-content">投资比亚迪，持有十数年，获得数十倍回报，是最经典的中国价值投资案例之一。</div>
+          <div class="timeline-content">投资比亚迪，2002-2003年开始关注，2008年已全部持股，回报数十倍。</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">2014年</div>
-          <div class="timeline-title">发表重要论文</div>
-          <div class="timeline-content">发表《Civilizations, Modernization, Value Investing and China》，系统阐述投资哲学。</div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-date">2015–2019年</div>
-          <div class="timeline-title">北大光华价值投资课程</div>
-          <div class="timeline-content">参与北大光华管理学院价值投资课程，培养新一代价值投资者。</div>
+          <div class="timeline-title">《Civilizations, Modernization, Value Investing and China》</div>
+          <div class="timeline-content">发表关于文明、现代化与价值投资的长篇论文，系统阐述对人类社会发展的理解。</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">2020年</div>
           <div class="timeline-title">出版《文明、现代化、价值投资与中国》</div>
-          <div class="timeline-content">系统阐述价值投资理念与中国市场机会，成为畅销投资读物。</div>
+          <div class="timeline-content">将多年投资思考整理成书，成为畅销投资读物。</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-date">2025年Q4</div>
-          <div class="timeline-title">13F持仓规模近$36亿</div>
-          <div class="timeline-content">Alphabet（谷歌）第一大持仓，占比43.86%。组合PE约17–19x，零调仓连续2季度。</div>
+          <div class="timeline-title">13F 持仓规模约 $36亿</div>
+          <div class="timeline-content">Alphabet 为第一大持仓（43.86%），其次是 Bank of America（16.08%）、PDD（14.64%）。</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOLDINGS -->
-  <section id="holdings" class="section">
+  <!-- Holdings -->
+  <section id="holdings">
     <div class="section-header">
       <h2 class="section-title">喜马拉雅资本持仓 (13F)</h2>
-      <p class="section-subtitle">2025年Q4 13F申报 · 美国公开市场持仓 · 约¥250亿</p>
+      <p class="section-subtitle">2025年Q4 13F申报 &middot; 美国公开市场持仓 &middot; 总规模约 250亿人民币</p>
     </div>
-
     <div class="holdings-grid">
 
-      <!-- Alphabet -->
       <div class="holding-card">
-        <div class="holding-name">Alphabet (谷歌) <span class="moat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-        <div class="holding-meta">NASDAQ: GOOGL/GOOG · 科技 · 占比 <strong>43.86%</strong></div>
+        <h4>Alphabet (谷歌)</h4>
+        <div class="holding-meta">NASDAQ: GOOGL/GOOG &middot; 科技 &middot; 占比 <strong>43.86%</strong></div>
         <div class="holding-tags">
-          <span class="tag tag-gray">PE ~27x</span>
-          <span class="tag tag-gray">股息 0.5%</span>
-          <span class="tag tag-green">ROIC &gt;25%</span>
+          <span class="tag">PE ~27x</span>
+          <span class="tag">股息 0.5%</span>
+          <span class="tag">ROIC &gt;25%</span>
         </div>
-        <div class="holding-row">
-          <span><strong>$15.65亿</strong> <small>市值</small></span>
-          <span><strong>未变动</strong> <small>Q4</small></span>
+        <div class="holding-footer">
+          <span><strong>$15.65亿</strong> 市值</span>
+          <span>未变动 &middot; Q4</span>
         </div>
-        <div class="holding-note">&#128992; 搜索广告+云+Gemini AI 三重护城河 | 持有~5.5年</div>
       </div>
 
-      <!-- Bank of America -->
       <div class="holding-card">
-        <div class="holding-name">Bank of America <span class="moat-stars">&#9733;&#9733;&#9733;&#9733;</span></div>
-        <div class="holding-meta">NYSE: BAC · 金融 · 占比 <strong>16.08%</strong></div>
+        <h4>Bank of America</h4>
+        <div class="holding-meta">NYSE: BAC &middot; 金融 &middot; 占比 <strong>16.08%</strong></div>
         <div class="holding-tags">
           <span class="tag tag-green">PE 12.9x</span>
           <span class="tag tag-green">PB 1.25x</span>
           <span class="tag tag-green">股息 2.2%</span>
         </div>
-        <div class="holding-row">
-          <span><strong>$5.74亿</strong> <small>市值</small></span>
-          <span><strong>未变动</strong> <small>Q4</small></span>
+        <div class="holding-footer">
+          <span><strong>$5.74亿</strong> 市值</span>
+          <span>未变动 &middot; Q4</span>
         </div>
-        <div class="holding-note">&#128992; 深度价值+高股息压舱石 | 持有~6年</div>
       </div>
 
-      <!-- PDD -->
       <div class="holding-card">
-        <div class="holding-name">拼多多 PDD <span class="moat-stars">&#9733;&#9733;&#9733;&#9733;</span></div>
-        <div class="holding-meta">NASDAQ: PDD · 电商 · 占比 <strong>14.64%</strong></div>
+        <h4>拼多多 PDD</h4>
+        <div class="holding-meta">NASDAQ: PDD &middot; 电商 &middot; 占比 <strong>14.64%</strong></div>
         <div class="holding-tags">
           <span class="tag tag-green">PE ~10x</span>
-          <span class="tag tag-blue">净现金=市值50%</span>
-          <span class="tag tag-gray">0%股息</span>
+          <span class="tag">净现金=市值50%</span>
+          <span class="tag">0%股息</span>
         </div>
-        <div class="holding-row">
-          <span><strong>$5.23亿</strong> <small>市值</small></span>
-          <span><strong>未变动</strong> <small>Q4</small></span>
+        <div class="holding-footer">
+          <span><strong>$5.23亿</strong> 市值</span>
+          <span>未变动 &middot; Q4</span>
         </div>
-        <div class="holding-note">&#128992; 最被低估 · PE~10x+现金700亿 | Temu全球化高速扩张</div>
       </div>
 
-      <!-- Berkshire -->
       <div class="holding-card">
-        <div class="holding-name">伯克希尔 B <span class="moat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-        <div class="holding-meta">NYSE: BRK.B · 投资控股 · 占比 <strong>12.64%</strong></div>
+        <h4>伯克希尔 B</h4>
+        <div class="holding-meta">NYSE: BRK.B &middot; 投资控股 &middot; 占比 <strong>12.64%</strong></div>
         <div class="holding-tags">
-          <span class="tag tag-gray">PE ~22x</span>
-          <span class="tag tag-gray">PB 1.5x</span>
-          <span class="tag tag-gray">0%股息</span>
+          <span class="tag">PE ~22x</span>
+          <span class="tag">PB 1.5x</span>
+          <span class="tag">0%股息</span>
         </div>
-        <div class="holding-row">
-          <span><strong>$4.51亿</strong> <small>市值</small></span>
-          <span><strong>未变动</strong> <small>Q4</small></span>
+        <div class="holding-footer">
+          <span><strong>$4.51亿</strong> 市值</span>
+          <span>未变动 &middot; Q4</span>
         </div>
-        <div class="holding-note">&#128992; 芒格/巴菲特资本配置+浮存金 | 持有~5-6年</div>
       </div>
 
-      <!-- Apple -->
       <div class="holding-card">
-        <div class="holding-name">苹果 Apple <span class="moat-stars" style="color:#a0aec0">&#9733;&#9733;&#9733;</span></div>
-        <div class="holding-meta">NASDAQ: AAPL · 科技 · 占比 <strong>0.84%</strong></div>
+        <h4>苹果 Apple</h4>
+        <div class="holding-meta">NASDAQ: AAPL &middot; 科技 &middot; 占比 <strong>0.84%</strong></div>
         <div class="holding-tags">
-          <span class="tag tag-gray">PE ~20x</span>
-          <span class="tag tag-gray">股息 0.5%</span>
+          <span class="tag">PE ~20x</span>
+          <span class="tag">股息 0.5%</span>
           <span class="tag tag-red">ROIC &gt;50%</span>
         </div>
-        <div class="holding-row">
-          <span><strong>$0.30亿</strong> <small>市值</small></span>
-          <span style="color:#38a169"><strong>增持</strong> <small>Q4</small></span>
+        <div class="holding-footer">
+          <span><strong>$0.30亿</strong> 市值</span>
+          <span>增持 &middot; Q4</span>
         </div>
-        <div class="holding-note">&#129000; 2025年Q1减持65%后余底仓 | Q3再减持58%</div>
       </div>
 
-      <!-- Crocs -->
-      <div class="holding-card green-accent">
-        <div class="holding-name">Crocs <span class="moat-stars" style="color:#a0aec0">&#9733;&#9733;</span></div>
-        <div class="holding-meta">NASDAQ: CROX · 消费品 · 占比 <strong>1.50%</strong></div>
+      <div class="holding-card">
+        <h4>Crocs</h4>
+        <div class="holding-meta">NASDAQ: CROX &middot; 消费品 &middot; 占比 <strong>1.50%</strong></div>
         <div class="holding-tags">
           <span class="tag tag-green">PE ~8x</span>
-          <span class="tag tag-gray">PB ~4x</span>
+          <span class="tag tag-green">PB ~4x</span>
           <span class="tag tag-red">价值陷阱?</span>
         </div>
-        <div class="holding-row">
-          <span><strong>$0.53亿</strong> <small>市值</small></span>
-          <span style="color:#38a169"><strong>新建仓</strong> <small>Q4</small></span>
+        <div class="holding-footer">
+          <span><strong>$0.53亿</strong> 市值</span>
+          <span>新建仓 &middot; Q4</span>
         </div>
-        <div class="holding-note">&#9888; 唯一"疑问手" · 博低端消费品牌反转 | 仓位克制风险可控</div>
       </div>
 
     </div>
 
-    <!-- Holdings summary -->
     <div class="holdings-summary">
-      <div class="summary-item"><span>行业分布</span><strong>科技 44.7% · 金融 16.6% · 电商 14.6%</strong></div>
-      <div class="summary-item"><span>前五集中度</span><strong>96.96%</strong></div>
-      <div class="summary-item"><span>持仓数量</span><strong>仅8只</strong></div>
-      <div class="summary-item"><span>组合加权PE</span><strong>~17–19x</strong></div>
-      <div class="summary-item"><span>组合股息率</span><strong>~1.0%</strong></div>
-      <div class="summary-item"><span>零调仓周期</span><strong>连续2季度</strong></div>
+      <h4>持仓特征</h4>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <span>行业分布</span>
+          <strong>科技 44.7% &middot; 金融 16.6% &middot; 电商 14.6% &middot; 投资 12.6%</strong>
+        </div>
+        <div class="summary-item">
+          <span>前五集中度</span>
+          <strong>96.96%</strong>
+        </div>
+        <div class="summary-item">
+          <span>持仓数量</span>
+          <strong>仅8只</strong>
+        </div>
+        <div class="summary-item">
+          <span>组合加权 PE</span>
+          <strong>~17-19x</strong>
+        </div>
+        <div class="summary-item">
+          <span>组合股息率</span>
+          <strong>~1.0%</strong>
+        </div>
+        <div class="summary-item">
+          <span>连续零调仓</span>
+          <strong>2季度</strong>
+        </div>
+      </div>
     </div>
-    <p class="holdings-disclaimer">* 数据来源：2025年Q4 13F (2026年2月17日披露) · 页面更新：2026-04-06 · 仅供研究参考，不构成投资建议</p>
+    <p class="disclaimer">* 数据来源：2025年Q4 13F（2026年2月17日披露）&nbsp;&nbsp;|&nbsp;&nbsp;页面更新：2026-04-05&nbsp;&nbsp;|&nbsp;&nbsp;仅供参考，不构成投资建议</p>
   </section>
 
-  <!-- PRINCIPLES -->
+  <!-- Principles -->
   <section id="principles" class="section">
     <div class="section-header">
       <h2 class="section-title">核心投资原则</h2>
-      <p class="section-subtitle">李录28年投资生涯的三大核心要素</p>
+      <p class="section-subtitle">李录28年投资生涯总结的六大核心要素</p>
     </div>
     <div class="principles">
-      <div class="principle-card animate-in delay-1">
-        <span class="principle-number">01</span>
-        <h4>&#127919; 股票是公司的一部分所有权</h4>
+      <div class="principle-card">
+        <h4>股票是公司的一部分所有权</h4>
         <p>股票不是一张炒卖的纸，而是公司的所有权证书。投资必须以企业所有者的心态看待每一持仓。</p>
       </div>
-      <div class="principle-card animate-in delay-2">
-        <span class="principle-number">02</span>
-        <h4>&#128161; 市场先生是你的仆人，不是你的向导</h4>
+      <div class="principle-card">
+        <h4>市场先生是你的仆人，不是你的向导</h4>
         <p>市场提供价格发现功能，但不能预测价格。价格波动不是决策依据，安全边际才是。</p>
       </div>
-      <div class="principle-card animate-in delay-3">
-        <span class="principle-number">03</span>
-        <h4>&#128269; 能力圈：不懂不投</h4>
+      <div class="principle-card">
+        <h4>能力圈：不懂不投</h4>
         <p>只投资自己真正理解的行业和公司。如果一家公司你无法在10年内持有，就不要持有10分钟。</p>
       </div>
-    </div>
-    <div class="principles" style="margin-top:var(--sp-6)">
-      <div class="principle-card animate-in delay-1">
-        <span class="principle-number">04</span>
-        <h4>&#128640; 安全边际是核心</h4>
+      <div class="principle-card">
+        <h4>安全边际是核心</h4>
         <p>买价低于内在价值时才有安全边际。安全边际是你犯错时的缓冲带，也是长期收益的主要来源。</p>
       </div>
-      <div class="principle-card animate-in delay-2">
-        <span class="principle-number">05</span>
-        <h4>&#127757; 长期主义的纪律</h4>
+      <div class="principle-card">
+        <h4>长期主义的纪律</h4>
         <p>如果不打算持有一家公司10年，就不要持有10分钟。真正的机会来自长期持有优秀企业的复利效应。</p>
       </div>
-      <div class="principle-card animate-in delay-3">
-        <span class="principle-number">06</span>
-        <h4>&#9878; 护城河是根本</h4>
-        <p>护城河来自：规模经济、持续时间、管理层资本配置能力、企业文化。高资本回报率且可持续，是核心标准。</p>
+      <div class="principle-card">
+        <h4>护城河是根本</h4>
+        <p>护城河来自：规模经济、持续时间、管理层资本配置能力、企业文化。高资本回报率且可持续，是选择标的的核心标准。</p>
       </div>
     </div>
-    <!-- Moat sub-card -->
-    <div class="card" style="margin-top:var(--sp-6)">
-      <h3>&#127968; 护城河四大要素</h3>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--sp-4);margin-top:var(--sp-4)">
-        <div style="padding:var(--sp-4);background:var(--md-surface-variant);border-radius:var(--radius-sm);text-align:center">
-          <strong>规模经济</strong>
-          <p style="font-size:var(--font-size-sm);color:var(--text-secondary);margin-top:var(--sp-2)">成本优势来自规模</p>
-        </div>
-        <div style="padding:var(--sp-4);background:var(--md-surface-variant);border-radius:var(--radius-sm);text-align:center">
-          <strong>持续时间</strong>
-          <p style="font-size:var(--font-size-sm);color:var(--text-secondary);margin-top:var(--sp-2)">长期竞争优势</p>
-        </div>
-        <div style="padding:var(--sp-4);background:var(--md-surface-variant);border-radius:var(--radius-sm);text-align:center">
-          <strong>管理层资本配置</strong>
-          <p style="font-size:var(--font-size-sm);color:var(--text-secondary);margin-top:var(--sp-2)">关键的护城河要素</p>
-        </div>
-        <div style="padding:var(--sp-4);background:var(--md-surface-variant);border-radius:var(--radius-sm);text-align:center">
-          <strong>企业文化</strong>
-          <p style="font-size:var(--font-size-sm);color:var(--text-secondary);margin-top:var(--sp-2)">内在驱动力</p>
-        </div>
+    <div class="card" style="margin-top: var(--sp-8);">
+      <h3>护城河的关键要素</h3>
+      <div class="moat-grid">
+        <div class="moat-item"><strong>规模经济</strong><p>成本优势来自规模</p></div>
+        <div class="moat-item"><strong>持续时间</strong><p>长期竞争优势</p></div>
+        <div class="moat-item"><strong>管理层资本配置</strong><p>关键的护城河要素</p></div>
+        <div class="moat-item"><strong>企业文化</strong><p>内在驱动力</p></div>
       </div>
     </div>
   </section>
 
-  <!-- FRAMEWORK -->
-  <section id="framework" class="section">
-    <div class="section-header section-dark" style="margin-bottom:var(--sp-8)">
+  <!-- Decision Framework -->
+  <section id="framework">
+    <div class="section-header">
       <h2 class="section-title">投资决策框架</h2>
-      <p class="section-subtitle">李录决策流程六步骤 · Bruce Greenwald 学术框架</p>
+      <p class="section-subtitle">李录决策流程六步骤 &middot; 来源：Himalaya Capital + Bruce Greenwald 学术框架</p>
     </div>
-
     <div class="framework-grid">
       <div class="framework-step">
-        <h4>&#128270; 步骤一：能力圈筛选</h4>
-        <p>明确划定三大能力圈：</p>
+        <h4>步骤一：能力圈筛选</h4>
         <ul>
-          <li><strong>科技</strong> — 平台公司、网络效应</li>
-          <li><strong>金融</strong> — 银行、保险</li>
-          <li><strong>中国相关</strong> — 消费、互联网</li>
-        </ul>
-        <p style="margin-top:var(--sp-2);color:rgba(255,255,255,.45);font-size:var(--font-size-xs)">超出能力圈的不碰</p>
-      </div>
-      <div class="framework-step">
-        <h4>&#127969; 步骤二：护城河评估</h4>
-        <p>Bruce Greenwald 四维框架：</p>
-        <ul>
-          <li><strong>供给侧</strong> — 专利、地理位置、牌照</li>
-          <li><strong>需求侧</strong> — 品牌、转换成本、习惯</li>
-          <li><strong>规模经济</strong> — 单位成本随规模下降</li>
-          <li><strong style="color:var(--md-secondary)">信任护城河</strong> ★ 李录最强调</li>
+          <li><strong style="color:#fff">科技</strong> — 平台公司、网络效应</li>
+          <li><strong style="color:#fff">金融</strong> — 银行、保险</li>
+          <li><strong style="color:#fff">中国相关</strong> — 消费、互联网</li>
+          <li style="color:#6b7280">超出能力圈的不碰</li>
         </ul>
       </div>
       <div class="framework-step">
-        <h4>&#128200; 步骤三：估值与安全边际</h4>
+        <h4>步骤二：护城河评估</h4>
         <ul>
-          <li><strong>DCF</strong> — 内在价值核心评估工具</li>
-          <li><strong>相对估值</strong> — PE、PB、EV/EBITDA 辅助</li>
-          <li><strong>清算价值</strong> — 极端情况下的安全底线</li>
+          <li><strong style="color:#fff">供给侧</strong> — 专利、地理位置、牌照</li>
+          <li><strong style="color:#fff">需求侧</strong> — 品牌、转换成本、习惯</li>
+          <li><strong style="color:#fff">规模经济</strong> — 单位成本随规模下降</li>
+          <li><strong style="color:#c9a227">信任护城河</strong> — 管理层诚信 ★</li>
         </ul>
-        <p style="margin-top:var(--sp-2);color:rgba(255,255,255,.45);font-size:var(--font-size-xs)">买价必须低于内在价值</p>
       </div>
       <div class="framework-step">
-        <h4>&#9889; 步骤四：买入决策</h4>
-        <p><strong>"致命一击"</strong> — 等待完美机会重仓出击</p>
-        <p style="margin-top:var(--sp-2);color:rgba(255,255,255,.45);font-size:var(--font-size-xs)">不轻易出手，出手即重仓 · 引用自芒格/巴菲特</p>
+        <h4>步骤三：估值与安全边际</h4>
+        <ul>
+          <li><strong style="color:#fff">DCF</strong> — 内在价值核心评估工具</li>
+          <li><strong style="color:#fff">相对估值</strong> — PE、PB、EV/EBITDA 辅助</li>
+          <li><strong style="color:#fff">清算价值</strong> — 极端情况下的安全底线</li>
+          <li style="color:#6b7280">买价必须低于内在价值</li>
+        </ul>
       </div>
       <div class="framework-step">
-        <h4>&#9201; 步骤五：持有与监控</h4>
+        <h4>步骤四：买入决策</h4>
+        <p>"致命一击" — 等待完美机会重仓出击<br><span style="color:#6b7280;font-size:0.82rem">不轻易出手，出手即重仓</span></p>
+      </div>
+      <div class="framework-step">
+        <h4>步骤五：持有与监控</h4>
         <ul>
           <li>抗拒短期波动</li>
           <li>持续评估护城河是否侵蚀</li>
@@ -1298,30 +1096,29 @@ details p {
         </ul>
       </div>
       <div class="framework-step">
-        <h4>&#128465; 步骤六：卖出决策</h4>
+        <h4>步骤六：卖出决策</h4>
         <ul>
-          <li><strong>基本面恶化</strong> — 护城河根本性侵蚀</li>
-          <li><strong>估值泡沫</strong> — 价格远超内在价值</li>
-          <li><strong>更好机会</strong> — "致命一击"出现</li>
+          <li><strong style="color:#fff">基本面恶化</strong> — 护城河根本性侵蚀</li>
+          <li><strong style="color:#fff">估值泡沫</strong> — 价格远超内在价值</li>
+          <li><strong style="color:#fff">更好机会</strong> — "致命一击"出现</li>
+          <li style="color:#6b7280">卖出频率远低于买入</li>
         </ul>
-        <p style="margin-top:var(--sp-2);color:rgba(255,255,255,.45);font-size:var(--font-size-xs)">卖出频率远低于买入</p>
       </div>
     </div>
-
-    <div class="framework-callout">
-      <h4>&#128640; 框架核心：组合集中度</h4>
-      <div class="framework-callout-item">
-        <div class="ci-label">持仓数量<br><span class="ci-value">8只</span></div>
-        <div class="ci-label">前五占比<br><span class="ci-value">96.96%</span></div>
-        <div class="ci-label">第一大(Alphabet)<br><span class="ci-value">43.86%</span></div>
-        <div class="ci-label">连续零调仓<br><span class="ci-value">2季度</span></div>
+    <div class="framework-summary">
+      <h4>框架核心：组合集中度</h4>
+      <div class="framework-stats">
+        <div class="stat-item"><span>持仓数量</span><strong>8只</strong></div>
+        <div class="stat-item"><span>前五占比</span><strong>96.96%</strong></div>
+        <div class="stat-item"><span>第一大 (Alphabet)</span><strong>43.86%</strong></div>
+        <div class="stat-item"><span>连续零调仓</span><strong>2季度</strong></div>
       </div>
-      <p style="color:rgba(255,255,255,.45);font-size:var(--font-size-xs);margin-top:var(--sp-3)">芒格式极致集中策略："真正的好公司不多，找到它们后重仓买进"</p>
+      <p class="framework-note">芒格式极致集中策略："真正的好公司不多，找到它们后重仓买进"</p>
     </div>
-    <p class="holdings-disclaimer" style="margin-top:var(--sp-4)">* 框架来源：Himalaya Capital + Poor Charlie's Almanack + Bruce Greenwald</p>
+    <p class="disclaimer">* 框架来源：Himalaya Capital (himcap.com) + Poor Charlie's Almanack + Bruce Greenwald</p>
   </section>
 
-  <!-- QUOTES -->
+  <!-- Quotes -->
   <section id="quotes" class="section">
     <div class="section-header">
       <h2 class="section-title">投资智慧语录</h2>
@@ -1329,7 +1126,7 @@ details p {
     </div>
     <div class="quotes-grid">
       <div class="quote-card">
-        <p class="quote-text">Take the world the way it is, not what we wish to be, what we want to be. It is what it is, take it.</p>
+        <p class="quote-text">Take the world the way it is, not what we wish to be. It is what it is, take it.（接受世界本来的样子，而非我们希望它成为的样子。）</p>
         <p class="quote-source">— 2024年12月 北大价值投资课程十周年演讲</p>
       </div>
       <div class="quote-card">
@@ -1359,8 +1156,210 @@ details p {
     </div>
   </section>
 
+  <!-- Books -->
+  <section id="books" class="section">
+    <div class="section-header">
+      <h2 class="section-title">推荐书籍</h2>
+      <p class="section-subtitle">李录推荐及价值投资必读经典</p>
+    </div>
+    <div class="books-grid">
+      <div class="book-card">
+        <div class="book-cover">&#128214;</div>
+        <div class="book-info">
+          <h4>《文明、现代化、价值投资与中国》</h4>
+          <p>李录 著<br>2020年出版</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">&#128218;</div>
+        <div class="book-info">
+          <h4>《证券分析》</h4>
+          <p>Benjamin Graham<br>价值投资奠基之作</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">&#128219;</div>
+        <div class="book-info">
+          <h4>《聪明的投资者》</h4>
+          <p>Benjamin Graham<br>投资经典必读</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">&#128220;</div>
+        <div class="book-info">
+          <h4>《穷查理宝典》</h4>
+          <p>Charlie Munger<br>芒格智慧箴言</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">&#128221;</div>
+        <div class="book-info">
+          <h4>《巴菲特致股东的信》</h4>
+          <p>Warren Buffett<br>股神投资哲学</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">&#128219;</div>
+        <div class="book-info">
+          <h4>《滚雪球》</h4>
+          <p>Warren Buffett传记<br>投资生涯全景</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Path -->
+  <section id="learning" class="section">
+    <div class="section-header">
+      <h2 class="section-title">学习路径</h2>
+      <p class="section-subtitle">从入门到实践的系统学习路线</p>
+    </div>
+    <div class="learning-grid">
+      <div class="learning-card">
+        <h3>第一阶段：入门（1-2周）</h3>
+        <ul>
+          <li>阅读《文明、现代化、价值投资与中国》</li>
+          <li>学习财务报表基础</li>
+          <li>理解PE、PB、ROE基本概念</li>
+          <li>观看李录短版视频（30分钟内）</li>
+        </ul>
+      </div>
+      <div class="learning-card">
+        <h3>第二阶段：进阶（1-2月）</h3>
+        <ul>
+          <li>阅读《证券分析》前6章</li>
+          <li>研究李录持仓公司年报</li>
+          <li>练习分析企业商业模式</li>
+          <li>学习行业研究方法</li>
+        </ul>
+      </div>
+      <div class="learning-card">
+        <h3>第三阶段：实践（3-6月）</h3>
+        <ul>
+          <li>建立模拟组合</li>
+          <li>跟踪李录持仓变化</li>
+          <li>形成自己的投资体系</li>
+          <li>持续学习与复盘</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossary -->
+  <section id="glossary" class="section">
+    <div class="section-header">
+      <h2 class="section-title">投资术语表</h2>
+      <p class="section-subtitle">价值投资核心概念速查</p>
+    </div>
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <strong>护城河 (Moat)</strong>
+        <p>企业竞争优势，可持续阻止竞争对手。</p>
+      </div>
+      <div class="glossary-item">
+        <strong>ROE</strong>
+        <p>Return on Equity，股东权益回报率。</p>
+      </div>
+      <div class="glossary-item">
+        <strong>安全边际 (Margin of Safety)</strong>
+        <p>买入价与内在价值的差额。</p>
+      </div>
+      <div class="glossary-item">
+        <strong>内在价值 (Intrinsic Value)</strong>
+        <p>企业的真实价值，基于现金流折现。</p>
+      </div>
+      <div class="glossary-item">
+        <strong>PE (市盈率)</strong>
+        <p>Price to Earnings，股价与盈利比率。</p>
+      </div>
+      <div class="glossary-item">
+        <strong>能力圈 (Circle of Competence)</strong>
+        <p>你真正理解的行业和公司范围。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interviews -->
+  <section id="interviews" class="section">
+    <div class="section-header">
+      <h2 class="section-title">访谈与文章</h2>
+      <p class="section-subtitle">深入了解李录的投资思想与中国市场观点</p>
+    </div>
+    <div class="card interview-section">
+      <h3>2021年哥伦比亚商学院访谈要点</h3>
+      <p><strong>来源:</strong> Columbia Business School Greater China Society &nbsp;|&nbsp; <strong>采访者:</strong> Bruce Greenwald</p>
+
+      <h4>投资标准</h4>
+      <ul>
+        <li>持久护城河 (Durable Moat)</li>
+        <li>高资本回报率（可持续）</li>
+        <li>以低于内在价值买入（安全边际）</li>
+        <li>长期持有，在下跌时加仓</li>
+      </ul>
+
+      <h4>对中国市场观点</h4>
+      <ul>
+        <li>中国将成为世界上最大、最活跃、增长最快的消费市场</li>
+        <li>中国市场仍然不发达，在充满活力的经济体中更容易找到价值</li>
+        <li>金融服务尚未开发，许多领域即将起飞</li>
+        <li>现在是投资中国的好时机</li>
+      </ul>
+
+      <h4>关于新技术</h4>
+      <ul>
+        <li>你需要了解新技术对你投资的企业的影响</li>
+        <li>汽车行业遭受4个颠覆性趋势：共享出行、电池、智能设计、自动驾驶</li>
+        <li>李录是比亚迪的长期投资者</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Downloads -->
+  <section id="resources">
+    <div class="section-header">
+      <h2 class="section-title">下载资源</h2>
+      <p class="section-subtitle">学习资料打包下载</p>
+    </div>
+    <div class="downloads">
+      <a href="li-lu-study-guide.md" download class="download-link">学习指南 (Markdown)</a>
+      <a href="li-lu-qa.md" download class="download-link download-link-outline">问答集 (Markdown)</a>
+      <a href="li-lu-2021-interview-summary.md" download class="download-link download-link-outline">访谈摘要 (Markdown)</a>
+    </div>
+    <p class="disclaimer">注：以下为源文件下载，实际数据请以网页版为准</p>
+  </section>
+
+  <!-- Updates -->
+  <section id="updates" class="section">
+    <div class="section-header">
+      <h2 class="section-title">更新日志</h2>
+      <p class="section-subtitle">网站内容更新记录</p>
+    </div>
+    <div class="card">
+      <div class="update-date">2026-04-05（本次更新）</div>
+      <ul>
+        <li>M3设计改版：Georgia衬线字体，沉稳克制专业风格</li>
+        <li>简化Hero区：移除装饰性渐变、图片占位、动画</li>
+        <li>持仓区简化：移除星级评分和emoji，数据保持准确</li>
+        <li>移除视频section（已迁移至video_study.html）</li>
+        <li>统一M3设计语言：4dp网格、12dp圆角、专业配色</li>
+      </ul>
+      <div class="update-date">2026-03-22</div>
+      <ul>
+        <li>新增投资案例分析（比亚迪、Alphabet、Bank of America）</li>
+        <li>新增学习路径三阶段</li>
+        <li>新增持仓PE及股息数据分析</li>
+        <li>新增视频嵌入播放</li>
+        <li>新增搜索功能</li>
+      </ul>
+      <div class="update-date">2026-03-21</div>
+      <ul>
+        <li>初始版本发布，包含持仓数据、访谈摘要、推荐书籍</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- FAQ -->
-  <section id="faq" class="section">
+  <section id="faq">
     <div class="section-header">
       <h2 class="section-title">常见问题</h2>
       <p class="section-subtitle">关于李录与价值投资</p>
@@ -1368,7 +1367,7 @@ details p {
     <div class="faq-list">
       <details>
         <summary>Q1: 李录是如何开始价值投资的？</summary>
-        <p>李录在哥伦比亚大学获JD+MBA+MA三学位，师从 Bruce Greenwald 教授学习价值投资，深受格雷厄姆与巴菲特思想影响，后创立喜马拉雅资本。</p>
+        <p>李录在哥伦比亚大学获JD+MBA+MA三学位，师从Bruce Greenwald教授学习价值投资，深受格雷厄姆与巴菲特思想影响，后创立喜马拉雅资本。</p>
       </details>
       <details>
         <summary>Q2: 李录的核心投资原则是什么？</summary>
@@ -1376,55 +1375,46 @@ details p {
       </details>
       <details>
         <summary>Q3: 李录对中国市场怎么看？</summary>
-        <p>他认为中国将成为世界上最大、最活跃的消费市场，在充满活力的经济体中更容易找到价值。金融服务尚未充分开发，许多领域即将起飞。</p>
+        <p>他认为中国正处于从农业社会向现代化转型的关键时期，中国将成为世界上最大、最活跃的消费市场，在充满活力的经济体中更容易找到价值。</p>
       </details>
       <details>
-        <summary>Q4: 喜马拉雅资本的管理规模有多大？</summary>
-        <p>根据2025年Q4 13F申报，管理规模约$35.69亿美元（约¥250亿）。Alphabet为第一大持仓(43.86%)，其次是Bank of America(16.08%)、PDD(14.64%)、Berkshire(12.64%)。</p>
+        <summary>Q4: 李录为什么投资比亚迪？</summary>
+        <p>2008年投资时看中王传福的企业家精神和垂直整合模式。比亚迪代表了中国制造业的崛起，是典型的护城河+成长组合。</p>
       </details>
       <details>
-        <summary>Q5: 李录为什么投资比亚迪？</summary>
-        <p>2008年投资时看中王传福的企业家精神和垂直整合模式。比亚迪代表了中国制造业的崛起，是典型的"护城河+成长"组合，最终获得数十倍回报。</p>
+        <summary>Q5: 喜马拉雅资本的管理规模有多大？</summary>
+        <p>根据2025年Q4 13F申报，管理规模约$35.69亿美元（约250亿人民币）。Alphabet为第一大持仓（43.86%），其次是Bank of America（16.08%）、PDD（14.64%）。</p>
       </details>
     </div>
   </section>
 
 </main>
 
-<!-- ===== FOOTER ===== -->
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
     <h3>李录 <span>价值投资</span> 研究</h3>
-    <p>本页面为李录价值投资研究资料汇总，仅供学习参考，不构成任何投资建议。</p>
-    <p style="margin-top:var(--sp-2)">数据来源：Himalaya Capital、SEC EDGAR 13F、公开访谈及演讲</p>
+    <p>本页面仅供个人学习研究使用，不构成任何投资建议。所有数据均来源于公开渠道（13F申报、公开访谈等）。</p>
     <div class="footer-bottom">
-      &copy; 2026 李录价值投资研究 · 仅供研究参考 · 不构成投资建议
+      <p>&copy; 2026 李录价值投资研究 &middot; 基于公开信息整理 &middot; 不构成投资建议</p>
     </div>
   </div>
 </footer>
 
-<!-- Back to top -->
-<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="返回顶部">&#8593;</button>
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
 
 <script>
 // Theme toggle
 function toggleTheme() {
   document.body.classList.toggle('dark-mode');
-  const btn = document.querySelector('.theme-toggle');
-  btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ 白天' : '&#9790; 夜间';
+  var btn = document.querySelector('.theme-toggle');
+  btn.textContent = document.body.classList.contains('dark-mode') ? '日间模式' : '夜间模式';
 }
 
-// Mobile drawer
-function toggleDrawer() {
-  document.getElementById('navDrawer').classList.toggle('open');
-}
-function closeDrawer() {
-  document.getElementById('navDrawer').classList.remove('open');
-}
-
-// Back to top button visibility
+// Back to top visibility
 window.addEventListener('scroll', function() {
-  const btn = document.getElementById('backToTop');
+  var btn = document.getElementById('backToTop');
   if (window.scrollY > 400) {
     btn.classList.add('visible');
   } else {
@@ -1432,17 +1422,11 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-  anchor.addEventListener('click', function(e) {
-    var target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      closeDrawer();
-    }
-  });
-});
+// Init theme
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  document.body.classList.add('dark-mode');
+  document.querySelector('.theme-toggle').textContent = '日间模式';
+}
 </script>
 </body>
 </html>
