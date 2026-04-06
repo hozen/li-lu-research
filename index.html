@@ -76,6 +76,9 @@
     --md-on-surface:    #e0e0e0;
     --md-on-surface-muted: #9ca3af;
     --md-outline:       #374151;
+    --text-primary:     #e0e0e0;
+    --text-secondary:   #9ca3af;
+    --text-muted:       #6b7280;
   }
   body {
     background-color: var(--md-background);
@@ -107,6 +110,9 @@ body.dark-mode {
   --md-on-surface:    #e0e0e0;
   --md-on-surface-muted: #9ca3af;
   --md-outline:       #374151;
+  --text-primary:     #e0e0e0;
+  --text-secondary:   #9ca3af;
+  --text-muted:       #6b7280;
   background-color: var(--md-background);
   color: var(--md-on-surface);
 }
@@ -553,6 +559,11 @@ a:hover { color: var(--md-secondary); }
 .tag-green { background: #c6f6d5; color: #276749; }
 .tag-red { background: #fed7d7; color: #c53030; }
 .tag-blue { background: #bee3f8; color: #2b6cb0; }
+
+body.dark-mode .tag-gray { background: #374151; color: #d1d5db; }
+body.dark-mode .tag-green { background: rgba(56,161,105,.2); color: #68d391; }
+body.dark-mode .tag-red { background: rgba(197,48,48,.2); color: #fc8181; }
+body.dark-mode .tag-blue { background: rgba(43,108,176,.2); color: #90cdf4; }
 
 .moat-stars { color: #38a169; font-size: var(--font-size-xs); }
 
