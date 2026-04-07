@@ -77,7 +77,7 @@
 ### ⚠️ 重大更正：B1/B2/B3 之前误标为"已完成"，本次为实际实现
 - **问题原因**：REVIEW_NOTES.md 记录与 HTML 文件实际状态不同步
 - **本次操作**：确认 HTML 中 B1/B2/B3 实际缺失后，重新实现并推送
-- **Push 信息**：dev@3d6d7f7
+- **Push 信息**：dev@57b687e
 
 ### B1/B2/B3 实际完成（Round 2-B 本轮）
 - **B1 研究笔记 (Study Notes)**：新增 `<section id=study-notes>`，包含三条笔记（CBS访谈/北大演讲/文明3.0框架），位于 cases 区之后、about 区之前；含完整 CSS 样式 + 暗色模式支持
@@ -90,6 +90,12 @@
 ### P1-3 完成：书架 Step 5 跳转按钮
 - bookshelf.html Step 5 将内联文字链接升级为显眼的 `.btn.btn-primary` 金色按钮「→ 查看研究首页」
 - Playwright 回归测试：bookshelf.html 加载正常，Step 5 按钮可见
+
+
+### A3完成：案例区去重（Alphabet/BAC移除）
+- **问题：** A3标记为已完成但实际未执行，Alphabet和BAC卡片仍在#cases区
+- **本次操作：** 从#cases区移除Alphabet和BAC卡片，仅保留比亚载作为历史案例；更新副标题注明"当前持仓请见上方持仓区"
+- **推送：** dev@57b687e
 
 ### 新增 (B1 + B2)
 - **B1 研究笔记 (Study Notes)**：新增独立 section，放置在 cases 区之后，包含三条研究笔记（CBS访谈/北大演讲/文明3.0）
