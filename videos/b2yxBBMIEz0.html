@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCBC Fireside Chat — 李录研究</title>
+<style>
+/* ============================================================
+   M3 Design System — aligned with video_study.html
+   ============================================================ */
+:root {
+  --md-primary:        #0a1628;
+  --md-primary-rgb:   10,22,40;
+  --md-secondary:      #c9a227;
+  --md-on-secondary:   #1a1a2e;
+  --md-surface:         #ffffff;
+  --md-surface-variant: #f3f4f6;
+  --md-background:     #ffffff;
+  --md-background-dark: #1a1a2e;
+  --md-on-surface:     #1a1a2e;
+  --md-on-surface-muted: #4a5568;
+  --md-outline:         #d1d5db;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px;
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --text-primary: #1a1a2e; --text-secondary: #4a5568; --text-muted: #6b7280;
+  --text-inverse: #f5f5f5;
+  --navbar-height: 64px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-primary:#1a365d;--md-surface:#162032;--md-surface-variant:#1a2744;
+    --md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;
+    --md-outline:#374151;--text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280;
+  }
+  body{background-color:var(--md-background);color:var(--md-on-surface)}
+}
+body.dark-mode{
+  --md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;
+  --md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--md-outline:#374151;
+  --text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280;
+  background-color:var(--md-background);color:var(--md-on-surface)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-family);background:#f3f4f6;color:#1a1a1a;line-height:1.6;min-height:100vh}
+a{color:var(--md-secondary);text-decoration:none;transition:color .2s}
+a:hover{color:var(--md-secondary-container)}
+*:focus-visible{outline:2px solid var(--md-secondary);outline-offset:2px}
+.navbar{
+  position:fixed;top:0;left:0;right:0;height:var(--navbar-height);
+  background:rgba(var(--md-primary-rgb),.97);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--sp-10);box-shadow:0 2px 8px rgba(0,0,0,.15)
+}
+.nav-brand{color:var(--text-inverse);font-size:var(--font-size-lg);font-weight:600;white-space:nowrap}
+.nav-brand span{color:var(--md-secondary)}
+.nav-links{display:flex;align-items:center;gap:var(--sp-1)}
+.nav-link{
+  color:rgba(255,255,255,.65);text-decoration:none;padding:var(--sp-2) var(--sp-3);
+  border-radius:var(--radius-sm);font-size:var(--font-size-sm);font-weight:500;
+  transition:background .2s,color .2s;white-space:nowrap
+}
+.nav-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+.nav-link.active{color:var(--md-secondary)}
+.theme-toggle{
+  padding:var(--sp-2) var(--sp-4);background:var(--md-secondary);border:none;
+  border-radius:var(--radius-sm);cursor:pointer;font-size:var(--font-size-sm);
+  font-weight:500;color:var(--md-on-secondary);transition:opacity .2s;white-space:nowrap
+}
+.theme-toggle:hover{opacity:.85}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:var(--sp-2)}
+.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.nav-drawer{
+  display:none;position:fixed;top:var(--navbar-height);left:0;right:0;
+  background:rgba(var(--md-primary-rgb),.98);padding:var(--sp-4) var(--sp-6);
+  flex-direction:column;gap:var(--sp-2);z-index:999;
+  box-shadow:0 4px 12px rgba(0,0,0,.2)
+}
+.nav-drawer.open{display:flex}
+.nav-drawer .nav-link{color:rgba(255,255,255,.8);font-size:var(--font-size-base);padding:var(--sp-3) var(--sp-4)}
+.main-content{padding-top:var(--navbar-height);max-width:900px;margin:0 auto;background:var(--md-surface);min-height:100vh}
+.back-bar{
+  padding:12px 16px;border-bottom:1px solid #e5e7eb;
+  display:flex;align-items:center;gap:8px;background:#fafafa
+}
+.back-bar a{color:#c9a227;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:4px}
+.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#0a1628}
+.video-embed iframe{width:100%;height:100%;border:none;display:block}
+.video-header{padding:20px 16px 12px}
+.video-title{font-size:1.15rem;font-weight:700;color:#1a1a2e;line-height:1.4;margin-bottom:8px}
+.video-meta{font-size:.78rem;color:#6b7280;display:flex;gap:16px;flex-wrap:wrap}
+.video-meta span{display:flex;align-items:center;gap:4px}
+.video-desc{padding:0 16px 16px;font-size:.88rem;color:#4a5568;line-height:1.7}
+.video-yt-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#c9a227;color:#0a1628;padding:8px 18px;
+  border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin:0 16px 16px;
+  transition:background .2s
+}
+.video-yt-btn:hover{background:#b8922a}
+.seg-list{padding:16px;border-top:1px solid #e5e7eb}
+.seg-list h3{padding:0 0 12px;font-size:.9rem;font-weight:700;color:#1a1a2e;border-bottom:2px solid #c9a227;margin-bottom:16px;display:inline-block}
+.seg{padding:12px;margin-bottom:10px;border-radius:8px;border:1px solid #e5e7eb;background:#fafafa;transition:all .15s}
+.seg:hover{border-color:#c9a227}
+.seg-time{font-size:.72rem;font-weight:700;color:#c9a227;margin-bottom:4px}
+.seg-label{font-size:.75rem;color:#4a5568;font-weight:600;margin-bottom:6px}
+.seg-zh{font-size:.85rem;color:#374151;line-height:1.7}
+.seg-en{font-size:.78rem;color:#555;background:#f3f4f6;padding:8px 10px;border-radius:6px;line-height:1.7;max-height:0;overflow:hidden;transition:max-height .3s;margin-top:0}
+.seg-en.open{max-height:400px}
+.seg-exp{font-size:.75rem;color:#c9a227;cursor:pointer;user-select:none;margin-top:6px;display:inline-block}
+.seg-jmp{font-size:.75rem;color:#c9a227;font-weight:600;text-decoration:none;padding:4px 10px;border:1px solid #c9a227;border-radius:20px;display:inline-block;margin-top:8px;transition:all .2s}
+.seg-jmp:hover{background:#c9a227;color:#0a1628}
+footer{padding:10px 16px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
+footer a{color:#c9a227;text-decoration:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0a1628;color:#fff;padding:8px 20px;border-radius:30px;font-size:.85rem;opacity:0;transition:opacity .3s;z-index:1000;pointer-events:none}
+.toast.on{opacity:1}
+@media(max-width:768px){
+  :root{--sp-10:20px}
+  .navbar{padding:0 var(--sp-5)}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .main-content{padding-top:var(--navbar-height)}
+}
+@media(prefers-color-scheme:dark){
+  .back-bar{background:#0d1b2a;border-color:#333}
+  .seg{background:#1a2744;border-color:#333}
+  .seg-zh{color:#c0c0c0}
+  .seg-en{background:#0f0f23;border-color:#444;color:#b0b0b0}
+  footer{background:#0d1b2a;color:#888}
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-brand"><span>&#10070;</span> 李录研究</div>
+  <div class="nav-links">
+    <a href="index.html#about"      class="nav-link">关于</a>
+    <a href="index.html#holdings"   class="nav-link">持仓</a>
+    <a href="index.html#principles" class="nav-link">投资原则</a>
+    <a href="index.html#framework"  class="nav-link">决策框架</a>
+    <a href="video_study.html"      class="nav-link active">📺 视频学习</a>
+    <a href="index.html#quotes"     class="nav-link">语录</a>
+    <a href="index.html#faq"        class="nav-link">FAQ</a>
+  </div>
+  <button class="theme-toggle" onclick="toggleTheme()">&#9790; 夜间</button>
+  <button class="hamburger" onclick="toggleDrawer()" aria-label="菜单"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-drawer" id="navDrawer">
+  <a href="index.html#about"      class="nav-link" onclick="closeDrawer()">关于</a>
+  <a href="index.html#holdings"   class="nav-link" onclick="closeDrawer()">持仓</a>
+  <a href="index.html#principles" class="nav-link" onclick="closeDrawer()">投资原则</a>
+  <a href="index.html#framework"  class="nav-link" onclick="closeDrawer()">决策框架</a>
+  <a href="video_study.html"      class="nav-link active">📺 视频学习</a>
+  <a href="index.html#quotes"     class="nav-link" onclick="closeDrawer()">语录</a>
+  <a href="index.html#faq"        class="nav-link" onclick="closeDrawer()">FAQ</a>
+</div>
+
+<main class="main-content">
+  <div class="back-bar">
+    <a href="video_study.html">&#8592; 视频列表</a>
+  </div>
+
+  <div class="video-embed">
+    <iframe src="https://www.youtube.com/embed/b2yxBBMIEz0?rel=0" allowfullscreen title="CCBC Fireside Chat"></iframe>
+  </div>
+
+  <div class="video-header">
+    <h1 class="video-title">CCBC Fireside Chat on Value Investing in China</h1>
+    <div class="video-meta">
+      <span>&#127916; Columbia China Business Conference</span>
+      <span>&#9202; 1h32m</span>
+      <span style="color:#c9a227">&#10003; Transcript</span>
+    </div>
+  </div>
+
+  <div class="video-desc">Li Lu x Bruce Greenwald at Columbia. The definitive Li Lu interview covering moat, trust, DCF, China opportunities.</div>
+  <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0" target="_blank" rel="noopener" class="video-yt-btn">&#9654; YouTube 原站观看</a>
+
+  <div class="seg-list">
+    <h3>Transcript Segments</h3>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 02:24 &middot; Host</div>
+      <div class="seg-label">Opening Introduction</div>
+      <div class="seg-zh">主持人介绍 Bruce Greenwald 和李录。Bruce 是哥伦比亚商学院价值投资之父，培养了一代价值投资者包括李录在内。</div>
+      <div class="seg-en" id="en-1">Live streaming from Columbia Business School. Welcome to the 13th Columbia China Business Conference. Joining us today are Professor Bruce Greenwald and Mr. Lee Liu.</div>
+      <div class="seg-exp" onclick="toggleEn(1)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=144" target="_blank" class="seg-jmp">&#9654; 02:24</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 04:37 &middot; Bruce</div>
+      <div class="seg-label">Evolution of Investment</div>
+      <div class="seg-zh">Bruce 开场：您的投资理念在过去28年是如何演变的？查理·芒格对您有什么影响？</div>
+      <div class="seg-en" id="en-2">I've known Lee Liu for more than 20 years. How has your investment philosophy evolved? In what ways has Charlie Munger influenced you?</div>
+      <div class="seg-exp" onclick="toggleEn(2)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=277" target="_blank" class="seg-jmp">&#9654; 04:37</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 08:00 &middot; Li Lu</div>
+      <div class="seg-label">From Graham to Munger</div>
+      <div class="seg-zh">李录分享三阶段演进：1) 格雷厄姆雪茄烟蒂法 2) 优质小企业 3) 具有持久护城河的伟大企业。芒格的影响远超投资。</div>
+      <div class="seg-en" id="en-3">Before I got exposed to value investing through Buffett's lecture at Bruce's class, my whole approach was along similar lines.</div>
+      <div class="seg-exp" onclick="toggleEn(3)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=480" target="_blank" class="seg-jmp">&#9654; 08:00</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 12:30 &middot; Bruce</div>
+      <div class="seg-label">What Makes a Great Business</div>
+      <div class="seg-zh">Bruce 追问：什么是伟大企业的具体特征？有哪些可量化的指标？</div>
+      <div class="seg-en" id="en-4">What specifically do you look for in a great business? What are the characteristics that make a business truly outstanding?</div>
+      <div class="seg-exp" onclick="toggleEn(4)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=750" target="_blank" class="seg-jmp">&#9654; 12:30</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 12:42 &middot; Li Lu</div>
+      <div class="seg-label">ROIC and Moat</div>
+      <div class="seg-zh">三个标准：1) ROIC 持续高于平均水平 2) 真正的护城河 3) 长期持续增长赛道。符合这三个条件的伟大企业极其罕见。</div>
+      <div class="seg-en" id="en-5">Great businesses are the ones who really have above average return on invested capital - but that kind of businesses socially attract imitators.</div>
+      <div class="seg-exp" onclick="toggleEn(5)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=762" target="_blank" class="seg-jmp">&#9654; 12:42</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 15:00 &middot; Li Lu</div>
+      <div class="seg-label">Trust Moat</div>
+      <div class="seg-zh">李录最强调的护城河：信任。最高形式的文明是无缝的、值得信赖的信任之网。</div>
+      <div class="seg-en" id="en-6">The highest form which civilization can reach is a seamless web of deserved trust - not much procedure, just totally reliable people correctly trusting one another.</div>
+      <div class="seg-exp" onclick="toggleEn(6)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=900" target="_blank" class="seg-jmp">&#9654; 15:00</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 19:00 &middot; Li Lu</div>
+      <div class="seg-label">Constant Change</div>
+      <div class="seg-zh">所有伟大企业都处于不断变化中。护城河必须不断重建才能保持相关性。</div>
+      <div class="seg-en" id="en-7">All great businesses are in constant change. The moat must be continuously rebuilt to remain relevant.</div>
+      <div class="seg-exp" onclick="toggleEn(7)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=1140" target="_blank" class="seg-jmp">&#9654; 19:00</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 21:51 &middot; Bruce</div>
+      <div class="seg-label">How Do You Invest Differently</div>
+      <div class="seg-zh">Bruce 提问：您的方法与其他价值投资者有什么本质区别？</div>
+      <div class="seg-en" id="en-8">How do you invest differently from other value investors?</div>
+      <div class="seg-exp" onclick="toggleEn(8)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=1311" target="_blank" class="seg-jmp">&#9654; 21:51</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 26:30 &middot; Li Lu</div>
+      <div class="seg-label">From Small to Great</div>
+      <div class="seg-zh">李录从完全不懂企业只看财报，演进到深入理解管理层。性格评估是艺术，不是科学。</div>
+      <div class="seg-en" id="en-9">I evolved from not understanding business at all, just looking at financial statements, to deeply understanding management.</div>
+      <div class="seg-exp" onclick="toggleEn(9)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=1590" target="_blank" class="seg-jmp">&#9654; 26:30</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 33:00 &middot; Li Lu</div>
+      <div class="seg-label">Margin of Safety and DCF</div>
+      <div class="seg-zh">DCF 是李录的核心估值工具，但关键是保守假设。</div>
+      <div class="seg-en" id="en-10">I use DCF as the primary tool, but the key is being conservative with assumptions.</div>
+      <div class="seg-exp" onclick="toggleEn(10)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=1980" target="_blank" class="seg-jmp">&#9654; 33:00</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 38:00 &middot; Bruce</div>
+      <div class="seg-label">Generalist or Specialist</div>
+      <div class="seg-zh">Bruce 提问：投资者应该是通才还是专才？在中国市场运作方式是否不同？</div>
+      <div class="seg-en" id="en-11">Do you think investors should be generalists or specialists?</div>
+      <div class="seg-exp" onclick="toggleEn(11)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=2280" target="_blank" class="seg-jmp">&#9654; 38:00</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 44:49 &middot; Li Lu</div>
+      <div class="seg-label">China World's Most Dynamic</div>
+      <div class="seg-zh">中国30年来一直是全球最具活力的经济体，正在从投资驱动转向消费驱动。</div>
+      <div class="seg-en" id="en-12">China has been the most dynamic economy in the world for the last 30 years, transitioning from investment-driven to consumption-driven economy.</div>
+      <div class="seg-exp" onclick="toggleEn(12)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=2689" target="_blank" class="seg-jmp">&#9654; 44:49</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 50:00 &middot; Li Lu</div>
+      <div class="seg-label">Opportunities Across Sectors</div>
+      <div class="seg-zh">住房、服务、几乎所有行业都处于强劲增长阶段。关键是找到有护城河的好公司。</div>
+      <div class="seg-en" id="en-13">Housing, services, virtually every industry is in a robust growth stage. The challenge in China is not finding opportunities.</div>
+      <div class="seg-exp" onclick="toggleEn(13)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=3000" target="_blank" class="seg-jmp">&#9654; 50:00</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 55:00 &middot; Bruce</div>
+      <div class="seg-label">Service Economy</div>
+      <div class="seg-zh">Bruce 提问：中国的服务业有哪些机会和人才挑战？</div>
+      <div class="seg-en" id="en-14">What opportunities do you see in China's service economy?</div>
+      <div class="seg-exp" onclick="toggleEn(14)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=3300" target="_blank" class="seg-jmp">&#9654; 55:00</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 62:00 &middot; Bruce</div>
+      <div class="seg-label">Investment Mistakes</div>
+      <div class="seg-zh">Bruce 提问：回顾您的职业生涯，您最大的投资错误是什么？</div>
+      <div class="seg-en" id="en-15">Looking back on your career, what are some of your biggest investment mistakes?</div>
+      <div class="seg-exp" onclick="toggleEn(15)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=3720" target="_blank" class="seg-jmp">&#9654; 62:00</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 62:01 &middot; Li Lu</div>
+      <div class="seg-label">Mistakes and Advice</div>
+      <div class="seg-zh">错误是投资的必要部分——关键是快速学习。</div>
+      <div class="seg-en" id="en-16">Mistakes are a necessary part of investing. The key is learning from them quickly.</div>
+      <div class="seg-exp" onclick="toggleEn(16)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=3721" target="_blank" class="seg-jmp">&#9654; 62:01</a>
+    </div>
+
+    <div class="seg">
+      <div class="seg-time">&#9201; 85:00 &middot; Li Lu</div>
+      <div class="seg-label">Asian-American Bridge</div>
+      <div class="seg-zh">李录最后呼吁：全球经济中心正在从大西洋转向太平洋。</div>
+      <div class="seg-en" id="en-17">The center of the global economy is shifting from the Atlantic to the Pacific.</div>
+      <div class="seg-exp" onclick="toggleEn(17)">&#9658; Show English</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0&t=5100" target="_blank" class="seg-jmp">&#9654; 85:00</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <span>仅供学习参考 · <a href="video_study.html">视频列表</a></span>
+  <span style="color:#ef4444">不构成投资建议</span>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function tst(msg){
+  var t=document.getElementById("toast");
+  t.textContent=msg;t.className="toast on";
+  setTimeout(function(){t.className="toast";},2500);
+}
+function toggleTheme(){
+  document.body.classList.toggle('dark-mode');
+  var btn=document.querySelector('.theme-toggle');
+  btn.textContent=document.body.classList.contains('dark-mode')?'☀️ 白天':'&#9790; 夜间';
+}
+function toggleDrawer(){document.getElementById('navDrawer').classList.toggle('open');}
+function closeDrawer(){document.getElementById('navDrawer').classList.remove('open');}
+function toggleEn(id){
+  var el=document.getElementById("en-"+id);
+  if(!el)return;
+  if(el.classList.contains("open")){
+    el.classList.remove("open");
+    el.previousElementSibling.textContent="\u25b8 Show English";
+  }else{
+    el.classList.add("open");
+    el.previousElementSibling.textContent="\u25bc Hide English";
+  }
+}
+</script>
+</body>
+</html>

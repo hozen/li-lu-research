@@ -1,0 +1,21 @@
+{
+  "b2yxBBMIEz0": [
+    {"id": 1, "t": "02:24", "sp": "Host",    "lb": "Opening Introduction",               "zh": "主持人介绍 Bruce Greenwald 和李录。Bruce 是哥伦比亚商学院价值投资之父，培养了一代价值投资者包括李录在内。", "en": "Live streaming from Columbia Business School. Welcome to the 13th Columbia China Business Conference. Joining us today are Professor Bruce Greenwald and Mr. Lee Liu."},
+    {"id": 2, "t": "04:37", "sp": "Bruce",  "lb": "Evolution of Investment",             "zh": "Bruce 开场：您的投资理念在过去28年是如何演变的？查理·芒格对您有什么影响？", "en": "I've known Lee Liu for more than 20 years. How has your investment philosophy evolved? In what ways has Charlie Munger influenced you?"},
+    {"id": 3, "t": "08:00", "sp": "Li Lu",  "lb": "From Graham to Munger",              "zh": "李录分享三阶段演进：1) 格雷厄姆雪茄烟蒂法 2) 优质小企业 3) 具有持久护城河的伟大企业。芒格的影响远超投资。", "en": "Before I got exposed to value investing through Buffett's lecture at Bruce's class, my whole approach was along similar lines."},
+    {"id": 4, "t": "12:30", "sp": "Bruce",  "lb": "What Makes a Great Business",         "zh": "Bruce 追问：什么是伟大企业的具体特征？有哪些可量化的指标？", "en": "What specifically do you look for in a great business? What are the characteristics that make a business truly outstanding?"},
+    {"id": 5, "t": "12:42", "sp": "Li Lu",  "lb": "ROIC and Moat",                       "zh": "三个标准：1) ROIC 持续高于平均水平 2) 真正的护城河 3) 长期持续增长赛道。符合这三个条件的伟大企业极其罕见。", "en": "Great businesses are the ones who really have above average return on invested capital - but that kind of businesses socially attract imitators."},
+    {"id": 6, "t": "15:00", "sp": "Li Lu",  "lb": "Trust Moat",                          "zh": "李录最强调的护城河：信任。最高形式的文明是无缝的、值得信赖的信任之网。", "en": "The highest form which civilization can reach is a seamless web of deserved trust - not much procedure, just totally reliable people correctly trusting one another."},
+    {"id": 7, "t": "19:00", "sp": "Li Lu",  "lb": "Constant Change",                     "zh": "所有伟大企业都处于不断变化中。护城河必须不断重建才能保持相关性。", "en": "All great businesses are in constant change. The moat must be continuously rebuilt to remain relevant."},
+    {"id": 8, "t": "21:51", "sp": "Bruce",  "lb": "How Do You Invest Differently",       "zh": "Bruce 提问：您的方法与其他价值投资者有什么本质区别？", "en": "How do you invest differently from other value investors?"},
+    {"id": 9, "t": "26:30", "sp": "Li Lu",  "lb": "From Small to Great",                 "zh": "李录从完全不懂企业只看财报，演进到深入理解管理层。性格评估是艺术，不是科学。", "en": "I evolved from not understanding business at all, just looking at financial statements, to deeply understanding management."},
+    {"id": 10,"t": "33:00", "sp": "Li Lu",  "lb": "Margin of Safety and DCF",           "zh": "DCF 是李录的核心估值工具，但关键是保守假设。", "en": "I use DCF as the primary tool, but the key is being conservative with assumptions."},
+    {"id": 11,"t": "38:00", "sp": "Bruce",  "lb": "Generalist or Specialist",            "zh": "Bruce 提问：投资者应该是通才还是专才？在中国市场运作方式是否不同？", "en": "Do you think investors should be generalists or specialists?"},
+    {"id": 12,"t": "44:49", "sp": "Li Lu",  "lb": "China World's Most Dynamic",          "zh": "中国30年来一直是全球最具活力的经济体，正在从投资驱动转向消费驱动。", "en": "China has been the most dynamic economy in the world for the last 30 years, transitioning from investment-driven to consumption-driven economy."},
+    {"id": 13,"t": "50:00", "sp": "Li Lu",  "lb": "Opportunities Across Sectors",        "zh": "住房、服务、几乎所有行业都处于强劲增长阶段。关键是找到有护城河的好公司。", "en": "Housing, services, virtually every industry is in a robust growth stage. The challenge in China is not finding opportunities."},
+    {"id": 14,"t": "55:00", "sp": "Bruce",  "lb": "Service Economy",                     "zh": "Bruce 提问：中国的服务业有哪些机会和人才挑战？", "en": "What opportunities do you see in China's service economy?"},
+    {"id": 15,"t": "62:00", "sp": "Bruce",  "lb": "Investment Mistakes",                "zh": "Bruce 提问：回顾您的职业生涯，您最大的投资错误是什么？", "en": "Looking back on your career, what are some of your biggest investment mistakes?"},
+    {"id": 16,"t": "62:01", "sp": "Li Lu",  "lb": "Mistakes and Advice",                 "zh": "错误是投资的必要部分——关键是快速学习。", "en": "Mistakes are a necessary part of investing. The key is learning from them quickly."},
+    {"id": 17,"t": "85:00", "sp": "Li Lu",  "lb": "Asian-American Bridge",               "zh": "李录最后呼吁：全球经济中心正在从大西洋转向太平洋。", "en": "The center of the global economy is shifting from the Atlantic to the Pacific."}
+  ]
+}
