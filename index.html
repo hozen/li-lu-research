@@ -34,60 +34,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 .card h3,.card h4{color:#000000;margin-bottom:15px}
 
 
-/* Dark Mode - High Contrast for Night Reading */
-
-
-body.dark-mode{background:#000000;color:#ffffff}
-
-
-body.dark-mode .card{background:#1a1a1a;color:#ffffff;border:1px solid #444}
-
-
-body.dark-mode .card h3,body.dark-mode .card h4{color:#ffff00}
-
-
-body.dark-mode .section{background:#000000}
-
-
-body.dark-mode .footer{background:#0a0a0a}
-
-
-body.dark-mode .quote-card{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .book-card{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .video-card{background:#1a1a1a}
-
-
-body.dark-mode .timeline-item{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode .hero{background:linear-gradient(135deg,#000000 0%,#111111 100%)}
-
-
-body.dark-mode .hero-text h1{color:#ffff00}
-
-
-body.dark-mode .section-title{color:#ffff00}
-
-
-body.dark-mode .quote-text{color:#ffffff}
-
-
-body.dark-mode details{background:#1a1a1a;color:#ffffff}
-
-
-body.dark-mode p,body.dark-mode li{color:#e0e0e0}
-
-
-body.dark-mode a{color:#64b5f6}
-
-
-body.dark-mode .nav-link{color:#e0e0e0}
-
-
 /* Light mode fixes */
 
 
@@ -124,10 +70,10 @@ body.dark-mode .video-card{background:#1a365d}
 body.dark-mode .timeline-item{background:#1a365d}
 
 
-body.dark-mode .hero{background:linear-gradient(135deg,#000 0%,#1a365d 100%)}
+body.dark-mode .hero{background:linear-gradient(135deg,#0a1628 0%,#1a365d 100%)}
 
 
-body.dark-mode .hero-text h1{color:#fff}
+body.dark-mode .hero-text h1{color:#ffffff}
 
 
 body.dark-mode .section-title{color:#c9a227}
@@ -136,6 +82,24 @@ body.dark-mode .section-title{color:#c9a227}
 body.dark-mode details{background:#1a365d;color:#e2e8f0}
 
 
+
+body.dark-mode p,body.dark-mode li{color:#e2e8f0}
+
+body.dark-mode a{color:#64b5f6}
+
+body.dark-mode .nav-link{color:#e2e8f0}
+
+body.dark-mode .stat-number{color:#c9a227}
+
+body.dark-mode .stat-label{color:#94a3b8}
+
+body.dark-mode .subtitle{color:#94a3b8}
+
+body.dark-mode .tagline{color:#c9a227}
+
+body.dark-mode .placeholder-text{color:#94a3b8}
+
+body.dark-mode .hero-image-box{border-color:#c9a227}
 *{box-sizing:border-box;margin:0;padding:0}
 
 
@@ -172,7 +136,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 .search-box input::placeholder{color:rgba(255,255,255,0.5);}
 
 
-.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
+.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:60vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
 
 
 .hero::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
@@ -458,7 +422,7 @@ a, button { transition: all 0.2s ease-out; }
 <a href=#framework class=nav-link>鍐崇瓥妗嗘灦</a>
 
 
-
+<a href=#videos class=nav-link>瑙嗛</a>
 
 
 <a href=video_study.html class=nav-link target=_blank>馃摵 瑙嗛瀛︿範</a>
@@ -473,7 +437,7 @@ a, button { transition: all 0.2s ease-out; }
 </div>
 
 
-<button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 澶滈棿</button>
+<button id="theme-toggle" onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem; color: #0a1628; font-weight: 600;">&#9728; 鏃ラ棿</button>
 
 
 </nav>
@@ -500,7 +464,10 @@ a, button { transition: all 0.2s ease-out; }
 <div style=margin-top:30px;display:flex;gap:15px;flex-wrap:wrap>
 
 
+<a href=#videos class=btn btn-primary>瑙傜湅瑙嗛 &#8594;</a>
 
+
+<a href=#principles class=btn btn-outline>浜嗚В鎶曡祫鍝插</a>
 
 
 </div>
@@ -523,6 +490,8 @@ a, button { transition: all 0.2s ease-out; }
 
 </div>
 
+
+<p style="color:rgba(255,255,255,0.35);font-size:0.7rem;margin-top:8px;padding:0 4px;">&#8224; 鎹叕寮€鎶ラ亾浼扮畻锛岄潪瀹樻柟鎶湶鏁版嵁</p>
 
 <div class=hero-image-box>
 
@@ -554,7 +523,7 @@ a, button { transition: all 0.2s ease-out; }
 <h2 class=section-title style="color: #fff;">鍠滈┈鎷夐泤璧勬湰鎸佷粨 (13F)</h2>
 
 
-<p class=section-subtitle style="color: #a0aec0;">2025骞碤4 13F鐢虫姤 路 缇庡浗鍏紑甯傚満鎸佷粨 路 鎬昏妯＄害楼250浜?/p>
+<p class=section-subtitle style="color: #a0aec0;">鏁版嵁鎴锛?025 Q4 13F (2026-02-17鎶湶) 路 缇庡浗鍏紑甯傚満鎸佷粨 路 鎬昏妯＄害楼250浜?/p>
 
 
 </div>
@@ -1337,7 +1306,73 @@ a, button { transition: all 0.2s ease-out; }
 </section>
 
 
+<section id=videos class=section>
 
+
+<div class=section-header>
+
+
+<h2 class=section-title>瑙嗛璧勬簮</h2>
+
+
+<p class=section-subtitle>瀹屾暣鐗堟紨璁蹭笌璁胯皥锛屾繁搴︾悊瑙ｄ环鍊兼姇璧勫摬瀛?/p>
+
+
+</div>
+
+
+<div class=video-grid>
+
+
+<div class=video-card><div class=video-thumbnail><a href=video_study.html class=play-icon></a></div><div class=video-info><h4>馃摵 CCBC Fireside Chat | 浠峰€兼姇璧勪腑鍥?(甯﹀瓧骞曞涔?</h4><div style=padding:6px 0><span style="background:#ef4444;color:white;padding:2px 8px;border-radius:4px;font-size:0.72rem;">鈿狅笍 闇€璺宠浆YouTube</span></div><div class=video-meta><span class=video-source>YouTube 路 CCBC</span><span class=video-duration>90鍒嗛挓</span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=https://www.bilibili.com/video/BV19QzcYeEWW/ target=_blank class=play-icon></a></div><div class=video-info><h4>鍖楀ぇ婕旇锛氭垜瀵逛环鍊兼姇璧勭殑鐞嗚В</h4><div class=video-meta><span class=video-source>Bilibili</span><span class=video-duration>3灏忔椂+</span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=video_study.html class=play-icon></a></div><div class=video-info><h4>Master Class on Value Investing</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>45鍒嗛挓</span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=https://www.youtube.com/watch?v=FiHrWy2jGbA target=_blank class=play-icon></a></div><div class=video-info><h4>CCBC Fireside Chat: 涓浗甯傚満鏈轰細</h4><div class=video-meta><span class=video-source>CBS Greater China</span><span class=video-duration>1灏忔椂32鍒?/span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=video_study.html class=play-icon></a></div><div class=video-info><h4>The Chinese Warren Buffett: Li Lu</h4><div class=video-meta><span class=video-source>We Study Billionaires</span><span class=video-duration>51鍒嗛挓</span></div></div></div>
+
+
+<div class=video-card><div class=video-thumbnail><a href=https://www.bilibili.com/video/BV19QzcYeEWW/ target=_blank class=play-icon></a></div><div class=video-info><h4>鍖楀ぇ浠峰€兼姇璧勮绋嬪崄鍛ㄥ勾婕旇</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>25鍒嗛挓</span></div></div></div>
+
+
+</div>
+
+
+<div class=card style=margin-top:30px>
+
+
+<h3>&#9889; 蹇€熷叆闂?(鐭増)</h3>
+
+
+<div style=display:flex;flex-wrap:wrap;gap:15px;margin-top:20px>
+
+
+<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Li Lus 3 Important Rules - 7鍒嗛挓</span>
+
+
+<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Why Only 5% Win - 5鍒嗛挓</span>
+
+
+<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Munger on Li Lu - 2鍒嗛挓</span>
+
+
+<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Holy Grail of Investing - 3鍒嗛挓</span>
+
+
+</div>
+
+
+</div>
+
+
+</section>
 
 
 <section id=glossary class=section>
@@ -1930,114 +1965,6 @@ a, button { transition: all 0.2s ease-out; }
 </main>
 
 
-
-<section id="downloads" class="section" style="background: var(--md-surface-variant); padding: var(--sp-12) var(--sp-10);">
-  <div class="section-header">
-    <h2 class="section-title">涓嬭浇璧勬簮</h2>
-    <p class="section-subtitle">鏉庡綍鐮旂┒瀛︿範璧勬枡</p>
-  </div>
-  <div style="display: flex; gap: var(--sp-4); flex-wrap: wrap; justify-content: center; margin-top: var(--sp-8);">
-    <a href="li-lu-study-guide.md" download style="padding: var(--sp-4) var(--sp-6); background: var(--md-secondary); color: var(--md-on-secondary); border-radius: var(--radius-md); text-decoration: none; font-weight: 500;">瀛︿範鎸囧崡 (Markdown)</a>
-    <a href="li-lu-qa.md" download style="padding: var(--sp-4) var(--sp-6); background: var(--md-surface); color: var(--md-on-surface); border: 1px solid var(--md-outline); border-radius: var(--radius-md); text-decoration: none; font-weight: 500;">闂瓟闆?(Markdown)</a>
-    <a href="li-lu-2021-interview-summary.md" download style="padding: var(--sp-4) var(--sp-6); background: var(--md-surface); color: var(--md-on-surface); border: 1px solid var(--md-outline); border-radius: var(--radius-md); text-decoration: none; font-weight: 500;">璁胯皥鎽樿 (Markdown)</a>
-  </div>
-</section>
-
-
-<section id="changelog" class="section" style="background: var(--md-surface); padding: var(--sp-12) var(--sp-10);">
-  <div class="section-header">
-    <h2 class="section-title">鏇存柊鏃ュ織</h2>
-    <p class="section-subtitle">椤甸潰鍐呭鍙樻洿璁板綍</p>
-  </div>
-  <div style="max-width: 800px;">
-    <div style="margin-bottom: var(--sp-6); padding-bottom: var(--sp-6); border-bottom: 1px solid var(--md-outline);">
-      <span style="font-weight: 600; color: var(--md-secondary); font-size: var(--font-size-sm);">2026-04-06</span>
-      <ul style="padding-left: var(--sp-5); color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.7; margin-top: var(--sp-2);">
-        <li>M3璁捐閲嶆瀯锛欸eorgia琛嚎浣撱€佸幓闄よ楗板姩鐢汇€佺畝鍖杊ero甯冨眬</li>
-        <li>dark mode瀵规瘮搴︿慨澶嶏細鎸佷粨鍖恒€佹鏋舵楠ゆ枃瀛椾紭鍖?/li>
-        <li>video_study.html瀵艰埅鏍忎笌index.html缁熶竴</li>
-        <li>鏂板QQ缇や簩缁寸爜锛氭柟渚垮涔犺€呭姞鍏ヤ氦娴佺兢</li>
-        <li>鏂板鏇存柊鏃ュ織涓庝笅杞借祫婧愬尯</li>
-      </ul>
-    </div>
-    <div style="margin-bottom: var(--sp-6); padding-bottom: var(--sp-6); border-bottom: 1px solid var(--md-outline);">
-      <span style="font-weight: 600; color: var(--md-secondary); font-size: var(--font-size-sm);">2026-04-05</span>
-      <ul style="padding-left: var(--sp-5); color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.7; margin-top: var(--sp-2);">
-        <li>鎸佷粨鏁版嵁鏇存柊涓?025骞碤4 13F锛圓lphabet 43.86%绗竴澶т粨锛?/li>
-        <li>鏂板鎶曡祫鍐崇瓥妗嗘灦鍏楠?/li>
-      </ul>
-    </div>
-    <div>
-      <span style="font-weight: 600; color: var(--md-secondary); font-size: var(--font-size-sm);">2026-03-22</span>
-      <ul style="padding-left: var(--sp-5); color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.7; margin-top: var(--sp-2);">
-        <li>鏂板鎶曡祫妗堜緥鍒嗘瀽銆佸涔犺矾寰勪笁闃舵銆佹寔浠揚E鏁版嵁鍒嗘瀽</li>
-        <li>鏂板瑙嗛宓屽叆鎾斁銆佹悳绱㈠姛鑳姐€佷笅杞借祫婧愬尯</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- QR Code Section -->
-<section id="join" class="section" style="background: var(--md-surface); padding: var(--sp-12) var(--sp-10); text-align: center;">
-  <div style="max-width: 400px; margin: 0 auto;">
-    <h2 class="section-title" style="justify-content: center; margin-bottom: var(--sp-4);">鍔犲叆瀛︿範缇?/h2>
-    <p style="color: var(--text-secondary); margin-bottom: var(--sp-6); font-size: var(--font-size-base);">鎵爜鍔犲叆缇よ亰锛屼笌蹇楀悓閬撳悎鐨勬姇璧勮€呬竴璧峰涔犱氦娴?/p>
-    <div style="background: #ffffff; border-radius: var(--radius-lg); padding: var(--sp-4); display: inline-block;">
-      <img src="https://raw.githubusercontent.com/hozen/li-lu-research/dev/qq-group-qr.png" alt="QQ缇や簩缁寸爜" style="width: 220px; display: block;">
-    </div>
-    <p style="color: var(--text-secondary); margin-top: var(--sp-4); font-size: var(--font-size-sm);">缇ゅ彿: 560559464</p>
-  </div>
-</section>
-
-<!-- Downloads Section -->
-<section id="downloads" class="section" style="background: var(--md-surface-variant); padding: var(--sp-12) var(--sp-10);">
-  <div class="section-header">
-    <h2 class="section-title">涓嬭浇璧勬簮</h2>
-    <p class="section-subtitle">鏉庡綍鐮旂┒瀛︿範璧勬枡</p>
-  </div>
-  <div style="display: flex; gap: var(--sp-4); flex-wrap: wrap; justify-content: center; margin-top: var(--sp-8);">
-    <a href="li-lu-study-guide.md" download style="padding: var(--sp-4) var(--sp-6); background: var(--md-secondary); color: var(--md-on-secondary); border-radius: var(--radius-md); text-decoration: none; font-weight: 500;">瀛︿範鎸囧崡 (Markdown)</a>
-    <a href="li-lu-qa.md" download style="padding: var(--sp-4) var(--sp-6); background: var(--md-surface); color: var(--md-on-surface); border: 1px solid var(--md-outline); border-radius: var(--radius-md); text-decoration: none; font-weight: 500;">闂瓟闆?(Markdown)</a>
-    <a href="li-lu-2021-interview-summary.md" download style="padding: var(--sp-4) var(--sp-6); background: var(--md-surface); color: var(--md-on-surface); border: 1px solid var(--md-outline); border-radius: var(--radius-md); text-decoration: none; font-weight: 500;">璁胯皥鎽樿 (Markdown)</a>
-  </div>
-</section>
-
-<!-- Changelog Section -->
-<section id="changelog" class="section" style="background: var(--md-surface); padding: var(--sp-12) var(--sp-10);">
-  <div class="section-header">
-    <h2 class="section-title">鏇存柊鏃ュ織</h2>
-    <p class="section-subtitle">椤甸潰鍐呭鍙樻洿璁板綍</p>
-  </div>
-  <div style="max-width: 800px;">
-    <div style="margin-bottom: var(--sp-6); padding-bottom: var(--sp-6); border-bottom: 1px solid var(--md-outline);">
-      <span style="font-weight: 600; color: var(--md-secondary); font-size: var(--font-size-sm);">2026-04-06</span>
-      <ul style="padding-left: var(--sp-5); color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.7; margin-top: var(--sp-2);">
-        <li>M3璁捐閲嶆瀯锛欸eorgia琛嚎浣撱€佸幓闄よ楗板姩鐢汇€佺畝鍖杊ero甯冨眬</li>
-        <li>dark mode瀵规瘮搴︿慨澶嶏細鎸佷粨鍖恒€佹鏋舵楠ゆ枃瀛椾紭鍖?/li>
-        <li>video_study.html瀵艰埅鏍忎笌index.html缁熶竴</li>
-        <li>鏂板QQ缇や簩缁寸爜锛氭柟渚垮涔犺€呭姞鍏ヤ氦娴佺兢</li>
-        <li>鏂板鏇存柊鏃ュ織涓庝笅杞借祫婧愬尯</li>
-      </ul>
-    </div>
-    <div style="margin-bottom: var(--sp-6); padding-bottom: var(--sp-6); border-bottom: 1px solid var(--md-outline);">
-      <span style="font-weight: 600; color: var(--md-secondary); font-size: var(--font-size-sm);">2026-04-05</span>
-      <ul style="padding-left: var(--sp-5); color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.7; margin-top: var(--sp-2);">
-        <li>鎸佷粨鏁版嵁鏇存柊涓?025骞碤4 13F锛圓lphabet 43.86%绗竴澶т粨锛?/li>
-        <li>鏂板鎶曡祫鍐崇瓥妗嗘灦鍏楠?/li>
-      </ul>
-    </div>
-    <div>
-      <span style="font-weight: 600; color: var(--md-secondary); font-size: var(--font-size-sm);">2026-04-03</span>
-      <ul style="padding-left: var(--sp-5); color: var(--text-secondary); font-size: var(--font-size-sm); line-height: 1.7; margin-top: var(--sp-2);">
-        <li>鏂板鎶曡祫妗堜緥鍒嗘瀽銆佸涔犺矾寰勪笁闃舵銆佹寔浠揚E鏁版嵁鍒嗘瀽</li>
-        <li>鏂板瑙嗛宓屽叆鎾斁銆佹悳绱㈠姛鑳姐€佷笅杞借祫婧愬尯</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <footer class=footer>
 
 
@@ -2062,7 +1989,13 @@ a, button { transition: all 0.2s ease-out; }
 <a href=#principles style="color: #c9a227; text-decoration: none;">鍘熷垯</a> 路
 
 
-<a href=#videos style="color: #c9a227; text-decoration: noxt-decoration: none;">瀛︿範</a> 路
+<a href=#videos style="color: #c9a227; text-decoration: none;">瑙嗛</a> 路
+
+
+<a href=#books style="color: #c9a227; text-decoration: none;">涔︾睄</a> 路
+
+
+<a href=#learning style="color: #c9a227; text-decoration: none;">瀛︿範</a> 路
 
 
 <a href=#faq style="color: #c9a227; text-decoration: none;">FAQ</a>
@@ -2108,12 +2041,19 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 
 
 function toggleTheme() {
-
-
   document.body.classList.toggle('dark-mode');
-
-
+  updateThemeToggle();
 }
+
+function updateThemeToggle() {
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
+  const isDark = document.body.classList.contains('dark-mode');
+  btn.innerHTML = isDark ? '&#9790; 澶滈棿' : '&#9728; 鏃ラ棿';
+}
+
+// Initialize theme toggle button state
+document.addEventListener('DOMContentLoaded', updateThemeToggle);
 
 
 
