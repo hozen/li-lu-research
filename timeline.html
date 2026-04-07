@@ -343,6 +343,98 @@ body.dark-mode .stat-card .stat-num { color: var(--accent-gold-hover); }
   .footer { padding: 40px 20px 20px; }
 }
 
+/* Collapsible Timeline */
+.timeline-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.timeline-controls button {
+  padding: 8px 18px;
+  border: 1px solid var(--accent-gold);
+  background: transparent;
+  color: var(--accent-gold);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.timeline-controls button:hover {
+  background: var(--accent-gold);
+  color: #fff;
+}
+
+.era-group {
+  margin-bottom: 16px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.era-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  margin-bottom: 2px;
+  transition: all 0.2s;
+  user-select: none;
+}
+.era-header:hover { opacity: 0.88; }
+.era-header.childhood { background: #ebf8ff; border-left: 4px solid #3182ce; }
+.era-header.education { background: #f0fff4; border-left: 4px solid #38a169; }
+.era-header.career { background: #fffbeb; border-left: 4px solid var(--accent-gold); }
+.era-header.milestone { background: #fff5f5; border-left: 4px solid #e53e3e; }
+
+.era-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--primary-dark);
+}
+.era-header-left .era-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+}
+.era-header.childhood .era-dot { background: #3182ce; }
+.era-header.education .era-dot { background: #38a169; }
+.era-header.career .era-dot { background: var(--accent-gold); }
+.era-header.milestone .era-dot { background: #e53e3e; }
+
+.era-toggle {
+  font-size: 1.2rem;
+  line-height: 1;
+  color: var(--text-muted);
+  transition: transform 0.3s;
+}
+.era-header.collapsed .era-toggle { transform: rotate(-90deg); }
+
+.era-items {
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  max-height: 2000px;
+  opacity: 1;
+}
+.era-items.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+/* Dark mode era headers */
+body.dark-mode .era-header.childhood { background: #1a3a5c; }
+body.dark-mode .era-header.education { background: #1a4a3a; }
+body.dark-mode .era-header.career { background: #3a3520; }
+body.dark-mode .era-header.milestone { background: #4a1a1a; }
+body.dark-mode .era-header-left { color: #e2e8f0; }
+body.dark-mode .era-toggle { color: #9ca3af; }
+
+/* Dark mode: make legend match */
+body.dark-mode .legend { background: #1a2744; }
+body.dark-mode .legend-item { color: #9ca3af; }
+
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
@@ -397,6 +489,11 @@ body.dark-mode .stat-card .stat-num { color: var(--accent-gold-hover); }
     </div>
   </div>
 
+  <div class="timeline-controls">
+    <button onclick="toggleAllEra(true)">&#9660; 全部展开</button>
+    <button onclick="toggleAllEra(false)">&#9654; 全部折叠</button>
+  </div>
+
   <div class="legend">
     <div class="legend-item"><div class="legend-dot childhood"></div>童年与求学</div>
     <div class="legend-item"><div class="legend-dot education"></div>留学与转型</div>
@@ -404,92 +501,114 @@ body.dark-mode .stat-card .stat-num { color: var(--accent-gold-hover); }
     <div class="legend-item"><div class="legend-dot milestone"></div>重大里程碑</div>
   </div>
 
-  <div class="timeline">
-
-    <div class="timeline-item era-childhood animate-in">
-      <div class="timeline-year">1966 <span class="era-badge">童年</span></div>
-      <div class="timeline-title">出生于中国</div>
-      <div class="timeline-desc">出生于中国，在文化大革命的时代背景下成长。这段特殊的历史经历塑造了他对中国社会变迁的深刻理解，也为他日后研究中西方文明演进埋下了伏笔。</div>
+  <!-- Era 1: 童年与求学 -->
+  <div class="era-group">
+    <div class="era-header childhood" onclick="toggleEra(this)">
+      <div class="era-header-left"><div class="era-dot"></div>童年与求学</div>
+      <div class="era-toggle">&#9660;</div>
     </div>
-
-    <div class="timeline-item era-education animate-in">
-      <div class="timeline-year">~1989 <span class="era-badge">求学</span></div>
-      <div class="timeline-title">南京大学求学</div>
-      <div class="timeline-desc">在南京大学完成本科阶段学习。这段求学经历为他后来的国际化发展奠定了基础，也培养了他跨文化学习的能力。</div>
+    <div class="era-items">
+      <div class="timeline-item era-childhood animate-in">
+        <div class="timeline-year">1966 <span class="era-badge">童年</span></div>
+        <div class="timeline-title">出生于中国</div>
+        <div class="timeline-desc">出生于中国，在文化大革命的时代背景下成长。这段特殊的历史经历塑造了他对中国社会变迁的深刻理解，也为他日后研究中西方文明演进埋下了伏笔。</div>
+      </div>
+      <div class="timeline-item era-education animate-in">
+        <div class="timeline-year">~1989 <span class="era-badge">求学</span></div>
+        <div class="timeline-title">南京大学求学</div>
+        <div class="timeline-desc">在南京大学完成本科阶段学习。这段求学经历为他后来的国际化发展奠定了基础，也培养了他跨文化学习的能力。</div>
+      </div>
     </div>
+  </div>
 
-    <div class="timeline-item era-education animate-in">
-      <div class="timeline-year">Early 1990s <span class="era-badge">留学</span></div>
-      <div class="timeline-title">赴美深造 — 哥伦比亚大学</div>
-      <div class="timeline-desc">移民美国，进入哥伦比亚大学深造。先后获得JD（法律博士）、MBA（工商管理硕士）和MA（经济学硕士）三个学位，成为少数兼具法律、商业和经济学术背景的投资者。师从价值投资大师Bruce Greenwald教授，系统学习价值投资理论与实践。</div>
+  <!-- Era 2: 留学与转型 -->
+  <div class="era-group">
+    <div class="era-header education" onclick="toggleEra(this)">
+      <div class="era-header-left"><div class="era-dot"></div>留学与转型</div>
+      <div class="era-toggle">&#9660;</div>
     </div>
-
-    <div class="timeline-item era-career animate-in">
-      <div class="timeline-year">1997 <span class="era-badge">创业</span></div>
-      <div class="timeline-title">创立喜马拉雅资本</div>
-      <div class="timeline-desc">在美国创立喜马拉雅资本管理公司（Himalaya Capital Management LLC），专注于长期价值投资。公司名称取自世界最高峰，象征着对卓越的追求。</div>
+    <div class="era-items">
+      <div class="timeline-item era-education animate-in">
+        <div class="timeline-year">Early 1990s <span class="era-badge">留学</span></div>
+        <div class="timeline-title">赴美深造 — 哥伦比亚大学</div>
+        <div class="timeline-desc">移民美国，进入哥伦比亚大学深造。先后获得JD（法律博士）、MBA（工商管理硕士）和MA（经济学硕士）三个学位，成为少数兼具法律、商业和经济学术背景的投资者。师从价值投资大师Bruce Greenwald教授，系统学习价值投资理论与实践。</div>
+      </div>
+      <div class="timeline-item era-education animate-in">
+        <div class="timeline-year">2015–2019 <span class="era-badge">教育</span></div>
+        <div class="timeline-title">北大光华价值投资课程</div>
+        <div class="timeline-desc">参与北京大学光华管理学院价值投资课程，担任核心讲师。李录将西方价值投资理念与中国市场实践相结合，培养新一代价值投资者，在象牙塔与市场之间搭建桥梁。</div>
+      </div>
     </div>
+  </div>
 
-    <div class="timeline-item era-career animate-in">
-      <div class="timeline-year">1997 <span class="era-badge">转折</span></div>
-      <div class="timeline-title">结识查理·芒格</div>
-      <div class="timeline-desc">经朋友介绍结识查理·芒格（Charlie Munger），开启了一段深刻的忘年交。芒格成为李录投资哲学最重要的导师和精神偶像。这次相遇改变了李录的投资生涯轨迹。</div>
+  <!-- Era 3: 投资生涯 -->
+  <div class="era-group">
+    <div class="era-header career" onclick="toggleEra(this)">
+      <div class="era-header-left"><div class="era-dot"></div>投资生涯</div>
+      <div class="era-toggle">&#9660;</div>
     </div>
-
-    <div class="timeline-item era-career animate-in">
-      <div class="timeline-year">2002–2003 <span class="era-badge">研究</span></div>
-      <div class="timeline-title">首次研究比亚迪</div>
-      <div class="timeline-desc">开始深入研究比亚迪（BYD）。李录注意到这家深圳电池公司及其创始人王传福的独特潜力。当时比亚迪尚未进入电动汽车领域，但李录看到了王传福企业家精神和公司垂直整合模式的价值。</div>
+    <div class="era-items">
+      <div class="timeline-item era-career animate-in">
+        <div class="timeline-year">1997 <span class="era-badge">创业</span></div>
+        <div class="timeline-title">创立喜马拉雅资本</div>
+        <div class="timeline-desc">在美国创立喜马拉雅资本管理公司（Himalaya Capital Management LLC），专注于长期价值投资。公司名称取自世界最高峰，象征着对卓越的追求。</div>
+      </div>
+      <div class="timeline-item era-career animate-in">
+        <div class="timeline-year">1997 <span class="era-badge">转折</span></div>
+        <div class="timeline-title">结识查理·芒格</div>
+        <div class="timeline-desc">经朋友介绍结识查理·芒格（Charlie Munger），开启了一段深刻的忘年交。芒格成为李录投资哲学最重要的导师和精神偶像。这次相遇改变了李录的投资生涯轨迹。</div>
+      </div>
+      <div class="timeline-item era-career animate-in">
+        <div class="timeline-year">2002–2003 <span class="era-badge">研究</span></div>
+        <div class="timeline-title">首次研究比亚迪</div>
+        <div class="timeline-desc">开始深入研究比亚迪（BYD）。李录注意到这家深圳电池公司及其创始人王传福的独特潜力。当时比亚迪尚未进入电动汽车领域，但李录看到了王传福企业家精神和公司垂直整合模式的价值。</div>
+      </div>
+      <div class="timeline-item era-career animate-in">
+        <div class="timeline-year">2003–2004 <span class="era-badge">合作</span></div>
+        <div class="timeline-title">成为芒格麾下伙伴</div>
+        <div class="timeline-desc">李录将比亚迪介绍给芒格，伯克希尔·哈撒韦随后开始买入比亚迪股票。李录正式成为芒格麾下的投资伙伴，在芒格的指导和信任下管理资产。这段合作关系持续至今。</div>
+      </div>
+      <div class="timeline-item era-career animate-in">
+        <div class="timeline-year">2014 <span class="era-badge">思想</span></div>
+        <div class="timeline-title">发表《Civilizations, Modernization, Value Investing and China》</div>
+        <div class="timeline-desc">发表长篇论文，系统阐述人类文明演进、现代化进程与价值投资的关系。论文提出中国处于"2.5文明阶段"的独特视角，认为在中国这样充满活力的经济体中，价值投资具有独特的生命力。</div>
+      </div>
+      <div class="timeline-item era-career animate-in">
+        <div class="timeline-year">2024 <span class="era-badge">荣誉</span></div>
+        <div class="timeline-title">CCBC Fireside Chat 演讲</div>
+        <div class="timeline-desc">出席哥伦比亚大学大中华协会（CCBC）炉边对话，发表关于全球价值投资与中国市场机会的深度演讲。分享最新投资思想，强调"护城河必须可持续"、"接受世界本来的样子"等核心观点。</div>
+      </div>
+      <div class="timeline-item era-career animate-in">
+        <div class="timeline-year">2024年12月 <span class="era-badge">教育</span></div>
+        <div class="timeline-title">北大价值投资课程十周年</div>
+        <div class="timeline-desc">出席北大光华价值投资课程十周年庆典，发表"全球价值投资者"主题演讲，回顾十年历程，展望价值投资在中国的未来。</div>
+      </div>
     </div>
+  </div>
 
-    <div class="timeline-item era-career animate-in">
-      <div class="timeline-year">2003–2004 <span class="era-badge">合作</span></div>
-      <div class="timeline-title">成为芒格麾下伙伴</div>
-      <div class="timeline-desc">李录将比亚迪介绍给芒格，伯克希尔·哈撒韦随后开始买入比亚迪股票。李录正式成为芒格麾下的投资伙伴，在芒格的指导和信任下管理资产。这段合作关系持续至今。</div>
+  <!-- Era 4: 重大里程碑 -->
+  <div class="era-group">
+    <div class="era-header milestone" onclick="toggleEra(this)">
+      <div class="era-header-left"><div class="era-dot"></div>重大里程碑</div>
+      <div class="era-toggle">&#9660;</div>
     </div>
-
-    <div class="timeline-item era-milestone animate-in">
-      <div class="timeline-year">2008 <span class="era-badge">里程碑</span></div>
-      <div class="timeline-title">伯克希尔投资比亚迪</div>
-      <div class="timeline-desc">伯克希尔·哈撒韦通过子公司MidAmerican Energy投资比亚迪，以约2.3亿美元收购比亚迪约10%的股份。这一投资最终升值至数十亿美元，成为价值投资史上经典案例。同年，李录受邀在巴菲特股东大会上发表演讲。</div>
+    <div class="era-items">
+      <div class="timeline-item era-milestone animate-in">
+        <div class="timeline-year">2008 <span class="era-badge">里程碑</span></div>
+        <div class="timeline-title">伯克希尔投资比亚迪</div>
+        <div class="timeline-desc">伯克希尔·哈撒韦通过子公司MidAmerican Energy投资比亚迪，以约2.3亿美元收购比亚迪约10%的股份。这一投资最终升值至数十亿美元，成为价值投资史上经典案例。同年，李录受邀在巴菲特股东大会上发表演讲。</div>
+      </div>
+      <div class="timeline-item era-milestone animate-in">
+        <div class="timeline-year">2020 <span class="era-badge">里程碑</span></div>
+        <div class="timeline-title">出版《文明、现代化、价值投资与中国》</div>
+        <div class="timeline-desc">将二十余年投资思考整理成书，系统阐述价值投资理念、现代化与中国市场机会。书中融合了芒格多元思维模型、西方投资经典与中国历史文明视角，成为畅销投资读物。</div>
+      </div>
+      <div class="timeline-item era-milestone animate-in">
+        <div class="timeline-year">2025 <span class="era-badge">规模</span></div>
+        <div class="timeline-title">13F显示管理规模约$35.69亿</div>
+        <div class="timeline-desc">根据2025年Q4 13F申报文件，喜马拉雅资本管理规模约$35.69亿美元（约合¥250亿）。Alphabet（谷歌）为第一大持仓（43.86%），其次是Bank of America（16.08%）、拼多多（14.64%）、伯克希尔（12.64%）。持仓极度集中（前五占比96.96%），连续两季度零调仓。</div>
+      </div>
     </div>
-
-    <div class="timeline-item era-career animate-in">
-      <div class="timeline-year">2014 <span class="era-badge">思想</span></div>
-      <div class="timeline-title">发表《Civilizations, Modernization, Value Investing and China》</div>
-      <div class="timeline-desc">发表长篇论文，系统阐述人类文明演进、现代化进程与价值投资的关系。论文提出中国处于"2.5文明阶段"的独特视角，认为在中国这样充满活力的经济体中，价值投资具有独特的生命力。</div>
-    </div>
-
-    <div class="timeline-item era-education animate-in">
-      <div class="timeline-year">2015–2019 <span class="era-badge">教育</span></div>
-      <div class="timeline-title">北大光华价值投资课程</div>
-      <div class="timeline-desc">参与北京大学光华管理学院价值投资课程，担任核心讲师。李录将西方价值投资理念与中国市场实践相结合，培养新一代价值投资者，在象牙塔与市场之间搭建桥梁。</div>
-    </div>
-
-    <div class="timeline-item era-milestone animate-in">
-      <div class="timeline-year">2020 <span class="era-badge">里程碑</span></div>
-      <div class="timeline-title">出版《文明、现代化、价值投资与中国》</div>
-      <div class="timeline-desc">将二十余年投资思考整理成书，系统阐述价值投资理念、现代化与中国市场机会。书中融合了芒格多元思维模型、西方投资经典与中国历史文明视角，成为畅销投资读物。</div>
-    </div>
-
-    <div class="timeline-item era-career animate-in">
-      <div class="timeline-year">2024 <span class="era-badge">荣誉</span></div>
-      <div class="timeline-title">CCBC Fireside Chat 演讲</div>
-      <div class="timeline-desc">出席哥伦比亚大学大中华协会（CCBC）炉边对话，发表关于全球价值投资与中国市场机会的深度演讲。分享最新投资思想，强调"护城河必须可持续"、"接受世界本来的样子"等核心观点。</div>
-    </div>
-
-    <div class="timeline-item era-career animate-in">
-      <div class="timeline-year">2024年12月 <span class="era-badge">教育</span></div>
-      <div class="timeline-title">北大价值投资课程十周年</div>
-      <div class="timeline-desc">出席北大光华价值投资课程十周年庆典，发表"全球价值投资者"主题演讲，回顾十年历程，展望价值投资在中国的未来。</div>
-    </div>
-
-    <div class="timeline-item era-milestone animate-in">
-      <div class="timeline-year">2025 <span class="era-badge">规模</span></div>
-      <div class="timeline-title">13F显示管理规模约$35.69亿</div>
-      <div class="timeline-desc">根据2025年Q4 13F申报文件，喜马拉雅资本管理规模约$35.69亿美元（约合¥250亿）。Alphabet（谷歌）为第一大持仓（43.86%），其次是Bank of America（16.08%）、拼多多（14.64%）、伯克希尔（12.64%）。持仓极度集中（前五占比96.96%），连续两季度零调仓。</div>
-    </div>
-
   </div>
 
   <!-- Back Link -->
@@ -521,6 +640,31 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
   document.body.classList.add('dark-mode');
 }
 function toggleTheme() { document.body.classList.toggle('dark-mode'); }
+
+function toggleEra(header) {
+  const group = header.parentElement;
+  const items = group.querySelector('.era-items');
+  const isCollapsed = items.classList.contains('collapsed');
+  if (isCollapsed) {
+    items.classList.remove('collapsed');
+    header.classList.remove('collapsed');
+  } else {
+    items.classList.add('collapsed');
+    header.classList.add('collapsed');
+  }
+}
+
+function toggleAllEra(expand) {
+  document.querySelectorAll('.era-items').forEach(function(el) {
+    if (expand) {
+      el.classList.remove('collapsed');
+      el.parentElement.querySelector('.era-header').classList.remove('collapsed');
+    } else {
+      el.classList.add('collapsed');
+      el.parentElement.querySelector('.era-header').classList.add('collapsed');
+    }
+  });
+}
 </script>
 
 </body>
