@@ -425,7 +425,7 @@ a, button { transition: all 0.2s ease-out; }
 <a href=#videos class=nav-link>瑙嗛</a>
 
 
-<a href=video_study.html class=nav-link target=_blank>馃摵 瑙嗛瀛︿範</a>
+<a href=video_study.html class=nav-link>馃摵 瑙嗛瀛︿範</a>
 
 
 <a href=#quotes class=nav-link>璇綍</a>
@@ -435,9 +435,6 @@ a, button { transition: all 0.2s ease-out; }
 
 
 </div>
-
-
-<button id="theme-toggle" onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem; color: #0a1628; font-weight: 600;">&#9728; 鏃ラ棿</button>
 
 
 </nav>
@@ -2116,25 +2113,7 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
 // Dark mode toggle
 
 
-function toggleTheme() {
-  document.body.classList.toggle('dark-mode');
-  updateThemeToggle();
-}
-
-function updateThemeToggle() {
-  const btn = document.getElementById('theme-toggle');
-  if (!btn) return;
-  const isDark = document.body.classList.contains('dark-mode');
-  btn.innerHTML = isDark ? '&#9790; 澶滈棿' : '&#9728; 鏃ラ棿';
-}
-
 // Initialize theme toggle button state
-document.addEventListener('DOMContentLoaded', updateThemeToggle);
-
-
-
-
-
 // Quick search function
 
 
