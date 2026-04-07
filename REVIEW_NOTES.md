@@ -1,6 +1,7 @@
 ﻿# Li Lu Site Review Notes
 
-**Last Updated:** 2026-04-07 (本轮更新)
+**Last Updated:** 2026-04-07 (夜间更新)
+**Dev SHA:** 7d0afba643bb441cb673a2dda0da5e2751e7a615
 **Reference:** `li-lu-site-improvement-prompt.md` (最新完整改进需求)
 
 ---
@@ -72,7 +73,25 @@
 
 | P2-6 | 书架加购买链接 | bookshelf.html | ✅ 已完成 | 每本书卡片底部添加 Amazon 购买链接（5本英文原版）；footer 日期更新至 2026-04-07 |
 
-## 2026-04-07 更新（本轮）
+## 2026-04-07 更新（夜间批次 — 2026-04-07 21:02）
+
+### 编码故障恢复
+- **问题**：master HEAD (344472a) 的 index.html 有 29 处 `e9 8f 89` 编码损坏；WC（工作目录）版本虽有部分修复但标题标签损坏（`</title>` 前出现 `?`）
+- **根因**：commit e9f93ec 引入了 UTF-8 编码损坏（30 处 `e9 8f 89`），后续提交尝试修复但未彻底
+- **恢复操作**：
+  1. `git reset --hard origin/dev` — 检出干净的 dev 版本（7d0afba，无编码损坏）
+  2. GitHub API 强制更新 origin/dev refs 指向 7d0afba（解决 ref 历史分歧）
+- **结果**：index.html 现为 67534 字节，BOM=False，`e9 8f 89`=0；所有 HTML 文件干净
+- **推送**：`origin/dev` → `7d0afba`（via GitHub API force-update）
+
+### Playwright 回归测试
+- 7 pages / 0 errors ✅（2026-04-07 21:05）
+- 测试覆盖：index / video_study / bookshelf / downloads / timeline / quotes / glossary
+- HTTP 200，无 console error
+
+---
+
+## 2026-04-07 更新（下午批次）
 
 ### ⚠️ 重大更正：B1/B2/B3 之前误标为"已完成"，本次为实际实现
 - **问题原因**：REVIEW_NOTES.md 记录与 HTML 文件实际状态不同步
