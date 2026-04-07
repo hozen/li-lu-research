@@ -1,6 +1,6 @@
-﻿# Li Lu Site Review Notes
+# Li Lu Site Review Notes
 
-**Last Updated:** 2026-04-07 (本轮更新)
+**Last Updated:** 2026-04-08 (紧急修复)
 **Reference:** `li-lu-site-improvement-prompt.md` (最新完整改进需求)
 
 ---
@@ -71,6 +71,27 @@
 | P2-5 | 术语表精简 | glossary.html | ✅ 已完成 | 11→8术语：移除经济护城河(重复)、内在记分卡(偏巴菲特)、无缝信任网(子概念) |
 
 | P2-6 | 书架加购买链接 | bookshelf.html | ✅ 已完成 | 每本书卡片底部添加 Amazon 购买链接（5本英文原版）；footer 日期更新至 2026-04-07 |
+
+## 2026-04-08 更新（紧急编码修复）
+
+### 修复 master 分支 4 个 HTML 文件编码腐败
+- **问题发现**：origin/master (25f96e0) 中以下文件存在 UTF-8 解码失败：
+  - `downloads.html` — UTF-8 decode failed at byte 2553
+  - `glossary.html` — UTF-8 decode failed at byte 185
+  - `quotes.html` — UTF-8 decode failed at byte 185
+  - `timeline.html` — UTF-8 decode failed at byte 167
+- **根本原因**：commit 6f5fb21 声称 "restore from c642598" 但实际修改了这些文件并引入腐败
+- **修复方式**：从 c642598（已确认干净）恢复 downloads/glossary/quotes/timeline；从 origin/master 恢复 index.html（仅移除 BOM）
+- **推送**：master@3a77a6d ✅
+- **验证**：
+  - 编码检查：7/7 文件通过
+  - HTML 标签校验：7/7 通过
+  - Playwright 回归测试：7 pages / 0 errors ✅
+
+### 注意：B1/B2/B3 板块
+- origin/master 的 index.html 不包含 B1/B2/B3 板块（c642598 基线）
+- dev 分支（c5e332d6）同样不包含 B1/B2/B3（c5e332d sync 时被覆盖）
+- B1/B2/B3 内容仅存在于 dev@57b687e（但该版本 index.html 有 255x U+FFFD 腐败）
 
 ## 2026-04-07 更新（本轮）
 
