@@ -4,6 +4,17 @@
 <meta charset=UTF-8>
 <meta name=viewport content=width=device-width,initial-scale=1.0>
 <title>李录 (Li Lu) - 价值投资研究</title>
+<meta name="description" content="李录（Li Lu）价值投资研究资料站。包含投资原则、视频访谈、研究笔记、持仓分析。">
+<meta property="og:title" content="李录 (Li Lu) - 价值投资研究">
+<meta property="og:description" content="李录价值投资研究资料站 — 喜马拉雅资本创始人，28年投资经验。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hozen.github.io/li-lu-research/">
+<meta name="description" content="李录 (Li Lu) 价值投资研究与学习平台。涵盖投资原则、持仓分析、视频学习、推荐书籍等。">
+<meta property="og:title" content="李录 (Li Lu) - 价值投资研究">
+<meta property="og:description" content="李录价值投资研究与学习平台。涵盖投资原则、持仓分析、视频学习、推荐书籍等。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--primary-dark:#0a1628;--primary-blue:#1a365d;--accent-gold:#b8860b;--accent-gold-light:#daa520;--text-dark:#1a1a1a;--text-light:#f5f5f5;--text-muted:#4a5568;--bg-light:#ffffff;--bg-off-white:#f8f9fa;--card-bg:#ffffff;--shadow:0 4px 20px rgba(0,0,0,0.15)}
 /* High contrast light mode */
@@ -132,12 +143,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <nav class=navbar>
 <div class=nav-brand><span>&#10070;</span> 李录研究</div>
 <div class=nav-links>
-<a href=#about class=nav-link active>关于</a>
+<a href=#about class=nav-link>关于</a>
 <a href=#principles class=nav-link>投资原则</a>
+<a href=#framework class=nav-link>投资框架</a>
 <a href=#videos class=nav-link>视频</a>
+<a href=#study-notes class=nav-link>研究笔记</a>
 <a href=#quotes class=nav-link>语录</a>
 <a href=#books class=nav-link>书籍</a>
-<a href=#interviews class=nav-link>访谈</a>
+<a href=#holdings class=nav-link>持仓</a>
 <a href=#faq class=nav-link>FAQ</a>
 </div>
 <button onclick="toggleTheme()" style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 夜间</button>
@@ -167,10 +180,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 </section>
 <section id=holdings class=section style="background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); padding: 60px 40px;">
 <div class=section-header>
-<h2 class=section-title style="color: #fff;">喜马拉雅资本最新持仓</h2>
-<p class=section-subtitle style="color: #a0aec0;">2025年权益资产组合 · 内在价值分析</p>
+<h2 class=section-title style="color: #fff;" id="holdings-main">喜马拉雅资本持仓与投资案例</h2>
+<p class=section-subtitle style="color: #a0aec0;">2025年权益资产组合 · 内在价值分析 | 从李录的成功投资中学习</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px;">
+
+<!-- 13F Current Holdings -->
+<h3 style="color: #c9a227; font-size: 1.1rem; margin-bottom: 20px; margin-top: 10px;">📊 最新持仓 (13F 2025 Q4)</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
 <div class=card style="border-left: 4px solid #c9a227;">
 <h4 style="color: #1a365d;">腾讯控股</h4>
 <p style="color: #666; font-size: 0.85rem;">港股 · 科技 · PE 24.2</p>
@@ -234,24 +250,20 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <div><span style="color: #a0aec0;">平均市盈率:</span><br><strong style="color: #fff;">13.3x</strong></div>
 </div>
 </div>
-<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 数据截止：2025 Q4 13F (2026-02-17 披露) | 仅供研究参考，不构成投资建议</p>
-</section>
-<section id=cases class=section style="background: #f7fafc;">
-<div class=section-header>
-<h2 class=section-title>投资案例分析</h2>
-<p class=section-subtitle>从李录的成功投资中学习</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px;">
+
+<!-- Historical Case Studies -->
+<h3 style="color: #c9a227; font-size: 1.1rem; margin-bottom: 20px; margin-top: 40px;">📈 历史投资案例</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
 <div class=card>
 <h3 style="color: #1a365d;">&#128663; 比亚迪 (BYD)</h3>
-<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>投资时间:</strong> 2008年</p>
+<p style="color: #666; font-size: 0.9rem; margin-top: 10px;"><strong>投资时间:</strong> 2002-2003年发现，2008年推荐给芒格/巴菲特</p>
 <p style="color: #666; font-size: 0.9rem; margin-top: 5px;"><strong>投资逻辑:</strong></p>
 <ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
 <li>看中王传福的企业家精神</li>
 <li>电动汽车行业的颠覆性机会</li>
 <li>垂直整合带来的成本优势</li>
 </ul>
-<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 投资回报: 数十倍</p>
+<p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 投资回报: 数十倍 (经典案例)</p>
 </div>
 <div class=card>
 <h3 style="color: #1a365d;">&#128200; 腾讯控股</h3>
@@ -276,7 +288,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <p style="color: #38a169; font-weight: 600; margin-top: 15px;">&#10003; 投资回报: 稳定分红</p>
 </div>
 </div>
+<p style="color: #a0aec0; text-align: center; margin-top: 30px; font-size: 0.85rem;">* 数据截止：2025 Q4 13F (2026-02-17 披露) | 仅供研究参考，不构成投资建议</p>
 </section>
+<!-- Investment Cases merged into Holdings section above -->
 <main class=main-content>
 <section id=about class=section>
 <div class=section-header>
@@ -349,26 +363,55 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">企业竞争优势，可持续阻止竞争对手。</p>
 </div>
 <div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">ROE</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Return on Equity，股东权益回报率。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
 <strong style="color: #1a365d;">安全边际 (Margin of Safety)</strong>
 <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">买入价与内在价值的差额。</p>
 </div>
 <div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
 <strong style="color: #1a365d;">内在价值 (Intrinsic Value)</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">企业的真实价值，基于现金流折现。</p>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">企业的真实价值，基于现金流折现(DCF)。</p>
 </div>
 <div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">PE (市盈率)</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Price to Earnings，股价与盈利比率。</p>
+<strong style="color: #1a365d;">ROE</strong>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Return on Equity，股东权益回报率。</p>
 </div>
 <div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
 <strong style="color: #1a365d;">能力圈 (Circle of Competence)</strong>
 <p style="font-size: 0.85rem; color: #666; margin-top: 5px;">你真正理解的行业和公司范围。</p>
 </div>
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+<strong style="color: #1a365d;">ROIC</strong>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Return on Invested Capital，投入资本回报率。</p>
 </div>
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+<strong style="color: #1a365d;">现金流折现 (DCF)</strong>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Discounted Cash Flow，估算内在价值的核心方法。</p>
+</div>
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
+<strong style="color: #1a365d;">13F 报告</strong>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">美国SEC要求机构投资者每季度披露持仓的报告。</p>
+</div>
+</div>
+<details style="margin-top: 20px; background: #f7fafc; border-radius: 8px; padding: 15px;">
+<summary style="font-weight: 600; color: #1a365d; cursor: pointer; outline: none;">&#9660; 更多术语 (PB、PEG、EV/EBITDA 等)</summary>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #ccc;">
+<strong style="color: #1a365d;">PB (市净率)</strong>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Price to Book，股价与每股净资产比率。</p>
+</div>
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #ccc;">
+<strong style="color: #1a365d;">PEG 比率</strong>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">PE除以盈利增长率，衡量成长性。</p>
+</div>
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #ccc;">
+<strong style="color: #1a365d;">EV/EBITDA</strong>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">企业价值与息税折旧前利润比率。</p>
+</div>
+<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #ccc;">
+<strong style="color: #1a365d;">雪茄烟蒂投资</strong>
+<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">以极低价格买入平庸公司，类似捡烟蒂。</p>
+</div>
+</div>
+</details>
 </section>
 <section id=learning class=section style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
 <div class=section-header>
@@ -425,12 +468,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <p class=section-subtitle>李录推荐及价值投资必读经典</p>
 </div>
 <div class=books-grid>
-<div class=book-card><div class=book-cover><span>&#128214;</span></div><div class=book-info><h4>《文明、现代化、价值投资与中国》</h4><p>李录 著<br>2020年出版</p></div></div>
-<div class=book-card><div class=book-cover><span>&#128218;</span></div><div class=book-info><h4>《证券分析》</h4><p>Benjamin Graham<br>价值投资奠基之作</p></div></div>
-<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><h4>《聪明的投资者》</h4><p>Benjamin Graham<br>投资经典必读</p></div></div>
-<div class=book-card><div class=book-cover><span>&#128220;</span></div><div class=book-info><h4>《穷查理宝典》</h4><p>Charlie Munger<br>芒格智慧箴言</p></div></div>
-<div class=book-card><div class=book-cover><span>&#128221;</span></div><div class=book-info><h4>《巴菲特致股东的信》</h4><p>Warren Buffett<br>股神投资哲学</p></div></div>
-<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><h4>《滚雪球》</h4><p>Warren Buffett传记<br>投资生涯全景</p></div></div>
+<div class=book-card><div class=book-cover><span>&#128214;</span></div><div class=book-info><span style="background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">&#9733; 必读</span><h4>《文明、现代化、价值投资与中国》</h4><p>李录 著<br>2020年出版<br><small style="color:#c9a227;">&#9733; 必读 — 理解李录思想体系的最佳起点</small></p></div></div>
+<div class=book-card><div class=book-cover><span>&#128218;</span></div><div class=book-info><span style="background:#3182ce;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">进阶</span><h4>《证券分析》</h4><p>Benjamin Graham<br>价值投资奠基之作<br><small style="color:#3182ce;">进阶 — 价值投资原典，建议有基础后阅读</small></p></div></div>
+<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><span style="background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">&#9733; 必读</span><h4>《聪明的投资者》</h4><p>Benjamin Graham<br>投资经典必读<br><small style="color:#c9a227;">&#9733; 必读 — 格雷厄姆最经典著作</small></p></div></div>
+<div class=book-card><div class=book-cover><span>&#128220;</span></div><div class=book-info><span style="background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">&#9733; 必读</span><h4>《穷查理宝典》</h4><p>Charlie Munger<br>芒格智慧箴言<br><small style="color:#c9a227;">&#9733; 必读 — 多元思维模型与投资智慧</small></p></div></div>
+<div class=book-card><div class=book-cover><span>&#128221;</span></div><div class=book-info><span style="background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">&#9733; 必读</span><h4>《巴菲特致股东的信》</h4><p>Warren Buffett<br>股神投资哲学<br><small style="color:#c9a227;">&#9733; 必读 — 每年必读的投资圣经</small></p></div></div>
+<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><span style="background:#718096;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">参考</span><h4>《滚雪球》</h4><p>Warren Buffett传记<br>投资生涯全景<br><small style="color:#718096;">参考 — 巴菲特生平，适合延伸阅读</small></p></div></div>
 </div>
 </section>
 <section id=interviews class=section>
@@ -474,13 +517,141 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <a href="li-lu-2021-interview-summary.md" download style="padding: 20px 40px; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block; border: 2px solid #c9a227;">&#128196; 访谈摘要 (Markdown格式，建议用Markdown阅读器打开)</a>
 </div>
 </section>
+<section id=timeline-index class=section>
+<div class=section-header>
+<h2 class=section-title>李录公开活动索引</h2>
+<p class=section-subtitle>Q2资料回顾Checklist — 每项完成后打勾</p>
+</div>
+<div class=card>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2024-12 北大价值投资课程十周年演讲</summary><p style="margin-top:10px;color:#4a5568;">十周年纪念演讲</p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2021 CBS/Greenwald访谈 (CCBC Fireside Chat)</summary><p style="margin-top:10px;color:#4a5568;">Columbia Greater China Society主办</p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2020 《文明、现代化、价值投资与中国》出版</summary><p style="margin-top:10px;color:#4a5568;">系统阐述价值投资理念与中国市场机会</p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2019 北大光华课程演讲</summary><p style="margin-top:10px;color:#4a5568;"></p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2015 北大光华价值投资课程启动</summary><p style="margin-top:10px;color:#4a5568;"></p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2014 "Civilizations, Modernization" 论文</summary><p style="margin-top:10px;color:#4a5568;">SSRN发表</p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2010s Himalaya Capital 致投资者信</summary><p style="margin-top:10px;color:#4a5568;">如公开</p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2008 比亚迪投资（芒格/巴菲特入场）</summary><p style="margin-top:10px;color:#4a5568;">李录推荐，芒格/巴菲特入场</p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2002-03 李录发现/研究比亚迪</summary><p style="margin-top:10px;color:#4a5568;"></p></details>
+<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 1997 创立喜马拉雅资本</summary><p style="margin-top:10px;color:#4a5568;"></p></details>
+</div>
+</section>
+
+<section id=study-notes class=section>
+<div class=section-header>
+<h2 class=section-title>研究笔记 / Study Notes</h2>
+<p class=section-subtitle>Q2核心 — 每看完一个视频/文章，结构化沉淀于此</p>
+</div>
+<div class=card>
+<p style="color:#4a5568;"><em>暂无笔记 — 从视频/文章学习后，在此记录关键要点和「我的思考」</em></p>
+<p style="color:#888;font-size:0.85rem;margin-top:10px;">笔记格式：标题 + 来源链接 + 日期 + 类型标签（演讲/访谈/文章/年报分析）+ 3-5条关键要点 + 「我的思考」</p>
+</div>
+</section>
+
+<section id=civilization3 class=section style="background:linear-gradient(135deg,#0a1628 0%,#1a365d 100%);padding:60px 40px;">
+<div class=section-header>
+<h2 class=section-title style="color:#fff;">文明3.0框架</h2>
+<p class=section-subtitle style="color:#a0aec0;">李录对人类文明的核心思考框架</p>
+</div>
+<div class=card style="border-left:4px solid #c9a227;">
+<h3 style="color:#c9a227;">&#127756; 人类文明三阶段</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:25px;">
+<div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center;">
+<strong style="color:#1a365d;">1.0 狩猎采集</strong>
+<p style="font-size:0.85rem;color:#666;margin-top:8px;">约一万年前之前</p>
+</div>
+<div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center;">
+<strong style="color:#1a365d;">2.0 农业文明</strong>
+<p style="font-size:0.85rem;color:#666;margin-top:8px;">约一万年前—1750年</p>
+</div>
+<div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center;">
+<strong style="color:#c9a227;">3.0 科技文明</strong>
+<p style="font-size:0.85rem;color:#666;margin-top:8px;">1750年至今</p>
+</div>
+</div>
+<h4 style="margin-top:30px;color:#1a365d;">&#128161; 核心论点</h4>
+<p style="color:#4a5568;margin-top:10px;">中国目前处于2.5→3.0的转型期，这个转型创造了巨大的投资机会。3.0文明的本质是：科技 + 自由市场 + 现代政府治理。只有这三种力量结合，才能实现持续的科技创新和经济繁荣。</p>
+<p style="color:#4a5568;margin-top:10px;">引用来源：《文明、现代化、价值投资与中国》(2020)</p>
+</div>
+</section>
+
+<section id=my-framework class=section>
+<div class=section-header>
+<h2 class=section-title>我的投资框架 <span style="font-size:1rem;color:#888;font-weight:400;">(Q3 2026 构建中)</span></h2>
+<p class=section-subtitle>基于李录思想，结合自身认知和实践，形成的个人投资体系</p>
+</div>
+<div class=card>
+<h4 style="color:#1a365d;">与李录框架的异同</h4>
+<p style="color:#888;font-size:0.9rem;margin-top:8px;">(Q3填充)</p>
+</div>
+<div class=card>
+<h4 style="color:#1a365d;">我的能力圈定义</h4>
+<p style="color:#888;font-size:0.9rem;margin-top:8px;">(Q3填充)</p>
+</div>
+<div class=card>
+<h4 style="color:#1a365d;">我的护城河评估清单</h4>
+<p style="color:#888;font-size:0.9rem;margin-top:8px;">(Q3填充)</p>
+</div>
+<div class=card>
+<h4 style="color:#1a365d;">我的买入/卖出纪律</h4>
+<p style="color:#888;font-size:0.9rem;margin-top:8px;">(Q3填充)</p>
+</div>
+</section>
+
+<section id=principle-mapping class=section style="background:#f7fafc;">
+<div class=section-header>
+<h2 class=section-title>原则 → 持仓映射 <span style="font-size:1rem;color:#888;font-weight:400;">(Q4 2026)</span></h2>
+<p class=section-subtitle>李录的原则如何映射到我自己的持仓决策</p>
+</div>
+<div class=card>
+<table style="width:100%;border-collapse:collapse;">
+<tr style="background:#1a365d;color:#fff;">
+<th style="padding:12px;text-align:left;">李录原则</th>
+<th style="padding:12px;text-align:left;">我的持仓中的体现</th>
+<th style="padding:12px;text-align:center;">自我评分</th>
+</tr>
+<tr>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;"><strong>护城河</strong></td>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;">(Q4填充)</td>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;">☆☆☆☆☆</td>
+</tr>
+<tr>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;"><strong>安全边际</strong></td>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;">(Q4填充)</td>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;">☆☆☆☆☆</td>
+</tr>
+<tr>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;"><strong>能力圈</strong></td>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;">(Q4填充)</td>
+<td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;">☆☆☆☆☆</td>
+</tr>
+<tr>
+<td style="padding:12px;"><strong>长期持有</strong></td>
+<td style="padding:12px;">(Q4填充)</td>
+<td style="padding:12px;text-align:center;">☆☆☆☆☆</td>
+</tr>
+</table>
+</div>
+</section>
+
 <section id=updates class=section>
 <div class=section-header>
 <h2 class=section-title>更新日志</h2>
 <p class=section-subtitle>网站内容更新记录</p>
 </div>
 <div class=card>
-<h4 style="color: #1a365d;">&#128197; 2026-03-22</h4>
+<h4 style="color: #c9a227;">&#128197; 2026-04-08</h4>
+<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
+<li>新增: 李录公开活动索引 (Q2 Checklist)</li>
+<li>新增: 研究笔记 / Study Notes 区域</li>
+<li>新增: 文明3.0框架板块</li>
+<li>新增: 我的投资框架 (Q3 构建中)</li>
+<li>新增: 原则→持仓映射表 (Q4)</li>
+<li>修复: 人物背景事实 (JD+MBA+MA, 比亚迪时间线)</li>
+<li>修复: 年化收益标注非官方数据</li>
+<li>优化: 下载资源标注Markdown格式</li>
+<li>优化: Open Graph标签 / 返回顶部按钮</li>
+</ul>
+<h4 style="color: #1a365d; margin-top: 25px;">&#128197; 2026-03-22</h4>
 <ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
 <li>新增: 投资案例分析 (比亚迪、腾讯、中国移动)</li>
 <li>新增: 学习路径三阶段</li>
@@ -533,6 +704,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 </div>
 <div class=footer-bottom>
 <p>&#128197; 页面更新: 2026-04-08 | 数据截止: 2025 Q4 13F (2026-02-17披露) | 仅供研究参考，不构成投资建议</p>
+<button onclick="window.scrollTo({top:0,behavior:'smooth'});" style="position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#c9a227;color:#0a1628;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);z-index:999;" title="返回顶部">&#8593;</button>
 </div>
 </footer>
 <script>
