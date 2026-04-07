@@ -54,7 +54,7 @@
 |---|------|------|------|------|
 | P1-1 | video_study → 视频列表入口页 | video_study.html | ✅ 已完成 | JSON数据分离+10个独立子页+CCBC完整Transcript |
 | P1-2 | principle cards 04/05/06 样式一致 | index.html | ✅ 已完成 | 两grid合并为一个，移除style="margin-top:30px" |
-| P1-3 | bookshelf Step 5 跳转链接 | bookshelf.html | 🔴 待处理 | 添加 → index.html |
+| P1-3 | bookshelf Step 5 跳转链接 | bookshelf.html | ✅ 已完成 | Step 5 添加显眼的 btn btn-primary 按钮「→ 查看研究首页」|
 | P1-4 | "所有者心态"语录重复 | index.html | 🔴 待确认 | 确认是否已修复 |
 | P1-5 | video_study 移动端汉堡菜单 | video_study.html | ✅ 已完成 | |
 
@@ -73,6 +73,10 @@
 | P2-6 | 书架加购买链接 | bookshelf.html | ✅ 已完成 | 每本书卡片底部添加 Amazon 购买链接（5本英文原版）；footer 日期更新至 2026-04-07 | |
 
 ## 2026-04-07 更新
+
+### P1-3 完成：书架 Step 5 跳转按钮
+- bookshelf.html Step 5 将内联文字链接升级为显眼的 `.btn.btn-primary` 金色按钮「→ 查看研究首页」
+- Playwright 回归测试：bookshelf.html 加载正常，Step 5 按钮可见
 
 ### 新增 (B1 + B2)
 - **B1 研究笔记 (Study Notes)**：新增独立 section，放置在 cases 区之后，包含三条研究笔记（CBS访谈/北大演讲/文明3.0）
