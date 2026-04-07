@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<Why Only 5% Win in Stocks>Why Only 5% Win in Stocks — 李录研究</Why Only 5% Win in Stocks>
+<style>
+:root{--md-primary:#0a1628;--md-primary-rgb:10,22,40;--md-secondary:#c9a227;--md-on-secondary:#1a1a2e;--md-surface:#ffffff;--md-surface-variant:#f3f4f6;--md-background:#ffffff;--md-background-dark:#1a1a2e;--md-on-surface:#1a1a2e;--md-on-surface-muted:#4a5568;--md-outline:#d1d5db;--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--font-family:'Roboto',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--text-primary:#1a1a2e;--text-secondary:#4a5568;--text-muted:#6b7280;--text-inverse:#f5f5f5;--navbar-height:64px}
+@media(prefers-color-scheme:dark){:root{--md-primary:#1a365d;--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--md-outline:#374151;--text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280}body{background-color:var(--md-background);color:var(--md-on-surface)}}
+body.dark-mode{--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--md-outline:#374151;--text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280;background-color:var(--md-background);color:var(--md-on-surface)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font-family);background:#f3f4f6;color:#1a1a1a;line-height:1.6;min-height:100vh}a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{color:var(--md-secondary-container)}*:focus-visible{outline:2px solid var(--md-secondary);outline-offset:2px}
+.navbar{position:fixed;top:0;left:0;right:0;height:var(--navbar-height);background:rgba(var(--md-primary-rgb),.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 var(--sp-10);box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.nav-brand{color:var(--text-inverse);font-size:var(--font-size-lg);font-weight:600;white-space:nowrap}.nav-brand span{color:var(--md-secondary)}
+.nav-links{display:flex;align-items:center;gap:var(--sp-1)}
+.nav-link{color:rgba(255,255,255,.65);text-decoration:none;padding:var(--sp-2) var(--sp-3);border-radius:var(--radius-sm);font-size:var(--font-size-sm);font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+.nav-link:hover{color:#fff;background:rgba(201,162,39,.15)}.nav-link.active{color:var(--md-secondary)}
+.theme-toggle{padding:var(--sp-2) var(--sp-4);background:var(--md-secondary);border:none;border-radius:var(--radius-sm);cursor:pointer;font-size:var(--font-size-sm);font-weight:500;color:var(--md-on-secondary);transition:opacity .2s;white-space:nowrap}
+.theme-toggle:hover{opacity:.85}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:var(--sp-2)}.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+.nav-drawer{display:none;position:fixed;top:var(--navbar-height);left:0;right:0;background:rgba(var(--md-primary-rgb),.98);padding:var(--sp-4) var(--sp-6);flex-direction:column;gap:var(--sp-2);z-index:999;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.nav-drawer.open{display:flex}.nav-drawer .nav-link{color:rgba(255,255,255,.8);font-size:var(--font-size-base);padding:var(--sp-3) var(--sp-4)}
+.main-content{padding-top:var(--navbar-height);max-width:900px;margin:0 auto;background:var(--md-surface);min-height:100vh}
+.back-bar{padding:12px 16px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;gap:8px;background:#fafafa}
+.back-bar a{color:#c9a227;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:4px}
+.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#0a1628}
+.video-embed iframe{width:100%;height:100%;border:none;display:block}
+.video-header{padding:20px 16px 12px}
+.video-Why Only 5% Win in Stocks{font-size:1.15rem;font-weight:700;color:#1a1a2e;line-height:1.4;margin-bottom:8px}
+.video-meta{font-size:.78rem;color:#6b7280;display:flex;gap:16px;flex-wrap:wrap}.video-meta span{display:flex;align-items:center;gap:4px}
+.video-Li Lu on why most investors underperform and the importance of temperament.{padding:0 16px 16px;font-size:.88rem;color:#4a5568;line-height:1.7}
+.video-yt-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:8px 18px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin:0 16px 16px;transition:background .2s}
+.video-yt-btn:hover{background:#b8922a}
+footer{padding:10px 16px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
+footer a{color:#c9a227;text-decoration:none}
+@media(max-width:768px){:root{--sp-10:20px}.navbar{padding:0 var(--sp-5)}.nav-links{display:none}.hamburger{display:flex}.main-content{padding-top:var(--navbar-height)}}
+@media(prefers-color-scheme:dark){.back-bar{background:#0d1b2a;border-color:#333}footer{background:#0d1b2a;color:#888}}
+</style>
+</head>
+<body>
+<nav class="navbar"><div class="nav-brand"><span>&#10070;</span> 李录研究</div><div class="nav-links"><a href="index.html#about" class="nav-link">关于</a><a href="index.html#holdings" class="nav-link">持仓</a><a href="index.html#principles" class="nav-link">投资原则</a><a href="index.html#framework" class="nav-link">决策框架</a><a href="video_study.html" class="nav-link active">📺 视频学习</a><a href="index.html#quotes" class="nav-link">语录</a><a href="index.html#faq" class="nav-link">FAQ</a></div><button class="theme-toggle" onclick="toggleTheme()">&#9790; 夜间</button><button class="hamburger" onclick="toggleDrawer()" aria-label="菜单"><span></span><span></span><span></span></button></nav>
+<div class="nav-drawer" id="navDrawer"><a href="index.html#about" class="nav-link" onclick="closeDrawer()">关于</a><a href="index.html#holdings" class="nav-link" onclick="closeDrawer()">持仓</a><a href="index.html#principles" class="nav-link" onclick="closeDrawer()">投资原则</a><a href="index.html#framework" class="nav-link" onclick="closeDrawer()">决策框架</a><a href="video_study.html" class="nav-link active">📺 视频学习</a><a href="index.html#quotes" class="nav-link" onclick="closeDrawer()">语录</a><a href="index.html#faq" class="nav-link" onclick="closeDrawer()">FAQ</a></div>
+<main class="main-content">
+<div class="back-bar"><a href="video_study.html">&#8592; 视频列表</a></div>
+<div class="video-embed"><iframe src="https://www.youtube.com/embed/IbrTswEKpLE?rel=0" allowfullscreen Why Only 5% Win in Stocks="Why Only 5% Win in Stocks"></iframe></div>
+<div class="video-header"><h1 class="video-Why Only 5% Win in Stocks">Why Only 5% Win in Stocks</h1><div class="video-meta"><span>&#127916; Timeless Gain</span><span>&#9202; ~10min</span></div></div>
+<div class="video-Li Lu on why most investors underperform and the importance of temperament.">Li Lu on why most investors underperform and the importance of temperament.</div>
+<a href="https://www.youtube.com/watch?v=IbrTswEKpLE" target="_blank" rel="noopener" class="video-yt-btn">&#9654; YouTube 原站观看</a>
+</main>
+<footer><span>仅供学习参考 · <a href="video_study.html">视频列表</a></span><span style="color:#ef4444">不构成投资建议</span></footer>
+<script>function toggleTheme(){document.body.classList.toggle('dark-mode');var btn=document.querySelector('.theme-toggle');btn.textContent=document.body.classList.contains('dark-mode')?'☀️ 白天':'&#9790; 夜间'}function toggleDrawer(){document.getElementById('navDrawer').classList.toggle('open')}function closeDrawer(){document.getElementById('navDrawer').classList.remove('open')}</script>
+</body></html>
