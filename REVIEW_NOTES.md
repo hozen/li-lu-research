@@ -10,7 +10,7 @@
 | 优先级 | 状态 | 说明 |
 |--------|------|------|
 | P0 | 🔶 大部分完成 | Hero/YouTube/事实核查已完成；PR #3 已合并 |
-| P1 | 🔄 进行中 | video_study/原则卡片/书架跳转 |
+| P1 | 🔄 进行中 | 书架跳转/语录重复确认 |
 | P2 | 🔄 部分完成 | .md标注/footer日期/持仓标注 |
 
 ---
@@ -52,7 +52,7 @@
 
 | # | 问题 | 文件 | 状态 | 说明 |
 |---|------|------|------|------|
-| P1-1 | video_study → 视频列表入口页 | video_study.html | 🔴 待处理 | 每视频独立子页面，JSON数据分离 |
+| P1-1 | video_study → 视频列表入口页 | video_study.html | ✅ 已完成 | JSON数据分离+10个独立子页+CCBC完整Transcript |
 | P1-2 | principle cards 04/05/06 样式一致 | index.html | ✅ 已完成 | 两grid合并为一个，移除style="margin-top:30px" |
 | P1-3 | bookshelf Step 5 跳转链接 | bookshelf.html | 🔴 待处理 | 添加 → index.html |
 | P1-4 | "所有者心态"语录重复 | index.html | 🔴 待确认 | 确认是否已修复 |
@@ -77,11 +77,13 @@
 ### 新增 (B1 + B2)
 - **B1 研究笔记 (Study Notes)**：新增独立 section，放置在 cases 区之后，包含三条研究笔记（CBS访谈/北大演讲/文明3.0）
 - **B2 公开活动索引**：10-item checklist，放置在视频资源区前，3/10已完成标记
+- P1-1 完成：video_study JSON分离+10个独立子页（dev@2613226）
 - 导航栏新增「笔记」「索引」快速入口
 
 ### 技术
 - 编码检查：无乱码
-- Playwright 回归测试：7 pages / 0 errors ✅
+- Playwright 回归测试：8 pages / 0 errors ✅（含新视频子页）
+- 编码检查：无乱码
 
 
 ---
