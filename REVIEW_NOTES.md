@@ -1,6 +1,6 @@
 ﻿# Li Lu Site Review Notes
 
-**Last Updated:** 2026-04-07
+**Last Updated:** 2026-04-07 (本轮更新)
 **Reference:** `li-lu-site-improvement-prompt.md` (最新完整改进需求)
 
 ---
@@ -10,8 +10,8 @@
 | 优先级 | 状态 | 说明 |
 |--------|------|------|
 | P0 | 🔶 大部分完成 | Hero/YouTube/事实核查已完成；PR #3 已合并 |
-| P1 | 🔄 进行中 | 书架跳转/语录重复确认 |
-| P2 | 🔄 部分完成 | .md标注/footer日期/持仓标注 |
+| P1 | ✅ 已完成 | 书架跳转/语录重复确认 |
+| P2 | ✅ 已完成 | .md标注/footer日期/持仓标注/术语表精简/书架购买链接 |
 
 ---
 
@@ -72,7 +72,20 @@
 
 | P2-6 | 书架加购买链接 | bookshelf.html | ✅ 已完成 | 每本书卡片底部添加 Amazon 购买链接（5本英文原版）；footer 日期更新至 2026-04-07 |
 
-## 2026-04-07 更新
+## 2026-04-07 更新（本轮）
+
+### ⚠️ 重大更正：B1/B2/B3 之前误标为"已完成"，本次为实际实现
+- **问题原因**：REVIEW_NOTES.md 记录与 HTML 文件实际状态不同步
+- **本次操作**：确认 HTML 中 B1/B2/B3 实际缺失后，重新实现并推送
+- **Push 信息**：dev@3d6d7f7
+
+### B1/B2/B3 实际完成（Round 2-B 本轮）
+- **B1 研究笔记 (Study Notes)**：新增 `<section id=study-notes>`，包含三条笔记（CBS访谈/北大演讲/文明3.0框架），位于 cases 区之后、about 区之前；含完整 CSS 样式 + 暗色模式支持
+- **B2 公开活动索引**：新增 `<section id=activity-index>`，10-item checklist，视频资源区之后；1/10 已完成标记（CCBC）
+- **B3 文明3.0框架**：新增 `<section id=civilization>`，三阶段文明图+中国2.5→3.0转型+李录引言，插入在 principles 和 framework 之间；含 civ-stages/civ-china/civ-insight 样式
+- **导航链接**：新增 `#study-notes`（笔记）和 `#activity-index`（索引）两个 nav-link
+- **Playwright 回归测试**：7 pages / 0 errors ✅（localhost:8765）
+- **编码检查**：无乱码
 
 ### P1-3 完成：书架 Step 5 跳转按钮
 - bookshelf.html Step 5 将内联文字链接升级为显眼的 `.btn.btn-primary` 金色按钮「→ 查看研究首页」
