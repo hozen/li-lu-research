@@ -2,6 +2,16 @@
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
 > Fetched: 2026-04-07
 
+## 已修复记录
+
+- **2026-04-08 第二次提交**: 修复 index.html 中的 CSS 重复 dark-mode 规则块 + 去重 meta 标签
+  - 问题：两个 `body.dark-mode` 规则背景色冲突（#000000 vs #0a1628），导致暗色模式背景不一致
+  - 修复：删除第一个 dark-mode 块，保留一致的 #0a1628 配色体系
+  - 同时删除重复的 og:title/og:description/og:type/meta:description 标签
+  - Commit: 96cdd338
+
+---
+
 ## Priority 1：必须修复的问题
 
 ### 1.1 删除占位符
