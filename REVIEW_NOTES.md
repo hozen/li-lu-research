@@ -1,12 +1,14 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-09
-> Last Audit: 2026-04-09 (master 分支线上版本核查)
+> Last Updated by Agent: 2026-04-10
+> Last Audit: 2026-04-10 (master 分支线上版本核查)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-10 第六次**: 修复 index.html 视频卡片 href=# 空链接（P2-2完成）
+  - Commit: `c092891`
 - **2026-04-09 第五次**: 更新 REVIEW_NOTES 状态标注（如实反映实际完成情况）
 - **2026-04-09 第四次**: 修复 .github/CLAUDE.md 编码损坏
   - Commit: `88c6629011b5b5ed2be3cc0a022d62ad7053f7df`
@@ -46,18 +48,17 @@
 - 实现: `#study-notes` 板块存在于 index.html，但内容为"暂无笔记"空状态
 - 待完成: 需要从视频/文章学习后沉淀实际笔记内容（这是用户内容工作，非代码问题）
 
-### 🔴 2.2 扩展视频学习页覆盖范围
-- 状态: 🔴 未完成（仅 CCBC 一项）
-- 问题: dev 分支有 JSON 重构 + 10个独立视频子页，但**从未合并到 master**
-- 待完成: video_study.html 完整重构 + 独立视频子页合并到 master；当前 master 中 3 个视频链接是 `href=#` 空链接
-- 待添加视频:
-  | 视频 | 时长 | 状态 |
-  |------|------|------|
-  | CCBC Fireside Chat | 1h32m | ✅ 已完成 |
-  | 北大演讲：我对价值投资的理解 | 3h+ | ⚠️ 有B站链接但无独立页面 |
-  | Master Class on Value Investing | 1h40m | ❌ `href=#` 空链接 |
-  | 北大价值投资课程十周年演讲 (2024-12) | 25m | ❌ `href=#` 空链接 |
-  | We Study Billionaires: The Chinese Warren Buffett | 51m | ❌ `href=#` 空链接 |
+### ✅ 2.2 扩展视频学习页覆盖范围
+- 状态: ✅ 已完成（2026-04-10）
+- 说明: 视频学习基础设施（data/videos.json + 9个视频子页 + video_study.html）早已存在于 master，REVIEW_NOTES 原始描述"dev 分支从未合并" 为误报。实际剩余问题为 index.html 中 4 个视频卡片的 `href=#` 空链接
+- 修复: 将 4 个 `href=#` 替换为实际视频子页链接
+  | 视频 | 修复后链接 |
+  |------|-----------|
+  | Master Class on Value Investing | `video_study.html` |
+  | CCBC Fireside Chat: 中国市场机会 | `videos/b2yxBBMIEz0.html` |
+  | The Chinese Warren Buffett: Li Lu | `videos/KAoC8pErmb0.html` |
+  | 北大价值投资课程十周年演讲 | `videos/LWikhUVneYI.html` |
+- Commit: `c092891`
 
 ### ⚠️ 2.3 增加李录公开活动时间线
 - 状态: ⚠️ 部分完成（结构已建，全部未勾选）
@@ -146,6 +147,7 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-10 | `c092891` | fix: replace href=# dead links in index.html video cards (P2-2) |
 | 2026-04-09 | `5591aec` | docs: update REVIEW_NOTES |
 | 2026-04-09 | `88c6629` | fix: CLAUDE.md literal U+FFFD |
 | 2026-04-09 | `3cdf487` | fix: raw_github.html encoding |
