@@ -48,7 +48,7 @@ python scripts/check_encoding.py <文件路径>
 ```
 检查项：
 - `e9 8f 89` 乱码序列（错误「李录」的特征）
-- `�?` 乱码字符
+- `U+FFFD?` 乱码字符（Unicode替换符 + 问号）
 - BOM 头 `\xef\xbb\xbf`
 
 发现乱码 → **立即用 `write` 工具重写**，不要 sed 修复。
@@ -155,7 +155,7 @@ mcporter call playwright.chromium.navigate { "url": "http://localhost:8080/index
 
 | 检查项 | 标准 |
 |--------|------|
-| 编码 | 无 `e9 8f 89`，无 `�?`，无 BOM |
+| 编码 | 无 `e9 8f 89`，无 `U+FFFD?`，无 BOM |
 | HTML 标签 | 全部闭合，层级正确 |
 | Console errors | 0 errors |
 | Git message | 包含 `(encoding: clean)` 和 `(tested: N pages)` |
