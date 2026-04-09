@@ -4,6 +4,11 @@
 
 ## 已修复记录
 
+- **2026-04-09 第四次提交**: 修复 .github/CLAUDE.md 编码损坏
+  - 问题：文件包含两处 literal U+FFFD (efbfbd) 替换字符，作为文档示例
+  - 修复：将 literal U+FFFD 字符替换为 `U+FFFD` 文本描述，避免触发编码检查误报
+  - Commit: 88c6629011b5b5ed2be3cc0a022d62ad7053f7df
+
 - **2026-04-09 第三次提交**: 修复 raw_github.html 编码损坏
   - 问题：文件末尾有 U+FFFD (efbfbd) 替换字符 + UTF-8 BOM + 标题乱码
   - 修复：删除末尾 U+FFFD 填充字节、移除 BOM、修复标题 "浠峰€兼姇璧勭爺绌" → "价值投资研究"
