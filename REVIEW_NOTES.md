@@ -7,6 +7,8 @@
 
 ## 已修复记录
 
+- **2026-04-10 第八次**: CLAUDE.md 工作流升级 + 最终确认（准则5：REVIEW_NOTES 更新强制化 + dev→master 修正）
+  - Commit: `<本提交>`
 - **2026-04-10 第七次**: 更新 REVIEW_NOTES（三核：P2-2已解决、待修复表清理、commit历史补全）
   - Commit: `aa12b3f`
 - **2026-04-10 第六次**: 修复 index.html 视频卡片 href=# 空链接（P2-2完成）
