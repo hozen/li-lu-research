@@ -8,7 +8,7 @@
 ## 已修复记录
 
 - **2026-04-10 第八次**: CLAUDE.md 工作流升级 + 最终确认（准则5：REVIEW_NOTES 更新强制化 + dev→master 修正）
-  - Commit: `<本提交>`
+  - Commit: `02d5520`
 - **2026-04-10 第七次**: 更新 REVIEW_NOTES（三核：P2-2已解决、待修复表清理、commit历史补全）
   - Commit: `aa12b3f`
 - **2026-04-10 第六次**: 修复 index.html 视频卡片 href=# 空链接（P2-2完成）
@@ -151,6 +151,7 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-10 | `02d5520` | docs: CLAUDE.md workflow improvements + REVIEW_NOTES final update (准则5 + dev→master fix) |
 | 2026-04-10 | `aa12b3f` | docs: REVIEW_NOTES 全面核查更新 — P2-2/P5-1 已解决，清理待修复表，补充 commit 历史 |
 | 2026-04-10 | `fc669d7` | docs: update REVIEW_NOTES - P2-2 video links fixed |
 | 2026-04-10 | `c092891` | fix: replace href=# dead links in index.html video cards (P2-2) |
