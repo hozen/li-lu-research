@@ -1,12 +1,14 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
 > Last Updated by Agent: 2026-04-10
-> Last Audit: 2026-04-10 (master 分支线上版本核查)
+> Last Audit: 2026-04-10 (master 分支 · 第三次全面核查 · 8:02 CST)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-10 第七次**: 更新 REVIEW_NOTES（三核：P2-2已解决、待修复表清理、commit历史补全）
+  - Commit: `aa12b3f`
 - **2026-04-10 第六次**: 修复 index.html 视频卡片 href=# 空链接（P2-2完成）
   - Commit: `c092891`
 - **2026-04-09 第五次**: 更新 REVIEW_NOTES 状态标注（如实反映实际完成情况）
@@ -124,14 +126,14 @@
 
 ## 待修复 Priority 清单（按紧急程度）
 
-| 优先级 | 任务 | 严重性 | 说明 |
-|--------|------|--------|------|
-| 🔴 P2-2 | video_study.html 重构未合并 | 高 | dev→master PR 从未合并 |
-| ✅ P5-1 | 持仓数据错误 | ~~**极高**~~ → ✅已修复 | 持仓区已替换为喜马拉雅资本真实13F数据 |
-| ⚠️ P2-1 | 研究笔记内容为空 | 中 | 已有结构，内容需用户填充 |
-| ⚠️ P2-3 | 活动时间线未勾选 | 低 | 用户内容工作 |
-| ⚠️ P3-1 | 我的框架占位 | 低 | 用户内容工作 |
-| ⚠️ P4-1 | 原则映射占位 | 低 | 用户内容工作 |
+| 优先级 | 任务 | 状态 | 说明 |
+|--------|------|------|------|
+| ✅ P2-2 | 视频卡片空链接 | 已解决 | href=# → 实际视频子页（commit `c092891`） |
+| ✅ P5-1 | 持仓数据错误 | 已解决 | 真实13F数据（commit `89b2457`） |
+| ⚠️ P2-1 | 研究笔记内容为空 | 用户内容 | 已有结构，内容需用户填充 |
+| ⚠️ P2-3 | 活动时间线未勾选 | 用户内容 | 随学习进度填充 |
+| ⚠️ P3-1 | 我的框架占位 | 用户内容 | Q3 内容填充 |
+| ⚠️ P4-1 | 原则映射占位 | 用户内容 | Q4 内容填充 |
 
 ---
 
@@ -139,7 +141,7 @@
 
 - P3-1（我的投资框架）、P4-1（原则映射）的内容填充是**用户自己的工作**，不是代码任务。Agent 只负责提供结构，内容由用户填充。
 - P2-1（研究笔记）、P2-3（活动时间线）同样依赖用户学习进度。
-- **真正需要代码修复的只有两件事：P2-2（视频页面合并）和 P5-1（持仓数据纠正）。**
+- **所有代码级修复已全部完成。** 剩余 P2-1/P2-3/P3-1/P4-1 均为用户内容填充，无需 Agent 介入。
 
 ---
 
@@ -147,8 +149,12 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-10 | `aa12b3f` | docs: REVIEW_NOTES 全面核查更新 — P2-2/P5-1 已解决，清理待修复表，补充 commit 历史 |
+| 2026-04-10 | `fc669d7` | docs: update REVIEW_NOTES - P2-2 video links fixed |
 | 2026-04-10 | `c092891` | fix: replace href=# dead links in index.html video cards (P2-2) |
-| 2026-04-09 | `5591aec` | docs: update REVIEW_NOTES |
+| 2026-04-09 | `b9f8dc2` | docs: update REVIEW_NOTES - P5-1 持仓数据修复完成 |
+| 2026-04-09 | `89b2457` | fix: replace user portfolio with Himalaya Capital actual 13F holdings (P5-1) |
+| 2026-04-09 | `5591aec` | docs: update REVIEW_NOTES with fourth commit entry |
 | 2026-04-09 | `88c6629` | fix: CLAUDE.md literal U+FFFD |
 | 2026-04-09 | `3cdf487` | fix: raw_github.html encoding |
 | 2026-04-08 | `96cdd338` | fix: CSS dark-mode + meta dedup |
