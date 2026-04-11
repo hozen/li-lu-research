@@ -1,7 +1,7 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-11
-> Last Audit: 2026-04-11 (master 分支 · 第七次核查 · Round 4 完成)
+> Last Updated by Agent: 2026-04-12
+> Last Audit: 2026-04-12 (P7-1 PDD投资案例分析完成)
 
 ---
 
@@ -165,12 +165,11 @@
 | ✅ P6-1 | 移动端优化 | 已完成 | 返回顶部按钮 |
 | ✅ P6-4 | 汉堡导航菜单 | 已完成 | ≤1024px滑出式抽屉 + 夜间模式 |
 | ✅ P6-5 | 移动端暗模式全面修复 | 已完成 | text-muted变量覆盖 + 字号提升 + 硬编码颜色修复 |
-| P7-1 | PDD投资案例分析（BYD框架） | 待执行 | 用比亚迪框架结构分析李录投资PDD的完整决策链条 |
-| P7-2 | 中国邮储银行投资分析（BYD框架） | 待核实持仓 | 用BYD框架分析邮储银行，参照P7-1格式 || P7-1 | PDD投资案例分析（BYD框架） | 待执行 | 用比亚迪框架结构分析李录投资PDD的完整决策链条 |
-| P6-C | 李录中国股票持仓研究（非13F渠道） | 待执行 | 核实HK股/A股持仓，完善MEMORY.md持仓数据，优先级高于P7 |
-| P6-C | 李录中国股票持仓研究（非13F渠道） | 待执行 | 核实HK股/A股持仓，完善MEMORY.md持仓数据，优先级高于P7 |
-| P6-C-1 | 全球配置比例计算（非13F渠道） | 待执行 | 核实HK股/A股持仓，完善MEMORY.md持仓数据，优先级高于P7 |
-| P6-C-2 | 贵州茅台清仓分析（非13F渠道） | 待执行 | 核实HK股/A股持仓，完善MEMORY.md持仓数据，优先级高于P7 |
+| ✅ P7-1 | PDD投资案例分析（BYD框架） | 已完成 | 创建 pdd-investment-deep.html，8章结构，置信度标注完整 |
+| P7-2 | 中国邮储银行投资分析（BYD框架） | 待核实持仓 | 用BYD框架分析邮储银行，参照P7-1格式 |
+| P6-C | 李录中国股票持仓研究（非13F渠道） | 待执行 | 核实HK股/A股持仓 |
+| P6-C-1 | 全球配置比例计算（非13F渠道） | 待执行 | 13F+非13F合并计算全球配置比例 |
+| P6-C-2 | 贵州茅台清仓分析（非13F渠道） | 待执行 | 创建 kweichow-moutai-investment-deep.html（9章，BYD框架） |
 | ✅ P6-2 | SEO | 已完成 | meta / OG / twitter:card |
 | ✅ P6-3 | 设计调性 | 已完成 | 深色 + 金色强调 |
 
@@ -186,7 +185,6 @@
 | 4-A2 | 投资原则从3条扩展为6条 + Hero数字改为6 | ✅ |
 | 4-A3 | 恢复六步决策框架 | ✅ |
 | 4-A4 | FAQ同步（三学位、六原则） | ✅ |
-| 4-A5 | EWBC/OXY投资逻辑注释 | ✅ |
 | 4-A5 | EWBC/OXY投资逻辑注释 | ✅ |
 | 4-A6 | 文明3.0板块内容扩展 | ✅ |
 
@@ -345,6 +343,7 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-12 | `179cac2` | feat: add pdd-investment-deep.html (P7-1, BYD framework applied to PDD investment) |
 | 2026-04-11 | `e9ffcec` | docs: REVIEW_NOTES fourth audit — all code verified complete, encoding+links clean |
 | 2026-04-11 | `d73aae7` | fix: nav link #framework -> #my-framework across all pages (encoding: clean) |
 | 2026-04-10 | `a07cd7e7cada43c8b1cf060a227237b19ac7e266` | docs: CLAUDE.md 准则5强制化 + REVIEW_NOTES最终确认 (all code tasks complete) |
