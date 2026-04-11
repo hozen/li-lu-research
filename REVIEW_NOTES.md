@@ -1,12 +1,16 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
 > Last Updated by Agent: 2026-04-11
-> Last Audit: 2026-04-11 (master 分支 · 第四次核查 · 0:02 CST · 编码+链接全量验证通过)
+> Last Audit: 2026-04-11 (master 分支 · 第五次核查 · 8:02 CST · 三重验证通过：编码✓/HTML解析✓/nav链接✓)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-11 第十次**: 修复 nav 锚点死链 + REVIEW_NOTES commit 历史补全（第五次核查完成）
+  - Commit: `d73aae7`
+- **2026-04-11 第九次**: 补充文档 commit 历史 — UTF-8 BOM 从 8 个视频子页移除（`df7aebc`）
+  - Commit: `c82337b`
 - **2026-04-10 第八次**: CLAUDE.md 工作流升级 + 最终确认（准则5：REVIEW_NOTES 更新强制化 + dev→master 修正）
   - Commit: `a07cd7e7cada43c8b1cf060a227237b19ac7e266`
 - **2026-04-10 第七次**: 更新 REVIEW_NOTES（三核：P2-2已解决、待修复表清理、commit历史补全）
@@ -151,6 +155,8 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-11 | `e9ffcec` | docs: REVIEW_NOTES fourth audit — all code verified complete, encoding+links clean |
+| 2026-04-11 | `d73aae7` | fix: nav link #framework -> #my-framework across all pages (encoding: clean) |
 | 2026-04-10 | `a07cd7e7cada43c8b1cf060a227237b19ac7e266` | docs: CLAUDE.md 准则5强制化 + REVIEW_NOTES最终确认 (all code tasks complete) |
 | 2026-04-10 | `aa12b3f` | docs: REVIEW_NOTES 全面核查更新 — P2-2/P5-1 已解决，清理待修复表，补充 commit 历史 |
 | 2026-04-10 | `fc669d7` | docs: update REVIEW_NOTES - P2-2 video links fixed |
