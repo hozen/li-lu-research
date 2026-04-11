@@ -161,9 +161,30 @@
 | 4-A3 | 恢复六步决策框架 | ✅ |
 | 4-A4 | FAQ同步（三学位、六原则） | ✅ |
 | 4-A5 | EWBC/OXY投资逻辑注释 | ✅ |
+| 4-A5 | EWBC/OXY投资逻辑注释 | ✅ |
 | 4-A6 | 文明3.0板块内容扩展 | ✅ |
 
 - Commit `5b489a7`: Round 4 fixes — 案例精简/6原则/决策框架/FAQ/EWBC-OXY注释/文明3.0扩展
+
+---
+
+## Round 5 — 内容主动填充（2026-04-11）
+
+> ⚠️ 重要原则：站点内容由 Agent 主动收集填充，不等待用户手动回填。cron job `Li Lu Content Collector` 负责日常采集，Review Notes 中的内容任务由 `Li Lu Site Dev` cron job 分配执行。
+
+| 任务 | 描述 | 状态 | 优先级 |
+|------|------|------|--------|
+| 5-C1 | **验证 EWBC/OXY 是否在 13F 中** — 搜索 SEC EDGAR 确认 Himalayan Capital 13F 持仓中有 EWBC 和 OXY，如无法确认则删除对应卡片 | ☐ | P0 |
+| 5-C2 | **研究笔记板块填充** — 主动收集李录现有视频/访谈内容，转录关键要点写入 `#study-notes` 板块；优先从 CCBC Fireside Chat transcript 和北大演讲入手 | ☐ | P1 |
+| 5-C3 | **文明3.0框架内容扩展** — 当前仅3行，需扩展为完整框架（Round 2-B3 模板）：1.0/2.0/3.0各阶段2-3句 + 中国2.5→3.0转型 + 引用语录 | ☐ | P1 |
+| 5-C4 | **活动时间线内容填充** — 10-item checklist 已存在，每项补充具体日期、背景、来源链接 | ☐ | P2 |
+
+**执行顺序**：5-C1（验证）→ 5-C2/C3（内容填充）→ 5-C4（收尾）
+
+**5-C1 具体做法**：
+1. 用 web_search 搜索 "Himalaya Capital 13F 2025 Q4" + "SEC EDGAR"
+2. 找到 Himalayan Capital 的 13F Filing 对比 EWBC 和 OXY 是否在持仓列表中
+3. 如果在 → 补全投资逻辑注释（同 BAC/PDD 格式）；如果不在 → 删除 EWBC/OXY 持仓卡片并更新 13F 说明
 
 ---
 
