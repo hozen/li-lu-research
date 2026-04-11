@@ -1,7 +1,7 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
 > Last Updated by Agent: 2026-04-11
-> Last Audit: 2026-04-11 (master 分支 · 第六次核查 · 12:04 CST · 所有代码级修复已全部完成)
+> Last Audit: 2026-04-11 (master 分支 · 第七次核查 · Round 4 完成)
 
 ---
 
@@ -149,6 +149,21 @@
 | ✅ P6-3 | 设计调性 | 已完成 | 深色 + 金色强调 |
 
 **所有代码级修复已全部完成。** 剩余 P2-1、P2-3、P3-1、P4-1 均为用户内容填充，无需 Agent 介入。
+
+---
+
+## Round 4 任务 (2026-04-11)
+
+| 任务 | 描述 | 状态 |
+|------|------|------|
+| 4-A1 | 删除腾讯/中国移动案例卡片，仅保留比亚迪 | ✅ |
+| 4-A2 | 投资原则从3条扩展为6条 + Hero数字改为6 | ✅ |
+| 4-A3 | 恢复六步决策框架 | ✅ |
+| 4-A4 | FAQ同步（三学位、六原则） | ✅ |
+| 4-A5 | EWBC/OXY投资逻辑注释 | ✅ |
+| 4-A6 | 文明3.0板块内容扩展 | ✅ |
+
+- Commit `5b489a7`: Round 4 fixes — 案例精简/6原则/决策框架/FAQ/EWBC-OXY注释/文明3.0扩展
 
 ---
 
