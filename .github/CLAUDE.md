@@ -206,7 +206,34 @@ li-lu-research/
 
 ---
 
-## 八、本地开发服务器
+## 八、Changelog 维护规范（强制）
+
+### 规则 7：每次发布必须追加 changelog
+**位置**：`index.html` 中 `<section id="changelog">`，位于 `</main>` 和 `<footer>` 之间。
+
+**格式**：
+```html
+<section id="changelog" style="background:#f7fafc;padding:40px 60px;">
+  <h3 style="color:#c9a227;margin-bottom:20px;">更新日志</h3>
+  <div style="margin-bottom:20px;">
+    <span style="color:#c9a227;font-weight:600;">2026-04-12</span>
+    <ul style="margin-top:8px;padding-left:20px;color:#4a5568;">
+      <li>新增 xxx 页面/功能</li>
+      <li>修复 xxx 问题</li>
+    </ul>
+  </div>
+</section>
+```
+
+**要求**：
+- 日期金色 `color:#c9a227`
+- 列表克制风格，无 emoji
+- 每次 `git push` 到 dev 或 master 后立即追加
+- **不写 changelog = 任务未完成**
+
+---
+
+## 九、本地开发服务器
 
 ```bash
 # 启动 HTTP 服务器（端口 8080）
