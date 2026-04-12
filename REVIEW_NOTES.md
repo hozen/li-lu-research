@@ -168,6 +168,7 @@
 | ✅ P6-4 | 汉堡导航菜单 | 已完成 | ≤1024px滑出式抽屉 + 夜间模式 |
 | ✅ P6-5 | 移动端暗模式全面修复 | 已完成 | text-muted变量覆盖 + 字号提升 + 硬编码颜色修复 |
 | ✅ P7-1 | PDD投资案例分析（BYD框架） | 已完成 | 创建 pdd-investment-deep.html，8章结构，置信度标注完整 |
+| ✅ P7-4 | Bank of America (BAC) 深度研究 | 已完成 | bac-investment-deep.html，8章结构，建仓$22-24(2020Q1)，持仓US$574M(16%，第三大持仓) |
 | ✅ P7-2 | 中国邮储银行投资分析（BYD框架） | 已完成 | 创建 psbc-investment-deep.html，8章结构；持仓核实确认：2020-12-18首次买入10.06亿股(HK$4.228)，2021-01-15加仓2.68亿股(HK$5.3479)，累计成本约HK$57亿，持股比例最高5.93%，至今仍持有约9.86亿股 |
 
 | P6-C | 李录中国股票持仓研究（非13F渠道） | 待执行 | 核实HK股/A股持仓 |
@@ -425,11 +426,19 @@
 
 ### P7-4 · Bank of America (BAC) 深度研究 — **P1**
 
-**状态**：待执行
+**状态**：✅ 已完成（2026-04-12，commit `0c3cfc9`）
 
-**文件输出**：`bac-investment-deep.html`（待创建）
+**文件输出**：`bac-investment-deep.html`
 
-**分析框架**：同BYD框架8章，持有5.8年，13F数据充足
+**内容摘要**：
+- 建仓时间线：2020年Q1 COVID恐慌期开始建仓（BAC $22-24），持续增持至2023年Q1
+- 护城河分析：规模效应+美林投行平台+财富管理+存款成本优势+G-SIB监管地位
+- 当前持仓约US$574M（2025 Q4），13F组合占比16.08%，第三大持仓
+- 持有期经历2020 COVID暴跌、2022加息周期、2023 SVB危机，BAC逆势韧性显著
+- 累计减持约765万股，反映估值阶段性判断
+- 正反方辩论：利率环境 vs 金融科技颠覆 vs 监管成本
+
+**Commit**：`0c3cfc9`
 
 ---
 
@@ -522,6 +531,7 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-12 | `0c3cfc9` | feat: add bac-investment-deep.html (P7-4, BYD framework applied to Bank of America investment, ~US$574M, 16%, 6yr hold) |
 | 2026-04-12 | `39c1c7a` | fix: P6-H footer nav + view-all links (quotes/books/timeline) |
 | 2026-04-12 | `0fef818` | docs: REVIEW_NOTES — P6-G completed (changelog section added) |
 | 2026-04-12 | `c966090` | feat: add changelog section to index.html + CLAUDE.md rule 7 |
