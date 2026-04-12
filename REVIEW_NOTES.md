@@ -423,80 +423,27 @@
 
 **优先级**：**P0**（功能性导航错误，影响页面可用性）
 
----
+**状态**：✅ 已完成（2026-04-12）
 
-### 问题描述
-
-**现状：** 站点有 7 个页面，内容存在"预览-完整"双层结构，但用户完全无法感知这层关系。
-
-| index.html 内嵌板块 | 独立页面 | 内嵌条数 | 独立页条数 |
-|---------------------|----------|---------|----------|
-| `#quotes` | quotes.html | 6条 | 40+条，按主题分类 |
-| `#books` | bookshelf.html | 6本书 | 6本+阅读顺序+摘要+金句 |
-| `#timeline-index` | timeline.html | 10项Checklist | 完整编年史+时代分段 |
-| （无） | glossary.html | — | 核心术语+搜索过滤 |
-| `#resources` | downloads.html | 3个按钮 | 分类整理 |
-| `#videos` | video_study.html | 4个卡片 | 视频索引+播放列表 |
+**Commit**：`39c1c7a`
 
 ---
 
-### P0 致命问题：Footer 导航目标错误
+### 修复内容
 
-**现象：**
-- navbar 链接 → 独立页面（正确：`quotes.html`）
-- footer 链接 → index.html 内嵌板块（错误：`#quotes`）
+**1. Footer 导航修复（P0）**
+- `#videos` → `video_study.html`
+- `#books` → `bookshelf.html`
+- `#learning` → `timeline.html`
 
-**影响：** 用户从 footer 进入看到贫乏的 6 条语录，从 navbar 进入看到完整的 quotes.html。同一站点的同一内容，两种体验。
+**2. "查看全部"引导链接（P1）**
+- `#quotes` 底部：`查看全部语录 →` → `quotes.html`
+- `#books` 底部：`完整书单与阅读指引 →` → `bookshelf.html`
+- `#timeline-index` 底部：`完整时间线 →` → `timeline.html`
 
----
+**验证方式**：确认 footer 链接指向独立页面，三处内嵌板块底部均有引导链接。
 
-### P1 问题：内嵌板块无引导
-
-index.html 各板块缺少"查看全部 →"链接，用户不知道完整内容在独立页面。
-
----
-
-### P2 问题：内容重复维护负担
-
-书籍/语录在两处同时存在，修改需同步，容易产生不一致。
-
----
-
-### 推荐修复方案
-
-**步骤1：修复 Footer 导航（P0，立即修复）**
-```
-#quotes → quotes.html
-#books → bookshelf.html
-#learning → timeline.html
-```
-
-**步骤2：每个内嵌板块加"查看全部"链接（P1）**
-- quotes 底部：`查看全部语录 →` 链接到 quotes.html
-- books 底部：`完整书单与阅读指引 →` 链接到 bookshelf.html
-- timeline 底部：`完整时间线 →` 链接到 timeline.html
-
-**步骤3：内嵌内容精简为 3-4 条精选（P2）**
-- quotes：6条 → 4条（最精华）
-- books：6本 → 4本（最必读）
-- 减少重复感，突出"预览"属性
-
----
-
-### 依赖项
-
-无外部依赖
-
-**存储位置**：li-lu-research/REVIEW_NOTES.md
-
----
-
-### 验证要求
-
-修复后：
-1. Footer 所有内容链接指向独立页面（不是 index 内嵌板块）
-2. index.html 每个板块底部有"查看全部"引导
-3. Playwright 回归测试 0 console errors
+**待处理（P2）**：内嵌内容精简为 3-4 条精选 — 暂缓，以内容丰富度为先。
 
 ---
 
@@ -504,6 +451,8 @@ index.html 各板块缺少"查看全部 →"链接，用户不知道完整内容
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-12 | `39c1c7a` | fix: P6-H footer nav + view-all links (quotes/books/timeline) |
+| 2026-04-12 | `0fef818` | docs: REVIEW_NOTES — P6-G completed (changelog section added) |
 | 2026-04-12 | `c966090` | feat: add changelog section to index.html + CLAUDE.md rule 7 |
 | 2026-04-12 | `d7dba0a` | feat: add psbc-investment-deep.html (P7-2, BYD framework applied to PSBC investment) |
 | 2026-04-12 | `179cac2` | feat: add pdd-investment-deep.html (P7-1, BYD framework applied to PDD investment) |
