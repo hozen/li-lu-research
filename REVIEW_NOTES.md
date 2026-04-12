@@ -401,10 +401,26 @@
 
 
 ---
+
+### P6-G · Changelog 缺失修复
+
+**问题来源**：用户反馈（2026-04-12）
+
+**状态**：✅ 已完成（2026-04-12）
+
+**修复内容**：
+1. `index.html` 新增 `<section id="changelog">`（位于 `</main>` 和 `<footer>` 之间）
+2. `.github/CLAUDE.md` 新增规则7：每次 push 到 dev/master 必须追加 changelog
+3. MEMORY.md 中冗余规范已移除，指向 CLAUDE.md 为唯一真实来源
+
+**Commit**：`c966090`
+
+---
 ## Commit 历史
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-12 | `c966090` | feat: add changelog section to index.html + CLAUDE.md rule 7 |
 | 2026-04-12 | `d7dba0a` | feat: add psbc-investment-deep.html (P7-2, BYD framework applied to PSBC investment) |
 | 2026-04-12 | `179cac2` | feat: add pdd-investment-deep.html (P7-1, BYD framework applied to PDD investment) |
 | 2026-04-11 | `e9ffcec` | docs: REVIEW_NOTES fourth audit — all code verified complete, encoding+links clean |
