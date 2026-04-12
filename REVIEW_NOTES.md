@@ -1,12 +1,14 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
 > Last Updated by Agent: 2026-04-12
-> Last Audit: 2026-04-12 (P7-1 PDD投资案例分析完成)
+> Last Audit: 2026-04-12 (P6-E 视频页面可用性验证完成)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-12 第十二次**: P6-E 视频页面可用性验证 — KmzOZLf8wcw 已下架（YouTube Short 私有）替换为占位符 + 全部9个视频子页 nav 锚点 #framework→#my-framework
+  - Commit: `128023e`
 - **2026-04-11 第十一次**: 更新 REVIEW_NOTES — 标注所有用户内容任务状态（P2-1/P2-3/P3-1/P4-1 均为用户填充，无需代码介入）
 - **2026-04-11 第十次**: 修复 nav 锚点死链 + REVIEW_NOTES commit 历史补全（第五次核查完成）
   - Commit: `d73aae7`
@@ -283,6 +285,65 @@
 **输出**：li-lu-research/kweichow-moutai-investment-deep.html
 
 
+
+## P6-E · 视频页面可用性验证与失效处理
+
+**问题来源**：用户反馈（2026-04-12）
+
+**优先级**：P1
+
+**状态**：✅ 已完成（2026-04-12）
+
+---
+
+### 验证结果
+
+通过 web_search 逐个验证 9 个 YouTube embed 视频可用性：
+
+| 视频ID | 标题 | 状态 | 备注 |
+|--------|------|------|------|
+| b2yxBBMIEz0 | CCBC Fireside Chat | ✅ 可用 | |
+| KAoC8pErmb0 | The Chinese Warren Buffett | ✅ 可用 | |
+| LWikhUVneYI | Li Lu On 2021 Investing | ✅ 可用 | |
+| -gfRCGZ0zf4 | How I Got Started In Value Investing (CBS 2021) | ✅ 可用 | |
+| YaCRr0DIfuE | Investing in China: Unique Challenges | ✅ 可用 | |
+| 35RgNwcyjFk | Holy Grail of Investing (FAME 2012) | ✅ 可用 | |
+| IbrTswEKpLE | Why Only 5% Win in Stocks | ✅ 可用 | |
+| KmzOZLf8wcw | Li Lu's Secret to Investing Success (Short) | ❌ 已下架 | YouTube Short 被频道设为私有 |
+| _-M1HFuqus0 | Li Lu Explains Value Investing | ✅ 可用 | YouTube Short |
+
+---
+
+### 修复内容
+
+**1. KmzOZLf8wcw.html - 不可用视频处理**
+- 问题：We Study Billionaires 频道将该 Short 设为私有/删除
+- 修复：移除失效 iframe，替换为「视频不可用」占位符
+- 占位符包含：警告图标 + 说明文字 + 跳转完整版访谈链接（KAoC8pErmb0）
+- Commit: `128023e`
+
+**2. 全部 9 个视频子页导航锚点修复**
+- 问题：导航链接指向 `#framework`（不存在），应为 `#my-framework`
+- 修复：批量替换所有 `index.html#framework` → `index.html#my-framework`（含 navbar 和 nav-drawer 两处）
+- 涉及页面：-gfRCGZ0zf4.html, 35RgNwcyjFk.html, b2yxBBMIEz0.html, IbrTswEKpLE.html, KAoC8pErmb0.html, LWikhUVneYI.html, YaCRr0DIfuE.html, _-M1HFuqus0.html, KmzOZLf8wcw.html
+- Commit: `128023e`
+
+---
+
+### 验证方式
+
+- web_search 逐个确认 8/9 视频可找到公开引用（置信度 ✅）
+- KmzOZLf8wcw 搜索结果明确标注 "Video unavailable"（置信度 ✅ 确认不可用）
+- Nav 锚点修复通过 `Select-String` 全目录扫描确认 0 个残留 `#framework`
+
+---
+
+### 注意事项
+
+- YouTube Shorts 视频保质期短，建议定期核查（建议加入定期健康检查）
+- `_-M1HFuqus0`（Li Lu Explains Value Investing）同为 Short，当前可用但需关注
+
+---
 
 ## P7 — 投资案例分析（BYD框架）
 
