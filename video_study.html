@@ -264,7 +264,8 @@ function renderVideoList(videos){
     if(v.hasTranscript) html+='<span style="color:#c9a227">&#10003; Transcript</span>';
     html+='</div>';
     html+='<div style="font-size:.82rem;color:#6b7280;margin-top:8px">'+v.desc+'</div>';
-    html+='<a href="'+ytUrl+'" target="_blank" rel="noopener" class="vid-yt-link" onclick="event.stopPropagation()">&#9654; Watch on YouTube</a>';
+    html+='<a href="'+ytUrl+'" target="_blank" rel="noopener" class="vid-yt-link" onclick="event.stopPropagation()">&#9654; YouTube</a>';
+    if(v.bilibili){html+='<span class='vid-yt-link' style='background:#FF9EB5;color:#fff;cursor:default'>&#127910; '+v.bilibili+'</span>';}
     html+='<a href="'+detailUrl+'" class="vid-detail-link" onclick="event.stopPropagation()">&#8594; 详细页 / 分段笔记 &#8592;</a>';
     html+='</div></div>';
   }
