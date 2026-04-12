@@ -404,6 +404,32 @@
 
 **参考**：byd-investment-deep.html（框架模板）、pdd-investment-deep.html（如已完成，参考其格式）
 
+---
+
+### P7-3 · Alphabet (GOOGL/GOOG) 深度研究 — **P1**
+
+**状态**：✅ 已完成（2026-04-12）
+
+**文件输出**：`alphabet-investment-deep.html`（已创建并推送）
+
+**内容摘要**：
+- 建仓时间线：2020年Q2首次建仓→持续至2022年Q2（COVID恐慌和2022年加息恐慌两次时机）
+- 护城河分析：搜索惯性+数据飞轮+广告网络效应+三大增长引擎（搜索+YouTube+Cloud）
+- 43.86%为13F组合最大持仓（市值$15.65亿）
+- 正反方辩论：AI竞争威胁 vs 持久护城河
+- 持有过程：2022年科技股暴跌中持仓未减，仅小幅减持
+
+**Commit**：`a632940`（包含在 bookshelf investment case studies commit 中）
+
+---
+
+### P7-4 · Bank of America (BAC) 深度研究 — **P1**
+
+**状态**：待执行
+
+**文件输出**：`bac-investment-deep.html`（待创建）
+
+**分析框架**：同BYD框架8章，持有5.8年，13F数据充足
 
 ---
 
