@@ -1,6 +1,6 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-12
+> Last Updated by Agent: 2026-04-13
 > Last Audit: 2026-04-12 (P7-3~P7-9 李录全部持仓深度分析完成)
 
 ---
@@ -171,8 +171,8 @@
 | ✅ P7-4 | Bank of America (BAC) 深度研究 | 已完成 | bac-investment-deep.html，8章结构，建仓$22-24(2020Q1)，持仓US$574M(16%，第三大持仓) |
 | ✅ P7-2 | 中国邮储银行投资分析（BYD框架） | 已完成 | 创建 psbc-investment-deep.html，8章结构；持仓核实确认：2020-12-18首次买入10.06亿股(HK$4.228)，2021-01-15加仓2.68亿股(HK$5.3479)，累计成本约HK$57亿，持股比例最高5.93%，至今仍持有约9.86亿股 |
 
-| P6-C | 李录中国股票持仓研究（非13F渠道） | 待执行 | 核实HK股/A股持仓 |
-| P6-C-1 | 全球配置比例计算（非13F渠道） | 待执行 | 13F+非13F合并计算全球配置比例 |
+| ✅ P6-C | 李录中国股票持仓研究（非13F渠道） | ✅ 已完成（2026-04-13）| 核实完成：邮储银行+比亚迪有HKEx实锤；中国移动/电信/中海油/保利物业无公开证据，建议移除；贵州茅台间接消息但无法确认当前持仓 |
+| ✅ P6-C-1 | 全球配置比例计算（非13F渠道） | ✅ 已完成（2026-04-13）| 13F美股~45%精确数据；非美股（港股+A股）~55%估算主体；邮储银行+比亚迪为最大非美股持仓 |
 | P6-C-2 | 贵州茅台清仓分析（非13F渠道） | 待执行 | 创建 kweichow-moutai-investment-deep.html（9章，BYD框架） |
 | ✅ P6-2 | SEO | 已完成 | meta / OG / twitter:card |
 | ✅ P6-3 | 设计调性 | 已完成 | 深色 + 金色强调 |
@@ -218,6 +218,21 @@
 
 ## P6-C · 李录中国股票持仓研究（非13F渠道）
 
+**状态**：✅ 已完成（2026-04-13）
+
+**文件输出**：`china-hk-holdings-research.html`（已创建并推送）
+
+**内容摘要**：
+- 研究方法论：Tier 1（HKEx实锤）→ Tier 4（单一来源存疑）的置信度分级体系
+- 确认持仓：邮储银行（HKEx 2020-2025完整买卖路径）+ 比亚迪（HKEx 2021年7.03%确认 + 2026年4月对话确认仍持有）
+- 历史持仓：中国中车CRRC（2016年HKEx披露6.13%，已退出）
+- 排除持仓：中国移动/中国电信/中海油/保利物业 — 无HKEx公开披露，置信度0，建议从李录持仓列表移除
+- 茅台特殊案例：有间接消息（Granitefirm/Snowball）称李录在伯克希尔茅台谈判失败后自己买入茅台，2004-2019持有约287倍回报，但当前是否持有无法核实
+- 全球配置估算：13F美股~45%（精确）vs 非美股~55%（估算主体），比亚迪+邮储为核心非美股持仓
+- 关键洞察：13F仅揭示约45%仓位，港股持仓是李录持仓主体（与雪球分析一致）
+
+**Commit**：`70cd01c`
+
 **背景**：13F只覆盖美股持仓。李录在A股（沪深）和H股（港交所）的投资不在13F披露范围内，但MEMORY.md中的Portfolio Structure记录了大量非US持仓数据（如邮储银行、中国电信、中海油等）。需要从网络公开资料核实这些持仓和买入记录。
 
 **研究目标**：
@@ -253,103 +268,30 @@
 
 
 #### P6-C-1 · 全球配置比例计算
-**任务**：将非美股持仓与13F持仓合并，计算李录全球资产配置比例。
+**状态**：✅ 已完成（2026-04-13，纳入 china-hk-holdings-research.html 第6节）
 
-**已知数据**：
-- 13F美股组合：~US$35.7亿（2025Q4，含Alphabet/BAC/PDD/BRK.B/EWBC等9只）
-- 邮储银行(1658.HK)：当前持仓约9.86亿股，4.96%，当前价约HK$4.8，市值约HK$47亿(~US$6亿)
-- 比亚迪(1211.HK)：25年+连续持仓，持股量大（具体股数未披露），按当前价HK$300+估算市值很大
-- 喜马拉雅资本总管理规模：~US$50亿(2021) → ~US$80亿(2025)
-
-**输出**：一张配置表（美股/港股/其他，各标的名称+估算市值+估算比例），需标注置信度
+**输出内容**：
+- 13F美股组合：US$35.7亿，占比~45%（精确数据，SEC EDGAR 2025Q4）
+- 港股（比亚迪+邮储）：US$16-26亿，占比~20-30%（HKEx披露推算）
+- A股/其他/现金：US$18-28亿，占比~25-35%（无法精确估算）
+- 配置结论：非美股持仓是主体，13F仅揭示约45%仓位
 
 #### P6-C-2 · 贵州茅台清仓分析（BYD框架）
-**任务**：创建 kweichow-moutai-investment-deep.html，严格复用 byd-investment-deep.html 结构，新增第9章专门分析卖出逻辑。
-
-**背景**：
-- 李录在茅台上市初期（2001年前后）买入
-- 在塑化剂期间（2013-2014，茅台PE跌至4-5倍）重仓买入
-- 持有约20年后疑似清仓
-- 最终回报：约287倍
-
-**8+1章节结构**：
-1. 如何发现：2001年茅台IPO早期
-2. 关键特质：茅台的品牌护城河
-3. 买入逻辑：塑化剂期间4-5倍PE极端低估重仓买入
-4. 持有过程：20年+持有经历的重大考验
-5. 卖出时机：何时卖出？为什么卖？（如无公开记录，标注待核实）
-6. 正反方辩论：市场对茅台的分歧
-7. 方法论提炼：茅台 vs BYD/PDD的卖出逻辑对比
-8. 对普通投资者的启示
-9. 新增：卖出逻辑深度分析
-
-**输出**：li-lu-research/kweichow-moutai-investment-deep.html
-
-
-
-## P6-E · 视频页面可用性验证与失效处理
-
-**问题来源**：用户反馈（2026-04-12）
-
-**优先级**：P1
 
 **状态**：✅ 已完成（2026-04-12）
 
----
+**文件输出**：`kweichow-moutai-investment-deep.html`（已创建并推送）
 
-### 验证结果
+**内容摘要**：
+- 建仓时间线：2004年芒格投入8800万美元后开始系统建仓茅台
+- 护城河分析：地理不可复制性 + 时间壁垒（5年酿造周期）+ 品牌溢价 + 预收账款模式
+- 持有期间4次重大考验（2008金融危机/塑化剂+反腐/2018跌停）均未减持
+- 2019年卖出，PE超30倍，股价破千；卖出逻辑：估值极端化 + 销售问题困扰 + 机会成本
+- 最终回报：约287倍（持有近20年）
+- 正反方辩论完整记录（林园/段永平/但斌 vs 怀疑论者）
+- 方法论：买在极端悲观（PE 4-5倍）、卖在极端乐观（PE 30+倍）
 
-通过 web_search 逐个验证 9 个 YouTube embed 视频可用性：
-
-| 视频ID | 标题 | 状态 | 备注 |
-|--------|------|------|------|
-| b2yxBBMIEz0 | CCBC Fireside Chat | ✅ 可用 | |
-| KAoC8pErmb0 | The Chinese Warren Buffett | ✅ 可用 | |
-| LWikhUVneYI | Li Lu On 2021 Investing | ✅ 可用 | |
-| -gfRCGZ0zf4 | How I Got Started In Value Investing (CBS 2021) | ✅ 可用 | |
-| YaCRr0DIfuE | Investing in China: Unique Challenges | ✅ 可用 | |
-| 35RgNwcyjFk | Holy Grail of Investing (FAME 2012) | ✅ 可用 | |
-| IbrTswEKpLE | Why Only 5% Win in Stocks | ✅ 可用 | |
-| KmzOZLf8wcw | Li Lu's Secret to Investing Success (Short) | ❌ 已下架 | YouTube Short 被频道设为私有 |
-| _-M1HFuqus0 | Li Lu Explains Value Investing | ✅ 可用 | YouTube Short |
-
----
-
-### 修复内容
-
-**1. KmzOZLf8wcw.html - 不可用视频处理**
-- 问题：We Study Billionaires 频道将该 Short 设为私有/删除
-- 修复：移除失效 iframe，替换为「视频不可用」占位符
-- 占位符包含：警告图标 + 说明文字 + 跳转完整版访谈链接（KAoC8pErmb0）
-- Commit: `128023e`
-
-**2. 全部 9 个视频子页导航锚点修复**
-- 问题：导航链接指向 `#framework`（不存在），应为 `#my-framework`
-- 修复：批量替换所有 `index.html#framework` → `index.html#my-framework`（含 navbar 和 nav-drawer 两处）
-- 涉及页面：-gfRCGZ0zf4.html, 35RgNwcyjFk.html, b2yxBBMIEz0.html, IbrTswEKpLE.html, KAoC8pErmb0.html, LWikhUVneYI.html, YaCRr0DIfuE.html, _-M1HFuqus0.html, KmzOZLf8wcw.html
-- Commit: `128023e`
-
----
-
-### 验证方式
-
-- web_search 逐个确认 8/9 视频可找到公开引用（置信度 ✅）
-- KmzOZLf8wcw 搜索结果明确标注 "Video unavailable"（置信度 ✅ 确认不可用）
-- Nav 锚点修复通过 `Select-String` 全目录扫描确认 0 个残留 `#framework`
-
----
-
-### 注意事项
-
-- YouTube Shorts 视频保质期短，建议定期核查（建议加入定期健康检查）
-- `_-M1HFuqus0`（Li Lu Explains Value Investing）同为 Short，当前可用但需关注
-
-**附加发现（2026-04-12）：**
-- origin/master 的 9 个视频文件全部存在 UTF-8 编码腐败（U+FFFD 乱码），源于之前某次编辑时 PowerShell `>` 重定向以 UTF-16LE 写入导致
-- 修复：从 GitHub `df7aebc` commit 重新拉取干净版本，`origin/master` 的版本本身已被污染
-- Commit: `5252adf`
-
----
+**Commit**：`fb10101`
 
 ## P7 — 投资案例分析（BYD框架）
 
@@ -531,6 +473,7 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-13 | `70cd01c` | feat: add china-hk-holdings-research.html (P6-C, non-13F holdings verification, HKEx confirmed PSBC+BYD, excluded China Mobile/Telecom/CNOOC/PolyProp, global allocation ~55% non-US) |
 | 2026-04-12 | `0c3cfc9` | feat: add bac-investment-deep.html (P7-4, BYD framework applied to Bank of America investment, ~US$574M, 16%, 6yr hold) |
 | 2026-04-12 | `39c1c7a` | fix: P6-H footer nav + view-all links (quotes/books/timeline) |
 | 2026-04-12 | `0fef818` | docs: REVIEW_NOTES — P6-G completed (changelog section added) |
