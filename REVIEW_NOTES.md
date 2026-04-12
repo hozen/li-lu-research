@@ -343,6 +343,11 @@
 - YouTube Shorts 视频保质期短，建议定期核查（建议加入定期健康检查）
 - `_-M1HFuqus0`（Li Lu Explains Value Investing）同为 Short，当前可用但需关注
 
+**附加发现（2026-04-12）：**
+- origin/master 的 9 个视频文件全部存在 UTF-8 编码腐败（U+FFFD 乱码），源于之前某次编辑时 PowerShell `>` 重定向以 UTF-16LE 写入导致
+- 修复：从 GitHub `df7aebc` commit 重新拉取干净版本，`origin/master` 的版本本身已被污染
+- Commit: `5252adf`
+
 ---
 
 ## P7 — 投资案例分析（BYD框架）
