@@ -166,7 +166,8 @@
 | ✅ P6-4 | 汉堡导航菜单 | 已完成 | ≤1024px滑出式抽屉 + 夜间模式 |
 | ✅ P6-5 | 移动端暗模式全面修复 | 已完成 | text-muted变量覆盖 + 字号提升 + 硬编码颜色修复 |
 | ✅ P7-1 | PDD投资案例分析（BYD框架） | 已完成 | 创建 pdd-investment-deep.html，8章结构，置信度标注完整 |
-| P7-2 | 中国邮储银行投资分析（BYD框架） | 待核实持仓 | 用BYD框架分析邮储银行，参照P7-1格式 |
+| ✅ P7-2 | 中国邮储银行投资分析（BYD框架） | 已完成 | 创建 psbc-investment-deep.html，8章结构；持仓核实确认：2020-12-18首次买入10.06亿股(HK$4.228)，2021-01-15加仓2.68亿股(HK$5.3479)，累计成本约HK$57亿，持股比例最高5.93%，至今仍持有约9.86亿股 |
+
 | P6-C | 李录中国股票持仓研究（非13F渠道） | 待执行 | 核实HK股/A股持仓 |
 | P6-C-1 | 全球配置比例计算（非13F渠道） | 待执行 | 13F+非13F合并计算全球配置比例 |
 | P6-C-2 | 贵州茅台清仓分析（非13F渠道） | 待执行 | 创建 kweichow-moutai-investment-deep.html（9章，BYD框架） |
@@ -343,6 +344,7 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-12 | `d7dba0a` | feat: add psbc-investment-deep.html (P7-2, BYD framework applied to PSBC investment) |
 | 2026-04-12 | `179cac2` | feat: add pdd-investment-deep.html (P7-1, BYD framework applied to PDD investment) |
 | 2026-04-11 | `e9ffcec` | docs: REVIEW_NOTES fourth audit — all code verified complete, encoding+links clean |
 | 2026-04-11 | `d73aae7` | fix: nav link #framework -> #my-framework across all pages (encoding: clean) |
