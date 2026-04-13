@@ -1,12 +1,14 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
 > Last Updated by Agent: 2026-04-13
-> Last Audit: 2026-04-12 (P7-3~P7-9 李录全部持仓深度分析完成)
+> Last Audit: 2026-04-13 (P0: video_study.html 死链修复完成)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-13 第十三次**: P0 video_study.html 死链修复 — 该文件从未存在（commit `f144c4e` 曾从 master 删除）；新建 video_study.html 视频学习中心（含全部视频链接 + CCVideo 17段TOC）；index.html Master Class 卡片链接指向 video_study.html
+  - Commit: `3eeb277`
 - **2026-04-12 第十二次**: P6-E 视频页面可用性验证 — KmzOZLf8wcw 已下架（YouTube Short 私有）替换为占位符 + 全部9个视频子页 nav 锚点 #framework→#my-framework
   - Commit: `128023e`
 - **2026-04-11 第十一次**: 更新 REVIEW_NOTES — 标注所有用户内容任务状态（P2-1/P2-3/P3-1/P4-1 均为用户填充，无需代码介入）
@@ -473,6 +475,8 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-13 | `3eeb277` | fix: P0 video_study.html dead link — create learning hub + link Master Class card |
+| 2026-04-13 | `dc97ebf` | docs: REVIEW_NOTES — P6-C + P6-C-1 completed (non-13F holdings research + global allocation) |
 | 2026-04-13 | `70cd01c` | feat: add china-hk-holdings-research.html (P6-C, non-13F holdings verification, HKEx confirmed PSBC+BYD, excluded China Mobile/Telecom/CNOOC/PolyProp, global allocation ~55% non-US) |
 | 2026-04-12 | `0c3cfc9` | feat: add bac-investment-deep.html (P7-4, BYD framework applied to Bank of America investment, ~US$574M, 16%, 6yr hold) |
 | 2026-04-12 | `39c1c7a` | fix: P6-H footer nav + view-all links (quotes/books/timeline) |
