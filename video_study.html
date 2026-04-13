@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>视频学习中心 · 李录研究</title>
+<style>
+:root{--md-primary:#0a1628;--md-primary-rgb:10,22,40;--md-secondary:#c9a227;--md-on-secondary:#1a1a2e;--md-surface:#ffffff;--md-surface-variant:#f3f4f6;--md-background:#ffffff;--md-background-dark:#1a1a2e;--md-on-surface:#1a1a2e;--md-on-surface-muted:#4a5568;--md-outline:#d1d5db;--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--font-family:'Roboto',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--text-primary:#1a1a2e;--text-secondary:#4a5568;--text-muted:#6b7280;--text-inverse:#f5f5f5}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-family);background:var(--md-background);color:var(--text-primary);line-height:1.6}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.2rem;font-weight:600;text-decoration:none}
+#uni-navbar .uni-brand span{color:#c9a227}
+#uni-navbar .uni-links{display:flex;align-items:center;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:.875rem;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:#c9a227}
+#uni-navbar .uni-theme{background:#c9a227;color:#0a1628;border:none;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:600}
+#uni-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+#uni-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+@media(max-width:900px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-drawer{display:none}#uni-drawer.open{display:flex}}
+#uni-drawer{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(10,22,40,.98);padding:20px;flex-direction:column;gap:8px;z-index:9998;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+#uni-drawer.open{display:flex}
+#uni-drawer .uni-link{color:rgba(255,255,255,.8);font-size:1rem;padding:10px 14px}
+.main-content{padding-top:64px;max-width:960px;margin:0 auto;padding:84px 24px 60px}
+.back-bar{display:flex;align-items:center;gap:12px;padding:12px 0;margin-bottom:24px}
+.back-bar a{color:#c9a227;text-decoration:none;font-size:.9rem;display:flex;align-items:center;gap:6px}
+.back-bar a:hover{text-decoration:underline}
+.page-title{font-size:2rem;font-weight:700;color:#0a1628;margin-bottom:8px}
+.page-subtitle{color:#4a5568;font-size:1rem;margin-bottom:32px}
+.toc-card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:20px 24px;margin-bottom:40px}
+.toc-card h2{font-size:1.1rem;color:#0a1628;margin-bottom:12px}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.toc-list li{display:flex;align-items:baseline;gap:8px}
+.toc-list .toc-time{color:#c9a227;font-size:.8rem;font-weight:600;min-width:44px}
+.toc-list .toc-label{color:#374151;font-size:.9rem}
+.toc-list .toc-label:hover{color:#0a1628}
+.toc-list .toc-speaker{color:#9ca3af;font-size:.8rem;margin-left:auto}
+.section-sep{border:none;border-top:1px dashed #e5e7eb;margin:16px 0}
+.video-section{margin-bottom:40px}
+.video-card{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;display:flex;gap:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.06)}
+.video-card+.video-card{margin-top:16px}
+.video-thumb{width:160px;min-height:120px;background:linear-gradient(135deg,#0a1628,#1e3a6e);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.video-thumb .play-icon{font-size:2.5rem;color:#c9a227;opacity:.9}
+.video-body{padding:16px;flex:1}
+.video-body h3{font-size:1rem;color:#0a1628;margin-bottom:6px}
+.video-body p{font-size:.85rem;color:#4a5568;margin-bottom:8px}
+.video-body .meta{display:flex;gap:12px;font-size:.8rem;color:#9ca3af}
+.video-body .meta span{display:flex;align-items:center;gap:4px}
+.video-body a{color:#c9a227;text-decoration:none;font-size:.85rem;font-weight:600}
+.video-body a:hover{text-decoration:underline}
+@media(max-width:600px){.video-card{flex-direction:column}.video-thumb{width:100%;min-height:80px}.page-title{font-size:1.5rem}}
+footer{padding:16px 24px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
+footer a{color:#c9a227;text-decoration:none}
+@media(prefers-color-scheme:dark){
+body{background:#1a1a2e;color:#e2e8f0}
+#uni-navbar{background:rgba(10,22,40,.99)}
+#uni-drawer{background:rgba(10,22,40,.99)}
+.back-bar a{color:#c9a227}
+.page-title{color:#e2e8f0}
+.page-subtitle{color:#8fa3c0}
+.toc-card{background:#0d1b2a;border-color:#333}
+.toc-list .toc-label{color:#c8d6e8}
+.toc-list .toc-time{color:#c9a227}
+.video-card{background:#0d1b2a;border-color:#333}
+.video-body h3{color:#e2e8f0}
+.video-body p{color:#8fa3c0}
+footer{background:#0d1b2a;color:#888;border-color:#333}
+}</style>
+</head>
+<body>
+<nav id="uni-navbar">
+  <a href="index.html" class="uni-brand"><span>&#10070;</span> 李录研究</a>
+  <div class="uni-links">
+    <a href="index.html#about" class="uni-link">关于</a>
+    <a href="index.html#holdings" class="uni-link">持仓</a>
+    <a href="index.html#principles" class="uni-link">投资原则</a>
+    <a href="index.html#framework" class="uni-link">决策框架</a>
+    <a href="index.html#quotes" class="uni-link">语录</a>
+    <a href="index.html#faq" class="uni-link">FAQ</a>
+  </div>
+  <button class="uni-theme" onclick="toggleTheme()">&#9790; 夜间</button>
+  <div id="uni-hamburger" onclick="toggleDrawer()"><span></span><span></span><span></span></div>
+</nav>
+<div id="uni-drawer">
+  <a href="index.html#about" class="uni-link" onclick="toggleDrawer()">关于</a>
+  <a href="index.html#holdings" class="uni-link" onclick="toggleDrawer()">持仓</a>
+  <a href="index.html#principles" class="uni-link" onclick="toggleDrawer()">投资原则</a>
+  <a href="index.html#framework" class="uni-link" onclick="toggleDrawer()">决策框架</a>
+  <a href="index.html#quotes" class="uni-link" onclick="toggleDrawer()">语录</a>
+  <a href="index.html#faq" class="uni-link" onclick="toggleDrawer()">FAQ</a>
+</div>
+
+<div class="main-content">
+  <div class="back-bar">
+    <a href="index.html#videos">&#8592; 返回首页视频区</a>
+  </div>
+
+  <h1 class="page-title">&#127916; 视频学习中心</h1>
+  <p class="page-subtitle">李录公开演讲、访谈与课程精选，附分段时间戳导航</p>
+
+  <!-- CCVideo (Main CCBC Master Class) -->
+  <div class="video-section">
+    <div class="video-card">
+      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+      <div class="video-body">
+        <h3>哥大CCBC：中国价值投资大师课</h3>
+        <p>Bruce Greenwald × 李录 · 哥伦比亚大学第13届中美商业大会 · 全程对话翻译 + 分段笔记</p>
+        <div class="meta">
+          <span>&#9202; 85分钟</span>
+          <span>&#127916; 17个段落</span>
+          <span>&#127463;&#127465; 中英双语</span>
+        </div>
+        <a href="videos/-gfRCGZ0zf4.html">进入视频 &#8594;</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- CCVideo TOC -->
+  <div class="toc-card">
+    <h2>&#128337; 分段时间戳</h2>
+    <ul class="toc-list">
+      <li><span class="toc-time">02:24</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=144">开场介绍</a><span class="toc-speaker">Host</span></li>
+      <li><span class="toc-time">04:37</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=277">Q1: 投资哲学演变</a><span class="toc-speaker">Bruce</span></li>
+      <li><span class="toc-time">08:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=480">从Graham到芒格：哲学进化</a><span class="toc-speaker">Li Lu</span></li>
+      <li><span class="toc-time">12:30</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=750">Q2: 什么是伟大企业？</a><span class="toc-speaker">Bruce</span></li>
+      <li><span class="toc-time">12:42</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=762">ROIC与护城河：伟大企业标准</a><span class="toc-speaker">Li Lu</span></li>
+      <li><span class="toc-time">15:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=900">信任护城河：最核心的要素</a><span class="toc-speaker">Li Lu</span></li>
+      <hr class="section-sep">
+      <li><span class="toc-time">19:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=1140">constant change：护城河的持续挑战</a><span class="toc-speaker">Li Lu</span></li>
+      <li><span class="toc-time">21:51</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=1311">Q3: 投资方法的差异</a><span class="toc-speaker">Bruce</span></li>
+      <li><span class="toc-time">26:30</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=1590">从小企业到伟大企业：选股进化</a><span class="toc-speaker">Li Lu</span></li>
+      <li><span class="toc-time">33:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=1980">安全边际与DCF估值</a><span class="toc-speaker">Li Lu</span></li>
+      <li><span class="toc-time">38:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=2280">Q4: 通才还是专才？</a><span class="toc-speaker">Bruce</span></li>
+      <li><span class="toc-time">44:49</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=2689">中国：全球最活跃消费市场</a><span class="toc-speaker">Li Lu</span></li>
+      <hr class="section-sep">
+      <li><span class="toc-time">50:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=3000">中国各行业投资机会</a><span class="toc-speaker">Li Lu</span></li>
+      <li><span class="toc-time">55:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=3300">Q5: 服务经济与人才</a><span class="toc-speaker">Bruce</span></li>
+      <li><span class="toc-time">62:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=3720">Q6: 投资失误与教训</a><span class="toc-speaker">Bruce</span></li>
+      <li><span class="toc-time">62:01</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=3721">失误与对中国青年的建议</a><span class="toc-speaker">Li Lu</span></li>
+      <li><span class="toc-time">85:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=5100">Asian-American的桥梁角色</a><span class="toc-speaker">Li Lu</span></li>
+    </ul>
+  </div>
+
+  <!-- Other Videos -->
+  <div class="video-section">
+    <h2 style="font-size:1.1rem;color:#0a1628;margin-bottom:16px;">&#127744; 其他精选视频</h2>
+
+    <div class="video-card">
+      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+      <div class="video-body">
+        <h3>CCBC Fireside Chat: 中国市场机会</h3>
+        <p>We Study Billionaires 访谈 · 喜马拉雅资本 · ~2小时</p>
+        <div class="meta"><span>&#127916; YouTube</span></div>
+        <a href="videos/b2yxBBMIEz0.html">观看视频 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+      <div class="video-body">
+        <h3>The Chinese Warren Buffett: Li Lu</h3>
+        <p>We Study Billionaires 人物专题 · 李录投资生涯</p>
+        <div class="meta"><span>&#127916; YouTube</span></div>
+        <a href="videos/KAoC8pErmb0.html">观看视频 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+      <div class="video-body">
+        <h3>北大价值投资课程十周年演讲</h3>
+        <p>李录 · 北京大学价值投资课程</p>
+        <div class="meta"><span>&#127916; YouTube</span></div>
+        <a href="videos/LWikhUVneYI.html">观看视频 &#8594;</a>
+      </div>
+    </div>
+
+    <div class="video-card">
+      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+      <div class="video-body">
+        <h3>北大演讲：我对价值投资的理解</h3>
+        <p>李录 · 北京大学 · 3小时+ · Bilibili</p>
+        <div class="meta"><span>&#127916; Bilibili</span></div>
+        <a href="https://www.bilibili.com/video/BV19QzcYeEWW/" target="_blank">前往 Bilibili &#8599;</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>仅供学习参考 · 不构成投资建议</span>
+  <span style="color:#ef4444">数据截止: 2025 Q4 13F (2026-02-17披露)</span>
+</footer>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle('dark-mode');
+  var btn=document.querySelector('.uni-theme');
+  btn.textContent=document.body.classList.contains('dark-mode')?'☀ 白天':'&#9790; 夜间';
+}
+function toggleDrawer(){
+  document.getElementById('uni-drawer').classList.toggle('open');
+}
+</script>
+</body>
+</html>
