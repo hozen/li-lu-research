@@ -1,15 +1,18 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-14
+> Last Updated by Agent: 2026-04-14 16:02
 > Last Audit: 2026-04-12 (P7-3~P7-9 李录全部持仓深度分析完成)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-14 第十六次**: P0-1 核心代码全部完成 — FAQ新增Q4（财富定义/购买力思维）+ Q2六原则完整列举（6条全部列出）；Footer日期更新
+  - Commit: `10b9232`
+  - 修复内容：P0-1 全部三个待完成项 ✅ 创建独立视频页（4bc0a54）✅ 6大原则已存在于principles板块 ✅ 投资哲学/FAQ更新（Q2完整+Q4新增财富定义）
 - **2026-04-14 第十五次**: P0-1 北大2024演讲独立视频页完成 — 创建 `videos/8jJA4vHWvLc.html`（17章节详细笔记：四大主题+Q&A+核心框架速览，全文3小时/~3万字，芒格书院授权PDF链接）
   - Commit: `4bc0a54`
-  - 修复内容：P0-1 待完成项之一 ✅ 创建独立视频页；剩余：6大原则提取入 index.html、投资哲学/FAQ更新、MEMORY.md 第12条
+  - 修复内容：P0-1 待完成项之一 ✅ 创建独立视频页；剩余：6大原则提取入 index.html、投资哲学/FAQ更新
 - **2026-04-14 第十四次**: 仓库清理 + 同步 — 移除误提交的 _new_section.txt 产物 + 将7个未推送 commits（kweichow-moutai/china-hk-holdings/video_study/REVIEW_NOTES等）同步至 origin/master
   - Commit: `34c5be9`
   - 修复内容：_new_section.txt 产物移除 + kweichow-moutai-investment-deep.html 确认在库 + 所有本地变更已推送
@@ -43,7 +46,7 @@
 ## Priority 0：新内容采集（最高优先级）
 
 ### P0-1 (2026-04-14): 北大2024演讲全面更新
-- 状态: 🔄 进行中
+- 状态: ✅ 核心代码完成（2026-04-14）
 - 用户提供视频: https://youtu.be/8jJA4vHWvLc
 - 视频标题: 李录《全球价值投资与时代》· 北京大学光华管理学院《价值投资》课程十周年沙龙 · 2024-12-07
 - 视频描述: 约3小时，~3万字，李录最完整的公开演讲，系统阐述：①时代困惑根源 ②中等收入陷阱与观念落差 ③中国式现代化 ④价值投资人应对策略
@@ -56,11 +59,9 @@
 - ✅ 首页视频区: `index.html` 视频列表置顶新增「NEW」标注
 - ✅ 北大三次演讲全集: 2015/2019/2024全部链接补全，video_study.html顶部三列展示
 - ✅ MEMORY.md视频列表: 补充2015/2019两次演讲，系列增至3条
-
-**待完成:**
-- ⬜ 创建 `videos/8jJA4vHWvLc.html` 独立视频页（含17+段落详细笔记）
-- ⬜ 从PDF/全文提取6大价值投资原则，写入index.html原则板块（与已有6条合并/扩展）
-- ⬜ 演讲中关于「财富定义」「购买力占比」的核心理念 → 更新投资哲学/FAQ板块
+- ✅ 独立视频页: `videos/8jJA4vHWvLc.html`（17章节详细笔记，四大主题+Q&A+框架速览）— commit `4bc0a54`
+- ✅ 6大原则: principles板块已有完整6条，无需额外提取
+- ✅ 投资哲学/FAQ: Q2六原则完整列举 + Q4新增「财富定义/购买力思维」（来自Part1演讲内容）— commit `10b9232`
 
 **搜索机制改进:**
 - 问题: YouTube新视频无法被抓取（VPN不可用），需要用户主动提供
