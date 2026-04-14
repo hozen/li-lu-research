@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-13
+> Last Updated by Agent: 2026-04-14
 > Last Audit: 2026-04-12 (P7-3~P7-9 李录全部持仓深度分析完成)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-14 第十四次**: 仓库清理 + 同步 — 移除误提交的 _new_section.txt 产物 + 将7个未推送 commits（kweichow-moutai/china-hk-holdings/video_study/REVIEW_NOTES等）同步至 origin/master
+  - Commit: `34c5be9`
+  - 修复内容：_new_section.txt 产物移除 + kweichow-moutai-investment-deep.html 确认在库 + 所有本地变更已推送
 - **2026-04-13 第十三次**: P0 视频中心可用性修复 — 创建 video_study.html 学习中心 hub + 修复 index.html Master Class 卡片空链接 → video_study.html（17段落TOC完整）
   - Commit: `70f05b9`
 - **2026-04-12 第十二次**: P6-E 视频页面可用性验证 — KmzOZLf8wcw 已下架（YouTube Short 私有）替换为占位符 + 全部9个视频子页 nav 锚点 #framework→#my-framework
