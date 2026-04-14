@@ -7,6 +7,9 @@
 
 ## 已修复记录
 
+- **2026-04-14 第十五次**: P0-1 北大2024演讲独立视频页完成 — 创建 `videos/8jJA4vHWvLc.html`（17章节详细笔记：四大主题+Q&A+核心框架速览，全文3小时/~3万字，芒格书院授权PDF链接）
+  - Commit: `4bc0a54`
+  - 修复内容：P0-1 待完成项之一 ✅ 创建独立视频页；剩余：6大原则提取入 index.html、投资哲学/FAQ更新、MEMORY.md 第12条
 - **2026-04-14 第十四次**: 仓库清理 + 同步 — 移除误提交的 _new_section.txt 产物 + 将7个未推送 commits（kweichow-moutai/china-hk-holdings/video_study/REVIEW_NOTES等）同步至 origin/master
   - Commit: `34c5be9`
   - 修复内容：_new_section.txt 产物移除 + kweichow-moutai-investment-deep.html 确认在库 + 所有本地变更已推送
@@ -53,7 +56,7 @@
 - ✅ 首页视频区: `index.html` 视频列表置顶新增「NEW」标注
 
 **待完成:**
-- ⬜ 创建 `videos/8jJA4vHWvLc.html` 独立视频页（含17+段落详细笔记）
+- ✅ 创建 `videos/8jJA4vHWvLc.html` 独立视频页（含17+段落详细笔记）— `4bc0a54`
 - ⬜ 从PDF/全文提取6大价值投资原则，写入index.html原则板块（与已有6条合并/扩展）
 - ⬜ 演讲中关于「财富定义」「购买力占比」的核心理念 → 更新投资哲学/FAQ板块
 - ⬜ 更新MEMORY.md视频列表（第12条）
