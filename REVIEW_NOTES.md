@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-14 16:02
-> Last Audit: 2026-04-12 (P7-3~P7-9 李录全部持仓深度分析完成)
+> Last Updated by Agent: 2026-04-15 00:02
+> Last Audit: 2026-04-14 (P6-4 汉堡菜单功能修复 + P7-3~P7-9 完成)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-14 第十七次**: P6-4 汉堡菜单功能修复 — 添加缺失的`toggleMenu()` JS函数（index.html line 231）+ 暗模式文字颜色全面提亮 + 通用导航暗色样式；REVIEW_NOTES P6-4状态纠正（2026-04-11布局完成/2026-04-14功能修复）
+  - Commit: `11b72f8`
+  - 修复内容：P6-4 2026-04-11标记完成但`toggleMenu()`函数实际缺失，导致汉堡按钮无法工作；2026-04-14核实并修复
 - **2026-04-14 第十六次**: P0-1 核心代码全部完成 — FAQ新增Q4（财富定义/购买力思维）+ Q2六原则完整列举（6条全部列出）；Footer日期更新
   - Commit: `10b9232`
   - 修复内容：P0-1 全部三个待完成项 ✅ 创建独立视频页（4bc0a54）✅ 6大原则已存在于principles板块 ✅ 投资哲学/FAQ更新（Q2完整+Q4新增财富定义）
@@ -158,9 +161,10 @@
 - 实现: 返回顶部按钮 + 窄屏卡片不溢出
 
 ### ✅ 6.4 汉堡导航菜单
-- 状态: ✅ 已完成（2026-04-11）
+- 状态: ✅ 已完成（2026-04-11 CSS布局 + 2026-04-14 JS功能修复）
 - 实现: ≤1024px 显示三线汉堡按钮 → 右侧滑出抽屉，9个导航链接 + 夜间模式开关；点击链接自动关闭抽屉；点击遮罩层关闭
-- Commit: `待提交`
+- 修复记录: 2026-04-11 仅完成CSS布局和HTML结构；`toggleMenu()` JS函数实际缺失（2026-04-14发现），已通过 commit `11b72f8` 修复：添加缺失的`toggleMenu()`函数 + 暗模式文字颜色全面提亮（#c8d6e8→#dde6f0等）+ 通用导航暗色模式样式（uni-drawer/mobile-drawer）
+- Commit: `11b72f8`
 
 ### ✅ 6.5 移动端暗模式全面修复
 - 状态: ✅ 已完成（2026-04-11）
@@ -517,6 +521,8 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-14 | `11b72f8` | fix: mobile hamburger toggleMenu() JS function missing + dark mode contrast improvements (#c8d6e8→#dde6f0, #e2e8f0→#f0f4f8, #c9a227→#f0c040, uni-drawer/mobile-drawer dark mode) |
+| 2026-04-14 | `c9b6eaf` | docs: REVIEW_NOTES — task table complete: P7-3/5/6/7/8/9 + SHA fixes for P7-1/2 |
 | 2026-04-13 | `70f05b9` | fix: P0 dead link — create video_study.html hub + link Master Class card |
 | 2026-04-13 | `40d736c` | feat: add china-hk-holdings-research.html (P6-C, non-13F holdings verification, HKEx confirmed PSBC+BYD, excluded China Mobile/Telecom/CNOOC/PolyProp, global allocation ~55% non-US) |
 | 2026-04-12 | `0c3cfc9` | feat: add bac-investment-deep.html (P7-4, BYD framework applied to Bank of America investment, ~US$574M, 16%, 6yr hold) |
