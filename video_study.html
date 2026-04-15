@@ -15,7 +15,6 @@ body{font-family:var(--font-family);background:var(--md-background);color:var(--
 #uni-navbar .uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:.875rem;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
 #uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
 #uni-navbar .uni-link.active{color:#c9a227}
-#uni-navbar .uni-theme{background:#c9a227;color:#0a1628;border:none;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:600}
 #uni-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
 #uni-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
 @media(max-width:900px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-drawer{display:none}#uni-drawer.open{display:flex}}
@@ -237,11 +236,7 @@ footer{background:#0d1b2a;color:#888;border-color:#333}
 </footer>
 
 <script>
-function toggleTheme(){
-  document.body.classList.toggle('dark-mode');
-  var btn=document.querySelector('.uni-theme');
-  btn.textContent=document.body.classList.contains('dark-mode')?'☀ 白天':'&#9790; 夜间';
-}
+
 function toggleDrawer(){
   document.getElementById('uni-drawer').classList.toggle('open');
 }
