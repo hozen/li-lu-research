@@ -73,6 +73,17 @@ a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{co
 footer{padding:10px 16px;background:var(--md-surface-variant);border-top:1px solid var(--md-outline);font-size:.75rem;color:var(--text-muted);display:flex;justify-content:space-between}
 footer a{color:#c9a227;text-decoration:none}
 @media(max-width:768px){:root{--sp-10:20px}.navbar{padding:0 var(--sp-5)}.nav-links{display:none}.hamburger{display:flex}.main-content{padding-top:var(--navbar-height)}.chapter-body,.chapter-meta{padding-left:0}.chapter{padding-left:0}}
+/* Video degradation fallback — graceful YouTube unavailable handling */
+.video-fallback{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#1e3a6e);color:#f0f4f8;padding:24px;text-align:center;gap:12px}
+.video-fallback.show{display:flex}
+.video-fallback-icon{font-size:3rem;opacity:.6}
+.video-fallback-title{font-size:1rem;font-weight:700;color:#c9a227}
+.video-fallback-msg{font-size:.85rem;color:#8fa3c0;max-width:400px}
+.video-fallback-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;margin-top:4px;transition:background .2s}
+.video-fallback-btn:hover{background:#b8922a}
+body.dark-mode .video-fallback{background:linear-gradient(135deg,#0a1628,#1a365d)}
+body.dark-mode .video-fallback-title{color:#f0c040}
+body.dark-mode .video-fallback-msg{color:#8fa3c0}
 </style>
 </head>
 <body>
@@ -130,7 +141,14 @@ document.body.classList.toggle("dark-mode")};
 </div>
 
 <div class="video-embed">
-<iframe src="https://www.youtube.com/embed/8jJA4vHWvLc?rel=0" allowfullscreen title="李录《全球价值投资与时代》北京大学光华管理学院 2024-12-07"></iframe>
+<iframe src="https://www.youtube.com/embed/8jJA4vHWvLc?rel=0" allowfullscreen title="李录《全球价值投资与时代》北京大学光华管理学院 2024-12-07" onerror="this.style.display='none';document.getElementById('videoFallback8jJA4vHWvLc').classList.add('show')"></iframe>
+<!-- Video fallback: shown when YouTube embed is unavailable -->
+<div class="video-fallback" id="videoFallback8jJA4vHWvLc">
+  <div class="video-fallback-icon">&#9654;</div>
+  <div class="video-fallback-title">李录《全球价值投资与时代》· 北京大学光华管理学院 2024-12-07</div>
+  <div class="video-fallback-msg">此视频暂时无法播放，请点击下方按钮在 YouTube 原站观看</div>
+  <a href="https://www.youtube.com/watch?v=8jJA4vHWvLc" target="_blank" rel="noopener" class="video-fallback-btn">&#9654; 在 YouTube 观看</a>
+</div>
 </div>
 
 <div class="video-header">
