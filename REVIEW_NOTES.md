@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-15 12:02
-> Last Audit: 2026-04-15 (每日UX审查：总分 ims-gtm 21/30，li-lu-research 24/30；无新增P0/P1；黄色对比度/视频降级处理为持续历史问题)
+> Last Updated by Agent: 2026-04-15 16:02
+> Last Audit: 2026-04-15 16:02 (每日UX审查：总分 ims-gtm 21/30，li-lu-research 24/30；无新增P0/P1；Footer链接visited状态修复完成；黄色对比度/视频降级处理为持续历史问题)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-15 第十九次**: P2-Footer链接visited状态修复 — 为index.html两个CSS块的footer链接添加`:visited`和`:hover`样式：light mode `.footer a:visited{color:#b8960b}` + `.footer a:hover{color:#e0b830}`；dark mode `body.dark-mode .footer a:visited{color:#9a7b1a}` + `body.dark-mode .footer a:hover{color:#c9a227}`；修复2026-04-14和2026-04-15每日UX审查中重复出现的P2问题（Footer链接无visited状态，用户无法区分已访问/未访问页面）
+  - Commit: `3963076`
+  - 修复内容：P2 UX问题（每日UX审查持续标注）：Footer链接在用户访问后保持金色（#c9a227）还是变为浏览器默认紫色导致无法区分；添加visited为哑金色(#b8960b/##9a7b1a)以区分已访问链接；hover为亮金色(#e0b830/#c9a227)提供交互反馈
 - **2026-04-15 第十八次**: P2-视频页降级处理 — 为全部10个视频页面添加YouTube嵌入失败时的降级处理（onerror handler + fallback div）；fallback显示：视频标题 + 描述 + YouTube外链按钮；支持暗模式；涵盖所有视频页（-gfRCGZ0zf4/35RgNwcyjFk/8jJA4vHWvLc/IbrTswEKpLE/KAoC8pErmb0/KmzOZLf8wcw/LWikhUVneYI/YaCRr0DIfuE/_-M1HFuqus0/b2yxBBMIEz0）
   - Commit: `19fdb2a`
   - 修复内容：P2 UX问题（2026-04-14/04-15审查重复）：视频页YouTube不可用时显示降级内容（视频信息+外链）而非空白或错误；onerror handler监听嵌入失败并切换fallback显示
