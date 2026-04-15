@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-15 00:02
-> Last Audit: 2026-04-14 (P6-4 汉堡菜单功能修复 + P7-3~P7-9 完成)
+> Last Updated by Agent: 2026-04-15 12:02
+> Last Audit: 2026-04-15 (每日UX审查：总分 ims-gtm 21/30，li-lu-research 24/30；无新增P0/P1；黄色对比度/视频降级处理为持续历史问题)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-15 第十八次**: P2-视频页降级处理 — 为全部10个视频页面添加YouTube嵌入失败时的降级处理（onerror handler + fallback div）；fallback显示：视频标题 + 描述 + YouTube外链按钮；支持暗模式；涵盖所有视频页（-gfRCGZ0zf4/35RgNwcyjFk/8jJA4vHWvLc/IbrTswEKpLE/KAoC8pErmb0/KmzOZLf8wcw/LWikhUVneYI/YaCRr0DIfuE/_-M1HFuqus0/b2yxBBMIEz0）
+  - Commit: `19fdb2a`
+  - 修复内容：P2 UX问题（2026-04-14/04-15审查重复）：视频页YouTube不可用时显示降级内容（视频信息+外链）而非空白或错误；onerror handler监听嵌入失败并切换fallback显示
 - **2026-04-14 第十七次**: P6-4 汉堡菜单功能修复 — 添加缺失的`toggleMenu()` JS函数（index.html line 231）+ 暗模式文字颜色全面提亮 + 通用导航暗色样式；REVIEW_NOTES P6-4状态纠正（2026-04-11布局完成/2026-04-14功能修复）
   - Commit: `11b72f8`
   - 修复内容：P6-4 2026-04-11标记完成但`toggleMenu()`函数实际缺失，导致汉堡按钮无法工作；2026-04-14核实并修复
@@ -200,6 +203,7 @@
 | ✅ P2-1 | 研究笔记板块 | 已完成 | Agent主动填充4篇结构化笔记（CCBC/四理念/护城河/方法论） |
 | ✅ P2-2 | 视频卡片空链接 | 已完成 | href=# → 实际链接（commit `c092891`） |
 | ✅ P2-3 | 活动时间线 | 结构完成 | 10-item checklist 由用户勾选 |
+| ✅ P2-4 | 视频页降级处理 | 已完成 | 全部10个视频页添加YouTube onerror fallback，嵌入失败时显示视频信息+外链（commit `19fdb2a`） |
 | ✅ P3-1 | 我的投资框架 | 结构完成 | 框架由用户填充（Q3） |
 | ✅ P3-2 | 文明3.0思想框架 | 已完成 | 三阶段卡片 + 中国转型论点 |
 | ✅ P4-1 | 原则映射 | 结构完成 | 表格由用户填充（Q4） |
@@ -521,6 +525,7 @@
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-15 | `19fdb2a` | fix: add video degradation fallback to all 10 video pages (P2-4) — onerror handler + fallback div with video title/description/YouTube button, dark mode support |
 | 2026-04-14 | `11b72f8` | fix: mobile hamburger toggleMenu() JS function missing + dark mode contrast improvements (#c8d6e8→#dde6f0, #e2e8f0→#f0f4f8, #c9a227→#f0c040, uni-drawer/mobile-drawer dark mode) |
 | 2026-04-14 | `c9b6eaf` | docs: REVIEW_NOTES — task table complete: P7-3/5/6/7/8/9 + SHA fixes for P7-1/2 |
 | 2026-04-13 | `70f05b9` | fix: P0 dead link — create video_study.html hub + link Master Class card |
@@ -583,6 +588,51 @@
 - ✅ hamburger菜单滑出式drawer正常（≤1024px激活）。
 - ✅ back-to-top按钮存在（右下角固定）。
 - ✅ 暗模式移动端全面修复（--text-muted覆盖正常）。
+
+### 对比度检查
+- ✅ 正文文字对比度约10:1，远超4.5:1标准。
+- ✅ 金色强调（#c9a227 on #1a365d）对比度约5.2:1，满足AA标准。
+- ✅ 主要链接（#64b5f6 on #0a1628）对比度约6.5:1，满足AA标准。
+
+---
+## 每日 UX 审查 — 2026-04-15
+
+### 综合评分
+| Heuristic | 评分/3 | 问题 |
+|-----------|--------|------|
+| 1. 系统状态可见性 | 2 | ✅ 静态HTML无需加载指示器；⚠️ 页面无最后更新时间标注（index.html底部有数据截止日期，但视频学习中心等子页无） |
+| 2. 系统与真实世界匹配 | 3 | ✅ 投资术语准确；学习路径设计符合投资教育逻辑；置信度标注清晰 |
+| 3. 用户控制与自由 | 2 | ✅ hamburger菜单正常；back-to-top按钮存在；⚠️ 无面包屑导航 |
+| 4. 一致性与标准 | 3 | ✅ Dark + gold主题全站一致；移动端/桌面端风格统一 |
+| 5. 错误预防 | 2 | ✅ 置信度标签（🟢/⚠️）帮助用户判断信息可靠性；⚠️ 视频播放失败无降级处理 |
+| 6. 识别优于记忆 | 3 | ✅ 视频时间戳导航；学习阶段结构清晰；案例研究框架一致 |
+| 7. 灵活性与效率 | 2 | ✅ 视频嵌入播放；外链到YouTube/Bilibili；⚠️ 无键盘快捷键 |
+| 8. 审美与极简设计 | 3 | ✅ 专业深色主题+金色强调；信息密度适当；排版清晰 |
+| 9. 帮助用户从错误恢复 | 2 | ✅ FAQ页面存在；⚠️ 失效视频链接无降级内容（与2026-04-14审查P2问题重复，持续监控） |
+| 10. 帮助与文档 | 2 | ✅ 学习路径引导完整；FAQ区块存在；⚠️ 无站内搜索 |
+| **总分** | **24/30** | |
+
+### P0 问题（致命）
+- 无。所有历史P0问题已于2026-04-12前全部完成修复。
+
+### P1 问题（严重）
+- 无。所有历史P1问题已修复。
+
+### P2 问题（一般）
+- **视频页缺少降级处理**：✅ 已完成（2026-04-15）— 全部10个视频页添加onerror fallback机制，YouTube不可用时显示标题+描述+外链按钮
+- **Footer链接无visited状态**：用户无法区分已访问/未访问的页面链接。与历史审查重复。
+
+### P3 改进建议
+- **面包屑导航**：深层页面缺少面包屑。与历史审查重复。
+- **站内搜索**：站点无全局搜索功能。与历史审查重复。
+- **键盘快捷键**：高频操作无键盘支持。与历史审查重复。
+- **404页面**：访问不存在页面时显示友好提示。与历史审查重复。
+
+### 移动端检查
+- ✅ hamburger菜单滑出式drawer正常（≤1024px激活）。
+- ✅ back-to-top按钮存在（右下角固定）。
+- ✅ 暗模式移动端全面修复（--text-muted覆盖正常）。
+- ⚠️ 移动端视频学习中心（video_study.html）内嵌YouTube iframe在部分设备上可能加载缓慢，建议添加"在YouTube观看"外链备选。
 
 ### 对比度检查
 - ✅ 正文文字对比度约10:1，远超4.5:1标准。
