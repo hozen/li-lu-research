@@ -41,8 +41,8 @@ body.dark-mode,.dark-mode{--text-muted:#8fa3c0}
 body.dark-mode .subtitle,body.dark-mode .stat-label,body.dark-mode .section-subtitle,body.dark-mode .quote-source,body.dark-mode .book-info p,body.dark-mode .video-source,body.dark-mode .footer,body.dark-mode .hero-text .tagline{color:#8fa3c0}
 body.dark-mode .hero-image-box .placeholder-text{color:#8fa3c0}
 body.dark-mode .principle-card p{color:#b0bfd4}
-body.dark-mode .hamburger span{background:#8fa3c0}
-body.dark-mode .drawer-close{color:#8fa3c0}
+
+
 /* Dark mode — hardcoded muted colors */
 body.dark-mode .card p{color:#dde6f0}
 body.dark-mode .quote-text{color:#f0f4f8}
@@ -58,32 +58,6 @@ body.dark-mode .book-info p{color:#8fa3c0}
 body.dark-mode .btn-outline{color:#c9a227;border-color:#c9a227}
 body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
 *{box-sizing:border-box;margin:0;padding:0}
-.navbar{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.95);backdrop-filter:blur(10px);z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,0.2)}
-.nav-brand{color:var(--text-light);font-size:1.3rem;font-weight:600}
-.nav-brand span{color:var(--accent-gold)}
-.nav-links{display:flex;gap:8px}
-.nav-link{color:var(--text-muted);text-decoration:none;padding:10px 18px;border-radius:8px;font-size:0.9rem;font-weight:500;transition:all 0.3s}
-.nav-link:hover,.nav-link.active{color:var(--text-light);background:rgba(201,162,39,0.15)}
-.nav-link.active{color:var(--accent-gold)}
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:rgba(255,255,255,0.1);border:none;border-radius:8px;cursor:pointer;padding:10px 12px;margin-left:8px}
-.hamburger span{display:block;width:100%;height:2px;background:var(--text-muted);border-radius:2px;transition:all 0.3s}
-.hamburger:hover span{background:var(--text-light)}
-.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1001;opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s}
-.mobile-overlay.open{opacity:1;visibility:visible}
-.mobile-drawer{position:fixed;top:0;right:0;bottom:0;width:280px;max-width:80vw;background:var(--primary-dark);z-index:1002;transform:translateX(100%);transition:transform 0.3s ease;padding:24px 20px;display:flex;flex-direction:column}
-.mobile-drawer.open{transform:translateX(0)}
-.drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
-.drawer-brand{color:var(--text-light);font-size:1.1rem;font-weight:600}
-.drawer-brand span{color:var(--accent-gold)}
-.drawer-close{width:36px;height:36px;background:rgba(255,255,255,0.1);border:none;border-radius:8px;cursor:pointer;color:var(--text-muted);font-size:18px;display:flex;align-items:center;justify-content:center}
-.drawer-close:hover{color:var(--text-light)}
-.drawer-nav{display:flex;flex-direction:column;gap:4px}
-.drawer-nav .nav-link{color:var(--text-muted);padding:14px 16px;border-radius:8px;font-size:1rem}
-.drawer-nav .nav-link:hover,.drawer-nav .nav-link.active{color:var(--text-light);background:rgba(201,162,39,0.15)}
-.drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1)}
-.search-box{display:flex;align-items:center;background:rgba(255,255,255,0.1);border-radius:20px;padding:5px 15px;margin-left:20px;}
-.search-box input{background:transparent;border:none;color:#fff;outline:none;width:120px;font-size:0.85rem;}
-.search-box input::placeholder{color:rgba(255,255,255,0.5);}
 .hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
 .hero::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
 .hero-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
@@ -153,8 +127,8 @@ body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
 .footer a:visited{color:#b8960b}
 .footer a:hover{color:#e0b830}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;text-align:center;font-size:0.85rem;margin-top:40px}
-@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.nav-links{display:none}.hamburger{display:flex}.theme-btn-desktop{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
-@media(max-width:768px){.navbar{padding:0 20px}.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}.stat-label{font-size:1rem}.section-subtitle{font-size:1rem}.card p{font-size:1rem}.card h3{font-size:1.15rem}.hero-text .subtitle{font-size:1.2rem}.tagline{font-size:1rem}.quote-text{font-size:1rem}}
+@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.theme-btn-desktop{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
+@media(max-width:768px){.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}.stat-label{font-size:1rem}.section-subtitle{font-size:1rem}.card p{font-size:1rem}.card h3{font-size:1.15rem}.hero-text .subtitle{font-size:1.2rem}.tagline{font-size:1rem}.quote-text{font-size:1rem}}
 @media(max-width:768px){body.dark-mode .hero-text .subtitle{font-size:1.2rem;color:#b0bfd4}body.dark-mode .tagline{font-size:1rem;color:#f0c040}body.dark-mode .stat-label{color:#b0bfd4;font-size:1rem}body.dark-mode .card{font-size:1rem}body.dark-mode .card p,body.dark-mode .quote-text{color:#c8d6e8;font-size:1rem}body.dark-mode .section-subtitle{color:#b0bfd4;font-size:1rem}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate-in{animation:fadeInUp 0.6s ease forwards}.delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.2s}.delay-3{animation-delay:0.3s}
 </style>
@@ -214,41 +188,6 @@ body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
 <a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
 <div class="uni-drawer-theme">
 </div>
-</div>
-<nav class=navbar>
-<div class=nav-brand><span>&#10070;</span> 李录研究</div>
-<div class=nav-links>
-<a href=#about class=nav-link>关于</a>
-<a href=#principles class=nav-link>投资原则</a>
-<a href=#my-framework class=nav-link>投资框架</a>
-<a href=#study-notes class=nav-link>研究笔记</a>
-<a href=quotes.html class=nav-link>语录</a>
-<a href=bookshelf.html class=nav-link>书籍</a>
-<a href=#holdings class=nav-link>持仓</a>
-<a href=#faq class=nav-link>FAQ</a>
-</div>
-<button class=hamburger onclick="toggleMenu()"><span></span><span></span><span></span></button>
-<button class=theme-btn-desktop style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 夜间</button>
-</nav>
-<div class=mobile-overlay id=mobileOverlay onclick="toggleMenu()"></div>
-<div class=mobile-drawer id=mobileDrawer>
-  <div class=drawer-header>
-    <div class=drawer-brand><span>&#10070;</span> 李录研究</div>
-    <button class=drawer-close onclick="toggleMenu()">&#x2715;</button>
-  </div>
-  <nav class=drawer-nav>
-    <a href=#about class=nav-link onclick="toggleMenu()">关于</a>
-    <a href=#principles class=nav-link onclick="toggleMenu()">投资原则</a>
-    <a href=#my-framework class=nav-link onclick="toggleMenu()">投资框架</a>
-    <a href=#study-notes class=nav-link onclick="toggleMenu()">研究笔记</a>
-    <a href=quotes.html class=nav-link onclick="toggleMenu()">语录</a>
-    <a href=bookshelf.html class=nav-link onclick="toggleMenu()">书籍</a>
-    <a href=#holdings class=nav-link onclick="toggleMenu()">持仓</a>
-    <a href=#faq class=nav-link onclick="toggleMenu()">FAQ</a>
-  </nav>
-  <div class=drawer-theme>
-    
-  </div>
 </div>
 <section class=hero>
 <div class=hero-content>
@@ -408,8 +347,8 @@ body.dark-mode,.dark-mode{--text-muted:#8fa3c0}
 body.dark-mode .subtitle,body.dark-mode .stat-label,body.dark-mode .section-subtitle,body.dark-mode .quote-source,body.dark-mode .book-info p,body.dark-mode .video-source,body.dark-mode .footer,body.dark-mode .hero-text .tagline{color:#8fa3c0}
 body.dark-mode .hero-image-box .placeholder-text{color:#8fa3c0}
 body.dark-mode .principle-card p{color:#b0bfd4}
-body.dark-mode .hamburger span{background:#8fa3c0}
-body.dark-mode .drawer-close{color:#8fa3c0}
+
+
 /* Dark mode — hardcoded muted colors */
 body.dark-mode .card p{color:#dde6f0}
 body.dark-mode .quote-text{color:#f0f4f8}
@@ -425,32 +364,6 @@ body.dark-mode .book-info p{color:#8fa3c0}
 body.dark-mode .btn-outline{color:#c9a227;border-color:#c9a227}
 body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
 *{box-sizing:border-box;margin:0;padding:0}
-.navbar{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.95);backdrop-filter:blur(10px);z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,0.2)}
-.nav-brand{color:var(--text-light);font-size:1.3rem;font-weight:600}
-.nav-brand span{color:var(--accent-gold)}
-.nav-links{display:flex;gap:8px}
-.nav-link{color:var(--text-muted);text-decoration:none;padding:10px 18px;border-radius:8px;font-size:0.9rem;font-weight:500;transition:all 0.3s}
-.nav-link:hover,.nav-link.active{color:var(--text-light);background:rgba(201,162,39,0.15)}
-.nav-link.active{color:var(--accent-gold)}
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:rgba(255,255,255,0.1);border:none;border-radius:8px;cursor:pointer;padding:10px 12px;margin-left:8px}
-.hamburger span{display:block;width:100%;height:2px;background:var(--text-muted);border-radius:2px;transition:all 0.3s}
-.hamburger:hover span{background:var(--text-light)}
-.mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1001;opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s}
-.mobile-overlay.open{opacity:1;visibility:visible}
-.mobile-drawer{position:fixed;top:0;right:0;bottom:0;width:280px;max-width:80vw;background:var(--primary-dark);z-index:1002;transform:translateX(100%);transition:transform 0.3s ease;padding:24px 20px;display:flex;flex-direction:column}
-.mobile-drawer.open{transform:translateX(0)}
-.drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px}
-.drawer-brand{color:var(--text-light);font-size:1.1rem;font-weight:600}
-.drawer-brand span{color:var(--accent-gold)}
-.drawer-close{width:36px;height:36px;background:rgba(255,255,255,0.1);border:none;border-radius:8px;cursor:pointer;color:var(--text-muted);font-size:18px;display:flex;align-items:center;justify-content:center}
-.drawer-close:hover{color:var(--text-light)}
-.drawer-nav{display:flex;flex-direction:column;gap:4px}
-.drawer-nav .nav-link{color:var(--text-muted);padding:14px 16px;border-radius:8px;font-size:1rem}
-.drawer-nav .nav-link:hover,.drawer-nav .nav-link.active{color:var(--text-light);background:rgba(201,162,39,0.15)}
-.drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1)}
-.search-box{display:flex;align-items:center;background:rgba(255,255,255,0.1);border-radius:20px;padding:5px 15px;margin-left:20px;}
-.search-box input{background:transparent;border:none;color:#fff;outline:none;width:120px;font-size:0.85rem;}
-.search-box input::placeholder{color:rgba(255,255,255,0.5);}
 .hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
 .hero::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
 .hero-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
@@ -520,8 +433,8 @@ body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
 .footer a:visited{color:#b8960b}
 .footer a:hover{color:#e0b830}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;text-align:center;font-size:0.85rem;margin-top:40px}
-@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.nav-links{display:none}.hamburger{display:flex}.theme-btn-desktop{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
-@media(max-width:768px){.navbar{padding:0 20px}.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}.stat-label{font-size:1rem}.section-subtitle{font-size:1rem}.card p{font-size:1rem}.card h3{font-size:1.15rem}.hero-text .subtitle{font-size:1.2rem}.tagline{font-size:1rem}.quote-text{font-size:1rem}}
+@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.theme-btn-desktop{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
+@media(max-width:768px){.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}.stat-label{font-size:1rem}.section-subtitle{font-size:1rem}.card p{font-size:1rem}.card h3{font-size:1.15rem}.hero-text .subtitle{font-size:1.2rem}.tagline{font-size:1rem}.quote-text{font-size:1rem}}
 @media(max-width:768px){body.dark-mode .hero-text .subtitle{font-size:1.2rem;color:#b0bfd4}body.dark-mode .tagline{font-size:1rem;color:#f0c040}body.dark-mode .stat-label{color:#b0bfd4;font-size:1rem}body.dark-mode .card{font-size:1rem}body.dark-mode .card p,body.dark-mode .quote-text{color:#c8d6e8;font-size:1rem}body.dark-mode .section-subtitle{color:#b0bfd4;font-size:1rem}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate-in{animation:fadeInUp 0.6s ease forwards}.delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.2s}.delay-3{animation-delay:0.3s}
 
@@ -530,50 +443,15 @@ body.dark-mode #uni-hamburger span,
 body.dark-mode .hamburger span{background:#b0bfd4}
 body.dark-mode #uni-overlay{background:rgba(0,0,0,0.7)}
 body.dark-mode #uni-drawer,
-body.dark-mode .mobile-drawer{background:#0f1e32}
+
 body.dark-mode #uni-drawer .uni-link,
-body.dark-mode .mobile-drawer .nav-link{color:#b0bfd4}
+
 body.dark-mode #uni-drawer .uni-link:hover,
-body.dark-mode .mobile-drawer .nav-link:hover{color:#f0f4f8;background:rgba(201,162,39,0.15)}
+
 
 </style>
 </head>
 <body>
-<nav class=navbar>
-<div class=nav-brand><span>&#10070;</span> 李录研究</div>
-<div class=nav-links>
-<a href=#about class=nav-link>关于</a>
-<a href=#principles class=nav-link>投资原则</a>
-<a href=#my-framework class=nav-link>投资框架</a>
-<a href=#study-notes class=nav-link>研究笔记</a>
-<a href=quotes.html class=nav-link>语录</a>
-<a href=bookshelf.html class=nav-link>书籍</a>
-<a href=#holdings class=nav-link>持仓</a>
-<a href=#faq class=nav-link>FAQ</a>
-</div>
-<button class=hamburger onclick="toggleMenu()"><span></span><span></span><span></span></button>
-<button class=theme-btn-desktop style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 夜间</button>
-</nav>
-<div class=mobile-overlay id=mobileOverlay onclick="toggleMenu()"></div>
-<div class=mobile-drawer id=mobileDrawer>
-  <div class=drawer-header>
-    <div class=drawer-brand><span>&#10070;</span> 李录研究</div>
-    <button class=drawer-close onclick="toggleMenu()">&#x2715;</button>
-  </div>
-  <nav class=drawer-nav>
-    <a href=#about class=nav-link onclick="toggleMenu()">关于</a>
-    <a href=#principles class=nav-link onclick="toggleMenu()">投资原则</a>
-    <a href=#my-framework class=nav-link onclick="toggleMenu()">投资框架</a>
-    <a href=#study-notes class=nav-link onclick="toggleMenu()">研究笔记</a>
-    <a href=quotes.html class=nav-link onclick="toggleMenu()">语录</a>
-    <a href=bookshelf.html class=nav-link onclick="toggleMenu()">书籍</a>
-    <a href=#holdings class=nav-link onclick="toggleMenu()">持仓</a>
-    <a href=#faq class=nav-link onclick="toggleMenu()">FAQ</a>
-  </nav>
-  <div class=drawer-theme>
-    
-  </div>
-</div>
 <section class=hero>
 <div class=hero-content>
 <div class=hero-text>
