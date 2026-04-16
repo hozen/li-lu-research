@@ -1,7 +1,7 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-15 16:02
-> Last Audit: 2026-04-15 16:02 (每日UX审查：总分 ims-gtm 21/30，li-lu-research 24/30；无新增P0/P1；Footer链接visited状态修复完成；黄色对比度/视频降级处理为持续历史问题)
+> Last Updated by Agent: 2026-04-17 04:05
+> Last Audit: 2026-04-17 04:05 (Round 5 Phase 1 完成：index.html 结构腐败修复（双HTML文档问题），新建 about/principles/holdings/faq 子页面；首页重写为213行仪表板)
 
 ---
 
@@ -288,11 +288,11 @@
 
 | 任务 | 描述 | 状态 | 优先级 |
 |------|------|------|--------|
-| 5-R1-1 | **重写 index.html 为学习仪表板** — 首屏 = 一行标题 + 研究笔记最新 3-5 条 + 公开活动 checklist 进度 + 13F 持仓快照表格；目标 < 300 行 | ☐ | P0 |
-| 5-R1-2 | **创建 about.html** — 人物传记 + 时间线 + 学习路径三阶段；从 index.html 迁移 | ☐ | P1 |
-| 5-R1-3 | **创建 principles.html** — 6 条原则 + 决策框架六步骤 + 护城河要素 + 文明 3.0 框架；从 index.html 迁移 | ☐ | P1 |
-| 5-R1-4 | **创建 holdings.html** — 完整 13F 持仓卡片 + 持仓特征分析 + 深度分析页面链接 + 历史投资案例（BYD/PDD 等）；从 index.html 迁移 | ☐ | P1 |
-| 5-R1-5 | **创建 faq.html** — FAQ section；从 index.html 迁移 | ☐ | P2 |
+| 5-R1-1 | **重写 index.html 为学习仪表板** — 首屏 = 一行标题 + 研究笔记最新 3 条 + 公开活动 checklist 进度 + 13F 持仓快照表格；目标 < 300 行 | ✅ `e35b576` | P0 |
+| 5-R1-2 | **创建 about.html** — 人物传记 + 时间线 + 学习路径三阶段；从 index.html 迁移 | ✅ `e35b576` | P1 |
+| 5-R1-3 | **创建 principles.html** — 6 条原则 + 决策框架六步骤 + 护城河要素 + 文明 3.0 框架；从 index.html 迁移 | ✅ `e35b576` | P1 |
+| 5-R1-4 | **创建 holdings.html** — 完整 13F 持仓卡片 + 持仓特征分析 + 深度分析页面链接 + 历史投资案例（BYD/PDD 等）；从 index.html 迁移 | ✅ `e35b576` | P1 |
+| 5-R1-5 | **创建 faq.html** — FAQ section；从 index.html 迁移 | ✅ `e35b576` | P2 |
 
 **Phase 2 · 导航更新 + 验证收尾**
 
@@ -591,6 +591,7 @@ faq.html        ← FAQ（新创建）
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-17 | `e35b576` | feat: Round 5 Phase 1 — clean index.html (<300l, 213 lines) + about/principles/holdings/faq subpages (5-R1-1 P0); fixes structural corruption (two HTML docs in one file); all pages use shared.css + js/main.js with uni-navbar + footer |
 | 2026-04-16 | `510f941` | feat: add js/main.js shared JavaScript (5-R0-2 P0) — drawer toggle, theme toggle, back-to-top, search, auto dark mode; move script to end of body; add id=backToTop to fixed button |
 | 2026-04-14 | `11b72f8` | fix: mobile hamburger toggleMenu() JS function missing + dark mode contrast improvements (#c8d6e8→#dde6f0, #e2e8f0→#f0f4f8, #c9a227→#f0c040, uni-drawer/mobile-drawer dark mode) |
 | 2026-04-14 | `c9b6eaf` | docs: REVIEW_NOTES — task table complete: P7-3/5/6/7/8/9 + SHA fixes for P7-1/2 |
