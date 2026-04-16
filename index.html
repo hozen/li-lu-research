@@ -215,26 +215,6 @@ body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
 <div class="uni-drawer-theme">
 </div>
 </div>
-<script>
-document.getElementById("uniHamBtn").onclick=function(){
-document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
-document.getElementById("uniOverlay").onclick=function(){
-document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniDrawerClose").onclick=function(){
-document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniThemeBtn").onclick=function(){
-document.body.classList.toggle("dark-mode");this.text=document.body.classList.contains("dark-mode")?"&#9788; 亮色":"&#9790; 暗色"};
-document.getElementById("uniDrawerThemeBtn").onclick=function(){
-document.body.classList.toggle("dark-mode")};
-function toggleMenu(){
-  var overlay=document.getElementById("mobileOverlay");
-  var drawer=document.getElementById("mobileDrawer");
-  if(!overlay||!drawer) return;
-  overlay.classList.toggle("open");
-  drawer.classList.toggle("open");
-}
-</script>
-
 <nav class=navbar>
 <div class=nav-brand><span>&#10070;</span> 李录研究</div>
 <div class=nav-links>
@@ -1161,45 +1141,11 @@ e;">视频</a> ·
 </div>
 <div class=footer-bottom>
 <p>&#128197; 页面更新: 2026-04-14 | 数据截止: 2025 Q4 13F (2026-02-17披露) | 仅供研究参考，不构成投资建议</p>
-<button onclick="window.scrollTo({top:0,behavior:'smooth'});" style="position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#c9a227;color:#0a1628;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);z-index:999;" title="返回顶部">&#8593;</button>
+<button id="backToTop" style="position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#c9a227;color:#0a1628;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);z-index:999;display:none;" title="返回顶部">&#8593;</button>
 </div>
 </footer>
-<script>
-// Auto dark mode based on system preference
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  document.body.classList.add('dark-mode');
-}
+<script src="js/main.js"></script>
 
-// Dark mode toggle
-
-
-// Mobile menu drawer
-function toggleMenu() {
-  document.getElementById('mobileDrawer').classList.toggle('open');
-  document.getElementById('mobileOverlay').classList.toggle('open');
-  document.body.style.overflow = document.getElementById('mobileDrawer').classList.contains('open') ? 'hidden' : '';
-}
-
-// Quick search function
-function searchContent() {
-  const input = document.getElementById('searchInput');
-  const filter = input.value.toUpperCase();
-  const sections = document.querySelectorAll('section, .card, .quote-card, .book-card, .video-card');
-  
-  sections.forEach(section => {
-    const text = section.textContent || section.innerText;
-    if (text.toUpperCase().indexOf(filter) > -1) {
-      section.style.display = "";
-    } else {
-      section.style.display = "none";
-    }
-  });
-  
-  if (filter === '') {
-    sections.forEach(s => s.style.display = '');
-  }
-}
-</script>
 </body>
 </html>
 
