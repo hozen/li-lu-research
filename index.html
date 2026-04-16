@@ -1,140 +1,14 @@
 <!DOCTYPE html>
-<html lang=zh-CN>
+<html lang="zh-CN">
 <head>
-<meta charset=UTF-8>
-<meta name=viewport content=width=device-width,initial-scale=1.0>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>李录 (Li Lu) - 价值投资研究</title>
 <meta name="description" content="李录（Li Lu）价值投资研究与学习平台。涵盖投资原则、持仓分析、视频学习、推荐书籍等。">
 <meta property="og:title" content="李录 (Li Lu) - 价值投资研究">
-<meta property="og:description" content="李录价值投资研究与学习平台。涵盖投资原则、持仓分析、视频学习、推荐书籍等。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://hozen.github.io/li-lu-research/">
-<meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="css/shared.css">
-<style>
-:root{--primary-dark:#0a1628;--primary-blue:#1a365d;--accent-gold:#c9a227;--accent-gold-light:#e8c547;--text-dark:#1a1a1a;--text-light:#f5f5f5;--text-muted:#6b7a99;--text-primary:#111111;--bg-light:#ffffff;--bg-off-white:#f8f9fa;--card-bg:#ffffff;--shadow:0 4px 20px rgba(0,0,0,0.15)}
-/* Base */
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:var(--text-primary);background:var(--bg-light)}
-.card{background:var(--card-bg);border-radius:12px;padding:25px;box-shadow:var(--shadow);margin-bottom:20px;color:var(--text-primary);border:1px solid #e0e0e0}
-.card h3,.card h4{color:#000000;margin-bottom:15px}
-/* Dark Mode — comprehensive */
-body.dark-mode{background:#0a1628;color:#e2e8f0}
-body.dark-mode .card{background:#1a365d;color:#e2e8f0}
-body.dark-mode .card h3,body.dark-mode .card h4{color:#c9a227}
-body.dark-mode .section{background:#0a1628}
-body.dark-mode .footer{background:#0a1628;color:#e2e8f0}
-body.dark-mode .quote-card{background:#1a365d}
-body.dark-mode .book-card{background:#1a365d}
-body.dark-mode .video-card{background:#1a365d}
-body.dark-mode .timeline-item{background:#1a365d}
-body.dark-mode .hero{background:linear-gradient(135deg,#000 0%,#1a365d 100%)}
-body.dark-mode .hero-text h1{color:#fff}
-body.dark-mode .section-title{color:#f0c040}
-body.dark-mode details{background:#1a365d;color:#e2e8f0}
-body.dark-mode p,body.dark-mode li{color:#e2e8f0}
-body.dark-mode a{color:#64b5f6}
-body.dark-mode .nav-link{color:#e2e8f0}
-body.dark-mode .quote-text{color:#ffffff}
-/* Dark mode — muted text (critical fix) */
-body.dark-mode,.dark-mode{--text-muted:#8fa3c0}
-body.dark-mode .subtitle,body.dark-mode .stat-label,body.dark-mode .section-subtitle,body.dark-mode .quote-source,body.dark-mode .book-info p,body.dark-mode .video-source,body.dark-mode .footer,body.dark-mode .hero-text .tagline{color:#8fa3c0}
-body.dark-mode .hero-image-box .placeholder-text{color:#8fa3c0}
-body.dark-mode .principle-card p{color:#b0bfd4}
-
-
-/* Dark mode — hardcoded muted colors */
-body.dark-mode .card p{color:#dde6f0}
-body.dark-mode .quote-text{color:#f0f4f8}
-body.dark-mode .section-title::after{background:linear-gradient(90deg,#c9a227,transparent)}
-body.dark-mode .section-title{color:#f0c040}
-body.dark-mode .footer h3 span{color:#c9a227}
-body.dark-mode .footer h3{color:#f0f4f8}
-body.dark-mode .footer p{color:#b0bfd4}
-body.dark-mode .video-info h4{color:#f0f4f8}
-body.dark-mode .video-duration{background:rgba(201,162,39,0.2);color:#c9a227}
-body.dark-mode .book-info h4{color:#f0f4f8}
-body.dark-mode .book-info p{color:#8fa3c0}
-body.dark-mode .btn-outline{color:#c9a227;border-color:#c9a227}
-body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
-*{box-sizing:border-box;margin:0;padding:0}
-.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
-.hero::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
-.hero-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
-.hero-text h1{font-size:3.5rem;color:var(--text-light);margin-bottom:20px;line-height:1.2}
-.hero-text h1 .highlight{color:var(--accent-gold)}
-.hero-text .subtitle{font-size:1.4rem;color:var(--text-muted);margin-bottom:30px;font-weight:300}
-.hero-text .tagline{font-size:1.1rem;color:var(--accent-gold-light);margin-bottom:40px;padding-left:20px;border-left:3px solid var(--accent-gold)}
-.hero-stats{display:flex;gap:50px;margin-top:40px}
-.stat{text-align:left}
-.stat-number{font-size:2.5rem;font-weight:700;color:var(--accent-gold)}
-.stat-label{font-size:0.9rem;color:var(--text-muted)}
-.hero-image-box{width:400px;height:500px;background:linear-gradient(145deg,rgba(201,162,39,0.2),rgba(26,54,93,0.3));border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--accent-gold)}
-.hero-image-box .placeholder-icon{font-size:120px}
-.hero-image-box .placeholder-text{color:var(--text-muted);font-size:1rem}
-.main-content{max-width:1200px;margin:0 auto;padding:80px 40px}
-.section{margin-bottom:80px;scroll-margin-top:100px}
-.section-header{margin-bottom:40px}
-.section-title{font-size:2rem;color:var(--primary-dark);margin-bottom:15px;display:flex;align-items:center;gap:15px}
-.section-title::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--accent-gold),transparent)}
-.section-subtitle{color:var(--text-muted)}
-.card{background:var(--card-bg);border-radius:16px;padding:30px;box-shadow:var(--shadow);margin-bottom:25px;border:1px solid #e2e8f0}
-.card h3{color:var(--primary-blue);margin-bottom:15px;font-size:1.3rem}
-.card p{color:#4a5568;margin-bottom:15px}
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px}
-.principle-card{background:linear-gradient(135deg,var(--primary-dark),var(--primary-blue));border-radius:16px;padding:35px;color:var(--text-light);text-align:center;position:relative}
-.principle-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent-gold)}
-.principle-number{font-size:3rem;font-weight:700;color:var(--accent-gold);opacity:0.3;position:absolute;top:15px;right:20px}
-.principle-card h4{font-size:1.3rem;margin-bottom:15px}
-.principle-card p{color:var(--text-muted);font-size:0.95rem;margin:0}
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
-.video-card{background:var(--card-bg);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #e2e8f0}
-.video-thumbnail{height:180px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));display:flex;align-items:center;justify-content:center}
-.play-icon{width:60px;height:60px;background:var(--accent-gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.play-icon::after{content:'';border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
-.video-info{padding:20px}
-.video-info h4{color:var(--primary-dark);font-size:1rem;margin-bottom:8px}
-.video-meta{display:flex;justify-content:space-between}
-.video-duration{background:#edf2f7;color:var(--primary-blue);padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600}
-.video-source{color:var(--text-muted);font-size:0.85rem}
-.quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:25px}
-.quote-card{background:var(--card-bg);border-radius:16px;padding:30px;box-shadow:var(--shadow);border-left:4px solid var(--accent-gold)}
-.quote-text{font-size:1.1rem;color:#2d3748;font-style:italic;margin-bottom:15px}
-.quote-source{color:var(--text-muted);font-size:0.9rem;text-align:right}
-.books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.book-card{background:var(--card-bg);border-radius:16px;padding:25px;box-shadow:var(--shadow);display:flex;gap:20px;border:1px solid #e2e8f0}
-.book-cover{width:80px;height:110px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center}
-.book-cover span{font-size:2rem}
-.book-info h4{color:var(--primary-dark);font-size:1.1rem;margin-bottom:8px}
-.book-info p{color:var(--text-muted);font-size:0.9rem;margin:0}
-.timeline{position:relative;padding-left:30px}
-.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent-gold),var(--primary-blue))}
-.timeline-item{position:relative;margin-bottom:30px;padding-left:25px}
-.timeline-item::before{content:'';position:absolute;left:-26px;top:5px;width:14px;height:14px;background:var(--accent-gold);border-radius:50%;border:3px solid var(--card-bg)}
-.timeline-date{font-size:0.85rem;color:var(--accent-gold);font-weight:600;margin-bottom:5px}
-.timeline-title{font-size:1.1rem;color:var(--primary-dark);margin-bottom:8px}
-.timeline-content{color:#4a5568;font-size:0.95rem}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;border:none}
-.btn-primary{background:var(--accent-gold);color:var(--primary-dark)}
-.btn-primary:hover{background:#b8941f;transform:translateY(-2px)}
-.btn-outline{background:transparent;border:2px solid var(--accent-gold);color:var(--accent-gold)}
-.btn-outline:hover{background:var(--accent-gold);color:var(--primary-dark)}
-.footer{background:var(--primary-dark);color:var(--text-muted);padding:60px 40px 30px}
-.footer-content{max-width:1200px;margin:0 auto}
-.footer h3{color:var(--text-light);font-size:1.5rem;margin-bottom:15px}
-.footer h3 span{color:var(--accent-gold)}
-.footer p{font-size:0.95rem;line-height:1.8}
-.footer a:visited{color:#b8960b}
-.footer a:hover{color:#e0b830}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;text-align:center;font-size:0.85rem;margin-top:40px}
-@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.theme-btn-desktop{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
-@media(max-width:768px){.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}.stat-label{font-size:1rem}.section-subtitle{font-size:1rem}.card p{font-size:1rem}.card h3{font-size:1.15rem}.hero-text .subtitle{font-size:1.2rem}.tagline{font-size:1rem}.quote-text{font-size:1rem}}
-@media(max-width:768px){body.dark-mode .hero-text .subtitle{font-size:1.2rem;color:#b0bfd4}body.dark-mode .tagline{font-size:1rem;color:#f0c040}body.dark-mode .stat-label{color:#b0bfd4;font-size:1rem}body.dark-mode .card{font-size:1rem}body.dark-mode .card p,body.dark-mode .quote-text{color:#c8d6e8;font-size:1rem}body.dark-mode .section-subtitle{color:#b0bfd4;font-size:1rem}}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate-in{animation:fadeInUp 0.6s ease forwards}.delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.2s}.delay-3{animation-delay:0.3s}
-</style>
-</head>
-<body>
-<div id="uni-navbar">
 <style>
 #uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 #uni-navbar .uni-brand{color:#f5f5f5;font-size:1.2rem;font-weight:600;text-decoration:none}
@@ -158,872 +32,195 @@ body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
 #uni-drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
 #uni-body{padding-top:64px}
 @media(max-width:900px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}}
-</style>
-<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
-<div class="uni-links">
-<a href="/li-lu-research/index.html#holdings" class="uni-link">æä»</a>
-<a href="/li-lu-research/index.html#principles" class="uni-link">æèµåå</a>
-<a href="/li-lu-research/index.html#study-notes" class="uni-link">ç ç©¶ç¬è®°</a>
-<a href="/li-lu-research/video_study.html" class="uni-link">è§é¢</a>
-<a href="/li-lu-research/quotes.html" class="uni-link">è¯­å½</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link">ä¹¦æ¶</a>
-<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
-<a href="/li-lu-research/index.html" class="uni-link">é¦é¡µ+å³äº</a></div>
-<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
-</div>
-<div id="uni-overlay" id="uniOverlay"></div>
-<div id="uni-drawer">
-<div id="uni-drawer-header">
-<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
-<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
-</div>
-<a href="/li-lu-research/index.html" class="uni-link">首页</a>
-<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
-<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
-<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
-<a href="/li-lu-research/index.html#my-framework" class="uni-link">视频</a>
-<a href="/li-lu-research/index.html#study-notes" class="uni-link">研究笔记</a>
-<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
-<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
-<div class="uni-drawer-theme">
-</div>
-</div>
-<section class=hero>
-<div class=hero-content>
-<div class=hero-text>
-<h1>李录 <span class=highlight>(Li Lu)</span></h1>
-<p class=subtitle>中国价值投资的代表性人物</p>
-<p class=tagline>中国的沃伦·巴菲特 — 哥伦比亚商学院教授 李录师从哥伦比亚大学商学院教授Bruce Greenwald学习价值投资，后创立喜马拉雅资本。拥有芝加哥大学法学博士(JD)、MBA和经济学硕士(MA)三个学位。</p>
-<div style=margin-top:30px;display:flex;gap:15px;flex-wrap:wrap>
-<a href=#videos class=btn btn-primary>观看视频 &#8594;</a>
-<a href=#principles class=btn btn-outline>了解投资哲学</a>
-</div>
-<div class=hero-stats>
-<div class=stat><div class=stat-number>28+</div><div class=stat-label>年投资经验</div></div>
-<div class=stat><div class=stat-number>~20%</div><div class=stat-label>年化复合收益<br><small style="color:#888;font-size:0.75rem;">(据公开报道估算，非官方披露)</small></div></div>
-<div class=stat><div class=stat-number>6</div><div class=stat-label>核心投资原则</div></div>
-</div>
-</div>
-<div class=hero-image-box>
-<div class=placeholder-icon>&#9812;</div>
-<p class=placeholder-text style="font-size:1.2rem;color:var(--accent-gold);font-weight:600;">价值投资</p>
-<p style=color:var(--text-muted);font-size:0.85rem;margin-top:10px;text-align:center;padding:0 20px;">「如果我们找到大有所为的东西，其他比不上它的，我们就不必再看了。」<br>— 查理·芒格</p>
-</div>
-</div>
-</section>
-<section id=holdings class=section style="background: linear-gradient(135deg, #0a1628 0%, #1a365d 100%); padding: 60px 40px;">
-<div class=section-header>
-<h2 class=section-title style="color: #fff;" id="holdings-main">喜马拉雅资本持仓与投资案例</h2>
-<p class=section-subtitle style="color: #a0aec0;">喜马拉雅资本 13F 真实持仓 (2025 Q4) · 数据来源：SEC 13F 报告 | 仅供研究参考，不构成投资建议</p>
-</div>
-
-<!-- 13F Current Holdings -->
-<h3 style="color: #c9a227; font-size: 1.1rem; margin-bottom: 20px; margin-top: 10px;">📊 最新持仓 (13F 2025 Q4)</h3>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">Alphabet (谷歌)</h4>
-<p style="color: #666; font-size: 0.85rem;">NASDAQ · 科技 · 占比 43.86%</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>43.86%</strong><br><small style="color:#888">组合占比</small></span>
-<span><strong>GOOGL</strong><br><small style="color:#888">股票代码</small></span>
-<span><strong>&#9733;&#9733;&#9733;&#9733;</strong><br><small style="color:#888">护城河</small></span>
-</div>
-</div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">Bank of America</h4>
-<p style="color: #666; font-size: 0.85rem;">NYSE · 金融 · 占比 16.08%</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>16.08%</strong><br><small style="color:#888">组合占比</small></span>
-<span><strong>BAC</strong><br><small style="color:#888">股票代码</small></span>
-<span><strong>&#9733;&#9733;&#9733;&#9734;</strong><br><small style="color:#888">护城河</small></span>
-</div>
-</div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">PDD Holdings (拼多多)</h4>
-<p style="color: #666; font-size: 0.85rem;">NASDAQ · 电商 · 占比 14.64%</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>14.64%</strong><br><small style="color:#888">组合占比</small></span>
-<span><strong>PDD</strong><br><small style="color:#888">股票代码</small></span>
-<span><strong>&#9733;&#9733;&#9733;&#9733;</strong><br><small style="color:#888">护城河</small></span>
-</div>
-</div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">Berkshire Hathaway B</h4>
-<p style="color: #666; font-size: 0.85rem;">NYSE · 多元控股 · 占比 12.64%</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>12.64%</strong><br><small style="color:#888">组合占比</small></span>
-<span><strong>BRK.B</strong><br><small style="color:#888">股票代码</small></span>
-<span><strong>&#9733;&#9733;&#9733;&#9733;&#9733;</strong><br><small style="color:#888">护城河</small></span>
-</div>
-</div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">East West Bancorp</h4>
-<p style="color: #666; font-size: 0.85rem;">NASDAQ · 商业银行 · 占比 8.74%</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>8.74%</strong><br><small style="color:#888">组合占比</small></span>
-<span><strong>EWBC</strong><br><small style="color:#888">股票代码</small></span>
-<span><strong>&#9733;&#9733;&#9733;&#9734;</strong><br><small style="color:#888">护城河</small></span>
-</div><p style="color:#38a169;font-size:0.8rem;margin-top:8px;">&#10003; 投资逻辑：区域性银行，受益于美国利率环境</p>
-</div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">Occidental Petroleum</h4>
-<p style="color: #666; font-size: 0.85rem;">NYSE · 能源 · 占比 1.69%</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>1.69%</strong><br><small style="color:#888">组合占比</small></span>
-<span><strong>OXY</strong><br><small style="color:#888">股票代码</small></span>
-<span><strong>&#9733;&#9733;&#9734;&#9734;</strong><br><small style="color:#888">护城河</small></span>
-</div><p style="color:#38a169;font-size:0.8rem;margin-top:8px;">&#10003; 投资逻辑：能源公司，估值受油价驱动，巴菲特相关持仓</p>
-</div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">Crocs</h4>
-<p style="color: #666; font-size: 0.85rem;">NASDAQ · 消费品 · 占比 1.50%</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>1.50%</strong><br><small style="color:#888">组合占比</small></span>
-<span><strong>CROX</strong><br><small style="color:#888">股票代码</small></span>
-<span><strong>&#9733;&#9733;&#9734;&#9734;</strong><br><small style="color:#888">护城河</small></span>
-</div>
-</div>
-<div class=card style="border-left: 4px solid #c9a227;">
-<h4 style="color: #1a365d;">Apple</h4>
-<p style="color: #666; font-size: 0.85rem;">NASDAQ · 科技 · 占比 0.84%</p>
-<div style="margin-top: 15px; display: flex; justify-content: space-between;">
-<span><strong>0.84%</strong><br><small style="color:#888">组合占比</small></span>
-<span><strong>AAPL</strong><br><small style="color:#888">股票代码</small></span>
-<span><strong>&#9733;&#9733;&#9733;&#9733;&#9733;</strong><br><small style="color:#888">护城河</small></span>
-</div>
-</div>
-</div>
-<div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 12px;">
-<h4 style="color: #c9a227; margin-bottom: 15px;">📊 持仓特征分析</h4>
-<div style="display: flex; gap: 30px; flex-wrap: wrap;">
-<div><span style="color: #a0aec0;">行业分布:</span><br><strong style="color: #fff;">科技 44.7% · 金融 24.8% · 电商 14.6% · 能源 1.7% · 消费 1.5%</strong></div>
-<div><span style="color: #a0aec0;">集中度:</span><br><strong style="color: #fff;">Top5 占比 96.2%</strong></div>
-<div><span style="color: #a0aec0;">投资风格:</span><br><strong style="color: #fff;">大盘价值 · 长期持有</strong></div>
-</div>
-</div>
-
-<!-- Historical Case Studies -->
-<h3 style="color: #c9a227; font-size: 1.1rem; margin-bottom: 20px; margin-top: 40px;">📈 历史投资案例</h3>
-<!DOCTYPE html>
-<html lang=zh-CN>
-<head>
-<meta charset=UTF-8>
-<meta name=viewport content=width=device-width,initial-scale=1.0>
-<title>李录 (Li Lu) - 价值投资研究</title>
-<meta name="description" content="李录（Li Lu）价值投资研究与学习平台。涵盖投资原则、持仓分析、视频学习、推荐书籍等。">
-<meta property="og:title" content="李录 (Li Lu) - 价值投资研究">
-<meta property="og:description" content="李录价值投资研究与学习平台。涵盖投资原则、持仓分析、视频学习、推荐书籍等。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hozen.github.io/li-lu-research/">
-<meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary_large_image">
-<style>
-:root{--primary-dark:#0a1628;--primary-blue:#1a365d;--accent-gold:#c9a227;--accent-gold-light:#e8c547;--text-dark:#1a1a1a;--text-light:#f5f5f5;--text-muted:#6b7a99;--text-primary:#111111;--bg-light:#ffffff;--bg-off-white:#f8f9fa;--card-bg:#ffffff;--shadow:0 4px 20px rgba(0,0,0,0.15)}
-/* Base */
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:var(--text-primary);background:var(--bg-light)}
-.card{background:var(--card-bg);border-radius:12px;padding:25px;box-shadow:var(--shadow);margin-bottom:20px;color:var(--text-primary);border:1px solid #e0e0e0}
-.card h3,.card h4{color:#000000;margin-bottom:15px}
-/* Dark Mode — comprehensive */
-body.dark-mode{background:#0a1628;color:#e2e8f0}
-body.dark-mode .card{background:#1a365d;color:#e2e8f0}
-body.dark-mode .card h3,body.dark-mode .card h4{color:#c9a227}
-body.dark-mode .section{background:#0a1628}
-body.dark-mode .footer{background:#0a1628;color:#e2e8f0}
-body.dark-mode .quote-card{background:#1a365d}
-body.dark-mode .book-card{background:#1a365d}
-body.dark-mode .video-card{background:#1a365d}
-body.dark-mode .timeline-item{background:#1a365d}
-body.dark-mode .hero{background:linear-gradient(135deg,#000 0%,#1a365d 100%)}
-body.dark-mode .hero-text h1{color:#fff}
-body.dark-mode .section-title{color:#f0c040}
-body.dark-mode details{background:#1a365d;color:#e2e8f0}
-body.dark-mode p,body.dark-mode li{color:#e2e8f0}
-body.dark-mode a{color:#64b5f6}
-body.dark-mode .nav-link{color:#e2e8f0}
-body.dark-mode .quote-text{color:#ffffff}
-/* Dark mode — muted text (critical fix) */
-body.dark-mode,.dark-mode{--text-muted:#8fa3c0}
-body.dark-mode .subtitle,body.dark-mode .stat-label,body.dark-mode .section-subtitle,body.dark-mode .quote-source,body.dark-mode .book-info p,body.dark-mode .video-source,body.dark-mode .footer,body.dark-mode .hero-text .tagline{color:#8fa3c0}
-body.dark-mode .hero-image-box .placeholder-text{color:#8fa3c0}
-body.dark-mode .principle-card p{color:#b0bfd4}
-
-
-/* Dark mode — hardcoded muted colors */
-body.dark-mode .card p{color:#dde6f0}
-body.dark-mode .quote-text{color:#f0f4f8}
-body.dark-mode .section-title::after{background:linear-gradient(90deg,#c9a227,transparent)}
-body.dark-mode .section-title{color:#f0c040}
-body.dark-mode .footer h3 span{color:#c9a227}
-body.dark-mode .footer h3{color:#f0f4f8}
-body.dark-mode .footer p{color:#b0bfd4}
-body.dark-mode .video-info h4{color:#f0f4f8}
-body.dark-mode .video-duration{background:rgba(201,162,39,0.2);color:#c9a227}
-body.dark-mode .book-info h4{color:#f0f4f8}
-body.dark-mode .book-info p{color:#8fa3c0}
-body.dark-mode .btn-outline{color:#c9a227;border-color:#c9a227}
-body.dark-mode .btn-outline:hover{background:#c9a227;color:#0a1628}
-*{box-sizing:border-box;margin:0;padding:0}
-.hero{background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary-blue) 100%);min-height:100vh;display:flex;align-items:center;padding:120px 60px 80px;position:relative}
-.hero::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
-.hero-content{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
-.hero-text h1{font-size:3.5rem;color:var(--text-light);margin-bottom:20px;line-height:1.2}
-.hero-text h1 .highlight{color:var(--accent-gold)}
-.hero-text .subtitle{font-size:1.4rem;color:var(--text-muted);margin-bottom:30px;font-weight:300}
-.hero-text .tagline{font-size:1.1rem;color:var(--accent-gold-light);margin-bottom:40px;padding-left:20px;border-left:3px solid var(--accent-gold)}
-.hero-stats{display:flex;gap:50px;margin-top:40px}
-.stat{text-align:left}
-.stat-number{font-size:2.5rem;font-weight:700;color:var(--accent-gold)}
-.stat-label{font-size:0.9rem;color:var(--text-muted)}
-.hero-image-box{width:400px;height:500px;background:linear-gradient(145deg,rgba(201,162,39,0.2),rgba(26,54,93,0.3));border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:2px solid var(--accent-gold)}
-.hero-image-box .placeholder-icon{font-size:120px}
-.hero-image-box .placeholder-text{color:var(--text-muted);font-size:1rem}
-.main-content{max-width:1200px;margin:0 auto;padding:80px 40px}
-.section{margin-bottom:80px;scroll-margin-top:100px}
-.section-header{margin-bottom:40px}
-.section-title{font-size:2rem;color:var(--primary-dark);margin-bottom:15px;display:flex;align-items:center;gap:15px}
-.section-title::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--accent-gold),transparent)}
-.section-subtitle{color:var(--text-muted)}
-.card{background:var(--card-bg);border-radius:16px;padding:30px;box-shadow:var(--shadow);margin-bottom:25px;border:1px solid #e2e8f0}
-.card h3{color:var(--primary-blue);margin-bottom:15px;font-size:1.3rem}
-.card p{color:#4a5568;margin-bottom:15px}
-.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:30px}
-.principle-card{background:linear-gradient(135deg,var(--primary-dark),var(--primary-blue));border-radius:16px;padding:35px;color:var(--text-light);text-align:center;position:relative}
-.principle-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent-gold)}
-.principle-number{font-size:3rem;font-weight:700;color:var(--accent-gold);opacity:0.3;position:absolute;top:15px;right:20px}
-.principle-card h4{font-size:1.3rem;margin-bottom:15px}
-.principle-card p{color:var(--text-muted);font-size:0.95rem;margin:0}
-.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
-.video-card{background:var(--card-bg);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #e2e8f0}
-.video-thumbnail{height:180px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));display:flex;align-items:center;justify-content:center}
-.play-icon{width:60px;height:60px;background:var(--accent-gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.play-icon::after{content:'';border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff;margin-left:4px}
-.video-info{padding:20px}
-.video-info h4{color:var(--primary-dark);font-size:1rem;margin-bottom:8px}
-.video-meta{display:flex;justify-content:space-between}
-.video-duration{background:#edf2f7;color:var(--primary-blue);padding:4px 12px;border-radius:20px;font-size:0.8rem;font-weight:600}
-.video-source{color:var(--text-muted);font-size:0.85rem}
-.quotes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:25px}
-.quote-card{background:var(--card-bg);border-radius:16px;padding:30px;box-shadow:var(--shadow);border-left:4px solid var(--accent-gold)}
-.quote-text{font-size:1.1rem;color:#2d3748;font-style:italic;margin-bottom:15px}
-.quote-source{color:var(--text-muted);font-size:0.9rem;text-align:right}
-.books-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.book-card{background:var(--card-bg);border-radius:16px;padding:25px;box-shadow:var(--shadow);display:flex;gap:20px;border:1px solid #e2e8f0}
-.book-cover{width:80px;height:110px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));border-radius:8px;display:flex;align-items:center;justify-content:center}
-.book-cover span{font-size:2rem}
-.book-info h4{color:var(--primary-dark);font-size:1.1rem;margin-bottom:8px}
-.book-info p{color:var(--text-muted);font-size:0.9rem;margin:0}
-.timeline{position:relative;padding-left:30px}
-.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent-gold),var(--primary-blue))}
-.timeline-item{position:relative;margin-bottom:30px;padding-left:25px}
-.timeline-item::before{content:'';position:absolute;left:-26px;top:5px;width:14px;height:14px;background:var(--accent-gold);border-radius:50%;border:3px solid var(--card-bg)}
-.timeline-date{font-size:0.85rem;color:var(--accent-gold);font-weight:600;margin-bottom:5px}
-.timeline-title{font-size:1.1rem;color:var(--primary-dark);margin-bottom:8px}
-.timeline-content{color:#4a5568;font-size:0.95rem}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.9rem;transition:all 0.3s;border:none}
-.btn-primary{background:var(--accent-gold);color:var(--primary-dark)}
-.btn-primary:hover{background:#b8941f;transform:translateY(-2px)}
-.btn-outline{background:transparent;border:2px solid var(--accent-gold);color:var(--accent-gold)}
-.btn-outline:hover{background:var(--accent-gold);color:var(--primary-dark)}
-.footer{background:var(--primary-dark);color:var(--text-muted);padding:60px 40px 30px}
-.footer-content{max-width:1200px;margin:0 auto}
-.footer h3{color:var(--text-light);font-size:1.5rem;margin-bottom:15px}
-.footer h3 span{color:var(--accent-gold)}
-.footer p{font-size:0.95rem;line-height:1.8}
-.footer a:visited{color:#b8960b}
-.footer a:hover{color:#e0b830}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:25px;text-align:center;font-size:0.85rem;margin-top:40px}
-@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.theme-btn-desktop{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
-@media(max-width:768px){.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}.stat-label{font-size:1rem}.section-subtitle{font-size:1rem}.card p{font-size:1rem}.card h3{font-size:1.15rem}.hero-text .subtitle{font-size:1.2rem}.tagline{font-size:1rem}.quote-text{font-size:1rem}}
-@media(max-width:768px){body.dark-mode .hero-text .subtitle{font-size:1.2rem;color:#b0bfd4}body.dark-mode .tagline{font-size:1rem;color:#f0c040}body.dark-mode .stat-label{color:#b0bfd4;font-size:1rem}body.dark-mode .card{font-size:1rem}body.dark-mode .card p,body.dark-mode .quote-text{color:#c8d6e8;font-size:1rem}body.dark-mode .section-subtitle{color:#b0bfd4;font-size:1rem}}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.animate-in{animation:fadeInUp 0.6s ease forwards}.delay-1{animation-delay:0.1s}.delay-2{animation-delay:0.2s}.delay-3{animation-delay:0.3s}
-
-/* Universal nav dark mode fix */
-body.dark-mode #uni-hamburger span,
-body.dark-mode .hamburger span{background:#b0bfd4}
-body.dark-mode #uni-overlay{background:rgba(0,0,0,0.7)}
-body.dark-mode #uni-drawer,
-
-body.dark-mode #uni-drawer .uni-link,
-
-body.dark-mode #uni-drawer .uni-link:hover,
-
-
+body.dark-mode #uni-hamburger span{background:#b0bfd4}
 </style>
 </head>
 <body>
-<section class=hero>
-<div class=hero-content>
-<div class=hero-text>
-<h1>李录 <span class=highlight>(Li Lu)</span></h1>
-<p class=subtitle>中国价值投资的代表性人物</p>
-<p class=tagline>中国的沃伦·巴菲特 — 哥伦比亚商学院教授 李录师从哥伦比亚大学商学院教授Bruce Greenwald学习价值投资，后创立喜马拉雅资本。拥有芝加哥大学法学博士(JD)、MBA和经济学硕士(MA)三个学位。</p>
-<div style=margin-top:30px;display:flex;gap:15px;flex-wrap:wrap>
-<a href=#videos class=btn btn-primary>观看视频 &#8594;</a>
-<a href=#principles class=btn btn-outline>了解投资哲学</a>
-</div>
-<div class=hero-stats>
-<div class=stat><div class=stat-number>28+</div><div class=stat-label>年投资经验</div></div>
-<div class=stat><div class=stat-number>~20%</div><div class=stat-label>年化复合收益<br><small style="color:#888;font-size:0.75rem;">(据公开报道估算，非官方披露)</small></div></div>
-<div class=stat><div class=stat-number>6</div><div class=stat-label>核心投资原则</div></div>
-</div>
-</div>
-<div class=hero-image-box>
-<div class=placeholder-icon>&#9812;</div>
-<p class=placeholder-text style="font-size:1.2rem;color:var(--accent-gold);font-weight:600;">价值投资</p>
-<p style=color:var(--text-muted);font-size:0.85rem;margin-top:10px;text-align:center;padding:0 20px;">「如果我们找到大有所为的东西，其他比不上它的，我们就不必再看了。」<br>— 查理·芒格</p>
-</div>
-</div>
-</section>
-</section>
-<!-- Investment Cases merged into Holdings section above -->
-<main class=main-content>
-<section id=about class=section>
-<div class=section-header>
-<h2 class=section-title>关于李录</h2>
-<p class=section-subtitle>从金融学者到价值投资大师的成长历程</p>
-</div>
-<div class=card>
-<h3>&#128220; 个人背景</h3>
-<p>李录是被誉为中国的沃伦·巴菲特的价值投资大师。现任美国喜马拉雅资本创始人兼董事长。哥伦比亚大学获得三个学位：法学博士 (JD)、MBA、经济学硕士 (MA)，师从著名价值投资教授 Bruce Greenwald。</p>
-<div class=timeline style=margin-top:30px>
-<div class=timeline-item><div class=timeline-date>1980s-1990s</div><div class=timeline-title>求学时期</div><div class=timeline-content>毕业于南京大学，后赴哥伦比亚大学求学，师从Bruce Greenwald教授。</div></div>
-<div class=timeline-item><div class=timeline-date>1997年</div><div class=timeline-title>创立喜马拉雅资本</div><div class=timeline-content>在美国创立喜马拉雅资本管理公司，专注于长期价值投资。</div></div>
-<div class=timeline-item><div class=timeline-date>2002-2003年</div><div class=timeline-title>研究/发现比亚迪</div><div class=timeline-content>以敏锐的商业眼光发现并深入研究比亚迪。</div></div>
-<div class=timeline-item><div class=timeline-date>2008年</div><div class=timeline-title>推荐巴菲特/芒格投资比亚迪</div><div class=timeline-content>在芒格和巴菲特的推荐中发挥关键作用，使其成为重要早期投资者。</div></div>
-<div class=timeline-item><div class=timeline-date>2020年</div><div class=timeline-title>出版《文明、现代化、价值投资与中国》</div><div class=timeline-content>将多年投资思考整理成书，系统阐述价值投资理念与中国市场机会。</div></div>
-</div>
-</div>
-</section>
-<section id=principles class=section>
-<div class=section-header>
-<h2 class=section-title>核心投资原则</h2>
-<div class="principles">
-<div class="principle-card animate-in delay-1"><span class="principle-number">01</span><h4>&#127919; 股票是公司的一部分所有权</h4><p>股票不只是代码，是企业真实所有权的一部分。投资股票就是购买企业的一部分，思考方式和创始人一样。</p></div>
-<div class="principle-card animate-in delay-2"><span class="principle-number">02</span><h4>&#128161; 市场先生是仆人不是向导</h4><p>市场每天报价，但价格由情绪驱动而非价值。理性投资者把市场波动当工具，利用其恐慌和狂热，而不是被其支配。</p></div>
-<div class="principle-card animate-in delay-3"><span class="principle-number">03</span><h4>&#128269; 能力圈：不懂不投</h4><p>理解自己能力圈的边界比扩大它更重要。不懂不做，懂了才能在别人恐惧时贪婪，在别人贪婪时恐惧。</p></div>
-<div class="principle-card animate-in delay-4"><span class="principle-number">04</span><h4>&#128737; 安全边际是核心</h4><p>永远在价格显著低于价值时买入。安全边际保护投资者不因预测错误而亏损，是价值投资的根基。</p></div>
-<div class="principle-card animate-in delay-5"><span class="principle-number">05</span><h4>&#128197; 长期主义的时间纪律</h4><p>价值投资需要时间来实现。频繁交易损耗收益，真正的回报来自长期持有优秀企业，让复利发挥作用。</p></div>
-<div class="principle-card animate-in delay-6"><span class="principle-number">06</span><h4>&#127984; 护城河是根本</h4><p>企业的竞争优势决定了长期回报。寻找有持久护城河的公司——成本优势、品牌护城河、网络效应或监管壁垒。</p></div>
-</div><div class=card style=margin-top:40px>
-<h3>&#127968; 护城河的关键要素</h3>
-<div style=display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:20px>
-<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>规模经济</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>成本优势来自规模</p></div>
-<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>持续时间</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>长期竞争优势</p></div>
-<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>管理层资本配置</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>关键的护城河要素</p></div>
-<div style=padding:20px;background:#f7fafc;border-radius:10px;text-align:center><strong>企业文化</strong><p style=margin-top:8px;font-size:0.9rem;color:#666>内在驱动力</p></div>
-</div>
-</div>
-</section>
 
-<div class="card" style="margin-top:40px">
-<h3>&#128640; 决策框架：知行合一</h3>
-<p style="margin:12px 0 20px;color:#4a5568;font-size:0.9rem;line-height:1.6"><strong style="color:#0a1628">研究在前，决策在后。</strong>研究的时间投入远大于买卖决策——看懂一家公司可能需要数年，买卖只是一瞬间。</p>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-top:16px">
-<div style="padding:16px;background:#f0f4ff;border-radius:10px;border-left:4px solid #3182ce"><strong style="color:#3182ce">&#9312; 行业与生意模式</strong><p style="margin-top:8px;font-size:0.82rem;color:#4a5568;line-height:1.5">判断目标公司是否属于<strong>能力圈内</strong>的<strong>大市场好生意</strong>。不熟不买是铁律。</p></div>
-<div style="padding:16px;background:#f0faf4;border-radius:10px;border-left:4px solid #38a169"><strong style="color:#38a169">&#9313; 护城河分析</strong><p style="margin-top:8px;font-size:0.82rem;color:#4a5568;line-height:1.5">识别企业<strong>持久竞争力</strong>的来源：成本优势、品牌、网络效应、技术壁垒还是转换成本？</p></div>
-<div style="padding:16px;background:#fef9e7;border-radius:10px;border-left:4px solid #d69e2e"><strong style="color:#d69e2e">&#9314; 管理层品格</strong><p style="margin-top:8px;font-size:0.82rem;color:#4a5568;line-height:1.5">管理层是否<strong>诚实、有能力、以股东利益为导向</strong>？有诚信的管理层是芒格最重要的择股标准。</p></div>
-<div style="padding:16px;background:#fff5f5;border-radius:10px;border-left:4px solid #e53e3e"><strong style="color:#e53e3e">&#9315; 内在价值与安全边际</strong><p style="margin-top:8px;font-size:0.82rem;color:#4a5568;line-height:1.5">DCF估算<strong>内在价值</strong>，与当前价格对比。<strong>安全边际</strong>足够时才考虑买入。</p></div>
-<div style="padding:16px;background:#faf5ff;border-radius:10px;border-left:4px solid #805ad5"><strong style="color:#805ad5">&#9316; 仓位与集中度</strong><p style="margin-top:8px;font-size:0.82rem;color:#4a5568;line-height:1.5"><strong>确定性决定仓位</strong>——研究越深，信心越强，仓位越重。单票上限控制下行风险。</p></div>
-<div style="padding:16px;background:#f0f7ff;border-radius:10px;border-left:4px solid #2b6cb0"><strong style="color:#2b6cb0">&#9317; 持续跟踪与卖出</strong><p style="margin-top:8px;font-size:0.82rem;color:#4a5568;line-height:1.5"><strong>逻辑变则卖出</strong>（基本面恶化、护城河收窄、管理层失信）。<strong>逻辑不变则持有</strong>穿越周期。</p></div>
+<div id="uni-navbar">
+  <div style="display:flex;align-items:center;gap:8px">
+    <a href="index.html" class="uni-brand"><span>&#10070;</span> 李录研究</a>
+  </div>
+  <div class="uni-links">
+    <a href="about.html" class="uni-link">关于李录</a>
+    <a href="principles.html" class="uni-link">投资原则</a>
+    <a href="holdings.html" class="uni-link">持仓</a>
+    <a href="faq.html" class="uni-link">FAQ</a>
+    <a href="timeline.html" class="uni-link">时间线</a>
+    <a href="video_study.html" class="uni-link">视频</a>
+    <a href="quotes.html" class="uni-link">语录</a>
+    <a href="bookshelf.html" class="uni-link">书架</a>
+  </div>
+  <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
 </div>
-<div style="margin-top:20px;padding:16px;background:#f7fafc;border-radius:10px;border-top:3px solid #c9a227"><strong style="color:#0a1628">&#9888; 买入 vs 卖出</strong>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:10px">
-<div style="text-align:center;padding:12px;background:#fff;border-radius:8px"><strong style="color:#38a169">&#9650; 买入条件</strong><p style="margin-top:6px;font-size:0.8rem;color:#4a5568">① 能力圈内 ② 护城河清晰 ③ 管理层可信 ④ 价格低于价值 + 安全边际</p></div>
-<div style="text-align:center;padding:12px;background:#fff;border-radius:8px"><strong style="color:#e53e3e">&#9660; 卖出条件</strong><p style="margin-top:6px;font-size:0.8rem;color:#4a5568">① 投资逻辑改变 ② 估值极度泡沫 ③ 发现更好机会 ④ 标的基本面恶化</p></div>
-</div>
-</div>
-<section id=videos class=section>
-<div class=section-header>
-<h2 class=section-title>视频资源</h2>
-<p class=section-subtitle>完整版演讲与访谈，深度理解价值投资哲学</p>
-</div>
-<div class=video-grid>
-<div class=video-card style="border:2px solid #c9a227;background:#fffdf5;"><div class=video-thumbnail style="background:linear-gradient(135deg,#0a1628,#1e3a6e,#8b6914);"><a href=https://www.youtube.com/watch?v=8jJA4vHWvLc target=_blank class=play-icon></a></div><div class=video-info><h4 style="color:#0a1628;">&#11088; 全球价值投资与时代 <span style="font-size:.75rem;background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:8px;font-weight:700;">NEW</span></h4><div class=video-meta><span class=video-source>北大光华 · 2024年12月 · 约3小时 · 3万字</span></div><p style="font-size:.78rem;color:#666;margin-top:4px;">最完整演讲 · 四大主题：时代困惑、中等收入陷阱、中国式现代化、价值投资人应对策略</p></div></div>
-<div class=video-card><div class=video-thumbnail><a href=https://www.youtube.com/watch?v=FiHrWy2jGbA target=_blank class=play-icon></a></div><div class=video-info><h4>Li Lu 2021 CBS访谈 | 完整版</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>1小时30分</span></div></div></div>
-<div class=video-card><div class=video-thumbnail><a href=https://www.bilibili.com/video/BV19QzcYeEWW/ target=_blank class=play-icon></a></div><div class=video-info><h4>北大演讲：我对价值投资的理解</h4><div class=video-meta><span class=video-source>Bilibili</span><span class=video-duration>3小时+</span></div></div></div>
-<div class=video-card><div class=video-thumbnail><a href=video_study.html target=_blank class=play-icon></a></div><div class=video-info><h4>Master Class on Value Investing</h4><div class=video-meta><span class=video-source>YouTube · 17段笔记</span><span class=video-duration>1小时40分</span></div></div></div>
-<div class=video-card><div class=video-thumbnail><a href=videos/b2yxBBMIEz0.html target=_blank class=play-icon></a></div><div class=video-info><h4>CCBC Fireside Chat: 中国市场机会</h4><div class=video-meta><span class=video-source>CBS Greater China</span><span class=video-duration>1小时32分</span></div></div></div>
-<div class=video-card><div class=video-thumbnail><a href=videos/KAoC8pErmb0.html target=_blank class=play-icon></a></div><div class=video-info><h4>The Chinese Warren Buffett: Li Lu</h4><div class=video-meta><span class=video-source>We Study Billionaires</span><span class=video-duration>51分钟</span></div></div></div>
-<div class=video-card><div class=video-thumbnail><a href=videos/LWikhUVneYI.html target=_blank class=play-icon></a></div><div class=video-info><h4>北大价值投资课程十周年演讲</h4><div class=video-meta><span class=video-source>YouTube</span><span class=video-duration>25分钟</span></div></div></div>
-</div>
-<div class=card style=margin-top:30px>
-<h3>&#9889; 快速入门 (短版)</h3>
-<div style=display:flex;flex-wrap:wrap;gap:15px;margin-top:20px>
-<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Li Lus 3 Important Rules - 7分钟</span>
-<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Why Only 5% Win - 5分钟</span>
-<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Munger on Li Lu - 2分钟</span>
-<span style=padding:12px 20px;background:#edf2f7;border-radius:25px;font-size:0.9rem>Holy Grail of Investing - 3分钟</span>
-</div>
-</div>
-</section>
-<section id=glossary class=section>
-<div class=section-header>
-<h2 class=section-title>投资术语表</h2>
-<p class=section-subtitle>价值投资核心概念速查</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 25px;">
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">护城河 (Moat)</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">企业竞争优势，可持续阻止竞争对手。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">安全边际 (Margin of Safety)</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">买入价与内在价值的差额。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">内在价值 (Intrinsic Value)</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">企业的真实价值，基于现金流折现(DCF)。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">ROE</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Return on Equity，股东权益回报率。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">能力圈 (Circle of Competence)</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">你真正理解的行业和公司范围。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">ROIC</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Return on Invested Capital，投入资本回报率。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">现金流折现 (DCF)</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Discounted Cash Flow，估算内在价值的核心方法。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #c9a227;">
-<strong style="color: #1a365d;">13F 报告</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">美国SEC要求机构投资者每季度披露持仓的报告。</p>
-</div>
-</div>
-<details style="margin-top: 20px; background: #f7fafc; border-radius: 8px; padding: 15px;">
-<summary style="font-weight: 600; color: #1a365d; cursor: pointer; outline: none;">&#9660; 更多术语 (PB、PEG、EV/EBITDA 等)</summary>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 15px;">
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #ccc;">
-<strong style="color: #1a365d;">PB (市净率)</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">Price to Book，股价与每股净资产比率。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #ccc;">
-<strong style="color: #1a365d;">PEG 比率</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">PE除以盈利增长率，衡量成长性。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #ccc;">
-<strong style="color: #1a365d;">EV/EBITDA</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">企业价值与息税折旧前利润比率。</p>
-</div>
-<div style="background: #fff; padding: 15px; border-radius: 8px; border-left: 3px solid #ccc;">
-<strong style="color: #1a365d;">雪茄烟蒂投资</strong>
-<p style="font-size: 0.85rem; color: #666; margin-top: 5px;">以极低价格买入平庸公司，类似捡烟蒂。</p>
-</div>
-</div>
-</details>
-</section>
-<section id=learning class=section style="background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);">
-<div class=section-header>
-<h2 class=section-title>学习路径</h2>
-<p class=section-subtitle>从入门到实践的系统学习路线</p>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
-<div class=card style="border-top: 4px solid #3182ce;">
-<h3 style="color: #3182ce;">&#128218; 第一阶段: 入门 (1-2周)</h3>
-<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
-<li>阅读《文明、现代化、价值投资与中国》</li>
-<li>学习财务报表基础 (利润表、资产负债表)</li>
-<li>理解PE、PB、ROE基本概念</li>
-<li>观看Li Lu短版视频 (30分钟内)</li>
-</ul>
-</div>
-<div class=card style="border-top: 4px solid #38a169;">
-<h3 style="color: #38a169;">&#128218; 第二阶段: 进阶 (1-2月)</h3>
-<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
-<li>阅读《证券分析》前6章</li>
-<li>研究Li Lu持仓公司年报</li>
-<li>练习分析企业商业模式</li>
-<li>学习行业研究方法</li>
-</ul>
-</div>
-<div class=card style="border-top: 4px solid #d69e2e;">
-<h3 style="color: #d69e2e;">&#128218; 第三阶段: 实践 (3-6月)</h3>
-<ul style="padding-left: 20px; color: #4a5568; line-height: 1.8;">
-<li>建立模拟组合</li>
-<li>跟踪Li Lu持仓变化</li>
-<li>形成自己的投资体系</li>
-<li>持续学习与复盘</li>
-</ul>
-</div>
-</div>
-</section>
-<section id=quotes class=section>
-<div class=section-header>
-<h2 class=section-title>投资智慧语录</h2>
-<p class=section-subtitle>来自李录28年投资实践的深刻洞见</p>
-</div>
-<div class=quotes-grid>
-<div class=quote-card><p class=quote-text>如果你只是假装了解企业，你会在困难时期被考验。</p><p class=quote-source>— 2021 CBS访谈</p></div>
-<div class=quote-card><p class=quote-text>长期投资回报与公司资本回报率完美相关。</p><p class=quote-source>— 投资哲学核心</p></div>
-<div class=quote-card><p class=quote-text>每5-10年发生一次百年一遇的危机。人类行为永远不会改变。</p><p class=quote-source>— 关于市场波动</p></div>
-<div class=quote-card><p class=quote-text>好的时光人们因贪婪而冒险，困难时人们恐慌，通常在错误的时刻做错误的决定。</p><p class=quote-source>— 人类行为分析</p></div>
-<div class=quote-card><p class=quote-text>假设有人送你100%所有权，比如亚马逊。如果你100%拥有它，你会想知道企业如何运作。</p><p class=quote-source>— 所有者心态</p></div>
-<div class=quote-card><p class=quote-text>做学习的通才，但投资时要成为真正的专家。你需要比你投资的企业管理层更了解它。</p><p class=quote-source>— 关于能力圈</p></div>
-</div>
-<p style="text-align:center;margin-top:20px;"><a href="/li-lu-research/quotes.html" style="color:#c9a227;font-weight:600;text-decoration:none;">查看全部语录 →</a></p>
-</section>
-<section id=books class=section>
-<div class=section-header>
-<h2 class=section-title>推荐书籍</h2>
-<p class=section-subtitle>李录推荐及价值投资必读经典</p>
-</div>
-<div class=books-grid>
-<div class=book-card><div class=book-cover><span>&#128214;</span></div><div class=book-info><span style="background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">&#9733; 必读</span><h4>《文明、现代化、价值投资与中国》</h4><p>李录 著<br>2020年出版<br><small style="color:#c9a227;">&#9733; 必读 — 理解李录思想体系的最佳起点</small></p></div></div>
-<div class=book-card><div class=book-cover><span>&#128218;</span></div><div class=book-info><span style="background:#3182ce;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">进阶</span><h4>《证券分析》</h4><p>Benjamin Graham<br>价值投资奠基之作<br><small style="color:#3182ce;">进阶 — 价值投资原典，建议有基础后阅读</small></p></div></div>
-<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><span style="background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">&#9733; 必读</span><h4>《聪明的投资者》</h4><p>Benjamin Graham<br>投资经典必读<br><small style="color:#c9a227;">&#9733; 必读 — 格雷厄姆最经典著作</small></p></div></div>
-<div class=book-card><div class=book-cover><span>&#128220;</span></div><div class=book-info><span style="background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">&#9733; 必读</span><h4>《穷查理宝典》</h4><p>Charlie Munger<br>芒格智慧箴言<br><small style="color:#c9a227;">&#9733; 必读 — 多元思维模型与投资智慧</small></p></div></div>
-<div class=book-card><div class=book-cover><span>&#128221;</span></div><div class=book-info><span style="background:#c9a227;color:#0a1628;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">&#9733; 必读</span><h4>《巴菲特致股东的信》</h4><p>Warren Buffett<br>股神投资哲学<br><small style="color:#c9a227;">&#9733; 必读 — 每年必读的投资圣经</small></p></div></div>
-<div class=book-card><div class=book-cover><span>&#128219;</span></div><div class=book-info><span style="background:#718096;color:#fff;padding:2px 8px;border-radius:4px;font-size:0.7rem;font-weight:700;display:inline-block;margin-bottom:6px;">参考</span><h4>《滚雪球》</h4><p>Warren Buffett传记<br>投资生涯全景<br><small style="color:#718096;">参考 — 巴菲特生平，适合延伸阅读</small></p></div></div>
-</div>
-<p style="text-align:center;margin-top:20px;"><a href="/li-lu-research/bookshelf.html" style="color:#c9a227;font-weight:600;text-decoration:none;">完整书单与阅读指引 →</a></p>
-</section>
-<section id=interviews class=section>
-<div class=section-header>
-<h2 class=section-title>访谈与文章</h2>
-<p class=section-subtitle>深入了解李录的投资思想与中国市场观点</p>
-</div>
-<div class=card>
-<h3>&#128221; 2021年哥伦比亚商学院访谈要点</h3>
-<p><strong>来源:</strong> Columbia Business School Greater China Society<br><strong>采访者:</strong> Bruce Greenwald (著名价值投资教授)</p>
-<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>投资标准</h4>
-<ul style=padding-left:20px;color:#4a5568>
-<li style=margin-bottom:8px>持久护城河 (Durable Moat)</li>
-<li style=margin-bottom:8px>高资本回报率 (可持续)</li>
-<li style=margin-bottom:8px>以低于内在价值买入 (安全边际)</li>
-<li style=margin-bottom:8px>长期持有，在下跌时加仓</li>
-</ul>
-<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>对中国市场观点</h4>
-<ul style=padding-left:20px;color:#4a5568>
-<li style=margin-bottom:8px>中国将成为世界上最大、最活跃、增长最快的消费市场</li>
-<li style=margin-bottom:8px>中国市场仍然不发达，在一个充满活力的经济体中更容易找到价值</li>
-<li style=margin-bottom:8px>金融服务尚未开发，许多领域即将起飞</li>
-<li style=margin-bottom:8px>现在是投资中国的好时机</li>
-</ul>
-<h4 style=margin-top:25px;margin-bottom:15px;color:var(--primary-blue)>关于新技术</h4>
-<ul style=padding-left:20px;color:#4a5568>
-<li style=margin-bottom:8px>你需要了解新技术对你投资的企业的影响</li>
-<li style=margin-bottom:8px>汽车行业遭受4个颠覆性趋势: 共享出行、电池、智能设计、自动驾驶</li>
-<li style=margin-bottom:8px>李录是比亚迪的长期投资者</li>
-</ul>
-</div>
-</section>
-<section id=resources class=section style="background: linear-gradient(135deg, #1a365d 0%, #0a1628 100%); padding: 60px 40px;">
-<div class=section-header>
-<h2 class=section-title style="color: #fff;">下载资源</h2>
-<p class=section-subtitle style="color: #a0aec0;">学习资料打包下载</p>
-</div>
-<div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
-<a href="li-lu-study-guide.md" download style="padding: 20px 40px; background: #c9a227; color: #0a1628; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block;">&#128196; 学习指南 (Markdown格式，建议用Markdown阅读器打开)</a>
-<a href="li-lu-qa.md" download style="padding: 20px 40px; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block; border: 2px solid #c9a227;">&#128196; 问答集 (Markdown格式，建议用Markdown阅读器打开)</a>
-<a href="li-lu-2021-interview-summary.md" download style="padding: 20px 40px; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600; display: inline-block; border: 2px solid #c9a227;">&#128196; 访谈摘要 (Markdown格式，建议用Markdown阅读器打开)</a>
-</div>
-</section>
-<section id=timeline-index class=section>
-<div class=section-header>
-<h2 class=section-title>李录公开活动索引</h2>
-<p class=section-subtitle>Q2资料回顾Checklist — 每项完成后打勾</p>
-</div>
-<div class=card>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2024-12 北大价值投资课程十周年演讲</summary><p style="margin-top:10px;color:#4a5568;">十周年纪念演讲</p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2021 CBS/Greenwald访谈 (CCBC Fireside Chat)</summary><p style="margin-top:10px;color:#4a5568;">Columbia Greater China Society主办</p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2020 《文明、现代化、价值投资与中国》出版</summary><p style="margin-top:10px;color:#4a5568;">系统阐述价值投资理念与中国市场机会</p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2019 北大光华课程演讲</summary><p style="margin-top:10px;color:#4a5568;"></p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2015 北大光华价值投资课程启动</summary><p style="margin-top:10px;color:#4a5568;"></p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2014 "Civilizations, Modernization" 论文</summary><p style="margin-top:10px;color:#4a5568;">SSRN发表</p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2010s Himalaya Capital 致投资者信</summary><p style="margin-top:10px;color:#4a5568;">如公开</p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2008 比亚迪投资（芒格/巴菲特入场）</summary><p style="margin-top:10px;color:#4a5568;">李录推荐，芒格/巴菲特入场</p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 2002-03 李录发现/研究比亚迪</summary><p style="margin-top:10px;color:#4a5568;"></p></details>
-<details><summary style="font-weight:600;color:#1a365d;cursor:pointer;">&#9744; 1997 创立喜马拉雅资本</summary><p style="margin-top:10px;color:#4a5568;"></p></details>
-</div>
-<p style="text-align:center;margin-top:20px;"><a href="timeline.html" style="color:#c9a227;font-weight:600;text-decoration:none;">完整时间线 →</a></p>
-</section>
-
-<section id=study-notes class=section>
-<div class=section-header>
-<h2 class=section-title>研究笔记 / Study Notes</h2>
-<p class=section-subtitle>Q2核心 — 每看完一个视频/文章，结构化沉淀于此</p>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+  <div id="uni-drawer-header">
+    <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+    <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+  </div>
+  <a href="index.html" class="uni-link">首页</a>
+  <a href="about.html" class="uni-link">关于李录</a>
+  <a href="principles.html" class="uni-link">投资原则</a>
+  <a href="holdings.html" class="uni-link">持仓</a>
+  <a href="faq.html" class="uni-link">FAQ</a>
+  <a href="timeline.html" class="uni-link">时间线</a>
+  <a href="video_study.html" class="uni-link">视频</a>
+  <a href="quotes.html" class="uni-link">语录</a>
+  <a href="bookshelf.html" class="uni-link">书架</a>
+  <div id="uni-drawer-theme"></div>
 </div>
 
-<!-- 笔记1：CCBC Fireside Chat -->
-<div class=card style="border-left:4px solid #3182ce;margin-bottom:16px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
-<h3 style="color:#1a365d;margin:0;">&#127916; 价值投资的三个阶段：从雪茄烟蒂到伟大企业</h3>
-<div style="display:flex;gap:8px;flex-wrap:wrap;">
-<span style="background:#3182ce;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.72rem;font-weight:600;">访谈</span>
-<span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:0.72rem;">2024-03-15</span>
-</div>
-</div>
-<p style="color:#888;font-size:0.8rem;margin-bottom:12px;">来源：· Columbia China Business Conference · Bruce Greenwald x Li Lu</p>
-<p style="color:#666;font-size:0.88rem;line-height:1.7;margin-bottom:10px;"><strong>核心论点：</strong>李录的投资生涯经历三个阶段演进，每一阶段都是在前一阶段基础上的深化：</p>
-<ul style="color:#4a5568;font-size:0.85rem;line-height:1.8;padding-left:20px;margin-bottom:10px;">
-<li><strong>第一阶段（格雷厄姆）：</strong>雪茄烟蒂法 — 寻找股价低于净流动资产的公司，靠分散化降低风险。最大问题：好公司卖了就再也买不回来。</li>
-<li><strong>第二阶段（过渡期）：</strong>优质小企业 — 开始关注公司质量，但护城河概念尚未系统化。</li>
-<li><strong>第三阶段（芒格/巴菲特）：</strong>具有持久护城河的伟大企业 — ROIC持续高于平均、真正护城河、长期增长赛道三者缺一不可。目标是在少数伟大企业中长期持有。</li>
-</ul>
-<p style="color:#2d3748;font-size:0.85rem;background:#f7fafc;padding:10px 14px;border-radius:8px;margin-bottom:8px;"><strong>&#128161; 我的思考：</strong>三个阶段的演进本质是认知升级。早期阶段的"价格驱动"到后期"价值驱动"，背后是理解深度的提升。我目前处于哪个阶段？对于能力圈尚未建立的领域，分散化仍是必要的风险管理。</p>
-<a href="videos/b2yxBBMIEz0.html" style="display:inline-block;padding:6px 14px;background:#3182ce;color:#fff;border-radius:8px;text-decoration:none;font-size:0.8rem;font-weight:500;">&#9654; 查看完整视频笔记</a>
-</div>
+<div id="uni-body">
+<main class="main-content" style="padding-top:84px">
 
-<!-- 笔记2：四大价值投资理念 -->
-<div class=card style="border-left:4px solid #38a169;margin-bottom:16px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
-<h3 style="color:#1a365d;margin:0;">&#128218; 价值投资四大核心理念（格雷厄姆+巴菲特）</h3>
-<div style="display:flex;gap:8px;flex-wrap:wrap;">
-<span style="background:#38a169;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.72rem;font-weight:600;">演讲</span>
-<span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:0.72rem;">2020+</span>
-</div>
-</div>
-<p style="color:#888;font-size:0.8rem;margin-bottom:12px;">来源：<a href="https://xueqiu.com/2524803655/238536858" target="_blank" style="color:#38a169;">雪球 · 李录：价值投资的四个理念</a> · 融合《文明、现代化、价值投资与中国》</p>
-<p style="color:#666;font-size:0.88rem;line-height:1.7;margin-bottom:10px;"><strong>前三个来自格雷厄姆，最后一个是巴菲特的独特贡献：</strong></p>
-<ul style="color:#4a5568;font-size:0.85rem;line-height:1.9;padding-left:20px;margin-bottom:10px;">
-<li><strong>① 股票是部分所有权：</strong>买股票就是买公司的一部分，持有分享公司价值增长。理解这一点的投资者少之又少，但这才是可持续的"正道"。</li>
-<li><strong>② 市场先生：</strong>市场存在只为投资者服务（提供买卖机会），不负责告诉你价值。价格不等于价值，利用情绪波动而不是被其支配。</li>
-<li><strong>③ 安全边际：</strong>投资是对未来预测，不可能100%准确。无论多有把握，都必须预留巨大安全边际。安全边际是投资的基石技能。</li>
-<li><strong>④ 能力圈：</strong>长期努力建立对某些公司/行业的深度理解，超越所有其他人。能清楚说出观点不成立的条件，才是真正的能力。没有边界的能力不是真能力。</li>
-</ul>
-<p style="color:#2d3748;font-size:0.85rem;background:#f7fafc;padding:10px 14px;border-radius:8px;margin-bottom:8px;"><strong>&#128161; 我的思考：</strong>四大理念中，我最薄弱的是③安全边际和④能力圈——经常高估自己的预测确定性。未来需要在决策时明确标注"安全边际检查"，以及在能力圈外标注"不投"。</p>
-</div>
-
-<!-- 笔记3：护城河与信任之网 -->
-<div class=card style="border-left:4px solid #c9a227;margin-bottom:16px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
-<h3 style="color:#1a365d;margin:0;">&#128275; 最高形式护城河：信任之网</h3>
-<div style="display:flex;gap:8px;flex-wrap:wrap;">
-<span style="background:#c9a227;color:#0a1628;padding:2px 10px;border-radius:12px;font-size:0.72rem;font-weight:600;">访谈</span>
-<span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:0.72rem;">2024-03</span>
-</div>
-</div>
-<p style="color:#888;font-size:0.8rem;margin-bottom:12px;">来源：<a href="videos/b2yxBBMIEz0.html" style="color:#c9a227;">CCBC Fireside Chat</a> · 15:00 片段 · Li Lu at Columbia</p>
-<p style="color:#666;font-size:0.88rem;line-height:1.7;margin-bottom:10px;"><strong>李录原话（英文）：</strong></p>
-<blockquote style="background:#0a1628;color:#e0e0e0;padding:12px 16px;border-radius:8px;font-size:0.85rem;line-height:1.7;margin-bottom:12px;font-style:italic;">"The highest form which civilization can reach is a seamless web of deserved trust — not much procedure, just totally reliable people correctly trusting one another."</blockquote>
-<p style="color:#4a5568;font-size:0.85rem;line-height:1.7;margin-bottom:10px;">李录认为护城河有多种形式（成本优势、品牌、网络效应、监管壁垒），但<strong>最深厚的护城河是信任</strong>——建立在诚信基础上的企业与人之间的无缝信任网络。这一洞见源于芒格对人类社会演进的研究，也解释了为何巴菲特如此看重管理层品质。</p>
-<p style="color:#2d3748;font-size:0.85rem;background:#f7fafc;padding:10px 14px;border-radius:8px;margin-bottom:8px;"><strong>&#128161; 我的思考：</strong>信任作为护城河的核心含义：优秀的管理层不只关注短期指标，而是维护与客户、员工、社会的长期信任关系。这解释了为何李录如此重视比亚迪的王传福——他评价的是企业家的"可信度"和"品德"。</p>
-</div>
-
-<!-- 笔记4：投资方法论 -->
-<div class=card style="border-left:4px solid #805ad5;margin-bottom:16px;">
-<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
-<h3 style="color:#1a365d;margin:0;">&#128640; 李录投资方法论：六大核心</h3>
-<div style="display:flex;gap:8px;flex-wrap:wrap;">
-<span style="background:#805ad5;color:#fff;padding:2px 10px;border-radius:12px;font-size:0.72rem;font-weight:600;">文章</span>
-<span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:0.72rem;">2025-05</span>
-</div>
-</div>
-<p style="color:#888;font-size:0.8rem;margin-bottom:12px;">来源：<a href="https://finance.sina.com.cn/money/smjj/smdt/2025-05-14/doc-inewprwy0392915.shtml" target="_blank" style="color:#805ad5;">新浪财经 · 李录的价值投资方法论概述</a></p>
-<ul style="color:#4a5568;font-size:0.85rem;line-height:1.9;padding-left:20px;margin-bottom:10px;">
-<li><strong>深入研究：</strong>像调查记者一样研究公司——快速搜集数据、探究每个细节、对任何事物保持好奇。大部分企业难以预测，聚焦在可预测的伟大企业。</li>
-<li><strong>DCF为核心工具：</strong>DCF是主要估值方法，关键在于保守假设。估值时要问：十年后这家公司最差会差成什么样子？</li>
-<li><strong>卖出纪律：</strong>三个卖出理由：错误发现、估值极端高估、发现更好的机会（机会成本优化）。</li>
-<li><strong>波动非风险：</strong>股价下跌不是风险，是机会。真正的风险是资本的永久性损失。</li>
-<li><strong>客户选择：</strong>只管理理解并承诺长期投资的资金，摆脱华尔街短期压力。</li>
-<li><strong>地域配置：</strong>没有预设标准，跟着机会和兴趣走，聚焦美国和亚洲。</li>
-</ul>
-<p style="color:#2d3748;font-size:0.85rem;background:#f7fafc;padding:10px 14px;border-radius:8px;"><strong>&#128161; 我的思考：</strong>"波动非风险"这个观念需要反复提醒自己。下跌时产生的情绪反应（恐惧）恰恰是市场在暴露我自己的弱点，而不是在告诉我有价值信息。</p>
-</div>
-
+<!-- Hero -->
+<section style="background:linear-gradient(135deg,#0a1628,#1a365d);border-radius:20px;padding:50px 40px;margin-bottom:50px;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:url('data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E');opacity:.5"></div>
+  <div style="position:relative;z-index:1">
+    <h1 style="font-size:2.8rem;color:#fff;margin-bottom:12px;line-height:1.2">李录 <span style="color:#c9a227">(Li Lu)</span></h1>
+    <p style="color:rgba(255,255,255,.6);font-size:1.1rem;margin-bottom:6px">价值投资研究者 · 喜马拉雅资本</p>
+    <p style="color:#c9a227;font-size:.95rem">28年投资经验 · ~20% 年化收益 · 6条核心原则</p>
+    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+      <a href="about.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#c9a227;color:#0a1628;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem">关于李录 →</a>
+      <a href="principles.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;border:2px solid #c9a227;color:#c9a227;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem">投资原则 →</a>
+      <a href="holdings.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;border:2px solid #c9a227;color:#c9a227;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem">持仓研究 →</a>
+    </div>
+  </div>
 </section>
 
-<section id=civilization class=section>
-<div class=card style="border-left:4px solid #c9a227;">
-<h3 style="color:#c9a227;">&#127756; 人类文明演进阶段</h3>
-<p style="color:#4a5568;font-size:0.9rem;margin-bottom:20px;">李录将文明定义为人类利用自身与环境资源在生存发展中创造的全部成果，用来衡量人类与动物祖先之间拉开的距离。（《文明、现代化、价值投资与中国》）</p>
+<!-- Study Notes -->
+<section class="section">
+  <h2 style="font-size:1.5rem;color:#0a1628;margin-bottom:5px;font-weight:700">研究笔记 <span style="font-size:.9rem;color:#888;font-weight:400">Study Notes</span></h2>
+  <p style="color:#888;font-size:.9rem;margin-bottom:20px">Q2 核心 — 每看完一个视频/文章，结构化沉淀于此</p>
+  <div style="display:flex;flex-direction:column;gap:16px">
 
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:15px;">
-<div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center;">
-<strong style="color:#1a365d;">1.0 狩猎采集</strong>
-<p style="font-size:0.85rem;color:#666;margin-top:8px;">约一万年前之前。人类以狩猎采集为生，人口少，工具简陋。人类完全依赖自然供给，无剩余产品，无阶级分化。</p>
-</div>
-<div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center;">
-<strong style="color:#1a365d;">2.0 农业文明</strong>
-<p style="font-size:0.85rem;color:#666;margin-top:8px;">约一万年前至1750年。农耕带来定居，人口激增，出现城市、文字和国家。土地是核心资产，农业经济是短缺经济，不断陷入马尔萨斯陷阱——战争、瘟疫、饥荒周期性地削减人口。</p>
-</div>
-<div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center;">
-<strong style="color:#c9a227;">3.0 科技文明</strong>
-<p style="font-size:0.85rem;color:#666;margin-top:8px;">1750年至今，以1776年《国富论》《独立宣言》与瓦特蒸汽机为标志。核心资产从土地转变为市场大小——自由竞争市场不断自我进化，现代科技加速这一过程，最终最大的市场成为唯一市场。</p>
-</div>
-</div>
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;border-left:4px solid #3182ce">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#3182ce;color:#fff;padding:2px 10px;border-radius:12px;font-size:.72rem;font-weight:600">访谈</span>
+        <span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:.72rem">2024-03-15</span>
+      </div>
+      <h3 style="color:#1a365d;font-size:1rem;margin-bottom:8px">价值投资的三个阶段：从雪茄烟蒂到伟大企业</h3>
+      <p style="color:#4a5568;font-size:.85rem;line-height:1.7">第一阶段（格雷厄姆）雪茄烟蒂法 → 第二阶段优质小企业 → 第三阶段（芒格/巴菲特）具有持久护城河的伟大企业。三个阶段的演进本质是认知升级。</p>
+      <a href="about.html" style="color:#c9a227;font-size:.82rem;text-decoration:none;margin-top:8px;display:inline-block">查看全部 →</a>
+    </div>
 
-<blockquote style="background:#0a1628;color:#e0e0e0;padding:14px 18px;border-radius:8px;font-size:0.88rem;line-height:1.8;margin:25px 0 20px 0;font-style:italic;border-left:3px solid #c9a227;">
-「一个自由竞争的市场就是一个不断自我进化、自我进步、自我完善的机制，现代科技的介入使得这一过程异常迅猛……一个国家增加实力最好的方法是放弃自己的关税壁垒，加入到这全球最大的国际自由市场体系里去；反之，闭关锁国就会导致相对落后。<strong style="color:#c9a227;">这就是3.0文明的铁律。</strong>」<br>
-<cite style="color:#8fa3c0;font-size:0.8rem;font-style:normal;">—— 李录《文明、现代化、价值投资与中国》</cite>
-</blockquote>
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;border-left:4px solid #38a169">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#38a169;color:#fff;padding:2px 10px;border-radius:12px;font-size:.72rem;font-weight:600">演讲</span>
+        <span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:.72rem">2020+</span>
+      </div>
+      <h3 style="color:#1a365d;font-size:1rem;margin-bottom:8px">价值投资四大核心理念</h3>
+      <p style="color:#4a5568;font-size:.85rem;line-height:1.7">①股票是部分所有权 ②市场先生是仆人 ③安全边际 ④能力圈。四大理念中，安全边际和能力圈是最需要刻意练习的部分。</p>
+      <a href="about.html" style="color:#c9a227;font-size:.82rem;text-decoration:none;margin-top:8px;display:inline-block">查看全部 →</a>
+    </div>
 
-<div style="margin-top:20px;padding:20px;background:#f0f4f8;border-radius:10px;">
-<strong style="color:#1a365d;">&#127919; 中国：从2.5迈向3.0</strong>
-<p style="color:#4a5568;margin-top:10px;font-size:0.95rem;">
-中国目前处于2.5向3.0的转型阶段。改革40年已完成工业化，但科技创新和市场经济仍在深化。李录指出，3.0文明的核心标志是<strong>科技 + 自由市场 + 制度创新</strong>三者缺一不可。中国最核心的变化将是从政府主导的市场经济转变为以政府为辅助的全面自由市场经济。如果转型成功，中国将成为3.0文明时代最重要的增长极；如果回到政府全面主导的老路，则可能错失历史机遇。
-</p>
-<p style="color:#4a5568;margin-top:10px;font-size:0.9rem;">
-李录特别强调：<strong>真正3.0文明的主道和政治、文化关系不大，和自由市场经济及现代科技关系极大。</strong>西方观察者最大的误解，就是过度关注政治体制而忽视市场机制这一根本变量。
-</p>
-</div>
+    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;border-left:4px solid #c9a227">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#c9a227;color:#0a1628;padding:2px 10px;border-radius:12px;font-size:.72rem;font-weight:600">访谈</span>
+        <span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:.72rem">2024-03</span>
+      </div>
+      <h3 style="color:#1a365d;font-size:1rem;margin-bottom:8px">最高形式护城河：信任之网</h3>
+      <p style="color:#4a5568;font-size:.85rem;line-height:1.7">"The highest form which civilization can reach is a seamless web of deserved trust." 护城河有多种形式，但最深厚的护城河是信任——建立在诚信基础上的企业与人之间的无缝信任网络。</p>
+      <a href="about.html" style="color:#c9a227;font-size:.82rem;text-decoration:none;margin-top:8px;display:inline-block">查看全部 →</a>
+    </div>
 
-<h4 style="margin-top:30px;color:#1a365d;">&#128161; 核心观点</h4>
-<ul style="color:#4a5568;font-size:0.88rem;line-height:1.9;padding-left:20px;margin-top:8px;">
-<li><strong>土地 → 市场：</strong>农业文明核心资产是土地；3.0科技文明核心资产是市场大小。最大市场最终成为唯一市场，这是3.0铁律。</li>
-<li><strong>政府角色：</strong>2.0农业文明政府核心是土地分配；3.0科技文明政府核心是保护私产、有限干预、保障自由市场规则。</li>
-<li><strong>对中国判断：</strong>悲观论者（人均GDP永远赶不上西方）和乐观论者（中国经济将很快超越美国）都忽略了关键——中国能否成功转型的核心是制度创新，而非单纯的技术或经济指标。</li>
-<li><strong>投资含义：</strong>李录投资中国，根本逻辑不是押注中国政府政策，而是押注中国企业家精神和市场经济机制能否持续释放。</li>
-</ul>
-
-<blockquote style="background:#0a1628;color:#e0e0e0;padding:14px 18px;border-radius:8px;font-size:0.88rem;line-height:1.8;margin:20px 0 10px 0;font-style:italic;border-left:3px solid #c9a227;">
-「我们看到真正3.0文明的主道其实和政治、文化关系不大，而和自由市场经济及现代科技关系极大，这是真正的本质。这是很多投资人，尤其是西方投资人对中国最大的误解。」<br>
-<cite style="color:#8fa3c0;font-size:0.8rem;font-style:normal;">—— 李录，2019年北大演讲</cite>
-</blockquote>
-
-<p style="color:#888;font-size:0.85rem;margin-top:20px;">内容来源：李录《文明、现代化、价值投资与中国》(2020) · 北大演讲(2015/2019) · 哥伦比亚大学讲座(2006)</p>
-</div>
+  </div>
+  <a href="about.html" style="color:#c9a227;font-size:.9rem;font-weight:600;text-decoration:none;margin-top:16px;display:inline-block">查看全部笔记 →</a>
 </section>
 
-<section id=my-framework class=section>
-<div class=section-header>
-<h2 class=section-title>我的投资框架 <span style="font-size:1rem;color:#888;font-weight:400;">(Q3 2026 构建中)</span></h2>
-<p class=section-subtitle>基于李录思想，结合自身认知和实践，形成的个人投资体系</p>
-</div>
-<div class=card>
-<h4 style="color:#1a365d;">与李录框架的异同</h4>
-<p style="color:#888;font-size:0.9rem;margin-top:8px;">(Q3填充)</p>
-</div>
-<div class=card>
-<h4 style="color:#1a365d;">我的能力圈定义</h4>
-<p style="color:#888;font-size:0.9rem;margin-top:8px;">(Q3填充)</p>
-</div>
-<div class=card>
-<h4 style="color:#1a365d;">我的护城河评估清单</h4>
-<p style="color:#888;font-size:0.9rem;margin-top:8px;">(Q3填充)</p>
-</div>
-<div class=card>
-<h4 style="color:#1a365d;">我的买入/卖出纪律</h4>
-<p style="color:#888;font-size:0.9rem;margin-top:8px;">(Q3填充)</p>
-</div>
+<!-- Public Activity Checklist -->
+<section class="section">
+  <h2 style="font-size:1.5rem;color:#0a1628;margin-bottom:5px;font-weight:700">公开活动进度</h2>
+  <p style="color:#888;font-size:.9rem;margin-bottom:20px">Q2 资料回顾 Checklist — 每项完成后打勾</p>
+  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px">
+    <details style="margin-bottom:12px"><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2024-12 北大价值投资课程十周年演讲</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem">约3小时最完整演讲 · 四大主题</p></details>
+    <details style="margin-bottom:12px"><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2021 CBS/Greenwald 访谈</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem">Columbia Greater China Society 主办</p></details>
+    <details style="margin-bottom:12px"><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2020《文明、现代化、价值投资与中国》出版</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem">系统阐述价值投资理念与中国市场机会</p></details>
+    <details style="margin-bottom:12px"><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2019 北大光华课程演讲</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem"></p></details>
+    <details><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2015 北大光华价值投资课程启动</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem"></p></details>
+  </div>
+  <a href="timeline.html" style="color:#c9a227;font-size:.9rem;font-weight:600;text-decoration:none;margin-top:16px;display:inline-block">完整时间线 →</a>
 </section>
 
-<section id=principle-mapping class=section style="background:#f7fafc;">
-<div class=section-header>
-<h2 class=section-title>原则 → 持仓映射 <span style="font-size:1rem;color:#888;font-weight:400;">(Q4 2026)</span></h2>
-<p class=section-subtitle>李录的原则如何映射到我自己的持仓决策</p>
-</div>
-<div class=card>
-<table style="width:100%;border-collapse:collapse;">
-<tr style="background:#1a365d;color:#fff;">
-<th style="padding:12px;text-align:left;">李录原则</th>
-<th style="padding:12px;text-align:left;">我的持仓中的体现</th>
-<th style="padding:12px;text-align:center;">自我评分</th>
-</tr>
-<tr>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;"><strong>护城河</strong></td>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;">(Q4填充)</td>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;">☆☆☆☆☆</td>
-</tr>
-<tr>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;"><strong>安全边际</strong></td>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;">(Q4填充)</td>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;">☆☆☆☆☆</td>
-</tr>
-<tr>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;"><strong>能力圈</strong></td>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;">(Q4填充)</td>
-<td style="padding:12px;border-bottom:1px solid #e2e8f0;text-align:center;">☆☆☆☆☆</td>
-</tr>
-<tr>
-<td style="padding:12px;"><strong>长期持有</strong></td>
-<td style="padding:12px;">(Q4填充)</td>
-<td style="padding:12px;text-align:center;">☆☆☆☆☆</td>
-</tr>
-</table>
-</div>
+<!-- Holdings Snapshot -->
+<section class="section">
+  <h2 style="font-size:1.5rem;color:#0a1628;margin-bottom:5px;font-weight:700">持仓快照 <span style="font-size:.9rem;color:#888;font-weight:400">(2025 Q4)</span></h2>
+  <p style="color:#888;font-size:.9rem;margin-bottom:20px">喜马拉雅资本 13F · SEC EDGAR · 仅供研究参考，不构成投资建议</p>
+  <div style="overflow-x:auto">
+    <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
+      <thead>
+        <tr style="background:#0a1628;color:#fff">
+          <th style="padding:12px 16px;text-align:left;font-size:.85rem">股票</th>
+          <th style="padding:12px 16px;text-align:left;font-size:.85rem">代码</th>
+          <th style="padding:12px 16px;text-align:center;font-size:.85rem">占比</th>
+          <th style="padding:12px 16px;text-align:center;font-size:.85rem">护城河</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #e5e7eb">
+          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Alphabet</td>
+          <td style="padding:12px 16px;font-size:.82rem;color:#666">GOOGL</td>
+          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">43.86%</td>
+          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9733;</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e5e7eb;background:#f9fafb">
+          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Bank of America</td>
+          <td style="padding:12px 16px;font-size:.82rem;color:#666">BAC</td>
+          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">16.08%</td>
+          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9734;</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e5e7eb">
+          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">PDD Holdings</td>
+          <td style="padding:12px 16px;font-size:.82rem;color:#666">PDD</td>
+          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">14.64%</td>
+          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9733;</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e5e7eb;background:#f9fafb">
+          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Berkshire Hathaway B</td>
+          <td style="padding:12px 16px;font-size:.82rem;color:#666">BRK.B</td>
+          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">12.64%</td>
+          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e5e7eb">
+          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">East West Bancorp</td>
+          <td style="padding:12px 16px;font-size:.82rem;color:#666">EWBC</td>
+          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">8.74%</td>
+          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9734;</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e5e7eb;background:#f9fafb">
+          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Occidental Petroleum</td>
+          <td style="padding:12px 16px;font-size:.82rem;color:#666">OXY</td>
+          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">1.69%</td>
+          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9734;&#9734;</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e5e7eb">
+          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Crocs</td>
+          <td style="padding:12px 16px;font-size:.82rem;color:#666">CROX</td>
+          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">1.50%</td>
+          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9734;&#9734;</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Apple</td>
+          <td style="padding:12px 16px;font-size:.82rem;color:#666">AAPL</td>
+          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">0.84%</td>
+          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="margin-top:12px;color:#888;font-size:.82rem">Top5 占比 96.2% · 科技 44.7% · 金融 24.8% · 电商 14.6% · 13F 仅覆盖美股持仓</p>
+  <a href="holdings.html" style="color:#c9a227;font-size:.9rem;font-weight:600;text-decoration:none;margin-top:12px;display:inline-block">完整持仓分析 →</a>
 </section>
 
-<section id=updates class=section>
-<div class=section-header>
-<h2 class=section-title>更新日志</h2>
-<p class=section-subtitle>网站内容更新记录</p>
-</div>
-<div class=card>
-<h4 style="color: #c9a227;">&#128197; 2026-04-08</h4>
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-<li>新增: 李录公开活动索引 (Q2 Checklist)</li>
-<li>新增: 研究笔记 / Study Notes 区域</li>
-<li>新增: 文明3.0框架板块</li>
-<li>新增: 我的投资框架 (Q3 构建中)</li>
-<li>新增: 原则→持仓映射表 (Q4)</li>
-<li>修复: 人物背景事实 (JD+MBA+MA, 比亚迪时间线)</li>
-<li>修复: 年化收益标注非官方数据</li>
-<li>优化: 下载资源标注Markdown格式</li>
-<li>优化: Open Graph标签 / 返回顶部按钮</li>
-</ul>
-<h4 style="color: #1a365d; margin-top: 25px;">&#128197; 2026-03-22</h4>
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-<li>新增: 投资案例分析 (比亚迪、腾讯、中国移动)</li>
-<li>新增: 学习路径三阶段</li>
-<li>新增: 持仓PE及股息数据分析</li>
-<li>新增: 视频嵌入播放</li>
-<li>新增: 搜索功能</li>
-<li>新增: 下载资源区</li>
-</ul>
-<h4 style="color: #1a365d; margin-top: 25px;">&#128197; 2026-03-21</h4>
-<ul style="padding-left: 20px; color: #4a5568; margin-top: 10px;">
-<li>初始版本发布</li>
-<li>包含持仓数据、访谈摘要、推荐书籍</li>
-</ul>
-</div>
-</section>
-<section id=faq class=section style="background: #edf2f7;">
-<div class=section-header>
-<h2 class=section-title>常见问题</h2>
-<p class=section-subtitle>关于李录与价值投资</p>
-</div>
-<div style="max-width: 800px; margin: 30px auto 0;">
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q1: 李录是如何开始价值投资的？</summary>
-<p style="margin-top: 15px; color: #4a5568;">李录在哥伦比亚大学师从Bruce Greenwald教授学习价值投资，后创立喜马拉雅资本。</p>
-</details>
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q2: 李录的核心投资原则是什么？</summary>
-<p style="margin-top: 15px; color: #4a5568;">六大原则：①买股票就是买企业（股票是企业部分所有权）②市场先生是仆人不是向导（利用情绪波动而非被其支配）③能力圈：不懂不投（知道自己不知道什么比知道什么更重要）④安全边际（用显著低于价值的价格买入）⑤长期主义让复利发挥作用⑥护城河是根本（持久竞争优势决定长期回报）</p>
-</details>
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q3: 李录对中国市场怎么看？</summary>
-<p style="margin-top: 15px; color: #4a5568;">他认为中国将成为世界上最大、最活跃的消费市场，在充满活力的经济体中更容易找到价值。</p>
-</details>
-<details style="background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 15px; cursor: pointer;">
-<summary style="font-weight: 600; color: #1a365d; outline: none;">Q4: 什么是「财富」？——李录的财富观与购买力思维</summary>
-<p style="margin-top: 15px; color: #4a5568;"><strong>核心观点（来自2024北大演讲）：</strong>真正的财富不是账面资产，而是「购买力」——即未来能够持续购买商品和服务的能力。李录指出，人们对财富的困惑是时代性困惑的根源之一。<br><br><strong>关键区分：</strong>①「已积累财富」vs「未来创富能力」——房子是70%中国家庭财富形式，但它是消费品不是投资品；②「名义财富」vs「实际购买力」——房产名义增值若不能变现，在需要流动性时无法发挥作用。<br><br><strong>投资人的财富定义：</strong>能够产生现金流、抵御通胀、并在全球范围内优化资源配置的能力。价值投资本质上是一种购买力 preservation（保全）和增殖的思维。<br><br><em>来源：李录2024北大演讲《全球价值投资与时代》Part 1 — 时代困惑的根源</em></p>
-</details>
-</div>
-</section>
 </main>
-
-<!-- Changelog — see .github/CLAUDE.md 规则7 -->
-
-
-<footer class=footer>
-<div class=footer-content>
-<h3>李录 <span>价值投资</span> 研究</h3>
-<p>专注于李录价值投资思想研究与学习的资料汇总。</p>
-<div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-<a href=#about style="color: #c9a227; text-decoration: none;">关于</a> ·
-<a href=#holdings style="color: #c9a227; text-decoration: none;">持仓</a> ·
-<a href=#principles style="color: #c9a227; text-decoration: none;">原则</a> ·
-e;">视频</a> ·
-<a href=bookshelf.html style="color: #c9a227; text-decoration: none;">书籍</a> ·
-<a href=timeline.html style="color: #c9a227; text-decoration: none;">学习</a> ·
-<a href=#faq style="color: #c9a227; text-decoration: none;">FAQ</a>
 </div>
-</div>
-<div class=footer-bottom>
-<p>&#128197; 页面更新: 2026-04-14 | 数据截止: 2025 Q4 13F (2026-02-17披露) | 仅供研究参考，不构成投资建议</p>
-<button id="backToTop" style="position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#c9a227;color:#0a1628;border:none;font-size:1.5rem;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.3);z-index:999;display:none;" title="返回顶部">&#8593;</button>
-</div>
+
+<footer>
+  <span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
+  <span>数据截止：2025 Q4 13F</span>
 </footer>
-<script src="js/main.js"></script>
 
+<script src="js/main.js" defer></script>
 </body>
 </html>
-
