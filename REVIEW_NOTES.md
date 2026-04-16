@@ -280,8 +280,8 @@
 
 | 任务 | 描述 | 状态 | 优先级 |
 |------|------|------|--------|
-| 5-R0-1 | **创建共享 CSS 文件** — 从 index.html 提取所有 CSS，建立 CSS 变量驱动主题系统（`--text`, `--bg`, `--muted` 等）；删除所有 `body.dark-mode .xxx { color }` 补丁规则；输出 `css/shared.css` | ☐ | P0 |
-| 5-R0-2 | **创建共享 JS 文件** — navbar 切换、drawer 开关、主题切换、back-to-top；输出 `js/main.js` | ☐ | P0 |
+| 5-R0-1 | **创建共享 CSS 文件** — 从 index.html 提取所有 CSS，建立 CSS 变量驱动主题系统（`--text`, `--bg`, `--muted` 等）；删除所有 `body.dark-mode .xxx { color }` 补丁规则；输出 `css/shared.css` | ✅ | P0 |
+| 5-R0-2 | **创建共享 JS 文件** — navbar 切换、drawer 开关、主题切换、back-to-top；输出 `js/main.js` | ✅ | P0 |
 | 5-R0-3 | **统一导航体系** — 删除旧 `.navbar` 系统，只保留 `#uni-navbar`；所有页面复用同一套 navbar HTML（或 JS 注入） | ☐ | P0 |
 
 **Phase 1 · 首页重构 + 子页面创建**
@@ -591,7 +591,7 @@ faq.html        ← FAQ（新创建）
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
-| 2026-04-15 | `19fdb2a` | fix: add video degradation fallback to all 10 video pages (P2-4) — onerror handler + fallback div with video title/description/YouTube button, dark mode support |
+| 2026-04-16 | `510f941` | feat: add js/main.js shared JavaScript (5-R0-2 P0) — drawer toggle, theme toggle, back-to-top, search, auto dark mode; move script to end of body; add id=backToTop to fixed button |
 | 2026-04-14 | `11b72f8` | fix: mobile hamburger toggleMenu() JS function missing + dark mode contrast improvements (#c8d6e8→#dde6f0, #e2e8f0→#f0f4f8, #c9a227→#f0c040, uni-drawer/mobile-drawer dark mode) |
 | 2026-04-14 | `c9b6eaf` | docs: REVIEW_NOTES — task table complete: P7-3/5/6/7/8/9 + SHA fixes for P7-1/2 |
 | 2026-04-13 | `70f05b9` | fix: P0 dead link — create video_study.html hub + link Master Class card |
