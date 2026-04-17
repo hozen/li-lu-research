@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-17 20:02
-> Last Audit: 2026-04-17 20:02 (P5-J 完成：`~20% 年化收益`两处标注 ⚠️，commit `132b986`)
+> Last Updated by Agent: 2026-04-18 00:02
+> Last Audit: 2026-04-18 00:02 (5-R0-3 完成：统一导航体系，commit `b392711`)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-18 第二十次**: 5-R0-3 统一导航体系完成 — 删除全部 11 个文件（旧架构）的 `<nav class="navbar">...</nav>` HTML 块 + 内联 `.navbar`/`.page`/`.nav-brand`/`.nav-link` CSS；替换 `<div class="page">` 为 `<main class="main-content" style="padding-top:84px">`；移除内联汉堡菜单 JS（main.js 统一处理）；修复 alphabet/apple/bac/berkshire/bank-of-america 的 `id="uniOverlay"` 重复属性；全部 28 个 HTML 文件现在使用统一的 `#uni-navbar` + main.js 导航系统
+  - Commit: `b392711`
+  - 修复内容：5-R0-3 P0 任务：删除 11 个文件的旧 `.navbar` 固定定位导航系统，统一迁移至 `#uni-navbar` + drawer + main.js 新架构；影响文件：alphabet-investment-deep.html、apple-investment-deep.html、bac-investment-deep.html、berkshire-investment-deep.html、bookshelf.html、downloads.html、glossary.html、quotes.html、raw_github.html、timeline.html、bank-of-america-investment-deep.html
 - **2026-04-15 第十九次**: P2-Footer链接visited状态修复 — 为index.html两个CSS块的footer链接添加`:visited`和`:hover`样式：light mode `.footer a:visited{color:#b8960b}` + `.footer a:hover{color:#e0b830}`；dark mode `body.dark-mode .footer a:visited{color:#9a7b1a}` + `body.dark-mode .footer a:hover{color:#c9a227}`；修复2026-04-14和2026-04-15每日UX审查中重复出现的P2问题（Footer链接无visited状态，用户无法区分已访问/未访问页面）
   - Commit: `3963076`
   - 修复内容：P2 UX问题（每日UX审查持续标注）：Footer链接在用户访问后保持金色（#c9a227）还是变为浏览器默认紫色导致无法区分；添加visited为哑金色(#b8960b/##9a7b1a)以区分已访问链接；hover为亮金色(#e0b830/#c9a227)提供交互反馈
@@ -282,7 +285,7 @@
 |------|------|------|--------|
 | 5-R0-1 | **创建共享 CSS 文件** — 从 index.html 提取所有 CSS，建立 CSS 变量驱动主题系统（`--text`, `--bg`, `--muted` 等）；删除所有 `body.dark-mode .xxx { color }` 补丁规则；输出 `css/shared.css` | ✅ | P0 |
 | 5-R0-2 | **创建共享 JS 文件** — navbar 切换、drawer 开关、主题切换、back-to-top；输出 `js/main.js` | ✅ | P0 |
-| 5-R0-3 | **统一导航体系** — 删除旧 `.navbar` 系统，只保留 `#uni-navbar`；所有页面复用同一套 navbar HTML（或 JS 注入） | ☐ | P0 |
+| 5-R0-3 | **统一导航体系** — 删除旧 `.navbar` 系统，只保留 `#uni-navbar`；所有页面复用同一套 navbar HTML（或 JS 注入） | ✅ `b392711` | P0 |
 
 **Phase 1 · 首页重构 + 子页面创建**
 
@@ -637,6 +640,7 @@ faq.html        ← FAQ（新创建）
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-18 | `b392711` | feat: 5-R0-3 remove old .navbar system, unify to #uni-navbar — 11 files: alphabet/apple/bac/berkshire/bank-of-america-investment-deep, bookshelf, downloads, glossary, quotes, raw_github, timeline; remove <nav class='navbar'> HTML, inline .navbar/.page CSS, inline hamburger JS; replace <div class='page'> with <main class='main-content' style='padding-top:84px'> |
 | 2026-04-17 | `77f1b46` | feat: 5-R3-2 add direct links to all 5 checklist items — 2024 PKU talk→videos/8jJA4vHWvLc, 2021 CBS/Greenwald→videos/-gfRCGZ0zf4, 2020 book→bookshelf.html, 2019 PKU→videos/35RgNwcyjFk, 2015 PKU→Bilibili BV1Cm4y1r76v |
 | 2026-04-17 | `7c3dcec` | chore: remove cookies.txt and www.youtube.com_cookies.txt — should not be in public repo (5-R2-4 P2) |
 | 2026-04-17 | `a41e7e6` | feat: add light mode support for hero section (prefers-color-scheme) — shared.css light mode block + index.html hero adapts to light/dark system preference |
