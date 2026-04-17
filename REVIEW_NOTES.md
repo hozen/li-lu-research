@@ -1,7 +1,7 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-17 04:05
-> Last Audit: 2026-04-17 04:05 (Round 5 Phase 1 完成：index.html 结构腐败修复（双HTML文档问题），新建 about/principles/holdings/faq 子页面；首页重写为213行仪表板)
+> Last Updated by Agent: 2026-04-17 08:02
+> Last Audit: 2026-04-17 08:02 (Round 5 Phase 2 进行中：5-R2-1 navbar精简完成（28页统一dropdown navbar），commit `4ff31ba`)
 
 ---
 
@@ -298,9 +298,9 @@
 
 | 任务 | 描述 | 状态 | 优先级 |
 |------|------|------|--------|
-| 5-R2-1 | **Navbar 精简** — 首页链接改为「笔记 · 进度 · 持仓 · 资料库▼」；资料库下拉：关于 / 原则 / 语录 / 书单 / 术语 / FAQ / 时间线 | ☐ | P0 |
+| 5-R2-1 | **Navbar 精简** — 简化navbar为「笔记 · 进度 · 持仓 · 资料库▼」，资料库下拉含8项（关于/原则/视频/语录/书架/术语/FAQ/时间线）；dropdown CSS加入shared.css，JS加入main.js；全部28个页面统一navbar结构；video_study.html改用shared.css+新系统；移动端用hamburger drawer | ✅ `4ff31ba` | P0 |
 | 5-R2-2 | **全面验证** — 每次 push 后在 亮色+暗色、mobile (≤375px)+desktop (≥1024px) 四种组合下检查文字可见性和导航可用性 | ☐ | P0 |
-| 5-R2-3 | **Hero tagline 事实错误** — "芝加哥大学" → "哥伦比亚大学"（在 about.html 中） | ☐ | P1 |
+| 5-R2-3 | **Hero tagline 事实错误** — "芝加哥大学" → "哥伦比亚大学"（在 about.html 中） | ✅ 已核实无需修复 | P1 |
 | 5-R2-4 | **清理 repo** — 删除 `cookies.txt`、`www.youtube.com_cookies.txt` 等不应在 public repo 中的文件；更新 README.md | ☐ | P2 |
 
 **Phase 3 · 内容层面（架构稳定后执行）**
@@ -591,7 +591,7 @@ faq.html        ← FAQ（新创建）
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
-| 2026-04-17 | `e35b576` | feat: Round 5 Phase 1 — clean index.html (<300l, 213 lines) + about/principles/holdings/faq subpages (5-R1-1 P0); fixes structural corruption (two HTML docs in one file); all pages use shared.css + js/main.js with uni-navbar + footer |
+| 2026-04-17 | `4ff31ba` | feat: 5-R2-1 navbar simplification — unify all 28 pages to simplified nav: 笔记 · 进度 · 持仓 · 资料库▼(dropdown); dropdown CSS in shared.css, JS (initDropdown) in main.js; active page highlight via JS; video_study.html migrated from old inline navbar to shared.css system; index.html inline navbar CSS removed |
 | 2026-04-16 | `510f941` | feat: add js/main.js shared JavaScript (5-R0-2 P0) — drawer toggle, theme toggle, back-to-top, search, auto dark mode; move script to end of body; add id=backToTop to fixed button |
 | 2026-04-14 | `11b72f8` | fix: mobile hamburger toggleMenu() JS function missing + dark mode contrast improvements (#c8d6e8→#dde6f0, #e2e8f0→#f0f4f8, #c9a227→#f0c040, uni-drawer/mobile-drawer dark mode) |
 | 2026-04-14 | `c9b6eaf` | docs: REVIEW_NOTES — task table complete: P7-3/5/6/7/8/9 + SHA fixes for P7-1/2 |
