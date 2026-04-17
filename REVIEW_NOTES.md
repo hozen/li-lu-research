@@ -1,6 +1,6 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-17 12:03
+> Last Updated by Agent: 2026-04-17 16:02
 > Last Audit: 2026-04-17 12:03 (Round 5 Phase 2 收尾：5-R2-4 repo清理完成（cookies.txt等移除），commit `7c3dcec`；5-R2-2 全面验证待手动浏览器检查)
 
 ---
@@ -308,7 +308,7 @@
 | 任务 | 描述 | 状态 | 优先级 |
 |------|------|------|--------|
 | 5-R3-1 | **删除研究笔记中的伪写作** — 删除 Agent 以站长视角撰写的"💡我的思考"段落；只保留事实和来源部分 | ☐ | P1 |
-| 5-R3-2 | **活动 checklist 加直接链接** — 每项活动加视频 URL 或文章 URL 外链 | ☐ | P2 |
+| 5-R3-2 | **活动 checklist 加直接链接** — 每项活动加视频 URL 或文章 URL 外链 | ✅ `77f1b46` | P2 |
 | 5-R3-3 | **持仓历史演变概览**（可选）| ☐ | P3 |
 
 **重构后的站点结构**：
@@ -587,10 +587,65 @@ faq.html        ← FAQ（新创建）
 
 ---
 
+## P5-J · 首页"~20% 年化收益"来源存疑
+
+**需求澄清**：首页 Hero 写"~20% 年化收益"，此数字广泛流传但从未被喜马拉雅官方确认，属于引用来源不明的宣传性表述。
+
+**影响范围**：index.html Hero section
+
+**优先级**：P5
+
+**实现难度**：Trivial（<1h）
+
+**建议处理方式**：
+- 方案A：删除该数字，改为"28年投资经验"
+- 方案B：保留数字但加标注"（注：广泛引用，未经官方确认）"
+
+**依赖项**：无
+
+---
+
+## P5-I · 官网内容补充：喜马拉雅资本官网资料采集
+
+**需求澄清**：从 Himcap.com 官网采集和李录投资理念相符的内容，补充到网站，提升权威性和完整性。
+
+**影响范围**：可能在 about.html / principles.html / 新增独立页面
+
+**优先级**：P5
+
+**实现难度**：Low（1-3h）
+
+**依赖项**：无外部依赖
+
+**摘录内容（来源：https://www.himcap.com & https://www.himcap.com/cn/publications）**：
+
+1. **Investment Philosophy — "Fat Pitch"（肥硕一击）**
+   > "In making investments, I have always believed that you must act with discipline whenever you see something you truly like. To explain this philosophy, Buffett/Munger likes to use a baseball analogy... Ted Williams divided the strike zone into seventy-seven cells... Once in a while, you will find a 'fat pitch' that is slow, straight, and right in the middle of your sweet spot. Then you swing hard."
+   > — Li Lu (Poor Charlie's Almanack, 3rd Edition 2009, Page 61)
+
+2. **What We Do（我们的投资方式）**
+   > "We embrace the value investment principles of Benjamin Graham, Warren Buffett, and Charles Munger, and today primarily focus on publicly traded companies in Asia and North America. We aim to achieve superior returns by being long-term owners of high quality companies with substantial 'economic moat', great growth potential, and run by trust-worthy people."
+
+3. **芒格语录（官网首页置顶）**
+   > "The highest form which civilization can reach is a seamless web of deserved trust. Not much procedure, just totally reliable people correctly trusting one another." – Charlie Munger
+
+4. **Publications 页三条新闻**：
+   - Li Lu 向洛杉矶 charitable foundation 捐赠 $1.5M (2020-04-09)
+   - Li Lu 向中国医院/机构捐赠抗疫 (2020-03-06)
+   - Li Lu 在美国国家历史博物馆展览中亮相 (2016-11)
+
+**建议执行方式**：
+- about.html 新增"官方理念"板块，仅引用：① Fat Pitch 原文（Poor Charlie's Almanack 出处）② 芒格语录
+- timeline.html 补充 3 条公开报道（捐赠、博物馆）
+- **删除** "What We Do" 自我定性描述（"achieve superior returns"、"substantial economic moat" 等）— 属于营销语言，非可证实事实，不适合放在研究站
+
+---
+
 ## Commit 历史
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-17 | `77f1b46` | feat: 5-R3-2 add direct links to all 5 checklist items — 2024 PKU talk→videos/8jJA4vHWvLc, 2021 CBS/Greenwald→videos/-gfRCGZ0zf4, 2020 book→bookshelf.html, 2019 PKU→videos/35RgNwcyjFk, 2015 PKU→Bilibili BV1Cm4y1r76v |
 | 2026-04-17 | `7c3dcec` | chore: remove cookies.txt and www.youtube.com_cookies.txt — should not be in public repo (5-R2-4 P2) |
 | 2026-04-17 | `a41e7e6` | feat: add light mode support for hero section (prefers-color-scheme) — shared.css light mode block + index.html hero adapts to light/dark system preference |
 | 2026-04-17 | `4ff31ba` | feat: 5-R2-1 navbar simplification — unify all 28 pages to simplified nav: 笔记 · 进度 · 持仓 · 资料库▼(dropdown); dropdown CSS in shared.css, JS (initDropdown) in main.js; active page highlight via JS; video_study.html migrated from old inline navbar to shared.css system; index.html inline navbar CSS removed |
