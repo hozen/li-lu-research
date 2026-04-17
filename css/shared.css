@@ -581,3 +581,39 @@ footer {
 body .uni-dropdown-menu { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,.06); }
 body .uni-dropdown-menu a { color: #4a5568; }
 body .uni-dropdown-menu a:hover { color: #1a202c; background: #f7fafc; }
+
+/* ── Dark mode overrides (applied via body.dark-mode) ──────────── */
+body.dark-mode #uni-navbar  { background: #0d1b2a; border-bottom: 1px solid #1e3a5f; }
+body.dark-mode #uni-drawer  { background: #0d1b2a; }
+body.dark-mode #uni-drawer a.uni-link { color: #94a3b8; }
+body.dark-mode #uni-drawer a.uni-link:hover { color: #e2e8f0; background: #1e3a5f; }
+body.dark-mode .uni-dropdown-menu { background: #0d1b2a; border-color: #1e3a5f; }
+body.dark-mode .uni-dropdown-menu a { color: #94a3b8; }
+body.dark-mode .uni-dropdown-menu a:hover { color: #e2e8f0; background: #1e3a5f; }
+body.dark-mode .page-title  { color: #e2e8f0; }
+body.dark-mode .page-subtitle { color: #94a3b8; }
+body.dark-mode .back-bar a  { color: #c9a227; }
+body.dark-mode .toc-card { background: #0f2744; border-color: #1e3a5f; }
+body.dark-mode .toc-card h2,
+body.dark-mode .toc-card h3 { color: #e2e8f0; }
+body.dark-mode .toc-list .toc-label { color: #cbd5e1; }
+body.dark-mode .toc-list .toc-time  { color: #c9a227; }
+body.dark-mode .video-card { background: #0f2744; border-color: #1e3a5f; }
+body.dark-mode .video-body h3 { color: #e2e8f0; }
+body.dark-mode .video-body p  { color: #94a3b8; }
+body.dark-mode .insight-card { background: #1a2a1a; border-color: #2d4a2d; }
+body.dark-mode .insight-card h4 { color: #c9a227; }
+body.dark-mode .lesson-card { background: #1a2a1a; border-color: #2d4a2d; }
+body.dark-mode .lesson-card h4 { color: #e2e8f0; }
+body.dark-mode .lesson-card p,
+body.dark-mode .lesson-card li { color: #94a3b8; }
+body.dark-mode .highlight { background: #1a2a1a; border-color: #2d4a2d; }
+body.dark-mode .quote-box { background: #1a2a1a; border-color: #2d4a2d; color: #cbd5e1; }
+body.dark-mode .quote-box cite { color: #64748b; }
+body.dark-mode .dual-panel .panel-bull { background: #0f2a1a; border-color: #1e4a2d; }
+
+/* Hero section dark mode — overrides inline styles from index.html */
+body.dark-mode .hero-section { background: linear-gradient(135deg,#0d1b2a,#1e3a5f) !important; }
+body.dark-mode .hero-section h1 { color: #e2e8f0 !important; }
+body.dark-mode .hero-section .hero-subtitle { color: #94a3b8 !important; }
+body.dark-mode .hero-section .hero-cta-outline { border-color: #c9a227 !important; color: #c9a227 !important; }
