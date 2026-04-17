@@ -1,7 +1,7 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-17 16:02
-> Last Audit: 2026-04-17 12:03 (Round 5 Phase 2 收尾：5-R2-4 repo清理完成（cookies.txt等移除），commit `7c3dcec`；5-R2-2 全面验证待手动浏览器检查)
+> Last Updated by Agent: 2026-04-17 20:02
+> Last Audit: 2026-04-17 20:02 (P5-J 完成：`~20% 年化收益`两处标注 ⚠️，commit `132b986`)
 
 ---
 
@@ -587,21 +587,13 @@ faq.html        ← FAQ（新创建）
 
 ---
 
-## P5-J · 首页"~20% 年化收益"来源存疑
+## P5-J · 首页"~20% 年化收益"来源存疑 — ✅ 已完成（2026-04-17）
 
-**需求澄清**：首页 Hero 写"~20% 年化收益"，此数字广泛流传但从未被喜马拉雅官方确认，属于引用来源不明的宣传性表述。
+**修复内容**：两处"~20% 年化收益"均添加 ⚠️ 标注和 `title` 属性，明确标注为"广泛引用，未经官方确认"：
+1. `index.html` Hero：`~20% 年化收益 ⚠️` + `<span title="广泛引用，未经官方确认">`
+2. `about.html` 人物简介数字卡片：`⚠️ 据公开报道估算（未经官方确认）`
 
-**影响范围**：index.html Hero section
-
-**优先级**：P5
-
-**实现难度**：Trivial（<1h）
-
-**建议处理方式**：
-- 方案A：删除该数字，改为"28年投资经验"
-- 方案B：保留数字但加标注"（注：广泛引用，未经官方确认）"
-
-**依赖项**：无
+**Commit**：`132b986`
 
 ---
 
