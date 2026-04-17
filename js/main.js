@@ -80,7 +80,37 @@
     });
   }
 
-  /* ── 5. 移动端旧式 hamburger（兼容） ───────────────────────── */
+  /* ── 5. 资料库下拉菜单点击切换 (5-R2-1) ─────────────────── */
+  function initDropdown() {
+    var drops = document.querySelectorAll('.uni-dropdown > .uni-link');
+    drops.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var menu = link.nextElementSibling;
+        if (!menu) return;
+        var isOpen = menu.style.display === 'block';
+        // close all
+        document.querySelectorAll('.uni-dropdown-menu').forEach(function (m) { m.style.display = ''; });
+        if (!isOpen) menu.style.display = 'block';
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.uni-dropdown')) {
+        document.querySelectorAll('.uni-dropdown-menu').forEach(function (m) { m.style.display = ''; });
+      }
+    });
+    // highlight active page link
+    var path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.uni-links a, .uni-dropdown-menu a').forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (href === path || (path === '' && href === 'index.html')) {
+        a.style.color = '#c9a227';
+        a.style.fontWeight = '600';
+      }
+    });
+  }
+
+  /* ── 6. 移动端旧式 hamburger（兼容） ───────────────────────── */
   function initLegacyMenu() {
     var btn = document.getElementById('mobileMenuBtn');
     if (!btn) return;
@@ -99,6 +129,7 @@
     initBackToTop();
     initSearch();
     initLegacyMenu();
+    initDropdown();
   });
 
 })();

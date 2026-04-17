@@ -193,10 +193,60 @@ body {
 }
 #uni-body { padding-top: 64px; }
 
+/* ── 3b. 资料库下拉菜单 (5-R2-1) ─────────────────────────── */
+.uni-dropdown { position: relative; }
+.uni-dropdown > .uni-link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.uni-dropdown > .uni-link::after {
+  content: '▼';
+  font-size: .55rem;
+  margin-left: 3px;
+  opacity: .65;
+}
+.uni-dropdown:hover > .uni-link {
+  color: #fff;
+  background: rgba(201, 162, 39, .15);
+}
+.uni-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 190px;
+  background: #0f2d5a;
+  border: 1px solid rgba(201, 162, 39, .25);
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
+  z-index: 10003;
+}
+.uni-dropdown:hover > .uni-dropdown-menu { display: block; }
+.uni-dropdown-menu a {
+  display: block;
+  color: rgba(255, 255, 255, .7);
+  text-decoration: none;
+  padding: 9px 14px;
+  border-radius: 6px;
+  font-size: .82rem;
+  transition: background .15s, color .15s;
+}
+.uni-dropdown-menu a:hover {
+  color: #fff;
+  background: rgba(201, 162, 39, .2);
+}
+body.dark-mode .uni-dropdown-menu { background: #0f2d5a; }
+body.dark-mode .uni-dropdown-menu a { color: rgba(255,255,255,.7); }
+body.dark-mode .uni-dropdown-menu a:hover { color: #fff; background: rgba(201,162,39,.25); }
+
 /* 响应式: 移动端 */
 @media (max-width: 900px) {
   #uni-navbar .uni-links { display: none; }
   #uni-hamburger { display: flex; }
+  .uni-dropdown { display: none; }  /* 移动端用 hamburger drawer */
 }
 
 /* ── 4. 通用 Footer ─────────────────────────────────────────── */
