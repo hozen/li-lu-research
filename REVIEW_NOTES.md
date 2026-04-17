@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-18 00:02
-> Last Audit: 2026-04-18 00:02 (5-R0-3 完成：统一导航体系，commit `b392711`)
+> Last Updated by Agent: 2026-04-18 04:02
+> Last Audit: 2026-04-18 04:02 (5-R2-2 完成：全面验证 + 暗模式修复，commit `c5908b6`)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-18 第二十一次**: 5-R2-2 全面验证 + 暗模式修复完成 — 发现并修复两个关键Bug：①主题切换按钮（`uniThemeBtn`/`uniDrawerThemeBtn`）在main.js中被引用但在全部18个页面缺失，导致手动暗色/亮色切换完全失效；②Hero区域使用硬编码浅色背景（`#f7fafc/#e2e8f0`），在暗模式下无适配；修复：shared.css新增`body.dark-mode`完整暗色覆盖（navbar/drawer/所有卡片/ Hero节）；18个页面Desktop导航栏全部添加`uniThemeBtn`；18个页面Mobile抽屉全部添加`uniDrawerThemeBtn`；Hero节新增`.hero-section`/`.hero-subtitle`/`.hero-cta-outline` CSS类供暗色覆盖
+  - Commit: `c5908b6`
+  - 修复内容：5-R2-2 P0验证任务发现：main.js引用`uniThemeBtn`和`uniDrawerThemeBtn`但18个HTML页面均未添加这两个按钮，导致主题切换功能形同虚设；Hero节暗模式无覆盖（内联`background:linear-gradient(135deg,#f7fafc,#e2e8f0)`在暗色模式下刺眼）；影响文件：shared.css（新增dark-mode覆盖）、18个HTML文件（新增主题切换按钮）
 - **2026-04-18 第二十次**: 5-R0-3 统一导航体系完成 — 删除全部 11 个文件（旧架构）的 `<nav class="navbar">...</nav>` HTML 块 + 内联 `.navbar`/`.page`/`.nav-brand`/`.nav-link` CSS；替换 `<div class="page">` 为 `<main class="main-content" style="padding-top:84px">`；移除内联汉堡菜单 JS（main.js 统一处理）；修复 alphabet/apple/bac/berkshire/bank-of-america 的 `id="uniOverlay"` 重复属性；全部 28 个 HTML 文件现在使用统一的 `#uni-navbar` + main.js 导航系统
   - Commit: `b392711`
   - 修复内容：5-R0-3 P0 任务：删除 11 个文件的旧 `.navbar` 固定定位导航系统，统一迁移至 `#uni-navbar` + drawer + main.js 新架构；影响文件：alphabet-investment-deep.html、apple-investment-deep.html、bac-investment-deep.html、berkshire-investment-deep.html、bookshelf.html、downloads.html、glossary.html、quotes.html、raw_github.html、timeline.html、bank-of-america-investment-deep.html
@@ -302,7 +305,7 @@
 | 任务 | 描述 | 状态 | 优先级 |
 |------|------|------|--------|
 | 5-R2-1 | **Navbar 精简** — 简化navbar为「笔记 · 进度 · 持仓 · 资料库▼」，资料库下拉含8项（关于/原则/视频/语录/书架/术语/FAQ/时间线）；dropdown CSS加入shared.css，JS加入main.js；全部28个页面统一navbar结构；video_study.html改用shared.css+新系统；移动端用hamburger drawer | ✅ `4ff31ba` | P0 |
-| 5-R2-2 | **全面验证** — 每次 push 后在 亮色+暗色、mobile (≤375px)+desktop (≥1024px) 四种组合下检查文字可见性和导航可用性 | ☐ | P0 |
+| 5-R2-2 | **全面验证** — 每次 push 后在 亮色+暗色、mobile (≤375px)+desktop (≥1024px) 四种组合下检查文字可见性和导航可用性 | ✅ `c5908b6` | P0 |
 | 5-R2-3 | **Hero tagline 事实错误** — "芝加哥大学" → "哥伦比亚大学"（在 about.html 中） | ✅ 已核实无需修复 | P1 |
 | 5-R2-4 | **清理 repo** — 删除 `cookies.txt`、`www.youtube.com_cookies.txt` 等不应在 public repo 中的文件；更新 README.md | ✅ `7c3dcec` | P2 |
 
