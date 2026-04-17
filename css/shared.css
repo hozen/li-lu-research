@@ -457,6 +457,76 @@ footer a { color: #c9a227; text-decoration: none; }
 }
 
 /* ── 7. 暗色模式 (prefers-color-scheme: dark) ───────────────── */
+/* ── 7b. 亮色模式优先 (prefers-color-scheme: light) ───────────── */
+@media (prefers-color-scheme: light) {
+  body { background: #ffffff; color: #1a202c; }
+
+  #uni-navbar  { background: rgba(255, 255, 255, .98); border-bottom: 1px solid #e2e8f0; }
+  #uni-drawer  { background: #ffffff; }
+  #uni-drawer a.uni-link { color: rgba(26, 32, 44, .7); }
+  #uni-drawer a.uni-link:hover { color: #1a202c; background: rgba(201, 162, 39, .12); }
+
+  .back-bar a  { color: #c9a227; }
+  .page-title  { color: #1a202c; }
+  .page-subtitle { color: #4a5568; }
+
+  .toc-card {
+    background: #f7fafc;
+    border-color: #e2e8f0;
+  }
+  .toc-card h2,
+  .toc-card h3 { color: #1a202c; }
+  .toc-list .toc-label { color: #2d3748; }
+  .toc-list .toc-time  { color: #c9a227; }
+
+  .video-card {
+    background: #f7fafc;
+    border-color: #e2e8f0;
+  }
+  .video-body h3 { color: #1a202c; }
+  .video-body p  { color: #4a5568; }
+
+  .insight-card {
+    background: #fffbeb;
+    border-color: #c9a227;
+  }
+  .insight-card h4 { color: #c9a227; }
+
+  .lesson-card {
+    background: #fffbeb;
+    border-color: #c9a227;
+  }
+  .lesson-card h4 { color: #1a202c; }
+  .lesson-card p,
+  .lesson-card li { color: #4a5568; }
+
+  .highlight {
+    background: #fffbeb;
+    border-color: #c9a227;
+  }
+
+  .quote-box {
+    background: #fffbeb;
+    border-color: #c9a227;
+    color: #2d3748;
+  }
+  .quote-box cite { color: #718096; }
+
+  .dual-panel .panel-bull { background: #f0fff4; }
+  .dual-panel .panel-bear { background: #fff5f5; }
+
+  .nums .num-box { background: #f7fafc; }
+
+  footer {
+    background: #f7fafc;
+    color: #4a5568;
+    border-color: #e2e8f0;
+  }
+
+  .source-note { color: #718096; border-color: #e2e8f0; }
+}
+
+/* ── 7. 暗色模式 (prefers-color-scheme: dark) ───────────────── */
 @media (prefers-color-scheme: dark) {
   body { background: #1a1a2e; color: #e2e8f0; }
 
