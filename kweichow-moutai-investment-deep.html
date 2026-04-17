@@ -64,8 +64,9 @@ p{color:#333;margin-bottom:14px}
 table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.9rem}
 td{padding:10px;border:1px solid #e0e0e0;vertical-align:top}
 tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
-@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:100px 20px 40px}.lead{padding:25px 22px}}
+@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}}
 </style>
+<script src="js/main.js" defer></script>
 </head>
 <body>
 <div id="uni-navbar">
@@ -90,7 +91,7 @@ tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
 #uni-drawer-brand span{color:#c9a227}
 #uni-drawer-close{width:36px;height:36px;background:transparent;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;color:#4a5568;font-size:18px}
 #uni-drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid #e2e8f0}
-#uni-body{padding-top:64px}
+#uni-body{padding-top:56px}
 @media(max-width:900px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}}
 </style>
 <div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
@@ -116,38 +117,42 @@ tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
 </div>
 <div id="uni-overlay" id="uniOverlay"></div>
 <div id="uni-drawer">
-<div id="uni-drawer-header">
-<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
-<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+  <div id="uni-drawer-header">
+    <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+    <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+  </div>
+  <a href="index.html" class="uni-link">首页</a>
+  <a href="about.html" class="uni-link">关于李录</a>
+  <a href="principles.html" class="uni-link">投资原则</a>
+  <a href="holdings.html" class="uni-link">持仓</a>
+  <a href="video_study.html" class="uni-link">视频学习</a>
+  <a href="quotes.html" class="uni-link">语录</a>
+  <a href="bookshelf.html" class="uni-link">书架</a>
+  <a href="glossary.html" class="uni-link">术语表</a>
+  <a href="faq.html" class="uni-link">FAQ</a>
+  <a href="timeline.html" class="uni-link">时间线</a>
+  <a href="downloads.html" class="uni-link">下载资源</a>
+  <a href="china-hk-holdings-research.html" class="uni-link">非13F持仓</a>
+  <a href="raw_github.html" class="uni-link">Raw GitHub</a>
+  <a href="alphabet-investment-deep.html" class="uni-link">Alphabet</a>
+  <a href="apple-investment-deep.html" class="uni-link">Apple</a>
+  <a href="bac-investment-deep.html" class="uni-link">BAC</a>
+  <a href="bank-of-america-investment-deep.html" class="uni-link">Bank of America</a>
+  <a href="berkshire-investment-deep.html" class="uni-link">BRK.B</a>
+  <a href="byd-investment-deep.html" class="uni-link">比亚迪深度</a>
+  <a href="byd-cross-reference.html" class="uni-link">比亚迪交叉</a>
+  <a href="byd-next-decade.html" class="uni-link">比亚迪十年</a>
+  <a href="byd_investment.html" class="uni-link">比亚迪综合</a>
+  <a href="crocs-investment-deep.html" class="uni-link">Crocs</a>
+  <a href="ewbc-investment-deep.html" class="uni-link">EWBC</a>
+  <a href="kweichow-moutai-investment-deep.html" class="uni-link">茅台</a>
+  <a href="oxy-investment-deep.html" class="uni-link">OXY</a>
+  <a href="pdd-investment-deep.html" class="uni-link">PDD</a>
+  <a href="psbc-investment-deep.html" class="uni-link">PSBC</a>
 </div>
-<a href="/li-lu-research/index.html" class="uni-link">首页</a>
-<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
-<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
-<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
-<a href="/li-lu-research/index.html#my-framework" class="uni-link">视频</a>
-<a href="/li-lu-research/index.html#study-notes" class="uni-link">研究笔记</a>
-<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
-<div class="uni-drawer-theme">
-</div>
-</div>
-<script>
-document.getElementById("uniHamBtn").onclick=function(){
-document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
-document.getElementById("uniOverlay").onclick=function(){
-document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniDrawerClose").onclick=function(){
-document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniThemeBtn").onclick=function(){
-document.body.classList.toggle("dark-mode");this.text=document.body.classList.contains("dark-mode")?"&#9788; 亮色":"&#9790; 暗色"};
-document.getElementById("uniDrawerThemeBtn").onclick=function(){
-document.body.classList.toggle("dark-mode")};
-</script>
 
 <div id="uni-body">
 <div class="page">
-<a href="/li-lu-research/index.html" class="back-link">← 返回首页</a>
-
 <h1>投资贵州茅台：约287倍回报背后的买入逻辑与卖出决策</h1>
 <p class="subtitle">2001年茅台IPO，到2019年李录卖出——这是一笔持续近20年、回报约287倍的投资。与比亚迪的"暴跌不卖"不同，李录在茅台上选择了主动卖出。这个卖出决策，包含着比买入更重要的人生智慧。</p>
 
