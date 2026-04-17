@@ -10,10 +10,10 @@
 <meta property="og:type" content="article">
 <link rel="stylesheet" href="css/shared.css">
 <style>
-:root{--primary-dark:#0a1628;--primary-blue:#1a365d;--accent-gold:#c9a227;--text-dark:#1a1a1a;--text-muted:#4a5568;--bg-light:#ffffff}
+:root{--primary-dark:#f7fafc;--primary-blue:#e2e8f0;--accent-gold:#c9a227;--text-dark:#1a1a1a;--text-muted:#4a5568;--bg-light:#ffffff}
 .meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
 .meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:0.82rem;color:var(--text-muted)}
-.lead{background:linear-gradient(135deg,#0a1628,#1a365d);color:#fff;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
+.lead{background:linear-gradient(135deg,#f8f9fa,#e2e8f0);color:#1a202c;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
 .lead h2{color:var(--accent-gold);margin-bottom:15px;font-size:1.3rem}
 .lead p{margin-bottom:12px;color:#dde}
 .toc{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:12px;padding:25px 30px;margin-bottom:40px}
@@ -70,26 +70,26 @@ tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
 <body>
 <div id="uni-navbar">
 <style>
-#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
-#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.2rem;font-weight:600;text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#1a202c;font-size:1.2rem;font-weight:600;text-decoration:none}
 #uni-navbar .uni-brand span{color:#c9a227}
 #uni-navbar .uni-links{display:flex;align-items:center;gap:2px}
 #uni-navbar .uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:.875rem;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
-#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link:hover{color:#1a202c;background:rgba(201,162,39,.15)}
 #uni-navbar .uni-link.active{color:#c9a227}
 #uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:10px 12px;margin-left:8px}
 #uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
 #uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
 #uni-overlay.open{opacity:1;visibility:visible}
-#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:#0a1628;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:24px 20px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:#f8f9fa;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:24px 20px;display:flex;flex-direction:column;gap:4px}
 #uni-drawer.open{transform:translateX(0)}
-#uni-drawer a.uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:14px 16px;border-radius:8px;font-size:1rem;display:block}
-#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer a.uni-link{color:#4a5568;text-decoration:none;padding:14px 16px;border-radius:8px;font-size:1rem;display:block}
+#uni-drawer a.uni-link:hover{color:#1a202c;background:rgba(201,162,39,.15)}
 #uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-#uni-drawer-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-drawer-brand{color:#1a202c;font-size:1.1rem;font-weight:600}
 #uni-drawer-brand span{color:#c9a227}
-#uni-drawer-close{width:36px;height:36px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;color:rgba(255,255,255,.6);font-size:18px}
-#uni-drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
+#uni-drawer-close{width:36px;height:36px;background:transparent;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;color:#4a5568;font-size:18px}
+#uni-drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid #e2e8f0}
 #uni-body{padding-top:64px}
 @media(max-width:900px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}}
 </style>
