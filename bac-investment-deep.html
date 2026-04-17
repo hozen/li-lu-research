@@ -13,14 +13,14 @@
 <style>
 :root{--primary-dark:#f7fafc;--primary-blue:#e2e8f0;--accent-gold:#b8860b;--text-dark:#1a1a1a;--text-muted:#4a5568;--bg-light:#ffffff}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;color:var(--text-dark);background:var(--bg-light)}
-.navbar{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.97);backdrop-filter:blur(10px);z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{color:#1a202c;font-size:1.3rem;font-weight:600}
+
+
 .nav-brand span{color:var(--accent-gold)}
-.nav-links{display:flex;gap:8px}
-.nav-link{color:#aaa;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:0.9rem;font-weight:500;transition:all 0.3s}
+
+
 .nav-link:hover,.nav-link.active{color:#1a202c;background:rgba(201,162,39,0.15)}
-.page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
-.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent-gold);text-decoration:none;font-size:0.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,0.1);transition:all 0.2s}
+
+
 .back-link:hover{background:rgba(201,162,39,0.2)}
 h1{font-size:2rem;color:var(--primary-blue);margin-bottom:12px;line-height:1.3}
 .subtitle{color:var(--text-muted);font-size:1rem;margin-bottom:30px;line-height:1.6}
@@ -77,7 +77,7 @@ p{color:#333;margin-bottom:14px}
 table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.9rem}
 td{padding:10px;border:1px solid #e0e0e0;vertical-align:top}
 tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
-@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}}
+@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.lead{padding:25px 22px}}
 </style>
 <script src="js/main.js" defer></script>
 </head>
@@ -104,7 +104,7 @@ tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
   </div>
   <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
 </div>
-<div id="uni-overlay" id="uniOverlay"></div>
+<div id="uni-overlay" ></div>
 <div id="uni-drawer">
 <div id="uni-drawer-header">
 <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
@@ -121,33 +121,11 @@ tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
 <div class="uni-drawer-theme">
 </div>
 </div>
-<script>
-document.getElementById("uniHamBtn").onclick=function(){
-document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
-document.getElementById("uniOverlay").onclick=function(){
-document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniDrawerClose").onclick=function(){
-document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniThemeBtn").onclick=function(){
-document.body.classList.toggle("dark-mode");this.text=document.body.classList.contains("dark-mode")?"&#9788; 亮色":"&#9790; 暗色"};
-document.getElementById("uniDrawerThemeBtn").onclick=function(){
-document.body.classList.toggle("dark-mode")};
-</script>
 
-<nav class="navbar">
-<a href="/li-lu-research/index.html" class="nav-brand"><span>李录</span>研究</a>
-<div class="nav-links">
-<a href="/li-lu-research/index.html#holdings" class="uni-link" onclick="toggleDrawer()">æä»</a>
-<a href="/li-lu-research/index.html#principles" class="uni-link" onclick="toggleDrawer()">æèµåå</a>
-<a href="/li-lu-research/index.html#study-notes" class="uni-link" onclick="toggleDrawer()">ç ç©¶ç¬è®°</a>
-<a href="/li-lu-research/video_study.html" class="uni-link" onclick="toggleDrawer()">è§é¢</a>
-<a href="/li-lu-research/quotes.html" class="uni-link" onclick="toggleDrawer()">è¯­å½</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link" onclick="toggleDrawer()">ä¹¦æ¶</a>
-<a href="/li-lu-research/index.html#faq" class="uni-link" onclick="toggleDrawer()">FAQ</a>
-<a href="/li-lu-research/index.html" class="uni-link" onclick="toggleDrawer()">é¦é¡µ+å³äº</a></div>
-</nav>
 
-<div class="page">
+
+
+<main class="main-content" style="padding-top:84px">
 <h1>投资美国银行（BAC）：李录的决策逻辑与价值投资方法论</h1>
 <p class="subtitle">2020年Q1开始建仓，持续增持至2023年——这是一笔跨越疫情冲击和地区银行危机的"逆向买入"：市场恐惧时，李录看到了美国最核心金融机构被错误定价的机会。</p>
 

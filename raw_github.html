@@ -174,7 +174,7 @@ body.dark-mode a{color:#64b5f6}
 
 
 
-body.dark-mode .nav-link{color:#e0e0e0}
+body.dark-mode 
 
 
 
@@ -288,13 +288,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 
 
 
-.navbar{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.95);backdrop-filter:blur(10px);z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 20px rgba(0,0,0,0.2)}
 
 
 
 
 
-.nav-brand{color:var(--text-light);font-size:1.3rem;font-weight:600}
+
+
 
 
 
@@ -306,13 +306,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 
 
 
-.nav-links{display:flex;gap:8px}
 
 
 
 
 
-.nav-link{color:var(--text-muted);text-decoration:none;padding:10px 18px;border-radius:8px;font-size:0.9rem;font-weight:500;transition:all 0.3s}
+
+
 
 
 
@@ -750,13 +750,13 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 
 
 
-@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.nav-links{display:none}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
+@media(max-width:1024px){.hero-content{grid-template-columns:1fr;text-align:center;gap:50px}.hero-text h1{font-size:2.5rem}.hero-stats{justify-content:center}.principles{grid-template-columns:1fr}.quotes-grid{grid-template-columns:1fr}.footer-content{text-align:center}}
 
 
 
 
 
-@media(max-width:768px){.navbar{padding:0 20px}.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}}
+@media(max-width:768px){.hero{padding:100px 20px 60px}.hero-text h1{font-size:2rem}.hero-stats{flex-direction:column;gap:25px;align-items:center}.hero-image-box{width:300px;height:380px}.main-content{padding:50px 20px}.section-title{font-size:1.5rem}.video-grid,.books-grid{grid-template-columns:1fr}.footer{padding:40px 20px 20px}}
 
 
 
@@ -804,7 +804,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
   </div>
   <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
 </div>
-<div id="uni-overlay" id="uniOverlay"></div>
+<div id="uni-overlay" ></div>
 <div id="uni-drawer">
 <div id="uni-drawer-header">
 <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
@@ -822,107 +822,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;l
 <div class="uni-drawer-theme">
 </div>
 </div>
-<script>
-document.getElementById("uniHamBtn").onclick=function(){
-document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
-document.getElementById("uniOverlay").onclick=function(){
-document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniDrawerClose").onclick=function(){
-document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniThemeBtn").onclick=function(){
-document.body.classList.toggle("dark-mode");this.text=document.body.classList.contains("dark-mode")?"&#9788; 亮色":"&#9790; 暗色"};
-document.getElementById("uniDrawerThemeBtn").onclick=function(){
-document.body.classList.toggle("dark-mode")};
-</script>
 
 
 
 
 
 
-<nav class=navbar>
 
 
-
-
-
-<div class=nav-brand><span>&#10070;</span> 李录鐮旂┒</div>
-
-
-
-
-
-<div class=nav-links>
-
-
-
-
-
-<a href=#about class=nav-link>鍏充簬</a>
-
-
-
-
-
-<a href=#holdings class=nav-link>鎸佷粨</a>
-
-
-
-
-
-<a href=#principles class=nav-link>鎶曡祫鍘熷垯</a>
-
-
-
-
-
-<a href=#my-framework class=nav-link>鍐崇瓥妗嗘灦</a>
-
-
-
-
-
-<a href=#videos class=nav-link>瑙嗛</a>
-
-
-
-
-
-<a href=glossary.html class=nav-link>📖 核心概念</a>
-
-<a href=timeline.html class=nav-link>⏱️ 时间线</a>
-
-<a href=quotes.html class=nav-link>💬 语录</a>
-
-
-
-
-
-<a href=#quotes class=nav-link>璇綍</a>
-
-
-
-
-
-<a href=#faq class=nav-link>FAQ</a>
-
-
-
-
-
-</div>
-
-
-
-
-
-<button style="padding: 8px 16px; background: #c9a227; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">&#9790; 澶滈棿</button>
-
-
-
-
-
-</nav>
 
 
 
