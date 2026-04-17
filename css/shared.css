@@ -68,7 +68,7 @@ body {
 #uni-navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 64px;
+  height: 56px;
   background: rgba(255, 255, 255, .98) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -76,7 +76,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 24px;
   box-shadow: 0 1px 0 #e2e8f0 !important;
 }
 
@@ -128,19 +128,62 @@ body, p, li, td, th { color: #2d3748 !important; }
   gap: 5px;
   width: 44px;
   height: 44px;
-  background: transparent;
-  border: none;
+  background: rgba(0,0,0,.06);
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
   cursor: pointer;
   padding: 10px 12px;
   margin-left: 8px;
+  flex-shrink: 0;
 }
 #uni-hamburger span {
   display: block;
   width: 100%;
   height: 2px;
-  background: #4a5568;
+  background: #2d3748;
   border-radius: 2px;
+}
+
+/* Also apply navbar styles to .navbar class for pages using that structure */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 56px;
+  background: rgba(255, 255, 255, .98) !important;
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-shadow: 0 1px 0 #e2e8f0;
+}
+.navbar .nav-brand { color: #1a202c; font-size: 1.2rem; font-weight: 600; }
+.navbar .nav-brand span { color: #c9a227; }
+.navbar .nav-links { display: flex; align-items: center; gap: 2px; }
+.navbar .nav-link { color: #4a5568; text-decoration: none; padding: 8px 14px; border-radius: 6px; font-size: .875rem; font-weight: 500; transition: background .2s, color .2s; white-space: nowrap; }
+.navbar .nav-link:hover { color: #1a202c; background: rgba(201, 162, 39, .1); }
+.navbar .nav-link.active { color: #c9a227; }
+.navbar .back-link { display: none !important; }
+
+@media (max-width: 900px) {
+  .navbar .nav-links { display: none; }
+  #uni-hamburger, .navbar .uni-hamburger { display: flex; }
+  .navbar .uni-hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: rgba(0,0,0,.06);
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 10px 12px;
+    flex-shrink: 0;
+  }
+  .navbar .uni-hamburger span { display: block; width: 100%; height: 2px; background: #2d3748; border-radius: 2px; }
 }
 
 /* 遮罩层 */
@@ -204,7 +247,7 @@ body, p, li, td, th { color: #2d3748 !important; }
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, .1);
 }
-#uni-body { padding-top: 64px; }
+#uni-body { padding-top: 56px; }
 
 /* ── 3b. 资料库下拉菜单 (5-R2-1) ─────────────────────────── */
 .uni-dropdown { position: relative; }
@@ -279,18 +322,14 @@ footer a { color: #c9a227; text-decoration: none; }
 
 /* ── 5. 通用工具类 ──────────────────────────────────────────── */
 .main-content {
-  padding-top: 64px;
+  padding-top: 80px;
   max-width: 960px;
   margin: 0 auto;
-  padding: 84px 24px 60px;
+  padding: 20px 24px 60px;
 }
 
 .back-bar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 0;
-  margin-bottom: 24px;
+  display: none !important;
 }
 .back-bar a {
   color: #c9a227;

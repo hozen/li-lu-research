@@ -74,22 +74,20 @@ table ul,table li{margin:4px 0}
 </style>
 </head>
 <body>
-<div class="navbar">
-<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="nav-brand">&#10070; <span>李录</span>研究</a></div>
-<div class="nav-links">
-<a href="/li-lu-research/index.html#holdings" class="uni-link" onclick="toggleDrawer()">æä»</a>
-<a href="/li-lu-research/index.html#principles" class="uni-link" onclick="toggleDrawer()">æèµåå</a>
-<a href="/li-lu-research/index.html#study-notes" class="uni-link" onclick="toggleDrawer()">ç ç©¶ç¬è®°</a>
-<a href="/li-lu-research/video_study.html" class="uni-link" onclick="toggleDrawer()">è§é¢</a>
-<a href="/li-lu-research/quotes.html" class="uni-link" onclick="toggleDrawer()">è¯­å½</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link" onclick="toggleDrawer()">ä¹¦æ¶</a>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand">&#10070; <span>李录</span>研究</a></div>
+<div class="uni-links">
+<a href="/li-lu-research/index.html#holdings" class="uni-link" onclick="toggleDrawer()">持仓</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link" onclick="toggleDrawer()">投资原则</a>
+<a href="/li-lu-research/index.html#study-notes" class="uni-link" onclick="toggleDrawer()">研究笔记</a>
+<a href="/li-lu-research/video_study.html" class="uni-link" onclick="toggleDrawer()">视频</a>
+<a href="/li-lu-research/quotes.html" class="uni-link" onclick="toggleDrawer()">语录</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link" onclick="toggleDrawer()">书架</a>
 <a href="/li-lu-research/index.html#faq" class="uni-link" onclick="toggleDrawer()">FAQ</a>
-<a href="/li-lu-research/index.html" class="uni-link" onclick="toggleDrawer()">é¦é¡µ+å³äº</a></div>
+</div>
 </div>
 
 <div class="page">
-<a href="/li-lu-research/index.html" class="back-link">&#8592; 返回首页</a>
-
 <h1>李录非13F持仓研究</h1>
 <p class="subtitle">港股公开披露核实 + 全球资产配置估算 &nbsp;|&nbsp; 研究截止：2026年4月</p>
 
@@ -469,13 +467,31 @@ table ul,table li{margin:4px 0}
 <p style="margin-top:8px;color:#666;font-size:0.78rem">本页面内容基于公开资料整理，仅供研究参考，不构成任何投资建议</p>
 </div>
 
+<div id="uni-overlay" onclick="closeDrawer()"></div>
+<div id="uni-drawer">
+  <div id="uni-drawer-header">
+    <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+    <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+  </div>
+  <a href="/li-lu-research/index.html" class="uni-link">首页</a>
+  <a href="/li-lu-research/about.html" class="uni-link">关于李录</a>
+  <a href="/li-lu-research/principles.html" class="uni-link">投资原则</a>
+  <a href="/li-lu-research/holdings.html" class="uni-link">持仓</a>
+  <a href="/li-lu-research/video_study.html" class="uni-link">视频</a>
+  <a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+  <a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
+  <a href="/li-lu-research/glossary.html" class="uni-link">术语</a>
+  <a href="/li-lu-research/faq.html" class="uni-link">FAQ</a>
+  <a href="/li-lu-research/timeline.html" class="uni-link">时间线</a>
+  <a href="/li-lu-research/downloads.html" class="uni-link">下载</a>
+</div>
+
 <script>
-// Minimal dark mode toggle
-document.addEventListener('DOMContentLoaded',function(){
-var t=document.getElementById('uniThemeBtn')||document.querySelector('.theme-toggle');
-if(t){t.addEventListener('click',function(){document.body.classList.toggle('dark-mode');localStorage.setItem('theme',document.body.classList.contains('dark-mode')?'dark':'light')})}
-if(localStorage.getItem('theme')==='dark')document.body.classList.add('dark-mode');
-});
+function toggleDrawer(){document.getElementById('uni-overlay').classList.toggle('open');document.getElementById('uni-drawer').classList.toggle('open')}
+function closeDrawer(){document.getElementById('uni-overlay').classList.remove('open');document.getElementById('uni-drawer').classList.remove('open')}
+document.getElementById('uniHamBtn').addEventListener('click',toggleDrawer);
+document.getElementById('uniOverlay').addEventListener('click',closeDrawer);
+document.getElementById('uniDrawerClose').addEventListener('click',closeDrawer);
 </script>
 </body>
 </html>
