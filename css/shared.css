@@ -6,25 +6,25 @@
 /* ── 1. CSS 变量 ─────────────────────────────────────────────── */
 :root {
   /* 颜色系统 */
-  --md-primary:       #0a1628;
-  --md-primary-rgb:   10, 22, 40;
+  --md-primary:       #f7fafc;
+  --md-primary-rgb:   247, 250, 252;
   --md-secondary:     #c9a227;
   --md-on-secondary:  #1a1a2e;
   --md-surface:       #ffffff;
   --md-surface-variant: #f3f4f6;
   --md-background:    #ffffff;
-  --md-background-dark: #1a1a2e;
-  --md-on-surface:    #1a1a2e;
+  --md-background-dark: #f7fafc;
+  --md-on-surface:    #1a202c;
   --md-on-surface-muted: #4a5568;
   --md-outline:       #d1d5db;
 
   /* 语义颜色 */
   --color-accent:       #c9a227;
-  --color-accent-dark:  #0a1628;
-  --color-primary-blue: #1a365d;
+  --color-accent-dark:  #f7fafc;
+  --color-primary-blue: #e2e8f0;
   --color-bull:         #276749;
   --color-bear:         #c53030;
-  --color-text-dark:    #1a1a1a;
+  --color-text-dark:    #1a202c;
   --color-text-muted:   #4a5568;
   --color-bg-light:     #ffffff;
   --color-bg-off:       #f8f9fa;
@@ -51,7 +51,7 @@
   --text-primary:   #1a1a2e;
   --text-secondary: #4a5568;
   --text-muted:     #6b7280;
-  --text-inverse:   #f5f5f5;
+  --text-inverse:   #1a202c;
 }
 
 /* ── 2. 基础重置 ─────────────────────────────────────────────── */
@@ -69,7 +69,7 @@ body {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 64px;
-  background: rgba(10, 22, 40, .97);
+  background: rgba(255, 255, 255, .98) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 9999;
@@ -77,8 +77,21 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  box-shadow: 0 1px 0 #e2e8f0 !important;
 }
+
+/* Force light mode on all drawer and overlay elements */
+#uni-drawer { background: #ffffff !important; border-left: 1px solid #e2e8f0 !important; }
+#uni-overlay { background: rgba(0,0,0,.5) !important; }
+#uni-drawer a.uni-link { color: #4a5568 !important; }
+#uni-drawer a.uni-link:hover { color: #1a202c !important; background: #f7fafc !important; }
+#uni-drawer-brand { color: #1a202c !important; }
+#uni-drawer-close { color: #4a5568 !important; background: transparent !important; border: 1px solid #e2e8f0 !important; }
+footer { background: #f8f9fa !important; color: #4a5568 !important; border-top: 1px solid #e2e8f0 !important; }
+
+/* Fix muted text contrast: #6b7280 on white = 3.4:1 (fails AA). Raise to #4a5568 = 5.9:1 (passes AA) */
+body, p, li, td, th { color: #2d3748 !important; }
+.text-muted, .muted, .subtitle, .desc { color: #4a5568 !important; }
 #uni-navbar .uni-brand {
   color: #1a202c;
   font-size: 1.2rem;
@@ -459,7 +472,7 @@ footer a { color: #c9a227; text-decoration: none; }
 
 /* ── 7. 暗色模式 (prefers-color-scheme: dark) ───────────────── */
 /* ── 7. 亮色模式 (默认) ────────────────────────────────────────── */
-body { background: #ffffff; color: #2d3748; }
+body { background: #ffffff !important; color: #1a202c !important; }
 
 #uni-navbar  { background: #ffffff; border-bottom: 1px solid #e2e8f0; box-shadow: none; }
 #uni-drawer  { background: #ffffff; }
