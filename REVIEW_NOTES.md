@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-19 00:02
-> Last Audit: 2026-04-19 00:02 (origin/master 与 origin/dev 再次同步完成，origin/master 已更新至 `412ec0e`)
+> Last Updated by Agent: 2026-04-19 04:02
+> Last Audit: 2026-04-19 04:02 (origin/master 与 origin/dev 完全同步，均已更新至 `fb52811`)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-19 第二十五次**: 下载资源目录收尾完成 — 发现 `downloads/himcap/` 下9个文件未提交（7份英文翻译txt + John-Jay-Award-Speech-2012-CN.md）；这些是4月18日同步时产生的文件，commit `412ec0e` 仅包含了同批的中文翻译MD文件；本次补充提交全部9个文件（7429行新增），并推送 origin/master 和 origin/dev 至 `fb52811`；现 origin/master 与 origin/dev 完全同步
+  - Commit: `fb52811`
+  - 修复内容：downloads/himcap/ 目录补齐英文翻译文件（book-list/gvie-2024/john-jay-2012/modernization-2016/munger-tribute/pca-foreword/pku-2015/sino-us-modernization 各english.txt）+ John-Jay-Award-Speech-2012-CN.md；origin/master 与 origin/dev 均已推送至 `fb52811`
 - **2026-04-19 第二十四次**: origin/master 与 origin/dev 再次同步完成 — 发现 origin/master 落后 origin/dev 11个commits（commit `412ec0e` 回溯），新增内容：①喜马拉雅资本7份官方PDF（2012年哥大颁奖演讲/2016年现代化 essays/2023年芒格纪念文/书单）；②完整中英双语翻译文件（2015北大演讲/2024北大演讲/PCA序言/芒格纪念文）；③核心页面重新设计为自包含彩色风格（principles/about/quotes/glossary/faq/bookshelf/holdings/timeline/downloads.html）；④可下载资源（13F CSV/原则速查MD/视频讲座笔记MD）；⑤持仓页新增完整13F表格+柱状图可视化；共11个commits，origin/master 与 origin/dev 完全同步
   - Commit: `412ec0e`（本次推送顶头）
   - 修复内容：origin/dev 在上次同步后新增11个commits，origin/master 再次落后；本次推送后 origin/master 与 origin/dev 完全同步（均为 `412ec0e`）
