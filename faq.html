@@ -3,129 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>常见问题 — 李录价值投资研究</title>
-<meta name="description" content="关于李录与价值投资的常见问题解答。">
-<link rel="stylesheet" href="css/shared.css">
+<title>FAQ — 李录价值投资研究</title>
+<meta name="description" content="关于李录价值投资研究的常见问题解答。">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:var(--gold)}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-body{padding-top:64px}
+.main-content{max-width:860px;margin:0 auto;padding:0 16px 48px;background:var(--surface);min-height:calc(100vh - 64px)}
+.back-bar{padding:12px 16px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;background:#f7fafc}
+.back-bar a{color:var(--gold);font-size:.85rem;font-weight:500}
+.page-title{font-size:1.8rem;font-weight:800;color:var(--navy);padding:32px 16px 4px}
+.page-subtitle{color:var(--text-muted);font-size:.95rem;padding:0 16px 24px}
+.section{padding:8px 0 24px}
+h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.faq-item{margin-bottom:12px}
+.faq-q{background:var(--surface);border:1px solid #e2e8f0;border-radius:12px;padding:16px 20px;cursor:pointer;font-weight:600;color:var(--navy);font-size:.95rem}
+.faq-q:hover{background:#f7fafc}
+.faq-a{background:#f7fafc;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;padding:14px 20px;color:var(--text-muted);font-size:.88rem;line-height:1.7}
+footer{padding:24px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;text-align:center;font-size:.78rem;color:var(--text-light)}
+@media(max-width:600px){.page-title{font-size:1.5rem}}
+</style>
 </head>
 <body>
-
 <div id="uni-navbar">
-  <div style="display:flex;align-items:center;gap:8px">
-    <a href="index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a>
-  </div>
-  <div class="uni-links">
-    <a href="index.html" class="uni-link">笔记</a>
-    <a href="timeline.html" class="uni-link">进度</a>
-    <a href="holdings.html" class="uni-link">持仓</a>
-    <div class="uni-dropdown">
-      <a class="uni-link">资料库</a>
-      <div class="uni-dropdown-menu">
-        <a href="about.html">关于李录</a>
-        <a href="principles.html">投资原则</a>
-        <a href="video_study.html">视频</a>
-        <a href="quotes.html">语录</a>
-        <a href="bookshelf.html">书架</a>
-        <a href="glossary.html">术语</a>
-        <a href="faq.html">FAQ</a>
-        <a href="timeline.html">时间线</a>
-      </div>
-    </div>
-  </div>
-  <button id="uniThemeBtn" style="background:none;border:none;cursor:pointer;font-size:.82rem;color:var(--text-muted,#4a5568);padding:4px 8px;margin-left:4px;border-radius:6px;">暗色</button>
-  <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+<div style="display:flex;align-items:center;gap:8px"><span class="uni-brand"><span style="color:var(--gold)">&#10070;</span> 李录研究</span></div>
+<div class="uni-links">
+<a href="index.html" class="uni-link">首页</a>
+<a href="faq.html" class="uni-link" style="color:var(--gold)">FAQ</a>
+<a href="principles.html" class="uni-link">原则</a>
+<a href="video_study.html" class="uni-link">视频</a>
+</div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
 </div>
 <div id="uni-overlay"></div>
 <div id="uni-drawer">
-  <div id="uni-drawer-header">
-    <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <button id="uniDrawerThemeBtn" style="background:none;border:1px solid #d1d5db;border-radius:6px;cursor:pointer;font-size:.78rem;color:#4a5568;padding:4px 10px;">暗色</button>
-      <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
-  </div>
-  <a href="index.html" class="uni-link">首页</a>
-  <a href="about.html" class="uni-link">关于李录</a>
-  <a href="principles.html" class="uni-link">投资原则</a>
-  <a href="holdings.html" class="uni-link">持仓</a>
-  <a href="video_study.html" class="uni-link">视频学习</a>
-  <a href="quotes.html" class="uni-link">语录</a>
-  <a href="bookshelf.html" class="uni-link">书架</a>
-  <a href="glossary.html" class="uni-link">术语表</a>
-  <a href="faq.html" class="uni-link">FAQ</a>
-  <a href="timeline.html" class="uni-link">时间线</a>
-  <a href="downloads.html" class="uni-link">下载资源</a>
-  <a href="china-hk-holdings-research.html" class="uni-link">非13F持仓</a>
-  <a href="raw_github.html" class="uni-link">Raw GitHub</a>
-  <a href="alphabet-investment-deep.html" class="uni-link">Alphabet</a>
-  <a href="apple-investment-deep.html" class="uni-link">Apple</a>
-  <a href="bac-investment-deep.html" class="uni-link">BAC</a>
-  <a href="bank-of-america-investment-deep.html" class="uni-link">Bank of America</a>
-  <a href="berkshire-investment-deep.html" class="uni-link">BRK.B</a>
-  <a href="byd-investment-deep.html" class="uni-link">比亚迪深度</a>
-  <a href="byd-cross-reference.html" class="uni-link">比亚迪交叉</a>
-  <a href="byd-next-decade.html" class="uni-link">比亚迪十年</a>
-  <a href="byd_investment.html" class="uni-link">比亚迪综合</a>
-  <a href="crocs-investment-deep.html" class="uni-link">Crocs</a>
-  <a href="ewbc-investment-deep.html" class="uni-link">EWBC</a>
-  <a href="kweichow-moutai-investment-deep.html" class="uni-link">茅台</a>
-  <a href="oxy-investment-deep.html" class="uni-link">OXY</a>
-  <a href="pdd-investment-deep.html" class="uni-link">PDD</a>
-  <a href="psbc-investment-deep.html" class="uni-link">PSBC</a>
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span style="color:var(--gold)">&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="index.html" class="uni-link">首页</a>
+<a href="faq.html" class="uni-link" style="color:var(--gold)">FAQ</a>
+<a href="principles.html" class="uni-link">投资原则</a>
+<a href="video_study.html" class="uni-link">视频学习</a>
 </div>
 
 <div id="uni-body">
-<main class="main-content">
-
+<div class="main-content">
 <div class="back-bar">
-  <a href="index.html">&#8592; 首页</a>
+<a href="index.html">← 返回首页</a>
 </div>
 
-<h1 class="page-title">常见问题</h1>
-<p class="page-subtitle">关于李录与价值投资</p>
+<h1 class="page-title">FAQ</h1>
+<p class="page-subtitle">关于李录价值投资研究的常见问题</p>
 
-<section class="section">
+<div class="section">
+<h2>基础问题</h2>
 
-<details style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:15px;cursor:pointer" open>
-<summary style="font-weight:700;color:#0a1628;outline:none;font-size:1rem">Q1: 李录是如何开始价值投资的？</summary>
-<p style="margin-top:15px;color:#4a5568;line-height:1.7">李录在哥伦比亚大学师从 Bruce Greenwald 教授学习价值投资。Greenwald 是价值投资领域的权威学者，其著作《Value Investing》被广泛用作教材。李录在获得法学博士 (JD)、MBA 和经济学硕士 (MA) 三个学位后，创立了喜马拉雅资本，专注于长期价值投资。</p>
-</details>
+<div class="faq-item">
+<div class="faq-q">李录是谁？</div>
+<div class="faq-a">李录是喜马拉雅资本（Himalaya Capital）的创始人，管理规模约20亿美元。曾在哥伦比亚大学师从价值投资教授Bruce Greenwald，并与查理·芒格建立了深厚友谊，芒格家族是其最早的投资人之一。他以价值投资为核心策略，长期持有具有持久护城河的企业。</div>
+</div>
 
-<details style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:15px;cursor:pointer">
-<summary style="font-weight:700;color:#0a1628;outline:none;font-size:1rem">Q2: 李录的核心投资原则是什么？</summary>
-<p style="margin-top:15px;color:#4a5568;line-height:1.7">六大原则：</p>
-<ul style="margin:10px 0 0 20px;color:#4a5568;line-height:1.9">
-  <li><strong>① 股票是企业部分所有权：</strong>买股票就是买公司的一部分，思考方式和创始人一样。</li>
-  <li><strong>② 市场先生是仆人不是向导：</strong>利用情绪波动而不是被其支配，在别人恐惧时贪婪，在别人贪婪时恐惧。</li>
-  <li><strong>③ 能力圈：不懂不投：</strong>知道自己不知道什么比知道什么更重要。理解边界比扩大边界更重要。</li>
-  <li><strong>④ 安全边际：</strong>永远在价格显著低于价值时买入，用显著低于价值的价格提供缓冲。</li>
-  <li><strong>⑤ 长期主义：</strong>让复利发挥作用，频繁交易损耗收益。</li>
-  <li><strong>⑥ 护城河是根本：</strong>持久竞争优势决定了长期回报——成本优势、品牌、网络效应、监管壁垒。</li>
-</ul>
-</details>
+<div class="faq-item">
+<div class="faq-q">李录和巴菲特/芒格是什么关系？</div>
+<div class="faq-a">李录称芒格为"老师"。芒格是喜马拉雅资本的早期LP（有限合伙人）。2008年，李录向芒格推荐比亚迪，最终促成伯克希尔入股，这是两人合作史上最具标志性的事件。李录的投资哲学深受芒格影响，但也有自己的独立思考和进化。</div>
+</div>
 
-<details style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:15px;cursor:pointer">
-<summary style="font-weight:700;color:#0a1628;outline:none;font-size:1rem">Q3: 李录对中国市场怎么看？</summary>
-<p style="margin-top:15px;color:#4a5568;line-height:1.7">他认为中国将成为世界上最大、最活跃的消费市场。在一个充满活力的经济体中更容易找到价值。中国市场仍然不发达，金融服务尚未开发，许多领域即将起飞。李录投资中国的逻辑不是押注政府政策，而是押注中国企业家精神和市场经济机制能否持续释放。</p>
-<p style="margin-top:12px;color:#4a5568;line-height:1.7">关于文明演进，李录提出 3.0 科技文明铁律：真正3.0文明的主道和政治、文化关系不大，和自由市场经济及现代科技关系极大。西方观察者最大的误解，就是过度关注政治体制而忽视市场机制这一根本变量。</p>
-</details>
+<div class="faq-item">
+<div class="faq-q">李录的年化收益率是多少？</div>
+<div class="faq-a">据公开资料，李录管理的喜马拉雅资本自1997年创立以来，年化收益率约20%（部分报告的长期数据）。这个成绩在价值投资领域极为突出，且是在没有使用杠杆的情况下实现的。</div>
+</div>
 
-<details style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;margin-bottom:15px;cursor:pointer">
-<summary style="font-weight:700;color:#0a1628;outline:none;font-size:1rem">Q4: 什么是「财富」？— 李录的财富观与购买力思维</summary>
-<p style="margin-top:15px;color:#4a5568;line-height:1.7"><strong>核心观点（来自2024北大演讲）：</strong>真正的财富不是账面资产，而是「购买力」——即未来能够持续购买商品和服务的能力。李录指出，人们对财富的困惑是时代性困惑的根源之一。</p>
-<p style="margin-top:12px;color:#4a5568;line-height:1.7"><strong>关键区分：</strong>①「已积累财富」vs「未来创富能力」——房子是70%中国家庭财富形式，但它是消费品不是投资品；②「名义财富」vs「实际购买力」——房产名义增值若不能变现，在需要流动性时无法发挥作用。</p>
-<p style="margin-top:12px;color:#4a5568;line-height:1.7"><strong>投资人的财富定义：</strong>能够产生现金流、抵御通胀，并在全球范围内优化资源配置的能力。价值投资本质上是一种购买力保全和增殖的思维。</p>
-<p style="margin-top:12px;color:#888;font-size:.82rem"><em>来源：李录2024北大演讲《全球价值投资与时代》Part 1 — 时代困惑的根源</em></p>
-</details>
+<div class="faq-item">
+<div class="faq-q">李录的主要持仓有哪些？</div>
+<div class="faq-a">根据2025 Q4的13F报告，主要持仓包括：Alphabet（43.86%）、Bank of America（16.08%）、PDD Holdings（8.69%）、Berkshire Hathaway B（12.64%）等。他在港股/A股也有投资，包括比亚迪、邮储银行等。</div>
+</div>
+</div>
 
-</section>
+<div class="section">
+<h2>投资理念相关</h2>
 
-</main>
+<div class="faq-item">
+<div class="faq-q">李录的投资框架是什么？</div>
+<div class="faq-a">李录的核心框架包括：①股票是企业所有权的一部分；②市场先生是仆人不是向导；③安全边际；④能力圈（不懂不做）；⑤寻找有持久护城河的企业；⑥长期持有。他的框架深受格雷厄姆和芒格影响，但更强调"好生意"和"护城河"，而非单纯的"便宜货"。</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">李录为什么投资比亚迪？</div>
+<div class="faq-a">李录2002年见到王传福后，判断他具有顶级企业家素质：极度专注技术、垂直整合能力强、诚信。比亚迪的电池技术和中国市场先发优势构成了护城河。李录向芒格推荐后，2008年伯克希尔入股比亚迪。</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">李录的13F持仓变化多久披露一次？</div>
+<div class="faq-a">美国SEC要求管理规模超过1亿美元的机构投资者每季度结束后45天内提交13F报告。因此李录的持仓数据每季度更新一次（通常在2月、5月、8月、11月）。</div>
+</div>
+</div>
+
+<div class="section">
+<h2>关于本研究</h2>
+
+<div class="faq-item">
+<div class="faq-q">这些研究资料来源是什么？</div>
+<div class="faq-a">持仓数据来源于SEC EDGAR的13F公开报告（sec.gov/edgar）；投资理念来源于公开视频（YouTube/Bilibili北大演讲）、论文（《文明、现代化、价值投资与中国》）、书籍（《穷查理宝典》）等。所有内容仅供研究参考，不构成投资建议。</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-q">我可以参考这些内容做投资决策吗？</div>
+<div class="faq-a">不可以。本研究资料仅供学习参考，不构成任何形式的投资建议。投资有风险，决策需谨慎，请咨询专业投资顾问。</div>
+</div>
+
+</div>
 </div>
 
 <footer>
-  <span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
-  <span>数据截止：2025 Q4 13F</span>
+<span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
 </footer>
+</div>
 
-<script src="js/main.js" defer></script>
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
 </body>
 </html>
