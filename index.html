@@ -3,229 +3,212 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李录 (Li Lu) - 价值投资研究</title>
-<meta name="description" content="李录（Li Lu）价值投资研究与学习平台。涵盖投资原则、持仓分析、视频学习、推荐书籍等。">
-<meta property="og:title" content="李录 (Li Lu) - 价值投资研究">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://hozen.github.io/li-lu-research/">
-<link rel="stylesheet" href="css/shared.css">
+<title>李录研究 — 索引</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #fafaf9;
+  color: #1c1917;
+  line-height: 1.6;
+  padding: 0;
+}
+header {
+  background: #1c1917;
+  color: #fafaf9;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+header h1 { font-size: 1rem; font-weight: 600; color: #c9a227; }
+header span { font-size: .8rem; color: #a8a29e; }
+main { max-width: 720px; margin: 0 auto; padding: 24px 20px 80px; }
+h2 {
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: #78716c;
+  margin: 32px 0 12px;
+  border-bottom: 1px solid #e7e5e4;
+  padding-bottom: 6px;
+}
+h2:first-child { margin-top: 0; }
+a.list-item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #f1f0ef;
+  text-decoration: none;
+  color: #1c1917;
+  transition: color .15s;
+}
+a.list-item:hover { color: #c9a227; }
+a.list-item .name { font-size: .95rem; font-weight: 500; }
+a.list-item .tag {
+  font-size: .7rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #f5f5f4;
+  color: #78716c;
+  white-space: nowrap;
+}
+a.list-item:hover .tag { background: #fef3c7; color: #92400e; }
+.tag-red { background: #fee2e2 !important; color: #991b1b !important; }
+.tag-green { background: #dcfce7 !important; color: #166534 !important; }
+.tag-blue { background: #dbeafe !important; color: #1e40af !important; }
+.tag-purple { background: #f3e8ff !important; color: #6b21a8 !important; }
+footer {
+  text-align: center;
+  padding: 24px;
+  font-size: .75rem;
+  color: #a8a29e;
+  border-top: 1px solid #e7e5e4;
+}
+</style>
 </head>
 <body>
 
-<div id="uni-navbar">
-  <div style="display:flex;align-items:center;gap:8px">
-    <a href="index.html" class="uni-brand"><span>&#10070;</span> 李录研究</a>
-  </div>
-  <div class="uni-links">
-    <a href="index.html" class="uni-link active">笔记</a>
-    <a href="timeline.html" class="uni-link">进度</a>
-    <a href="holdings.html" class="uni-link">持仓</a>
-    <div class="uni-dropdown">
-      <a class="uni-link">资料库</a>
-      <div class="uni-dropdown-menu">
-        <a href="about.html">关于李录</a>
-        <a href="principles.html">投资原则</a>
-        <a href="video_study.html">视频</a>
-        <a href="quotes.html">语录</a>
-        <a href="bookshelf.html">书架</a>
-        <a href="glossary.html">术语</a>
-        <a href="faq.html">FAQ</a>
-        <a href="timeline.html">时间线</a>
-      </div>
-    </div>
-    <button id="uniThemeBtn" style="background:none;border:none;cursor:pointer;font-size:.82rem;color:var(--text-muted,#4a5568);padding:4px 8px;margin-left:4px;border-radius:6px;">暗色</button>
-  </div>
-  <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
-</div>
-<div id="uni-overlay"></div>
-<div id="uni-drawer">
-  <div id="uni-drawer-header">
-    <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <button id="uniDrawerThemeBtn" style="background:none;border:1px solid #d1d5db;border-radius:6px;cursor:pointer;font-size:.78rem;color:#4a5568;padding:4px 10px;">暗色</button>
-      <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
-    </div>
-  </div>
-  <a href="index.html" class="uni-link">首页</a>
-  <a href="about.html" class="uni-link">关于李录</a>
-  <a href="principles.html" class="uni-link">投资原则</a>
-  <a href="holdings.html" class="uni-link">持仓</a>
-  <a href="video_study.html" class="uni-link">视频学习</a>
-  <a href="quotes.html" class="uni-link">语录</a>
-  <a href="bookshelf.html" class="uni-link">书架</a>
-  <a href="glossary.html" class="uni-link">术语表</a>
-  <a href="faq.html" class="uni-link">FAQ</a>
-  <a href="timeline.html" class="uni-link">时间线</a>
-  <a href="downloads.html" class="uni-link">下载资源</a>
-  <a href="china-hk-holdings-research.html" class="uni-link">非13F持仓</a>
-  <a href="raw_github.html" class="uni-link">Raw GitHub</a>
-  <a href="alphabet-investment-deep.html" class="uni-link">Alphabet</a>
-  <a href="apple-investment-deep.html" class="uni-link">Apple</a>
-  <a href="bac-investment-deep.html" class="uni-link">BAC</a>
-  <a href="bank-of-america-investment-deep.html" class="uni-link">Bank of America</a>
-  <a href="berkshire-investment-deep.html" class="uni-link">BRK.B</a>
-  <a href="byd-investment-deep.html" class="uni-link">比亚迪深度</a>
-  <a href="byd-cross-reference.html" class="uni-link">比亚迪交叉</a>
-  <a href="byd-next-decade.html" class="uni-link">比亚迪十年</a>
-  <a href="byd_investment.html" class="uni-link">比亚迪综合</a>
-  <a href="crocs-investment-deep.html" class="uni-link">Crocs</a>
-  <a href="ewbc-investment-deep.html" class="uni-link">EWBC</a>
-  <a href="kweichow-moutai-investment-deep.html" class="uni-link">茅台</a>
-  <a href="oxy-investment-deep.html" class="uni-link">OXY</a>
-  <a href="pdd-investment-deep.html" class="uni-link">PDD</a>
-  <a href="psbc-investment-deep.html" class="uni-link">PSBC</a>
-</div>
+<header>
+  <h1>李录价值投资研究</h1>
+  <span>喜马拉雅资本 · ~20% 年化</span>
+</header>
 
-<div id="uni-body">
-<main class="main-content" style="padding-top:84px">
+<main>
 
-<!-- Hero -->
-<section class="hero-section" style="background:linear-gradient(135deg,#f7fafc,#e2e8f0);border-radius:20px;padding:50px 40px;margin-bottom:50px;position:relative;overflow:hidden">
-  <div style="position:absolute;inset:0;background:url('data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.08%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E');opacity:.5"></div>
-  <div style="position:relative;z-index:1">
-    <h1 style="font-size:2.8rem;color:#1a202c;margin-bottom:12px;line-height:1.2">李录 <span style="color:#c9a227">(Li Lu)</span></h1>
-    <p class="hero-subtitle" style="color:#4a5568;font-size:1.1rem;margin-bottom:6px">价值投资研究者 · 喜马拉雅资本</p>
-    <p style="color:#c9a227;font-size:.95rem">28年投资经验 · <span title="广泛引用，未经官方确认">~20% 年化收益 ⚠️</span> · 6条核心原则</p>
-    <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
-      <a href="about.html" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:#c9a227;color:#0a1628;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem">关于李录 →</a>
-      <a href="principles.html" class="hero-cta-outline" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;border:2px solid #c9a227;color:#1a365d;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem">投资原则 →</a>
-      <a href="holdings.html" class="hero-cta-outline" style="display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:transparent;border:2px solid #c9a227;color:#1a365d;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem">持仓研究 →</a>
-    </div>
-  </div>
-</section>
+<h2>视频学习</h2>
+<a class="list-item" href="video_study.html">
+  <span class="name">视频学习中心</span>
+  <span class="tag tag-blue">8部视频</span>
+</a>
+<a class="list-item" href="https://www.bilibili.com/video/BV1Cm4y1r76v/" target="_blank">
+  <span class="name">北大光华价值投资课程启动（2015）</span>
+  <span class="tag">Bilibili</span>
+</a>
 
-<!-- Study Notes -->
-<section class="section">
-  <h2 style="font-size:1.5rem;color:#0a1628;margin-bottom:5px;font-weight:700">研究笔记 <span style="font-size:.9rem;color:#888;font-weight:400">Study Notes</span></h2>
-  <p style="color:#888;font-size:.9rem;margin-bottom:20px">Q2 核心 — 每看完一个视频/文章，结构化沉淀于此</p>
-  <div style="display:flex;flex-direction:column;gap:16px">
+<h2>核心资料</h2>
+<a class="list-item" href="about.html">
+  <span class="name">关于李录</span>
+  <span class="tag">简介</span>
+</a>
+<a class="list-item" href="principles.html">
+  <span class="name">投资原则</span>
+  <span class="tag">6条原则</span>
+</a>
+<a class="list-item" href="holdings.html">
+  <span class="name">持仓与投资案例</span>
+  <span class="tag">13F·2025Q4</span>
+</a>
+<a class="list-item" href="china-hk-holdings-research.html">
+  <span class="name">非13F持仓研究</span>
+  <span class="tag">港股·A股</span>
+</a>
+<a class="list-item" href="quotes.html">
+  <span class="name">语录</span>
+  <span class="tag">金句</span>
+</a>
+<a class="list-item" href="glossary.html">
+  <span class="name">术语表</span>
+  <span class="tag">行话</span>
+</a>
+<a class="list-item" href="faq.html">
+  <span class="name">FAQ</span>
+  <span class="tag">常见问题</span>
+</a>
+<a class="list-item" href="timeline.html">
+  <span class="name">时间线</span>
+  <span class="tag">历程</span>
+</a>
+<a class="list-item" href="bookshelf.html">
+  <span class="name">书架</span>
+  <span class="tag">书单</span>
+</a>
+<a class="list-item" href="downloads.html">
+  <span class="name">下载资源</span>
+  <span class="tag">资料</span>
+</a>
 
-    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;border-left:4px solid #3182ce">
-      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-        <span style="background:#3182ce;color:#1a202c;padding:2px 10px;border-radius:12px;font-size:.72rem;font-weight:600">访谈</span>
-        <span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:.72rem">2024-03-15</span>
-      </div>
-      <h3 style="color:#1a365d;font-size:1rem;margin-bottom:8px">价值投资的三个阶段：从雪茄烟蒂到伟大企业</h3>
-      <p style="color:#4a5568;font-size:.85rem;line-height:1.7">第一阶段（格雷厄姆）雪茄烟蒂法 → 第二阶段优质小企业 → 第三阶段（芒格/巴菲特）具有持久护城河的伟大企业。三个阶段的演进本质是认知升级。</p>
-      <a href="about.html" style="color:#c9a227;font-size:.82rem;text-decoration:none;margin-top:8px;display:inline-block">查看全部 →</a>
-    </div>
+<h2>投资案例深度分析</h2>
+<a class="list-item" href="alphabet-investment-deep.html">
+  <span class="name">Alphabet (谷歌)</span>
+  <span class="tag tag-blue">科技</span>
+</a>
+<a class="list-item" href="apple-investment-deep.html">
+  <span class="name">Apple (苹果)</span>
+  <span class="tag tag-blue">科技</span>
+</a>
+<a class="list-item" href="bac-investment-deep.html">
+  <span class="name">Bank of America (美国银行)</span>
+  <span class="tag tag-green">金融</span>
+</a>
+<a class="list-item" href="bank-of-america-investment-deep.html">
+  <span class="name">Bank of America 深度分析</span>
+  <span class="tag tag-green">金融</span>
+</a>
+<a class="list-item" href="berkshire-investment-deep.html">
+  <span class="name">Berkshire Hathaway B</span>
+  <span class="tag tag-green">控股</span>
+</a>
+<a class="list-item" href="pdd-investment-deep.html">
+  <span class="name">PDD Holdings (拼多多)</span>
+  <span class="tag tag-purple">电商</span>
+</a>
+<a class="list-item" href="ewbc-investment-deep.html">
+  <span class="name">East West Bancorp (华美银行)</span>
+  <span class="tag tag-green">银行</span>
+</a>
+<a class="list-item" href="oxy-investment-deep.html">
+  <span class="name">Occidental Petroleum (西方石油)</span>
+  <span class="tag">能源</span>
+</a>
+<a class="list-item" href="crocs-investment-deep.html">
+  <span class="name">Crocs (卡骆驰)</span>
+  <span class="tag">消费</span>
+</a>
+<a class="list-item" href="psbc-investment-deep.html">
+  <span class="name">邮储银行 (PSBC)</span>
+  <span class="tag tag-green">港股</span>
+</a>
+<a class="list-item" href="kweichow-moutai-investment-deep.html">
+  <span class="name">贵州茅台 — 清仓案例</span>
+  <span class="tag tag-red">已清仓</span>
+</a>
 
-    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;border-left:4px solid #38a169">
-      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-        <span style="background:#38a169;color:#1a202c;padding:2px 10px;border-radius:12px;font-size:.72rem;font-weight:600">演讲</span>
-        <span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:.72rem">2020+</span>
-      </div>
-      <h3 style="color:#1a365d;font-size:1rem;margin-bottom:8px">价值投资四大核心理念</h3>
-      <p style="color:#4a5568;font-size:.85rem;line-height:1.7">①股票是部分所有权 ②市场先生是仆人 ③安全边际 ④能力圈。四大理念中，安全边际和能力圈是最需要刻意练习的部分。</p>
-      <a href="about.html" style="color:#c9a227;font-size:.82rem;text-decoration:none;margin-top:8px;display:inline-block">查看全部 →</a>
-    </div>
+<h2>比亚迪专题</h2>
+<a class="list-item" href="byd-investment-deep.html">
+  <span class="name">比亚迪深度分析</span>
+  <span class="tag">经典</span>
+</a>
+<a class="list-item" href="byd-cross-reference.html">
+  <span class="name">比亚迪交叉参考</span>
+  <span class="tag">研究</span>
+</a>
+<a class="list-item" href="byd-next-decade.html">
+  <span class="name">比亚迪未来十年</span>
+  <span class="tag">展望</span>
+</a>
+<a class="list-item" href="byd_investment.html">
+  <span class="name">比亚迪综合研究</span>
+  <span class="tag">综合</span>
+</a>
 
-    <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px;border-left:4px solid #c9a227">
-      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-        <span style="background:#c9a227;color:#0a1628;padding:2px 10px;border-radius:12px;font-size:.72rem;font-weight:600">访谈</span>
-        <span style="background:#e2e8f0;color:#4a5568;padding:2px 10px;border-radius:12px;font-size:.72rem">2024-03</span>
-      </div>
-      <h3 style="color:#1a365d;font-size:1rem;margin-bottom:8px">最高形式护城河：信任之网</h3>
-      <p style="color:#4a5568;font-size:.85rem;line-height:1.7">"The highest form which civilization can reach is a seamless web of deserved trust." 护城河有多种形式，但最深厚的护城河是信任——建立在诚信基础上的企业与人之间的无缝信任网络。</p>
-      <a href="about.html" style="color:#c9a227;font-size:.82rem;text-decoration:none;margin-top:8px;display:inline-block">查看全部 →</a>
-    </div>
-
-  </div>
-  <a href="about.html" style="color:#c9a227;font-size:.9rem;font-weight:600;text-decoration:none;margin-top:16px;display:inline-block">查看全部笔记 →</a>
-</section>
-
-<!-- Public Activity Checklist -->
-<section class="section">
-  <h2 style="font-size:1.5rem;color:#0a1628;margin-bottom:5px;font-weight:700">公开活动进度</h2>
-  <p style="color:#888;font-size:.9rem;margin-bottom:20px">Q2 资料回顾 Checklist — 每项完成后打勾</p>
-  <div style="background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:20px">
-    <details style="margin-bottom:12px"><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2024-12 北大价值投资课程十周年演讲</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem">约3小时最完整演讲 · 四大主题<a href="videos/8jJA4vHWvLc.html" style="color:#c9a227;margin-left:8px;text-decoration:none">→ 视频笔记</a></p></details>
-    <details style="margin-bottom:12px"><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2021 CBS/Greenwald 访谈</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem">Columbia Greater China Society × Bruce Greenwald 主办<a href="videos/-gfRCGZ0zf4.html" style="color:#c9a227;margin-left:8px;text-decoration:none">→ 视频笔记</a></p></details>
-    <details style="margin-bottom:12px"><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2020《文明、现代化、价值投资与中国》出版</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem">系统阐述价值投资理念与中国市场机会<a href="bookshelf.html" style="color:#c9a227;margin-left:8px;text-decoration:none">→ 书单</a></p></details>
-    <details style="margin-bottom:12px"><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2019 北大光华课程演讲</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem"><a href="videos/35RgNwcyjFk.html" style="color:#c9a227;text-decoration:none">→ 视频笔记</a></p></details>
-    <details><summary style="font-weight:600;color:#1a365d;cursor:pointer;outline:none">&#9744; 2015 北大光华价值投资课程启动</summary><p style="margin-top:8px;color:#4a5568;font-size:.85rem"><a href="https://www.bilibili.com/video/BV1Cm4y1r76v/" target="_blank" style="color:#c9a227;text-decoration:none">→ Bilibili 观看</a></p></details>
-  </div>
-  <a href="timeline.html" style="color:#c9a227;font-size:.9rem;font-weight:600;text-decoration:none;margin-top:16px;display:inline-block">完整时间线 →</a>
-</section>
-
-<!-- Holdings Snapshot -->
-<section class="section">
-  <h2 style="font-size:1.5rem;color:#0a1628;margin-bottom:5px;font-weight:700">持仓快照 <span style="font-size:.9rem;color:#888;font-weight:400">(2025 Q4)</span></h2>
-  <p style="color:#888;font-size:.9rem;margin-bottom:20px">喜马拉雅资本 13F · SEC EDGAR · 仅供研究参考，不构成投资建议</p>
-  <div style="overflow-x:auto">
-    <table style="width:100%;border-collapse:collapse;background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden">
-      <thead>
-        <tr style="background:#f8f9fa;color:#1a202c">
-          <th style="padding:12px 16px;text-align:left;font-size:.85rem">股票</th>
-          <th style="padding:12px 16px;text-align:left;font-size:.85rem">代码</th>
-          <th style="padding:12px 16px;text-align:center;font-size:.85rem">占比</th>
-          <th style="padding:12px 16px;text-align:center;font-size:.85rem">护城河</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom:1px solid #e5e7eb">
-          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Alphabet</td>
-          <td style="padding:12px 16px;font-size:.82rem;color:#666">GOOGL</td>
-          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">43.86%</td>
-          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9733;</td>
-        </tr>
-        <tr style="border-bottom:1px solid #e5e7eb;background:#f9fafb">
-          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Bank of America</td>
-          <td style="padding:12px 16px;font-size:.82rem;color:#666">BAC</td>
-          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">16.08%</td>
-          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9734;</td>
-        </tr>
-        <tr style="border-bottom:1px solid #e5e7eb">
-          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">PDD Holdings</td>
-          <td style="padding:12px 16px;font-size:.82rem;color:#666">PDD</td>
-          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">14.64%</td>
-          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9733;</td>
-        </tr>
-        <tr style="border-bottom:1px solid #e5e7eb;background:#f9fafb">
-          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Berkshire Hathaway B</td>
-          <td style="padding:12px 16px;font-size:.82rem;color:#666">BRK.B</td>
-          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">12.64%</td>
-          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
-        </tr>
-        <tr style="border-bottom:1px solid #e5e7eb">
-          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">East West Bancorp</td>
-          <td style="padding:12px 16px;font-size:.82rem;color:#666">EWBC</td>
-          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">8.74%</td>
-          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9734;</td>
-        </tr>
-        <tr style="border-bottom:1px solid #e5e7eb;background:#f9fafb">
-          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Occidental Petroleum</td>
-          <td style="padding:12px 16px;font-size:.82rem;color:#666">OXY</td>
-          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">1.69%</td>
-          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9734;&#9734;</td>
-        </tr>
-        <tr style="border-bottom:1px solid #e5e7eb">
-          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Crocs</td>
-          <td style="padding:12px 16px;font-size:.82rem;color:#666">CROX</td>
-          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">1.50%</td>
-          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9734;&#9734;</td>
-        </tr>
-        <tr>
-          <td style="padding:12px 16px;font-size:.88rem;color:#1a365d;font-weight:600">Apple</td>
-          <td style="padding:12px 16px;font-size:.82rem;color:#666">AAPL</td>
-          <td style="padding:12px 16px;text-align:center;font-size:.88rem;color:#c9a227;font-weight:700">0.84%</td>
-          <td style="padding:12px 16px;text-align:center;color:#c9a227">&#9733;&#9733;&#9733;&#9733;&#9733;</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <p style="margin-top:12px;color:#888;font-size:.82rem">Top5 占比 96.2% · 科技 44.7% · 金融 24.8% · 电商 14.6% · 13F 仅覆盖美股持仓</p>
-  <a href="holdings.html" style="color:#c9a227;font-size:.9rem;font-weight:600;text-decoration:none;margin-top:12px;display:inline-block">完整持仓分析 →</a>
-</section>
+<h2>其他</h2>
+<a class="list-item" href="raw_github.html">
+  <span class="name">Raw GitHub</span>
+  <span class="tag">源码</span>
+</a>
 
 </main>
-</div>
 
 <footer>
-  <span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
-  <span>数据截止：2025 Q4 13F</span>
+  仅供研究参考，不构成投资建议 · 数据截止 2025 Q4
 </footer>
 
-<script src="js/main.js" defer></script>
 </body>
 </html>
