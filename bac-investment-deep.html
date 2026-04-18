@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>投资 Bank of America：为什么这是李录第二大持仓 — 李录研究</title>
 <meta name="description" content="深度拆解李录投资 Bank of America 的完整决策链条：如何发现、如何评估银行的护城河、利率环境变化的影响、以及为什么长期持有不动。">
-<link rel="stylesheet" href="css/shared.css">
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fafaf9;color:#1a1a2e;line-height:1.7;min-height:100vh}
+a{color:#c9a227;text-decoration:none}
 .page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
 .back-link{display:inline-flex;align-items:center;gap:6px;color:#c9a227;text-decoration:none;font-size:.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,.1);transition:all .2s}
 .back-link:hover{background:rgba(201,162,39,.2)}
@@ -59,267 +61,97 @@ p{color:#333;margin-bottom:14px;line-height:1.8}
 .footer{background:#f8f9fa;color:#888;text-align:center;padding:30px;margin-top:60px;font-size:.85rem}
 @media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}}
 </style>
-<script src="js/main.js" defer></script>
 </head>
 <body>
-<div id="uni-navbar">
-<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
-<div class="uni-links">
-<a href="index.html" class="uni-link">笔记</a>
-<a href="timeline.html" class="uni-link">进度</a>
-<a href="holdings.html" class="uni-link">持仓</a>
-<div class="uni-dropdown">
-<a class="uni-link">资料库</a>
-<div class="uni-dropdown-menu">
-<a href="about.html">关于李录</a>
-<a href="principles.html">投资原则</a>
-<a href="video_study.html">视频</a>
-<a href="quotes.html">语录</a>
-<a href="bookshelf.html">书架</a>
-<a href="glossary.html">术语</a>
-<a href="faq.html">FAQ</a>
-<a href="timeline.html">时间线</a>
-</div>
-</div>
-</div>
-<button id="uniThemeBtn" style="background:none;border:none;cursor:pointer;font-size:.82rem;color:#a8a29e;padding:4px 8px;margin-left:4px;border-radius:6px;">暗色</button>
-<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
-</div>
-<div id="uni-overlay"></div>
-<div id="uni-drawer">
-<div id="uni-drawer-header">
-<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
-<div style="display:flex;align-items:center;gap:8px">
-<button id="uniDrawerThemeBtn" style="background:none;border:1px solid #d1d5db;border-radius:6px;cursor:pointer;font-size:.78rem;color:#4a5568;padding:4px 10px;">暗色</button>
-<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
-</div>
-</div>
-<a href="/li-lu-research/index.html" class="uni-link">首页</a>
-<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
-<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
-<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
-<a href="/li-lu-research/video_study.html" class="uni-link">学习中心</a>
-<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
-<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
-<div class="uni-drawer-theme">
-</div>
-</div>
-<script>
-document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
-document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
-document.getElementById("uniThemeBtn").onclick=function(){document.body.classList.toggle("dark-mode");this.textContent=document.body.classList.contains("dark-mode")?"☀ 亮色":"暗色"};
-document.getElementById("uniDrawerThemeBtn").onclick=function(){document.body.classList.toggle("dark-mode")};
-</script>
-
 <div class="page">
 <a href="/li-lu-research/index.html" class="back-link">← 返回首页</a>
-
 <h1>投资 Bank of America：为什么这是李录第二大持仓</h1>
 <p class="subtitle">持有约9年，第二大持仓，深度价值投资与巴菲特效应的交汇点——这是一笔典型的"李录式"银行股投资。</p>
-
 <div class="meta">
 <span class="meta-item">📅 首次发布：2026-04-18</span>
 <span class="meta-item">📊 投资案例分析</span>
 <span class="meta-item">🏦 Bank of America / BAC</span>
 <span class="meta-item">💰 13F占比 16.08%</span>
 </div>
-
-<div class="toc">
-<h3>本文结构</h3>
-<ol>
+<div class="toc"><h3>本文结构</h3><ol>
 <li><a href="#overview">这是一笔什么样的投资</a></li>
 <li><a href="#discovery">如何发现：巴菲特的暗示与独立研究</a></li>
 <li><a href="#moat">护城河分析：BYD 框架</a></li>
 <li><a href="#rate">利率环境对银行股的影响</a></li>
 <li><a href="#risks">当前主要风险</a></li>
 <li><a href="#framework">方法论提炼：对普通投资者的启示</a></li>
-</ol>
-</div>
-
-<div class="lead">
-<h2>这是一笔什么样的投资</h2>
+</ol></div>
+<div class="lead"><h2>这是一笔什么样的投资</h2>
 <p>李录于 2016 年开始建仓 Bank of America，至今已持有约 9 年。2025 Q4 13F 显示持仓市值约 $5.74 亿，占组合 16.08%——是李录 13F 中第二大持仓。BAC 同时受到巴菲特的深刻影响：伯克希尔哈撒韦本身就是 BAC 的前十大股东之一。</p>
 <p>这笔投资的典型特征：买入时 PE 约 10x 以下（2016年），PB 低于账面值，具有典型的深度价值特征——用显著的安全边际买入一家拥有宽阔护城河的金融机构的股权。</p>
 </div>
-
-<!-- ==================== SECTION 1 ==================== -->
 <div class="section" id="discovery">
 <h2>一、如何发现：巴菲特的暗示与独立研究</h2>
-
-<div class="insight-card">
-<h4>为什么李录注意到了 BAC</h4>
-<p>李录在研究银行股时，有一个重要的参照系：巴菲特。巴菲特自 2011 年起开始买入 BAC，并在股东信中多次提及对银行股的偏好。李录研究 BAC 的背景逻辑是：<strong>如果巴菲特在一个领域做出了重大投资决定，那么这个领域的护城河一定是真实且持久的</strong>——因为巴菲特的尽调深度远超普通投资者。</p>
-</div>
-
+<div class="insight-card"><h4>为什么李录注意到了 BAC</h4>
+<p>李录在研究银行股时，有一个重要的参照系：巴菲特。巴菲特自 2011 年起开始买入 BAC，并在股东信中多次提及对银行股的偏好。李录研究 BAC 的背景逻辑是：<strong>如果巴菲特在一个领域做出了重大投资决定，那么这个领域的护城河一定是真实且持久的</strong>。</p></div>
 <div class="timeline">
-<div class="tl-item">
-<div class="tl-date">2011年</div>
-<div class="tl-title">巴菲特开始买入 BAC</div>
-<div class="tl-content">伯克希尔开始建仓 Bank of America，买入价格约 $5-7（拆股前）。彼时 BAC 正因次贷危机后遗症（抵押贷款诉讼、Merrill Lynch 收购遗留问题）而估值低迷。</div>
+<div class="tl-item"><div class="tl-date">2011年</div><div class="tl-title">巴菲特开始买入 BAC</div><div class="tl-content">伯克希尔开始建仓 Bank of America，彼时 BAC 正因次贷危机后遗症而估值低迷。</div></div>
+<div class="tl-item"><div class="tl-date">2016年</div><div class="tl-title">李录开始建仓 BAC</div><div class="tl-content">买入时 PE ~10x 以下，PB ~0.7x，股价约 $12-14（拆股后）。市场对银行股估值普遍折价。</div></div>
+<div class="tl-item"><div class="tl-date">2017-2018年</div><div class="tl-title">加息周期启动，NIM 扩张</div><div class="tl-content">美联储加息 9 次，基准利率从 0.25% 升至 2.5%。BAC 作为以存贷业务为主的银行，净息差显著扩大，盈利弹性释放。</div></div>
+<div class="tl-item"><div class="tl-date">2020年</div><div class="tl-title">疫情冲击，股价再次承压</div><div class="tl-content">COVID-19 冲击，BAC 股价一度跌至 $20 以下。李录持仓未变——因为银行基本面并未受损，只是市场情绪恐慌。</div></div>
 </div>
-<div class="tl-item">
-<div class="tl-date">2016年</div>
-<div class="tl-title">李录开始建仓 BAC</div>
-<div class="tl-content">买入时 PE ~10x 以下，PB ~0.7x，股价约 $12-14（拆股后）。市场对银行股的估值普遍折价，主要担忧包括：低利率压制净息差（NIM）、商业地产贷款风险、监管合规成本高企。</div>
+<div class="quote-box">"买得便宜是硬道理。安全边际不仅是护城河的补偿，更是认知不足时的保护伞。"<cite>— 李录，银行股投资原则</cite></div>
 </div>
-<div class="tl-item">
-<div class="tl-date">2017-2018年</div>
-<div class="tl-title">加息周期启动，NIM 扩张</div>
-<div class="tl-content">美联储加息 9 次，基准利率从 0.25% 升至 2.5%。BAC 作为以存贷业务为主的银行，净息差显著扩大，盈利弹性释放。股价开始修复。</div>
-</div>
-<div class="tl-item">
-<div class="tl-date">2020年</div>
-<div class="tl-title">疫情冲击，股价再次承压</div>
-<div class="tl-content">COVID-19 冲击，BAC 股价一度跌至 $20 以下。李录持仓未变——因为银行基本面并未受损，只是市场情绪恐慌。</div>
-</div>
-<div class="tl-item">
-<div class="tl-date">2022-2023年</div>
-<div class="tl-title">利率快速上升，盈利超预期</div>
-<div class="tl-content">美联储激进加息，BAC 净利息收入（NII）创历史新高，ROE 恢复至 11-13% 区间。估值得到修复。</div>
-</div>
-</div>
-
-<div class="quote-box">
-"买得便宜是硬道理。安全边际不仅是护城河的补偿，更是认知不足时的保护伞。"
-<cite>— 李录，银行股投资原则</cite>
-</div>
-</div>
-
-<!-- ==================== SECTION 2 ==================== -->
 <div class="section" id="moat">
 <h2>二、护城河分析：BYD 框架</h2>
-
-<div class="insight-card">
-<h4>✦ 无形资产：美国四大银行之一，分布广泛的物理网络</h4>
-<p>BAC 是美国四大银行（JP摩根、花旗、美银、富国）中排名第二。物理网点分布广泛——在几乎每一个美国社区都有 BAC 的分支。这种广泛的物理存在构成了无形资产：用户对"附近有 ATM 和网点"的便利性有天然依赖，尤其对老年客户和中低收入家庭。</p>
-<p>加上 Merrill Lynch 财富管理品牌的溢价，BAC 在"全面金融服务提供商"这个定位上，有与 JP Morgan 竞争的能力。</p>
+<div class="insight-card"><h4>✦ 无形资产：美国四大银行之一，分布广泛的物理网络</h4>
+<p>BAC 是美国四大银行中排名第二。物理网点分布广泛，在几乎每一个美国社区都有分支。加上 Merrill Lynch 财富管理品牌的溢价，BAC 在"全面金融服务提供商"这个定位上，有与 JP Morgan 竞争的能力。</p></div>
+<div class="insight-card"><h4>✦ 转换成本：B2B 银行关系的黏性</h4>
+<p>BAC 的企业银行业务（企业贷款、现金管理、跨境支付）对美国中小企业极其重要。一旦企业将主要银行关系迁移到另一家机构，需要重新谈判贷款条件、修改数百个员工的账户授权——这种转换成本是巨大的。</p></div>
+<div class="insight-card"><h4>✦ 网络效应：Merrill Lynch 交叉销售生态</h4>
+<p>BAC 与 Merrill Lynch 的整合，创造了独特的交叉销售飞轮：零售客户→推荐至 Merrill Lynch 购买理财产品；Merrill 的高净值客户→使用 BAC 的企业银行服务。这种交叉销售网络的建立需要数十年积累。</p></div>
+<div class="insight-card"><h4>✦ 成本优势：数字化转型压降成本收入比</h4>
+<p>CEO Brian Moynihan 推动的数字化计划，显著降低了物理网点运营成本。成本收入比从 2010 年的 ~80% 压降至 2023 年的 ~60%，接近 JP Morgan 的水平。</p></div>
 </div>
-
-<div class="insight-card">
-<h4>✦ 转换成本：B2B 银行关系的黏性</h4>
-<p>BAC 的企业银行业务（企业贷款、现金管理、跨境支付）对美国中小企业极其重要。一旦企业将主要银行关系迁移到另一家机构，需要重新谈判贷款条件、修改数百个员工的账户授权、重签供应商付款合同——这种转换成本是巨大的。</p>
-<p>此外，BAC 的 "Preferred Rewards" 忠诚度计划，让个人客户在存款达到一定金额后享受利率优惠，形成了存款搬家的高门槛。</p>
-</div>
-
-<div class="insight-card">
-<h4>✦ 网络效应：Merrill Lynch 交叉销售生态</h4>
-<p>BAC 与 Merrill Lynch 的整合，创造了独特的交叉销售飞轮：</p>
-<ul>
-<li>BAC 的零售客户 → 推荐至 Merrill Lynch 购买理财产品 → Merrill 向 BAC 支付存款资金</li>
-<li>Merrill 的高净值客户 → 使用 BAC 的企业银行服务 → 双向加深关系</li>
-<li>Bank of America Private Bank（私人银行）→ 吸引 UHNW 客户</li>
-</ul>
-<p>这种交叉销售网络的建立，需要数十年积累，新进入者几乎无法复制。</p>
-</div>
-
-<div class="insight-card">
-<h4>✦ 成本优势：数字化转型压降成本收入比</h4>
-<p>BAC 是美国四大银行中数字化转型最积极的之一。CEO Brian Moynihan 推动的"Project BAIN"数字化计划，显著降低了物理网点运营成本。成本收入比（Efficiency Ratio）从 2010 年的 ~80% 压降至 2023 年的 ~60%，接近 JP Morgan 的水平。</p>
-<p>规模效应带来的成本优势：更大的 IT 基础设施投资分摊到更多客户、更好的数据分析能力支撑精准信贷决策。</p>
-</div>
-</div>
-
-<!-- ==================== SECTION 3 ==================== -->
 <div class="section" id="rate">
 <h2>三、利率环境对银行股的影响</h2>
-
 <div class="nums">
 <div class="num-box"><div class="big">~2.2%</div><div class="label">当前股息率</div></div>
 <div class="num-box"><div class="big">~12.9x</div><div class="label">当前 PE</div></div>
 <div class="num-box"><div class="big">~1.25x</div><div class="label">当前 PB</div></div>
 <div class="num-box"><div class="big">~11-13%</div><div class="label">当前 ROE</div></div>
 </div>
-
 <div class="dual-panel">
-<div class="panel panel-bull">
-<h4>🟢 利好因素</h4>
-<ul>
+<div class="panel panel-bull"><h4>🟢 利好因素</h4><ul>
 <li>维持利率高于 4%，NIM 维持历史高位</li>
-<li>贷款定价能力保持，企业贷款需求稳定</li>
 <li>信用卡业务收入增长，消费信贷质量改善</li>
-<li>股票回购持续提升每股内在价值</li>
 <li>派息率仅 25-30%，留存收益空间大</li>
-</ul>
-</div>
-<div class="panel panel-bear">
-<h4>🔴 利空因素</h4>
-<ul>
+</ul></div>
+<div class="panel panel-bear"><h4>🔴 利空因素</h4><ul>
 <li>若进入降息周期，NIM 将显著收窄</li>
-<li>商业地产（CRE）贷款敞口（约 $300B），空置率上升威胁资产质量</li>
+<li>商业地产（CRE）贷款敞口约 $300B</li>
 <li>消费储蓄率下降，信用卡违约率可能上升</li>
-<li>金融科技（SoFi、Chime 等）持续蚕食零售客户</li>
-<li>巴菲特已开始减持，需关注信号意义</li>
-</ul>
+</ul></div>
 </div>
 </div>
-
-<div class="insight-card">
-<h4>李录的判断：银行股的周期性是机会，不是风险</h4>
-<p>银行股的本质是周期性的——利率上下波动、经济繁荣与衰退交替。但对价值投资者来说，<strong>周期性造成的估值压缩恰恰是买入的最佳时机</strong>。李录在 2016 年 BAC 低估时买入，在 2020 年疫情冲击时持仓不动——正是这种"别人恐惧时不恐慌"的行为模式，让 BAC 成为他组合中的稳定器。</p>
-</div>
-</div>
-
-<!-- ==================== SECTION 4 ==================== -->
 <div class="section" id="risks">
 <h2>四、当前主要风险</h2>
-
-<div class="highlight">
-<h4>商业地产（CRE）风险：这是当前最大隐患</h4>
-<ul>
+<div class="highlight"><h4>商业地产（CRE）风险：当前最大隐患</h4><ul>
 <li>BAC 是美国四大银行中 CRE 贷款敞口最大的之一，约 $300B 规模</li>
-<li>其中约 60% 是办公楼类贷款，远程办公革命导致写字楼空置率飙升（部分城市超 25%）</li>
-<li>写字楼抵押贷款违约率已开始上升，部分预计在 2025-2026 年达到峰值</li>
+<li>其中约 60% 是办公楼类贷款，远程办公革命导致写字楼空置率飙升</li>
 <li>BAC 已为 CRE 贷款损失拨备，但市场担心拨备不足</li>
-<li>如果 CRE 违约率上升到 2008 年的水平，BAC 可能需要额外增加 $5-10B 的贷款损失准备金</li>
-</ul>
-</div>
-
-<div class="highlight">
-<h4>巴菲特减持的信号意义</h4>
-<ul>
+</ul></div>
+<div class="highlight"><h4>巴菲特减持的信号意义</h4><ul>
 <li>2023 年 Q2 起，伯克希尔开始减持 BAC（从约 13% 降至约 11%）</li>
-<li>虽然仍是前十大股东之一，但"减仓"本身传递了信号</li>
-<li>巴菲特可能认为 BAC 的估值已合理，或对 CRE 风险有担忧</li>
 <li>李录持仓 BAC 未变——两人在同一个标的上的分歧，恰恰说明了"机会成本判断的主观性"</li>
-</ul>
+</ul></div>
 </div>
-</div>
-
-<!-- ==================== SECTION 5 ==================== -->
 <div class="section" id="framework">
-<h2>五、方法论提炼：对普通投资者的启示</h2>
-
-<div class="lesson-card">
-<h4>1. 深度价值 + 宽阔护城河 = 理想持仓</h4>
-<p>李录选择 BAC 而非花旗或富国，核心原因是：<strong>BAC 在 2016 年同时满足了"深度价值"（PE < 10x, PB < 1x）和"宽阔护城河"（四大银行之一、Merrill 交叉销售）两个条件</strong>。花旗估值更低但护城河更窄；富国估值合理但已经被市场充分定价。</p>
+<h2>五、方法论提炼</h2>
+<div class="lesson-card"><h4>1. 深度价值 + 宽阔护城河 = 理想持仓</h4>
+<p>李录选择 BAC 而非花旗或富国，核心原因是：<strong>BAC 在 2016 年同时满足了"深度价值"（PE < 10x, PB < 1x）和"宽阔护城河"（四大银行之一、Merrill 交叉销售）两个条件</strong>。</p></div>
+<div class="lesson-card"><h4>2. "买得便宜"是持有不动的底气</h4>
+<p>李录在 2016 年买入 BAC 时，PE ~10x，PB ~0.7x。这意味着即使 BAC 股价腰斩，他仍然很可能在盈利。这种安全边际，是他能在 2020 年疫情和 2022 年利率冲击时持仓不动的根本原因。</p></div>
+<div class="lesson-card"><h4>3. 银行股是"经济的地心引力"</h4>
+<p>银行股与宏观经济高度相关——经济繁荣期银行股涨幅居前，经济衰退期跌幅也最深。李录选择银行股作为第二大持仓，体现了他对"可预测性"的偏好。</p></div>
 </div>
-
-<div class="lesson-card">
-<h4>2. "买得便宜"是持有不动的底气</h4>
-<p>李录在 2016 年买入 BAC 时，PE ~10x，PB ~0.7x。这意味着即使 BAC 股价腰斩，他仍然很可能在盈利——因为他的买入价格已经充分反映了最坏情景。这种安全边际，是他能在 2020 年疫情和 2022 年利率冲击时持仓不动的根本原因。</p>
-</div>
-
-<div class="lesson-card">
-<h4>3. 跟巴菲特投资，不等于盲目模仿</h4>
-<p>李录持有 BAC 与巴菲特也持有 BAC，两者决策逻辑相似但时间成本不同。李录在 2016 年买入（早于巴菲特大举增持），成本更低。巴菲特开始减持时（2023年），李录持仓不动——因为两人的机会成本和资金性质不同。对普通投资者来说，关键不是"跟着大师买"，而是理解大师的决策逻辑，并在自己的约束条件下做出判断。</p>
-</div>
-
-<div class="lesson-card">
-<h4>4. 银行股是"经济的地心引力"</h4>
-<p>银行股与宏观经济高度相关——经济繁荣期银行股涨幅居前，经济衰退期跌幅也最深。李录选择银行股而非科技股作为第二大持仓，体现了他对"可预测性"的偏好：银行股的商业模式虽然不如科技股性感，但其盈利的可预测性更高（利率环境 + 贷款规模 = NII 基本可以预测），这让组合整体风险更为可控。</p>
-</div>
-
-</div>
-
-<div class="source-note">
-数据来源：SEC EDGAR 13F (Himalaya Capital Management, 2025Q4) · Bank of America 年报 · FDIC · 仅供研究参考，不构成投资建议
-</div>
-
-<div class="footer">
-<a href="/li-lu-research/index.html">← 返回首页</a> · 仅供研究参考，不构成投资建议
-</div>
+<div class="source-note">数据来源：SEC EDGAR 13F (Himalaya Capital Management, 2025Q4) · Bank of America 年报 · FDIC · 仅供研究参考，不构成投资建议</div>
+<div class="footer"><a href="/li-lu-research/index.html">← 返回首页</a> · 仅供研究参考，不构成投资建议</div>
 </div>
 </body>
 </html>
