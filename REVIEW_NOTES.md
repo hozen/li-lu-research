@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-18 04:02
+> Last Updated by Agent: 2026-04-18 12:02
 > Last Audit: 2026-04-18 04:02 (5-R2-2 完成：全面验证 + 暗模式修复，commit `c5908b6`)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-18 第二十二次**: P5-I 喜马拉雅资本官网内容补充完成 — about.html 新增「肥硕一击（Fat Pitch）」lesson-card，引用 Poor Charlie's Almanack 原文（"Once in a while, you will find a 'fat pitch' that is slow, straight, and right in the middle of your sweet spot. Then you swing hard."）；timeline.html 新增3条公开记录：①2016-11 美国国家历史博物馆展览亮相、②2020-03 向中国抗疫医院/机构捐赠物资、③2020-04 向洛杉矶慈善基金会捐赠$150万；内容来源：himcap.com publications 页 + Poor Charlie's Almanack
+  - Commit: `95ebe3e`
+  - 修复内容：P5-I（官网内容补充）完成；Fat Pitch 投资哲学首次出现在 about.html 研究笔记精选首位；3条李录公益活动时间线补全
 - **2026-04-18 第二十一次**: 5-R2-2 全面验证 + 暗模式修复完成 — 发现并修复两个关键Bug：①主题切换按钮（`uniThemeBtn`/`uniDrawerThemeBtn`）在main.js中被引用但在全部18个页面缺失，导致手动暗色/亮色切换完全失效；②Hero区域使用硬编码浅色背景（`#f7fafc/#e2e8f0`），在暗模式下无适配；修复：shared.css新增`body.dark-mode`完整暗色覆盖（navbar/drawer/所有卡片/ Hero节）；18个页面Desktop导航栏全部添加`uniThemeBtn`；18个页面Mobile抽屉全部添加`uniDrawerThemeBtn`；Hero节新增`.hero-section`/`.hero-subtitle`/`.hero-cta-outline` CSS类供暗色覆盖
   - Commit: `c5908b6`
   - 修复内容：5-R2-2 P0验证任务发现：main.js引用`uniThemeBtn`和`uniDrawerThemeBtn`但18个HTML页面均未添加这两个按钮，导致主题切换功能形同虚设；Hero节暗模式无覆盖（内联`background:linear-gradient(135deg,#f7fafc,#e2e8f0)`在暗色模式下刺眼）；影响文件：shared.css（新增dark-mode覆盖）、18个HTML文件（新增主题切换按钮）
@@ -603,7 +606,7 @@ faq.html        ← FAQ（新创建）
 
 ---
 
-## P5-I · 官网内容补充：喜马拉雅资本官网资料采集
+## P5-I · 官网内容补充：喜马拉雅资本官网资料采集 — ✅ 已完成（2026-04-18）
 
 **需求澄清**：从 Himcap.com 官网采集和李录投资理念相符的内容，补充到网站，提升权威性和完整性。
 
@@ -643,6 +646,7 @@ faq.html        ← FAQ（新创建）
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-18 | `95ebe3e` | feat: P5-I add Fat Pitch content + timeline publications — about.html: 肥硕一击(Fat Pitch) lesson-card from Poor Charlie's Almanack; timeline.html: 2016 museum, 2020 COVID donation, 2020 $1.5M LA foundation donation |
 | 2026-04-18 | `b392711` | feat: 5-R0-3 remove old .navbar system, unify to #uni-navbar — 11 files: alphabet/apple/bac/berkshire/bank-of-america-investment-deep, bookshelf, downloads, glossary, quotes, raw_github, timeline; remove <nav class='navbar'> HTML, inline .navbar/.page CSS, inline hamburger JS; replace <div class='page'> with <main class='main-content' style='padding-top:84px'> |
 | 2026-04-17 | `77f1b46` | feat: 5-R3-2 add direct links to all 5 checklist items — 2024 PKU talk→videos/8jJA4vHWvLc, 2021 CBS/Greenwald→videos/-gfRCGZ0zf4, 2020 book→bookshelf.html, 2019 PKU→videos/35RgNwcyjFk, 2015 PKU→Bilibili BV1Cm4y1r76v |
 | 2026-04-17 | `7c3dcec` | chore: remove cookies.txt and www.youtube.com_cookies.txt — should not be in public repo (5-R2-4 P2) |
