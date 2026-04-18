@@ -3,327 +3,250 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>下载资源 - 李录研究资料</title>
-<link rel="stylesheet" href="css/shared.css">
+<title>下载资源 — 李录价值投资研究</title>
+<meta name="description" content="李录研究相关下载资源：13F持仓数据、视频笔记、论文PDF等。">
 <style>
-:root{--primary-dark:#f7fafc;--primary-blue:#e2e8f0;--accent-gold:#c9a227;--accent-gold-light:#daa520;--text-dark:#1a202c;--text-light:#1a202c;--text-muted:#718096;--bg-light:#ffffff;--bg-off-white:#f8f9fa;--card-bg:#f8f9fa;--shadow:0 2px 12px rgba(0,0,0,0.06)}
-
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.7;color:#2d3748;background:#f7fafc}
-
-
-
-.nav-brand span{color:var(--accent-gold)}
-
-
-.nav-link:hover,.nav-link.active{color:var(--text-dark);background:rgba(201,162,39,0.1)}
-.nav-link.active{color:var(--accent-gold)}
-
-.page-header{background:linear-gradient(135deg,#f8f9fa 0%,#e2e8f0 100%);padding:120px 40px 60px;position:relative}
-.page-header::before{content:'';position:absolute;inset:0;background:url(data:image/svg+xml,%3Csvg width=60 height=60 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23c9a227%22 fill-opacity=%220.05%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z/%22/%3E%3C/g%3E%3C/svg%3E);opacity:0.5}
-.page-header-content{max-width:900px;margin:0 auto;position:relative;z-index:1}
-.page-header h1{font-size:2.5rem;color:var(--text-light);margin-bottom:10px}
-.page-header h1 span{color:var(--accent-gold)}
-.page-header .subtitle{font-size:1.1rem;color:var(--text-muted);font-weight:300}
-
-.main-content{max-width:900px;margin:0 auto;padding:50px 40px 80px}
-
-
-.back-link:hover{background:rgba(201,162,39,0.2);transform:translateX(-4px)}
-.back-link::before{content:'←'}
-
-.section{margin-bottom:50px}
-.section-title{font-size:1.5rem;color:var(--primary-dark);margin-bottom:20px;display:flex;align-items:center;gap:12px;padding-bottom:12px;border-bottom:2px solid var(--accent-gold)}
-.section-title span{font-size:1.8rem}
-
-.card{background:var(--card-bg);border-radius:16px;padding:25px;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid #e2e8f0}
-.card h3{color:var(--primary-blue);margin-bottom:12px;font-size:1.15rem}
-
-.resource-list{list-style:none}
-.resource-item{display:flex;align-items:flex-start;gap:15px;padding:18px 0;border-bottom:1px solid #edf2f7}
-.resource-item:last-child{border-bottom:none}
-
-.resource-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--primary-blue),var(--primary-dark));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
-
-.resource-info{flex:1}
-.resource-info h4{color:var(--primary-dark);font-size:1rem;margin-bottom:4px}
-.resource-info p{color:var(--text-muted);font-size:0.85rem;margin:0}
-
-.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:600;margin-left:8px}
-.badge-soon{background:#fed7d7;color:#c53030}
-.badge-recommend{background:#c6f6d5;color:#276749}
-.badge-placeholder{background:#edf2f7;color:#718096}
-
-.download-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--accent-gold);color:var(--primary-dark);text-decoration:none;border-radius:8px;font-size:0.85rem;font-weight:600;transition:all 0.3s;flex-shrink:0}
-.download-btn:hover{background:#b8941f;transform:translateY(-2px)}
-.download-btn.disabled{background:#e2e8f0;color:#a0aec0;cursor:not-allowed;pointer-events:none}
-
-.external-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--primary-blue);color:#fff;text-decoration:none;border-radius:8px;font-size:0.85rem;font-weight:600;transition:all 0.3s;flex-shrink:0}
-.external-btn:hover{background:var(--primary-dark);transform:translateY(-2px)}
-.external-btn::after{content:'↗';font-size:0.75rem}
-
-.note{background:#fffbeb;border-left:3px solid var(--accent-gold);padding:12px 16px;border-radius:0 8px 8px 0;font-size:0.85rem;color:#92400e;margin-top:12px}
-
-.footer{background:var(--primary-dark);color:var(--text-muted);padding:40px;text-align:center}
-.footer a{color:var(--accent-gold);text-decoration:none}
-
-@media(max-width:768px){
-
-.page-header{padding:100px 20px 50px}
-.page-header h1{font-size:1.8rem}
-.main-content{padding:40px 20px 60px}
-
-.resource-item{flex-direction:column;gap:10px}
-.download-btn,.external-btn{width:100%;justify-content:center}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:var(--gold)}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-body{padding-top:64px}
+.main-content{max-width:860px;margin:0 auto;padding:0 16px 48px;background:var(--surface);min-height:calc(100vh - 64px)}
+.back-bar{padding:12px 16px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;background:#f7fafc}
+.back-bar a{color:var(--gold);font-size:.85rem;font-weight:500}
+.page-title{font-size:1.8rem;font-weight:800;color:var(--navy);padding:32px 16px 4px}
+.page-subtitle{color:var(--text-muted);font-size:.95rem;padding:0 16px 24px}
+.section{padding:8px 0 32px}
+h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.dl-card{
+  background:var(--surface);
+  border-radius:14px;
+  padding:20px;
+  border:1px solid #e2e8f0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition:transform .2s,box-shadow .2s;
 }
+.dl-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+.dl-card .icon{font-size:1.8rem}
+.dl-card h3{color:var(--navy);font-size:.95rem;font-weight:700}
+.dl-card p{color:var(--text-muted);font-size:.83rem;line-height:1.6;flex:1}
+.dl-card .meta{font-size:.75rem;color:var(--text-light);margin-top:auto}
+.dl-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 14px;
+  background:var(--gold);
+  color:#fff;
+  border-radius:8px;
+  font-size:.82rem;
+  font-weight:600;
+  text-align:center;
+  transition:background .2s;
+}
+.dl-btn:hover{background:#b8922a;color:#fff}
+.dl-btn.outline{
+  background:transparent;
+  border:1.5px solid var(--gold);
+  color:var(--gold);
+}
+.dl-btn.outline:hover{background:var(--gold-light)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#dcfce7;color:#166534}
+.tag-orange{background:#ffedd5;color:#9a3411}
+.note-box{background:linear-gradient(135deg,var(--gold-light),#fffdf5);border-left:4px solid var(--gold);padding:16px 20px;border-radius:0 12px 12px 0;margin-top:20px}
+.note-box strong{color:var(--navy);font-size:.9rem}
+.note-box p{color:var(--text-muted);font-size:.85rem;line-height:1.7;margin-top:6px}
+footer{padding:24px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;text-align:center;font-size:.78rem;color:var(--text-light)}
+@media(max-width:600px){.page-title{font-size:1.5rem}.dl-grid{grid-template-columns:1fr}}
 </style>
-<script src="js/main.js" defer></script>
 </head>
 <body>
 <div id="uni-navbar">
-<style>
-#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
-#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.2rem;font-weight:600;text-decoration:none}
-#uni-navbar .uni-brand span{color:#c9a227}
-#uni-navbar .uni-links{display:flex;align-items:center;gap:2px}
-#uni-navbar .uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:.875rem;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
-#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
-#uni-navbar .uni-link.active{color:#c9a227}
-#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:10px 12px;margin-left:8px}
-#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
-#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
-#uni-overlay.open{opacity:1;visibility:visible}
-#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:#ffffff;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:24px 20px;display:flex;flex-direction:column;gap:4px;border-left:1px solid #e2e8f0}
-#uni-drawer.open{transform:translateX(0)}
-#uni-drawer a.uni-link{color:#4a5568;text-decoration:none;padding:14px 16px;border-radius:8px;font-size:1rem;display:block}
-#uni-drawer a.uni-link:hover{color:#1a202c;background:#f7fafc}
-#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-#uni-drawer-brand{color:#1a202c;font-size:1.1rem;font-weight:600}
-#uni-drawer-brand span{color:#c9a227}
-#uni-drawer-close{width:36px;height:36px;background:transparent;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;color:#4a5568;font-size:18px}
-#uni-drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid #e2e8f0}
-#uni-body{padding-top:56px}
-@media(max-width:900px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}}
-</style>
-<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
+<div style="display:flex;align-items:center;gap:8px"><span class="uni-brand"><span style="color:var(--gold)">&#10070;</span> 李录研究</span></div>
 <div class="uni-links">
-    <a href="index.html" class="uni-link">笔记</a>
-    <a href="timeline.html" class="uni-link">进度</a>
-    <a href="holdings.html" class="uni-link">持仓</a>
-    <div class="uni-dropdown">
-      <a class="uni-link">资料库</a>
-      <div class="uni-dropdown-menu">
-        <a href="about.html">关于李录</a>
-        <a href="principles.html">投资原则</a>
-        <a href="video_study.html">视频</a>
-        <a href="quotes.html">语录</a>
-        <a href="bookshelf.html">书架</a>
-        <a href="glossary.html">术语</a>
-        <a href="faq.html">FAQ</a>
-        <a href="timeline.html">时间线</a>
-      </div>
-    </div>
-  </div>
-  <button id="uniThemeBtn" style="background:none;border:none;cursor:pointer;font-size:.82rem;color:var(--text-muted,#4a5568);padding:4px 8px;margin-left:4px;border-radius:6px;">暗色</button>
-  <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+<a href="index.html" class="uni-link">首页</a>
+<a href="downloads.html" class="uni-link" style="color:var(--gold)">下载</a>
+<a href="principles.html" class="uni-link">原则</a>
+<a href="video_study.html" class="uni-link">视频</a>
 </div>
-<div id="uni-overlay" ></div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
 <div id="uni-drawer">
 <div id="uni-drawer-header">
-<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <button id="uniDrawerThemeBtn" style="background:none;border:1px solid #d1d5db;border-radius:6px;cursor:pointer;font-size:.78rem;color:#4a5568;padding:4px 10px;">暗色</button>
-      <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+<div class="uni-drawer-brand"><span style="color:var(--gold)">&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
 </div>
-<a href="/li-lu-research/index.html" class="uni-link">首页</a>
-<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
-<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
-<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
-<a href="/li-lu-research/index.html#my-framework" class="uni-link">视频</a>
-<a href="/li-lu-research/index.html#study-notes" class="uni-link">研究笔记</a>
-<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
-<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
-<div class="uni-drawer-theme">
-</div>
+<a href="index.html" class="uni-link">首页</a>
+<a href="downloads.html" class="uni-link" style="color:var(--gold)">下载资源</a>
+<a href="principles.html" class="uni-link">投资原则</a>
+<a href="video_study.html" class="uni-link">视频学习</a>
 </div>
 
-
-
-
-<header class="page-header">
-<div class="page-header-content">
-<h1><span>&#128196;</span> 下载资源</h1>
-<p class="subtitle">李录研究资料 · 书籍、视频、论文与数据</p>
-</div>
-</header>
-
-<main class="main-content">
-<!-- 书籍 -->
-<section class="section">
-<h2 class="section-title"><span>&#128214;</span> 推荐书籍</h2>
-
-<div class="card">
-<h3>《文明、现代化、价值投资与中国》</h3>
-<p style="color:#666;font-size:0.9rem;">李录 著 · 2020年出版</p>
-<p style="color:#4a5568;font-size:0.9rem;margin-top:8px;">
-系统阐述文明演进、现代化逻辑与价值投资哲学，是理解李录思想的核心著作。
-</p>
-<div style="margin-top:15px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-<span class="badge badge-soon">即将上线</span>
-<a href="https://github.com/hozen/li-lu-research/raw/master/Civilizations,%20Modernization,%20Value%20Investing%20and%20China.pdf" class="download-btn disabled">&#11015; 下载 PDF</a>
-</div>
-<div class="note">&#9432; 英文原版 PDF 暂存于 GitHub，正式发布后将开放下载。</div>
+<div id="uni-body">
+<div class="main-content">
+<div class="back-bar">
+<a href="index.html">← 返回首页</a>
 </div>
 
-<div class="card">
-<h3>Poor Charlie's Almanack《穷查理宝典》</h3>
-<p style="color:#666;font-size:0.9rem;">Charlie Munger 著 · 芒格智慧箴言</p>
-<p style="color:#4a5568;font-size:0.9rem;margin-top:8px;">
-李录深受芒格影响，此书是理解其投资哲学的必读经典。
-</p>
-<div style="margin-top:15px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-<span class="badge badge-recommend">推荐阅读</span>
-<span style="color:#718096;font-size:0.85rem;">请通过正规渠道购买支持正版</span>
+<h1 class="page-title">下载资源</h1>
+<p class="page-subtitle">13F数据、视频笔记、研究资料汇总</p>
+
+<div class="section">
+<h2>&#128200; 持仓数据</h2>
+<div class="dl-grid">
+<div class="dl-card">
+<div class="icon">&#128202;</div>
+<h3>最新13F持仓（2025 Q4）</h3>
+<p>李录喜马拉雅资本在美国SEC披露的最新机构持仓数据，包含持仓明细、仓位权重、季度变化。</p>
+<span class="meta">数据来源：SEC EDGAR · 更新于2026年2月</span>
+<a href="holdings.html" class="dl-btn" style="margin-top:8px">→ 查看持仓</a>
+</div>
+<div class="dl-card">
+<div class="icon">&#128188;</div>
+<h3>历史13F存档</h3>
+<p>历年13F文件存档，可追溯至2013年起的季度持仓变化。</p>
+<span class="meta">数据来源：SEC EDGAR</span>
+<a href="https://sec.gov/edgar/browse/?CIK=0001060837" class="dl-btn outline" style="margin-top:8px" target="_blank">SEC EDGAR →</a>
+</div>
+<div class="dl-card">
+<div class="icon">&#127970;</div>
+<h3>港股/A股非13F持仓</h3>
+<p>李录在中国香港及内地市场的投资，包括比亚迪、邮储银行等不在美国13F披露范围内的持仓。</p>
+<span class="meta">数据来源：公开资料整理</span>
+<a href="china-hk-holdings-research.html" class="dl-btn" style="margin-top:8px">→ 查看详情</a>
+</div>
 </div>
 </div>
 
-</section>
-
-<!-- 视频 -->
-<section class="section">
-<h2 class="section-title"><span>&#127909;</span> 视频资源</h2>
-
-<div class="card">
-<ul class="resource-list">
-<li class="resource-item">
-<div class="resource-icon">&#127909;</div>
-<div class="resource-info">
-<h4>CCBC Fireside Chat · 价值投资与中国 <span class="badge badge-recommend">推荐</span></h4>
-<p>哥伦比亚商学院 Greater China Society 与李录的深度对话，90分钟完整版</p>
+<div class="section">
+<h2>&#127909; 视频学习笔记</h2>
+<div class="dl-grid">
+<div class="dl-card">
+<div class="icon">&#127891;</div>
+<h3>北大光华第一课（2015）</h3>
+<p>价值投资在中国的展望。4章节完整笔记，包含护城河四问、安全边际等核心概念。</p>
+<span class="meta">Bilibili · 2015年</span>
+<a href="videos/BV1Cm4y1r76v.html" class="dl-btn" style="margin-top:8px">→ 课程笔记</a>
 </div>
-<a href="https://www.youtube.com/watch?v=b2yxBBMIEz0" class="external-btn" target="_blank" rel="noopener">YouTube</a>
-</li>
-<li class="resource-item">
-<div class="resource-icon">&#127909;</div>
-<div class="resource-info">
-<h4>北大演讲：我对价值投资的理解</h4>
-<p>李录在北京大学的系统演讲，B站搬运版</p>
+<div class="dl-card">
+<div class="icon">&#127892;</div>
+<h3>北大光华第二课（2019）</h3>
+<p>价值投资在实践中的知行合一。5章节完整笔记，包含完整决策框架和案例分析。</p>
+<span class="meta">YouTube · 2019年11月</span>
+<a href="videos/kqjKbPxbsac.html" class="dl-btn" style="margin-top:8px">→ 课程笔记</a>
 </div>
-<a href="https://www.bilibili.com/video/BV19QzcYeEWW/" class="external-btn" target="_blank">B站</a>
-</li>
-<li class="resource-item">
-<div class="resource-icon">&#127909;</div>
-<div class="resource-info">
-<h4>Master Class on Value Investing <span class="badge badge-recommend">推荐</span></h4>
-<p>价值投资大师班演讲视频 · 45分钟完整版</p>
+<div class="dl-card">
+<div class="icon">&#127893;</div>
+<h3>北大光华第三课（2024）</h3>
+<p>全球价值投资与时代。AI时代投资框架的最新思考，以及中美市场展望。</p>
+<span class="meta">YouTube · 2024年12月</span>
+<a href="videos/8jJA4vHWvLc.html" class="dl-btn" style="margin-top:8px">→ 课程笔记</a>
 </div>
-<a href="https://www.youtube.com/watch?v=ajMy9LkQQlw" class="external-btn" target="_blank" rel="noopener">YouTube</a>
-</li>
-<li class="resource-item">
-<div class="resource-icon">&#127909;</div>
-<div class="resource-info">
-<h4>The Chinese Warren Buffett: Li Lu <span class="badge badge-recommend">推荐</span></h4>
-<p>We Study Billionaires 播客访谈 · 深度了解李录投资生涯</p>
+<div class="dl-card">
+<div class="icon">&#128250;</div>
+<h3>CBS采访全集（2021）</h3>
+<p>李录在CBS的系列采访，涵盖投资逻辑、中国市场、AI时代等话题。</p>
+<span class="meta">YouTube · CBS Interview</span>
+<a href="videos/-gfRCGZ0zf4.html" class="dl-btn" style="margin-top:8px">→ 查看视频</a>
 </div>
-<a href="https://www.youtube.com/watch?v=KAoC8pErmb0" class="external-btn" target="_blank" rel="noopener">YouTube</a>
-</li>
-</ul>
 </div>
-</section>
-
-<!-- 演讲全文 -->
-<section class="section">
-<h2 class="section-title"><span>&#127908;</span> 演讲全文</h2>
-
-<div class="card" style="border-left:4px solid var(--accent-gold);">
-<h3>全球价值投资与时代</h3>
-<p style="color:#666;font-size:0.9rem;">李录 · 北京大学光华管理学院 · 2024年12月7日 · 约3万字</p>
-<p style="color:#4a5568;font-size:0.9rem;margin-top:8px;">
-李录在北大《价值投资》课程十周年沙龙上的主旨演讲，系统阐述全球价值投资与时代的关系。被收入《文明、现代化、价值投资与中国》增订本。<strong style="color:#c53030;">这是李录迄今为止最完整、最新的思想表达。</strong>
-</p>
-<p style="color:#4a5568;font-size:0.85rem;margin-top:8px;">涵盖四大主题：①时代的困惑 ②中等收入陷阱与观念落差 ③中国式现代化 ④价值投资人的应对策略</p>
-<div style="margin-top:12px;">
-<a href="downloads/pku_2024_speech.pdf" class="download-btn" download>PDF 下载（约430KB，芒格书院授权）</a>
-<span style="margin-left:10px;font-size:.8rem;color:#4a5568;vertical-align:middle;">&#127916; <a href="https://www.youtube.com/watch?v=8jJA4vHWvLc" target="_blank" style="color:var(--primary-blue);">YouTube原版</a></span>
-</div>
-<div class="note">&#9432; 全文约27250字，预计阅读时间55分钟。来源：芒格书院（经李录授权首发）。</div>
 </div>
 
-</section>
-
-<!-- 学术论文 -->
-<section class="section">
-<h2 class="section-title"><span>&#128220;</span> 学术论文</h2>
-
-<div class="card">
-<h3>Civilizations, Modernization, Value Investing and China</h3>
-<p style="color:#666;font-size:0.9rem;">李录 · 2014年</p>
-<p style="color:#4a5568;font-size:0.9rem;margin-top:8px;">
-李录第一篇系统阐述其投资哲学与文明观的长篇论文，是理解其思想源头的重要文献。
-</p>
-<div class="note">&#9432; 该论文曾于2014年在哥伦比亚大学发表，可在学术数据库或联系北大光华价值投资课程获取原文。</div>
+<div class="section">
+<h2>&#128214; 论文与文献</h2>
+<div class="dl-grid">
+<div class="dl-card">
+<div class="icon">&#128218;</div>
+<h3>文明、现代化、价值投资与中国</h3>
+<p>李录原创长篇论文，系统阐述人类文明演进、3.0文明铁律与中国市场机遇。必读文献。</p>
+<span class="meta">李录著 · 2014年 · SSRN可下载</span>
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2586596" class="dl-btn outline" style="margin-top:8px" target="_blank">SSRN下载 →</a>
+</div>
+<div class="dl-card">
+<div class="icon">&#129309;</div>
+<h3>穷查理宝典 — 李录章节</h3>
+<p>《穷查理宝典》中芒格推荐的阅读书目清单，李录贡献的章节内容。</p>
+<span class="meta">彼得·考夫曼编</span>
+<a href="bookshelf.html" class="dl-btn" style="margin-top:8px">→ 书架</a>
+</div>
+</div>
 </div>
 
-</section>
-
-<!-- 13F 数据 -->
-<section class="section">
-<h2 class="section-title"><span>&#128200;</span> 13F 公开持仓数据</h2>
-
-<div class="card">
-<h3>喜马拉雅资本 SEC 13F 申报</h3>
-<p style="color:#4a5568;font-size:0.9rem;margin-top:8px;">
-美国法规要求管理规模超过1亿美元的机构投资者每季度提交13F持仓报告。
-喜马拉雅资本（Himalaya Capital Management LLC）的所有公开市场美国股票持仓均在此可查。
-</p>
-<div style="margin-top:15px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-<a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001086367&type=13F" class="external-btn" target="_blank">SEC EDGAR · Himalaya Capital</a>
+<div class="section">
+<h2>&#9889; 快速导航</h2>
+<div class="dl-grid">
+<div class="dl-card">
+<div class="icon">&#128161;</div>
+<h3>投资原则速查</h3>
+<p>李录六大核心投资原则、护城河四要素、知行合一决策框架的精华版。</p>
+<a href="principles.html" class="dl-btn" style="margin-top:8px">→ 查看原则</a>
 </div>
-<div class="note">&#9432; 公开持仓请查阅 SEC 13F 申报。13F仅披露公开市场股票持仓，不含私有公司及衍生品。</div>
+<div class="dl-card">
+<div class="icon">&#128269;</div>
+<h3>术语表</h3>
+<p>护城河、安全边际、13F、浮存金、DCF等核心术语速查。</p>
+<a href="glossary.html" class="dl-btn" style="margin-top:8px">→ 查看术语</a>
+</div>
+<div class="dl-card">
+<div class="icon">&#128172;</div>
+<h3>语录金句</h3>
+<p>按主题分类的李录投资语录集锦，涵盖护城河、能力圈、知行合一。</p>
+<a href="quotes.html" class="dl-btn" style="margin-top:8px">→ 查看语录</a>
+</div>
+<div class="dl-card">
+<div class="icon">&#128197;</div>
+<div style="display:flex;flex-direction:column;gap:8px;flex:1">
+<h3>YouTube播放列表</h3>
+<p>本研究收录的全部李录相关视频播放列表（YouTube）。</p>
+<span class="meta">持续更新</span>
+<a href="https://www.youtube.com/playlist?list=PLkEZRICN7V9A2z0nj6rsbasZRGAE6EQgD" class="dl-btn outline" style="margin-top:4px" target="_blank">YouTube →</a>
+</div>
+</div>
+</div>
 </div>
 
-</section>
-
-<!-- 其他资源 -->
-<section class="section">
-<h2 class="section-title"><span>&#9881;</span> 其他资料</h2>
-
-<div class="card">
-<ul class="resource-list">
-<li class="resource-item">
-<div class="resource-icon">&#128196;</div>
-<div class="resource-info">
-<h4>学习指南 (Markdown)</h4>
-<p>李录研究资料速查指南</p>
+<div class="note-box">
+<strong>&#9888; 免责声明</strong>
+<p>本研究所有内容仅供学习参考，不构成任何投资建议。持仓数据来源于SEC公开披露，历史收益不代表未来表现。投资有风险，决策需谨慎。</p>
 </div>
-<a href="li-lu-study-guide.md" class="download-btn" download>&#11015; 下载 <span style="font-size:0.75rem">(Markdown 格式)</span></a>
-</li>
-<li class="resource-item">
-<div class="resource-icon">&#128196;</div>
-<div class="resource-info">
-<h4>问答集 (Markdown)</h4>
-<p>李录访谈问答精选</p>
-</div>
-<a href="li-lu-qa.md" class="download-btn" download>&#11015; 下载 <span style="font-size:0.75rem">(Markdown 格式)</span></a>
-</li>
-<li class="resource-item">
-<div class="resource-icon">&#128196;</div>
-<div class="resource-info">
-<h4>2021年哥大访谈摘要 (Markdown)</h4>
-<p>哥伦比亚商学院访谈要点整理</p>
-</div>
-<a href="li-lu-2021-interview-summary.md" class="download-btn" download>&#11015; 下载 <span style="font-size:0.75rem">(Markdown 格式)</span></a>
-</li>
-</ul>
-</div>
-</section>
 
-</main>
+</div>
+</div>
 
-<footer class="footer">
-<p><a href="index.html">&#10070; 李录价值投资研究</a> · 仅供学习研究，不构成投资建议</p>
-<p style="margin-top:10px;font-size:0.8rem;">&#128197; 页面更新: 2026-04-06</p>
+<footer>
+<span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
 </footer>
+</div>
+
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
 </body>
 </html>
