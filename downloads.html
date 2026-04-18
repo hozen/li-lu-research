@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>下载资源 — 李录价值投资研究</title>
-<meta name="description" content="李录研究相关下载资源：13F持仓数据、视频笔记、论文PDF等。">
+<meta name="description" content="李录研究相关下载资源：13F持仓数据、视频笔记、PDF资料。">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
@@ -65,6 +65,7 @@ h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-b
   font-weight:600;
   text-align:center;
   transition:background .2s;
+  text-decoration:none;
 }
 .dl-btn:hover{background:#b8922a;color:#fff}
 .dl-btn.outline{
@@ -73,10 +74,17 @@ h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-b
   color:var(--gold);
 }
 .dl-btn.outline:hover{background:var(--gold-light)}
+.dl-btn.green{background:var(--green)}
+.dl-btn.green:hover{background:#2f7a54}
+.dl-btn.blue{background:var(--blue)}
+.dl-btn.blue:hover{background:#2563a8}
+.dl-btn.purple{background:var(--purple)}
+.dl-btn.purple:hover{background:#6b3fa3}
 .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600}
 .tag-blue{background:#dbeafe;color:#1e40af}
 .tag-green{background:#dcfce7;color:#166534}
 .tag-orange{background:#ffedd5;color:#9a3411}
+.tag-gold{background:var(--gold-light);color:#92400e}
 .note-box{background:linear-gradient(135deg,var(--gold-light),#fffdf5);border-left:4px solid var(--gold);padding:16px 20px;border-radius:0 12px 12px 0;margin-top:20px}
 .note-box strong{color:var(--navy);font-size:.9rem}
 .note-box p{color:var(--text-muted);font-size:.85rem;line-height:1.7;margin-top:6px}
@@ -114,7 +122,7 @@ footer{padding:24px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;text-al
 </div>
 
 <h1 class="page-title">下载资源</h1>
-<p class="page-subtitle">13F数据、视频笔记、研究资料汇总</p>
+<p class="page-subtitle">可下载的研究资料包</p>
 
 <div class="section">
 <h2>&#128200; 持仓数据</h2>
@@ -122,110 +130,87 @@ footer{padding:24px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;text-al
 <div class="dl-card">
 <div class="icon">&#128202;</div>
 <h3>最新13F持仓（2025 Q4）</h3>
-<p>李录喜马拉雅资本在美国SEC披露的最新机构持仓数据，包含持仓明细、仓位权重、季度变化。</p>
-<span class="meta">数据来源：SEC EDGAR · 更新于2026年2月</span>
-<a href="holdings.html" class="dl-btn" style="margin-top:8px">→ 查看持仓</a>
+<p>CSV格式，包含全部美股持仓代码、公司名称、持仓权重、目标权重、备注字段。可直接导入Excel或表格工具。</p>
+<span class="meta">CSV · 约15条记录 · 更新于2026-02</span>
+<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+<a href="downloads/li-lu-holdings-q4-2025.csv" class="dl-btn" download>⬇ 下载 CSV</a>
+<a href="holdings.html" class="dl-btn outline">网页版</a>
+</div>
 </div>
 <div class="dl-card">
 <div class="icon">&#128188;</div>
 <h3>历史13F存档</h3>
-<p>历年13F文件存档，可追溯至2013年起的季度持仓变化。</p>
-<span class="meta">数据来源：SEC EDGAR</span>
+<p>美国SEC EDGAR官方数据库，可查询李录（CIK: 0001060837）历年的13F持仓变化记录。</p>
+<span class="meta">来源：SEC EDGAR · 外部链接</span>
 <a href="https://sec.gov/edgar/browse/?CIK=0001060837" class="dl-btn outline" style="margin-top:8px" target="_blank">SEC EDGAR →</a>
 </div>
 <div class="dl-card">
 <div class="icon">&#127970;</div>
 <h3>港股/A股非13F持仓</h3>
-<p>李录在中国香港及内地市场的投资，包括比亚迪、邮储银行等不在美国13F披露范围内的持仓。</p>
+<p>李录在中国香港及内地市场的投资，包括比亚迪、邮储银行等不在美国13F披露范围内的持仓整理。</p>
 <span class="meta">数据来源：公开资料整理</span>
-<a href="china-hk-holdings-research.html" class="dl-btn" style="margin-top:8px">→ 查看详情</a>
+<a href="china-hk-holdings-research.html" class="dl-btn outline" style="margin-top:8px">查看详情 →</a>
 </div>
 </div>
 </div>
 
 <div class="section">
-<h2>&#127909; 视频学习笔记</h2>
+<h2>&#128214; 研究资料下载</h2>
+<div class="dl-grid">
+<div class="dl-card">
+<div class="icon">&#128218;</div>
+<h3>投资原则速查卡</h3>
+<p>李录六大核心原则、护城河四要素、知行合一框架、持仓速查表。一页纸打印版，适合随身阅读。</p>
+<span class="meta">Markdown · 可打印 · 约2页</span>
+<a href="downloads/li-lu-principles-quickref.md" class="dl-btn green" style="margin-top:8px" download>⬇ 下载 MD</a>
+</div>
+<div class="dl-card">
+<div class="icon">&#127909;</div>
+<h3>北大课程笔记索引</h3>
+<p>2015/2019/2024三次北大光华课程的核心内容摘要，包含每课主题、关键概念、案例索引。</p>
+<span class="meta">Markdown · 约3页</span>
+<a href="downloads/li-lu-video-lectures-notes.md" class="dl-btn green" style="margin-top:8px" download>⬇ 下载 MD</a>
+</div>
+<div class="dl-card">
+<div class="icon">&#128196;</div>
+<h3>北大2024演讲PDF</h3>
+<p>李录2024年12月在北大光华发表的"全球价值投资与时代"完整演讲PDF版本。</p>
+<span class="meta">PDF · 437KB · 来源用户提供</span>
+<a href="downloads/pku_2024_speech.pdf" class="dl-btn purple" style="margin-top:8px" download>⬇ 下载 PDF</a>
+</div>
+<div class="dl-card">
+<div class="icon">&#128220;</div>
+<h3>文明、现代化、价值投资与中国</h3>
+<p>李录原创长篇论文，系统阐述人类文明演进、3.0文明铁律与中国市场机遇。必读文献。</p>
+<span class="meta">PDF · SSRN官方下载</span>
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2586596" class="dl-btn outline" style="margin-top:8px" target="_blank">SSRN下载 →</a>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>&#127909; 视频学习</h2>
 <div class="dl-grid">
 <div class="dl-card">
 <div class="icon">&#127891;</div>
 <h3>北大光华第一课（2015）</h3>
-<p>价值投资在中国的展望。4章节完整笔记，包含护城河四问、安全边际等核心概念。</p>
+<p>价值投资在中国的展望。4章节完整笔记，包含护城河四问、安全边际、能力圈等核心概念。</p>
 <span class="meta">Bilibili · 2015年</span>
-<a href="videos/BV1Cm4y1r76v.html" class="dl-btn" style="margin-top:8px">→ 课程笔记</a>
+<a href="videos/BV1Cm4y1r76v.html" class="dl-btn blue" style="margin-top:8px">→ 查看笔记</a>
 </div>
 <div class="dl-card">
 <div class="icon">&#127892;</div>
 <h3>北大光华第二课（2019）</h3>
-<p>价值投资在实践中的知行合一。5章节完整笔记，包含完整决策框架和案例分析。</p>
+<p>价值投资在实践中的知行合一。5章节完整笔记，包含完整决策框架和比亚迪案例。</p>
 <span class="meta">YouTube · 2019年11月</span>
-<a href="videos/kqjKbPxbsac.html" class="dl-btn" style="margin-top:8px">→ 课程笔记</a>
+<a href="videos/kqjKbPxbsac.html" class="dl-btn blue" style="margin-top:8px">→ 查看笔记</a>
 </div>
 <div class="dl-card">
 <div class="icon">&#127893;</div>
 <h3>北大光华第三课（2024）</h3>
 <p>全球价值投资与时代。AI时代投资框架的最新思考，以及中美市场展望。</p>
 <span class="meta">YouTube · 2024年12月</span>
-<a href="videos/8jJA4vHWvLc.html" class="dl-btn" style="margin-top:8px">→ 课程笔记</a>
-</div>
-<div class="dl-card">
-<div class="icon">&#128250;</div>
-<h3>CBS采访全集（2021）</h3>
-<p>李录在CBS的系列采访，涵盖投资逻辑、中国市场、AI时代等话题。</p>
-<span class="meta">YouTube · CBS Interview</span>
-<a href="videos/-gfRCGZ0zf4.html" class="dl-btn" style="margin-top:8px">→ 查看视频</a>
-</div>
-</div>
-</div>
-
-<div class="section">
-<h2>&#128214; 论文与文献</h2>
-<div class="dl-grid">
-<div class="dl-card">
-<div class="icon">&#128218;</div>
-<h3>文明、现代化、价值投资与中国</h3>
-<p>李录原创长篇论文，系统阐述人类文明演进、3.0文明铁律与中国市场机遇。必读文献。</p>
-<span class="meta">李录著 · 2014年 · SSRN可下载</span>
-<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2586596" class="dl-btn outline" style="margin-top:8px" target="_blank">SSRN下载 →</a>
-</div>
-<div class="dl-card">
-<div class="icon">&#129309;</div>
-<h3>穷查理宝典 — 李录章节</h3>
-<p>《穷查理宝典》中芒格推荐的阅读书目清单，李录贡献的章节内容。</p>
-<span class="meta">彼得·考夫曼编</span>
-<a href="bookshelf.html" class="dl-btn" style="margin-top:8px">→ 书架</a>
-</div>
-</div>
-</div>
-
-<div class="section">
-<h2>&#9889; 快速导航</h2>
-<div class="dl-grid">
-<div class="dl-card">
-<div class="icon">&#128161;</div>
-<h3>投资原则速查</h3>
-<p>李录六大核心投资原则、护城河四要素、知行合一决策框架的精华版。</p>
-<a href="principles.html" class="dl-btn" style="margin-top:8px">→ 查看原则</a>
-</div>
-<div class="dl-card">
-<div class="icon">&#128269;</div>
-<h3>术语表</h3>
-<p>护城河、安全边际、13F、浮存金、DCF等核心术语速查。</p>
-<a href="glossary.html" class="dl-btn" style="margin-top:8px">→ 查看术语</a>
-</div>
-<div class="dl-card">
-<div class="icon">&#128172;</div>
-<h3>语录金句</h3>
-<p>按主题分类的李录投资语录集锦，涵盖护城河、能力圈、知行合一。</p>
-<a href="quotes.html" class="dl-btn" style="margin-top:8px">→ 查看语录</a>
-</div>
-<div class="dl-card">
-<div class="icon">&#128197;</div>
-<div style="display:flex;flex-direction:column;gap:8px;flex:1">
-<h3>YouTube播放列表</h3>
-<p>本研究收录的全部李录相关视频播放列表（YouTube）。</p>
-<span class="meta">持续更新</span>
-<a href="https://www.youtube.com/playlist?list=PLkEZRICN7V9A2z0nj6rsbasZRGAE6EQgD" class="dl-btn outline" style="margin-top:4px" target="_blank">YouTube →</a>
-</div>
+<a href="videos/8jJA4vHWvLc.html" class="dl-btn blue" style="margin-top:8px">→ 查看笔记</a>
 </div>
 </div>
 </div>
