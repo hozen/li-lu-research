@@ -5,239 +5,237 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>投资原则 — 李录价值投资研究</title>
 <meta name="description" content="李录六大核心投资原则、护城河分析、决策框架与文明3.0思想框架。">
-<link rel="stylesheet" href="css/shared.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--md-secondary:#c9a227;--md-surface:#ffffff;--md-surface-variant:#f3f4f6;--md-background:#f3f4f6;--md-on-surface:#1a1a2e;--md-on-surface-muted:#4a5568;--md-outline:#d1d5db;--navbar-height:64px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fafaf9;color:#1a1a2e;line-height:1.6;min-height:100vh}
+a{color:#c9a227;text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:var(--navbar-height);background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:#c9a227}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500;white-space:nowrap}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:#0a1628;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:#c9a227}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-body{padding-top:var(--navbar-height)}
+.main-content{max-width:860px;margin:0 auto;padding:0 16px 48px;background:#fff;min-height:calc(100vh - var(--navbar-height))}
+.back-bar{padding:12px 16px;border-bottom:1px solid var(--md-outline);display:flex;align-items:center;gap:8px;background:var(--md-surface-variant)}
+.back-bar a{color:#c9a227;font-size:.85rem;font-weight:500}
+.page-title{font-size:1.8rem;font-weight:700;color:#1a365d;padding:28px 16px 8px}
+.page-subtitle{color:#4a5568;font-size:.9rem;padding:0 16px 24px}
+.section{padding:8px 0 28px}
+h2{font-size:1.2rem;color:#0a1628;margin:0 0 20px;font-weight:700}
+.lesson-card{background:#f8f9fa;border-radius:12px;padding:25px;border-left:4px solid #c9a227;margin-bottom:0}
+.lesson-card h4{color:#0a1628;margin-bottom:8px;font-size:1rem}
+.lesson-card p{color:#555;font-size:.88rem;line-height:1.7}
+.quote-box{background:#faf8f0;border-left:4px solid #c9a227;padding:16px 20px;border-radius:0 8px 8px 0;margin-top:16px;font-style:italic;color:#444}
+.quote-box strong{font-style:normal}
+.quote-box blockquote{font-style:italic;margin-top:8px}
+.quote-box cite{display:block;margin-top:8px;font-size:.82rem;color:#888;font-style:normal}
+.dual-panel{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.panel{padding:18px;border-radius:10px}
+.panel-bull{background:#f0f9f4;border:1px solid #38a169}
+.panel-bull h4{color:#276749;margin-bottom:8px;font-size:.95rem}
+.panel-bull li{color:#444;font-size:.85rem;margin-bottom:4px}
+.panel-bear{background:#fff5f5;border:1px solid #c53030}
+.panel-bear h4{color:#c53030;margin-bottom:8px;font-size:.95rem}
+.panel-bear li{color:#444;font-size:.85rem;margin-bottom:4px}
+footer{padding:24px 16px;background:#f8f9fa;border-top:1px solid #e0e0e0;text-align:center;font-size:.78rem;color:#888}
+footer span{display:block}
+@media(max-width:600px){.dual-panel{grid-template-columns:1fr}.page-title{font-size:1.4rem}}
+</style>
 </head>
 <body>
-
 <div id="uni-navbar">
-  <div style="display:flex;align-items:center;gap:8px">
-    <a href="index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a>
-  </div>
-  <div class="uni-links">
-    <a href="index.html" class="uni-link">笔记</a>
-    <a href="timeline.html" class="uni-link">进度</a>
-    <a href="holdings.html" class="uni-link">持仓</a>
-    <div class="uni-dropdown">
-      <a class="uni-link">资料库</a>
-      <div class="uni-dropdown-menu">
-        <a href="about.html">关于李录</a>
-        <a href="principles.html">投资原则</a>
-        <a href="video_study.html">视频</a>
-        <a href="quotes.html">语录</a>
-        <a href="bookshelf.html">书架</a>
-        <a href="glossary.html">术语</a>
-        <a href="faq.html">FAQ</a>
-        <a href="timeline.html">时间线</a>
-      </div>
-    </div>
-  </div>
-  <button id="uniThemeBtn" style="background:none;border:none;cursor:pointer;font-size:.82rem;color:var(--text-muted,#4a5568);padding:4px 8px;margin-left:4px;border-radius:6px;">暗色</button>
-  <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+<div style="display:flex;align-items:center;gap:8px"><span class="uni-brand"><span style="color:#c9a227">&#10070;</span> 李录研究</span></div>
+<div class="uni-links">
+<a href="index.html" class="uni-link">首页</a>
+<a href="principles.html" class="uni-link" style="color:#c9a227">投资原则</a>
+<a href="video_study.html" class="uni-link">视频学习</a>
+<a href="holdings.html" class="uni-link">持仓</a>
+</div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
 </div>
 <div id="uni-overlay"></div>
 <div id="uni-drawer">
-  <div id="uni-drawer-header">
-    <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <button id="uniDrawerThemeBtn" style="background:none;border:1px solid #d1d5db;border-radius:6px;cursor:pointer;font-size:.78rem;color:#4a5568;padding:4px 10px;">暗色</button>
-      <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
-  </div>
-  <a href="index.html" class="uni-link">首页</a>
-  <a href="about.html" class="uni-link">关于李录</a>
-  <a href="principles.html" class="uni-link">投资原则</a>
-  <a href="holdings.html" class="uni-link">持仓</a>
-  <a href="video_study.html" class="uni-link">视频学习</a>
-  <a href="quotes.html" class="uni-link">语录</a>
-  <a href="bookshelf.html" class="uni-link">书架</a>
-  <a href="glossary.html" class="uni-link">术语表</a>
-  <a href="faq.html" class="uni-link">FAQ</a>
-  <a href="timeline.html" class="uni-link">时间线</a>
-  <a href="downloads.html" class="uni-link">下载资源</a>
-  <a href="china-hk-holdings-research.html" class="uni-link">非13F持仓</a>
-  <a href="raw_github.html" class="uni-link">Raw GitHub</a>
-  <a href="alphabet-investment-deep.html" class="uni-link">Alphabet</a>
-  <a href="apple-investment-deep.html" class="uni-link">Apple</a>
-  <a href="bac-investment-deep.html" class="uni-link">BAC</a>
-  <a href="bank-of-america-investment-deep.html" class="uni-link">Bank of America</a>
-  <a href="berkshire-investment-deep.html" class="uni-link">BRK.B</a>
-  <a href="byd-investment-deep.html" class="uni-link">比亚迪深度</a>
-  <a href="byd-cross-reference.html" class="uni-link">比亚迪交叉</a>
-  <a href="byd-next-decade.html" class="uni-link">比亚迪十年</a>
-  <a href="byd_investment.html" class="uni-link">比亚迪综合</a>
-  <a href="crocs-investment-deep.html" class="uni-link">Crocs</a>
-  <a href="ewbc-investment-deep.html" class="uni-link">EWBC</a>
-  <a href="kweichow-moutai-investment-deep.html" class="uni-link">茅台</a>
-  <a href="oxy-investment-deep.html" class="uni-link">OXY</a>
-  <a href="pdd-investment-deep.html" class="uni-link">PDD</a>
-  <a href="psbc-investment-deep.html" class="uni-link">PSBC</a>
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span style="color:#c9a227">&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="index.html" class="uni-link">首页</a>
+<a href="principles.html" class="uni-link" style="color:#c9a227">投资原则</a>
+<a href="video_study.html" class="uni-link">视频学习</a>
+<a href="holdings.html" class="uni-link">持仓</a>
 </div>
 
 <div id="uni-body">
-<main class="main-content">
-
+<div class="main-content">
 <div class="back-bar">
-  <a href="index.html">&#8592; 首页</a>
+<a href="index.html">← 首页</a>
 </div>
 
 <h1 class="page-title">投资原则</h1>
 <p class="page-subtitle">李录六大核心原则与决策框架</p>
 
-<section class="section">
-  <h2 style="font-size:1.3rem;color:#0a1628;margin-bottom:20px;font-weight:700;">&#127919; 六大核心原则</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<div class="section">
+<h2>&#127919; 六大核心原则</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<div class="lesson-card">
+<h4>&#127919; 股票是公司的一部分所有权</h4>
+<p>股票不只是代码，是企业真实所有权的一部分。投资股票就是购买企业的一部分，思考方式和创始人一样。</p>
+</div>
+<div class="lesson-card">
+<h4>&#128161; 市场先生是仆人不是向导</h4>
+<p>市场每天报价，但价格由情绪驱动而非价值。理性投资者把市场波动当工具，利用其恐慌和狂热，而不是被其支配。</p>
+</div>
+<div class="lesson-card">
+<h4>&#128269; 能力圈：不懂不投</h4>
+<p>理解自己能力圈的边界比扩大它更重要。不懂不做，懂了才能在别人恐惧时贪婪，在别人贪婪时恐惧。</p>
+</div>
+<div class="lesson-card">
+<h4>&#128737; 安全边际是核心</h4>
+<p>永远在价格显著低于价值时买入。安全边际保护投资者不因预测错误而亏损，是价值投资的根基。</p>
+</div>
+<div class="lesson-card">
+<h4>&#128197; 长期主义的时间纪律</h4>
+<p>价值投资需要时间来实现。频繁交易损耗收益，真正的回报来自长期持有优秀企业，让复利发挥作用。</p>
+</div>
+<div class="lesson-card">
+<h4>&#127984; 护城河是根本</h4>
+<p>企业的竞争优势决定了长期回报。寻找有持久护城河的公司——成本优势、品牌护城河、网络效应或监管壁垒。</p>
+</div>
+</div>
+</div>
 
-    <div class="lesson-card" style="border-left-color:#c9a227;text-align:center;padding:28px 20px">
-      <div style="font-size:2.5rem;color:#c9a227;opacity:.4;font-weight:700;margin-bottom:8px">01</div>
-      <h4 style="color:#0a1628">&#127919; 股票是公司的一部分所有权</h4>
-      <p style="color:#555;font-size:.9rem;margin-top:10px">股票不只是代码，是企业真实所有权的一部分。投资股票就是购买企业的一部分，思考方式和创始人一样。</p>
-    </div>
+<div class="section">
+<h2>&#127968; 护城河的关键要素</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px">
+<div style="padding:18px;background:#f7fafc;border-radius:10px;text-align:center">
+<strong style="color:#0a1628">规模经济</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#666">成本优势来自规模</p>
+</div>
+<div style="padding:18px;background:#f7fafc;border-radius:10px;text-align:center">
+<strong style="color:#0a1628">持续时间</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#666">长期竞争优势存续期</p>
+</div>
+<div style="padding:18px;background:#f7fafc;border-radius:10px;text-align:center">
+<strong style="color:#0a1628">管理层资本配置</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#666">关键的护城河要素</p>
+</div>
+<div style="padding:18px;background:#f7fafc;border-radius:10px;text-align:center">
+<strong style="color:#0a1628">企业文化</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#666">内在驱动力</p>
+</div>
+</div>
+<div class="quote-box">
+<strong>最高形式护城河：信任之网</strong>
+<blockquote>"The highest form which civilization can reach is a seamless web of deserved trust — not much procedure, just totally reliable people correctly trusting one another."</blockquote>
+<cite>— 李录，CCBC Fireside Chat</cite>
+</div>
+</div>
 
-    <div class="lesson-card" style="border-left-color:#c9a227;text-align:center;padding:28px 20px">
-      <div style="font-size:2.5rem;color:#c9a227;opacity:.4;font-weight:700;margin-bottom:8px">02</div>
-      <h4 style="color:#0a1628">&#128161; 市场先生是仆人不是向导</h4>
-      <p style="color:#555;font-size:.9rem;margin-top:10px">市场每天报价，但价格由情绪驱动而非价值。理性投资者把市场波动当工具，利用其恐慌和狂热，而不是被其支配。</p>
-    </div>
+<div class="section">
+<h2>&#128640; 决策框架：知行合一</h2>
+<p style="color:#555;font-size:.9rem;margin-bottom:16px;line-height:1.7"><strong style="color:#0a1628">研究在前，决策在后。</strong>研究的时间投入远大于买卖决策——看懂一家公司可能需要数年，买卖只是一瞬间。</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin-bottom:16px">
+<div style="padding:16px;background:#f0f4ff;border-radius:10px;border-left:4px solid #3182ce">
+<strong style="color:#3182ce">&#9312; 行业与生意模式</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#4a5568;line-height:1.5">判断目标公司是否属于<strong>能力圈内</strong>的<strong>大市场好生意</strong>。不熟不买是铁律。</p>
+</div>
+<div style="padding:16px;background:#f0faf4;border-radius:10px;border-left:4px solid #38a169">
+<strong style="color:#38a169">&#9313; 护城河分析</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#4a5568;line-height:1.5">识别企业<strong>持久竞争力</strong>的来源：成本优势、品牌、网络效应、技术壁垒还是转换成本？</p>
+</div>
+<div style="padding:16px;background:#fef9e7;border-radius:10px;border-left:4px solid #d69e2e">
+<strong style="color:#d69e2e">&#9314; 管理层品格</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#4a5568;line-height:1.5">管理层是否<strong>诚实、有能力、以股东利益为导向</strong>？有诚信的管理层是芒格最重要的择股标准。</p>
+</div>
+<div style="padding:16px;background:#fff5f5;border-radius:10px;border-left:4px solid #e53e3e">
+<strong style="color:#e53e3e">&#9315; 内在价值与安全边际</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#4a5568;line-height:1.5">DCF估算<strong>内在价值</strong>，与当前价格对比。<strong>安全边际</strong>足够时才考虑买入。</p>
+</div>
+<div style="padding:16px;background:#faf5ff;border-radius:10px;border-left:4px solid #805ad5">
+<strong style="color:#805ad5">&#9316; 仓位与集中度</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#4a5568;line-height:1.5"><strong>确定性决定仓位</strong>——研究越深，信心越强，仓位越重。单票上限控制下行风险。</p>
+</div>
+<div style="padding:16px;background:#f0f7ff;border-radius:10px;border-left:4px solid #2b6cb0">
+<strong style="color:#2b6cb0">&#9317; 持续跟踪与卖出</strong>
+<p style="margin-top:8px;font-size:.85rem;color:#4a5568;line-height:1.5"><strong>逻辑变则卖出</strong>（基本面恶化、护城河收窄、管理层失信）。<strong>逻辑不变则持有</strong>穿越周期。</p>
+</div>
+</div>
+<div class="dual-panel">
+<div class="panel panel-bull">
+<h4>&#9650; 买入条件</h4>
+<ul style="margin-top:8px;padding-left:18px">
+<li>能力圈内</li>
+<li>护城河清晰</li>
+<li>管理层可信</li>
+<li>价格低于价值 + 安全边际</li>
+</ul>
+</div>
+<div class="panel panel-bear">
+<h4>&#9660; 卖出条件</h4>
+<ul style="margin-top:8px;padding-left:18px">
+<li>投资逻辑改变</li>
+<li>估值极度泡沫</li>
+<li>发现更好机会</li>
+<li>标的基本面恶化</li>
+</ul>
+</div>
+</div>
+</div>
 
-    <div class="lesson-card" style="border-left-color:#c9a227;text-align:center;padding:28px 20px">
-      <div style="font-size:2.5rem;color:#c9a227;opacity:.4;font-weight:700;margin-bottom:8px">03</div>
-      <h4 style="color:#0a1628">&#128269; 能力圈：不懂不投</h4>
-      <p style="color:#555;font-size:.9rem;margin-top:10px">理解自己能力圈的边界比扩大它更重要。不懂不做，懂了才能在别人恐惧时贪婪，在别人贪婪时恐惧。</p>
-    </div>
+<div class="section">
+<h2>&#127756; 文明3.0框架</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:20px">
+<div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center">
+<strong style="color:#1a365d">1.0 狩猎采集</strong>
+<p style="font-size:.85rem;color:#666;margin-top:8px">约一万年前之前。人类以狩猎采集为生，人口少，工具简陋，完全依赖自然供给。</p>
+</div>
+<div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center">
+<strong style="color:#1a365d">2.0 农业文明</strong>
+<p style="font-size:.85rem;color:#666;margin-top:8px">约一万年前至1750年。农耕带来定居，土地是核心资产，不断陷入马尔萨斯陷阱。</p>
+</div>
+<div style="padding:20px;background:#fff8e1;border-radius:10px;text-align:center;border:2px solid #c9a227">
+<strong style="color:#c9a227">3.0 科技文明</strong>
+<p style="font-size:.85rem;color:#666;margin-top:8px">1750年至今。核心资产从土地转变为市场大小——自由竞争市场不断自我进化，最终最大市场成为唯一市场。</p>
+</div>
+</div>
+<div class="quote-box">
+"一个自由竞争的市场就是一个不断自我进化、自我进步、自我完善的机制……这就是3.0文明的铁律。"
+<cite>— 李录《文明、现代化、价值投资与中国》</cite>
+</div>
+<div style="margin-top:20px;padding:20px;background:#f0f4f8;border-radius:10px">
+<strong style="color:#1a365d">&#127919; 中国：从2.5迈向3.0</strong>
+<p style="color:#555;margin-top:10px;font-size:.9rem">中国目前处于2.5向3.0的转型阶段。改革40年已完成工业化，但科技创新和市场经济仍在深化。李录指出，3.0文明的核心标志是<strong>科技 + 自由市场 + 制度创新</strong>三者缺一不可。</p>
+<p style="color:#555;margin-top:10px;font-size:.88rem"><strong>投资含义：</strong>李录投资中国，根本逻辑不是押注中国政府政策，而是押注中国企业家精神和市场经济机制能否持续释放。</p>
+</div>
+</div>
 
-    <div class="lesson-card" style="border-left-color:#c9a227;text-align:center;padding:28px 20px">
-      <div style="font-size:2.5rem;color:#c9a227;opacity:.4;font-weight:700;margin-bottom:8px">04</div>
-      <h4 style="color:#0a1628">&#128737; 安全边际是核心</h4>
-      <p style="color:#555;font-size:.9rem;margin-top:10px">永远在价格显著低于价值时买入。安全边际保护投资者不因预测错误而亏损，是价值投资的根基。</p>
-    </div>
-
-    <div class="lesson-card" style="border-left-color:#c9a227;text-align:center;padding:28px 20px">
-      <div style="font-size:2.5rem;color:#c9a227;opacity:.4;font-weight:700;margin-bottom:8px">05</div>
-      <h4 style="color:#0a1628">&#128197; 长期主义的时间纪律</h4>
-      <p style="color:#555;font-size:.9rem;margin-top:10px">价值投资需要时间来实现。频繁交易损耗收益，真正的回报来自长期持有优秀企业，让复利发挥作用。</p>
-    </div>
-
-    <div class="lesson-card" style="border-left-color:#c9a227;text-align:center;padding:28px 20px">
-      <div style="font-size:2.5rem;color:#c9a227;opacity:.4;font-weight:700;margin-bottom:8px">06</div>
-      <h4 style="color:#0a1628">&#127984; 护城河是根本</h4>
-      <p style="color:#555;font-size:.9rem;margin-top:10px">企业的竞争优势决定了长期回报。寻找有持久护城河的公司——成本优势、品牌护城河、网络效应或监管壁垒。</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="section">
-  <h2 style="font-size:1.3rem;color:#0a1628;margin-bottom:20px;font-weight:700;">&#127968; 护城河的关键要素</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;margin-top:5px">
-    <div style="padding:18px;background:#f7fafc;border-radius:10px;text-align:center">
-      <strong style="color:#0a1628">规模经济</strong>
-      <p style="margin-top:8px;font-size:.85rem;color:#666">成本优势来自规模</p>
-    </div>
-    <div style="padding:18px;background:#f7fafc;border-radius:10px;text-align:center">
-      <strong style="color:#0a1628">持续时间</strong>
-      <p style="margin-top:8px;font-size:.85rem;color:#666">长期竞争优势存续期</p>
-    </div>
-    <div style="padding:18px;background:#f7fafc;border-radius:10px;text-align:center">
-      <strong style="color:#0a1628">管理层资本配置</strong>
-      <p style="margin-top:8px;font-size:.85rem;color:#666">关键的护城河要素</p>
-    </div>
-    <div style="padding:18px;background:#f7fafc;border-radius:10px;text-align:center">
-      <strong style="color:#0a1628">企业文化</strong>
-      <p style="margin-top:8px;font-size:.85rem;color:#666">内在驱动力</p>
-    </div>
-  </div>
-  <div class="quote-box" style="margin-top:20px">
-    <strong>最高形式护城河：信任之网</strong>
-    <blockquote style="margin-top:10px;font-style:italic">"The highest form which civilization can reach is a seamless web of deserved trust — not much procedure, just totally reliable people correctly trusting one another."</blockquote>
-    <cite style="display:block;margin-top:8px;font-size:.82rem;color:#888">— 李录，CCBC Fireside Chat</cite>
-  </div>
-</section>
-
-<section class="section">
-  <h2 style="font-size:1.3rem;color:#0a1628;margin-bottom:20px;font-weight:700;">&#128640; 决策框架：知行合一</h2>
-  <p style="color:#555;font-size:.9rem;margin-bottom:20px;line-height:1.7"><strong style="color:#0a1628">研究在前，决策在后。</strong>研究的时间投入远大于买卖决策——看懂一家公司可能需要数年，买卖只是一瞬间。</p>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px">
-    <div style="padding:16px;background:#f0f4ff;border-radius:10px;border-left:4px solid #3182ce">
-      <strong style="color:#3182ce">&#9312; 行业与生意模式</strong>
-      <p style="margin-top:8px;font-size:.82rem;color:#4a5568;line-height:1.5">判断目标公司是否属于<strong>能力圈内</strong>的<strong>大市场好生意</strong>。不熟不买是铁律。</p>
-    </div>
-    <div style="padding:16px;background:#f0faf4;border-radius:10px;border-left:4px solid #38a169">
-      <strong style="color:#38a169">&#9313; 护城河分析</strong>
-      <p style="margin-top:8px;font-size:.82rem;color:#4a5568;line-height:1.5">识别企业<strong>持久竞争力</strong>的来源：成本优势、品牌、网络效应、技术壁垒还是转换成本？</p>
-    </div>
-    <div style="padding:16px;background:#fef9e7;border-radius:10px;border-left:4px solid #d69e2e">
-      <strong style="color:#d69e2e">&#9314; 管理层品格</strong>
-      <p style="margin-top:8px;font-size:.82rem;color:#4a5568;line-height:1.5">管理层是否<strong>诚实、有能力、以股东利益为导向</strong>？有诚信的管理层是芒格最重要的择股标准。</p>
-    </div>
-    <div style="padding:16px;background:#fff5f5;border-radius:10px;border-left:4px solid #e53e3e">
-      <strong style="color:#e53e3e">&#9315; 内在价值与安全边际</strong>
-      <p style="margin-top:8px;font-size:.82rem;color:#4a5568;line-height:1.5">DCF估算<strong>内在价值</strong>，与当前价格对比。<strong>安全边际</strong>足够时才考虑买入。</p>
-    </div>
-    <div style="padding:16px;background:#faf5ff;border-radius:10px;border-left:4px solid #805ad5">
-      <strong style="color:#805ad5">&#9316; 仓位与集中度</strong>
-      <p style="margin-top:8px;font-size:.82rem;color:#4a5568;line-height:1.5"><strong>确定性决定仓位</strong>——研究越深，信心越强，仓位越重。单票上限控制下行风险。</p>
-    </div>
-    <div style="padding:16px;background:#f0f7ff;border-radius:10px;border-left:4px solid #2b6cb0">
-      <strong style="color:#2b6cb0">&#9317; 持续跟踪与卖出</strong>
-      <p style="margin-top:8px;font-size:.82rem;color:#4a5568;line-height:1.5"><strong>逻辑变则卖出</strong>（基本面恶化、护城河收窄、管理层失信）。<strong>逻辑不变则持有</strong>穿越周期。</p>
-    </div>
-  </div>
-  <div class="dual-panel" style="margin-top:20px">
-    <div class="panel panel-bull">
-      <h4>&#9650; 买入条件</h4>
-      <ul style="margin-top:8px">
-        <li>能力圈内</li>
-        <li>护城河清晰</li>
-        <li>管理层可信</li>
-        <li>价格低于价值 + 安全边际</li>
-      </ul>
-    </div>
-    <div class="panel panel-bear">
-      <h4>&#9660; 卖出条件</h4>
-      <ul style="margin-top:8px">
-        <li>投资逻辑改变</li>
-        <li>估值极度泡沫</li>
-        <li>发现更好机会</li>
-        <li>标的基本面恶化</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2 style="font-size:1.3rem;color:#0a1628;margin-bottom:20px;font-weight:700;">&#127756; 文明3.0框架</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-bottom:20px">
-    <div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center">
-      <strong style="color:#1a365d">1.0 狩猎采集</strong>
-      <p style="font-size:.85rem;color:#666;margin-top:8px">约一万年前之前。人类以狩猎采集为生，人口少，工具简陋，完全依赖自然供给。</p>
-    </div>
-    <div style="padding:20px;background:#f7fafc;border-radius:10px;text-align:center">
-      <strong style="color:#1a365d">2.0 农业文明</strong>
-      <p style="font-size:.85rem;color:#666;margin-top:8px">约一万年前至1750年。农耕带来定居，土地是核心资产，不断陷入马尔萨斯陷阱。</p>
-    </div>
-    <div style="padding:20px;background:#fff8e1;border-radius:10px;text-align:center;border:2px solid #c9a227">
-      <strong style="color:#c9a227">3.0 科技文明</strong>
-      <p style="font-size:.85rem;color:#666;margin-top:8px">1750年至今。核心资产从土地转变为市场大小——自由竞争市场不断自我进化，最终最大市场成为唯一市场。</p>
-    </div>
-  </div>
-  <div class="quote-box">
-    "一个自由竞争的市场就是一个不断自我进化、自我进步、自我完善的机制……一个国家增加实力最好的方法是放弃自己的关税壁垒，加入到这全球最大的国际自由市场体系里去。<strong style="color:#c9a227">这就是3.0文明的铁律。</strong>"
-    <cite style="display:block;margin-top:10px;font-size:.82rem;color:#888">— 李录《文明、现代化、价值投资与中国》</cite>
-  </div>
-  <div style="margin-top:20px;padding:20px;background:#f0f4f8;border-radius:10px">
-    <strong style="color:#1a365d">&#127919; 中国：从2.5迈向3.0</strong>
-    <p style="color:#555;margin-top:10px;font-size:.9rem">中国目前处于2.5向3.0的转型阶段。改革40年已完成工业化，但科技创新和市场经济仍在深化。李录指出，3.0文明的核心标志是<strong>科技 + 自由市场 + 制度创新</strong>三者缺一不可。</p>
-    <p style="color:#555;margin-top:10px;font-size:.88rem"><strong>投资含义：</strong>李录投资中国，根本逻辑不是押注中国政府政策，而是押注中国企业家精神和市场经济机制能否持续释放。</p>
-  </div>
-</section>
-
-</main>
+</div>
 </div>
 
 <footer>
-  <span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
-  <span>数据截止：2025 Q4 13F</span>
+<span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
+<span>数据截止：2025 Q4 13F</span>
 </footer>
 
-<script src="js/main.js" defer></script>
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
 </body>
 </html>
