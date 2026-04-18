@@ -62,6 +62,8 @@ body {
   background: var(--md-background);
   color: var(--text-primary);
   line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* ── 3. 通用导航栏 (#uni-navbar) ────────────────────────────── */
@@ -302,8 +304,10 @@ body .uni-dropdown-menu a:hover { color: #1a202c; background: rgba(201,162,39,.1
 /* 响应式: 移动端 */
 @media (max-width: 900px) {
   #uni-navbar .uni-links { display: none; }
-  #uni-hamburger { display: flex; }
+  #uni-hamburger { display: flex !important; visibility: visible !important; opacity: 1 !important; }
   .uni-dropdown { display: none; }  /* 移动端用 hamburger drawer */
+  #uni-body { min-height: 100vh; }
+  body { min-height: 100vh; }
 }
 
 /* ── 4. 通用 Footer ─────────────────────────────────────────── */
@@ -322,10 +326,9 @@ footer a { color: #c9a227; text-decoration: none; }
 
 /* ── 5. 通用工具类 ──────────────────────────────────────────── */
 .main-content {
-  padding-top: 80px;
   max-width: 960px;
   margin: 0 auto;
-  padding: 20px 24px 60px;
+  padding: 80px 24px 60px;
 }
 
 .back-bar {
