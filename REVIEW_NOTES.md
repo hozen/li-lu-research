@@ -1,12 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
 > Last Updated by Agent: 2026-04-19 04:02
-> Last Audit: 2026-04-19 04:02 (origin/master 与 origin/dev 完全同步，均已更新至 `fb52811`)
+> Last Audit: 2026-04-19 08:02 (origin/master 与 origin/dev 完全同步，均已更新至 `80b37e6`)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-19 第二十七次**: 视频页 Wl4I2Cim190.html 修复完成 — 该文件原为占位符页（iframe完全缺失，fallback显示「视频失效」错误信息且误导性地引用了另一个已下架视频ID _-M1HFuqus0）；修复：①添加正确YouTube iframe（ID Wl4I2Cim190，~12分钟价值投资3大核心概念讲解）②添加onerror fallback处理（嵌入失败时显示章节摘要+YouTube外链）③标题更正为「Li Lu Explains Value Investing — 价值投资3大核心概念」时长~12分钟；youtube-videos.md同步更新（主列表增加3条比亚迪2026新视频并置顶、短版区更正YouTube链接）；注意：transcripts/目录（比亚迪音频/SRT/弹幕JSON）暂未提交，留待后续审核；origin/master 和 origin/dev 均已推送至 `80b37e6`
+  - Commit: `80b37e6`
+  - 修复内容：videos/Wl4I2Cim190.html 添加正确YouTube iframe + onerror fallback；youtube-videos.md 重组主列表（比亚迪2026对话置顶）+ 短版区链接修正
 - **2026-04-19 第二十六次**: 5-R3-3 持仓历史演变概览完成 — holdings.html 新增「持仓历史演变」版块（可视化时间线：Q1 2017—Q4 2025共28个季度的AUM/持仓数/关键里程碑）；新增 data/holdings-history.json（28个季度的完整13F历史数据，来源：SEC EDGAR via 13f.info）；关键里程碑标注：Alphabet成最大仓(2023Q4)/COVID恐慌期建仓GOOGL/BAC(2020Q1-Q2)/MU退出(2024Q2)/OXY加入(2025Q3)/最早中概股持仓(百度+新浪)；同步推送到 origin/master 和 origin/dev 至 `bae583c`
   - Commit: `bae583c`
   - 修复内容：5-R3-3 持仓历史演变概览；holdings.html 新增时间线（12个季度节点可视化）+ 关键里程碑高亮；data/holdings-history.json 完整28季度数据可下载
