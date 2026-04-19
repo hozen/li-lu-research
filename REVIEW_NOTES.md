@@ -7,6 +7,9 @@
 
 ## 已修复记录
 
+- **2026-04-19 第二十六次**: 5-R3-3 持仓历史演变概览完成 — holdings.html 新增「持仓历史演变」版块（可视化时间线：Q1 2017—Q4 2025共28个季度的AUM/持仓数/关键里程碑）；新增 data/holdings-history.json（28个季度的完整13F历史数据，来源：SEC EDGAR via 13f.info）；关键里程碑标注：Alphabet成最大仓(2023Q4)/COVID恐慌期建仓GOOGL/BAC(2020Q1-Q2)/MU退出(2024Q2)/OXY加入(2025Q3)/最早中概股持仓(百度+新浪)；同步推送到 origin/master 和 origin/dev 至 `bae583c`
+  - Commit: `bae583c`
+  - 修复内容：5-R3-3 持仓历史演变概览；holdings.html 新增时间线（12个季度节点可视化）+ 关键里程碑高亮；data/holdings-history.json 完整28季度数据可下载
 - **2026-04-19 第二十五次**: 下载资源目录收尾完成 — 发现 `downloads/himcap/` 下9个文件未提交（7份英文翻译txt + John-Jay-Award-Speech-2012-CN.md）；这些是4月18日同步时产生的文件，commit `412ec0e` 仅包含了同批的中文翻译MD文件；本次补充提交全部9个文件（7429行新增），并推送 origin/master 和 origin/dev 至 `fb52811`；现 origin/master 与 origin/dev 完全同步
   - Commit: `fb52811`
   - 修复内容：downloads/himcap/ 目录补齐英文翻译文件（book-list/gvie-2024/john-jay-2012/modernization-2016/munger-tribute/pca-foreword/pku-2015/sino-us-modernization 各english.txt）+ John-Jay-Award-Speech-2012-CN.md；origin/master 与 origin/dev 均已推送至 `fb52811`
@@ -327,7 +330,7 @@
 |------|------|------|--------|
 | 5-R3-1 | **删除研究笔记中的伪写作** — 删除 Agent 以站长视角撰写的"💡我的思考"段落；只保留事实和来源部分 | ✅ | P1 |
 | 5-R3-2 | **活动 checklist 加直接链接** — 每项活动加视频 URL 或文章 URL 外链 | ✅ `77f1b46` | P2 |
-| 5-R3-3 | **持仓历史演变概览**（可选）| ☐ | P3 |
+| 5-R3-3 | **持仓历史演变概览** | ✅ 已完成（2026-04-19）| P3 |
 
 **重构后的站点结构**：
 ```
@@ -655,6 +658,9 @@ faq.html        ← FAQ（新创建）
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-19 | `bae583c` | feat: 5-R3-3 add holdings history evolution — holdings.html timeline (Q1 2017-Q4 2025, 12 milestones); data/holdings-history.json (28 quarters, SEC EDGAR via 13f.info) |
+| 2026-04-19 | `8bf48bc` | docs: REVIEW_NOTES add 25th fix record fb52811 |
+| 2026-04-19 | `fb52811` | feat: add English translations for 7 key documents + 2012 John Jay award CN version — completion of April 18 sync content |
 | 2026-04-18 | `95ebe3e` | feat: P5-I add Fat Pitch content + timeline publications — about.html: 肥硕一击(Fat Pitch) lesson-card from Poor Charlie's Almanack; timeline.html: 2016 museum, 2020 COVID donation, 2020 $1.5M LA foundation donation |
 | 2026-04-18 | `b392711` | feat: 5-R0-3 remove old .navbar system, unify to #uni-navbar — 11 files: alphabet/apple/bac/berkshire/bank-of-america-investment-deep, bookshelf, downloads, glossary, quotes, raw_github, timeline; remove <nav class='navbar'> HTML, inline .navbar/.page CSS, inline hamburger JS; replace <div class='page'> with <main class='main-content' style='padding-top:84px'> |
 | 2026-04-17 | `77f1b46` | feat: 5-R3-2 add direct links to all 5 checklist items — 2024 PKU talk→videos/8jJA4vHWvLc, 2021 CBS/Greenwald→videos/-gfRCGZ0zf4, 2020 book→bookshelf.html, 2019 PKU→videos/35RgNwcyjFk, 2015 PKU→Bilibili BV1Cm4y1r76v |
