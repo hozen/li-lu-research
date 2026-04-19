@@ -85,6 +85,15 @@ td .wt{font-weight:700;color:var(--gold)}
 .tag-energy{background:#f3e8ff;color:#6b21a8}
 .tag-avi{background:#fce7f3;color:#9d174d}
 .disclaimer{background:linear-gradient(135deg,var(--gold-light),#fffdf5);border-left:4px solid var(--gold);padding:14px 18px;border-radius:0 10px 10px 0;margin-top:20px}
+.history-timeline{margin:12px 0}
+.hist-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.hist-period{min-width:70px;font-size:.78rem;font-weight:700;color:var(--navy);text-align:right}
+.hist-bar{flex:1;height:20px;background:#f0f0f0;border-radius:4px;overflow:hidden;min-width:60px}
+.hist-fill{height:100%;border-radius:4px;transition:width .5s}
+.hist-val{min-width:65px;font-size:.82rem;font-weight:700;color:var(--gold);text-align:right}
+.hist-note{flex-basis:100%;font-size:.75rem;color:var(--text-muted);padding-left:82px;line-height:1.4}
+.milestone-legend{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+.milestone-tag{display:inline-block;padding:2px 8px;background:#fff8e1;border:1px solid var(--gold);border-radius:4px;font-size:.72rem;color:var(--text-muted)}
 .disclaimer p{font-size:.82rem;color:var(--text-muted);line-height:1.6;margin:0}
 .disclaimer strong{color:var(--navy)}
 footer{padding:24px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;text-align:center;font-size:.78rem;color:var(--text-light)}
@@ -347,6 +356,92 @@ footer{padding:24px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;text-al
 </tbody>
 </table>
 </div>
+</div>
+
+<div class="section">
+<h2>&#128293; 持仓历史演变</h2>
+<p style="color:var(--text-muted);font-size:.82rem;margin:4px 0 14px">数据来源：SEC EDGAR 13F 公开披露（Q1 2017—Q4 2025）。13F 仅覆盖美股持仓，非美股（港股/A股）不在此列。</p>
+<div class="history-timeline">
+<div class="hist-row">
+<span class="hist-period">Q4 2025</span>
+<div class="hist-bar"><div class="hist-fill" style="width:100%;background:var(--blue)"></div></div>
+<span class="hist-val">$3.57B</span>
+<span class="hist-note">&#9733; Alphabet合计~44%成最大仓；OXY/EWBC加入</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q3 2025</span>
+<div class="hist-bar"><div class="hist-fill" style="width:90%;background:var(--blue)"></div></div>
+<span class="hist-val">$3.23B</span>
+<span class="hist-note">OXY首次出现在13F</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q2 2025</span>
+<div class="hist-bar"><div class="hist-fill" style="width:75%;background:var(--blue)"></div></div>
+<span class="hist-val">$2.69B</span>
+<span class="hist-note">持仓数增至9个</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q1 2025</span>
+<div class="hist-bar"><div class="hist-fill" style="width:62%;background:var(--blue)"></div></div>
+<span class="hist-val">$2.21B</span>
+<span class="hist-note">PDD退出前五</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2024</span>
+<div class="hist-bar"><div class="hist-fill" style="width:76%;background:var(--blue)"></div></div>
+<span class="hist-val">$2.71B</span>
+<span class="hist-note">Alphabet双股权结构稳定</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2023</span>
+<div class="hist-bar"><div class="hist-fill" style="width:58%;background:var(--blue)"></div></div>
+<span class="hist-val">$2.06B</span>
+<span class="hist-note">&#9733; Alphabet首次超越BAC成最大仓</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2022</span>
+<div class="hist-bar"><div class="hist-fill" style="width:54%;background:var(--green)"></div></div>
+<span class="hist-val">$1.93B</span>
+<span class="hist-note">MU为最大仓，科技股暴跌中坚守</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2021</span>
+<div class="hist-bar"><div class="hist-fill" style="width:75%;background:var(--green)"></div></div>
+<span class="hist-val">$2.66B</span>
+<span class="hist-note">META进入持仓；PDD已清仓</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q2 2020</span>
+<div class="hist-bar"><div class="hist-fill" style="width:30%;background:var(--green)"></div></div>
+<span class="hist-val">$1.06B</span>
+<span class="hist-note">&#9733; GOOG首次建仓（COVID恐慌期）</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q1 2020</span>
+<div class="hist-bar"><div class="hist-fill" style="width:20%;background:var(--orange)"></div></div>
+<span class="hist-val">$713M</span>
+<span class="hist-note">&#9733; BAC首次建仓（COVID恐慌期~$22-24）</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2019</span>
+<div class="hist-bar"><div class="hist-fill" style="width:12%;background:var(--orange)"></div></div>
+<span class="hist-val">$420M</span>
+<span class="hist-note">MU唯一持仓；PDD清仓完毕</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q1 2017</span>
+<div class="hist-bar"><div class="hist-fill" style="width:3.3%;background:var(--orange)"></div></div>
+<span class="hist-val">$118M</span>
+<span class="hist-note">&#9733; 最早13F披露：百度+新浪</span>
+</div>
+</div>
+<div class="milestone-legend">
+<span class="milestone-tag">&#9733; 关键建仓/清仓节点</span>
+</div>
+<p style="font-size:.78rem;color:var(--text-muted);margin-top:10px">完整历史数据（Q1 2017—Q4 2025 共30个季度）可下载 JSON 文件查阅。</p>
+<a href="data/holdings-history.json" download style="display:inline-flex;padding:8px 14px;background:var(--gold);color:#fff;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin-top:8px">
+  &#8681; 下载完整历史数据（JSON）
+</a>
 </div>
 
 <div class="disclaimer">
