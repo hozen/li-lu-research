@@ -1,0 +1,4 @@
+# Ignore everything except .srt and .gitignore
+*
+!.gitignore
+!.srt
