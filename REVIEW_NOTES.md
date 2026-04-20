@@ -1,11 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-19 04:02
-> Last Audit: 2026-04-19 08:02 (origin/master 与 origin/dev 完全同步，均已更新至 `80b37e6`)
+> Last Updated by Agent: 2026-04-20 10:41
+> Last Audit: 2026-04-20 10:41 (origin/master 与 origin/dev 完全同步，均已更新至 `cd4346d`)
 
 ---
 
 ## 已修复记录
+
+- **2026-04-20 第二十八次**: Whisper AI转写视频功能完成 + dev/master同步 — 清理origin/dev中无关的wingtech-analysis内容（revert commits `5bc28bd`/`eaa13ee`），确保Li Lu站点内容纯净；video_study.html新增「Whisper AI转写视频」版块（5张视频卡片：比亚迪2026对话/哥大2006演讲/有请专访等），每张卡片含B站外链+SRT字幕本地下载；新增transcripts/目录（含5个.srt字幕文件）+ transcripts/.gitignore（防止大型音频文件误提交）；origin/master 和 origin/dev 完全同步，均已推送至 `cd4346d`
+  - Commit: `cd4346d`
+  - 修复内容：video_study.html新增Whisper AI转写版块（5视频卡片+SRT下载）；transcripts/目录（.srt字幕文件）；.gitignore保护机制；origin/dev清理wingtech无关内容后与origin/master同步
 
 - **2026-04-19 第二十七次**: 视频页 Wl4I2Cim190.html 修复完成 — 该文件原为占位符页（iframe完全缺失，fallback显示「视频失效」错误信息且误导性地引用了另一个已下架视频ID _-M1HFuqus0）；修复：①添加正确YouTube iframe（ID Wl4I2Cim190，~12分钟价值投资3大核心概念讲解）②添加onerror fallback处理（嵌入失败时显示章节摘要+YouTube外链）③标题更正为「Li Lu Explains Value Investing — 价值投资3大核心概念」时长~12分钟；youtube-videos.md同步更新（主列表增加3条比亚迪2026新视频并置顶、短版区更正YouTube链接）；注意：transcripts/目录（比亚迪音频/SRT/弹幕JSON）暂未提交，留待后续审核；origin/master 和 origin/dev 均已推送至 `80b37e6`
   - Commit: `80b37e6`
@@ -661,7 +665,7 @@ faq.html        ← FAQ（新创建）
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
-| 2026-04-19 | `bae583c` | feat: 5-R3-3 add holdings history evolution — holdings.html timeline (Q1 2017-Q4 2025, 12 milestones); data/holdings-history.json (28 quarters, SEC EDGAR via 13f.info) |
+| 2026-04-20 | `cd4346d` | feat: add Whisper AI transcribed videos section to video_study.html — 5 video cards with SRT subtitle downloads (BYD2026/哥大2006/有请专访等); add transcripts/.gitignore to prevent large audio files; clean dev from wingtech-analysis content |
 | 2026-04-19 | `8bf48bc` | docs: REVIEW_NOTES add 25th fix record fb52811 |
 | 2026-04-19 | `fb52811` | feat: add English translations for 7 key documents + 2012 John Jay award CN version — completion of April 18 sync content |
 | 2026-04-18 | `95ebe3e` | feat: P5-I add Fat Pitch content + timeline publications — about.html: 肥硕一击(Fat Pitch) lesson-card from Poor Charlie's Almanack; timeline.html: 2016 museum, 2020 COVID donation, 2020 $1.5M LA foundation donation |
