@@ -1,12 +1,60 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-12
-> Last Audit: 2026-04-12 (P6-E 视频页面可用性验证完成)
+> Last Updated by Agent: 2026-04-20 10:41
+> Last Audit: 2026-04-20 10:41 (origin/master 与 origin/dev 完全同步，均已更新至 `cd4346d`)
 
 ---
 
 ## 已修复记录
 
+- **2026-04-20 第二十八次**: Whisper AI转写视频功能完成 + dev/master同步 — 清理origin/dev中无关的wingtech-analysis内容（revert commits `5bc28bd`/`eaa13ee`），确保Li Lu站点内容纯净；video_study.html新增「Whisper AI转写视频」版块（5张视频卡片：比亚迪2026对话/哥大2006演讲/有请专访等），每张卡片含B站外链+SRT字幕本地下载；新增transcripts/目录（含5个.srt字幕文件）+ transcripts/.gitignore（防止大型音频文件误提交）；origin/master 和 origin/dev 完全同步，均已推送至 `cd4346d`
+  - Commit: `cd4346d`
+  - 修复内容：video_study.html新增Whisper AI转写版块（5视频卡片+SRT下载）；transcripts/目录（.srt字幕文件）；.gitignore保护机制；origin/dev清理wingtech无关内容后与origin/master同步
+
+- **2026-04-19 第二十七次**: 视频页 Wl4I2Cim190.html 修复完成 — 该文件原为占位符页（iframe完全缺失，fallback显示「视频失效」错误信息且误导性地引用了另一个已下架视频ID _-M1HFuqus0）；修复：①添加正确YouTube iframe（ID Wl4I2Cim190，~12分钟价值投资3大核心概念讲解）②添加onerror fallback处理（嵌入失败时显示章节摘要+YouTube外链）③标题更正为「Li Lu Explains Value Investing — 价值投资3大核心概念」时长~12分钟；youtube-videos.md同步更新（主列表增加3条比亚迪2026新视频并置顶、短版区更正YouTube链接）；注意：transcripts/目录（比亚迪音频/SRT/弹幕JSON）暂未提交，留待后续审核；origin/master 和 origin/dev 均已推送至 `80b37e6`
+  - Commit: `80b37e6`
+  - 修复内容：videos/Wl4I2Cim190.html 添加正确YouTube iframe + onerror fallback；youtube-videos.md 重组主列表（比亚迪2026对话置顶）+ 短版区链接修正
+- **2026-04-19 第二十六次**: 5-R3-3 持仓历史演变概览完成 — holdings.html 新增「持仓历史演变」版块（可视化时间线：Q1 2017—Q4 2025共28个季度的AUM/持仓数/关键里程碑）；新增 data/holdings-history.json（28个季度的完整13F历史数据，来源：SEC EDGAR via 13f.info）；关键里程碑标注：Alphabet成最大仓(2023Q4)/COVID恐慌期建仓GOOGL/BAC(2020Q1-Q2)/MU退出(2024Q2)/OXY加入(2025Q3)/最早中概股持仓(百度+新浪)；同步推送到 origin/master 和 origin/dev 至 `bae583c`
+  - Commit: `bae583c`
+  - 修复内容：5-R3-3 持仓历史演变概览；holdings.html 新增时间线（12个季度节点可视化）+ 关键里程碑高亮；data/holdings-history.json 完整28季度数据可下载
+- **2026-04-19 第二十五次**: 下载资源目录收尾完成 — 发现 `downloads/himcap/` 下9个文件未提交（7份英文翻译txt + John-Jay-Award-Speech-2012-CN.md）；这些是4月18日同步时产生的文件，commit `412ec0e` 仅包含了同批的中文翻译MD文件；本次补充提交全部9个文件（7429行新增），并推送 origin/master 和 origin/dev 至 `fb52811`；现 origin/master 与 origin/dev 完全同步
+  - Commit: `fb52811`
+  - 修复内容：downloads/himcap/ 目录补齐英文翻译文件（book-list/gvie-2024/john-jay-2012/modernization-2016/munger-tribute/pca-foreword/pku-2015/sino-us-modernization 各english.txt）+ John-Jay-Award-Speech-2012-CN.md；origin/master 与 origin/dev 均已推送至 `fb52811`
+- **2026-04-19 第二十四次**: origin/master 与 origin/dev 再次同步完成 — 发现 origin/master 落后 origin/dev 11个commits（commit `412ec0e` 回溯），新增内容：①喜马拉雅资本7份官方PDF（2012年哥大颁奖演讲/2016年现代化 essays/2023年芒格纪念文/书单）；②完整中英双语翻译文件（2015北大演讲/2024北大演讲/PCA序言/芒格纪念文）；③核心页面重新设计为自包含彩色风格（principles/about/quotes/glossary/faq/bookshelf/holdings/timeline/downloads.html）；④可下载资源（13F CSV/原则速查MD/视频讲座笔记MD）；⑤持仓页新增完整13F表格+柱状图可视化；共11个commits，origin/master 与 origin/dev 完全同步
+  - Commit: `412ec0e`（本次推送顶头）
+  - 修复内容：origin/dev 在上次同步后新增11个commits，origin/master 再次落后；本次推送后 origin/master 与 origin/dev 完全同步（均为 `412ec0e`）
+- **2026-04-18 第二十三次**: origin/master 与 origin/dev 同步完成 — 发现 origin/master 落后 origin/dev 116个commits，关键修复 `33c5f6a`（video_study.html uni-drawer-header div未闭合bug）未同步至 origin/master；执行 git push master:master 将全部116个commits推送到 origin/master，origin/master 现与 origin/dev 完全同步（commit `0c7c0df`）；video_study.html 验证：uni-drawer-header div结构正确闭合，uniDrawerThemeBtn 和 uniDrawerClose 按钮存在且位置正确
+  - Commit: `0c7c0df`
+  - 修复内容：origin/master 长期落后 origin/dev，Round 5 全部重构commits（共享CSS/JS/新架构/暗模式/导航体系/视频页/深度分析页面等）未反映在 origin/master；本次推送后 origin/master 与 origin/dev 完全同步
+- **2026-04-18 第二十二次**: P5-I 喜马拉雅资本官网内容补充完成 — about.html 新增「肥硕一击（Fat Pitch）」lesson-card，引用 Poor Charlie's Almanack 原文（"Once in a while, you will find a 'fat pitch' that is slow, straight, and right in the middle of your sweet spot. Then you swing hard."）；timeline.html 新增3条公开记录：①2016-11 美国国家历史博物馆展览亮相、②2020-03 向中国抗疫医院/机构捐赠物资、③2020-04 向洛杉矶慈善基金会捐赠$150万；内容来源：himcap.com publications 页 + Poor Charlie's Almanack
+  - Commit: `95ebe3e`
+  - 修复内容：P5-I（官网内容补充）完成；Fat Pitch 投资哲学首次出现在 about.html 研究笔记精选首位；3条李录公益活动时间线补全
+- **2026-04-18 第二十一次**: 5-R2-2 全面验证 + 暗模式修复完成 — 发现并修复两个关键Bug：①主题切换按钮（`uniThemeBtn`/`uniDrawerThemeBtn`）在main.js中被引用但在全部18个页面缺失，导致手动暗色/亮色切换完全失效；②Hero区域使用硬编码浅色背景（`#f7fafc/#e2e8f0`），在暗模式下无适配；修复：shared.css新增`body.dark-mode`完整暗色覆盖（navbar/drawer/所有卡片/ Hero节）；18个页面Desktop导航栏全部添加`uniThemeBtn`；18个页面Mobile抽屉全部添加`uniDrawerThemeBtn`；Hero节新增`.hero-section`/`.hero-subtitle`/`.hero-cta-outline` CSS类供暗色覆盖
+  - Commit: `c5908b6`
+  - 修复内容：5-R2-2 P0验证任务发现：main.js引用`uniThemeBtn`和`uniDrawerThemeBtn`但18个HTML页面均未添加这两个按钮，导致主题切换功能形同虚设；Hero节暗模式无覆盖（内联`background:linear-gradient(135deg,#f7fafc,#e2e8f0)`在暗色模式下刺眼）；影响文件：shared.css（新增dark-mode覆盖）、18个HTML文件（新增主题切换按钮）
+- **2026-04-18 第二十次**: 5-R0-3 统一导航体系完成 — 删除全部 11 个文件（旧架构）的 `<nav class="navbar">...</nav>` HTML 块 + 内联 `.navbar`/`.page`/`.nav-brand`/`.nav-link` CSS；替换 `<div class="page">` 为 `<main class="main-content" style="padding-top:84px">`；移除内联汉堡菜单 JS（main.js 统一处理）；修复 alphabet/apple/bac/berkshire/bank-of-america 的 `id="uniOverlay"` 重复属性；全部 28 个 HTML 文件现在使用统一的 `#uni-navbar` + main.js 导航系统
+  - Commit: `b392711`
+  - 修复内容：5-R0-3 P0 任务：删除 11 个文件的旧 `.navbar` 固定定位导航系统，统一迁移至 `#uni-navbar` + drawer + main.js 新架构；影响文件：alphabet-investment-deep.html、apple-investment-deep.html、bac-investment-deep.html、berkshire-investment-deep.html、bookshelf.html、downloads.html、glossary.html、quotes.html、raw_github.html、timeline.html、bank-of-america-investment-deep.html
+- **2026-04-15 第十九次**: P2-Footer链接visited状态修复 — 为index.html两个CSS块的footer链接添加`:visited`和`:hover`样式：light mode `.footer a:visited{color:#b8960b}` + `.footer a:hover{color:#e0b830}`；dark mode `body.dark-mode .footer a:visited{color:#9a7b1a}` + `body.dark-mode .footer a:hover{color:#c9a227}`；修复2026-04-14和2026-04-15每日UX审查中重复出现的P2问题（Footer链接无visited状态，用户无法区分已访问/未访问页面）
+  - Commit: `3963076`
+  - 修复内容：P2 UX问题（每日UX审查持续标注）：Footer链接在用户访问后保持金色（#c9a227）还是变为浏览器默认紫色导致无法区分；添加visited为哑金色(#b8960b/##9a7b1a)以区分已访问链接；hover为亮金色(#e0b830/#c9a227)提供交互反馈
+- **2026-04-15 第十八次**: P2-视频页降级处理 — 为全部10个视频页面添加YouTube嵌入失败时的降级处理（onerror handler + fallback div）；fallback显示：视频标题 + 描述 + YouTube外链按钮；支持暗模式；涵盖所有视频页（-gfRCGZ0zf4/35RgNwcyjFk/8jJA4vHWvLc/IbrTswEKpLE/KAoC8pErmb0/KmzOZLf8wcw/LWikhUVneYI/YaCRr0DIfuE/_-M1HFuqus0/b2yxBBMIEz0）
+  - Commit: `19fdb2a`
+  - 修复内容：P2 UX问题（2026-04-14/04-15审查重复）：视频页YouTube不可用时显示降级内容（视频信息+外链）而非空白或错误；onerror handler监听嵌入失败并切换fallback显示
+- **2026-04-14 第十七次**: P6-4 汉堡菜单功能修复 — 添加缺失的`toggleMenu()` JS函数（index.html line 231）+ 暗模式文字颜色全面提亮 + 通用导航暗色样式；REVIEW_NOTES P6-4状态纠正（2026-04-11布局完成/2026-04-14功能修复）
+  - Commit: `11b72f8`
+  - 修复内容：P6-4 2026-04-11标记完成但`toggleMenu()`函数实际缺失，导致汉堡按钮无法工作；2026-04-14核实并修复
+- **2026-04-14 第十六次**: P0-1 核心代码全部完成 — FAQ新增Q4（财富定义/购买力思维）+ Q2六原则完整列举（6条全部列出）；Footer日期更新
+  - Commit: `10b9232`
+  - 修复内容：P0-1 全部三个待完成项 ✅ 创建独立视频页（4bc0a54）✅ 6大原则已存在于principles板块 ✅ 投资哲学/FAQ更新（Q2完整+Q4新增财富定义）
+- **2026-04-14 第十五次**: P0-1 北大2024演讲独立视频页完成 — 创建 `videos/8jJA4vHWvLc.html`（17章节详细笔记：四大主题+Q&A+核心框架速览，全文3小时/~3万字，芒格书院授权PDF链接）
+  - Commit: `4bc0a54`
+  - 修复内容：P0-1 待完成项之一 ✅ 创建独立视频页；剩余：6大原则提取入 index.html、投资哲学/FAQ更新
+- **2026-04-14 第十四次**: 仓库清理 + 同步 — 移除误提交的 _new_section.txt 产物 + 将7个未推送 commits（kweichow-moutai/china-hk-holdings/video_study/REVIEW_NOTES等）同步至 origin/master
+  - Commit: `34c5be9`
+  - 修复内容：_new_section.txt 产物移除 + kweichow-moutai-investment-deep.html 确认在库 + 所有本地变更已推送
+- **2026-04-13 第十三次**: P0 视频中心可用性修复 — 创建 video_study.html 学习中心 hub + 修复 index.html Master Class 卡片空链接 → video_study.html（17段落TOC完整）
+  - Commit: `70f05b9`
 - **2026-04-12 第十二次**: P6-E 视频页面可用性验证 — KmzOZLf8wcw 已下架（YouTube Short 私有）替换为占位符 + 全部9个视频子页 nav 锚点 #framework→#my-framework
   - Commit: `128023e`
 - **2026-04-11 第十一次**: 更新 REVIEW_NOTES — 标注所有用户内容任务状态（P2-1/P2-3/P3-1/P4-1 均为用户填充，无需代码介入）
@@ -29,6 +77,33 @@
   - Commit: `96cdd338`
 - **2026-04-08 第一批**: 编码腐败修复（downloads/glossary/quotes/timeline）
   - Commit: `3a77a6d`
+
+---
+
+## Priority 0：新内容采集（最高优先级）
+
+### P0-1 (2026-04-14): 北大2024演讲全面更新
+- 状态: ✅ 核心代码完成（2026-04-14）
+- 用户提供视频: https://youtu.be/8jJA4vHWvLc
+- 视频标题: 李录《全球价值投资与时代》· 北京大学光华管理学院《价值投资》课程十周年沙龙 · 2024-12-07
+- 视频描述: 约3小时，~3万字，李录最完整的公开演讲，系统阐述：①时代困惑根源 ②中等收入陷阱与观念落差 ③中国式现代化 ④价值投资人应对策略
+- 数据来源: 芒格书院授权全文（PDF）+ Podwise AI分段笔记
+
+**已完成更新:**
+- ✅ PDF下载: `downloads/pku_2024_speech.pdf` (437KB, 芒格书院授权版)
+- ✅ 视频学习中心: `video_study.html` 新增Featured置顶章节，含完整时间戳+内容速览
+- ✅ 下载页面: `downloads.html` 新增「演讲全文」板块
+- ✅ 首页视频区: `index.html` 视频列表置顶新增「NEW」标注
+- ✅ 北大三次演讲全集: 2015/2019/2024全部链接补全，video_study.html顶部三列展示
+- ✅ MEMORY.md视频列表: 补充2015/2019两次演讲，系列增至3条
+- ✅ 独立视频页: `videos/8jJA4vHWvLc.html`（17章节详细笔记，四大主题+Q&A+框架速览）— commit `4bc0a54`
+- ✅ 6大原则: principles板块已有完整6条，无需额外提取
+- ✅ 投资哲学/FAQ: Q2六原则完整列举 + Q4新增「财富定义/购买力思维」（来自Part1演讲内容）— commit `10b9232`
+
+**搜索机制改进:**
+- 问题: YouTube新视频无法被抓取（VPN不可用），需要用户主动提供
+- 改进方案: 建立「用户推荐视频」流程——用户分享YouTube链接 → AI自动：①搜索全文②更新网站③记入backlog
+- 触发条件: 用户发送任何YouTube链接且包含Li Lu相关内容
 
 ---
 
@@ -120,9 +195,10 @@
 - 实现: 返回顶部按钮 + 窄屏卡片不溢出
 
 ### ✅ 6.4 汉堡导航菜单
-- 状态: ✅ 已完成（2026-04-11）
+- 状态: ✅ 已完成（2026-04-11 CSS布局 + 2026-04-14 JS功能修复）
 - 实现: ≤1024px 显示三线汉堡按钮 → 右侧滑出抽屉，9个导航链接 + 夜间模式开关；点击链接自动关闭抽屉；点击遮罩层关闭
-- Commit: `待提交`
+- 修复记录: 2026-04-11 仅完成CSS布局和HTML结构；`toggleMenu()` JS函数实际缺失（2026-04-14发现），已通过 commit `11b72f8` 修复：添加缺失的`toggleMenu()`函数 + 暗模式文字颜色全面提亮（#c8d6e8→#dde6f0等）+ 通用导航暗色模式样式（uni-drawer/mobile-drawer）
+- Commit: `11b72f8`
 
 ### ✅ 6.5 移动端暗模式全面修复
 - 状态: ✅ 已完成（2026-04-11）
@@ -158,6 +234,7 @@
 | ✅ P2-1 | 研究笔记板块 | 已完成 | Agent主动填充4篇结构化笔记（CCBC/四理念/护城河/方法论） |
 | ✅ P2-2 | 视频卡片空链接 | 已完成 | href=# → 实际链接（commit `c092891`） |
 | ✅ P2-3 | 活动时间线 | 结构完成 | 10-item checklist 由用户勾选 |
+| ✅ P2-4 | 视频页降级处理 | 已完成 | 全部10个视频页添加YouTube onerror fallback，嵌入失败时显示视频信息+外链（commit `19fdb2a`） |
 | ✅ P3-1 | 我的投资框架 | 结构完成 | 框架由用户填充（Q3） |
 | ✅ P3-2 | 文明3.0思想框架 | 已完成 | 三阶段卡片 + 中国转型论点 |
 | ✅ P4-1 | 原则映射 | 结构完成 | 表格由用户填充（Q4） |
@@ -167,12 +244,19 @@
 | ✅ P6-1 | 移动端优化 | 已完成 | 返回顶部按钮 |
 | ✅ P6-4 | 汉堡导航菜单 | 已完成 | ≤1024px滑出式抽屉 + 夜间模式 |
 | ✅ P6-5 | 移动端暗模式全面修复 | 已完成 | text-muted变量覆盖 + 字号提升 + 硬编码颜色修复 |
-| ✅ P7-1 | PDD投资案例分析（BYD框架） | 已完成 | 创建 pdd-investment-deep.html，8章结构，置信度标注完整 |
-| ✅ P7-2 | 中国邮储银行投资分析（BYD框架） | 已完成 | 创建 psbc-investment-deep.html，8章结构；持仓核实确认：2020-12-18首次买入10.06亿股(HK$4.228)，2021-01-15加仓2.68亿股(HK$5.3479)，累计成本约HK$57亿，持股比例最高5.93%，至今仍持有约9.86亿股 |
+| ✅ P7-1 | PDD投资案例分析（BYD框架） | 已完成 | 创建 pdd-investment-deep.html，8章结构，置信度标注完整（commit `179cac2`） |
+| ✅ P7-2 | 中国邮储银行投资分析（BYD框架） | 已完成 | 创建 psbc-investment-deep.html，8章结构；持仓核实确认：2020-12-18首次买入10.06亿股(HK$4.228)，2021-01-15加仓2.68亿股(HK$5.3479)，累计成本约HK$57亿，持股比例最高5.93%，至今仍持有约9.86亿股（commit `d7dba0a`） |
+| ✅ P7-3 | Alphabet (GOOGL/GOOG) 深度研究 | 已完成 | alphabet-investment-deep.html，2020年Q2首建仓，护城河：搜索+YouTube+Cloud，13F最大持仓$15.65亿(43.86%)（commit `a632940`） |
+| ✅ P7-4 | Bank of America (BAC) 深度研究 | 已完成 | bac-investment-deep.html，8章结构，建仓$22-24(2020Q1)，持仓US$574M(16%，第三大持仓)（commit `0c3cfc9`） |
+| ✅ P7-5 | Berkshire Hathaway B (BRK.B) 深度研究 | 已完成 | 芒格与李录特殊关系；保险浮存金机制；制度化智慧；接班人风险（commit `12d0682`） |
+| ✅ P7-6 | East West Bancorp (EWBC) 深度研究 | 已完成 | 亚裔社区银行三重护城河；2023年区域银行危机韧性；美中关系与业务影响（commit `12d0682`） |
+| ✅ P7-7 | Occidental Petroleum (OXY) 深度研究 | 已完成 | 跟随巴菲特50亿建仓；页岩油EV/储量便宜；债务削减路径；碳捕获期权（commit `6e78d54`） |
+| ✅ P7-8 | Crocs (CROX) 深度研究 | 已完成 | 品牌重塑从"丑鞋"到潮流；Jibbitz生态高转换成本；后疫情反转验证（commit `6e78d54`） |
+| ✅ P7-9 | Apple (AAPL) 深度研究 | 已完成 | 生态系统用户锁定；iPhone心智锚点；库克资本配置（回购+分红）；订阅收入护城河（commit `b391312`） |
 
-| P6-C | 李录中国股票持仓研究（非13F渠道） | 待执行 | 核实HK股/A股持仓 |
-| P6-C-1 | 全球配置比例计算（非13F渠道） | 待执行 | 13F+非13F合并计算全球配置比例 |
-| P6-C-2 | 贵州茅台清仓分析（非13F渠道） | 待执行 | 创建 kweichow-moutai-investment-deep.html（9章，BYD框架） |
+| ✅ P6-C | 李录中国股票持仓研究（非13F渠道） | ✅ 已完成（2026-04-13）| 核实完成：邮储银行+比亚迪有HKEx实锤；中国移动/电信/中海油/保利物业无公开证据，建议移除；贵州茅台间接消息但无法确认当前持仓 |
+| ✅ P6-C-1 | 全球配置比例计算（非13F渠道） | ✅ 已完成（2026-04-13）| 13F美股~45%精确数据；非美股（港股+A股）~55%估算主体；邮储银行+比亚迪为最大非美股持仓 |
+| ✅ P6-C-2 | 贵州茅台清仓分析（非13F渠道） | ✅ 已完成（2026-04-12）| kweichow-moutai-investment-deep.html，commit `fb10101`，~287倍回报（持有近20年），2019年离场，BYD框架9章结构 |
 | ✅ P6-2 | SEO | 已完成 | meta / OG / twitter:card |
 | ✅ P6-3 | 设计调性 | 已完成 | 深色 + 金色强调 |
 
@@ -204,7 +288,7 @@
 | 5-C1 | **验证 EWBC/OXY 是否在 13F 中** — SEC EDGAR Q4 2025 确认：EWBC $312M (9%) + OXY $60M (2%) 均在持仓中，保留卡片及现有注释 | ✅ | P0 |
 | 5-C2 | **研究笔记板块填充** — CCBC视频笔记 + 四大价值投资理念 + 护城河/信任之网 + 投资方法论六核心 | ✅ | P1 |
 | 5-C3 | **文明3.0框架内容扩展** — 各阶段扩展为2-3句（含马尔萨斯陷阱/1776标志等深度描述）+ 中国转型含李录核心判断 + 两条李录原话引用（3.0铁律/西方误解）+ 四大核心观点列表 + 修复损坏的section标签 | ✅ | P1 |
-| 5-C4 | **活动时间线内容填充** — 10-item checklist 已存在，每项补充具体日期、背景、来源链接 | ☐ | P2 |
+| 5-C4 | **活动时间线内容填充** — 10-item checklist 已存在，每项补充具体日期、背景、来源链接 | ✅ | P2 |
 
 **执行顺序**：5-C1（验证）→ 5-C2/C3（内容填充）→ 5-C4（收尾）
 
@@ -215,7 +299,85 @@
 
 ---
 
+## Round 5 — 架构重构：首页→动态学习仪表板（2026-04-15）
+
+> **站长核心反馈**：站点信息架构搞反了——把静态参考信息（关于、FAQ、语录）放首屏，而把真正有价值的动态内容（研究笔记、视频洞见、持仓变化）藏在底部。
+> **重构方向**：首页 = 动态学习仪表板（Study Notes + 活动进度 + 持仓快照）；静态参考内容全部移至子页面。
+
+**Phase 0 · 准备工作（Phase 1-2 的基础）**
+
+| 任务 | 描述 | 状态 | 优先级 |
+|------|------|------|--------|
+| 5-R0-1 | **创建共享 CSS 文件** — 从 index.html 提取所有 CSS，建立 CSS 变量驱动主题系统（`--text`, `--bg`, `--muted` 等）；删除所有 `body.dark-mode .xxx { color }` 补丁规则；输出 `css/shared.css` | ✅ | P0 |
+| 5-R0-2 | **创建共享 JS 文件** — navbar 切换、drawer 开关、主题切换、back-to-top；输出 `js/main.js` | ✅ | P0 |
+| 5-R0-3 | **统一导航体系** — 删除旧 `.navbar` 系统，只保留 `#uni-navbar`；所有页面复用同一套 navbar HTML（或 JS 注入） | ✅ `b392711` | P0 |
+
+**Phase 1 · 首页重构 + 子页面创建**
+
+| 任务 | 描述 | 状态 | 优先级 |
+|------|------|------|--------|
+| 5-R1-1 | **重写 index.html 为学习仪表板** — 首屏 = 一行标题 + 研究笔记最新 3 条 + 公开活动 checklist 进度 + 13F 持仓快照表格；目标 < 300 行 | ✅ `e35b576` | P0 |
+| 5-R1-2 | **创建 about.html** — 人物传记 + 时间线 + 学习路径三阶段；从 index.html 迁移 | ✅ `e35b576` | P1 |
+| 5-R1-3 | **创建 principles.html** — 6 条原则 + 决策框架六步骤 + 护城河要素 + 文明 3.0 框架；从 index.html 迁移 | ✅ `e35b576` | P1 |
+| 5-R1-4 | **创建 holdings.html** — 完整 13F 持仓卡片 + 持仓特征分析 + 深度分析页面链接 + 历史投资案例（BYD/PDD 等）；从 index.html 迁移 | ✅ `e35b576` | P1 |
+| 5-R1-5 | **创建 faq.html** — FAQ section；从 index.html 迁移 | ✅ `e35b576` | P2 |
+
+**Phase 2 · 导航更新 + 验证收尾**
+
+| 任务 | 描述 | 状态 | 优先级 |
+|------|------|------|--------|
+| 5-R2-1 | **Navbar 精简** — 简化navbar为「笔记 · 进度 · 持仓 · 资料库▼」，资料库下拉含8项（关于/原则/视频/语录/书架/术语/FAQ/时间线）；dropdown CSS加入shared.css，JS加入main.js；全部28个页面统一navbar结构；video_study.html改用shared.css+新系统；移动端用hamburger drawer | ✅ `4ff31ba` | P0 |
+| 5-R2-2 | **全面验证** — 每次 push 后在 亮色+暗色、mobile (≤375px)+desktop (≥1024px) 四种组合下检查文字可见性和导航可用性 | ✅ `c5908b6` | P0 |
+| 5-R2-3 | **Hero tagline 事实错误** — "芝加哥大学" → "哥伦比亚大学"（在 about.html 中） | ✅ 已核实无需修复 | P1 |
+| 5-R2-4 | **清理 repo** — 删除 `cookies.txt`、`www.youtube.com_cookies.txt` 等不应在 public repo 中的文件；更新 README.md | ✅ `7c3dcec` | P2 |
+
+**Phase 3 · 内容层面（架构稳定后执行）**
+
+| 任务 | 描述 | 状态 | 优先级 |
+|------|------|------|--------|
+| 5-R3-1 | **删除研究笔记中的伪写作** — 删除 Agent 以站长视角撰写的"💡我的思考"段落；只保留事实和来源部分 | ✅ | P1 |
+| 5-R3-2 | **活动 checklist 加直接链接** — 每项活动加视频 URL 或文章 URL 外链 | ✅ `77f1b46` | P2 |
+| 5-R3-3 | **持仓历史演变概览** | ✅ 已完成（2026-04-19）| P3 |
+
+**重构后的站点结构**：
+```
+index.html   ← 学习仪表板（< 300行）
+about.html   ← 人物传记 + 时间线 + 学习路径
+principles.html ← 6条原则 + 决策框架 + 文明3.0
+holdings.html   ← 13F完整持仓 + 深度分析
+quotes.html     ← 语录（已存在）
+bookshelf.html  ← 书单（已存在）
+glossary.html   ← 术语表（已存在）
+timeline.html   ← 时间线（已存在）
+faq.html        ← FAQ（新创建）
+```
+
+**Guardrails**：
+- 不要替站长填写 Q3 投资框架或 Q4 持仓映射（占位符是正确的）
+- 不要编造没有公开来源的李录投资案例或语录
+- 不要把站长持仓混入李录持仓
+- 首页（index.html）不超过 300 行
+- CSS 用变量驱动主题，不用 `body.dark-mode` 打补丁
+- 每次 push 后在四种视口模式下验证
+
+---
+
 ## P6-C · 李录中国股票持仓研究（非13F渠道）
+
+**状态**：✅ 已完成（2026-04-13）
+
+**文件输出**：`china-hk-holdings-research.html`（已创建并推送）
+
+**内容摘要**：
+- 研究方法论：Tier 1（HKEx实锤）→ Tier 4（单一来源存疑）的置信度分级体系
+- 确认持仓：邮储银行（HKEx 2020-2025完整买卖路径）+ 比亚迪（HKEx 2021年7.03%确认 + 2026年4月对话确认仍持有）
+- 历史持仓：中国中车CRRC（2016年HKEx披露6.13%，已退出）
+- 排除持仓：中国移动/中国电信/中海油/保利物业 — 无HKEx公开披露，置信度0，建议从李录持仓列表移除
+- 茅台特殊案例：有间接消息（Granitefirm/Snowball）称李录在伯克希尔茅台谈判失败后自己买入茅台，2004-2019持有约287倍回报，但当前是否持有无法核实
+- 全球配置估算：13F美股~45%（精确）vs 非美股~55%（估算主体），比亚迪+邮储为核心非美股持仓
+- 关键洞察：13F仅揭示约45%仓位，港股持仓是李录持仓主体（与雪球分析一致）
+
+**Commit**：`40d736c`
 
 **背景**：13F只覆盖美股持仓。李录在A股（沪深）和H股（港交所）的投资不在13F披露范围内，但MEMORY.md中的Portfolio Structure记录了大量非US持仓数据（如邮储银行、中国电信、中海油等）。需要从网络公开资料核实这些持仓和买入记录。
 
@@ -252,103 +414,30 @@
 
 
 #### P6-C-1 · 全球配置比例计算
-**任务**：将非美股持仓与13F持仓合并，计算李录全球资产配置比例。
+**状态**：✅ 已完成（2026-04-13，纳入 china-hk-holdings-research.html 第6节）
 
-**已知数据**：
-- 13F美股组合：~US$35.7亿（2025Q4，含Alphabet/BAC/PDD/BRK.B/EWBC等9只）
-- 邮储银行(1658.HK)：当前持仓约9.86亿股，4.96%，当前价约HK$4.8，市值约HK$47亿(~US$6亿)
-- 比亚迪(1211.HK)：25年+连续持仓，持股量大（具体股数未披露），按当前价HK$300+估算市值很大
-- 喜马拉雅资本总管理规模：~US$50亿(2021) → ~US$80亿(2025)
-
-**输出**：一张配置表（美股/港股/其他，各标的名称+估算市值+估算比例），需标注置信度
+**输出内容**：
+- 13F美股组合：US$35.7亿，占比~45%（精确数据，SEC EDGAR 2025Q4）
+- 港股（比亚迪+邮储）：US$16-26亿，占比~20-30%（HKEx披露推算）
+- A股/其他/现金：US$18-28亿，占比~25-35%（无法精确估算）
+- 配置结论：非美股持仓是主体，13F仅揭示约45%仓位
 
 #### P6-C-2 · 贵州茅台清仓分析（BYD框架）
-**任务**：创建 kweichow-moutai-investment-deep.html，严格复用 byd-investment-deep.html 结构，新增第9章专门分析卖出逻辑。
-
-**背景**：
-- 李录在茅台上市初期（2001年前后）买入
-- 在塑化剂期间（2013-2014，茅台PE跌至4-5倍）重仓买入
-- 持有约20年后疑似清仓
-- 最终回报：约287倍
-
-**8+1章节结构**：
-1. 如何发现：2001年茅台IPO早期
-2. 关键特质：茅台的品牌护城河
-3. 买入逻辑：塑化剂期间4-5倍PE极端低估重仓买入
-4. 持有过程：20年+持有经历的重大考验
-5. 卖出时机：何时卖出？为什么卖？（如无公开记录，标注待核实）
-6. 正反方辩论：市场对茅台的分歧
-7. 方法论提炼：茅台 vs BYD/PDD的卖出逻辑对比
-8. 对普通投资者的启示
-9. 新增：卖出逻辑深度分析
-
-**输出**：li-lu-research/kweichow-moutai-investment-deep.html
-
-
-
-## P6-E · 视频页面可用性验证与失效处理
-
-**问题来源**：用户反馈（2026-04-12）
-
-**优先级**：P1
 
 **状态**：✅ 已完成（2026-04-12）
 
----
+**文件输出**：`kweichow-moutai-investment-deep.html`（已创建并推送）
 
-### 验证结果
+**内容摘要**：
+- 建仓时间线：2004年芒格投入8800万美元后开始系统建仓茅台
+- 护城河分析：地理不可复制性 + 时间壁垒（5年酿造周期）+ 品牌溢价 + 预收账款模式
+- 持有期间4次重大考验（2008金融危机/塑化剂+反腐/2018跌停）均未减持
+- 2019年卖出，PE超30倍，股价破千；卖出逻辑：估值极端化 + 销售问题困扰 + 机会成本
+- 最终回报：约287倍（持有近20年）
+- 正反方辩论完整记录（林园/段永平/但斌 vs 怀疑论者）
+- 方法论：买在极端悲观（PE 4-5倍）、卖在极端乐观（PE 30+倍）
 
-通过 web_search 逐个验证 9 个 YouTube embed 视频可用性：
-
-| 视频ID | 标题 | 状态 | 备注 |
-|--------|------|------|------|
-| b2yxBBMIEz0 | CCBC Fireside Chat | ✅ 可用 | |
-| KAoC8pErmb0 | The Chinese Warren Buffett | ✅ 可用 | |
-| LWikhUVneYI | Li Lu On 2021 Investing | ✅ 可用 | |
-| -gfRCGZ0zf4 | How I Got Started In Value Investing (CBS 2021) | ✅ 可用 | |
-| YaCRr0DIfuE | Investing in China: Unique Challenges | ✅ 可用 | |
-| 35RgNwcyjFk | Holy Grail of Investing (FAME 2012) | ✅ 可用 | |
-| IbrTswEKpLE | Why Only 5% Win in Stocks | ✅ 可用 | |
-| KmzOZLf8wcw | Li Lu's Secret to Investing Success (Short) | ❌ 已下架 | YouTube Short 被频道设为私有 |
-| _-M1HFuqus0 | Li Lu Explains Value Investing | ✅ 可用 | YouTube Short |
-
----
-
-### 修复内容
-
-**1. KmzOZLf8wcw.html - 不可用视频处理**
-- 问题：We Study Billionaires 频道将该 Short 设为私有/删除
-- 修复：移除失效 iframe，替换为「视频不可用」占位符
-- 占位符包含：警告图标 + 说明文字 + 跳转完整版访谈链接（KAoC8pErmb0）
-- Commit: `128023e`
-
-**2. 全部 9 个视频子页导航锚点修复**
-- 问题：导航链接指向 `#framework`（不存在），应为 `#my-framework`
-- 修复：批量替换所有 `index.html#framework` → `index.html#my-framework`（含 navbar 和 nav-drawer 两处）
-- 涉及页面：-gfRCGZ0zf4.html, 35RgNwcyjFk.html, b2yxBBMIEz0.html, IbrTswEKpLE.html, KAoC8pErmb0.html, LWikhUVneYI.html, YaCRr0DIfuE.html, _-M1HFuqus0.html, KmzOZLf8wcw.html
-- Commit: `128023e`
-
----
-
-### 验证方式
-
-- web_search 逐个确认 8/9 视频可找到公开引用（置信度 ✅）
-- KmzOZLf8wcw 搜索结果明确标注 "Video unavailable"（置信度 ✅ 确认不可用）
-- Nav 锚点修复通过 `Select-String` 全目录扫描确认 0 个残留 `#framework`
-
----
-
-### 注意事项
-
-- YouTube Shorts 视频保质期短，建议定期核查（建议加入定期健康检查）
-- `_-M1HFuqus0`（Li Lu Explains Value Investing）同为 Short，当前可用但需关注
-
-**附加发现（2026-04-12）：**
-- origin/master 的 9 个视频文件全部存在 UTF-8 编码腐败（U+FFFD 乱码），源于之前某次编辑时 PowerShell `>` 重定向以 UTF-16LE 写入导致
-- 修复：从 GitHub `df7aebc` commit 重新拉取干净版本，`origin/master` 的版本本身已被污染
-- Commit: `5252adf`
-
----
+**Commit**：`fb10101`
 
 ## P7 — 投资案例分析（BYD框架）
 
@@ -425,15 +514,63 @@
 
 ### P7-4 · Bank of America (BAC) 深度研究 — **P1**
 
-**状态**：待执行
+**状态**：✅ 已完成（2026-04-12，commit `0c3cfc9`）
 
-**文件输出**：`bac-investment-deep.html`（待创建）
+**文件输出**：`bac-investment-deep.html`
 
-**分析框架**：同BYD框架8章，持有5.8年，13F数据充足
+**内容摘要**：
+- 建仓时间线：2020年Q1 COVID恐慌期开始建仓（BAC $22-24），持续增持至2023年Q1
+- 护城河分析：规模效应+美林投行平台+财富管理+存款成本优势+G-SIB监管地位
+- 当前持仓约US$574M（2025 Q4），13F组合占比16.08%，第三大持仓
+- 持有期经历2020 COVID暴跌、2022加息周期、2023 SVB危机，BAC逆势韧性显著
+- 累计减持约765万股，反映估值阶段性判断
+- 正反方辩论：利率环境 vs 金融科技颠覆 vs 监管成本
+
+**Commit**：`0c3cfc9`
 
 ---
 
-### P6-G · Changelog 缺失修复
+#### P7-5 ⚖️ Berkshire Hathaway B (BRK.B) 深度研究 — **P1**
+
+**状态**: ✅ 已完成（2026-04-12，commit `12d0682`）
+
+**内容摘要**: 芒格与李录的特殊关系；保险浮存金机制；伯克希尔的制度化智慧；接班人风险与机会
+
+---
+
+### P7-6 ⚖️ East West Bancorp (EWBC) 深度研究 — **P1**
+
+**状态**: ✅ 已完成（2026-04-12，commit `12d0682`）
+
+**内容摘要**: 亚裔社区银行三重护城河；2023年区域银行危机中的韧性；美中关系与业务影响
+
+---
+
+### P7-7 ⚖️ Occidental Petroleum (OXY) 深度研究 — **P1**
+
+**状态**: ✅ 已完成（2026-04-12，commit `6e78d54`）
+
+**内容摘要**: 跟随巴菲特50亿建仓逻辑；页岩油EV/储量便宜；债务削减路径；碳捕获期权价值
+
+---
+
+### P7-8 ⚖️ Crocs (CROX) 深度研究 — **P2**
+
+**状态**: ✅ 已完成（2026-04-12，commit `6e78d54`）
+
+**内容摘要**: 品牌重塑从"丑鞋"到潮流符号；Jibbitz生态高转换成本；后疫情反转验证；轻仓（0.84%）→置信度有限
+
+---
+
+### P7-9 ⚖️ Apple (AAPL) 深度研究 — **P2**
+
+**状态**: ✅ 已完成（2026-04-12，commit `b391312`）
+
+**内容摘要**: 生态系统用户锁定；iPhone心智锚点；库克资本配置（回购+分红）；订阅收入护城河
+
+---
+
+## P6-G · Changelog 缺失修复
 
 **问题来源**：用户反馈（2026-04-12）
 
@@ -478,10 +615,71 @@
 
 ---
 
+## P5-J · 首页"~20% 年化收益"来源存疑 — ✅ 已完成（2026-04-17）
+
+**修复内容**：两处"~20% 年化收益"均添加 ⚠️ 标注和 `title` 属性，明确标注为"广泛引用，未经官方确认"：
+1. `index.html` Hero：`~20% 年化收益 ⚠️` + `<span title="广泛引用，未经官方确认">`
+2. `about.html` 人物简介数字卡片：`⚠️ 据公开报道估算（未经官方确认）`
+
+**Commit**：`132b986`
+
+---
+
+## P5-I · 官网内容补充：喜马拉雅资本官网资料采集 — ✅ 已完成（2026-04-18）
+
+**需求澄清**：从 Himcap.com 官网采集和李录投资理念相符的内容，补充到网站，提升权威性和完整性。
+
+**影响范围**：可能在 about.html / principles.html / 新增独立页面
+
+**优先级**：P5
+
+**实现难度**：Low（1-3h）
+
+**依赖项**：无外部依赖
+
+**摘录内容（来源：https://www.himcap.com & https://www.himcap.com/cn/publications）**：
+
+1. **Investment Philosophy — "Fat Pitch"（肥硕一击）**
+   > "In making investments, I have always believed that you must act with discipline whenever you see something you truly like. To explain this philosophy, Buffett/Munger likes to use a baseball analogy... Ted Williams divided the strike zone into seventy-seven cells... Once in a while, you will find a 'fat pitch' that is slow, straight, and right in the middle of your sweet spot. Then you swing hard."
+   > — Li Lu (Poor Charlie's Almanack, 3rd Edition 2009, Page 61)
+
+2. **What We Do（我们的投资方式）**
+   > "We embrace the value investment principles of Benjamin Graham, Warren Buffett, and Charles Munger, and today primarily focus on publicly traded companies in Asia and North America. We aim to achieve superior returns by being long-term owners of high quality companies with substantial 'economic moat', great growth potential, and run by trust-worthy people."
+
+3. **芒格语录（官网首页置顶）**
+   > "The highest form which civilization can reach is a seamless web of deserved trust. Not much procedure, just totally reliable people correctly trusting one another." – Charlie Munger
+
+4. **Publications 页三条新闻**：
+   - Li Lu 向洛杉矶 charitable foundation 捐赠 $1.5M (2020-04-09)
+   - Li Lu 向中国医院/机构捐赠抗疫 (2020-03-06)
+   - Li Lu 在美国国家历史博物馆展览中亮相 (2016-11)
+
+**建议执行方式**：
+- about.html 新增"官方理念"板块，仅引用：① Fat Pitch 原文（Poor Charlie's Almanack 出处）② 芒格语录
+- timeline.html 补充 3 条公开报道（捐赠、博物馆）
+- **删除** "What We Do" 自我定性描述（"achieve superior returns"、"substantial economic moat" 等）— 属于营销语言，非可证实事实，不适合放在研究站
+
+---
+
 ## Commit 历史
 
 | 日期 | Commit | 内容 |
 |------|--------|------|
+| 2026-04-20 | `cd4346d` | feat: add Whisper AI transcribed videos section to video_study.html — 5 video cards with SRT subtitle downloads (BYD2026/哥大2006/有请专访等); add transcripts/.gitignore to prevent large audio files; clean dev from wingtech-analysis content |
+| 2026-04-19 | `8bf48bc` | docs: REVIEW_NOTES add 25th fix record fb52811 |
+| 2026-04-19 | `fb52811` | feat: add English translations for 7 key documents + 2012 John Jay award CN version — completion of April 18 sync content |
+| 2026-04-18 | `95ebe3e` | feat: P5-I add Fat Pitch content + timeline publications — about.html: 肥硕一击(Fat Pitch) lesson-card from Poor Charlie's Almanack; timeline.html: 2016 museum, 2020 COVID donation, 2020 $1.5M LA foundation donation |
+| 2026-04-18 | `b392711` | feat: 5-R0-3 remove old .navbar system, unify to #uni-navbar — 11 files: alphabet/apple/bac/berkshire/bank-of-america-investment-deep, bookshelf, downloads, glossary, quotes, raw_github, timeline; remove <nav class='navbar'> HTML, inline .navbar/.page CSS, inline hamburger JS; replace <div class='page'> with <main class='main-content' style='padding-top:84px'> |
+| 2026-04-17 | `77f1b46` | feat: 5-R3-2 add direct links to all 5 checklist items — 2024 PKU talk→videos/8jJA4vHWvLc, 2021 CBS/Greenwald→videos/-gfRCGZ0zf4, 2020 book→bookshelf.html, 2019 PKU→videos/35RgNwcyjFk, 2015 PKU→Bilibili BV1Cm4y1r76v |
+| 2026-04-17 | `7c3dcec` | chore: remove cookies.txt and www.youtube.com_cookies.txt — should not be in public repo (5-R2-4 P2) |
+| 2026-04-17 | `a41e7e6` | feat: add light mode support for hero section (prefers-color-scheme) — shared.css light mode block + index.html hero adapts to light/dark system preference |
+| 2026-04-17 | `4ff31ba` | feat: 5-R2-1 navbar simplification — unify all 28 pages to simplified nav: 笔记 · 进度 · 持仓 · 资料库▼(dropdown); dropdown CSS in shared.css, JS (initDropdown) in main.js; active page highlight via JS; video_study.html migrated from old inline navbar to shared.css system; index.html inline navbar CSS removed |
+| 2026-04-16 | `510f941` | feat: add js/main.js shared JavaScript (5-R0-2 P0) — drawer toggle, theme toggle, back-to-top, search, auto dark mode; move script to end of body; add id=backToTop to fixed button |
+| 2026-04-14 | `11b72f8` | fix: mobile hamburger toggleMenu() JS function missing + dark mode contrast improvements (#c8d6e8→#dde6f0, #e2e8f0→#f0f4f8, #c9a227→#f0c040, uni-drawer/mobile-drawer dark mode) |
+| 2026-04-14 | `c9b6eaf` | docs: REVIEW_NOTES — task table complete: P7-3/5/6/7/8/9 + SHA fixes for P7-1/2 |
+| 2026-04-13 | `70f05b9` | fix: P0 dead link — create video_study.html hub + link Master Class card |
+| 2026-04-13 | `40d736c` | feat: add china-hk-holdings-research.html (P6-C, non-13F holdings verification, HKEx confirmed PSBC+BYD, excluded China Mobile/Telecom/CNOOC/PolyProp, global allocation ~55% non-US) |
+| 2026-04-12 | `0c3cfc9` | feat: add bac-investment-deep.html (P7-4, BYD framework applied to Bank of America investment, ~US$574M, 16%, 6yr hold) |
 | 2026-04-12 | `39c1c7a` | fix: P6-H footer nav + view-all links (quotes/books/timeline) |
 | 2026-04-12 | `0fef818` | docs: REVIEW_NOTES — P6-G completed (changelog section added) |
 | 2026-04-12 | `c966090` | feat: add changelog section to index.html + CLAUDE.md rule 7 |
@@ -500,3 +698,92 @@
 | 2026-04-09 | `3cdf487` | fix: raw_github.html encoding |
 | 2026-04-08 | `96cdd338` | fix: CSS dark-mode + meta dedup |
 | 2026-04-08 | `3a77a6d` | fix: encoding corruption restore |
+
+---
+## 每日 UX 审查 — 2026-04-14
+
+### 综合评分
+| Heuristic | 评分/3 | 问题 |
+|-----------|--------|------|
+| 1. 系统状态可见性 | 2 | ✅ 静态HTML无需加载指示器；⚠️ 页面无最后更新时间标注 |
+| 2. 系统与真实世界匹配 | 3 | ✅ 投资术语准确；学习路径设计符合投资教育逻辑；置信度标注清晰 |
+| 3. 用户控制与自由 | 2 | ✅ hamburger菜单正常；back-to-top按钮存在；⚠️ 无面包屑导航 |
+| 4. 一致性与标准 | 3 | ✅ Dark + gold主题全站一致；移动端/桌面端风格统一 |
+| 5. 错误预防 | 2 | ✅ 置信度标签（🟢/⚠️）帮助用户判断信息可靠性；⚠️ 视频播放失败无降级处理 |
+| 6. 识别优于记忆 | 3 | ✅ 视频时间戳导航；学习阶段结构清晰；案例研究框架一致 |
+| 7. 灵活性与效率 | 2 | ✅ 视频嵌入播放；外链到YouTube/Bilibili；⚠️ 无键盘快捷键 |
+| 8. 审美与极简设计 | 3 | ✅ 专业深色主题+金色强调；信息密度适当；排版清晰 |
+| 9. 帮助用户从错误恢复 | 2 | ✅ FAQ页面存在；⚠️ 失效视频链接无降级内容 |
+| 10. 帮助与文档 | 2 | ✅ 学习路径引导完整；FAQ区块存在；⚠️ 无站内搜索 |
+| **总分** | **24/30** | |
+
+### P0 问题（致命）
+- 无。所有历史P0问题已于2026-04-12前全部完成修复。
+
+### P1 问题（严重）
+- 无。所有历史P1问题已修复。
+
+### P2 问题（一般）
+- **视频页缺少降级处理**：当YouTube视频不可用，应显示视频描述+外链，而非404或空白。
+- **Footer链接无visited状态**：用户无法区分已访问/未访问的页面链接。
+
+### P3 改进建议
+- **面包屑导航**：深层页面缺少面包屑。
+- **站内搜索**：站点无全局搜索功能。
+- **键盘快捷键**：高频操作无键盘支持。
+- **404页面**：访问不存在页面时显示友好提示。
+
+### 移动端检查
+- ✅ hamburger菜单滑出式drawer正常（≤1024px激活）。
+- ✅ back-to-top按钮存在（右下角固定）。
+- ✅ 暗模式移动端全面修复（--text-muted覆盖正常）。
+
+### 对比度检查
+- ✅ 正文文字对比度约10:1，远超4.5:1标准。
+- ✅ 金色强调（#c9a227 on #1a365d）对比度约5.2:1，满足AA标准。
+- ✅ 主要链接（#64b5f6 on #0a1628）对比度约6.5:1，满足AA标准。
+
+---
+## 每日 UX 审查 — 2026-04-15
+
+### 综合评分
+| Heuristic | 评分/3 | 问题 |
+|-----------|--------|------|
+| 1. 系统状态可见性 | 2 | ✅ 静态HTML无需加载指示器；⚠️ 页面无最后更新时间标注（index.html底部有数据截止日期，但视频学习中心等子页无） |
+| 2. 系统与真实世界匹配 | 3 | ✅ 投资术语准确；学习路径设计符合投资教育逻辑；置信度标注清晰 |
+| 3. 用户控制与自由 | 2 | ✅ hamburger菜单正常；back-to-top按钮存在；⚠️ 无面包屑导航 |
+| 4. 一致性与标准 | 3 | ✅ Dark + gold主题全站一致；移动端/桌面端风格统一 |
+| 5. 错误预防 | 2 | ✅ 置信度标签（🟢/⚠️）帮助用户判断信息可靠性；⚠️ 视频播放失败无降级处理 |
+| 6. 识别优于记忆 | 3 | ✅ 视频时间戳导航；学习阶段结构清晰；案例研究框架一致 |
+| 7. 灵活性与效率 | 2 | ✅ 视频嵌入播放；外链到YouTube/Bilibili；⚠️ 无键盘快捷键 |
+| 8. 审美与极简设计 | 3 | ✅ 专业深色主题+金色强调；信息密度适当；排版清晰 |
+| 9. 帮助用户从错误恢复 | 2 | ✅ FAQ页面存在；⚠️ 失效视频链接无降级内容（与2026-04-14审查P2问题重复，持续监控） |
+| 10. 帮助与文档 | 2 | ✅ 学习路径引导完整；FAQ区块存在；⚠️ 无站内搜索 |
+| **总分** | **24/30** | |
+
+### P0 问题（致命）
+- 无。所有历史P0问题已于2026-04-12前全部完成修复。
+
+### P1 问题（严重）
+- 无。所有历史P1问题已修复。
+
+### P2 问题（一般）
+- **视频页缺少降级处理**：✅ 已完成（2026-04-15）— 全部10个视频页添加onerror fallback机制，YouTube不可用时显示标题+描述+外链按钮
+- **Footer链接无visited状态**：用户无法区分已访问/未访问的页面链接。与历史审查重复。
+
+### P3 改进建议
+- **面包屑导航**：深层页面缺少面包屑。与历史审查重复。
+- **站内搜索**：站点无全局搜索功能。与历史审查重复。
+- **键盘快捷键**：高频操作无键盘支持。与历史审查重复。
+- **404页面**：访问不存在页面时显示友好提示。与历史审查重复。
+
+### 移动端检查
+- ✅ hamburger菜单滑出式drawer正常（≤1024px激活）。
+- ✅ back-to-top按钮存在（右下角固定）。
+- ✅ 暗模式移动端全面修复（--text-muted覆盖正常）。
+- ⚠️ 移动端视频学习中心（video_study.html）内嵌YouTube iframe在部分设备上可能加载缓慢，建议添加"在YouTube观看"外链备选。
+
+### 对比度检查
+- ✅ 正文文字对比度约10:1，远超4.5:1标准。
+- ✅ 金色强调（#c9a227 on #1a365d）对比度约5.2:1，满足AA标准。
+- ✅ 主要链接（#64b5f6 on #0a1628）对比度约6.5:1，满足AA标准。

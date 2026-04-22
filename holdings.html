@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>持仓 — 李录价值投资研究</title>
+<meta name="description" content="李录喜马拉雅资本13F持仓实盘 (2025 Q4)：Alphabet、BAC、PDD、BRK等持仓明细与权重。">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:var(--gold)}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-body{padding-top:64px}
+.main-content{max-width:900px;margin:0 auto;padding:0 16px 48px;background:var(--surface);min-height:calc(100vh - 64px)}
+.back-bar{padding:12px 16px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;background:#f7fafc}
+.back-bar a{color:var(--gold);font-size:.85rem;font-weight:500}
+.page-title{font-size:1.8rem;font-weight:800;color:var(--navy);padding:32px 16px 4px}
+.page-subtitle{color:var(--text-muted);font-size:.95rem;padding:0 16px 24px}
+.section{padding:8px 0 32px}
+h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.stat-row{display:flex;flex-wrap:wrap;gap:14px;margin:16px 0}
+.stat-card{flex:1;min-width:130px;background:#f7fafc;border-radius:12px;padding:18px 14px;text-align:center;border:1px solid #e2e8f0}
+.stat-card .num{font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1}
+.stat-card .label{font-size:.75rem;color:var(--text-light);margin-top:6px}
+.bar-chart{margin:20px 0}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.bar-label{min-width:80px;font-size:.82rem;color:var(--text-muted);text-align:right}
+.bar-track{flex:1;height:24px;background:#f0f0f0;border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;transition:width .5s}
+.bar-pct{min-width:45px;font-size:.82rem;font-weight:600;color:var(--text)}
+.top-holdings{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0}
+.top-card{
+  background:var(--surface);
+  border-radius:14px;
+  padding:20px;
+  border:1px solid #e2e8f0;
+  transition:transform .2s,box-shadow .2s;
+}
+.top-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.top-card .rank{font-size:.7rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.top-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.top-card .ticker{font-size:.8rem;color:var(--text-light);margin-bottom:10px}
+.top-card .weight{font-size:1.4rem;font-weight:800;color:var(--gold)}
+.top-card .weight span{font-size:.8rem;font-weight:500;color:var(--text-muted)}
+.top-card .desc{font-size:.78rem;color:var(--text-muted);margin-top:6px;line-height:1.5}
+.top-card a{color:var(--gold);font-size:.8rem}
+.top-card a:hover{text-decoration:underline}
+.table-wrap{overflow-x:auto;margin:16px 0;border-radius:12px;border:1px solid #e2e8f0}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+thead{background:var(--navy);color:#fff}
+thead th{padding:12px 14px;text-align:left;font-weight:600;font-size:.8rem;white-space:nowrap}
+thead th:first-child{border-radius:11px 0 0 0}
+thead th:last-child{border-radius:0 11px 0 0}
+tbody tr{background:var(--surface);border-bottom:1px solid #f0f0f0;transition:background .15s}
+tbody tr:hover{background:#fafbfc}
+tbody tr:last-child{border-bottom:none}
+tbody tr:last-child td:first-child{border-radius:0 0 0 11px}
+tbody tr:last-child td:last-child{border-radius:0 0 11px 0}
+td{padding:12px 14px;color:var(--text)}
+td .ticker-tag{display:inline-block;padding:2px 8px;background:#f0f0f0;border-radius:4px;font-size:.78rem;font-weight:600;color:var(--navy)}
+td .wt{font-weight:700;color:var(--gold)}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600}
+.tag-tech{background:#dbeafe;color:#1e40af}
+.tag-fin{background:#dcfce7;color:#166534}
+.tag-cons{background:#ffedd5;color:#9a3411}
+.tag-energy{background:#f3e8ff;color:#6b21a8}
+.tag-avi{background:#fce7f3;color:#9d174d}
+.disclaimer{background:linear-gradient(135deg,var(--gold-light),#fffdf5);border-left:4px solid var(--gold);padding:14px 18px;border-radius:0 10px 10px 0;margin-top:20px}
+.history-timeline{margin:12px 0}
+.hist-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.hist-period{min-width:70px;font-size:.78rem;font-weight:700;color:var(--navy);text-align:right}
+.hist-bar{flex:1;height:20px;background:#f0f0f0;border-radius:4px;overflow:hidden;min-width:60px}
+.hist-fill{height:100%;border-radius:4px;transition:width .5s}
+.hist-val{min-width:65px;font-size:.82rem;font-weight:700;color:var(--gold);text-align:right}
+.hist-note{flex-basis:100%;font-size:.75rem;color:var(--text-muted);padding-left:82px;line-height:1.4}
+.milestone-legend{margin-top:6px;display:flex;gap:8px;flex-wrap:wrap}
+.milestone-tag{display:inline-block;padding:2px 8px;background:#fff8e1;border:1px solid var(--gold);border-radius:4px;font-size:.72rem;color:var(--text-muted)}
+.disclaimer p{font-size:.82rem;color:var(--text-muted);line-height:1.6;margin:0}
+.disclaimer strong{color:var(--navy)}
+footer{padding:24px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;text-align:center;font-size:.78rem;color:var(--text-light)}
+@media(max-width:600px){.page-title{font-size:1.5rem}.top-holdings{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><span class="uni-brand"><span style="color:var(--gold)">&#10070;</span> 李录研究</span></div>
+<div class="uni-links">
+<a href="index.html" class="uni-link">首页</a>
+<a href="holdings.html" class="uni-link" style="color:var(--gold)">持仓</a>
+<a href="principles.html" class="uni-link">原则</a>
+<a href="video_study.html" class="uni-link">视频</a>
+</div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span style="color:var(--gold)">&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="index.html" class="uni-link">首页</a>
+<a href="holdings.html" class="uni-link" style="color:var(--gold)">持仓</a>
+<a href="principles.html" class="uni-link">投资原则</a>
+<a href="video_study.html" class="uni-link">视频学习</a>
+</div>
+
+<div id="uni-body">
+<div class="main-content">
+<div class="back-bar">
+<a href="index.html">← 返回首页</a>
+</div>
+
+<h1 class="page-title">持仓</h1>
+<p class="page-subtitle">李录喜马拉雅资本 · 13F 真实持仓 (2025 Q4) · 数据来源：SEC EDGAR</p>
+
+<div class="stat-row">
+<div class="stat-card"><div class="num">~$1.7B</div><div class="label">管理规模</div></div>
+<div class="stat-card"><div class="num">13</div><div class="label">持仓数量</div></div>
+<div class="stat-card"><div class="num">2026-02</div><div class="label">最新披露</div></div>
+<div class="stat-card"><div class="num">Q4 2025</div><div class="label">报告期</div></div>
+</div>
+
+<div class="section">
+<h2>&#128081; 前五大仓位</h2>
+<div class="top-holdings">
+<div class="top-card" style="border-top:4px solid var(--blue)">
+<div class="rank">#1</div>
+<h3>Alphabet Inc</h3>
+<div class="ticker">NASDAQ: GOOGL</div>
+<div class="weight">43.86<span>%</span></div>
+<div class="desc">搜索/云/AI巨头，港美双重上市</div>
+<a href="alphabet-investment-deep.html">→ 深度分析</a>
+</div>
+<div class="top-card" style="border-top:4px solid var(--green)">
+<div class="rank">#2</div>
+<h3>Bank of America</h3>
+<div class="ticker">NYSE: BAC</div>
+<div class="weight">16.08<span>%</span></div>
+<div class="desc">美国四大银行之一，巴菲特关联持仓</div>
+<a href="bac-investment-deep.html">→ 深度分析</a>
+</div>
+<div class="top-card" style="border-top:4px solid var(--orange)">
+<div class="rank">#3</div>
+<h3>Berkshire Hathaway B</h3>
+<div class="ticker">NYSE: BRK.B</div>
+<div class="weight">12.64<span>%</span></div>
+<div class="desc">巴菲特旗舰，价值投资标杆</div>
+</div>
+<div class="top-card" style="border-top:4px solid var(--purple)">
+<div class="rank">#4</div>
+<h3>PDD Holdings</h3>
+<div class="ticker">NASDAQ: PDD</div>
+<div class="weight">8.69<span>%</span></div>
+<div class="desc">拼多多，中美双线布局</div>
+</div>
+<div class="top-card" style="border-top:4px solid var(--teal)">
+<div class="rank">#5</div>
+<h3>Charles Schwab</h3>
+<div class="ticker">NYSE: COFS</div>
+<div class="weight">2.27<span>%</span></div>
+<div class="desc">美国最大折扣券商之一</div>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>&#128202; 仓位分布图</h2>
+<div class="bar-chart">
+<div class="bar-row">
+<span class="bar-label">Alphabet</span>
+<div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--blue)"></div></div>
+<span class="bar-pct" style="color:var(--blue)">43.86%</span>
+</div>
+<div class="bar-row">
+<span class="bar-label">BAC</span>
+<div class="bar-track"><div class="bar-fill" style="width:36.7%;background:var(--green)"></div></div>
+<span class="bar-pct" style="color:var(--green)">16.08%</span>
+</div>
+<div class="bar-row">
+<span class="bar-label">BRK.B</span>
+<div class="bar-track"><div class="bar-fill" style="width:28.8%;background:var(--orange)"></div></div>
+<span class="bar-pct" style="color:var(--orange)">12.64%</span>
+</div>
+<div class="bar-row">
+<span class="bar-label">PDD</span>
+<div class="bar-track"><div class="bar-fill" style="width:19.8%;background:var(--purple)"></div></div>
+<span class="bar-pct" style="color:var(--purple)">8.69%</span>
+</div>
+<div class="bar-row">
+<span class="bar-label">COFS</span>
+<div class="bar-track"><div class="bar-fill" style="width:5.2%;background:var(--teal)"></div></div>
+<span class="bar-pct" style="color:var(--teal)">2.27%</span>
+</div>
+<div class="bar-row">
+<span class="bar-label">其他</span>
+<div class="bar-track"><div class="bar-fill" style="width:6.7%;background:#cbd5e0"></div></div>
+<span class="bar-pct">14.46%</span>
+</div>
+</div>
+</div>
+
+<div class="section">
+<h2>&#128188; 完整持仓明细</h2>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>公司名称</th>
+<th>权重</th>
+<th>市场</th>
+<th>行业</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="ticker-tag">GOOGL</span></td>
+<td>Alphabet Inc</td>
+<td class="wt">43.86%</td>
+<td>NASDAQ</td>
+<td><span class="tag tag-tech">科技</span></td>
+<td>第一大仓，搜索/云/AI</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">BAC</span></td>
+<td>Bank of America</td>
+<td class="wt">16.08%</td>
+<td>NYSE</td>
+<td><span class="tag tag-fin">金融</span></td>
+<td>巴菲特关联持仓</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">BRK.B</span></td>
+<td>Berkshire Hathaway B</td>
+<td class="wt">12.64%</td>
+<td>NYSE</td>
+<td><span class="tag tag-fin">金融</span></td>
+<td>巴菲特旗舰</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">PDD</span></td>
+<td>PDD Holdings</td>
+<td class="wt">8.69%</td>
+<td>NASDAQ</td>
+<td><span class="tag tag-tech">电商</span></td>
+<td>中美双线持仓</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">COFS</span></td>
+<td>Charles Schwab</td>
+<td class="wt">2.27%</td>
+<td>NYSE</td>
+<td><span class="tag tag-fin">金融</span></td>
+<td>金融服务</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">META</span></td>
+<td>Meta Platforms</td>
+<td class="wt">1.67%</td>
+<td>NASDAQ</td>
+<td><span class="tag tag-tech">科技</span></td>
+<td>社交/广告</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">AXON</span></td>
+<td>Axon Enterprise</td>
+<td class="wt">1.59%</td>
+<td>NASDAQ</td>
+<td><span class="tag tag-cons">设备</span></td>
+<td>公共安全设备</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">DAL</span></td>
+<td>Delta Air Lines</td>
+<td class="wt">0.80%</td>
+<td>NYSE</td>
+<td><span class="tag tag-avi">航空</span></td>
+<td>交通运输</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">CELH</span></td>
+<td>Celsius Holdings</td>
+<td class="wt">0.71%</td>
+<td>NASDAQ</td>
+<td><span class="tag tag-cons">消费</span></td>
+<td>功能性饮料</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">CHRD</span></td>
+<td>Chord Energy</td>
+<td class="wt">0.53%</td>
+<td>NASDAQ</td>
+<td><span class="tag tag-cons">能源</span></td>
+<td>能源</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">AMZN</span></td>
+<td>Amazon.com</td>
+<td class="wt">0.42%</td>
+<td>NASDAQ</td>
+<td><span class="tag tag-tech">电商/云</span></td>
+<td>科技</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">CROX</span></td>
+<td>Crocs Inc</td>
+<td class="wt">0.33%</td>
+<td>NASDAQ</td>
+<td><span class="tag tag-cons">消费</span></td>
+<td>逆向投资案例</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">0386.HK</span></td>
+<td>中国石油化工</td>
+<td class="wt">0.36%</td>
+<td>港交所</td>
+<td><span class="tag tag-cons">能源</span></td>
+<td>港股</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">1658.HK</span></td>
+<td>邮储银行</td>
+<td class="wt">0.65%</td>
+<td>港交所</td>
+<td><span class="tag tag-fin">金融</span></td>
+<td>港股持仓</td>
+</tr>
+<tr>
+<td><span class="ticker-tag">002594.SZ</span></td>
+<td>比亚迪</td>
+<td class="wt">0.44%</td>
+<td>深交所</td>
+<td><span class="tag tag-cons">新能源</span></td>
+<td>经典投资案例</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="section">
+<h2>&#128293; 持仓历史演变</h2>
+<p style="color:var(--text-muted);font-size:.82rem;margin:4px 0 14px">数据来源：SEC EDGAR 13F 公开披露（Q1 2017—Q4 2025）。13F 仅覆盖美股持仓，非美股（港股/A股）不在此列。</p>
+<div class="history-timeline">
+<div class="hist-row">
+<span class="hist-period">Q4 2025</span>
+<div class="hist-bar"><div class="hist-fill" style="width:100%;background:var(--blue)"></div></div>
+<span class="hist-val">$3.57B</span>
+<span class="hist-note">&#9733; Alphabet合计~44%成最大仓；OXY/EWBC加入</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q3 2025</span>
+<div class="hist-bar"><div class="hist-fill" style="width:90%;background:var(--blue)"></div></div>
+<span class="hist-val">$3.23B</span>
+<span class="hist-note">OXY首次出现在13F</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q2 2025</span>
+<div class="hist-bar"><div class="hist-fill" style="width:75%;background:var(--blue)"></div></div>
+<span class="hist-val">$2.69B</span>
+<span class="hist-note">持仓数增至9个</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q1 2025</span>
+<div class="hist-bar"><div class="hist-fill" style="width:62%;background:var(--blue)"></div></div>
+<span class="hist-val">$2.21B</span>
+<span class="hist-note">PDD退出前五</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2024</span>
+<div class="hist-bar"><div class="hist-fill" style="width:76%;background:var(--blue)"></div></div>
+<span class="hist-val">$2.71B</span>
+<span class="hist-note">Alphabet双股权结构稳定</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2023</span>
+<div class="hist-bar"><div class="hist-fill" style="width:58%;background:var(--blue)"></div></div>
+<span class="hist-val">$2.06B</span>
+<span class="hist-note">&#9733; Alphabet首次超越BAC成最大仓</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2022</span>
+<div class="hist-bar"><div class="hist-fill" style="width:54%;background:var(--green)"></div></div>
+<span class="hist-val">$1.93B</span>
+<span class="hist-note">MU为最大仓，科技股暴跌中坚守</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2021</span>
+<div class="hist-bar"><div class="hist-fill" style="width:75%;background:var(--green)"></div></div>
+<span class="hist-val">$2.66B</span>
+<span class="hist-note">META进入持仓；PDD已清仓</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q2 2020</span>
+<div class="hist-bar"><div class="hist-fill" style="width:30%;background:var(--green)"></div></div>
+<span class="hist-val">$1.06B</span>
+<span class="hist-note">&#9733; GOOG首次建仓（COVID恐慌期）</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q1 2020</span>
+<div class="hist-bar"><div class="hist-fill" style="width:20%;background:var(--orange)"></div></div>
+<span class="hist-val">$713M</span>
+<span class="hist-note">&#9733; BAC首次建仓（COVID恐慌期~$22-24）</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q4 2019</span>
+<div class="hist-bar"><div class="hist-fill" style="width:12%;background:var(--orange)"></div></div>
+<span class="hist-val">$420M</span>
+<span class="hist-note">MU唯一持仓；PDD清仓完毕</span>
+</div>
+<div class="hist-row">
+<span class="hist-period">Q1 2017</span>
+<div class="hist-bar"><div class="hist-fill" style="width:3.3%;background:var(--orange)"></div></div>
+<span class="hist-val">$118M</span>
+<span class="hist-note">&#9733; 最早13F披露：百度+新浪</span>
+</div>
+</div>
+<div class="milestone-legend">
+<span class="milestone-tag">&#9733; 关键建仓/清仓节点</span>
+</div>
+<p style="font-size:.78rem;color:var(--text-muted);margin-top:10px">完整历史数据（Q1 2017—Q4 2025 共30个季度）可下载 JSON 文件查阅。</p>
+<a href="data/holdings-history.json" download style="display:inline-flex;padding:8px 14px;background:var(--gold);color:#fff;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin-top:8px">
+  &#8681; 下载完整历史数据（JSON）
+</a>
+</div>
+
+<div class="disclaimer">
+<strong>&#9888; 免责声明</strong>
+<p>持仓数据来源于SEC EDGAR 13F公开披露（2025 Q4），仅供参考学习，不构成任何投资建议。李录的非13F持仓（港股/A股）约占总规模约55%，为研究估算值，非精确数据。投资有风险，决策需谨慎。</p>
+</div>
+
+<div class="section" style="margin-top:24px">
+<h2>&#128190; 下载持仓数据</h2>
+<p style="color:var(--text-muted);font-size:.88rem;margin:10px 0 16px">CSV格式，包含完整持仓代码、公司、权重、目标权重，可直接导入Excel。</p>
+<a href="downloads/li-lu-holdings-q4-2025.csv" class="dl-btn" download style="display:inline-flex;padding:10px 18px;background:var(--gold);color:#fff;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none">
+  ⬇ 下载 CSV（13F持仓）
+</a>
+</div>
+
+</div>
+</div>
+
+<footer>
+<span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
+</footer>
+</div>
+
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
+</body>
+</html>

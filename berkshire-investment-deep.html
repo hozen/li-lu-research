@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投资 Berkshire Hathaway B：李录的"老师"级投资 — 李录研究</title>
+<meta name="description" content="深度拆解李录持有 BRK.B 的投资逻辑：为何持有巴菲特/芒格的旗舰是最纯粹的价值投资实践，保险浮存金与复利机器的奥秘，以及这12.6%仓位的深层含义。">
+<style>
+.page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:#c9a227;text-decoration:none;font-size:.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,.1);transition:all .2s}
+.back-link:hover{background:rgba(201,162,39,.2)}
+h1{font-size:1.8rem;color:#1a365d;margin-bottom:12px;line-height:1.3}
+.subtitle{color:#4a5568;font-size:1rem;margin-bottom:30px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:.82rem;color:#4a5568}
+.lead{background:linear-gradient(135deg,#f8f9fa,#e2e8f0);color:#1a202c;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
+.lead h2{color:#c9a227;margin-bottom:15px;font-size:1.3rem}
+.lead p{margin-bottom:12px;color:#2d3748}
+.toc{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:12px;padding:25px 30px;margin-bottom:40px}
+.toc h3{color:#1a365d;margin-bottom:12px;font-size:1rem}
+.toc ol{margin-left:20px;color:#555}
+.toc li{margin-bottom:6px;font-size:.9rem}
+.section{margin-bottom:55px}
+h2{font-size:1.35rem;color:#1a365d;margin-bottom:18px;padding-bottom:10px;border-bottom:3px solid #c9a227;display:inline-block}
+h3{font-size:1.1rem;color:#1a365d;margin:30px 0 12px}
+p{color:#333;margin-bottom:14px;line-height:1.8}
+.quote-box{background:#faf8f0;border-left:5px solid #c9a227;padding:22px 28px;margin:25px 0;border-radius:0 10px 10px 0;font-style:italic;color:#444}
+.quote-box cite{display:block;margin-top:10px;font-size:.85rem;color:#888;font-style:normal}
+.insight-card{background:#fff;border:2px solid #c9a227;border-radius:14px;padding:28px;margin:30px 0}
+.insight-card h4{color:#c9a227;margin-bottom:14px;font-size:1rem}
+.lesson-card{background:#f8f9fa;border-radius:12px;padding:25px;margin-bottom:18px;border-left:4px solid #c9a227}
+.lesson-card h4{color:#1a365d;margin-bottom:10px;font-size:1rem}
+.lesson-card p{color:#444;font-size:.9rem;margin-bottom:8px;line-height:1.7}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:25px 0;text-align:center}
+.num-box{background:#f8f9fa;border-radius:10px;padding:20px 10px}
+.num-box .big{font-size:1.8rem;font-weight:700;color:#c9a227}
+.num-box .label{font-size:.8rem;color:#888;margin-top:5px}
+.highlight{background:linear-gradient(135deg,#fff8e1,#fff);border:1px solid #ffe082;border-radius:10px;padding:20px 25px;margin:20px 0}
+.highlight h4{color:#b8860b;margin-bottom:10px}
+.highlight ul{margin:8px 0 0 18px}
+.highlight li{color:#444;font-size:.9rem;margin-bottom:6px}
+.timeline{position:relative;padding-left:30px;margin:25px 0}
+.timeline::before{content:'';position:absolute;left:0;top:5px;bottom:5px;width:3px;background:linear-gradient(to bottom,#c9a227,#e8d5a3)}
+.tl-item{position:relative;margin-bottom:28px;padding-left:20px}
+.tl-item::before{content:'';position:absolute;left:-34px;top:7px;width:12px;height:12px;background:#c9a227;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c9a227}
+.tl-date{font-weight:700;color:#c9a227;font-size:.85rem;margin-bottom:4px}
+.tl-title{font-weight:600;color:#1a365d;margin-bottom:4px}
+.tl-content{color:#555;font-size:.9rem;line-height:1.7}
+.dual-panel{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:25px 0}
+.panel{padding:22px;border-radius:12px}
+.panel-bull{background:#f0f9f4;border:1px solid #38a169}
+.panel-bull h4{color:#276749;margin-bottom:10px}
+.panel-bear{background:#fff5f5;border:1px solid #c53030}
+.panel-bear h4{color:#c53030;margin-bottom:10px}
+.panel li{color:#444;font-size:.9rem;margin-bottom:6px}
+.panel ul{margin:8px 0 0 18px}
+.source-note{font-size:.78rem;color:#999;border-top:1px solid #eee;padding-top:15px;margin-top:30px}
+.footer{background:#f8f9fa;color:#888;text-align:center;padding:30px;margin-top:60px;font-size:.85rem}
+@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}}
+</style>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
+<div class="uni-links">
+<a href="index.html" class="uni-link">笔记</a>
+<a href="timeline.html" class="uni-link">进度</a>
+<a href="holdings.html" class="uni-link">持仓</a>
+<div class="uni-dropdown">
+<a class="uni-link">资料库</a>
+<div class="uni-dropdown-menu">
+<a href="about.html">关于李录</a>
+<a href="principles.html">投资原则</a>
+<a href="video_study.html">视频</a>
+<a href="quotes.html">语录</a>
+<a href="bookshelf.html">书架</a>
+<a href="glossary.html">术语</a>
+<a href="faq.html">FAQ</a>
+<a href="timeline.html">时间线</a>
+</div>
+</div>
+</div>
+<button id="uniThemeBtn" style="background:none;border:none;cursor:pointer;font-size:.82rem;color:#a8a29e;padding:4px 8px;margin-left:4px;border-radius:6px;">暗色</button>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+<div style="display:flex;align-items:center;gap:8px">
+<button id="uniDrawerThemeBtn" style="background:none;border:1px solid #d1d5db;border-radius:6px;cursor:pointer;font-size:.78rem;color:#4a5568;padding:4px 10px;">暗色</button>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+</div>
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
+<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
+<a href="/li-lu-research/video_study.html" class="uni-link">学习中心</a>
+<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
+<div class="uni-drawer-theme">
+</div>
+</div>
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniThemeBtn").onclick=function(){document.body.classList.toggle("dark-mode");this.textContent=document.body.classList.contains("dark-mode")?"☀ 亮色":"暗色"};
+document.getElementById("uniDrawerThemeBtn").onclick=function(){document.body.classList.toggle("dark-mode")};
+</script>
+
+<div class="page">
+<a href="/li-lu-research/index.html" class="back-link">← 返回首页</a>
+
+<h1>投资 Berkshire Hathaway B：李录的"老师"级投资</h1>
+<p class="subtitle">持有巴菲特/芒格的旗舰，既是一笔投资，也是一场终身的案例研究——BRK.B 是李录13F组合中唯一一个"学习方法论"与"资本增值"双重属性兼具的标的。</p>
+
+<div class="meta">
+<span class="meta-item">📅 首次发布：2026-04-18</span>
+<span class="meta-item">📊 投资案例分析</span>
+<span class="meta-item">🏛 Berkshire Hathaway B / BRK.B</span>
+<span class="meta-item">💰 13F占比 12.64%</span>
+</div>
+
+<div class="toc">
+<h3>本文结构</h3>
+<ol>
+<li><a href="#overview">这是一笔什么样的投资</a></li>
+<li><a href="#discovery">如何发现：与巴菲特/芒格的深度渊源</a></li>
+<li><a href="#moat">护城河分析：BYD 框架</a></li>
+<li><a href="#float">BRK.B 独有的优势：保险浮存金</a></li>
+<li><a href="#bullsbears">正方 vs 反方：为什么投资/为什么不投资</a></li>
+<li><a href="#framework">方法论提炼：对普通投资者的启示</a></li>
+</ol>
+</div>
+
+<div class="lead">
+<h2>这是一笔什么样的投资</h2>
+<p>李录持有 BRK.B 约12.64%的13F仓位，是第四大持仓。但这笔投资的含义远超普通持仓——BRK.B 既是李录的持仓，也是他研究巴菲特/芒格投资方法的"活的教科书"。</p>
+<p>李录在多次访谈中明确表示：他最初是受芒格启发走上价值投资道路，BRK.B 的持仓是他与这两位老师"利益绑定"的方式——通过持有 BRK.B，他可以持续跟踪世界上最伟大的资本配置者在做什么、想什么。</p>
+<p>BRK.B 的特殊性还在于：它不是一个普通公司的股票，而是一个"复利机器"的股权证明——这个机器的核心燃料是保险浮存金，引擎是巴菲特/芒格建立的理性资本配置文化。</p>
+</div>
+
+<!-- ==================== SECTION 1 ==================== -->
+<div class="section" id="discovery">
+<h2>一、如何发现：与巴菲特/芒格的深度渊源</h2>
+
+<div class="insight-card">
+<h4>李录与芒格的师承关系</h4>
+<p>李录的价值投资方法论，直接师承查理·芒格。1990年代，李录在哥伦比亚大学师从Bruce Greenwald，但真正塑造他投资哲学的，是与芒格的深度交流。芒格是李录最早的投资人之一——喜马拉雅资本创立之初，芒格及其家族就是LP。</p>
+<p>这种师承关系不是学术层面的，而是实战层面的：李录可以直接向芒格请教投资问题，芒格也会推荐李录作为值得信赖的资产管理人推荐给身边的人。</p>
+</div>
+
+<div class="timeline">
+<div class="tl-item">
+<div class="tl-date">1980s</div>
+<div class="tl-title">李录在哥大遇到 Bruce Greenwald</div>
+<div class="tl-content">在哥伦比亚大学，李录遇到了价值投资课教授 Bruce Greenwald，后者是格雷厄姆-多德价值投资派在当代的重要传人。李录的系统性价值投资框架，始于此时。</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">1990年代</div>
+<div class="tl-title">李录与芒格建立私人关系</div>
+<div class="tl-content">李录通过 Greenwald 引荐认识了芒格。两人一见如故——芒格欣赏李录的独立思考能力，李录则被芒格的"第一性原理思维"深深吸引。</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">1997年</div>
+<div class="tl-title">李录创立喜马拉雅资本</div>
+<div class="tl-content">芒格及其家族成为喜马拉雅资本的早期LP。这本身就证明了芒格对李录投资能力的信任——芒格以极度挑剔著称。</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2008年</div>
+<div class="tl-title">李录推荐比亚迪给芒格/巴菲特</div>
+<div class="tl-content">李录向芒格推荐比亚迪，最终促成巴菲特入股。这是两人合作历史上最具标志性的事件。</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2010年后</div>
+<div class="tl-title">李录在13F中持续持有 BRK.B</div>
+<div class="tl-content">在 Himalaya Capital 的13F报告中，BRK.B 长期作为核心持仓之一出现（约12-13%），是少数几个跨多个报告期持续持有的标的。</div>
+</div>
+</div>
+
+<div class="quote-box">
+"我最有幸的事情，是在职业生涯早期遇到了查理·芒格。他教给我最重要的一课是：投资是关于"人"的学问，不是关于"数字"的学问。"
+<cite>— 李录</cite>
+</div>
+</div>
+
+<!-- ==================== SECTION 2 ==================== -->
+<div class="section" id="moat">
+<h2>二、护城河分析：BYD 框架</h2>
+
+<p>李录的护城河分析框架，核心四问：<strong>①这个优势10年后还在吗？②竞争对手是否在积极进攻？③技术变革是在加强还是削弱？④管理层资本配置是否理性？</strong></p>
+
+<div class="insight-card">
+<h4>✦ 无形资产：世界顶级资本配置的信任溢价</h4>
+<p>BRK.B 的品牌不是普通的商业品牌，而是"世界上最伟大投资家群体"的信任符号。投资者愿意以溢价持有 BRK.B（长期PE高于指数），是因为他们相信：在这个价格区间，巴菲特和他的团队能比任何人都更好地配置资本。</p>
+<p>这种信任溢价是无法用金钱衡量的——它来源于巴菲特60年持续证明自己的记录，来源于"股东利益第一"的企业文化，来源于芒格建立的理论体系。</p>
+</div>
+
+<div class="insight-card">
+<h4>✦ 转换成本：持有时间越长，机会成本越低</h4>
+<p>BRK.B 的持有者面临一个特殊的"转换成本"：当你卖出 BRK.B，你需要找到一个至少同样好的资本配置工具——而世界上几乎不存在这样的替代品。</p>
+<p>共同基金？99%的主动基金跑不赢指数。
+对冲基金？2+20收费结构持续侵蚀复利。
+直接买股票？需要极强的研究能力才能接近 BRK.B 的风险调整后回报。</p>
+</div>
+
+<div class="insight-card">
+<h4>✦ 网络效应：被投资企业的"关系网络"</h4>
+<p>BRK.B 持有的一系列企业（GEICO、See's Candies、Dairy Queen、BNSF铁路等）形成了独特的"关系网络"：</p>
+<ul>
+<li>这些企业在各自领域都有深厚的护城河</li>
+<li>它们产生的现金流可以交叉补贴新投资机会</li>
+<li>整个系统的稳定性远高于任何单一企业</li>
+</ul>
+<p>这种企业生态的协同效应，是BRK.B独有的，其他投资公司几乎无法复制。</p>
+</div>
+
+<div class="insight-card">
+<h4>✦ 成本优势：保险浮存金——永久性的免费资本</h4>
+<p>BRK.B 最核心的成本优势，来源于其保险业务（特别是 GEICO）产生的浮存金。</p>
+<ul>
+<li>浮存金：保险客户预先支付的保费，在理赔之前可以由BRK.自由使用</li>
+<li>BRK.B 的浮存金规模约 $1,600亿美元，且持续增长</li>
+<li>这些钱的成本是负的——保险业务本身就在盈利，同时提供免费资本</li>
+<li>这让 BRK.B 在收购时永远有"弹药"，而无需考虑融资成本</li>
+</ul>
+<div class="quote-box">
+"浮存金是伯克希尔的秘密武器。它让我们可以在别人需要融资的时候，用便宜的价格买到好生意。"
+<cite>— 沃伦·巴菲特</cite>
+</div>
+</div>
+</div>
+
+<!-- ==================== SECTION 3 ==================== -->
+<div class="section" id="float">
+<h2>三、BRK.B 独有的优势：保险浮存金机制</h2>
+
+<div class="nums">
+<div class="num-box"><div class="big">~$1,600亿</div><div class="label">保险浮存金规模</div></div>
+<div class="num-box"><div class="big">~$1B+</div><div class="label">浮存金年增长额</div></div>
+<div class="num-box"><div class="big">~$0</div><div class="label">浮存金融资成本</div></div>
+<div class="num-box"><div class="big">60年</div><div class="label">持续跑赢标普500</div></div>
+</div>
+
+<div class="highlight">
+<h4>浮存金为什么是BRK.B的核心竞争力</h4>
+<ul>
+<li><strong>永久性：</strong>保险客户不会要求退还保费，只有理赔发生时才需要支付——而理赔是可控的</li>
+<li><strong>规模效应：</strong>更大的浮存金池 → 更多的投资资本 → 更好的回报 → 更大的规模</li>
+<li><strong>负成本：</strong>GEICO等保险业务本身是盈利的，同时提供免费资本——这是双重优势</li>
+<li><strong>抗周期：</strong>无论经济好坏，人们都需要保险——这个资本来源几乎不受宏观经济影响</li>
+</ul>
+</div>
+
+<div class="insight-card">
+<h4>巴菲特如何运用浮存金</h4>
+<p>巴菲特将浮存金用于：①收购有稳定现金流的企业（如BNSF铁路、伯灵顿北方圣太菲铁路）；②投资股票；③偿还债务。这种"用别人的钱赚钱，然后用自己的钱赚更多"的模式，是BRK.B复利引擎的核心。</p>
+<p>关键在于：巴菲特的保险业务不仅没有消耗资本，反而创造了资本。这与大多数公司"融资→投资→还债"的循环完全相反。</p>
+</div>
+</div>
+
+<!-- ==================== SECTION 4 ==================== -->
+<div class="section" id="bullsbears">
+<h2>四、正方 vs 反方：为什么投资/为什么不投资</h2>
+
+<div class="dual-panel">
+<div class="panel panel-bull">
+<h4>正方：持有 BRK.B 的理由</h4>
+<ul>
+<li>60年持续跑赢标普500，记录无人能及</li>
+<li>浮存金机制提供永久性免费资本优势</li>
+<li>巴菲特/芒格的资本配置智慧不可复制</li>
+<li>Greg Abel 继任后文化延续性有保障</li>
+<li>PE ~22x 对应20%+的长期年化回报仍合理</li>
+<li>持有BRK.B等于同时持有 dozens of“好生意”</li>
+<li>分红+回购持续提升每股内在价值</li>
+</ul>
+</div>
+<div class="panel panel-bear">
+<h4>反方：谨慎或卖出的理由</h4>
+<ul>
+<li>巴菲特继任风险真实存在：Greg Abel 能否复制神话？</li>
+<li>BRK.B 规模已达$9,000亿，继续大幅跑赢指数越来越难</li>
+<li>PE ~22x 是历史高位，溢价已充分</li>
+<li>“太大了”困境：找不到足够大的收购机会时，现金堆积</li>
+<li>如果只想获得指数级回报，直接买低成本指数基金更简单</li>
+<li>BRK.B的文化能否在继任后延续是最大的未知数</li>
+</ul>
+</div>
+</div>
+
+<div class="quote-box">
+"对于大多数投资者来说，BRK.B 是比大多数主动管理基金更好的选择——因为它不会因为明星基金经理离职而失去优势。"
+<cite>— 投资界分析</cite>
+</div>
+</div>
+
+<!-- ==================== SECTION 5 ==================== -->
+<div class="section" id="framework">
+<h2>五、方法论提炼：对普通投资者的启示</h2>
+
+<div class="lesson-card">
+<h4>1. 投资于"资本配置能力"，而不是"具体业务"</h4>
+<p>BRK.B 的本质不是铁路公司或糖果公司，而是一个"资本配置机器"。李录持有 BRK.B，核心是相信巴菲特/芒格（以及未来的Greg Abel）的资本配置能力——这种能力比任何单一业务都更难复制，也更持久。</p>
+<p>对于普通投资者来说，这意味着：当你选择持有一个投资公司（如指数基金、伯克希尔、任何主动管理基金）时，你要问的核心问题是：这个公司的资本配置能力，是否真的超越了市场平均？</p>
+</div>
+
+<div class="lesson-card">
+<h4>2. 时间和复利是 BRK.B 最大的武器</h4>
+<p>BRK.B 的价值不是一年内体现的，而是十年、二十年的复利积累。巴菲特99%的财富是在50岁之后积累的——这是复利的数学现实。</p>
+<p>对于普通投资者，这意味着：如果你不能以10年以上的视角持有BRK.B（或任何价值投资持仓），你可能就不应该持有它。</p>
+</div>
+
+<div class="lesson-card">
+<h4>3. "学习最聪明的人"本身就是一种投资策略</h4>
+<p>李录持有 BRK.B 的一部分原因，是通过持续跟踪BRK.B的投资组合来学习——这是一种"跟投"策略：通过持有世界上最伟大投资者的载体，让他们的智慧为你工作。</p>
+<p>对于普通投资者，这意味着：与其花费大量时间研究个股，不如找到几个你真正信任的投资人/基金，把时间花在"理解他们在做什么、为什么这样做"——这比研究任何单一公司都更有价值。</p>
+</div>
+
+<div class="lesson-card">
+<h4>4. "简单"是 BRK.B 的核心价值</h4>
+<p>很多投资者追求复杂的投资策略，BRK.B 却提供了一个"简单到难以置信"的方案：找到一个好的资本配置者，把钱交给他，让复利为你工作。巴菲特说："我们只想让股东拥有一辈子花不完的资产——即使我们明天退休，伯克希尔也会继续运转50年。"</p>
+<p>对于普通投资者，这意味着：有时候最好的投资策略，是找到一个你完全信任的管理人/机制，然后尽可能少地干预它。</p>
+</div>
+
+</div>
+
+<div class="source-note">
+数据来源：SEC EDGAR 13F (Himalaya Capital Management, 2025Q4) · Berkshire Hathaway 年报 · 仅供研究参考，不构成投资建议
+</div>
+
+<div class="footer">
+<a href="/li-lu-research/index.html">← 返回首页</a> · 仅供研究参考，不构成投资建议
+</div>
+</div>
+</body>
+</html>

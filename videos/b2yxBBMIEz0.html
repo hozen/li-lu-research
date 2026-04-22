@@ -131,9 +131,93 @@ footer a{color:#c9a227;text-decoration:none}
   .seg-en{background:#0f0f23;border-color:#444;color:#b0b0b0}
   footer{background:#0d1b2a;color:#888}
 }
+/* Video degradation fallback — graceful YouTube unavailable handling */
+.video-fallback{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#1e3a6e);color:#f0f4f8;padding:24px;text-align:center;gap:12px}
+.video-fallback.show{display:flex}
+.video-fallback-icon{font-size:3rem;opacity:.6}
+.video-fallback-title{font-size:1rem;font-weight:700;color:#c9a227}
+.video-fallback-msg{font-size:.85rem;color:#8fa3c0;max-width:400px}
+.video-fallback-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;margin-top:4px;transition:background .2s}
+.video-fallback-btn:hover{background:#b8922a}
+body.dark-mode .video-fallback{background:linear-gradient(135deg,#0a1628,#1a365d)}
+body.dark-mode .video-fallback-title{color:#f0c040}
+body.dark-mode .video-fallback-msg{color:#8fa3c0}
 </style>
 </head>
 <body>
+<div id="uni-navbar">
+<style>
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.2rem;font-weight:600;text-decoration:none}
+#uni-navbar .uni-brand span{color:#c9a227}
+#uni-navbar .uni-links{display:flex;align-items:center;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:.875rem;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:#c9a227}
+#uni-navbar .uni-theme{background:#c9a227;color:#0a1628;border:none;padding:7px 14px;border-radius:6px;cursor:pointer;font-size:.85rem;font-weight:600}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:10px 12px;margin-left:8px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:#0a1628;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:24px 20px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:14px 16px;border-radius:8px;font-size:1rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-drawer-brand span{color:#c9a227}
+#uni-drawer-close{width:36px;height:36px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;color:rgba(255,255,255,.6);font-size:18px}
+#uni-drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
+#uni-body{padding-top:64px}
+@media(max-width:900px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}}
+</style>
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
+<div class="uni-links">
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
+<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
+<a href="/li-lu-research/index.html#my-framework" class="uni-link">决策框架</a>
+<a href="/li-lu-research/index.html#study-notes" class="uni-link">研究笔记</a>
+<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
+</div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+<button class="uni-theme" id="uniThemeBtn">&#9790; 暗色</button>
+</div>
+<div id="uni-overlay" id="uniOverlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
+<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
+<a href="/li-lu-research/index.html#my-framework" class="uni-link">决策框架</a>
+<a href="/li-lu-research/index.html#study-notes" class="uni-link">研究笔记</a>
+<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
+<div class="uni-drawer-theme">
+<button class="uni-theme" id="uniDrawerThemeBtn" style="width:100%">&#9790; 切换暗色模式</button>
+</div>
+</div>
+<script>
+document.getElementById("uniHamBtn").onclick=function(){
+document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){
+document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){
+document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniThemeBtn").onclick=function(){
+document.body.classList.toggle("dark-mode");this.text=document.body.classList.contains("dark-mode")?"&#9788; 亮色":"&#9790; 暗色"};
+document.getElementById("uniDrawerThemeBtn").onclick=function(){
+document.body.classList.toggle("dark-mode")};
+</script>
+
 <nav class="navbar">
   <div class="nav-brand"><span>&#10070;</span> 李录研究</div>
   <div class="nav-links">
@@ -141,7 +225,6 @@ footer a{color:#c9a227;text-decoration:none}
     <a href="index.html#holdings"   class="nav-link">持仓</a>
     <a href="index.html#principles" class="nav-link">投资原则</a>
     <a href="index.html#framework"  class="nav-link">决策框架</a>
-    <a href="video_study.html"      class="nav-link active">📺 视频学习</a>
     <a href="index.html#quotes"     class="nav-link">语录</a>
     <a href="index.html#faq"        class="nav-link">FAQ</a>
   </div>
@@ -153,18 +236,23 @@ footer a{color:#c9a227;text-decoration:none}
   <a href="index.html#holdings"   class="nav-link" onclick="closeDrawer()">持仓</a>
   <a href="index.html#principles" class="nav-link" onclick="closeDrawer()">投资原则</a>
   <a href="index.html#framework"  class="nav-link" onclick="closeDrawer()">决策框架</a>
-  <a href="video_study.html"      class="nav-link active">📺 视频学习</a>
   <a href="index.html#quotes"     class="nav-link" onclick="closeDrawer()">语录</a>
   <a href="index.html#faq"        class="nav-link" onclick="closeDrawer()">FAQ</a>
 </div>
 
 <main class="main-content">
   <div class="back-bar">
-    <a href="video_study.html">&#8592; 视频列表</a>
-  </div>
+    </div>
 
   <div class="video-embed">
-    <iframe src="https://www.youtube.com/embed/b2yxBBMIEz0?rel=0" allowfullscreen title="CCBC Fireside Chat"></iframe>
+    <iframe src="https://www.youtube.com/embed/b2yxBBMIEz0?rel=0" allowfullscreen title="CCBC Fireside Chat" onerror="this.style.display='none';document.getElementById('videoFallbackb2yxBBMIEz0').classList.add('show')"></iframe>
+    <!-- Video fallback: shown when YouTube embed is unavailable -->
+    <div class="video-fallback" id="videoFallbackb2yxBBMIEz0">
+      <div class="video-fallback-icon">&#9654;</div>
+      <div class="video-fallback-title">CCBC Fireside Chat: 中国市场机会</div>
+      <div class="video-fallback-msg">此视频暂时无法播放，请点击下方按钮在 YouTube 原站观看</div>
+      <a href="https://www.youtube.com/watch?v=b2yxBBMIEz0" target="_blank" rel="noopener" class="video-fallback-btn">&#9654; 在 YouTube 观看</a>
+    </div>
   </div>
 
   <div class="video-header">
@@ -339,7 +427,7 @@ footer a{color:#c9a227;text-decoration:none}
 </main>
 
 <footer>
-  <span>仅供学习参考 · <a href="video_study.html">视频列表</a></span>
+  <span>仅供学习参考 · </span>
   <span style="color:#ef4444">不构成投资建议</span>
 </footer>
 

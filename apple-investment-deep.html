@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>投资 Apple：为什么李录在2025年大幅减持 — 李录研究</title>
+<meta name="description" content="深度拆解李录投资 Apple 的完整决策链条：从2016年首次买入，到为什么2025年Q1减持65%，以及 Apple 的护城河是否仍然稳固。">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#fafaf9;color:#1a1a2e;line-height:1.7;min-height:100vh}
+a{color:#c9a227;text-decoration:none}
+.page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:#c9a227;text-decoration:none;font-size:.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,.1);transition:all .2s}
+.back-link:hover{background:rgba(201,162,39,.2)}
+h1{font-size:1.8rem;color:#1a365d;margin-bottom:12px;line-height:1.3}
+.subtitle{color:#4a5568;font-size:1rem;margin-bottom:30px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:.82rem;color:#4a5568}
+.alert-box{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:24px;margin-bottom:40px}
+.alert-box h2{color:#991b1b;font-size:1.1rem;margin-bottom:12px}
+.alert-box p{color:#7f1d1d;margin-bottom:0;line-height:1.7}
+.lead{background:linear-gradient(135deg,#f8f9fa,#e2e8f0);color:#1a202c;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
+.lead h2{color:#c9a227;margin-bottom:15px;font-size:1.3rem}
+.lead p{margin-bottom:12px;color:#2d3748}
+.toc{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:12px;padding:25px 30px;margin-bottom:40px}
+.toc h3{color:#1a365d;margin-bottom:12px;font-size:1rem}
+.toc ol{margin-left:20px;color:#555}
+.toc li{margin-bottom:6px;font-size:.9rem}
+.section{margin-bottom:55px}
+h2{font-size:1.35rem;color:#1a365d;margin-bottom:18px;padding-bottom:10px;border-bottom:3px solid #c9a227;display:inline-block}
+h3{font-size:1.1rem;color:#1a365d;margin:30px 0 12px}
+p{color:#333;margin-bottom:14px;line-height:1.8}
+.quote-box{background:#faf8f0;border-left:5px solid #c9a227;padding:22px 28px;margin:25px 0;border-radius:0 10px 10px 0;font-style:italic;color:#444}
+.quote-box cite{display:block;margin-top:10px;font-size:.85rem;color:#888;font-style:normal}
+.insight-card{background:#fff;border:2px solid #c9a227;border-radius:14px;padding:28px;margin:30px 0}
+.insight-card h4{color:#c9a227;margin-bottom:14px;font-size:1rem}
+.lesson-card{background:#f8f9fa;border-radius:12px;padding:25px;margin-bottom:18px;border-left:4px solid #c9a227}
+.lesson-card h4{color:#1a365d;margin-bottom:10px;font-size:1rem}
+.lesson-card p{color:#444;font-size:.9rem;margin-bottom:8px;line-height:1.7}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:25px 0;text-align:center}
+.num-box{background:#f8f9fa;border-radius:10px;padding:20px 10px}
+.num-box .big{font-size:1.8rem;font-weight:700;color:#c9a227}
+.num-box .label{font-size:.8rem;color:#888;margin-top:5px}
+.highlight{background:linear-gradient(135deg,#fff8e1,#fff);border:1px solid #ffe082;border-radius:10px;padding:20px 25px;margin:20px 0}
+.highlight h4{color:#b8860b;margin-bottom:10px}
+.highlight ul{margin:8px 0 0 18px}
+.highlight li{color:#444;font-size:.9rem;margin-bottom:6px}
+.timeline{position:relative;padding-left:30px;margin:25px 0}
+.timeline::before{content:'';position:absolute;left:0;top:5px;bottom:5px;width:3px;background:linear-gradient(to bottom,#c9a227,#e8d5a3)}
+.tl-item{position:relative;margin-bottom:28px;padding-left:20px}
+.tl-item::before{content:'';position:absolute;left:-34px;top:7px;width:12px;height:12px;background:#c9a227;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px #c9a227}
+.tl-date{font-weight:700;color:#c9a227;font-size:.85rem;margin-bottom:4px}
+.tl-title{font-weight:600;color:#1a365d;margin-bottom:4px}
+.tl-content{color:#555;font-size:.9rem;line-height:1.7}
+.dual-panel{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:25px 0}
+.panel{padding:22px;border-radius:12px}
+.panel-bull{background:#f0f9f4;border:1px solid #38a169}
+.panel-bull h4{color:#276749;margin-bottom:10px}
+.panel-bear{background:#fff5f5;border:1px solid #c53030}
+.panel-bear h4{color:#c53030;margin-bottom:10px}
+.panel li{color:#444;font-size:.9rem;margin-bottom:6px}
+.panel ul{margin:8px 0 0 18px}
+.source-note{font-size:.78rem;color:#999;border-top:1px solid #eee;padding-top:15px;margin-top:30px}
+.footer{background:#f8f9fa;color:#888;text-align:center;padding:30px;margin-top:60px;font-size:.85rem}
+@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}}
+</style>
+</head>
+<body>
+<div class="page">
+<a href="/li-lu-research/index.html" class="back-link">← 返回首页</a>
+<h1>投资 Apple：为什么李录在2025年大幅减持</h1>
+<p class="subtitle">这不是"不看好"，而是"机会成本"的判断——在 Apple 突破 $200 之后，李录选择了将资本配置到置信度更高的地方。</p>
+<div class="alert-box"><h2>⚠ 重要提示：Apple 已在2025年大幅减持</h2>
+<p>2025 Q1 13F 显示，李录将 Apple 持仓从约 87万股减持至约 30万股，减持幅度约 65%。当前仅剩 0.84% 的零头仓位。请勿将 Apple 视为李录当前核心持仓。</p></div>
+<div class="meta">
+<span class="meta-item">📅 首次发布：2026-04-18</span>
+<span class="meta-item">📊 投资案例分析</span>
+<span class="meta-item">🍎 Apple / AAPL</span>
+<span class="meta-item">⚠️ 已减持（2025 Q1）</span>
+</div>
+<div class="toc"><h3>本文结构</h3><ol>
+<li><a href="#overview">这笔投资的历史回顾</a></li>
+<li><a href="#discovery">买入逻辑：为什么是 Apple 而不是纯科技股</a></li>
+<li><a href="#moat">护城河分析：BYD 框架</a></li>
+<li><a href="#why-sell">为什么卖出：机会成本思维</a></li>
+<li><a href="#lessons">方法论提炼：对普通投资者的启示</a></li>
+</ol></div>
+<div class="lead"><h2>这是一笔什么样的投资</h2>
+<p>李录于 2016 年首次买入 Apple，买入时点正值 iPhone 7 发布前夕。彼时市场对 Apple 的定位存在分歧：有人认为是"消费电子公司"，有人认为是"科技平台公司"。李录的判断是后者——他看到了 Apple 作为"科技 + 消费品"双重属性的独特护城河。</p>
+<p>2016 年买入时，Apple PE 约 10-12x，市值约 $5,000 亿。2025年 Q1 卖出大部分仓位时，Apple 市值已突破 $3万亿，PE 超过 25x。</p>
+</div>
+<div class="section" id="discovery">
+<h2>一、买入逻辑：为什么是 Apple 而不是纯科技股</h2>
+<div class="insight-card"><h4>李录看 Apple 的独特视角</h4>
+<p>在2016年的投资语境下，科技股投资者普遍偏爱平台型公司，而对 Apple 的定性是"硬件公司"。但李录看到了 Apple 与众不同的特征：<strong>它既是硬件公司，又是生态平台</strong>。这种双重属性，让 Apple 的护城河远超一般硬件公司。</p></div>
+<div class="timeline">
+<div class="tl-item"><div class="tl-date">2007年</div><div class="tl-title">iPhone 发布</div><div class="tl-content">乔布斯首次展示 iPhone，诺基亚和黑莓的投资者没有意识到这将是移动计算时代的开始。</div></div>
+<div class="tl-item"><div class="tl-date">2016年</div><div class="tl-title">李录首次建仓 Apple</div><div class="tl-content">买入时 PE ~10-12x，市值约 $5,000 亿。彼时市场对 iPhone 7 销量存疑，股价承压——这正是李录喜欢的窗口。</div></div>
+<div class="tl-item"><div class="tl-date">2019-2020年</div><div class="tl-title">Services 业务崛起</div><div class="tl-content">Apple 加速转型，App Store、iCloud、Apple Music 形成订阅收入流。市场开始将 Apple 重新定位为"科技消费平台"，PE 扩张。</div></div>
+<div class="tl-item"><div class="tl-date">2025 Q1</div><div class="tl-title">李录大幅减持 65%</div><div class="tl-content">Apple 股价突破 $200，市值超 $3万亿。李录认为估值已充分反映甚至超出长期价值，选择将资本转向置信度更高的标的。</div></div>
+</div>
+</div>
+<div class="section" id="moat">
+<h2>二、护城河分析：BYD 框架</h2>
+<div class="insight-card"><h4>✦ 无形资产：全球最强消费电子品牌</h4>
+<p>Apple Brand 在 Interbrand 全球品牌价值榜单中连续多年排名前三，iPhone 在全球高端智能手机市场份额超过 50%（600美元以上价位段）。这种定价权来源于品牌溢价——用户愿意为 Apple 支付 30-50% 的溢价，因为品牌本身就是一种信任承诺。</p></div>
+<div class="insight-card"><h4>✦ 转换成本：生态系统的黏性</h4>
+<p>Apple 护城河最深厚的部分，不是 iPhone 本身，而是围绕 iOS 的生态系统：iMessage（美国青少年社交基础设施）、iCloud（照片/文档存储）、AirDrop/Handoff（苹果设备间无缝协作）、App Store（高质量应用生态）。这些形成了全方位的转换成本壁垒。</p></div>
+<div class="insight-card"><h4>✦ 网络效应与成本优势</h4>
+<p>更多用户 → 开发者更愿意首先开发 iOS 版本 → iOS 应用质量更高 → 更多用户。Apple 的毛利率长期维持在 46-48%，远超一般电子制造业，来源于规模采购和与供应商的长期排他性合作协议。</p></div>
+</div>
+<div class="section" id="why-sell">
+<h2>三、为什么卖出：机会成本思维</h2>
+<div class="dual-panel">
+<div class="panel panel-bull"><h4>🟢 继续持有的理由</h4><ul>
+<li>Vision Pro 是下一个 iPhone 时刻的潜力</li>
+<li>AI 手机可能开启新一轮换机周期</li>
+<li>Services 收入持续高增长</li>
+<li>$3万亿市值对全球第一仍有溢价合理性</li>
+</ul></div>
+<div class="panel panel-bear"><h4>🔴 卖出的理由（李录的逻辑）</h4><ul>
+<li>PE > 25x 对一个成熟消费电子公司已过度</li>
+<li>中国市场竞争加剧（华为回归）</li>
+<li>iPhone 换机周期从 2年延长至 4年</li>
+<li>资本配置：将资金转向 Alphabet（更低估值 + 更高确信度）</li>
+</ul></div>
+</div>
+<div class="quote-box">"我们一直在思考机会成本。当一个持仓的预期回报率下降，而另一个标的的预期回报率上升且我们对其更确信时，换仓是理性的。"<cite>— 价值投资原则</cite></div>
+<div class="insight-card"><h4>李录卖出的本质：不是"看空"，而是"机会成本"</h4>
+<p>李录在 Apple 突破 $200 后选择减持，核心逻辑是：Alphabet 的置信度更高（搜索护城河比手机护城河更宽、更持久）；Alphabet 的估值更低（PE ~27x 对应 15-20% 增速，而 Apple PE >25x 对应成熟业务的个位数增长）。</p></div>
+</div>
+<div class="section" id="lessons">
+<h2>四、方法论提炼</h2>
+<div class="lesson-card"><h4>1. 卖出不是因为"跌了"，而是因为"机会成本变了"</h4>
+<p>普通投资者最常见的错误，是在股价下跌时恐慌卖出，而在股价上涨时"坚定持有"。李录的做法正好相反：他在 Apple 涨了 5-6 倍之后卖出，因为此时其他标的的机会成本吸引力更大。</p></div>
+<div class="lesson-card"><h4>2. "买得便宜"是持有不动的底气</h4>
+<p>李录在 PE ~10-12x 买入 Apple，这意味着即使股价腰斩，他仍然可能在盈利。而普通投资者往往在 PE ~20-25x 买入——这样的成本在面对 30-40% 的回撤时，心态就会崩溃。</p></div>
+<div class="lesson-card"><h4>3. 高持仓占比需要"超额确信"</h4>
+<p>李录对 Alphabet 43.86% 的持仓，来源于他对 Google 护城河的深刻理解。Apple 从未达到这样的置信度——因为手机行业的竞争格局变化更快，护城河的结构性稳定性不如搜索。</p></div>
+</div>
+<div class="source-note">数据来源：SEC EDGAR 13F (Himalaya Capital Management, 2025Q4) · Apple 年报 · 仅供研究参考，不构成投资建议</div>
+<div class="footer"><a href="/li-lu-research/index.html">← 返回首页</a> · 仅供研究参考，不构成投资建议</div>
+</div>
+</body>
+</html>

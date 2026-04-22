@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Li Lu Explains Value Investing — 李录研究</title>
+<style>
+:root{--md-primary:#0a1628;--md-primary-rgb:10,22,40;--md-secondary:#c9a227;--md-on-secondary:#1a1a2e;--md-surface:#ffffff;--md-surface-variant:#f3f4f6;--md-background:#f3f4f6;--md-background-dark:#1a1a2e;--md-on-surface:#1a1a2e;--md-on-surface-muted:#4a5568;--md-outline:#d1d5db;--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--text-primary:#1a1a2e;--text-secondary:#4a5568;--text-muted:#6b7280;--text-inverse:#f5f5f5;--navbar-height:64px}
+@media(prefers-color-scheme:dark){:root{--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--md-outline:#374151;--text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280}body{background-color:var(--md-background);color:var(--md-on-surface)}}
+body.dark-mode{--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--text-primary:#e0e0e0;--text-secondary:#9ca3af;background-color:var(--md-background);color:var(--md-on-surface)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--font-family);background:var(--md-background);color:var(--text-primary);line-height:1.6;min-height:100vh}
+a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{color:#e0b830}*:focus-visible{outline:2px solid var(--md-secondary);outline-offset:2px}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:var(--navbar-height);background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600;text-decoration:none}
+#uni-navbar .uni-brand span{color:#c9a227}
+#uni-navbar .uni-links{display:flex;align-items:center;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500;white-space:nowrap}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:#c9a227}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:#0a1628;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:#c9a227}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+#uni-body{padding-top:var(--navbar-height)}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+.main-content{max-width:860px;margin:0 auto;padding:0 16px 48px;background:var(--md-surface);min-height:calc(100vh - var(--navbar-height))}
+.back-bar{padding:12px 16px;border-bottom:1px solid var(--md-outline);display:flex;align-items:center;gap:8px;background:var(--md-surface-variant)}
+.back-bar a{color:#c9a227;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:4px}
+.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0a1628,#1e3a6e);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#f0f4f8;padding:24px;text-align:center;gap:12px}
+.video-embed .video-fallback-icon{font-size:3rem;opacity:.6}
+.video-embed .video-fallback-title{font-size:1rem;font-weight:700;color:#c9a227}
+.video-embed .video-fallback-msg{font-size:.85rem;color:#8fa3c0;max-width:400px}
+.video-embed .video-fallback-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;margin-top:4px;transition:background .2s}
+.video-embed .video-fallback-btn:hover{background:#b8922a}
+.video-header{padding:20px 16px 12px}
+.video-title{font-size:1.15rem;font-weight:700;color:var(--text-primary);line-height:1.4;margin-bottom:8px}
+.video-meta{font-size:.78rem;color:var(--text-muted);display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.video-meta span{display:flex;align-items:center;gap:4px}
+.video-desc{padding:0 16px 16px;font-size:.88rem;color:var(--text-secondary);line-height:1.7}
+.section-divider{border:none;border-top:1px solid var(--md-outline);margin:20px 16px}
+.chapter{margin:0 16px 28px}
+.chapter-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.chapter-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:var(--md-secondary);color:#0a1628;border-radius:50%;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.chapter-title{font-size:.95rem;font-weight:700;color:var(--text-primary)}
+.chapter-meta{font-size:.72rem;color:var(--text-muted);margin-bottom:10px;padding-left:36px}
+.chapter-body{font-size:.88rem;color:var(--text-secondary);line-height:1.75;padding-left:36px}
+.chapter-body p{margin-bottom:8px}
+.quote-block{border-left:3px solid var(--md-secondary);padding:8px 14px;margin:10px 0;background:var(--md-surface-variant);border-radius:0 6px 6px 0;font-style:italic;color:var(--text-primary)}
+.quote-src{font-size:.75rem;color:var(--text-muted);margin-top:4px;font-style:normal}
+footer{padding:10px 16px;background:var(--md-surface-variant);border-top:1px solid var(--md-outline);font-size:.75rem;color:var(--text-muted);display:flex;justify-content:space-between}
+footer a{color:#c9a227;text-decoration:none}
+@media(max-width:600px){.chapter-body,.chapter-meta{padding-left:0}.chapter{padding-left:0}.video-title{font-size:1rem}}
+</style>
+</head>
+<body>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand"><span>&#10070;</span> 李录研究</a></div>
+<div class="uni-links">
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/video_study.html" class="uni-link active">学习中心</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+</div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/video_study.html" class="uni-link">学习中心</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+</div>
+
+<div id="uni-body">
+<div class="main-content">
+<div class="back-bar">
+<a href="/li-lu-research/video_study.html">← 视频学习中心</a>
+</div>
+
+<div class="video-embed" id="videoEmbed">
+<iframe id="videoFrame" src="https://www.youtube.com/embed/Wl4I2Cim190?rel=0" allowfullscreen></iframe>
+<div class="video-fallback" id="videoFallback">
+<div class="video-fallback-icon">&#9654;</div>
+<div class="video-fallback-title">Li Lu Explains Value Investing</div>
+<div class="video-fallback-msg">此视频暂时无法播放。请在 YouTube 观看。</div>
+<a href="https://www.youtube.com/watch?v=Wl4I2Cim190" target="_blank" rel="noopener" class="video-fallback-btn">&#9654; 在 YouTube 观看</a>
+</div>
+</div>
+
+<div class="video-header">
+<div class="video-title">Li Lu Explains Value Investing — 价值投资3大核心概念</div>
+<div class="video-meta">
+<span>&#9202; ~12分钟</span>
+<span>&#127909; 价值投资理论</span>
+<span>&#127968; YouTube 精选</span>
+</div>
+</div>
+
+<div class="video-desc">
+<p>李录讲解价值投资3大核心概念：①股票是企业所有权、②市场先生情绪利用、③安全边际。这三个概念构成价值投资的基础框架，也是李录在多个场合反复强调的投资必备知识。</p>
+<p><strong>来源：</strong><a href="https://www.youtube.com/watch?v=Wl4I2Cim190" target="_blank" rel="noopener">YouTube — Li Lu explains value investing (3 Key Concepts)</a></p>
+</div>
+
+<hr class="section-divider">
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">1</span>
+<span class="chapter-title">价值投资的本质：股票是企业所有权</span>
+</div>
+<div class="chapter-meta">核心概念</div>
+<div class="chapter-body">
+<p>价值投资的本质，是将股票视为企业所有权的凭证，而非可以随意买卖的纸张。这一理念由本杰明·格雷厄姆奠定基础，由沃伦·巴菲特和查理·芒格发扬光大。</p>
+<div class="quote-block">
+"当你买进一只股票时，你就是在买进一家企业的一部分——你是在买进它的现金、它的未来、它的风险和它的回报。"
+<cite>— 李录，价值投资理论核心</cite>
+</div>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">2</span>
+<span class="chapter-title">市场先生的概念</span>
+</div>
+<div class="chapter-meta">核心理念</div>
+<div class="chapter-body">
+<p>市场每天都在报价，有时极度乐观（股价高估），有时极度悲观（股价低估）。聪明的投资者利用市场先生的情绪，而不是被其左右。</p>
+<div class="quote-block">
+"市场先生是躁郁症患者——他每天都会来报价，有时兴奋，有时绝望。真正的投资者既不会被他诱惑，也不会被他恐吓。"
+<cite>— 本杰明·格雷厄姆（李录多次引用）</cite>
+</div>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">3</span>
+<span class="chapter-title">安全边际</span>
+</div>
+<div class="chapter-meta">核心理念</div>
+<div class="chapter-body">
+<p>用显著低于内在价值的价格买进，为判断错误预留缓冲空间。安全边际是价值投资的核心保险机制。</p>
+<div class="quote-block">
+"用四毛钱买一块钱的东西——这是安全边际最朴素的理解。"
+<cite>— 价值投资原则</cite>
+</div>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">4</span>
+<span class="chapter-title">能力圈原则</span>
+</div>
+<div class="chapter-meta">核心理念</div>
+<div class="chapter-body">
+<p>只投资自己真正理解的公司。"懂"的门槛很高：你必须能够预测这家公司未来5-10年的自由现金流。如果不能，就不在你的能力圈内。</p>
+<div class="quote-block">
+"知道自己不知道什么，比以为自己什么都知道重要得多。"
+<cite>— 查理·芒格（李录引用）</cite>
+</div>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">5</span>
+<span class="chapter-title">护城河：时间的检验</span>
+</div>
+<div class="chapter-meta">进阶框架</div>
+<div class="chapter-body">
+<p>真正的护城河，必须能经受时间的检验。李录的检验四问：①这个优势10年后还在吗？②竞争对手是否在积极进攻？③技术变革是在加强还是削弱？④管理层资本配置是否理性？</p>
+<div class="quote-block">
+"护城河不是一个名词，而是一个动态的过程。你必须不断去验证它是否仍然存在。"
+<cite>— 李录</cite>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<footer>
+<span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
+<span><a href="/li-lu-research/video_study.html">← 学习中心</a></span>
+</footer>
+</div>
+
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("videoFrame").onerror=function(){document.getElementById("videoFrame").style.display="none";document.getElementById("videoFallback").classList.add("show")};
+</script>
+</body>
+</html>

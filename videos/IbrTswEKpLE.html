@@ -3,50 +3,255 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<Why Only 5% Win in Stocks>Why Only 5% Win in Stocks — 李录研究</Why Only 5% Win in Stocks>
+<title>为什么只有5%的人能在股市赚钱 — 李录研究</title>
 <style>
-:root{--md-primary:#0a1628;--md-primary-rgb:10,22,40;--md-secondary:#c9a227;--md-on-secondary:#1a1a2e;--md-surface:#ffffff;--md-surface-variant:#f3f4f6;--md-background:#ffffff;--md-background-dark:#1a1a2e;--md-on-surface:#1a1a2e;--md-on-surface-muted:#4a5568;--md-outline:#d1d5db;--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--font-family:'Roboto',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--text-primary:#1a1a2e;--text-secondary:#4a5568;--text-muted:#6b7280;--text-inverse:#f5f5f5;--navbar-height:64px}
-@media(prefers-color-scheme:dark){:root{--md-primary:#1a365d;--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--md-outline:#374151;--text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280}body{background-color:var(--md-background);color:var(--md-on-surface)}}
-body.dark-mode{--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--md-outline:#374151;--text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280;background-color:var(--md-background);color:var(--md-on-surface)}
+:root{--md-primary:#0a1628;--md-primary-rgb:10,22,40;--md-secondary:#c9a227;--md-on-secondary:#1a1a2e;--md-surface:#ffffff;--md-surface-variant:#f3f4f6;--md-background:#f3f4f6;--md-background-dark:#1a1a2e;--md-on-surface:#1a1a2e;--md-on-surface-muted:#4a5568;--md-outline:#d1d5db;--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--text-primary:#1a1a2e;--text-secondary:#4a5568;--text-muted:#6b7280;--text-inverse:#f5f5f5;--navbar-height:64px}
+@media(prefers-color-scheme:dark){:root{--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--md-outline:#374151;--text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280}body{background-color:var(--md-background);color:var(--md-on-surface)}}
+body.dark-mode{--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--text-primary:#e0e0e0;--text-secondary:#9ca3af;background-color:var(--md-background);color:var(--md-on-surface)}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{font-family:var(--font-family);background:#f3f4f6;color:#1a1a1a;line-height:1.6;min-height:100vh}a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{color:var(--md-secondary-container)}*:focus-visible{outline:2px solid var(--md-secondary);outline-offset:2px}
-.navbar{position:fixed;top:0;left:0;right:0;height:var(--navbar-height);background:rgba(var(--md-primary-rgb),.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:0 var(--sp-10);box-shadow:0 2px 8px rgba(0,0,0,.15)}
-.nav-brand{color:var(--text-inverse);font-size:var(--font-size-lg);font-weight:600;white-space:nowrap}.nav-brand span{color:var(--md-secondary)}
-.nav-links{display:flex;align-items:center;gap:var(--sp-1)}
-.nav-link{color:rgba(255,255,255,.65);text-decoration:none;padding:var(--sp-2) var(--sp-3);border-radius:var(--radius-sm);font-size:var(--font-size-sm);font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
-.nav-link:hover{color:#fff;background:rgba(201,162,39,.15)}.nav-link.active{color:var(--md-secondary)}
-.theme-toggle{padding:var(--sp-2) var(--sp-4);background:var(--md-secondary);border:none;border-radius:var(--radius-sm);cursor:pointer;font-size:var(--font-size-sm);font-weight:500;color:var(--md-on-secondary);transition:opacity .2s;white-space:nowrap}
-.theme-toggle:hover{opacity:.85}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:var(--sp-2)}.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
-.nav-drawer{display:none;position:fixed;top:var(--navbar-height);left:0;right:0;background:rgba(var(--md-primary-rgb),.98);padding:var(--sp-4) var(--sp-6);flex-direction:column;gap:var(--sp-2);z-index:999;box-shadow:0 4px 12px rgba(0,0,0,.2)}
-.nav-drawer.open{display:flex}.nav-drawer .nav-link{color:rgba(255,255,255,.8);font-size:var(--font-size-base);padding:var(--sp-3) var(--sp-4)}
-.main-content{padding-top:var(--navbar-height);max-width:900px;margin:0 auto;background:var(--md-surface);min-height:100vh}
-.back-bar{padding:12px 16px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;gap:8px;background:#fafafa}
-.back-bar a{color:#c9a227;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:4px}
+body{font-family:var(--font-family);background:var(--md-background);color:var(--text-primary);line-height:1.6;min-height:100vh}
+a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{color:#e0b830}*:focus-visible{outline:2px solid var(--md-secondary);outline-offset:2px}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:var(--navbar-height);background:rgba(10,22,40,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600;text-decoration:none}
+#uni-navbar .uni-brand span{color:#c9a227}
+#uni-navbar .uni-links{display:flex;align-items:center;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500;white-space:nowrap}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:#c9a227}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:#0a1628;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:#c9a227}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+#uni-body{padding-top:var(--navbar-height)}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+.main-content{max-width:860px;margin:0 auto;padding:0 16px 48px;background:var(--md-surface);min-height:calc(100vh - var(--navbar-height))}
+.back-bar{padding:12px 16px;border-bottom:1px solid var(--md-outline);display:flex;align-items:center;gap:8px;background:var(--md-surface-variant)}
+.back-bar a{color:#c9a227;font-size:.85rem;font-weight:500;display:flex;align-items:center:gap:4px}
 .video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#0a1628}
 .video-embed iframe{width:100%;height:100%;border:none;display:block}
+.video-embed .video-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#1e3a6e);color:#f0f4f8;padding:24px;text-align:center;gap:12px}
+.video-embed .video-fallback.show{display:flex}
+.video-embed .video-fallback-icon{font-size:3rem;opacity:.6}
+.video-embed .video-fallback-title{font-size:1rem;font-weight:700;color:#c9a227}
+.video-embed .video-fallback-msg{font-size:.85rem;color:#8fa3c0;max-width:400px}
+.video-embed .video-fallback-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;margin-top:4px}
 .video-header{padding:20px 16px 12px}
-.video-Why Only 5% Win in Stocks{font-size:1.15rem;font-weight:700;color:#1a1a2e;line-height:1.4;margin-bottom:8px}
-.video-meta{font-size:.78rem;color:#6b7280;display:flex;gap:16px;flex-wrap:wrap}.video-meta span{display:flex;align-items:center;gap:4px}
-.video-Li Lu on why most investors underperform and the importance of temperament.{padding:0 16px 16px;font-size:.88rem;color:#4a5568;line-height:1.7}
-.video-yt-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:8px 18px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin:0 16px 16px;transition:background .2s}
-.video-yt-btn:hover{background:#b8922a}
-footer{padding:10px 16px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
+.video-title{font-size:1.15rem;font-weight:700;color:var(--text-primary);line-height:1.4;margin-bottom:8px}
+.video-meta{font-size:.78rem;color:var(--text-muted);display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.video-meta span{display:flex;align-items:center;gap:4px}
+.video-desc{padding:0 16px 16px;font-size:.88rem;color:var(--text-secondary);line-height:1.7}
+.video-ext-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin:0 16px 20px;transition:background .2s}
+.video-ext-btn:hover{background:#b8922a}
+.section-divider{border:none;border-top:1px solid var(--md-outline);margin:20px 16px}
+.chapter{margin:0 16px 28px}
+.chapter-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.chapter-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:var(--md-secondary);color:#0a1628;border-radius:50%;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.chapter-title{font-size:.95rem;font-weight:700;color:var(--text-primary)}
+.chapter-meta{font-size:.72rem;color:var(--text-muted);margin-bottom:10px;padding-left:36px}
+.chapter-body{font-size:.88rem;color:var(--text-secondary);line-height:1.75;padding-left:36px}
+.chapter-body p{margin-bottom:8px}
+.quote-block{border-left:3px solid var(--md-secondary);padding:10px 16px;margin:12px 0;background:var(--md-surface-variant);border-radius:0 6px 6px 0;font-style:italic;color:var(--text-primary)}
+.quote-src{font-size:.75rem;color:var(--text-muted);margin-top:6px;font-style:normal;display:block}
+.key-point{display:flex;gap:8px;margin:8px 0}
+.key-bullet{color:var(--md-secondary);font-weight:700;flex-shrink:0;margin-top:2px}
+.insight-box{background:linear-gradient(135deg,#1c1917,#292524);color:#fafaf9;border-radius:12px;padding:24px;margin:20px 16px}
+.insight-box h3{color:#c9a227;font-size:.95rem;margin-bottom:14px}
+.insight-box p,.insight-box li{color:#d6d3d1}
+footer{padding:10px 16px;background:var(--md-surface-variant);border-top:1px solid var(--md-outline);font-size:.75rem;color:var(--text-muted);display:flex;justify-content:space-between}
 footer a{color:#c9a227;text-decoration:none}
-@media(max-width:768px){:root{--sp-10:20px}.navbar{padding:0 var(--sp-5)}.nav-links{display:none}.hamburger{display:flex}.main-content{padding-top:var(--navbar-height)}}
-@media(prefers-color-scheme:dark){.back-bar{background:#0d1b2a;border-color:#333}footer{background:#0d1b2a;color:#888}}
+@media(max-width:600px){.chapter-body,.chapter-meta{padding-left:0}.chapter{padding-left:0}.video-title{font-size:1rem}}
 </style>
 </head>
 <body>
-<nav class="navbar"><div class="nav-brand"><span>&#10070;</span> 李录研究</div><div class="nav-links"><a href="index.html#about" class="nav-link">关于</a><a href="index.html#holdings" class="nav-link">持仓</a><a href="index.html#principles" class="nav-link">投资原则</a><a href="index.html#framework" class="nav-link">决策框架</a><a href="video_study.html" class="nav-link active">📺 视频学习</a><a href="index.html#quotes" class="nav-link">语录</a><a href="index.html#faq" class="nav-link">FAQ</a></div><button class="theme-toggle" onclick="toggleTheme()">&#9790; 夜间</button><button class="hamburger" onclick="toggleDrawer()" aria-label="菜单"><span></span><span></span><span></span></button></nav>
-<div class="nav-drawer" id="navDrawer"><a href="index.html#about" class="nav-link" onclick="closeDrawer()">关于</a><a href="index.html#holdings" class="nav-link" onclick="closeDrawer()">持仓</a><a href="index.html#principles" class="nav-link" onclick="closeDrawer()">投资原则</a><a href="index.html#framework" class="nav-link" onclick="closeDrawer()">决策框架</a><a href="video_study.html" class="nav-link active">📺 视频学习</a><a href="index.html#quotes" class="nav-link" onclick="closeDrawer()">语录</a><a href="index.html#faq" class="nav-link" onclick="closeDrawer()">FAQ</a></div>
-<main class="main-content">
-<div class="back-bar"><a href="video_study.html">&#8592; 视频列表</a></div>
-<div class="video-embed"><iframe src="https://www.youtube.com/embed/IbrTswEKpLE?rel=0" allowfullscreen Why Only 5% Win in Stocks="Why Only 5% Win in Stocks"></iframe></div>
-<div class="video-header"><h1 class="video-Why Only 5% Win in Stocks">Why Only 5% Win in Stocks</h1><div class="video-meta"><span>&#127916; Timeless Gain</span><span>&#9202; ~10min</span></div></div>
-<div class="video-Li Lu on why most investors underperform and the importance of temperament.">Li Lu on why most investors underperform and the importance of temperament.</div>
-<a href="https://www.youtube.com/watch?v=IbrTswEKpLE" target="_blank" rel="noopener" class="video-yt-btn">&#9654; YouTube 原站观看</a>
-</main>
-<footer><span>仅供学习参考 · <a href="video_study.html">视频列表</a></span><span style="color:#ef4444">不构成投资建议</span></footer>
-<script>function toggleTheme(){document.body.classList.toggle('dark-mode');var btn=document.querySelector('.theme-toggle');btn.textContent=document.body.classList.contains('dark-mode')?'☀️ 白天':'&#9790; 夜间'}function toggleDrawer(){document.getElementById('navDrawer').classList.toggle('open')}function closeDrawer(){document.getElementById('navDrawer').classList.remove('open')}</script>
-</body></html>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand"><span>&#10070;</span> 李录研究</a></div>
+<div class="uni-links">
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/video_study.html" class="uni-link active">学习中心</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+</div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/video_study.html" class="uni-link">学习中心</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+</div>
+
+<div id="uni-body">
+<div class="main-content">
+<div class="back-bar">
+<a href="/li-lu-research/video_study.html">← 视频学习中心</a>
+</div>
+
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/IbrTswEKpLE?rel=0" allowfullscreen title="Why Only 5% Win in Stocks" onerror="this.style.display='none';document.getElementById('videoFallback').classList.add('show')"></iframe>
+<div class="video-fallback" id="videoFallback">
+<div class="video-fallback-icon">&#9654;</div>
+<div class="video-fallback-title">Why Only 5% Win in Stocks</div>
+<div class="video-fallback-msg">此视频暂时无法播放，请点击下方按钮在 YouTube 原站观看</div>
+<a href="https://www.youtube.com/watch?v=IbrTswEKpLE" target="_blank" rel="noopener" class="video-fallback-btn">&#9654; 在 YouTube 观看</a>
+</div>
+</div>
+
+<div class="video-header">
+<div class="video-title">为什么只有5%的人在股市赚钱</div>
+<div class="video-meta">
+<span>&#9202; ~10min</span>
+<span>&#127909; 投资心理学</span>
+<span>&#127757; Timeless Gain</span>
+</div>
+</div>
+
+<div class="video-desc">
+<p>李录系统阐述为什么股市中只有约5%的投资者能够长期跑赢市场——这不是数学问题，而是心理、性格和激励机制的问题。</p>
+<a href="https://www.youtube.com/watch?v=IbrTswEKpLE" target="_blank" rel="noopener" class="video-ext-btn">&#9654; 在 YouTube 观看完整视频</a>
+</div>
+
+<hr class="section-divider">
+
+<div class="insight-box">
+<h3>核心论点</h3>
+<p>资产管理行业是为"交易者"设计的，不是为"投资者"设计的。这个结构性现实，导致95%的资金天然流向短期交易者——这恰恰创造了价值投资者的机会。</p>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">1</span>
+<span class="chapter-title">95%的钱被困在"短期游戏"里</span>
+</div>
+<div class="chapter-meta">Part 1 · 结构性激励</div>
+<div class="chapter-body">
+<p>资产管理公司靠 AUM（管理规模）收费，而不是靠投资回报收费。这意味着：</p>
+<div class="key-point"><span class="key-bullet">→</span><span>交易越频繁，佣金收入越多——机构和客户利益天然背离</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>媒体靠广告生存，短期波动 = 更多点击 = 更多收入</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>分析师发布研报的压力来自雇主，不是真相</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>结果：95%的钱被"锁定"在短期游戏里，被短期情绪支配</span></div>
+<blockquote class="quote-block">
+"这个市场是为那些时时刻刻在交易的人设计的。他们会不断关注短期，他们会为短期的东西付很多钱——而这就是资产最终会发现你的地方。"
+<cite>— 李录</cite>
+</blockquote>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">2</span>
+<span class="chapter-title">股市回报的幂律分布</span>
+</div>
+<div class="chapter-meta">Part 2 · 数学现实</div>
+<div class="chapter-body">
+<p>资本市场遵循幂律分布——少数人拿走大部分回报：</p>
+<div class="key-point"><span class="key-bullet">→</span><span>约5%的投资者长期获得市场超额回报</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>约95%的回报流向了少数人（幂律分布的尾部效应）</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>钱天然向哪里流动？向短期交易者流动——因为那是激励结构引导的方向</span></div>
+<blockquote class="quote-block">
+"5%的投资者持续地、长期地获得了惊人的回报——而95%的资金几乎永远流向别处。"
+<cite>— 李录</cite>
+</blockquote>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">3</span>
+<span class="chapter-title">价值投资者是"基因突变"</span>
+</div>
+<div class="chapter-meta">Part 3 · 进化心理学</div>
+<div class="chapter-body">
+<p>李录用进化生物学的框架解释为什么价值投资者如此稀少：</p>
+<div class="key-point"><span class="key-bullet">→</span><span>几十万年的进化过程使人必须"从众"才能生存——这是写在基因里的倾向</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>在一个大型哺乳动物群体中不掉队，是生存的基本条件</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>价值投资者恰好相反——他们必须能够在别人恐惧时贪婪，在别人贪婪时恐惧</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>这种人几乎相当于"基因突变"——是极少数</span></div>
+<blockquote class="quote-block">
+"你的性格在某种程度上是经过进化过程'基因突变'形成的——你非常习惯于处于少数派，这在人类进化过程中对哺乳动物来说是非常不自然的。"
+<cite>— 李录</cite>
+</blockquote>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">4</span>
+<span class="chapter-title">你必须"正确"不是因为别人同意你</span>
+</div>
+<div class="chapter-meta">Part 4 · 独立思考</div>
+<div class="chapter-body">
+<p>李录对"真理独立于共识"有一段极为精彩的阐述：</p>
+<div class="key-point"><span class="key-bullet">→</span><span>你"正确"不是因为别人同意你，而是因为你的理由和证据站得住脚</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>这听起来是常识，但李录指出：常识恰恰是最稀缺的商品</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>大多数人不会这样思考——他们需要共识来获得安全感</span></div>
+<blockquote class="quote-block">
+"你会很自然地采取这种态度：你是正确的，不是因为别人同意你，而是因为你的推理、你的证据是正确的。这是常识——但当然，常识是最不常见的商品，大多数人不会这样思考。"
+<cite>— 李录</cite>
+</blockquote>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">5</span>
+<span class="chapter-title">先确认你是谁：你是价值投资者吗？</span>
+</div>
+<div class="chapter-meta">Part 5 · 自我认知</div>
+<div class="chapter-body">
+<p>李录在演讲结尾提出的最重要的问题：</p>
+<div class="key-point"><span class="key-bullet">→</span><span>在你未来的职业发展中，你会不断被考验：你是不是一个价值投资者？</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>如果你性格上不是，你就不应该假装是——这不是能伪装出来的东西</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>如果你确实是，你必须极度适应"独处"——这是你将被反复测试的地方</span></div>
+<blockquote class="quote-block">
+"你要非常非常习惯于独自一人——你会自然地采取这种态度：你是正确的，不是因为别人同意你，而是因为你的推理和证据是正确的。"
+<cite>— 李录</cite>
+</blockquote>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">6</span>
+<span class="chapter-title">如何成为一个5%的投资者</span>
+</div>
+<div class="chapter-meta">Part 6 · 实践路径</div>
+<div class="chapter-body">
+<p>李录给出了成为那5%的具体路径：</p>
+<div class="key-point"><span class="key-bullet">1.</span><span><strong>花大部分时间做研究员，而非"专业投资者"</strong>——像学者、记者一样对一切保持无法满足的好奇心</span></div>
+<div class="key-point"><span class="key-bullet">2.</span><span><strong>投资于"理解"而非"预测"</strong>——真正理解一个企业5-10年后的样子</span></div>
+<div class="key-point"><span class="key-bullet">3.</span><span><strong>跨越知与行的鸿沟</strong>——知道和做到之间隔着一生的修炼</span></div>
+<div class="key-point"><span class="key-bullet">4.</span><span><strong>找到那个给你带来巨大机会的洞察</strong>——其他人都因为某种原因无法利用这个机会</span></div>
+<blockquote class="quote-block">
+"你会花大部分时间做一个价值投资者——不是'专业投资者'——而是学者、研究员、记者——对一切保持无法满足的好奇心。因为投资这件事，你懂得越多，你越能成为一个好的投资者。"
+<cite>— 李录</cite>
+</blockquote>
+</div>
+</div>
+
+</div>
+</div>
+
+<footer>
+<span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
+<span><a href="/li-lu-research/video_study.html">← 学习中心</a></span>
+</footer>
+</div>
+
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
+</body>
+</html>

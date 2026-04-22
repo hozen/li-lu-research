@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>关于李录 — 李录价值投资研究</title>
+<meta name="description" content="李录（Li Lu）简介：喜马拉雅资本创始人、价值投资实践者、巴菲特早期支持者。">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--pink:#d53f8c;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:var(--gold)}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-body{padding-top:64px}
+.main-content{max-width:860px;margin:0 auto;padding:0 16px 48px;background:var(--surface);min-height:calc(100vh - 64px)}
+.back-bar{padding:12px 16px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;background:#f7fafc}
+.back-bar a{color:var(--gold);font-size:.85rem;font-weight:500}
+.hero{background:linear-gradient(135deg,#0a1628,#1a365d);color:#fff;padding:40px 24px;border-radius:16px;margin:24px 0}
+.hero-label{color:var(--gold);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+.hero h1{font-size:2rem;font-weight:800;margin-bottom:12px;line-height:1.2}
+.hero-sub{color:#a0aec0;font-size:.95rem;line-height:1.6}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.hero-tag{padding:5px 12px;background:rgba(201,162,39,.15);color:var(--gold);border-radius:20px;font-size:.78rem;font-weight:600}
+.section{padding:8px 0 32px}
+.section-sep{border-top:1px solid #f0f0f0;padding-top:28px;margin-top:8px}
+h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:0;top:5px;bottom:5px;width:3px;background:linear-gradient(to bottom,var(--gold),#e8d5a3)}
+.tl-item{position:relative;margin-bottom:24px;padding-left:18px}
+.tl-item::before{content:'';position:absolute;left:-31px;top:7px;width:10px;height:10px;background:var(--gold);border-radius:50%;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--gold)}
+.tl-date{font-weight:700;color:var(--gold);font-size:.82rem;margin-bottom:3px}
+.tl-title{font-weight:600;color:var(--navy);font-size:.95rem;margin-bottom:3px}
+.tl-content{color:var(--text-muted);font-size:.85rem;line-height:1.7}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:16px 0}
+.stat-card{background:#f7fafc;border-radius:12px;padding:18px 14px;text-align:center;border:1px solid #e2e8f0}
+.stat-card .num{font-size:1.8rem;font-weight:800;color:var(--gold);line-height:1}
+.stat-card .label{font-size:.75rem;color:var(--text-light);margin-top:6px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--surface);border-radius:14px;padding:20px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card h4{color:var(--navy);margin-bottom:8px;font-size:.92rem;font-weight:700}
+.card p{color:var(--text-muted);font-size:.85rem;line-height:1.7}
+.card.blue{border-top:3px solid var(--blue)}
+.card.green{border-top:3px solid var(--green)}
+.card.orange{border-top:3px solid var(--orange)}
+.card.purple{border-top:3px solid var(--purple)}
+.card.teal{border-top:3px solid var(--teal)}
+.quote-box{background:linear-gradient(135deg,var(--gold-light),#fffdf5);border-left:4px solid var(--gold);padding:16px 20px;border-radius:0 12px 12px 0;margin-top:16px}
+.quote-box blockquote{color:var(--text-muted);font-size:.9rem;line-height:1.8;font-style:italic}
+.quote-box cite{display:block;margin-top:8px;font-size:.8rem;color:var(--gold);font-style:normal;font-weight:600}
+footer{padding:24px 16px;background:#f7fafc;border-top:1px solid #e2e8f0;text-align:center;font-size:.78rem;color:var(--text-light)}
+@media(max-width:600px){.hero h1{font-size:1.5rem}.card-grid,.stat-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><span class="uni-brand"><span style="color:var(--gold)">&#10070;</span> 李录研究</span></div>
+<div class="uni-links">
+<a href="index.html" class="uni-link">首页</a>
+<a href="about.html" class="uni-link" style="color:var(--gold)">关于</a>
+<a href="principles.html" class="uni-link">原则</a>
+<a href="video_study.html" class="uni-link">视频</a>
+</div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span style="color:var(--gold)">&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="index.html" class="uni-link">首页</a>
+<a href="about.html" class="uni-link" style="color:var(--gold)">关于</a>
+<a href="principles.html" class="uni-link">投资原则</a>
+<a href="video_study.html" class="uni-link">视频学习</a>
+</div>
+
+<div id="uni-body">
+<div class="main-content">
+<div class="back-bar">
+<a href="index.html">← 返回首页</a>
+</div>
+
+<div class="hero">
+<div class="hero-label">人物档案</div>
+<h1>李录（Li Lu）</h1>
+<p class="hero-sub">喜马拉雅资本（Himalaya Capital）创始人 · 价值投资实践者 · 查理·芒格早期支持者</p>
+<div class="hero-tags">
+<span class="hero-tag">喜马拉雅资本</span>
+<span class="hero-tag">~20% 年化</span>
+<span class="hero-tag">13F 持仓分析</span>
+<span class="hero-tag">比亚迪经典案例</span>
+</div>
+</div>
+
+<div class="stat-grid">
+<div class="stat-card"><div class="num">~20%</div><div class="label">年化收益率</div></div>
+<div class="stat-card"><div class="num">30+</div><div class="label">年投资生涯</div></div>
+<div class="stat-card"><div class="num">1997</div><div class="label">创立喜马拉雅</div></div>
+<div class="stat-card"><div class="num">6</div><div class="label">北大光华课程</div></div>
+</div>
+
+<div class="section">
+<h2>&#128197; 人生时间线</h2>
+<div class="timeline">
+<div class="tl-item"><div class="tl-date">1960年代</div><div class="tl-title">出生于中国</div><div class="tl-content">在文化大革命期间长大，没有私营经济经验，从零开始学习市场经济。</div></div>
+<div class="tl-item"><div class="tl-date">1988年</div><div class="tl-title">哥伦比亚大学 MBA</div><div class="tl-content">在 Bruce Greenwald 的价值投资课堂上首次接触巴菲特思想。</div></div>
+<div class="tl-item"><div class="tl-date">1990年代</div><div class="tl-title">结识查理·芒格</div><div class="tl-content">通过 Greenwald 引荐认识芒格，两人一见如故。芒格及其家族成为喜马拉雅资本的早期 LP。</div></div>
+<div class="tl-item"><div class="tl-date">1997年</div><div class="tl-title">创立喜马拉雅资本</div><div class="tl-content">带着芒格家族的信任和价值投资哲学，正式创立 Himalaya Capital。</div></div>
+<div class="tl-item"><div class="tl-date">2002年</div><div class="tl-title">投资比亚迪</div><div class="tl-content">见到王传福后，判断其具备顶级企业家素质，决定深入研究并投资。</div></div>
+<div class="tl-item"><div class="tl-date">2008年</div><div class="tl-title">推荐比亚迪给芒格/巴菲特</div><div class="tl-content">向芒格推荐比亚迪，最终促成伯克希尔入股——这是两人合作史上最具标志性的事件。</div></div>
+<div class="tl-item"><div class="tl-date">2015年</div><div class="tl-title">北大光华课程启动</div><div class="tl-content">在北大光华管理学院开设价值投资课程，系统传授投资哲学。</div></div>
+<div class="tl-item"><div class="tl-date">2019年</div><div class="tl-title">北大光华第二课</div><div class="tl-content">系统讲授"价值投资在实践中的知行合一"。</div></div>
+<div class="tl-item"><div class="tl-date">2024年</div><div class="tl-title">北大光华第三课</div><div class="tl-content">在北大发表"全球价值投资与时代"演讲，系统阐述对AI时代投资的思考。</div></div>
+</div>
+</div>
+
+<div class="section section-sep">
+<h2>&#127984; 投资哲学特征</h2>
+<div class="card-grid">
+<div class="card blue">
+<h4>&#128161; 第一性原理思维</h4>
+<p>不受传统投资教条束缚，从商业本质出发理解每笔投资。</p>
+</div>
+<div class="card green">
+<h4>&#129309; 长期专注</h4>
+<p>真正理解一家公司后，敢于重仓持有，穿越短期波动。</p>
+</div>
+<div class="card orange">
+<h4>&#128269; 逆向投资</h4>
+<p>在市场抛弃某类资产时寻找机会，如 Crocs 的品牌转型案例。</p>
+</div>
+<div class="card purple">
+<h4>&#127757; 全球视野</h4>
+<p>中美双线布局，理解两个市场的结构性机遇。</p>
+</div>
+<div class="card teal">
+<h4>&#128640; 研究驱动</h4>
+<p>研究时间远大于交易时间，真正理解才出手。</p>
+</div>
+</div>
+</div>
+
+<div class="section section-sep">
+<h2>&#128214; 代表论文</h2>
+<div class="quote-box">
+<blockquote>"《文明、现代化、价值投资与中国》——李录系统阐述其对人类文明演进、现代市场机制和价值投资在中国实践的完整框架。这是理解李录投资哲学不可绕过的文献。"</blockquote>
+<cite>— 2014年首次发表，SSRN可下载</cite>
+</div>
+</div>
+
+</div>
+</div>
+
+<footer>
+<span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
+</footer>
+</div>
+
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
+</body>
+</html>

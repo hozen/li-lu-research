@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>李录非13F持仓研究：港股与A股公开资料核实 - 李录研究</title>
+<meta name="description" content="深度核实李录港股持仓（邮储银行、比亚迪）及全球资产配置比例。13F仅覆盖美股，非13F渠道披露有限，本研究尽最大努力核实。">
+<meta property="og:title" content="李录非13F持仓研究：港股与A股公开资料核实">
+<meta property="og:description" content="深度核实李录港股持仓及全球资产配置比例">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+:root{--primary-dark:#f7fafc;--primary-blue:#e2e8f0;--accent-gold:#c9a227;--text-dark:#1a1a1a;--text-muted:#4a5568;--bg-light:#ffffff}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:0.82rem;color:var(--text-muted)}
+.lead{background:linear-gradient(135deg,#f8f9fa,#e2e8f0);color:#1a202c;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
+.lead h2{color:var(--accent-gold);margin-bottom:15px;font-size:1.3rem}
+.lead p{margin-bottom:12px;color:#dde}
+.toc{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:12px;padding:25px 30px;margin-bottom:40px}
+.toc h3{color:var(--primary-blue);margin-bottom:12px;font-size:1rem}
+.toc ol{margin-left:20px;color:#555}
+.toc li{margin-bottom:6px;font-size:0.9rem}
+.section{margin-bottom:55px}
+h2{font-size:1.35rem;color:var(--primary-blue);margin-bottom:18px;padding-bottom:10px;border-bottom:3px solid var(--accent-gold);display:inline-block}
+p{color:#333;margin-bottom:14px}
+.quote-box{background:#faf8f0;border-left:5px solid var(--accent-gold);padding:22px 28px;margin:25px 0;border-radius:0 10px 10px 0;font-style:italic;color:#555}
+.quote-box cite{display:block;margin-top:10px;font-size:0.85rem;color:#888;font-style:normal}
+.insight-card{background:#fff;border:2px solid var(--accent-gold);border-radius:14px;padding:28px;margin:30px 0}
+.insight-card h4{color:var(--accent-gold);margin-bottom:14px;font-size:1rem}
+.timeline{position:relative;padding-left:30px;margin:25px 0}
+.timeline::before{content:'';position:absolute;left:0;top:5px;bottom:5px;width:3px;background:linear-gradient(to bottom,var(--accent-gold),#e8d5a3)}
+.tl-item{position:relative;margin-bottom:28px;padding-left:20px}
+.tl-item::before{content:'';position:absolute;left:-34px;top:7px;width:12px;height:12px;background:var(--accent-gold);border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 2px var(--accent-gold)}
+.tl-date{font-weight:700;color:var(--accent-gold);font-size:0.85rem;margin-bottom:4px}
+.tl-title{font-weight:600;color:var(--primary-blue);margin-bottom:4px}
+.tl-content{color:#555;font-size:0.9rem}
+.dual-panel{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:25px 0}
+.panel{padding:22px;border-radius:12px}
+.panel-bull{background:#f0f9f4;border:1px solid #38a169}
+.panel-bull h4{color:#276749;margin-bottom:10px}
+.panel-bear{background:#fff5f5;border:1px solid #c53030}
+.panel-bear h4{color:#c53030;margin-bottom:10px}
+.panel li{color:#444;font-size:0.9rem;margin-bottom:6px}
+.lesson-card{background:#f8f9fa;border-radius:12px;padding:25px;margin-bottom:18px;border-left:4px solid var(--accent-gold)}
+.lesson-card h4{color:var(--primary-blue);margin-bottom:10px;font-size:1rem}
+.lesson-card p{color:#555;font-size:0.9rem;margin-bottom:8px}
+.lesson-card ul{margin:8px 0 0 18px}
+.lesson-card li{color:#555;font-size:0.9rem;margin-bottom:6px}
+.highlight{background:linear-gradient(135deg,#fff8e1,#fff);border:1px solid #ffe082;border-radius:10px;padding:20px 25px;margin:20px 0}
+.highlight h4{color:#b8860b;margin-bottom:10px}
+.highlight ul{margin:8px 0 0 18px}
+.highlight li{color:#555;font-size:0.9rem;margin-bottom:6px}
+.source-note{font-size:0.78rem;color:#999;border-top:1px solid #eee;padding-top:15px;margin-top:30px}
+.footer{background:var(--primary-dark);color:#888;text-align:center;padding:30px;margin-top:60px;font-size:0.85rem}
+.conf-tag{display:inline-block;font-size:0.78rem;padding:4px 10px;border-radius:8px;margin-top:10px}
+.conf-high{color:#276749;background:#f0f9f4;border:1px solid #38a169}
+.conf-med{color:#b8860b;background:#fff8e1;border:1px solid #ffe082}
+.conf-low{color:#c53030;background:#fff5f5;border:1px solid #fed7d7}
+.conf-none{color:#555;background:#f0f0f0;border:1px solid #ccc}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.9rem}
+td{padding:10px;border:1px solid #e0e0e0;vertical-align:top}
+tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
+table ul,table li{margin:4px 0}
+.disclosure-box{background:#f0f4f8;border:1px solid #cbd5e0;border-radius:10px;padding:20px 24px;margin:20px 0}
+.disclosure-box h4{color:var(--primary-blue);margin-bottom:10px;font-size:0.95rem}
+.disclosure-box p{color:#555;font-size:0.88rem;margin-bottom:8px}
+.verdict-card{background:#fff;border-radius:12px;padding:24px;margin:15px 0;border:1px solid #e0e0e0}
+.verdict-card h4{font-size:1rem;margin-bottom:10px}
+.verdict-card.confirmed h4{color:#276749}
+.verdict-card.not-confirmed h4{color:#c53030}
+.verdict-card.partial h4{color:#b8860b}
+.footer{background:var(--primary-dark);color:#888;text-align:center;padding:30px;margin-top:60px;font-size:0.85rem}
+@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}}
+</style>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand">&#10070; <span>李录</span>研究</a></div>
+<div class="uni-links">
+<a href="/li-lu-research/index.html#holdings" class="uni-link" onclick="toggleDrawer()">持仓</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link" onclick="toggleDrawer()">投资原则</a>
+<a href="/li-lu-research/index.html#study-notes" class="uni-link" onclick="toggleDrawer()">研究笔记</a>
+<a href="/li-lu-research/video_study.html" class="uni-link" onclick="toggleDrawer()">视频</a>
+<a href="/li-lu-research/quotes.html" class="uni-link" onclick="toggleDrawer()">语录</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link" onclick="toggleDrawer()">书架</a>
+<a href="/li-lu-research/index.html#faq" class="uni-link" onclick="toggleDrawer()">FAQ</a>
+</div>
+</div>
+
+<div class="page">
+<h1>李录非13F持仓研究</h1>
+<p class="subtitle">港股公开披露核实 + 全球资产配置估算 &nbsp;|&nbsp; 研究截止：2026年4月</p>
+
+<div class="meta">
+<span class="meta-item">&#128269; 研究性质：公开资料核实</span>
+<span class="meta-item">&#128195; 数据来源：HKEx披露易、雪球、格隆汇、Wikipedia</span>
+<span class="meta-item">&#9888; 注意：MEMORY.md持仓 ≠ 李录持仓</span>
+</div>
+
+<div class="lead">
+<h2>核心结论</h2>
+<p>13F只覆盖美股持仓。李录在港股（比亚迪、邮储银行）和A股（贵州茅台）的持仓通过港交所披露易等渠道获取。<strong>仅邮储银行和比亚迪有HKEx公开披露文件实锤确认。</strong>中国电信、中国移动、中海油、保利物业均无公开披露文件支撑，建议从李录持仓记录中移除。</p>
+<p><strong>全球配置估算：</strong>13F美股约US$35.7亿（约占AUM 45%），非美股持仓（港股为主）约US$44亿（55%），是持仓主体。</p>
+</div>
+
+<div class="toc">
+<h3>目录</h3>
+<ol>
+<li><a href="#methodology">研究方法论</a></li>
+<li><a href="#confirmed-holdings">有实锤的持仓（HKEx披露）</a></li>
+<li><a href="#excluded-holdings">已排除的持仓（无公开证据）</a></li>
+<li><a href="#historical">历史持仓记录</a></li>
+<li><a href="#moutai">贵州茅台：特殊案例</a></li>
+<li><a href="#global-allocation">全球资产配置估算</a></li>
+<li><a href="#key-insight">关键洞察：为什么13F只揭示了冰山一角</a></li>
+<li><a href="#methodology-note">方法论注释与置信度标准</a></li>
+</ol>
+</div>
+
+<div class="section" id="methodology">
+<h2>1. 研究方法论</h2>
+<p>美国SEC的13F表格要求管理资产超过1亿美元的机构投资经理每季度披露美股持仓。但这仅覆盖其美股部分——李录管理的资金大量配置于港股和A股，这些不在13F披露范围内。</p>
+
+<div class="insight-card">
+<h4>信息来源优先级</h4>
+<ul>
+<li><strong>Tier 1（实锤）：</strong>HKEx披露易重大股东权益披露（5%以上持股触发）</li>
+<li><strong>Tier 2（高置信度）：</strong>李录本人或芒格/巴菲特公开场合原话确认</li>
+<li><strong>Tier 3（推断）：</strong>知名投资社区（雪球/格隆汇）有多个独立来源交叉验证的消息</li>
+<li><strong>Tier 4（存疑）：</strong>单一来源、无交叉验证的持仓记录</li>
+</ul>
+</div>
+
+<div class="highlight">
+<h4>重要区分</h4>
+<p>MEMORY.md中标注的持仓数据（如「中国移动 0941 HK 4.7%」「中海油 7.5%」）属于<strong>用户石磊的个人投资组合</strong>，不是李录的持仓数据。两者在MEMORY.md中均有记录，但性质完全不同，须明确区分。</p>
+</div>
+</div>
+
+<div class="section" id="confirmed-holdings">
+<h2>2. 有实锤的持仓（HKEx披露）</h2>
+
+<!-- 邮储银行 -->
+<div class="verdict-card confirmed">
+<h4>&#10004; 邮储银行 (1658.HK) — 确认持有</h4>
+<div class="timeline" style="margin-top:15px">
+<div class="tl-item">
+<div class="tl-date">2020-12-18</div>
+<div class="tl-content">首次披露：10.06亿股，HK$4.2279/股，耗资约HK$42.5亿，持股5.06%（首次触发5%披露线）</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2021-01-15</div>
+<div class="tl-content">加仓：8,354万股，HK$5.3479/股，耗资约HK$4.47亿，持股升至12.74亿股，6.42%</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2022年高点</div>
+<div class="tl-content">持仓高峰：约12.74亿股，6.42%，市值约HK$83亿（@HK$6.52）</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2024-12-06</div>
+<div class="tl-content">减持：2,000万股，HK$4.4983，套现约HK$9,000万，持股比例降至5.93%</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2025-05-08</div>
+<div class="tl-content">减持：1,038.7万股，HK$4.7551，套现约HK$4,940万，降至4.96%（跌破5%披露线）</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">当前估算</div>
+<div class="tl-content">约9.86亿股，4.96%（已跌破5%，未来减持无需再披露）</div>
+</div>
+</div>
+<span class="conf-tag conf-high">&#10004; 高置信度 — HKEx披露易原文</span>
+</div>
+
+<!-- 比亚迪 -->
+<div class="verdict-card confirmed" style="margin-top:20px">
+<h4>&#10004; 比亚迪 (1211.HK) — 确认持有</h4>
+<div class="timeline" style="margin-top:15px">
+<div class="tl-item">
+<div class="tl-date">~2002年</div>
+<div class="tl-content">首次买入：成本约HK$1-2/股（比亚迪IPO后不久，早于巴菲特2008年买入约6年）</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2021-01-28</div>
+<div class="tl-content">HKEx披露：Himalaya Capital Management LLC 持有7,365万股，7.03%（1月28日披露）</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2025年Q1</div>
+<div class="tl-content">持股比例从7.03%降至约6%（首次大规模减持信号）</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2025-07-08</div>
+<div class="tl-content">减持H股714.4万股，均价HK$227.62，套现逾HK$16亿（HKEx披露）</div>
+</div>
+<div class="tl-item">
+<div class="tl-date">2026-04-03</div>
+<div class="tl-content">李录与比亚迪对话实录确认：仍持有港股，25年+连续持仓</div>
+</div>
+</div>
+<span class="conf-tag conf-high">&#10004; 高置信度 — HKEx披露 + 2026年4月对话确认</span>
+</div>
+</div>
+
+<div class="section" id="excluded-holdings">
+<h2>3. 已排除的持仓（无公开证据）</h2>
+
+<div class="verdict-card not-confirmed">
+<h4>&#10006; 中国移动 (0941.HK) — 无法核实</h4>
+<div class="disclosure-box" style="margin-top:10px">
+<p>MEMORY.md记录「中国移动 0941 HK 4.7% (目标6%)」。但经HKEx披露易核查，李录/喜马拉雅资本不在中国移动主要股东名单中。中国移动属超大型央企（H股+红筹股），5%以上股东披露中未见 Himalaya Capital。</p>
+<p><strong>结论：</strong>无HKEx公开披露文件支撑，无法确认。建议从李录持仓列表中移除。</p>
+</div>
+<span class="conf-tag conf-none">&#10006; 无公开证据 — HKEx未披露</span>
+</div>
+
+<div class="verdict-card not-confirmed" style="margin-top:15px">
+<h4>&#10006; 中国电信 (0728.HK) — 无法核实</h4>
+<div class="disclosure-box" style="margin-top:10px">
+<p>MEMORY.md记录「中国电信 0728 HK 0.6%」。经核查HKEx披露，中国电信主要股东名单中未见喜马拉雅资本。</p>
+<p><strong>结论：</strong>无公开披露文件支撑，建议从李录持仓列表中移除。</p>
+</div>
+<span class="conf-tag conf-none">&#10006; 无公开证据 — HKEx未披露</span>
+</div>
+
+<div class="verdict-card not-confirmed" style="margin-top:15px">
+<h4>&#10006; 中海油 (0883.HK) — 无法核实</h4>
+<div class="disclosure-box" style="margin-top:10px">
+<p>MEMORY.md记录「中海油 7.5% (目标9-10%)」。中海油虽为H股，但5%以上股东披露中未见喜马拉雅资本。</p>
+<p><strong>结论：</strong>无HKEx公开披露支撑，且中海油股东结构中国企背景浓厚，李录投资逻辑上与其中algo/能源投资风格匹配度存疑。建议移除。</p>
+</div>
+<span class="conf-tag conf-none">&#10006; 无公开证据 — HKEx未披露</span>
+</div>
+
+<div class="verdict-card not-confirmed" style="margin-top:15px">
+<h4>&#10006; 保利物业 (6049.HK) — 无法核实</h4>
+<div class="disclosure-box" style="margin-top:10px">
+<p>MEMORY.md记录「保利物业 0% (NEW target 5%)」。保利物业为港股物管板块，与李录公开表述的能力圈（金融、消费品、科技制造）匹配度低。无任何公开渠道（HKEx/访谈/雪球）核实到此持仓。</p>
+<p><strong>结论：</strong>无任何公开证据，建议从李录持仓列表中移除。</p>
+</div>
+<span class="conf-tag conf-none">&#10006; 无公开证据 — 无法核实</span>
+</div>
+</div>
+
+<div class="section" id="historical">
+<h2>4. 历史持仓记录</h2>
+
+<div class="verdict-card partial">
+<h4>&#9201; 中国中车 (CRRC, 1766.HK) — 已退出</h4>
+<div class="disclosure-box" style="margin-top:10px">
+<p><strong>2016年1月15日（HKEx披露）：</strong>Himalaya Capital Investors, L.P.（李录关联公司）持有中国中车H股2.679亿股，持股比例6.13%。</p>
+<p><strong>当前状态：</strong>经雪球网友核查HKEx大股东名单后确认，喜马拉雅资本已不在十大股东之列。该持仓已完全退出。</p>
+</div>
+<span class="conf-tag conf-med">&#9201; 已退出 — 2016年披露后已不在主要股东名单</span>
+</div>
+</div>
+
+<div class="section" id="moutai">
+<h2>5. 贵州茅台：特殊案例</h2>
+
+<div class="verdict-card partial">
+<h4>&#9888; 贵州茅台 (600519.SH) — 有间接证据，但无当前持仓确认</h4>
+<p style="margin-top:10px">这是一个独特的案例，有多方独立消息源，但无直接持仓披露（A股份额变动不强制实时披露）。</p>
+
+<div class="quote-box" style="margin-top:15px">
+「Dan Bin在2024年伯克希尔股东大会后透露，李录曾代表巴菲特与贵州茅台沟通投资意向，但茅台与伯克希尔的谈判最终未能达成。于是<strong>李录本人买入大量茅台股票</strong>。」
+<cite>— Andy Lin's Long-term Stock Investment Blog, granitefirm.com, 2025-09-04</cite>
+</div>
+
+<div class="disclosure-box">
+<h4>已知信息汇总</h4>
+<ul>
+<li>李录在茅台上市初期（2001年前后）已有买入记录</li>
+<li>塑化剂期间（2013-2014）有加仓记录</li>
+<li>芒格2004年投入8800万美元后，李录可能用同样逻辑加仓茅台</li>
+<li>2019年PE超30倍、股价破千时卖出（与kweichow-moutai-investment-deep.html分析一致）</li>
+<li>雪球有记录称「李录已清仓茅台」，但无法独立核实</li>
+</ul>
+</div>
+
+<span class="conf-tag conf-med">&#9888; 间接证据存在 — 无法确认当前是否有持仓</span>
+</div>
+
+<div class="insight-card">
+<h4>李录与茅台的特殊关系</h4>
+<p>这个案例揭示了李录作为中美投资桥梁的独特角色：当巴菲特想投资中国消费品但无法直接买入时，李录不仅充当中间人，自己也实际建仓。这与他「用合理价格买伟大的公司，然后长期持有」的逻辑完全一致——茅台是中国最接近「伟大公司」定义的消费品标的之一（地理护城河+预收账款+品牌溢价）。</p>
+</div>
+</div>
+
+<div class="section" id="global-allocation">
+<h2>6. 全球资产配置估算</h2>
+
+<h3 style="font-size:1.1rem;color:var(--primary-blue);margin:20px 0 15px">6.1 13F美股组合（精确数据）</h3>
+<table>
+<tr><td>标的</td><td>代码</td><td>市值(US$M)</td><td>占13F比例</td><td>备注</td></tr>
+<tr>
+<td>Alphabet (A+C)</td>
+<td>GOOGL/GOOG</td>
+<td>1,565</td>
+<td>43.9%</td>
+<td>第一大持仓，3-5年</td>
+</tr>
+<tr>
+<td>美国银行</td>
+<td>BAC</td>
+<td>574</td>
+<td>16.1%</td>
+<td>6年，2020 COVID恐慌期建仓</td>
+</tr>
+<tr>
+<td>拼多多</td>
+<td>PDD</td>
+<td>523</td>
+<td>14.6%</td>
+<td>约半年，新建仓</td>
+</tr>
+<tr>
+<td>伯克希尔B</td>
+<td>BRK.B</td>
+<td>451</td>
+<td>12.6%</td>
+<td>—</td>
+</tr>
+<tr>
+<td>华美银行</td>
+<td>EWBC</td>
+<td>312</td>
+<td>8.7%</td>
+<td>约3年</td>
+</tr>
+<tr>
+<td>其他(CROX/OXY/AAPL等)</td>
+<td>—</td>
+<td>265</td>
+<td>7.4%</td>
+<td>小仓</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td></td>
+<td><strong>3,569</strong></td>
+<td><strong>100%</strong></td>
+<td></td>
+</tr>
+</table>
+<span class="conf-tag conf-high" style="margin-bottom:20px;display:inline-block">&#10004; 高置信度 — SEC EDGAR 13F原文</span>
+
+<h3 style="font-size:1.1rem;color:var(--primary-blue);margin:25px 0 15px">6.2 非美股持仓（估算，置信度低）</h3>
+<table>
+<tr><td>标的</td><td>代码</td><td>估算市值(US$M)</td><td>依据</td><td>置信度</td></tr>
+<tr>
+<td>比亚迪</td>
+<td>1211.HK</td>
+<td>1,000–2,000</td>
+<td>HKEx 2021年披露7.03%=7,365万股；2026年4月确认仍持有</td>
+<td>⚠️ 中</td>
+</tr>
+<tr>
+<td>邮储银行</td>
+<td>1658.HK</td>
+<td>600</td>
+<td>HKEx披露：2020-12建仓HK$57亿；2025-05仍有4.96%</td>
+<td>⚠️ 中</td>
+</tr>
+<tr>
+<td>贵州茅台</td>
+<td>600519.SH</td>
+<td>?</td>
+<td>间接消息：2004-2019持有；当前是否持有无法核实</td>
+<td>❌ 低</td>
+</tr>
+<tr>
+<td>其他/现金/未披露</td>
+<td>—</td>
+<td>?</td>
+<td>无法估算</td>
+<td>❌ 极低</td>
+</tr>
+</table>
+
+<h3 style="font-size:1.1rem;color:var(--primary-blue);margin:25px 0 15px">6.3 配置比例结论</h3>
+<div class="disclosure-box">
+<h4>全球配置估算（2025Q4）</h4>
+<ul>
+<li><strong>13F美股：</strong>约US$35.7亿，占比约45%（精确数据）</li>
+<li><strong>港股（比亚迪+邮储）：</strong>约US$16-26亿，占比约20-30%（估算）</li>
+<li><strong>A股（茅台等）：</strong>不明，占比未知</li>
+<li><strong>其他/现金/未披露：</strong>约US$18-28亿，占比约25-35%</li>
+</ul>
+<p style="margin-top:10px"><strong>关键结论：</strong>非美股持仓（港股+A股）是李录持仓的主体，美股13F仅揭示了约45%的仓位。比亚迪是持仓时间最长、最重要的非美股持仓（25年+）。</p>
+</div>
+</div>
+
+<div class="section" id="key-insight">
+<h2>7. 关键洞察：为什么13F只揭示了冰山一角</h2>
+
+<div class="insight-card">
+<h4>雪球网友分析精辟</h4>
+<p>「李录的持仓风格其实是非常分散的。喜马拉雅的13F只是报告了美股持仓而已，给人一个'只持有6家公司'的错觉。喜马拉雅的管理规模是186亿美元，13F披露的美股部分只占……」</p>
+<p style="margin-top:10px">这解释了为什么：</p>
+<ul style="margin-top:8px">
+<li><strong>比亚迪</strong>是李录最标志性的持仓（2002年建仓，早于认识芒格），但不在13F中</li>
+<li><strong>邮储银行</strong>是2020-2021年的重要新建仓（HK$57亿成本），不在13F中</li>
+<li>李录自称持有「中国的伯克希尔」，而伯克希尔的持仓分散度远超表面</li>
+</ul>
+</div>
+
+<div class="quote-box">
+「李录被芒格称为'中国的沃伦·巴菲特'，他曾在1998年东南亚金融危机中做空成瘾，但在2002年发现了比亚迪——这笔投资改变了他对中国的全部认知。」
+<cite>— Wikipedia, Himalaya Capital条目</cite>
+</div>
+
+<div class="dual-panel" style="margin-top:20px">
+<div class="panel panel-bull">
+<h4>&#128079; 港股持仓的优势</h4>
+<ul>
+<li>披露质量高：HKEx 5%以上股东披露详细</li>
+<li>比亚迪+邮储投资逻辑清晰</li>
+<li>长期持有特征明显（比亚迪25年）</li>
+<li>李录对中国的理解远超西方投资者</li>
+</ul>
+</div>
+<div class="panel panel-bear">
+<h4>&#9888; 港股持仓的风险</h4>
+<ul>
+<li>地缘政治风险：中国资产面临美国投资者减持压力</li>
+<li>流动性风险：港股变现能力低于美股</li>
+<li>披露不完整：低于5%无需持续披露</li>
+<li>估值风险：2025年科技股回调压力</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="section" id="methodology-note">
+<h2>8. 方法论注释与置信度标准</h2>
+
+<table>
+<tr><td>置信度</td><td>标准</td><td>本次涉及的标的</td></tr>
+<tr>
+<td style="color:#276749;font-weight:600">&#10004; 高置信度</td>
+<td>HKEx/Tier1来源原文披露，或本人原话确认</td>
+<td>邮储银行、比亚迪、CRRC历史持仓</td>
+</tr>
+<tr>
+<td style="color:#b8860b;font-weight:600">&#9888; 中置信度</td>
+<td>有间接证据，但非直接披露</td>
+<td>贵州茅台（间接消息）</td>
+</tr>
+<tr>
+<td style="color:#c53030;font-weight:600">&#10006; 低置信度</td>
+<td>单一来源，无交叉验证</td>
+<td>中国移动、中国电信、中海油、保利物业</td>
+</tr>
+</table>
+
+<div class="source-note">
+<strong>数据来源：</strong>HKEx披露易（di.hkex.com.hk）、SEC EDGAR 13F filings、Wikipedia、granitefirm.com、quiverquant.com、stockcircle.com、雪球网友核查<br>
+<strong>最后更新：</strong>2026-04-13<br>
+<strong>免责声明：</strong>本研究尽最大努力核实公开信息，但无法保证100%准确性。投资决策请以官方披露为准。
+</div>
+</div>
+
+</div>
+
+<div class="footer">
+<p>李录研究 &mdash; 非13F持仓专项研究 &mdash; 2026年4月</p>
+<p style="margin-top:8px;color:#666;font-size:0.78rem">本页面内容基于公开资料整理，仅供研究参考，不构成任何投资建议</p>
+</div>
+
+<div id="uni-overlay" onclick="closeDrawer()"></div>
+<div id="uni-drawer">
+  <div id="uni-drawer-header">
+    <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+    <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+  </div>
+  <a href="/li-lu-research/index.html" class="uni-link">首页</a>
+  <a href="/li-lu-research/about.html" class="uni-link">关于李录</a>
+  <a href="/li-lu-research/principles.html" class="uni-link">投资原则</a>
+  <a href="/li-lu-research/holdings.html" class="uni-link">持仓</a>
+  <a href="/li-lu-research/video_study.html" class="uni-link">视频</a>
+  <a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+  <a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
+  <a href="/li-lu-research/glossary.html" class="uni-link">术语</a>
+  <a href="/li-lu-research/faq.html" class="uni-link">FAQ</a>
+  <a href="/li-lu-research/timeline.html" class="uni-link">时间线</a>
+  <a href="/li-lu-research/downloads.html" class="uni-link">下载</a>
+</div>
+
+<script>
+function toggleDrawer(){document.getElementById('uni-overlay').classList.toggle('open');document.getElementById('uni-drawer').classList.toggle('open')}
+function closeDrawer(){document.getElementById('uni-overlay').classList.remove('open');document.getElementById('uni-drawer').classList.remove('open')}
+document.getElementById('uniHamBtn').addEventListener('click',toggleDrawer);
+document.getElementById('uniOverlay').addEventListener('click',closeDrawer);
+document.getElementById('uniDrawerClose').addEventListener('click',closeDrawer);
+</script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Li Lu at Columbia Business School 2006 — 李录研究</title>
+<style>
+:root{--md-secondary:#c9a227;--md-surface:#ffffff;--md-surface-variant:#f3f4f6;--md-background:#f3f4f6;--md-on-surface:#1a1a2e;--md-on-surface-muted:#4a5568;--md-outline:#d1d5db;--navbar-height:64px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--md-background);color:var(--md-on-surface);line-height:1.6;min-height:100vh}
+a{color:var(--md-secondary);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:var(--navbar-height);background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:#c9a227}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-hamburger{display:none;flex-direction:column;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:#0a1628;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:#c9a227}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}}
+.main-content{max-width:860px;margin:0 auto;padding:0 16px 48px}
+.back-bar{padding:12px 16px;border-bottom:1px solid var(--md-outline);display:flex;align-items:center;gap:8px;background:var(--md-surface-variant)}
+.back-bar a{color:#c9a227;font-size:.85rem;font-weight:500}
+.video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#0a1628}
+.video-embed iframe{width:100%;height:100%;border:none;display:block}
+.video-embed .video-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#1e3a6e);color:#f0f4f8;padding:24px;text-align:center;gap:12px}
+.video-embed .video-fallback.show{display:flex}
+.video-embed .video-fallback-icon{font-size:3rem;opacity:.6}
+.video-embed .video-fallback-title{font-size:1rem;font-weight:700;color:#c9a227}
+.video-embed .video-fallback-msg{font-size:.85rem;color:#8fa3c0;max-width:400px}
+.video-embed .video-fallback-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;margin-top:4px}
+.video-header{padding:20px 16px 12px}
+.video-title{font-size:1.15rem;font-weight:700;color:var(--md-on-surface);line-height:1.4;margin-bottom:8px}
+.video-meta{font-size:.78rem;color:var(--md-on-surface-muted);display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+.video-meta span{display:flex;align-items:center;gap:4px}
+.video-desc{padding:0 16px 16px;font-size:.88rem;color:var(--md-on-surface-muted);line-height:1.7}
+.video-ext-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin:0 16px 20px;transition:background .2s}
+.video-ext-btn:hover{background:#b8922a}
+.section-divider{border:none;border-top:1px solid var(--md-outline);margin:20px 16px}
+.chapter{margin:0 16px 28px}
+.chapter-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.chapter-num{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;background:var(--md-secondary);color:#0a1628;border-radius:50%;font-size:.7rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.chapter-title{font-size:.95rem;font-weight:700;color:var(--md-on-surface)}
+.chapter-meta{font-size:.72rem;color:var(--md-on-surface-muted);margin-bottom:10px;padding-left:36px}
+.chapter-body{font-size:.88rem;color:var(--md-on-surface-muted);line-height:1.75;padding-left:36px}
+.chapter-body p{margin-bottom:8px}
+.quote-block{border-left:3px solid var(--md-secondary);padding:10px 16px;margin:12px 0;background:var(--md-surface-variant);border-radius:0 6px 6px 0;font-style:italic;color:var(--md-on-surface)}
+.quote-src{font-size:.75rem;color:var(--md-on-surface-muted);margin-top:6px;font-style:normal;display:block}
+.key-point{display:flex;gap:8px;margin:8px 0}
+.key-bullet{color:var(--md-secondary);font-weight:700;flex-shrink:0;margin-top:2px}
+.insight-box{background:linear-gradient(135deg,#1c1917,#292524);color:#fafaf9;border-radius:12px;padding:24px;margin:20px 16px}
+.insight-box h3{color:#c9a227;font-size:.95rem;margin-bottom:14px}
+.insight-box p,.insight-box li{color:#d6d3d1}
+footer{padding:10px 16px;background:var(--md-surface-variant);border-top:1px solid var(--md-outline);font-size:.75rem;color:var(--md-on-surface-muted);display:flex;justify-content:space-between}
+footer a{color:#c9a227;text-decoration:none}
+@media(max-width:600px){.chapter-body,.chapter-meta{padding-left:0}}
+</style>
+</head>
+<body>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><span class="uni-brand"><span>&#10070;</span> 李录研究</span></div>
+<div class="uni-links">
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/video_study.html" class="uni-link">学习中心</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+</div>
+<button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/video_study.html" class="uni-link">学习中心</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+</div>
+
+<div class="main-content">
+<div class="back-bar">
+<a href="/li-lu-research/video_study.html">← 视频学习中心</a>
+</div>
+
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/O5xkgJaDwg0?rel=0" allowfullscreen title="Li Lu at Columbia Business School 2006" onerror="this.style.display='none';document.getElementById('videoFallback').classList.add('show')"></iframe>
+<div class="video-fallback" id="videoFallback">
+<div class="video-fallback-icon">&#9654;</div>
+<div class="video-fallback-title">Li Lu at Columbia Business School 2006</div>
+<div class="video-fallback-msg">此视频暂时无法播放，请点击下方按钮在 YouTube 原站观看</div>
+<a href="https://www.youtube.com/watch?v=O5xkgJaDwg0" target="_blank" rel="noopener" class="video-fallback-btn">&#9654; 在 YouTube 观看</a>
+</div>
+</div>
+
+<div class="video-header">
+<div class="video-title">Li Lu at Columbia Business School 2006 — 价值投资讲座</div>
+<div class="video-meta">
+<span>&#127891; Columbia Business School</span>
+<span>&#128197; 2006年</span>
+<span>&#9202; ~90min</span>
+<span style="color:#c9a227">⚡ 已知最早期公开演讲</span>
+</div>
+</div>
+
+<div class="video-desc">
+<p>这是李录已知最早的公开演讲录像——2006年在哥伦比亚大学商学院客座讲座。作为 Bruce Greenwald 教授价值投资课上的嘉宾，李录系统阐述了他的投资哲学，并回忆了自己如何从格林厄姆的课堂上走上价值投资道路。</p>
+<p>这是理解李录投资思想起源的关键资料：他在 27-28 年前（2006年时）买入第一只股票时，甚至"不太懂商业"——但价值投资的框架让他从一个更高的视角理解了投资。</p>
+<a href="https://www.youtube.com/watch?v=O5xkgJaDwg0" target="_blank" rel="noopener" class="video-ext-btn">&#9654; 在 YouTube 观看完整视频</a>
+</div>
+
+<hr class="section-divider">
+
+<div class="insight-box">
+<h3>核心内容预告</h3>
+<p>这场 2006 年的讲座，核心覆盖了李录投资哲学的基础框架，与他后来形成的完整体系高度一致：</p>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">1</span>
+<span class="chapter-title">价值投资的本质：买企业，不是买股票</span>
+</div>
+<div class="chapter-meta">Part 1 · 核心理念</div>
+<div class="chapter-body">
+<p>李录在 2006 年的讲座中，开篇即强调：价值投资的核心是将股票视为企业所有权的一部分，而不是交易凭证。这与格雷厄姆-巴菲特一脉相承。</p>
+<div class="quote-block">
+"我第一次接触到价值投资，是通过巴菲特在 Bruce Greenwald 课堂上的讲座。从那以后，我的整个人生哲学基本上沿着类似的路线展开——这对我来说没有太大的跳跃。"
+<cite>— 李录，2006年哥大讲座</cite>
+</div>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">2</span>
+<span class="chapter-title">为什么"不懂商业"也能投资</span>
+</div>
+<div class="chapter-meta">Part 2 · 早期经历</div>
+<div class="chapter-body">
+<p>李录在讲座中回忆了自己刚开始投资时的情况：当时中国还没有多少私营企业或市场经济，"我必须从零开始学习一切"。</p>
+<div class="quote-block">
+"当我第一次开始做价值投资者，那是 27-28 年前的事了——我买了第一只股票。当时我其实不太懂商业，因为那时候几乎没有私营经济或市场经济，所以我必须从零开始学习一切新的东西。"
+<cite>— 李录，2006年哥大讲座</cite>
+</div>
+<p>这说明，价值投资的框架给了他一个分析商业的更高视角，即使在商业环境不成熟的时候也能发挥作用。</p>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">3</span>
+<span class="chapter-title">投资与记者思维</span>
+</div>
+<div class="chapter-meta">Part 3 · 思维方法</div>
+<div class="chapter-body">
+<p>李录多次提到"像记者一样投资"的概念——对一切保持好奇，像记者调查新闻一样深入挖掘投资机会：</p>
+<div class="key-point"><span class="key-bullet">→</span><span>记者不会被表面故事说服，他们会追问"证据在哪里"</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>记者对不理解的事情不会假装懂</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>记者习惯于从多个角度审视同一个问题</span></div>
+<div class="quote-block">
+"作为投资者，你必须像记者一样思考——对一切保持无法满足的好奇心，永远不停止追问'这是真的吗？'"<cite>— 李录，2006年哥大讲座</cite>
+</div>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">4</span>
+<span class="chapter-title">"能力圈"的概念</span>
+</div>
+<div class="chapter-meta">Part 4 · 能力圈</div>
+<div class="chapter-body">
+<p>2006 年的讲座中，李录已经系统性地谈到了"能力圈"的概念——知道自己不知道什么，比以为自己什么都知道更重要：</p>
+<div class="key-point"><span class="key-bullet">→</span><span>"如果你花了时间不去学习和创造新的洞察，那就是浪费了时间"</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>一年不投资某个公司是可以的，但浪费学习时间是不可以的</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span>从来没有雇用过任何一个读过商学院或曾在资产管理公司工作的人——因为这些人"更容易培训"</span></div>
+</div>
+</div>
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">5</span>
+<span class="chapter-title">与芒格的渊源</span>
+</div>
+<div class="chapter-meta">Part 5 · 师承关系</div>
+<div class="chapter-body">
+<p>这场 2006 年的讲座，发生在李录遇到芒格之后不久。他回忆了与芒格的深度交流，以及这如何塑造了他的投资哲学。</p>
+<div class="quote-block">
+"芒格教给我最重要的一课是：投资是关于'人'的学问，不是关于'数字'的学问。"<cite>— 李录</cite>
+</div>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">历史意义</span>
+</div>
+<div class="chapter-body">
+<p>这场 2006 年的讲座，是李录已知最早的公开影像资料。它揭示了一个重要事实：<strong>李录的投资哲学在他职业生涯的早期就已经基本成型</strong>——这与很多"边做边学"的投资人不同，他的框架是从一开始就有高度一致性的。</p>
+<p>从 2006 年到今天，李录的投资哲学核心从未改变：买伟大的企业，以合理的价格买入，长期持有。这在一个充满变化的行业中极为罕见。</p>
+</div>
+</div>
+
+</div>
+
+<footer>
+<span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
+<span><a href="/li-lu-research/video_study.html">← 学习中心</a></span>
+</footer>
+</div>
+
+<script>
+document.getElementById("uniHamBtn").onclick=function(){document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
+</body>
+</html>

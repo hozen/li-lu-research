@@ -8,23 +8,12 @@
 <meta property="og:title" content="投资邮储银行：李录的决策逻辑与价值投资方法论">
 <meta property="og:description" content="深度拆解李录投资邮储银行的完整决策链条">
 <meta property="og:type" content="article">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="css/shared.css">
 <style>
-:root{--primary-dark:#0a1628;--primary-blue:#1a365d;--accent-gold:#b8860b;--text-dark:#1a1a1a;--text-muted:#4a5568;--bg-light:#ffffff}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.8;color:var(--text-dark);background:var(--bg-light)}
-.navbar{position:fixed;top:0;left:0;right:0;background:rgba(10,22,40,0.97);backdrop-filter:blur(10px);z-index:1000;padding:0 40px;height:70px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{color:#fff;font-size:1.3rem;font-weight:600}
-.nav-brand span{color:var(--accent-gold)}
-.nav-links{display:flex;gap:8px}
-.nav-link{color:#aaa;text-decoration:none;padding:10px 18px;border-radius:8px;font-size:0.9rem;font-weight:500;transition:all 0.3s}
-.nav-link:hover,.nav-link.active{color:#fff;background:rgba(201,162,39,0.15)}
-.page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
-.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent-gold);text-decoration:none;font-size:0.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,0.1);transition:all 0.2s}
-h1{font-size:2rem;color:var(--primary-blue);margin-bottom:12px;line-height:1.3}
-.subtitle{color:var(--text-muted);font-size:1rem;margin-bottom:30px}
+:root{--primary-dark:#f7fafc;--primary-blue:#e2e8f0;--accent-gold:#c9a227;--text-dark:#1a1a1a;--text-muted:#4a5568;--bg-light:#ffffff}
 .meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
 .meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:0.82rem;color:var(--text-muted)}
-.lead{background:linear-gradient(135deg,#0a1628,#1a365d);color:#fff;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
+.lead{background:linear-gradient(135deg,#f8f9fa,#e2e8f0);color:#1a202c;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
 .lead h2{color:var(--accent-gold);margin-bottom:15px;font-size:1.3rem}
 .lead p{margin-bottom:12px;color:#dde}
 .toc{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:12px;padding:25px 30px;margin-bottom:40px}
@@ -75,25 +64,102 @@ table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.9rem}
 td{padding:10px;border:1px solid #e0e0e0;vertical-align:top}
 tr:first-child td{background:#f0f4f8;font-weight:600;color:var(--primary-blue)}
 table ul,table li{margin:4px 0}
-@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:100px 20px 40px}.lead{padding:25px 22px}}
+@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}}
 </style>
+<script src="js/main.js" defer></script>
 </head>
 <body>
-<nav class="navbar">
-<a href="index.html" class="nav-brand"><span>李录</span>研究</a>
-<div class="nav-links">
-<a href="index.html" class="nav-link">首页</a>
-<a href="video_study.html" class="nav-link">视频学习</a>
-<a href="bookshelf.html" class="nav-link">书架</a>
-<a href="downloads.html" class="nav-link">下载</a>
-<a href="timeline.html" class="nav-link">时间线</a>
-<a href="quotes.html" class="nav-link">语录</a>
+<div id="uni-navbar">
+<style>
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#1a202c;font-size:1.2rem;font-weight:600;text-decoration:none}
+#uni-navbar .uni-brand span{color:#c9a227}
+#uni-navbar .uni-links{display:flex;align-items:center;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);text-decoration:none;padding:8px 14px;border-radius:6px;font-size:.875rem;font-weight:500;transition:background .2s,color .2s;white-space:nowrap}
+#uni-navbar .uni-link:hover{color:#1a202c;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:#c9a227}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:10px 12px;margin-left:8px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:280px;background:#f8f9fa;z-index:10001;transform:translateX(100%);transition:transform .3s;padding:24px 20px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:#4a5568;text-decoration:none;padding:14px 16px;border-radius:8px;font-size:1rem;display:block}
+#uni-drawer a.uni-link:hover{color:#1a202c;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+#uni-drawer-brand{color:#1a202c;font-size:1.1rem;font-weight:600}
+#uni-drawer-brand span{color:#c9a227}
+#uni-drawer-close{width:36px;height:36px;background:transparent;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;color:#4a5568;font-size:18px}
+#uni-drawer-theme{margin-top:auto;padding-top:20px;border-top:1px solid #e2e8f0}
+#uni-body{padding-top:56px}
+@media(max-width:900px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}}
+</style>
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
+<div class="uni-links">
+    <a href="index.html" class="uni-link">笔记</a>
+    <a href="timeline.html" class="uni-link">进度</a>
+    <a href="holdings.html" class="uni-link">持仓</a>
+    <div class="uni-dropdown">
+      <a class="uni-link">资料库</a>
+      <div class="uni-dropdown-menu">
+        <a href="about.html">关于李录</a>
+        <a href="principles.html">投资原则</a>
+        <a href="video_study.html">视频</a>
+        <a href="quotes.html">语录</a>
+        <a href="bookshelf.html">书架</a>
+        <a href="glossary.html">术语</a>
+        <a href="faq.html">FAQ</a>
+        <a href="timeline.html">时间线</a>
+      </div>
+    </div>
+  </div>
+  <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
 </div>
+<div id="uni-overlay" id="uniOverlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
+<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
+<a href="/li-lu-research/index.html#my-framework" class="uni-link">视频</a>
+<a href="/li-lu-research/index.html#study-notes" class="uni-link">研究笔记</a>
+<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
+<div class="uni-drawer-theme">
+</div>
+</div>
+<script>
+document.getElementById("uniHamBtn").onclick=function(){
+document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){
+document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){
+document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniThemeBtn").onclick=function(){
+document.body.classList.toggle("dark-mode");this.text=document.body.classList.contains("dark-mode")?"&#9788; 亮色":"&#9790; 暗色"};
+document.getElementById("uniDrawerThemeBtn").onclick=function(){
+document.body.classList.toggle("dark-mode")};
+</script>
+
+<nav class="navbar">
+<a href="/li-lu-research/index.html" class="nav-brand"><span>李录</span>研究</a>
+<div class="nav-links">
+<a href="/li-lu-research/index.html#holdings" class="uni-link" onclick="toggleDrawer()">æä»</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link" onclick="toggleDrawer()">æèµåå</a>
+<a href="/li-lu-research/index.html#study-notes" class="uni-link" onclick="toggleDrawer()">ç ç©¶ç¬è®°</a>
+<a href="/li-lu-research/video_study.html" class="uni-link" onclick="toggleDrawer()">è§é¢</a>
+<a href="/li-lu-research/quotes.html" class="uni-link" onclick="toggleDrawer()">è¯­å½</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link" onclick="toggleDrawer()">ä¹¦æ¶</a>
+<a href="/li-lu-research/index.html#faq" class="uni-link" onclick="toggleDrawer()">FAQ</a>
+<a href="/li-lu-research/index.html" class="uni-link" onclick="toggleDrawer()">é¦é¡µ+å³äº</a></div>
 </nav>
 
 <div class="page">
-<a href="index.html" class="back-link">← 返回首页</a>
-
 <h1>投资邮储银行：李录的决策逻辑与价值投资方法论</h1>
 <p class="subtitle">2020年12月，耗资约43亿港元买入10亿股；2021年1月再度加仓——这是一笔典型的"李录式"投资：不是买便宜货，而是买被市场误解的优质资产。</p>
 
@@ -445,6 +511,38 @@ table ul,table li{margin:4px 0}
 <b>声明：</b>本文仅供学习研究，不构成任何投资建议。银行股投资涉及复杂的资产负债表分析和宏观风险评估，普通投资者请谨慎决策。
 </div>
 </div>
+</div>
+
+  <style>
+    .related-videos { margin-top: 40px; padding-top: 30px; border-top: 2px solid #e2e8f0; }
+    .related-videos h3 { color: #1a365d; margin-bottom: 20px; font-size: 1.3rem; }
+    .related-videos h3::before { content: '\25B6 '; color: #c9a227; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .video-card { background: #f7fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; transition: all 0.2s; }
+    .video-card:hover { border-color: #c9a227; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .video-card h4 { color: #1a365d; font-size: 0.95rem; margin-bottom: 6px; }
+    .video-card p { color: #718096; font-size: 0.82rem; margin-bottom: 12px; }
+    .video-card a { display: inline-block; padding: 8px 16px; background: #1a365d; color: #fff; border-radius: 8px; text-decoration: none; font-size: 0.82rem; font-weight: 500; }
+    .video-card a:hover { background: #c9a227; }
+  </style>
+
+<div class="related-videos">
+  <h3>延伸视频学习</h3>
+  <div class="video-grid">
+<div class="video-card">
+  <h4>CCBC Fireside Chat（哥伦比亚大学）</h4>
+  <p>李录阐述银行股错误定价逻辑与中国金融体系特殊性，含护城河分析框架（约1.5小时）</p>
+  <a href="videos/b2yxBBMIEz0.html">&#9654; 观看带字幕笔记版</a>
+</div><div class="video-card">
+  <h4>Investing in China: Challenges & Opportunities</h4>
+  <p>中国市场独特挑战与机遇，含金融/基础设施板块分析（约15分钟）</p>
+  <a href="videos/YaCRr0DIfuE.html">&#9654; 观看带字幕笔记版</a>
+</div><div class="video-card">
+  <h4>How I Got Started In Value Investing</h4>
+  <p>李录投资起点与成长路径，师从 Bruce Greenwald 的渊源（约10分钟）</p>
+  <a href="videos/-gfRCGZ0zf4.html">&#9654; 观看带字幕笔记版</a>
+</div>
+  </div>
 </div>
 </div>
 

@@ -1,0 +1,393 @@
+{
+  "source": "SEC EDGAR 13F filings via 13f.info",
+  "note": "13F only covers US-listed securities; non-US holdings (HK/China stocks) not included",
+  "quarters": [
+    {
+      "period": "Q4 2025",
+      "filed": "2026-02-18",
+      "formType": "RESTATEMENT",
+      "valueM": 3568.88,
+      "numHoldings": 9,
+      "topHoldings": [
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A", "weight": 22.31, "status": "hold"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C", "weight": 21.55, "status": "hold"},
+        {"ticker": "BAC", "name": "Bank of America", "weight": 16.08, "status": "hold"},
+        {"ticker": "PDD", "name": "PDD Holdings", "weight": 8.69, "status": "hold"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B", "weight": 12.64, "status": "hold"},
+        {"ticker": "OXY", "name": "Occidental Petroleum", "weight": 2.0, "status": "hold", "note": "estimated"},
+        {"ticker": "EWBC", "name": "East West Bancorp", "weight": 2.0, "status": "hold", "note": "estimated"}
+      ],
+      "milestone": "Alphabet成为第一大仓(合计~44%)，PDD进入前五"
+    },
+    {
+      "period": "Q3 2025",
+      "filed": "2025-11-12",
+      "formType": "13F-HR",
+      "valueM": 3230.26,
+      "numHoldings": 9,
+      "topHoldings": [
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A", "status": "hold"},
+        {"ticker": "OXY", "name": "Occidental Petroleum", "status": "new"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C", "status": "hold"},
+        {"ticker": "BAC", "name": "Bank of America", "status": "hold"}
+      ],
+      "milestone": "OXY首次出现在13F"
+    },
+    {
+      "period": "Q2 2025",
+      "filed": "2025-08-14",
+      "formType": "13F-HR",
+      "valueM": 2689.20,
+      "numHoldings": 9,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America", "status": "hold"},
+        {"ticker": "OXY", "name": "Occidental Petroleum", "status": "hold"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A", "status": "hold"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B", "status": "hold"}
+      ],
+      "milestone": "持仓数量增至9个，OXY持续增持"
+    },
+    {
+      "period": "Q1 2025",
+      "filed": "2025-05-15",
+      "formType": "13F-HR",
+      "valueM": 2212.44,
+      "numHoldings": 8,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America", "status": "hold"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B", "status": "hold"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A", "status": "hold"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C", "status": "hold"}
+      ],
+      "milestone": "PDD退出前五，OXY加入"
+    },
+    {
+      "period": "Q4 2024",
+      "filed": "2025-02-14",
+      "formType": "13F-HR",
+      "valueM": 2711.38,
+      "numHoldings": 8,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": "Alphabet双类别股权结构稳定"
+    },
+    {
+      "period": "Q3 2024",
+      "filed": "2024-11-14",
+      "formType": "13F-HR",
+      "valueM": 2472.45,
+      "numHoldings": 8,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": null
+    },
+    {
+      "period": "Q2 2024",
+      "filed": "2024-08-14",
+      "formType": "13F-HR",
+      "valueM": 2561.62,
+      "numHoldings": 7,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": "MU从13F中消失"
+    },
+    {
+      "period": "Q1 2024",
+      "filed": "2024-05-15",
+      "formType": "13F-HR",
+      "valueM": 2260.39,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": null
+    },
+    {
+      "period": "Q4 2023",
+      "filed": "2024-02-14",
+      "formType": "13F-HR",
+      "valueM": 2059.25,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": "Alphabet首次超越BAC成为最大持仓"
+    },
+    {
+      "period": "Q3 2023",
+      "filed": "2023-11-14",
+      "formType": "13F-HR",
+      "valueM": 1820.10,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": null
+    },
+    {
+      "period": "Q2 2023",
+      "filed": "2023-08-14",
+      "formType": "13F-HR",
+      "valueM": 1791.45,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"},
+        {"ticker": "GOOGL", "name": "Alphabet Inc-CL A"}
+      ],
+      "milestone": "PDD退出，META进入前五"
+    },
+    {
+      "period": "Q1 2023",
+      "filed": "2023-05-15",
+      "formType": "13F-HR",
+      "valueM": 2039.30,
+      "numHoldings": 7,
+      "topHoldings": [
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": "MU重回前五，PDD仍在持仓"
+    },
+    {
+      "period": "Q4 2022",
+      "filed": "2023-02-14",
+      "formType": "13F-HR",
+      "valueM": 1927.22,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"}
+      ],
+      "milestone": "MU为最大持仓(约占20%+)，科技股暴跌中坚守"
+    },
+    {
+      "period": "Q3 2022",
+      "filed": "2022-11-14",
+      "formType": "13F-HR",
+      "valueM": 1743.55,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": "加息周期冲击科技股"
+    },
+    {
+      "period": "Q2 2022",
+      "filed": "2022-08-15",
+      "formType": "13F-HR",
+      "valueM": 1873.70,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": null
+    },
+    {
+      "period": "Q1 2022",
+      "filed": "2022-05-16",
+      "formType": "13F-HR",
+      "valueM": 2379.39,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"}
+      ],
+      "milestone": "MU为最大仓，科技股全面下跌前夜"
+    },
+    {
+      "period": "Q4 2021",
+      "filed": "2022-02-14",
+      "formType": "13F-HR",
+      "valueM": 2664.59,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "META", "name": "Meta Platforms"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"}
+      ],
+      "milestone": "META进入持仓，PDD已退出"
+    },
+    {
+      "period": "Q3 2021",
+      "filed": "2021-11-15",
+      "formType": "13F-HR",
+      "valueM": 2147.97,
+      "numHoldings": 7,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "BRK.B", "name": "Berkshire Hathaway B"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"}
+      ],
+      "milestone": null
+    },
+    {
+      "period": "Q2 2021",
+      "filed": "2021-08-13",
+      "formType": "13F-HR",
+      "valueM": 2049.39,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "META", "name": "Meta Platforms"}
+      ],
+      "milestone": "META首次建仓"
+    },
+    {
+      "period": "Q1 2021",
+      "filed": "2021-05-17",
+      "formType": "13F-HR",
+      "valueM": 1978.26,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"},
+        {"ticker": "META", "name": "Meta Platforms"}
+      ],
+      "milestone": "PDD仍在持仓"
+    },
+    {
+      "period": "Q4 2020",
+      "filed": "2021-02-16",
+      "formType": "13F-HR",
+      "valueM": 1815.52,
+      "numHoldings": 6,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "META", "name": "Meta Platforms"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"}
+      ],
+      "milestone": "GOOG首次出现(字母表双股权结构初期)"
+    },
+    {
+      "period": "Q3 2020",
+      "filed": "2020-11-16",
+      "formType": "13F-HR",
+      "valueM": 1311.49,
+      "numHoldings": 4,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "META", "name": "Meta Platforms"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"}
+      ],
+      "milestone": "PDD清仓，META首次出现"
+    },
+    {
+      "period": "Q2 2020",
+      "filed": "2020-08-17",
+      "formType": "13F-HR",
+      "valueM": 1063.75,
+      "numHoldings": 4,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "META", "name": "Meta Platforms"},
+        {"ticker": "GOOG", "name": "Alphabet Inc-CL C"}
+      ],
+      "milestone": "GOOG首次建仓(2020年Q2 COVID恐慌期)"
+    },
+    {
+      "period": "Q1 2020",
+      "filed": "2020-05-14",
+      "formType": "13F-HR",
+      "valueM": 713.21,
+      "numHoldings": 3,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology"},
+        {"ticker": "BAC", "name": "Bank of America"},
+        {"ticker": "BABA", "name": "Alibaba Group"}
+      ],
+      "milestone": "BAC首次建仓(2020年Q1 COVID恐慌期~$22-24)"
+    },
+    {
+      "period": "Q4 2019",
+      "filed": "2020-02-14",
+      "formType": "13F-HR",
+      "valueM": 420.26,
+      "numHoldings": 1,
+      "topHoldings": [
+        {"ticker": "MU", "name": "Micron Technology", "status": "hold"}
+      ],
+      "milestone": "MU首次成为唯一持仓；PDD清仓完毕"
+    },
+    {
+      "period": "Q3 2018",
+      "filed": "2018-11-14",
+      "formType": "13F-HR",
+      "valueM": 10.06,
+      "numHoldings": 2,
+      "topHoldings": [
+        {"ticker": "BABA", "name": "Alibaba Group"},
+        {"ticker": "BIDU", "name": "Baidu Inc"}
+      ],
+      "milestone": "专注中国概念股时期"
+    },
+    {
+      "period": "Q1 2018",
+      "filed": "2018-05-16",
+      "formType": "13F-HR",
+      "valueM": 17.10,
+      "numHoldings": 4,
+      "topHoldings": [
+        {"ticker": "BABA", "name": "Alibaba Group"},
+        {"ticker": "SINA", "name": "Sina Corp"},
+        {"ticker": "BIDU", "name": "Baidu Inc"},
+        {"ticker": "WB", "name": "Weibo Corp"}
+      ],
+      "milestone": "持仓最分散期(4个中概股)"
+    },
+    {
+      "period": "Q1 2017",
+      "filed": "2017-06-14",
+      "formType": "13F-HR",
+      "valueM": 117.59,
+      "numHoldings": 2,
+      "topHoldings": [
+        {"ticker": "BIDU", "name": "Baidu Inc"},
+        {"ticker": "SINA", "name": "Sina Corp"}
+      ],
+      "milestone": "13F最早披露：百度+新浪"
+    }
+  ]
+}
