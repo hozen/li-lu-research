@@ -1,11 +1,15 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-20 10:41
-> Last Audit: 2026-04-20 10:41 (origin/master 与 origin/dev 完全同步，均已更新至 `cd4346d`)
+> Last Updated by Agent: 2026-04-22 09:02
+> Last Audit: 2026-04-22 09:02 (origin/master 与 origin/dev 完全同步，均已更新至 `659a919`；已从 origin/dev/master 中移除所有 wingtech-analysis 内容，Li Lu 站点保持纯净)
 
 ---
 
 ## 已修复记录
+
+- **2026-04-22 第二十九次**: 站点纯净化 + 视频页清理完成 — 清理origin/dev和origin/master中混入的wingtech-analysis内容（共9个commits，从 `e684040` 到 `7580b05`），还原Li Lu站点纯净状态；删除已下架视频页面 `videos/_-M1HFuqus0.html`（YouTube Short已不可用）及其在index.html中的链接；修复 `index.html` 中 Li Lu Explains Value Investing 视频的iframe（移除失效fallback）；origin/master 和 origin/dev 完全同步，均已推送至 `659a919`
+  - Commit: `659a919`
+  - 修复内容：`videos/_-M1HFuqus0.html` 已下架占位符页删除；index.html 移除该视频链接；wingtech-analysis.html 等 wingtech 内容已从 dev/master 移除（保留在 wingtech-analysis 分支）；origin/master 与 origin/dev 再次同步
 
 - **2026-04-20 第二十八次**: Whisper AI转写视频功能完成 + dev/master同步 — 清理origin/dev中无关的wingtech-analysis内容（revert commits `5bc28bd`/`eaa13ee`），确保Li Lu站点内容纯净；video_study.html新增「Whisper AI转写视频」版块（5张视频卡片：比亚迪2026对话/哥大2006演讲/有请专访等），每张卡片含B站外链+SRT字幕本地下载；新增transcripts/目录（含5个.srt字幕文件）+ transcripts/.gitignore（防止大型音频文件误提交）；origin/master 和 origin/dev 完全同步，均已推送至 `cd4346d`
   - Commit: `cd4346d`
