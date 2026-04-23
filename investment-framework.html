@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>李录投资决策框架：Greenwald学术体系 × 巴菲特实践智慧 - 李录研究</title>
+<meta name="description" content="李录投资决策框架白皮书：师承Bruce Greenwald的学术体系，融合巴菲特/芒格实践智慧，涵盖能力圈、护城河、安全边际、估值方法、卖出信号与中国市场视角。">
+<meta property="og:title" content="李录投资决策框架白皮书">
+<meta property="og:description" content="Greenwald框架 × 巴菲特实践：7大维度深度拆解李录价值投资体系">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent-gold,#c9a227);text-decoration:none;font-size:0.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,0.1);transition:all 0.2s}
+.back-link:hover{background:rgba(201,162,39,0.2)}
+h1{font-size:2rem;color:var(--primary-blue,#1a365d);margin-bottom:12px;line-height:1.3}
+.subtitle{color:var(--text-muted,#4a5568);font-size:1rem;margin-bottom:30px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:0.82rem;color:var(--text-muted,#4a5568)}
+.lead{background:linear-gradient(135deg,#f8f9fa,#e2e8f0);color:#1a202c;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
+.lead h2{color:#c9a227;margin-bottom:15px;font-size:1.3rem}
+.lead p{margin-bottom:12px}
+.toc{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:12px;padding:25px 30px;margin-bottom:40px}
+.toc h3{color:var(--primary-blue,#1a365d);margin-bottom:12px;font-size:1rem}
+.toc ol{margin-left:20px;color:#555}
+.toc li{margin-bottom:6px;font-size:0.9rem}
+.toc li a{color:var(--accent-gold,#c9a227);text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+.section{margin-bottom:55px}
+h2{font-size:1.35rem;color:var(--primary-blue,#1a365d);margin-bottom:18px;padding-bottom:10px;border-bottom:3px solid #c9a227;display:inline-block}
+h3{font-size:1.1rem;color:var(--primary-blue,#1a365d);margin:30px 0 12px}
+h4{font-size:1rem;color:var(--primary-blue,#1a365d);margin:22px 0 10px}
+p{color:#333;margin-bottom:14px;line-height:1.8}
+ul,ol{margin:0 0 18px 22px;color:#333;line-height:1.8}
+li{margin-bottom:6px}
+.quote-box{background:#faf8f0;border-left:5px solid #c9a227;padding:22px 28px;margin:25px 0;border-radius:0 10px 10px 0;font-style:italic;color:#555;line-height:1.8}
+.quote-box cite{display:block;margin-top:10px;font-size:0.85rem;color:#888;font-style:normal}
+.insight-card{background:#fff;border:2px solid #c9a227;border-radius:14px;padding:28px;margin:30px 0}
+.insight-card h4{color:#c9a227;margin-bottom:14px;font-size:1rem}
+.lesson-card{background:#f8f9fa;border-radius:12px;padding:25px;margin-bottom:18px;border-left:4px solid #c9a227}
+.lesson-card h4{color:var(--primary-blue,#1a365d);margin-bottom:10px;font-size:1rem}
+.lesson-card p{color:#555;font-size:0.9rem;margin-bottom:8px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:25px 0;text-align:center}
+.num-box{background:#f8f9fa;border-radius:10px;padding:20px 10px}
+.num-box .big{font-size:1.6rem;font-weight:700;color:#c9a227}
+.num-box .label{font-size:0.78rem;color:#888;margin-top:5px}
+.highlight{background:linear-gradient(135deg,#fff8e1,#fff);border:1px solid #ffe082;border-radius:10px;padding:20px 25px;margin:20px 0}
+.highlight h4{color:#b8860b;margin-bottom:10px}
+.source-note{font-size:0.78rem;color:#999;border-top:1px solid #eee;padding-top:15px;margin-top:30px}
+.related-section{margin-top:55px;padding-top:35px;border-top:1px solid #e0e0e0}
+.related-section h3{color:var(--primary-blue,#1a365d);margin-bottom:18px;font-size:1rem}
+.rel-links{display:flex;flex-wrap:wrap;gap:10px}
+.rel-link{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;font-size:0.85rem;color:var(--text-muted,#4a5568);text-decoration:none;transition:all 0.2s}
+.rel-link:hover{background:#fff8e1;border-color:#c9a227;color:#b8860b}
+.rel-link .rel-icon{font-size:1.1rem}
+/* Two-column layout */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:25px 0}
+@media(max-width:680px){.two-col{grid-template-columns:1fr}}
+.col-card{background:#f8f9fa;border-radius:12px;padding:22px;border:1px solid #e0e0e0}
+.col-card h4{font-size:0.95rem;color:var(--primary-blue,#1a365d);margin-bottom:10px}
+.col-card p{font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0}
+/* Three circles */
+.three-circles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:25px 0}
+@media(max-width:680px){.three-circles{grid-template-columns:1fr}}
+.circle-card{background:#f8f9fa;border-radius:12px;padding:22px;text-align:center;border:2px solid transparent;transition:all 0.2s}
+.circle-card:hover{border-color:#c9a227;transform:translateY(-2px)}
+.circle-icon{font-size:2.2rem;margin-bottom:12px}
+.circle-name{font-size:1rem;font-weight:700;color:var(--primary-blue,#1a365d);margin-bottom:6px}
+.circle-desc{font-size:0.82rem;color:#666;line-height:1.65}
+.circle-card.tech{border-top:3px solid #3182ce}
+.circle-card.finance{border-top:3px solid #38a169}
+.circle-card.china{border-top:3px solid #e53e3e}
+/* vs card */
+.vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin:25px 0;align-items:stretch}
+.vs-left,.vs-right{background:#f8f9fa;border-radius:12px;padding:22px;border:1px solid #e0e0e0}
+.vs-center{display:flex;align-items:center;padding:0 14px;font-size:0.85rem;font-weight:700;color:#c9a227}
+.vs-left h4{color:#3182ce;margin-bottom:10px;font-size:0.95rem}
+.vs-right h4{color:#e53e3e;margin-bottom:10px;font-size:0.95rem}
+.vs-left p,.vs-right p{font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0}
+@media(max-width:600px){.vs-grid{grid-template-columns:1fr}.vs-center{padding:8px 0;justify-content:center}}
+/* Moat four levels */
+.moat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:22px 0}
+@media(max-width:600px){.moat-grid{grid-template-columns:1fr}}
+.moat-card{background:#f8f9fa;border-radius:10px;padding:20px;border-top:3px solid #c9a227}
+.moat-card h4{color:var(--primary-blue,#1a365d);margin-bottom:8px;font-size:0.95rem}
+.moat-card p{font-size:0.85rem;color:#555;margin-bottom:0;line-height:1.7}
+/* Decision flow */
+.flow-steps{display:flex;flex-direction:column;gap:14px;margin:25px 0}
+.flow-step{display:flex;gap:16px;align-items:flex-start}
+.flow-num{flex-shrink:0;width:32px;height:32px;background:#c9a227;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem}
+.flow-content{background:#f8f9fa;border-radius:10px;padding:16px 20px;flex:1;border:1px solid #e0e0e0}
+.flow-content h4{color:var(--primary-blue,#1a365d);margin-bottom:6px;font-size:0.95rem}
+.flow-content p{font-size:0.85rem;color:#555;margin-bottom:0;line-height:1.65}
+/* Sell signals */
+.sell-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:22px 0}
+@media(max-width:600px){.sell-grid{grid-template-columns:1fr}}
+.sell-card{background:#f8f9fa;border-radius:10px;padding:20px;border-left:4px solid #e53e3e}
+.sell-card h4{color:#c9a227;margin-bottom:8px;font-size:0.95rem}
+.sell-card p{font-size:0.85rem;color:#555;margin-bottom:0;line-height:1.65}
+.sell-card ul{margin:8px 0 0 18px;font-size:0.83rem;color:#666}
+.sell-card li{margin-bottom:4px}
+/* China risks */
+.risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:22px 0}
+@media(max-width:600px){.risk-grid{grid-template-columns:1fr}}
+.risk-card{background:#f8f9fa;border-radius:10px;padding:20px;border-top:3px solid #e53e3e}
+.risk-card h4{color:#e53e3e;margin-bottom:8px;font-size:0.95rem}
+.risk-card p{font-size:0.85rem;color:#555;margin-bottom:0;line-height:1.65}
+/* Reference table */
+.ref-table{width:100%;border-collapse:collapse;margin:22px 0;font-size:0.88rem}
+.ref-table th{background:var(--primary-blue,#1a365d);color:#fff;padding:10px 14px;text-align:left;font-size:0.82rem}
+.ref-table td{padding:10px 14px;border-bottom:1px solid #e0e0e0;color:#444;vertical-align:top}
+.ref-table tr:nth-child(even){background:#f8f9fa}
+.ref-table tr:hover{background:#fff8e1}
+/* Disclaimer */
+.disclaimer{background:#fff3cd;border:1px solid #ffe082;border-radius:10px;padding:18px 22px;margin-top:40px;font-size:0.85rem;color:#856404;line-height:1.7}
+.disclaimer strong{color:#856404}
+.footer{background:#f8f9fa;color:#888;text-align:center;padding:30px;margin-top:60px;font-size:0.85rem}
+@media(max-width:700px){.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}.three-circles{grid-template-columns:1fr}}
+</style>
+<script src="js/main.js" defer></script>
+<script>
+document.getElementById("uniHamBtn").onclick=function(){
+document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){
+document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){
+document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
+</head>
+<body>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
+<div class="uni-links">
+    <a href="index.html" class="uni-link">笔记</a>
+    <a href="timeline.html" class="uni-link">进度</a>
+    <a href="holdings.html" class="uni-link">持仓</a>
+    <div class="uni-dropdown">
+      <a class="uni-link">资料库</a>
+      <div class="uni-dropdown-menu">
+        <a href="about.html">关于李录</a>
+        <a href="principles.html">投资原则</a>
+        <a href="video_study.html">视频</a>
+        <a href="quotes.html">语录</a>
+        <a href="bookshelf.html">书架</a>
+        <a href="glossary.html">术语</a>
+        <a href="faq.html">FAQ</a>
+        <a href="timeline.html">时间线</a>
+      </div>
+    </div>
+  </div>
+  <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
+<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
+<a href="/li-lu-research/index.html#study-notes" class="uni-link">研究笔记</a>
+<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
+</div>
+
+<div class="page">
+<a href="index.html" class="back-link">&#8592; 返回笔记</a>
+
+<h1>李录投资决策框架</h1>
+<p class="subtitle">师承 Bruce Greenwald，融合巴菲特/芒格实践智慧——从能力圈划定到卖出决策，7大维度完整拆解李录的价值投资体系</p>
+
+<div class="meta">
+<span class="meta-item">📅 首次发布：2026-04-05</span>
+<span class="meta-item">📚 投资框架专题</span>
+<span class="meta-item">🎓 Bruce Greenwald × 李录</span>
+<span class="meta-item">⏱️ 阅读约需18分钟</span>
+</div>
+
+<div class="toc">
+<h3>本文结构</h3>
+<ol>
+<li><a href="#theory">理论基础：师承 Bruce Greenwald</a></li>
+<li><a href="#circles">能力圈：三大核心领域</a></li>
+<li><a href="#moat">护城河判断：Greenwald 四层框架</a></li>
+<li><a href="#valuation">安全边际与估值方法</a></li>
+<li><a href="#sell">卖出决策：四种明确信号</a></li>
+<li><a href="#china">中国市场视角：机会与风险</a></li>
+<li><a href="#flow">决策流程：六步执行框架</a></li>
+</ol>
+</div>
+
+<div class="lead">
+<h2>为什么研究李录的投资框架？</h2>
+<p>李录是 Himalaya Capital 创始人，被认为是将 Bruce Greenwald 学术体系与巴菲特/芒格实践智慧融合得最完整的当代价值投资者之一。他管理着喜马拉雅资本，二十年来为投资者创造了显著超额回报。</p>
+<p>本框架的核心价值在于：它是一套 <strong>可学习、可验证、可复制</strong> 的价值投资体系——不是玄学，而是从护城河评估到卖出决策都有明确标准的决策流程。</p>
+</div>
+
+<!-- 一、理论基础 -->
+<div class="section" id="theory">
+<h2>一、理论基础：师承 Bruce Greenwald</h2>
+
+<h3>1.1 学术渊源</h3>
+<p>李录是哥伦比亚大学商学院 Bruce Greenwald 教授的得意门生。Greenwald 是当代价值投资领域最具影响力的学者之一，其贡献在于将护城河理论系统化、学术化。李录将 Greenwald 的学术框架与巴菲特/芒格的实践智慧深度融合，形成了独特的投资体系。</p>
+
+<div class="quote-box">
+"We embrace the value investment principles of Benjamin Graham, Warren Buffett, and Charles Munger, and today primarily focus on publicly traded companies in Asia and North America."
+<cite>— Himalaya Capital 官网 (www.himcap.com)</cite>
+</div>
+
+<h3>1.2 与巴菲特/芒格的异同</h3>
+
+<table class="ref-table">
+<thead>
+<tr><th>维度</th><th>巴菲特/芒格</th><th>李录</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>核心理念</strong></td><td>内在价值、护城河、安全边际</td><td>高度一致，强调"经济护城河"</td></tr>
+<tr><td><strong>能力圈</strong></td><td>保险、消费、金融</td><td>科技+金融+中国，亚洲+北美双轨</td></tr>
+<tr><td><strong>持仓集中度</strong></td><td>高集中</td><td>高集中，等待"致命一击"机会</td></tr>
+<tr><td><strong>分析框架</strong></td><td>定性为主</td><td>Greenwald 学术框架 + 定性分析</td></tr>
+<tr><td><strong>地域偏好</strong></td><td>美国为主</td><td>亚洲+北美双轨并行</td></tr>
+</tbody>
+</table>
+
+<div class="quote-box">
+"In making investments, I have always believed that you must act with discipline whenever you see something you truly like. To explain this philosophy, Buffett/Munger likes to use a baseball analogy that I find particularly illuminating..."
+<cite>— 李录，Poor Charlie's Almanack，第三版，2009年，第61页</cite>
+</div>
+</div>
+
+<!-- 二、能力圈 -->
+<div class="section" id="circles">
+<h2>二、能力圈：三大核心领域</h2>
+
+<p>李录的能力圈是他区别于大多数美国本土价值投资者的关键差异。他的投资范围高度集中于三个领域：</p>
+
+<div class="three-circles">
+<div class="circle-card tech">
+<div class="circle-icon">💻</div>
+<div class="circle-name">科技</div>
+<div class="circle-desc">深度理解互联网平台公司的网络效应与用户粘性。早期投资多家中国科技巨头，对平台经济逻辑有敏锐判断。代表投资：百度（早期）。</div>
+</div>
+<div class="circle-card finance">
+<div class="circle-icon">🏦</div>
+<div class="circle-name">金融</div>
+<div class="circle-desc">受 Greenwald 影响，对金融机构的估值和分析有独到见解。善于识别具有可持续竞争优势的金融机构。代表投资：Bank of America、PSBC。</div>
+</div>
+<div class="circle-card china">
+<div class="circle-icon">🇨🇳</div>
+<div class="circle-name">中国</div>
+<div class="circle-desc">深度理解中国市场，能够评估中国企业的公司治理风险、政治风险和会计准则差异。华人投资者的本土洞察是最独特优势。代表投资：比亚迪、茅台。</div>
+</div>
+</div>
+
+<div class="insight-card">
+<h4>李录的核心投资理念</h4>
+<p>"我们致力于通过长期持有具有深厚'经济护城河'、巨大增长潜力、由可信之人运营的优质公司，来获取卓越回报。" 这句话浓缩了李录投资体系的精华——护城河、成长性、管理层诚信，三者缺一不可。</p>
+</div>
+</div>
+
+<!-- 三、护城河 -->
+<div class="section" id="moat">
+<h2>三、护城河判断：Greenwald 四层框架</h2>
+
+<p>李录采用 Greenwald 的护城河评估框架，具有明确的四个层次：</p>
+
+<div class="moat-grid">
+<div class="moat-card">
+<h4>🏭 供给侧护城河</h4>
+<p>专有技术/专利、独特的地理位置或资源禀赋、政府许可或牌照。竞争对手无法轻易复制供给端优势。</p>
+</div>
+<div class="moat-card">
+<h4>🛒 需求侧护城河</h4>
+<p>品牌认知度、客户转换成本、习惯性重复购买。客户主动选择而非被迫使用竞争对手的产品。</p>
+</div>
+<div class="moat-card">
+<h4>📈 规模经济护城河</h4>
+<p>单位成本随规模下降、网络效应、渠道优势。规模越大，竞争优势越难被颠覆。</p>
+</div>
+<div class="moat-card">
+<h4>🤝 信任护城河 ★ 李录最强调</h4>
+<p>诚信可靠的管理层、"无缝信任网络"——civilization 的最高形式。这是李录框架中最独特的维度。</p>
+</div>
+</div>
+
+<h3>护城河可持续性：三问检验</h3>
+<p>评估护城河可持续性，李录使用三个关键问题：</p>
+<div class="lesson-card">
+<h4>问题一：五年后还能保持当前竞争优势吗？</h4>
+<p>市场竞争格局会怎么演变？技术变革会不会颠覆这家公司的护城河？</p>
+</div>
+<div class="lesson-card">
+<h4>问题二：竞争对手需要多长时间才能复制这一优势？</h4>
+<p>如果复制需要十年以上，这个护城河的战略价值极高；如果是两三年，则护城河较浅。</p>
+</div>
+<div class="lesson-card">
+<h4>问题三：管理层诚信是否足以支撑护城河持续扩张？</h4>
+<p>即使商业模式再好，如果管理层不可靠，护城河也难以长期维持。这是李录最重视的维度。</p>
+</div>
+
+<div class="quote-box">
+"The highest form which civilization can reach is a seamless web of deserved trust. Not much procedure, just totally reliable people correctly trusting one another."
+<cite>— Charlie Munger（被李录多次引用）</cite>
+</div>
+</div>
+
+<!-- 四、安全边际与估值 -->
+<div class="section" id="valuation">
+<h2>四、安全边际与估值方法</h2>
+
+<h3>4.1 安全边际理念</h3>
+<p>李录的安全边际概念融合了 Graham 的定量安全边际和芒格的定性安全边际：</p>
+
+<div class="two-col">
+<div class="col-card">
+<h4>📊 定量标准（参考 Greenwald）</h4>
+<ul>
+<li>市盈率（PE）：通常要求显著低于行业平均，但无固定上限</li>
+<li>市净率（PB）：重资产行业的重要参考</li>
+<li>自由现金流折现（DCF）：内在价值的参考基准</li>
+</ul>
+</div>
+<div class="col-card">
+<h4>🎯 定性安全边际</h4>
+<ul>
+<li>业务模式的简洁性和可预测性</li>
+<li>管理层的诚信和理性</li>
+<li>竞争优势的持久性</li>
+</ul>
+</div>
+</div>
+
+<h3>4.2 估值方法</h3>
+<div class="nums">
+<div class="num-box"><div class="big">DCF</div><div class="label">内在价值核心工具</div></div>
+<div class="num-box"><div class="big">PE/PB</div><div class="label">相对估值辅助参考</div></div>
+<div class="num-box"><div class="big">清算价值</div><div class="label">极端情况下的安全底线</div></div>
+<div class="num-box"><div class="big">超长期</div><div class="label">20年超长期持股策略</div></div>
+</div>
+
+<div class="quote-box">
+"Some of our holdings date back to our inception twenty years ago."
+<cite>— Himalaya Capital 官网（体现其超长期持股策略）</cite>
+</div>
+</div>
+
+<!-- 五、卖出决策 -->
+<div class="section" id="sell">
+<h2>五、卖出决策：四种明确信号</h2>
+
+<p>李录的卖出决策遵循严格原则：卖出的频率应远低于买入，优质公司的卖出需要更严格的条件。</p>
+
+<div class="sell-grid">
+<div class="sell-card">
+<h4>📉 基本面恶化</h4>
+<p>护城河出现根本性侵蚀，管理层诚信受损，行业结构性变化不可逆。</p>
+</div>
+<div class="sell-card">
+<h4>🚀 估值极端泡沫化</h4>
+<p>价格远超内在价值，市场过度乐观，安全边际完全消失。</p>
+</div>
+<div class="sell-card">
+<h4>💡 发现更好机会</h4>
+<p>"致命一击"的机会出现，需要重新配置资本到更具吸引力的标的。</p>
+</div>
+<div class="sell-card">
+<h4>🎯 持仓超出能力圈</h4>
+<p>公司业务扩张到李录无法理解的范畴，原有投资逻辑不再适用。</p>
+</div>
+</div>
+
+<div class="highlight">
+<h4>📌 李录的核心卖出哲学</h4>
+<p>投资者最常见的问题之一是交易过于频繁——无论个人投资者还是受机构制度约束的专业投资者都是如此。李录强调：卖出的条件远比买入严格，优质公司的持有应以十年为单位计算。</p>
+</div>
+
+<div class="quote-box">
+"One common problem for investors is that they tend to swing too often. This is true for both individuals and for professional investors operating under institutional imperatives..."
+<cite>— 李录，Poor Charlie's Almanack</cite>
+</div>
+</div>
+
+<!-- 六、中国市场 -->
+<div class="section" id="china">
+<h2>六、中国市场视角：机会与风险并存</h2>
+
+<div class="two-col">
+<div class="col-card" style="border-top:3px solid #38a169">
+<h4>🌟 独特机会</h4>
+<ul>
+<li><strong>成长性溢价：</strong>新兴市场快速增长提供超额收益</li>
+<li><strong>信息不对称：</strong>西方投资者理解不足，造成定价偏差</li>
+<li><strong>本土优势：</strong>语言和文化优势带来信息获取优势</li>
+</ul>
+</div>
+<div class="col-card" style="border-top:3px solid #e53e3e">
+<h4>⚠️ 特殊风险</h4>
+<ul>
+<li><strong>地缘政治风险：</strong>美中关系紧张带来政策不确定性</li>
+<li><strong>公司治理风险：</strong>关联交易、小股东保护不足</li>
+<li><strong>会计准则风险：</strong>财务报告透明度和可靠性</li>
+<li><strong>汇率风险：</strong>人民币汇率波动影响回报</li>
+</ul>
+</div>
+</div>
+
+<h3>李录的中国投资策略</h3>
+<div class="risk-grid">
+<div class="risk-card" style="border-top-color:#3182ce">
+<h4>🔍 深度本土研究</h4>
+<p>利用语言和文化优势，对中国公司进行远超西方投资者的深度研究。</p>
+</div>
+<div class="risk-card" style="border-top-color:#3182ce">
+<h4>🏛️ 治理结构筛选</h4>
+<p>将管理层诚信作为首要筛选标准，治理结构有瑕疵的公司直接排除。</p>
+</div>
+<div class="risk-card" style="border-top-color:#3182ce">
+<h4>⚖️ 分散化配置</h4>
+<p>不将全部资产集中于中国，在亚洲和北美之间保持平衡配置。</p>
+</div>
+<div class="risk-card" style="border-top-color:#3182ce">
+<h4>⏳ 长期持有</h4>
+<p>通过时间化解政策波动风险，不参与短期投机性交易。</p>
+</div>
+</div>
+</div>
+
+<!-- 七、决策流程 -->
+<div class="section" id="flow">
+<h2>七、决策流程：六步执行框架</h2>
+
+<p>李录的投资决策可以分解为六个步骤，每一步都有明确的执行标准：</p>
+
+<div class="flow-steps">
+<div class="flow-step">
+<div class="flow-num">1</div>
+<div class="flow-content">
+<h4>能力圈筛选</h4>
+<p>判断投资机会是否落在科技、金融或中国三大核心能力圈内。不在能力圈内 → 直接放弃。</p>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-num">2</div>
+<div class="flow-content">
+<h4>护城河评估（Greenwald 框架）</h4>
+<p>四层检验：供给侧 → 需求侧 → 规模经济 → 信任护城河 ★。任何一层缺失都需要慎重评估。</p>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-num">3</div>
+<div class="flow-content">
+<h4>估值与安全边际</h4>
+<p>DCF 内在价值评估为主，相对估值（PE/PB）为辅。买入价格必须显著低于内在价值。</p>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-num">4</div>
+<div class="flow-content">
+<h4>买入决策</h4>
+<p>"致命一击"——等待完美机会，重仓出击。不是所有符合标准的机会都买入，只买最确定的机会。</p>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-num">5</div>
+<div class="flow-content">
+<h4>持有与监控</h4>
+<p>持续评估护城河是否可持续，抗拒短期波动干扰。优质公司的短期下跌不是卖出理由。</p>
+</div>
+</div>
+<div class="flow-step">
+<div class="flow-num">6</div>
+<div class="flow-content">
+<h4>卖出决策</h4>
+<p>基本面恶化 / 估值泡沫化 / 发现更好机会 / 超出能力圈。卖出条件远比买入严格。</p>
+</div>
+</div>
+</div>
+
+<div class="nums">
+<div class="num-box"><div class="big">3</div><div class="label">核心能力圈数量</div></div>
+<div class="num-box"><div class="big">4</div><div class="label">护城河层次</div></div>
+<div class="num-box"><div class="big">4</div><div class="label">卖出信号类型</div></div>
+<div class="num-box"><div class="big">6</div><div class="label">决策步骤</div></div>
+</div>
+</div>
+
+<!-- 相关链接 -->
+<div class="related-section">
+<h3>相关阅读</h3>
+<div class="rel-links">
+<a href="circle-of-competence.html" class="rel-link"><span class="rel-icon">⭕</span> 能力圈详解 · 判断标准与北大5问测试</a>
+<a href="byd-investment-deep.html" class="rel-link"><span class="rel-icon">🚗</span> 比亚迪案例 · 能力圈实战解析</a>
+<a href="principles.html" class="rel-link"><span class="rel-icon">📋</span> 投资原则清单</a>
+<a href="about.html" class="rel-link"><span class="rel-icon">👤</span> 关于李录 · 生平与投资历程</a>
+<a href="quotes.html" class="rel-link"><span class="rel-icon">💬</span> 李录语录精选</a>
+<a href="glossary.html" class="rel-link"><span class="rel-icon">📖</span> 术语表（护城河/安全边际/DCF）</a>
+</div>
+</div>
+
+<div class="source-note">
+<strong>参考来源：</strong> Himalaya Capital官网 (www.himcap.com) · Poor Charlie's Almanack（第三版，2009年，第61页）· Bruce Greenwald "Value Investing: A Guide to Equity Management" · 李录北大光华管理学院《价值投资》课程笔记（2015/2019/2024）
+</div>
+
+<div class="disclaimer">
+<strong>免责声明：</strong>本白皮书基于公开资料整理，仅供研究参考，不构成任何形式的投资建议。投资有风险，决策需谨慎。
+</div>
+
+<div class="footer">
+<p>本文为李录研究站内专题 · 字数约3,200字 · 相关内容已归档至 <a href="index.html">主笔记</a></p>
+</div>
+
+</div>
+</body>
+</html>
