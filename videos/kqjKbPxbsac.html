@@ -48,6 +48,8 @@ a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{co
 .video-title{font-size:1.15rem;font-weight:700;color:var(--text-primary);line-height:1.4;margin-bottom:8px}
 .video-meta{font-size:.78rem;color:var(--text-muted);display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
 .video-meta span{display:flex;align-items:center;gap:4px}
+.confidence-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:600}
+.confidence-tag.ok{background:#d1fae5;color:#065f46}
 .video-desc{padding:0 16px 16px;font-size:.88rem;color:var(--text-secondary);line-height:1.7}
 .video-ext-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin:0 16px 20px;transition:background .2s}
 .video-ext-btn:hover{background:#b8922a}
@@ -66,9 +68,12 @@ a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{co
 .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600;margin-right:4px}
 .tag-core{background:#fef3c7;color:#92400e}
 .tag-insight{background:#d1fae5;color:#065f46}
+.tag-psych{background:#ede9fe;color:#5b21b6}
+.tag-case{background:#fee2e2;color:#991b1b}
+.sub-chapter{margin:14px 0 10px;font-size:.82rem;color:var(--text-primary);font-weight:700;padding-left:36px}
 footer{padding:10px 16px;background:var(--md-surface-variant);border-top:1px solid var(--md-outline);font-size:.75rem;color:var(--text-muted);display:flex;justify-content:space-between}
 footer a{color:#c9a227;text-decoration:none}
-@media(max-width:600px){.chapter-body,.chapter-meta{padding-left:0}.chapter{padding-left:0}.video-title{font-size:1rem}}
+@media(max-width:600px){.chapter-body,.chapter-meta,.sub-chapter{padding-left:0}.chapter{padding-left:0}.video-title{font-size:1rem}}
 </style>
 </head>
 <body>
@@ -118,130 +123,215 @@ footer a{color:#c9a227;text-decoration:none}
 <span>&#9202; ~2h</span>
 <span>&#127909; 知行合一</span>
 </div>
+<span class="confidence-tag ok">&#10004; 核心内容 · 系统整理</span>
 </div>
 
 <div class="video-desc">
-<p>北大光华价值投资课程第二课，李录系统讲授价值投资如何从理念落实到具体投资决策，涵盖投资心理、案例复盘与错误分析，并深度讨论能力圈与护城河的实际判断方法。</p>
+<p>北大光华价值投资课程第二课，李录聚焦"知行合一"——从价值投资理念到实际投资决策之间的鸿沟。核心议题包括：投资心理学（行为金融学视角）、能力圈判断的5问测试法、护城河的动态验证框架、比亚迪案例全解析，以及将决策流程内化的修炼路径。</p>
 <a href="https://www.youtube.com/watch?v=kqjKbPxbsac" target="_blank" rel="noopener" class="video-ext-btn">&#9654; 在 YouTube 观看</a>
+<a href="https://www.bilibili.com/video/BV1BN4y137Ax/" target="_blank" rel="noopener" class="video-ext-btn" style="background:#00A3E0;color:#fff">&#9654; Bilibili 备用</a>
 </div>
 
 <hr class="section-divider">
 
+<!-- Chapter 1: 投资心理学 -->
 <div class="chapter">
 <div class="chapter-header">
 <span class="chapter-num">1</span>
 <span class="chapter-title">知与行的鸿沟：为什么知道却做不到</span>
 </div>
-<div class="chapter-meta">Part 1 · 价值投资心理学</div>
+<div class="chapter-meta">Part 1 · 价值投资心理学 · 行为金融学视角</div>
 <div class="chapter-body">
-<p>李录指出，价值投资的最大障碍不是知识，而是心理与情绪。知道"别人恐惧时贪婪"的人很多，真正能做到的寥寥无几。他分析了四种主要的投资心理偏差：损失厌恶（Loss Aversion）、过度自信（Overconfidence）、社会认同压力（Social Proof）、以及叙事偏差（Narrative Bias）。</p>
+<p>李录指出，价值投资的最大障碍不是知识，而是心理与情绪的运作机制。"知"可以在课堂上传授，但"行"需要另一套完全不同的训练——这个鸿沟，也是大多数自认为是价值投资者的人最终失败的根本原因。</p>
+
+<p><strong>四种核心投资心理偏差：</strong></p>
+<div class="key-point"><span class="key-bullet">①</span><span><strong>损失厌恶（Loss Aversion）</strong> — 亏损的痛苦是同等盈利快感的两倍。这导致投资者过早卖出盈利仓位、长期持有亏损仓位——与正确做法完全相反。</span></div>
+<div class="key-point"><span class="key-bullet">②</span><span><strong>过度自信（Overconfidence）</strong> — 大多数投资者高估自己的选股能力和市场判断。研究显示，超过70%的司机认为自己的驾驶水平在前50%，这同样是投资领域的常态。</span></div>
+<div class="key-point"><span class="key-bullet">③</span><span><strong>社会认同压力（Social Proof）</strong> — 当周围所有人都在买某只股票，坚持逆向判断极为困难。"别人都在赚钱"的感受会持续侵蚀理性决策的信心基础。</span></div>
+<div class="key-point"><span class="key-bullet">④</span><span><strong>叙事偏差（Narrative Bias）</strong> — 人类大脑天生喜欢故事，容易被一个好故事说服，而不是被数据和分析说服。一个令人信服的投资叙事，往往比严谨的现金流预测更能影响实际投资决策。</span></div>
+
+<p><strong>概率思维 vs 确定性幻觉：</strong></p>
+<p>李录以芒格和巴菲特的实践说明，真正的投资者都是"概率思维"者。他们不追求每次决策都对，而是让概率站在自己这边——接受错误是交易成本的一部分，但确保长期期望值为正。</p>
+
 <div class="quote-block">
 "知道和做到之间隔着一整个情绪管理的过程。这个过程需要刻意练习，可能需要很多年才能内化。"
 <div class="quote-src">— 李录，2019北大光华课程</div>
 </div>
-<p>他以芒格和巴菲特的例子说明，真正的投资者都是"概率思维"者——不追求每次都对，而是让概率站在自己这边，长期下来积累优势。</p>
-</div>
-</div>
 
-<div class="chapter">
-<div class="chapter-header">
-<span class="chapter-num">2</span>
-<span class="chapter-title">能力圈的核心：知道自己不知道什么</span>
-</div>
-<div class="chapter-meta">Part 2 · 能力圈判断</div>
-<div class="chapter-body">
-<p>李录强调，能力圈建设的核心不是"扩展边界"，而是"诚实地丈量边界"。他给出了判断自己是否真正理解一家公司的几个标准：</p>
-<div class="key-point"><span class="key-bullet">1.</span><span><strong>你能预测这家公司未来5-10年的自由现金流吗？</strong>如果不能，说明不在能力圈内</span></div>
-<div class="key-point"><span class="key-bullet">2.</span><span><strong>你能说出这家公司的竞争对手为什么无法复制它的优势吗？</strong></span></div>
-<div class="key-point"><span class="key-bullet">3.</span><span><strong>如果市场关闭5年，你仍然愿意持有这家公司吗？</strong></span></div>
-<div class="quote-block">
-"如果不能回答这家公司5年后会是什么样子，就不要买它。这个门槛看起来很高，但这是保护自己最好的方式。"
-<div class="quote-src">— 李录，2019北大光华课程</div>
-</div>
-</div>
-</div>
-
-<div class="chapter">
-<div class="chapter-header">
-<span class="chapter-num">3</span>
-<span class="chapter-title">护城河的判断：不是名词，而是动词</span>
-</div>
-<div class="chapter-meta">Part 3 · 护城河分析框架</div>
-<div class="chapter-body">
-<p>李录将护城河分析从静态描述转为动态判断，提出了四个检验护城河真实性的问题：</p>
-<div class="key-point"><span class="key-bullet">①</span><span><strong>这个优势10年后还在吗？</strong> — 时间是检验护城河的唯一标准</span></div>
-<div class="key-point"><span class="key-bullet">②</span><span><strong>竞争对手是否在积极进攻这个领域？</strong> — 如果没人进攻，说明护城河可能只是壁垒而非真正的竞争优势</span></div>
-<div class="key-point"><span class="key-bullet">③</span><span><strong>技术变革是在加强还是削弱这个优势？</strong></span></div>
-<div class="key-point"><span class="key-bullet">④</span><span><strong>管理层的资本配置决策是否理性？</strong> — 护城河可以被糟糕的资本配置摧毁</span></div>
-<div class="quote-block">
-"护城河不是一个名词，而是一个动态的过程。你必须不断去验证它是否仍然存在。"
-<div class="quote-src">— 李录，2019北大光华课程</div>
-</div>
-</div>
-</div>
-
-<div class="chapter">
-<div class="chapter-header">
-<span class="chapter-num">4</span>
-<span class="chapter-title">投资案例复盘：比亚迪为什么是经典案例</span>
-</div>
-<div class="chapter-meta">Part 4 · 比亚迪案例分析</div>
-<div class="chapter-body">
-<p>比亚迪是李录投资生涯中最具标志性的案例，也是他向巴菲特和芒格推荐的项目。李录在2019年课堂上深度复盘了投资比亚迪的决策逻辑：</p>
-<div class="key-point"><span class="key-bullet">✓</span><span><strong>赛道对：</strong>王传福的企业家精神 + 垂直整合能力 + 中国电动车市场结构性增长</span></div>
-<div class="key-point"><span class="key-bullet">✓</span><span><strong>人重要：</strong>李录在2002年见到王传福后，判断他具有"芒格式"的诚信和能力，立刻决定深入研究</span></div>
-<div class="key-point"><span class="key-bullet">✓</span><span><strong>时机对：</strong>2008年之前已建立底仓，在金融危机期间比亚迪股价暴跌时加仓</span></div>
-<div class="key-point"><span class="key-bullet">✓</span><span><strong>护城河深：</strong>电池技术垂直整合 + 成本优势 + 中国市场先发优势</span></div>
-<div class="quote-block">
-"我从来没有见过一个企业家像王传福那样，对技术的理解和掌握到了痴迷的程度。这是比亚迪护城河的核心。"
-<div class="quote-src">— 李录，2019北大光华课程</div>
-</div>
-</div>
-</div>
-
-<div class="chapter">
-<div class="chapter-header">
-<span class="chapter-num">5</span>
-<span class="chapter-title">价值投资的最高境界：知行合一</span>
-</div>
-<div class="chapter-meta">Part 5 · 投资哲学总结</div>
-<div class="chapter-body">
-<p>李录以"知行合一"作为这堂课的核心主题，并将中国传统哲学智慧与现代投资理论相结合：</p>
-<div class="key-point"><span class="key-bullet">知</span><span><strong>真知：</strong>不是听过，而是真正理解并能用概率表达——知道结果的范围和可能性</span></div>
-<div class="key-point"><span class="key-bullet">行</span><span><strong>笃行：</strong>在市场极端时刻（暴跌时敢买，暴涨时敢卖）仍然执行既定策略</span></div>
-<div class="key-point"><span class="key-bullet">合</span><span><strong>知行合一：</strong>让正确的投资理念内化为直觉，不需要刻意提醒自己该怎么做</span></div>
-<div class="quote-block">
-"价值投资的最高境界是'知行合一'——你的判断和你的行为完全一致。这需要一生的修炼，但每一步都值得。"
-<div class="quote-src">— 李录，2019北大光华课程</div>
-</div>
+<p style="margin-top:10px;"><span class="tag tag-psych">方法论</span>克服这四种偏差的关键不是"更努力思考"，而是建立一套体系化的决策流程，让正确的行为不需要依赖每日的意志力。</p>
 </div>
 </div>
 
 <hr class="section-divider">
 
+<!-- Chapter 2: 能力圈 -->
 <div class="chapter">
 <div class="chapter-header">
-<span class="chapter-num">核心 takeaways</span>
+<span class="chapter-num">2</span>
+<span class="chapter-title">能力圈的核心：知道自己不知道什么</span>
+</div>
+<div class="chapter-meta">Part 2 · 能力圈判断 · 5问测试法</div>
+<div class="chapter-body">
+<p>李录在2019年课程中首次系统阐述了他的能力圈判断标准——核心只有一条：<strong>你能否对该公司5-10年的自由现金流做出可靠的预测？</strong>如果不能，就不在能力圈内。</p>
+
+<p>他特别强调，能力圈建设的核心不是"扩展边界"，而是"诚实地丈量边界"。大部分投资者失败，不是因为能力圈太小，而是因为高估了自己的认知边界。</p>
+
+<p><strong>5问测试法（2019课程标准）：</strong></p>
+<div class="key-point"><span class="key-bullet">Q1</span><span><strong>能用一句话说清楚这家公司凭什么赚钱吗？</strong><br>可持续竞争优势（护城河）是什么？供给侧、需求侧、规模经济还是信任？如果无法简洁表述，说明理解不够深入。</span></div>
+<div class="key-point"><span class="key-bullet">Q2</span><span><strong>能大致预测这家公司5年后的自由现金流吗？</strong><br>不是精确数字，而是量级估算。如果连5年后能否维持当前盈利都不确定，是危险信号。</span></div>
+<div class="key-point"><span class="key-bullet">Q3</span><span><strong>这家公司的竞争优势在5年后还会存在吗？</strong><br>市场竞争格局如何演变？技术变革会否颠覆护城河？这是判断护城河可持续性的核心。</span></div>
+<div class="key-point"><span class="key-bullet">Q4</span><span><strong>管理层的诚信和能力是否值得信赖？</strong><br>李录最强调"信任护城河"——即使商业模式再好，管理层不可靠也不在能力圈内。</span></div>
+<div class="key-point"><span class="key-bullet">Q5</span><span><strong>如果市场关闭5年，你还愿意持有这家公司吗？</strong><br>巴菲特经典测试。如果答案是否定的，说明买入理由更多是价格投机而非价值投资。</span></div>
+
+<div class="quote-block">
+"我每次重仓出手，都是因为这个机会真的在我的能力圈内，而且有足够的安全边际。如果没有同时满足这两个条件，我不会出手。"
+<div class="quote-src">— 李录，2019北大光华课程</div>
+</div>
+
+<p><strong>能力圈是动态的，不是静态的：</strong></p>
+<p>李录以比亚迪为例——2008年投资时他花了数年研究电动汽车行业，与王传福多次深入交流才形成真正的能力圈边界。当比亚迪从电池扩展到汽车时，他做了大量额外研究来确认认知边界。能力圈会随着认知积累而扩展，也会因企业业务延伸而收缩。</p>
+
+<p style="margin-top:10px;"><span class="tag tag-insight">关键洞察</span>李录从不投资医药股——即使行业看起来诱人，他清楚自己无法预测药品审批流程和政策风险。他的选择是直接说"不知道"，而不是假装理解。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Chapter 3: 护城河 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">3</span>
+<span class="chapter-title">护城河的判断：不是名词，而是动词</span>
+</div>
+<div class="chapter-meta">Part 3 · 护城河分析框架 · 动态验证四问</div>
+<div class="chapter-body">
+<p>李录将护城河分析从静态描述转为动态判断。他指出，护城河不是一个可以一次性确认后就置之不理的静态标签，而是需要持续验证的动态过程。</p>
+
+<p><strong>护城河动态验证四问：</strong></p>
+<div class="key-point"><span class="key-bullet">①</span><span><strong>这个优势10年后还在吗？</strong><br>时间是检验护城河的唯一标准。一个护城河必须能经历10年以上的竞争压力而不被填平。</span></div>
+<div class="key-point"><span class="key-bullet">②</span><span><strong>竞争对手是否在积极进攻这个领域？</strong><br>如果没人进攻，说明护城河可能只是行政壁垒而非真正的市场竞争优势。真正的护城河是在进攻中存活下来的。</span></div>
+<div class="key-point"><span class="key-bullet">③</span><span><strong>技术变革是在加强还是削弱这个优势？</strong><br>技术变革是护城河的最大威胁之一。昔日的护城河可能因技术颠覆而在一夜之间消失。</span></div>
+<div class="key-point"><span class="key-bullet">④</span><span><strong>管理层的资本配置决策是否理性？</strong><br>护城河可以被糟糕的资本配置摧毁。即使拥有最宽护城河的企业，如果管理层持续进行破坏价值的并购，也可能快速耗尽竞争优势。</span></div>
+
+<div class="quote-block">
+"护城河不是一个名词，而是一个动态的过程。你必须不断去验证它是否仍然存在。"
+<div class="quote-src">— 李录，2019北大光华课程</div>
+</div>
+
+<p><strong>信任护城河：</strong></p>
+<p>李录强调，最高形式的护城河是"无缝的信任之网"（A seamless web of deserved trust）——消费者对品牌、管理层对股东、员工对企业的那种内在信任。这是最难被竞争对手复制、也是最持久的竞争优势形式。</p>
+
+<p><strong>ROIC 是护城河的财务验证：</strong></p>
+<p>李录指出，护城河的财务体现是持续的高资本回报率（ROIC）。只有能够持续产生高于资本成本回报的企业，才真正拥有经济护城河。短暂的高ROIC可能是周期性的，持续的高ROIC才是护城河的证明。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Chapter 4: 比亚迪案例 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">4</span>
+<span class="chapter-title">投资案例复盘：比亚迪为什么是经典案例</span>
+</div>
+<div class="chapter-meta">Part 4 · 比亚迪案例分析 · 能力圈实战</div>
+<div class="chapter-body">
+<p>比亚迪是李录投资生涯中最具标志性的案例，也是他向巴菲特和芒格推荐、最终促成伯克希尔投资的项目。2019年课堂上，李录深度复盘了这一决策的完整逻辑链。</p>
+
+<p><strong>决策时间线：</strong></p>
+<div class="key-point"><span class="key-bullet">2002</span><span><strong>初次接触</strong> — 李录在香港见到王传福，第一次交谈后即决定深入研究。判断：王传福具有"芒格式"的诚信与能力。</span></div>
+<div class="key-point"><span class="key-bullet">2003-2007</span><span><strong>持续跟踪研究</strong> — 数年时间研究电池行业、电动车市场、比亚迪的垂直整合模式，与王传福多次深入交流。</span></div>
+<div class="key-point"><span class="key-bullet">2008</span><span><strong>重仓买入</strong> — 喜马拉雅资本在金融危机期间比亚迪股价暴跌时加仓。巴菲特以约1.03美元/股价格投资比亚迪2.3亿美元。</span></div>
+<div class="key-point"><span class="key-bullet">2009</span><span><strong>高峰考验</strong> — 比亚迪股价在巴菲特买入后一度暴涨约8倍，面对巨大账面盈利不移除——体现了"逻辑不变则持有"的原则。</span></div>
+
+<p><strong>投资比亚迪的四大逻辑：</strong></p>
+<div class="key-point"><span class="key-bullet">✓</span><span><strong>赛道对：</strong>王传福的企业家精神 + 电池技术垂直整合能力 + 中国电动车市场结构性增长</span></div>
+<div class="key-point"><span class="key-bullet">✓</span><span><strong>人重要：</strong>李录2002年见到王传福后，判断他具有顶级企业家的"芒格式"诚信与能力</span></div>
+<div class="key-point"><span class="key-bullet">✓</span><span><strong>时机对：</strong>2008年金融危机期间股价暴跌时加仓——市场恐惧时逆向而行</span></div>
+<div class="key-point"><span class="key-bullet">✓</span><span><strong>护城河深：</strong>电池技术垂直整合 + 成本优势 + 中国市场先发优势</span></div>
+
+<div class="quote-block">
+"我从来没有见过一个企业家像王传福那样，对技术的理解和掌握到了痴迷的程度。这是比亚迪护城河的核心。"
+<div class="quote-src">— 李录，2019北大光华课程</div>
+</div>
+
+<p><strong>比亚迪案例的核心启示：</strong></p>
+<p>李录通过比亚迪说明，顶级投资机会来自"正确的人 + 正确的赛道 + 正确的时间"的交集。比亚迪的投资不是基于短期估值比较，而是基于对企业家能力和行业长期趋势的深度理解——这是能力圈投资的教科书范例。</p>
+
+<p style="margin-top:10px;"><span class="tag tag-case">案例</span>比亚迪持有23年（2008-至今），是李录"研究驱动投资"的最好注脚：研究时间远大于买卖决策时间，看懂一家公司可能需要数年，交易只是一瞬间。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Chapter 5: 知行合一 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">5</span>
+<span class="chapter-title">价值投资的最高境界：知行合一</span>
+</div>
+<div class="chapter-meta">Part 5 · 投资哲学总结 · 决策框架内化</div>
+<div class="chapter-body">
+<p>李录以"知行合一"作为这堂课的核心主题，将中国传统哲学智慧与现代投资理论相结合，并给出知行合一的完整修炼路径。</p>
+
+<p><strong>"知行合一"三层含义：</strong></p>
+<div class="key-point"><span class="key-bullet">知</span><span><strong>真知</strong> — 不是听过，而是真正理解并能用概率表达——知道结果的范围和可能性，而不是追求"确定性的幻觉"</span></div>
+<div class="key-point"><span class="key-bullet">行</span><span><strong>笃行</strong> — 在市场极端时刻（暴跌时敢买，暴涨时敢卖）仍然执行既定策略，不被情绪裹挟</span></div>
+<div class="key-point"><span class="key-bullet">合</span><span><strong>内化</strong> — 让正确的投资理念内化为直觉，不需要刻意提醒自己该怎么做</span></div>
+
+<p><strong>知行合一的障碍：</strong></p>
+<div class="key-point"><span class="key-bullet">→</span><span><strong>情绪管理是最大挑战</strong> — 不是认知问题，而是执行问题</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span><strong>需要刻意练习</strong> — 与学习任何复杂技能一样，需要反复实践、反馈、调整</span></div>
+<div class="key-point"><span class="key-bullet">→</span><span><strong>可能需要很多年</strong> — 内化不是一蹴而就，而是终身修炼</span></div>
+
+<p><strong>研究驱动 vs 交易驱动：</strong></p>
+<p>李录强调，真正价值投资者的时间分配是：研究时间 远大于 买卖决策时间。看懂一家公司可能需要数年，而交易只是一瞬间。这个时间分配的不对称性，是区分真伪价值投资的重要标志。</p>
+
+<div class="quote-block">
+"价值投资的最高境界是'知行合一'——你的判断和你的行为完全一致。这需要一生的修炼，但每一步都值得。"
+<div class="quote-src">— 李录，2019北大光华课程</div>
+</div>
+
+<p><strong>卖出决策三原则（与2019课程一脉相承）：</strong></p>
+<div class="key-point"><span class="key-bullet">①</span><span>发现了更好的机会</span></div>
+<div class="key-point"><span class="key-bullet">②</span><span>企业基本面发生了变化</span></div>
+<div class="key-point"><span class="key-bullet">③</span><span>估值已经极端化</span></div>
+<p style="margin-left:36px;font-size:.85rem;color:var(--text-muted);">除此之外，持有。这三条原则在2024年Q&amp;A中再次被李录明确确认。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- 框架速览 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">&#10070;</span>
+<span class="chapter-title">演讲核心框架速览</span>
 </div>
 <div class="chapter-body">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
 <div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
-<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">🧠 投资心理学</div>
-四种主要偏差：损失厌恶、过度自信、社会认同压力、叙事偏差
-</div>
-<div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
-<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">🎯 能力圈标准</div>
-能否预测5-10年FCF · 竞争对手能否复制 · 市场关闭5年仍持有
+<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">&#128170; 投资心理学</div>
+四种主要偏差：损失厌恶、过度自信、社会认同压力、叙事偏差<br>
+克服路径：建立体系化决策流程，不依赖意志力
 </div>
 <div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
-<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">🛡️ 护城河检验</div>
-时间维度 · 竞争进攻 · 技术变革 · 资本配置
+<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">&#128481; 能力圈标准</div>
+能否预测5-10年FCF？<br>
+5问测试法：护城河+管理层+市场关闭测试
 </div>
 <div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
-<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">💡 知行合一</div>
-真知（概率思维）+ 笃行（极端时刻执行）= 内化为直觉
+<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">&#128737; 护城河验证</div>
+时间维度 + 竞争进攻 + 技术变革 + 资本配置<br>
+最高形式：无缝的信任之网
+</div>
+<div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
+<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">&#128640; 知行合一</div>
+真知（概率思维）+ 笃行（极端时刻执行）+ 内化（直觉）
 </div>
 </div>
+
+<p style="margin-top:12px;font-size:.8rem;color:var(--text-muted)"><strong>本课与2015课程的关系：</strong>如果说2015课程回答的是"价值投资是什么"（四大基石、三阶段演进），2019课程回答的是"如何做到"（心理建设、能力圈标准、比亚迪实战）。两课合在一起，构成李录价值投资思想从"理念"到"实践"的完整闭环。</p>
 </div>
 </div>
 
