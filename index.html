@@ -3,304 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李录研究 — 索引（草案）</title>
+<title>李录研究 — 索引</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fafaf9; color: #1c1917; line-height: 1.6; }
-header { background: #1c1917; color: #fafaf9; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fafaf9; color: #1c1917; line-height: 1.8; }
+header { background: #1c1917; color: #fafaf9; padding: 16px 20px; }
 header h1 { font-size: 1rem; font-weight: 600; color: #c9a227; }
-header span { font-size: .8rem; color: #a8a29e; }
-
-/* === 三明治顶层：Hero Section === */
-.hero {
-  background: linear-gradient(135deg, #1c1917 0%, #292524 100%);
-  color: #fafaf9;
-  padding: 48px 24px;
-  text-align: center;
-}
-.hero h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #c9a227;
-  margin-bottom: 8px;
-  border: none;
-  text-transform: none;
-  letter-spacing: 0;
-}
-.hero-subtitle {
-  font-size: .95rem;
-  color: #a8a29e;
-  margin-bottom: 32px;
-}
-.hero-trilogy {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-  max-width: 640px;
-  margin: 0 auto 32px;
-}
-.trilogy-item {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(201,162,39,0.3);
-  border-radius: 8px;
-  padding: 16px 12px;
-  text-align: center;
-}
-.trilogy-year {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #c9a227;
-}
-.trilogy-title {
-  font-size: .8rem;
-  color: #d6d3d1;
-  margin-top: 4px;
-}
-.trilogy-arrow {
-  display: flex;
-  align-items: center;
-  font-size: .75rem;
-  color: #78716c;
-  justify-content: center;
-  gap: 4px;
-  margin-top: 8px;
-}
-.hero-meta {
-  font-size: .75rem;
-  color: #78716c;
-  max-width: 480px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.04);
-  padding: 12px 16px;
-  border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.06);
-}
-.hero-meta span { color: #c9a227; }
-
-/* === 三明治中层：专题区 === */
-main { max-width: 720px; margin: 0 auto; padding: 24px 20px 80px; }
-.section-label {
-  font-size: .7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  color: #c9a227;
-  margin: 32px 0 12px;
-}
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-a.card {
-  display: block;
-  background: #fff;
-  border: 1px solid #e7e5e4;
-  border-radius: 8px;
-  padding: 16px;
-  text-decoration: none;
-  color: #1c1917;
-  transition: border-color .15s, box-shadow .15s;
-}
-a.card:hover {
-  border-color: #c9a227;
-  box-shadow: 0 2px 8px rgba(201,162,39,0.15);
-}
-a.card .card-name { font-size: .9rem; font-weight: 500; }
-a.card .card-meta { font-size: .7rem; color: #78716c; margin-top: 4px; }
-.tag { font-size: .7rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; background: #f5f5f4; color: #78716c; }
-.tag-blue { background: #dbeafe; color: #1e40af; }
-.tag-green { background: #dcfce7; color: #166534; }
-.tag-red { background: #fee2e2; color: #991b1b; }
-.tag-purple { background: #f3e8ff; color: #6b21a8; }
-
-/* === 列表（原有结构保留）=== */
-h2 { font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #78716c; margin: 32px 0 12px; border-bottom: 1px solid #e7e5e4; padding-bottom: 6px; }
+main { max-width: 640px; margin: 0 auto; padding: 32px 20px 64px; }
+h2 { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: #78716c; margin: 28px 0 8px; border-bottom: 1px solid #e7e5e4; padding-bottom: 4px; }
 h2:first-child { margin-top: 0; }
-a.list-item { display: flex; align-items: baseline; gap: 12px; padding: 11px 0; border-bottom: 1px solid #f1f0ef; text-decoration: none; color: #1c1917; transition: color .15s; }
-a.list-item:hover { color: #c9a227; }
-a.list-item .name { font-size: .95rem; font-weight: 500; }
-a.list-item .tag { font-size: .7rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; background: #f5f5f4; color: #78716c; white-space: nowrap; margin-left: auto; }
-a.list-item:hover .tag { background: #fef3c7; color: #92400e; }
-
-/* === 三明治底层：Deep Pages 入口 === */
-.deep-entry {
-  background: #1c1917;
-  color: #fafaf9;
-  border-radius: 8px;
-  padding: 24px;
-  margin-top: 32px;
-}
-.deep-entry h3 {
-  font-size: .75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: #78716c;
-  margin-bottom: 16px;
-  border: none;
-  padding: 0;
-}
-.deep-links {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-.deep-links a {
-  color: #a8a29e;
-  text-decoration: none;
-  font-size: .85rem;
-  padding: 8px 0;
-  border-bottom: 1px solid #292524;
-  transition: color .15s;
-}
-.deep-links a:hover { color: #c9a227; }
-
-footer { text-align: center; padding: 24px; font-size: .75rem; color: #a8a29e; border-top: 1px solid #e7e5e4; margin-top: 48px; }
+a { color: #1c1917; text-decoration: none; }
+a:hover { color: #c9a227; }
+ul { list-style: none; }
+li { padding: 5px 0; }
+li a { font-size: .95rem; }
+li span { font-size: .75rem; color: #78716c; margin-left: 8px; }
+footer { max-width: 640px; margin: 0 auto; padding: 24px 20px; font-size: .75rem; color: #a8a29e; border-top: 1px solid #e7e5e4; }
 </style>
 </head>
 <body>
-
 <header>
   <h1>李录价值投资研究</h1>
-  <span>喜马拉雅资本 · ~20% 年化</span>
 </header>
-
-<!-- ===== 三明治顶层：Hero Section（接力叙事入口）===== -->
-<div class="hero">
-  <h2>北大三部曲</h2>
-  <p class="hero-subtitle">理解李录思想演变的三堂课</p>
-  <div class="hero-trilogy">
-    <div class="trilogy-item">
-      <div class="trilogy-year">2015</div>
-      <div class="trilogy-title">北大光华第一课<br>价值投资在中国展望</div>
-      <div class="trilogy-arrow">~30min → <a href="videos/BV1Cm4y1r76v.html" style="color:#c9a227;text-decoration:none;">阅读</a></div>
-    </div>
-    <div class="trilogy-item">
-      <div class="trilogy-year">2019</div>
-      <div class="trilogy-title">北大光华第二课<br>知行合一</div>
-      <div class="trilogy-arrow">~2h → <a href="videos/kqjKbPxbsac.html" style="color:#c9a227;text-decoration:none;">阅读</a></div>
-    </div>
-    <div class="trilogy-item">
-      <div class="trilogy-year">2024</div>
-      <div class="trilogy-title">北大光华第三课<br>全球价值投资与时代</div>
-      <div class="trilogy-arrow">~3h → <a href="videos/8jJA4vHWvLc.html" style="color:#c9a227;text-decoration:none;">阅读</a></div>
-    </div>
-  </div>
-  <div class="hero-meta">
-    <span>阅读顺序建议：</span>2015入门 → 2019深化 → 2024升华。三课体系构成完整叙事，缺一不可。
-  </div>
-</div>
-
 <main>
 
-<!-- ===== 三明治中层：专题自足 ===== -->
-<div class="section-label">核心资料</div>
-<div class="grid-2">
-  <a class="card" href="about.html"><div class="card-name">关于李录</div><div class="card-meta">简介 · 经历</div></a>
-  <a class="card" href="principles.html"><div class="card-name">投资原则</div><div class="card-meta">6条原则</div></a>
-  <a class="card" href="holdings.html"><div class="card-name">持仓与投资案例</div><div class="card-meta">13F·2025Q4</div></a>
-  <a class="card" href="quotes.html"><div class="card-name">语录</div><div class="card-meta">金句</div></a>
-  <a class="card" href="glossary.html"><div class="card-name">术语表</div><div class="card-meta">行话</div></a>
-  <a class="card" href="faq.html"><div class="card-name">FAQ</div><div class="card-meta">常见问题</div></a>
-</div>
+<h2>核心资料</h2>
+<ul>
+  <li><a href="about.html">关于李录</a> <span>简介</span></li>
+  <li><a href="principles.html">投资原则</a> <span>6条</span></li>
+  <li><a href="holdings.html">持仓</a> <span>13F 2025Q4</span></li>
+  <li><a href="quotes.html">语录</a></li>
+  <li><a href="glossary.html">术语表</a></li>
+  <li><a href="faq.html">FAQ</a></li>
+</ul>
 
-<div class="section-label">投资案例 · 美国市场</div>
-<div class="grid-2">
-  <a class="card" href="alphabet-investment-deep.html"><div class="card-name">Alphabet (谷歌)</div><div class="card-meta"><span class="tag tag-blue">科技</span></div></a>
-  <a class="card" href="apple-investment-deep.html"><div class="card-name">Apple (苹果)</div><div class="card-meta"><span class="tag tag-blue">科技</span></div></a>
-  <a class="card" href="bac-investment-deep.html"><div class="card-name">Bank of America</div><div class="card-meta"><span class="tag tag-green">金融</span></div></a>
-  <a class="card" href="berkshire-investment-deep.html"><div class="card-name">Berkshire Hathaway</div><div class="card-meta"><span class="tag tag-green">控股</span></div></a>
-  <a class="card" href="pdd-investment-deep.html"><div class="card-name">PDD Holdings</div><div class="card-meta"><span class="tag tag-purple">电商</span></div></a>
-  <a class="card" href="ewbc-investment-deep.html"><div class="card-name">East West Bancorp</div><div class="card-meta"><span class="tag tag-green">银行</span></div></a>
-  <a class="card" href="oxy-investment-deep.html"><div class="card-name">Occidental Petroleum</div><div class="card-meta"><span class="tag">能源</span></div></a>
-  <a class="card" href="crocs-investment-deep.html"><div class="card-name">Crocs (卡骆驰)</div><div class="card-meta"><span class="tag">消费</span></div></a>
-</div>
+<h2>深度分析</h2>
+<ul>
+  <li><a href="alphabet-investment-deep.html">Alphabet (谷歌)</a> <span>科技</span></li>
+  <li><a href="apple-investment-deep.html">Apple (苹果)</a> <span>科技</span></li>
+  <li><a href="bac-investment-deep.html">Bank of America</a> <span>金融</span></li>
+  <li><a href="berkshire-investment-deep.html">Berkshire Hathaway</a> <span>控股</span></li>
+  <li><a href="pdd-investment-deep.html">PDD Holdings (拼多多)</a> <span>电商</span></li>
+  <li><a href="ewbc-investment-deep.html">East West Bancorp (华美)</a> <span>银行</span></li>
+  <li><a href="oxy-investment-deep.html">Occidental Petroleum</a> <span>能源</span></li>
+  <li><a href="crocs-investment-deep.html">Crocs (卡骆驰)</a> <span>消费</span></li>
+  <li><a href="china-hk-holdings-research.html">非13F持仓</a> <span>港股·A股·含比亚迪</span></li>
+  <li><a href="psbc-investment-deep.html">邮储银行 (PSBC)</a> <span>港股</span></li>
+  <li><a href="kweichow-moutai-investment-deep.html">贵州茅台</a> <span>已清仓</span></li>
+  <li><a href="byd-investment-deep.html">比亚迪</a> <span>经典案例</span></li>
+</ul>
 
-<div class="section-label">投资案例 · 中国/港股</div>
-<div class="grid-2">
-  <a class="card" href="china-hk-holdings-research.html"><div class="card-name">非13F持仓研究</div><div class="card-meta"><span class="tag tag-green">港股·A股</span> 含比亚迪</div></a>
-  <a class="card" href="psbc-investment-deep.html"><div class="card-name">邮储银行 (PSBC)</div><div class="card-meta"><span class="tag tag-green">港股</span></div></a>
-  <a class="card" href="kweichow-moutai-investment-deep.html"><div class="card-name">贵州茅台</div><div class="card-meta"><span class="tag tag-red">已清仓</span></div></a>
-  <a class="card" href="byd-investment-deep.html"><div class="card-name">比亚迪</div><div class="card-meta">经典案例</div></a>
-</div>
+<h2>专题</h2>
+<ul>
+  <li><a href="circle-of-competence.html">能力圈</a></li>
+  <li><a href="timeline.html">时间线</a></li>
+  <li><a href="bookshelf.html">书架</a></li>
+  <li><a href="video_study.html">视频学习中心</a></li>
+  <li><a href="downloads.html">下载资源</a></li>
+</ul>
 
-<!-- ===== 三明治底层：Deep Pages 入口 ===== -->
-<div class="deep-entry">
-  <h3>Deep Pages（深度页面入口）</h3>
-  <div class="deep-links">
-    <a href="circle-of-competence.html">能力圈</a>
-    <a href="timeline.html">时间线</a>
-    <a href="bookshelf.html">书架</a>
-    <a href="downloads.html">下载资源</a>
-    <a href="video_study.html">视频学习中心</a>
-  </div>
-</div>
-
-<!-- 原有完整列表（向后兼容） -->
-<h2>李录本人演讲/采访</h2>
-<a class="list-item" href="videos/O5xkgJaDwg0.html">
-  <span class="name">Li Lu at Columbia Business School 2006</span>
-  <span class="tag tag-blue">2006 · 哥大 · ~90min</span>
-</a>
-<a class="list-item" href="videos/35RgNwcyjFk.html">
-  <span class="name">Li Lu explains his Holy Grail of Investing</span>
-  <span class="tag">2012 · FAME · ~12min</span>
-</a>
-<a class="list-item" href="videos/-gfRCGZ0zf4.html">
-  <span class="name">How I Got Started In Value Investing</span>
-  <span class="tag">2021 · CBS · ~12min</span>
-</a>
-<a class="list-item" href="videos/8jJA4vHWvLc.html">
-  <span class="name">全球价值投资与时代 · 李录北大演讲</span>
-  <span class="tag">2024 · 北大光华 · ~3h</span>
-</a>
-<a class="list-item" href="videos/b2yxBBMIEz0.html">
-  <span class="name">CCBC Fireside Chat on Value Investing in China</span>
-  <span class="tag">Columbia · ~15min</span>
-</a>
-<a class="list-item" href="videos/LWikhUVneYI.html">
-  <span class="name">Li Lu On 2021 Investing, Value, China & More</span>
-  <span class="tag">2021 · CBS · ~15min</span>
-</a>
-<a class="list-item" href="videos/YaCRr0DIfuE.html">
-  <span class="name">Investing in China: Unique Challenges & Opportunities</span>
-  <span class="tag">2021 · CBS · ~15min</span>
-</a>
-<a class="list-item" href="videos/kqjKbPxbsac.html">
-  <span class="name">价值投资在实践中的知行合一 — 北大光华第二课</span>
-  <span class="tag">2019 · 北大光华 · ~2h</span>
-</a>
-<a class="list-item" href="videos/BV1Cm4y1r76v.html">
-  <span class="name">价值投资在中国展望 — 北大光华第一课</span>
-  <span class="tag">2015 · 北大光华 · ~30min</span>
-</a>
-<a class="list-item" href="videos/IbrTswEKpLE.html">
-  <span class="name">Why Only 5% Win in Stocks</span>
-  <span class="tag">~10min</span>
-</a>
-
-<h2>第三方制作（关于李录）</h2>
-<a class="list-item" href="videos/KAoC8pErmb0.html">
-  <span class="name">The Chinese Warren Buffett: Billionaire Investing Legend Li Lu</span>
-  <span class="tag tag-purple">We Study Billionaires</span>
-</a>
-<a class="list-item" href="videos/KmzOZLf8wcw.html">
-  <span class="name">Li Lu's Secret to Investing Success (Short)</span>
-  <span class="tag tag-purple">We Study Billionaires</span>
-</a>
+<h2>演讲·采访</h2>
+<ul>
+  <li><a href="videos/O5xkgJaDwg0.html">哥大演讲 2006</a> <span>~90min</span></li>
+  <li><a href="videos/BV1Cm4y1r76v.html">北大光华第一课 2015</a> <span>~30min</span></li>
+  <li><a href="videos/kqjKbPxbsac.html">北大光华第二课 2019</a> <span>~2h</span></li>
+  <li><a href="videos/8jJA4vHWvLc.html">北大光华第三课 2024</a> <span>~3h</span></li>
+  <li><a href="videos/-gfRCGZ0zf4.html">How I Got Started 2021</a> <span>~12min</span></li>
+  <li><a href="videos/b2yxBBMIEz0.html">CCBC Fireside Chat</a></li>
+  <li><a href="videos/LWikhUVneYI.html">Li Lu On 2021 Investing</a></li>
+  <li><a href="videos/YaCRr0DIfuE.html">Investing in China Challenges</a></li>
+  <li><a href="videos/IbrTswEKpLE.html">Why Only 5% Win in Stocks</a> <span>~10min</span></li>
+  <li><a href="videos/KAoC8pErmb0.html">The Chinese Warren Buffett (We Study Billionaires)</a></li>
+</ul>
 
 <h2>其他</h2>
-<a class="list-item" href="https://github.com/hozen/li-lu-research" target="_blank">
-  <span class="name">GitHub 源码仓库</span>
-  <span class="tag">hozen/li-lu-research</span>
-</a>
+<ul>
+  <li><a href="https://github.com/hozen/li-lu-research" target="_blank">GitHub 源码仓库</a></li>
+</ul>
 
 </main>
-
 <footer>
   仅供研究参考，不构成投资建议 · 数据截止 2025 Q4
 </footer>
-
 </body>
 </html>
