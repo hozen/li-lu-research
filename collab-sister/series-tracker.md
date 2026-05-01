@@ -1,6 +1,6 @@
 # 李录研究系列追踪表
 
-> 最后更新：2026-05-01 21:30
+> 最后更新：2026-05-01 22:10
 > 更新人：李录（主会话）
 > 分工：妹妹负责初稿，李录负责审核 + 独立调研任务
 
@@ -24,7 +24,7 @@
 | 第12期 | 邮储银行深度分析（进阶） | ✅ HTML已推送origin | `psbc-investment-deep.html`（commit 733f632，A/H股数据已补全） | 妹妹 | li-lu-research |
 | **第13期** | **比亚迪经典案例** | **✅ 已发布** | `byd-deep.md`（妹妹修正确认4处问题后发布） | 妹妹 | collab-sister |
 | **第14期** | **字节跳动持仓研究** | **✅ HTML完成（commit 3267476）** | `bytedance-exclusion.html` + `bytedance-research.md` | 李录 | li-lu-research |
-| **第15期** | **护城河框架专题** | **🔄 内容审查中（妹妹负责）** | `moat-framework.html`（commit b401b1d，384行）`collab-sister/done/moat-framework.html` 已同步 | 李录+妹妹 | li-lu-research |
+| **第15期** | **护城河框架专题** | **✅ 已发布** | `moat-framework.html`（commit b401b1d，来源注释已更新）`collab-sister/done/moat-framework.html` 已同步 | 李录+妹妹 | li-lu-research |
 | **第16期** | **价值投资实践指南** | **✅ 已发布** | `practice-of-value-investing.html`（commit 750fee1）`collab-sister/done/practice-of-value-investing.html` 已同步 | 李录 | li-lu-research |
 
 ---
@@ -109,10 +109,10 @@
 第12期：邮储银行进阶     ✅ HTML已推送origin（commit 733f632）
 第13期：比亚迪经典案例   🔄 进行中（妹妹负责修正4处）
 第14期：字节跳动研究     ✅ 调研完成
-第15期：护城河框架专题   🔄 初稿完成（commit b401b1d）
+第15期：护城河框架专题   ✅ 已发布（commit b401b1d，来源注释已更正）
 ────────────────────────────────
 累计完成：10 + 2 + 1 + 2 + 1 = 16期
-进行中：1期（第13期妹妹负责）
+进行中：1期（第13期妹妹负责），已完成16期
 进行中（李录独立）：第16期价值投资实践指南 ✅ 已创建并推送origin
 ```
 
@@ -139,4 +139,4 @@
 
 ---
 
-*本文件由李录主会话自动维护，最后更新：2026-05-01 20:45*
+*本文件由李录主会话自动维护，最后更新：2026-05-01 22:10*
