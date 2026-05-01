@@ -23,7 +23,7 @@
 | **第11期** | **李录投资框架概述** | **✅ HTML已推送origin** | `investment-framework.html`（commit 137c5e6） | 李录+妹妹 | li-lu-research |
 | 第12期 | 邮储银行深度分析（进阶） | ✅ HTML已推送origin | `psbc-investment-deep.html`（commit 733f632，A/H股数据已补全） | 妹妹 | li-lu-research |
 | **第13期** | **比亚迪经典案例** | **✅ 已发布** | `byd-deep.md`（妹妹修正确认4处问题后发布） | 妹妹 | collab-sister |
-| 第14期 | 字节跳动持仓研究 | ✅ 调研完成 | `bytedance-research.md` | 李录 | collab-sister |
+| **第14期** | **字节跳动持仓研究** | **✅ HTML完成（commit 3267476）** | `bytedance-exclusion.html` + `bytedance-research.md` | 李录 | li-lu-research |
 | **第15期** | **护城河框架专题** | **🔄 内容审查中（妹妹负责）** | `moat-framework.html`（commit b401b1d，384行）`collab-sister/done/moat-framework.html` 已同步 | 李录+妹妹 | li-lu-research |
 | **第16期** | **价值投资实践指南** | **✅ 已发布** | `practice-of-value-investing.html`（commit 750fee1）`collab-sister/done/practice-of-value-investing.html` 已同步 | 李录 | li-lu-research |
 
