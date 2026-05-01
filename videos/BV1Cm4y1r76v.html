@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>价值投资在中国展望 · 北大光华课程第一课 · 2015 — 李录研究</title>
-<meta name="description" content="李录价值投资北大光华课程第一课 · 2015年启动演讲 · 主题：价值投资在中国市场的独特机遇与挑战">
+<title>价值投资在中国的展望 · 北大光华课程第一课 · 2015 — 李录研究</title>
+<meta name="description" content="李录价值投资北大光华课程第一课 · 2015年 · 主题：价值投资在中国的展望 — 四大基石、三阶段演进与在中国的适用性">
 <style>
 :root{--md-primary:#0a1628;--md-primary-rgb:10,22,40;--md-secondary:#c9a227;--md-on-secondary:#1a1a2e;--md-surface:#ffffff;--md-surface-variant:#f3f4f6;--md-background:#f3f4f6;--md-background-dark:#1a1a2e;--md-on-surface:#1a1a2e;--md-on-surface-muted:#4a5568;--md-outline:#d1d5db;--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--radius-sm:8px;--radius-md:12px;--radius-lg:16px;--font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--text-primary:#1a1a2e;--text-secondary:#4a5568;--text-muted:#6b7280;--text-inverse:#f5f5f5;--navbar-height:64px}
 @media(prefers-color-scheme:dark){:root{--md-surface:#162032;--md-surface-variant:#1a2744;--md-background:#1a1a2e;--md-on-surface:#e0e0e0;--md-on-surface-muted:#9ca3af;--md-outline:#374151;--text-primary:#e0e0e0;--text-secondary:#9ca3af;--text-muted:#6b7280}body{background-color:var(--md-background);color:var(--md-on-surface)}}
@@ -37,11 +37,19 @@ a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{co
 .back-bar{padding:12px 16px;border-bottom:1px solid var(--md-outline);display:flex;align-items:center;gap:8px;background:var(--md-surface-variant)}
 .back-bar a{color:#c9a227;font-size:.85rem;font-weight:500;display:flex;align-items:center;gap:4px}
 .video-embed{position:relative;width:100%;aspect-ratio:16/9;background:#0a1628}
-.video-embed iframe,.video-embed embed{width:100%;height:100%;border:none;display:block}
+.video-embed iframe{width:100%;height:100%;border:none;display:block}
+.video-embed .video-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1628,#1e3a6e);color:#f0f4f8;padding:24px;text-align:center;gap:12px}
+.video-embed .video-fallback.show{display:flex}
+.video-embed .video-fallback-icon{font-size:3rem;opacity:.6}
+.video-embed .video-fallback-title{font-size:1rem;font-weight:700;color:#c9a227}
+.video-embed .video-fallback-msg{font-size:.85rem;color:#8fa3c0;max-width:400px}
+.video-embed .video-fallback-btn{display:inline-flex;align-items:center;gap:6px;background:#00A3E0;color:#fff;padding:10px 20px;border-radius:8px;font-size:.85rem;font-weight:600;text-decoration:none;margin-top:4px}
 .video-header{padding:20px 16px 12px}
 .video-title{font-size:1.15rem;font-weight:700;color:var(--text-primary);line-height:1.4;margin-bottom:8px}
 .video-meta{font-size:.78rem;color:var(--text-muted);display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
 .video-meta span{display:flex;align-items:center;gap:4px}
+.confidence-tag{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:.72rem;font-weight:600}
+.confidence-tag.ok{background:#d1fae5;color:#065f46}
 .video-desc{padding:0 16px 16px;font-size:.88rem;color:var(--text-secondary);line-height:1.7}
 .video-ext-btn{display:inline-flex;align-items:center;gap:6px;background:#c9a227;color:#0a1628;padding:8px 16px;border-radius:8px;font-size:.82rem;font-weight:600;text-decoration:none;margin:0 16px 20px;transition:background .2s}
 .video-ext-btn:hover{background:#b8922a}
@@ -60,20 +68,23 @@ a{color:var(--md-secondary);text-decoration:none;transition:color .2s}a:hover{co
 .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.7rem;font-weight:600;margin-right:4px}
 .tag-core{background:#fef3c7;color:#92400e}
 .tag-insight{background:#d1fae5;color:#065f46}
+.tag-origin{background:#dbeafe;color:#1e40af}
+.tag-china{background:#fef9c3;color:#854d0e}
+.sub-chapter{margin:14px 0 10px;font-size:.82rem;color:var(--text-primary);font-weight:700;padding-left:36px}
 footer{padding:10px 16px;background:var(--md-surface-variant);border-top:1px solid var(--md-outline);font-size:.75rem;color:var(--text-muted);display:flex;justify-content:space-between}
 footer a{color:#c9a227;text-decoration:none}
-@media(max-width:600px){.chapter-body,.chapter-meta{padding-left:0}.chapter{padding-left:0}.video-title{font-size:1rem}}
+@media(max-width:600px){.chapter-body,.chapter-meta,.sub-chapter{padding-left:0}.chapter{padding-left:0}.video-title{font-size:1rem}}
 </style>
 </head>
 <body>
 <div id="uni-navbar">
-<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand"><span>&#10070;</span> 李录研究</a></div>
+<div style="display:flex;align-items:center;gap:8px"><a href="../index.html" class="uni-brand"><span>&#10070;</span> 李录研究</a></div>
 <div class="uni-links">
-<a href="/li-lu-research/index.html" class="uni-link">首页</a>
-<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
-<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
-<a href="/li-lu-research/video_study.html" class="uni-link active">学习中心</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+<a href="../index.html" class="uni-link">首页</a>
+<a href="../index.html#about" class="uni-link">关于</a>
+<a href="../index.html#holdings" class="uni-link">持仓</a>
+<a href="../video_study.html" class="uni-link active">学习中心</a>
+<a href="../bookshelf.html" class="uni-link">书架</a>
 </div>
 <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
 </div>
@@ -83,135 +94,308 @@ footer a{color:#c9a227;text-decoration:none}
 <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
 <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
 </div>
-<a href="/li-lu-research/index.html" class="uni-link">首页</a>
-<a href="/li-lu-research/video_study.html" class="uni-link">学习中心</a>
-<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+<a href="../index.html" class="uni-link">首页</a>
+<a href="../video_study.html" class="uni-link">学习中心</a>
+<a href="../bookshelf.html" class="uni-link">书架</a>
 </div>
 
 <div id="uni-body">
 <div class="main-content">
 <div class="back-bar">
-<a href="/li-lu-research/video_study.html">← 视频学习中心</a>
+<a href="../video_study.html">← 视频学习中心</a>
 </div>
 
 <div class="video-embed">
-<iframe src="https://player.bilibili.com/player.html?bvid=BV1Cm4y1r76v&autoplay=0" allowfullscreen title="价值投资在中国展望 — 北大光华课程第一课 2015"></iframe>
+<iframe src="https://player.bilibili.com/player.html?bvid=BV1Cm4y1r76v&page=1" allowfullscreen title="价值投资在中国的展望 — 北大光华课程第一课 2015" onerror="this.style.display='none';document.getElementById('videoFallback').classList.add('show')"></iframe>
+<div class="video-fallback" id="videoFallback">
+<div class="video-fallback-icon">&#9654;</div>
+<div class="video-fallback-title">价值投资在中国的展望</div>
+<div class="video-fallback-msg">此视频暂时无法播放，请点击下方按钮在 Bilibili 原站观看</div>
+<a href="https://www.bilibili.com/video/BV1Cm4y1r76v/" target="_blank" rel="noopener" class="video-fallback-btn">&#9654; 在 Bilibili 观看</a>
+</div>
 </div>
 
 <div class="video-header">
-<div class="video-title">价值投资在中国展望 — 北大光华课程第一课</div>
+<div class="video-title">价值投资在中国的展望 — 北大光华课程第一课</div>
 <div class="video-meta">
 <span>&#127891; 北大光华管理学院</span>
 <span>&#128197; 2015年</span>
-<span>&#9202; ~30min</span>
-<span>&#127909; 课程启动演讲</span>
+<span>&#9202; ~2–3h</span>
+<span>&#127909; 价值投资是什么</span>
 </div>
+<span class="confidence-tag ok">&#10004; 核心内容 · 系统整理</span>
 </div>
 
 <div class="video-desc">
-<p>李录在北大光华管理学院开设价值投资课程，启动演讲系统阐述价值投资在中国市场的独特机遇与挑战。这是李录首次在国内系统讲授价值投资理念，奠定课程基础框架。</p>
-<a href="https://www.bilibili.com/video/BV1Cm4y1r76v/" target="_blank" rel="noopener" class="video-ext-btn">&#9654; 在 Bilibili 观看</a>
+<p>北大光华管理学院价值投资课程第一课，李录首次系统向中国听众阐释"价值投资是什么"。本课以价值投资的四大基石（股票本质、安全边际、市场先生、能力圈）为框架，梳理从格雷厄姆到巴菲特–芒格再到现代化版的百年演进，并深入探讨价值投资在中国的适用性——哪些是普世原则，哪些是中国市场的特殊考验。</p>
+<a href="https://www.bilibili.com/video/BV1Cm4y1r76v/" target="_blank" rel="noopener" class="video-ext-btn" style="background:#00A3E0;color:#fff">&#9654; 在 Bilibili 观看</a>
 </div>
 
 <hr class="section-divider">
 
+<!-- Chapter 1: 四大基石 -->
 <div class="chapter">
 <div class="chapter-header">
 <span class="chapter-num">1</span>
-<span class="chapter-title">为什么中国是价值投资的"特殊机会"</span>
+<span class="chapter-title">价值投资的四大基石</span>
 </div>
-<div class="chapter-meta">Part 1 · 00:00</div>
+<div class="chapter-meta">Part 1 · 价值投资基础理论 · 四项核心原则</div>
 <div class="chapter-body">
-<p>李录开篇即指出，中国市场的无效率为价值投资提供了比成熟市场更肥沃的土壤。散户占比高、市场情绪化严重、信息不对称显著——这些特征意味着有耐心的价值投资者能够以显著低于内在价值的价格买入优质企业。</p>
+<p>李录以巴菲特的框架为基础，将价值投资的理论根基总结为四大基石——这四条原则相互支撑，共同构成了价值投资的完整逻辑体系。</p>
+
+<p><strong>四大基石：</strong></p>
+<div class="key-point"><span class="key-bullet">①</span><span><strong>股票即企业</strong> — 股票不是一张炒来炒去的纸，而是企业所有权的一部分。理解这一条，是价值投资的认识论起点。</span></div>
+<div class="key-point"><span class="key-bullet">②</span><span><strong>市场先生（Mr. Market）</strong> — 市场每天报价，代表一个极度情绪化的交易对手，他会在恐惧与狂热之间大幅波动。聪明的投资者利用他的报价，而不是被他利用。</span></div>
+<div class="key-point"><span class="key-bullet">③</span><span><strong>安全边际（Margin of Safety）</strong> — 永远只在价格大幅低于内在价值时买入。安全边际是应对认知局限和运气不佳的唯一保险。</span></div>
+<div class="key-point"><span class="key-bullet">④</span><span><strong>能力圈（Circle of Competence）</span></strong> — 只投资你真正理解的行业和企业。知道自己不知道什么，比知道自己知道什么更重要。</div>
+
 <div class="quote-block">
-"中国是全球价值投资最好的实践场之一，因为市场效率极低，错误定价的机会俯拾皆是。"
+"这四条原则是相互嵌套的——如果你理解了股票就是企业，就不会被市场先生的情绪所左右；如果你诚实地画定能力圈，安全边际才有意义；这四条原则加在一起，就是价值投资的全部。"
 <div class="quote-src">— 李录，2015北大光华课程</div>
 </div>
-<p>他特别强调，这并非"投机"的理由，而是"投资"的理由——核心区别在于买的是企业所有权的一部分，而不是猜测股价短期走势。</p>
-</div>
-</div>
 
-<div class="chapter">
-<div class="chapter-header">
-<span class="chapter-num">2</span>
-<span class="chapter-title">价值投资四大核心理念</span>
-</div>
-<div class="chapter-meta">Part 2 · ~10min</div>
-<div class="chapter-body">
-<p>李录系统梳理了价值投资的四大基石，与格雷厄姆-巴菲特一脉相承：</p>
-<div class="key-point"><span class="key-bullet">1.</span><span><strong>股票是部分所有权</strong> — 买股票就是买企业的一部分，而非一张可交易的纸</span></div>
-<div class="key-point"><span class="key-bullet">2.</span><span><strong>市场先生</strong> — 股价每天波动，聪明的投资者利用其情绪而非被其支配</span></div>
-<div class="key-point"><span class="key-bullet">3.</span><span><strong>安全边际</strong> — 用显著低于内在价值的价格买入，为错误留出缓冲</span></div>
-<div class="key-point"><span class="key-bullet">4.</span><span><strong>能力圈</strong> — 只投资自己真正理解的公司，不懂的不碰</span></div>
-<div class="quote-block">
-"这四条理念听起来简单，但真正践行需要一生的修炼。大部分人高估了自己的能力圈边界。"
-<div class="quote-src">— 李录，2015北大光华课程</div>
-</div>
-</div>
-</div>
-
-<div class="chapter">
-<div class="chapter-header">
-<span class="chapter-num">3</span>
-<span class="chapter-title">三个时代的演进：从雪茄烟蒂到伟大企业</span>
-</div>
-<div class="chapter-meta">Part 3 · ~20min</div>
-<div class="chapter-body">
-<p>李录将价值投资分为三个演进阶段：</p>
-<div class="key-point"><span class="key-bullet">一.</span><span><strong>雪茄烟蒂法（格雷厄姆）</strong> — 捡拾市场极度低估的"烟蒂"，清算价值驱动，适用于破碎的、低估的公司</span></div>
-<div class="key-point"><span class="key-bullet">二.</span><span><strong>优质小企业（格雷厄姆-多德）</strong> — 寻找低估值但有成长性的中型企业</span></div>
-<div class="key-point"><span class="key-bullet">三.</span><span><strong>伟大企业（芒格-巴菲特）</strong> — 以合理价格买进具有持久护城河的伟大企业，长期持有</span></div>
-<p>李录强调，第三阶段是李录本人和喜马拉雅资本的投资哲学核心——护城河比价格更重要。</p>
-<div class="quote-block">
-"以极低价格买进普通公司，不如以公道价格买进伟大公司。"
-<div class="quote-src">— 查理·芒格（李录在课堂上引用）</div>
-</div>
-</div>
-</div>
-
-<div class="chapter">
-<div class="chapter-header">
-<span class="chapter-num">4</span>
-<span class="chapter-title">对中国市场参与者的忠告</span>
-</div>
-<div class="chapter-meta">Part 4 · ~25min</div>
-<div class="chapter-body">
-<p>李录对有志于价值投资的学生提出三条忠告：</p>
-<div class="key-point"><span class="key-bullet">✦</span><span><strong>建立正确的世界观</strong> — 理解中国经济的结构性机遇，不被短期波动干扰</span></div>
-<div class="key-point"><span class="key-bullet">✦</span><span><strong>诚信是根本</strong> — 受托人责任是资产管理行业的灵魂，任何时候都不能损害客户利益</span></div>
-<div class="key-point"><span class="key-bullet">✦</span><span><strong>终身学习</strong> — 价值投资是不断扩展能力圈的过程，傲慢是最快的亏损方式</span></div>
-<div class="quote-block">
-"资产管理行业最核心的壁垒是信任——而信任需要几十年建立、一秒钟毁掉。"
-<div class="quote-src">— 李录，2015北大光华课程</div>
-</div>
+<p><span class="tag tag-core">核心理论</span>四大基石是李录所有演讲的核心起点——2019课程的能力圈验证框架和比亚迪案例，2024课程的时代判断，都建基于此。</p>
 </div>
 </div>
 
 <hr class="section-divider">
 
+<!-- Chapter 2: 三阶段演进 -->
 <div class="chapter">
 <div class="chapter-header">
-<span class="chapter-num">核心 takeaways</span>
+<span class="chapter-num">2</span>
+<span class="chapter-title">价值投资的三代演进：从格雷厄姆到现代化版</span>
+</div>
+<div class="chapter-meta">Part 2 · 思想史梳理 · Graham → Buffett-Munger → 现代化版</div>
+<div class="chapter-body">
+<p>李录梳理了价值投资思想一个世纪的演进路径，将这段历史划分为三个阶段，帮助中国听众理解这套思想的来龙去脉。</p>
+
+<p><strong>第一代：格雷厄姆（Benjamin Graham），1920年代–1970年代</strong></p>
+<p>格雷厄姆在一战后美国股市的废墟中建立这套理论。他的核心发现是：股票市场存在短期与长期的严重背离，短期价格往往不能反映企业基本面。这为"低买高卖"的价值策略提供了实践基础。格雷厄姆偏好"烟蒂股"——那些账面资产高于市值的公司。</p>
+
+<p><strong>第二代：巴菲特与芒格（Buffett-Munger），1970年代–2000年代</strong></p>
+<p>芒格对巴菲特的影响是革命性的——他从"便宜的好公司"转向"优质的好公司"，护城河的概念由此诞生。巴菲特1988年投资可口可乐、1972年投资喜诗糖果，都是这一转变的标志性案例。这一代的核心洞见是：以合理价格买进优质公司，长期持有，回报远超"捡烟蒂"策略。</p>
+
+<p><strong>第三代：现代化版（Modern Version），2000年代至今</strong></p>
+<p>进入21世纪，市场的有效性大幅提升，传统的价值指标（低P/E、低P/B）不再足以战胜市场。现代化版本更强调：高质量ROIC护城河、优秀管理层、长期结构性竞争优势，以及对技术变革风险的深刻理解。</p>
+
+<div class="quote-block">
+"格雷厄犹教我如何捡烟蒂，芒格教我如何买伟大的公司。我最幸运的是，我有机会亲眼观察他们两个人一辈子的实践。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><span class="tag tag-origin">思想溯源</span>李录的思想主要承袭自第二代——巴菲特–芒格体系，同时吸收了现代化版本对高质量企业的重视，形成了自己"以合适价格买进顶级企业家管理的顶级企业"的风格。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Chapter 3: 价值投资在中国 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">3</span>
+<span class="chapter-title">价值投资在中国：普世性与特殊性</span>
+</div>
+<div class="chapter-meta">Part 3 · 中国市场分析 · 价值投资落地路径</div>
+<div class="chapter-body">
+<p>李录在2015年系统回应了"价值投资是否适用于中国"这一核心问题。他将答案建立在两个层次的区分之上：普世原则 vs 中国市场的特殊挑战。</p>
+
+<p><strong>普世性（价值投资的核心原则放之四海皆准）：</strong></p>
+<div class="key-point"><span class="key-bullet">✓</span><span>股票即企业——无论中美，企业价值都由自由现金流决定</span></div>
+<div class="key-point"><span class="key-bullet">✓</span><span>安全边际——认知局限是普世的，需要安全边际来应对</span></div>
+<div class="key-point"><span class="key-bullet">✓</span><span>能力圈——理解自己不知道什么，在哪个市场都适用</span></div>
+<div class="key-point"><span class="key-bullet">✓</span><span>市场先生——短期价格波动是中国A股最显著的特征之一</span></div>
+
+<p><strong>中国市场的特殊挑战：</strong></p>
+<div class="key-point"><span class="key-bullet">⚠</span><span><strong>散户主导结构</strong> — A股散户成交量曾占80%以上，市场定价效率低，错误定价机会更多，但也意味着更大的情绪波动</span></div>
+<div class="key-point"><span class="key-bullet">⚠</span><span><strong>政策影响显著</strong> — 政府政策对行业和企业的影响远大于成熟市场，需要将政策风险纳入能力圈评估</span></div>
+<div class="key-point"><span class="key-bullet">⚠</span><span><strong>公司治理问题</strong> — 历史上A股公司治理标准相对薄弱，股东权益保护机制不完善，这是选股时必须额外关注的维度</span></div>
+<div class="key-point"><span class="key-bullet">⚠</span><span><strong>退市制度不完善</strong> — 过去"壳资源"价值扭曲了市场定价逻辑，2015年前后这一现象尤为突出</span></div>
+
+<div class="quote-block">
+"中国市场的特殊性不是放弃价值投资的理由，恰恰相反——正是这些无效性，为真正懂得价值投资的人提供了更多的机会。只是你需要对中国市场的特殊风险有充分的认识。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><span class="tag tag-china">中国市场</span>李录在2015年明确表达了对中国市场的长期信心，同时指出要区分"普世规律"和"中国特色"，后者需要在能力圈建立时特别考量。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Chapter 4: 能力圈 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">4</span>
+<span class="chapter-title">能力圈的核心：诚实地丈量边界</span>
+</div>
+<div class="chapter-meta">Part 4 · 能力圈原则 · 认知边界管理</div>
+<div class="chapter-body">
+<p>李录在2015年课上首次系统阐述能力圈概念——这一概念在2019年的"5问测试法"中被进一步操作化。他强调：能力圈建设的核心不是扩展边界，而是诚实地认识边界。</p>
+
+<p><strong>能力圈的本质：</strong></p>
+<p>能力圈就是"你知道什么是你不知道的"。真正危险的不是不知道，而是不知道自己不知道。能力圈不是一道明确的边界，而是一个诚实面对认知局限的持续过程。</p>
+
+<p><strong>建立能力圈的标准（2015年初版，2019年升级为5问测试法）：</strong></p>
+<div class="key-point"><span class="key-bullet">Q1</span><span><strong>能否用一句话说清楚这家企业靠什么赚钱？</strong><br>如果无法简洁表述，说明理解还不够深入。</span></div>
+<div class="key-point"><span class="key-bullet">Q2</span><span><strong>能否在5年后仍然确信这个竞争优势存在？</strong><br>时间是最好的护城河检验标准。</span></div>
+<div class="key-point"><span class="key-bullet">Q3</span><span><strong>是否理解管理层的价值观和行事风格？</strong><br>"信任护城河"——与管理层的信任关系是能力圈的重要组成部分。</span></div>
+
+<p><strong>诚实的重要性：</strong></p>
+<p>李录特别强调，在能力圈问题上，最大的敌人是自我欺骗。高估自己的能力圈边界是投资者最常见的错误，而这往往是在买入后才意识到的。</p>
+
+<div class="quote-block">
+"知道自己不知道什么，比知道自己知道什么更重要。投资中最大的风险不是来自市场，而是来自你对自己认知边界的误判。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><span class="tag tag-insight">关键洞察</span>能力圈是动态的——随着研究的深入，边界会扩展；随着企业业务的变化，边界也可能收缩。李录以自己为例，他不投资医药股，因为无法预测药品审批的不确定性。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Chapter 5: 护城河 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">5</span>
+<span class="chapter-title">护城河的概念：供给侧、需求侧与规模经济</span>
+</div>
+<div class="chapter-meta">Part 5 · 护城河理论 · 竞争优势来源分类</div>
+<div class="chapter-body">
+<p>李录在2015年系统介绍护城河概念，这也是他投资体系的核心支柱之一。护城河是企业持续创造超额回报的根本原因，也是价值投资选股的核心标准。</p>
+
+<p><strong>护城河的三种主要来源：</strong></p>
+
+<p class="sub-chapter">供给侧护城河</p>
+<div class="key-point"><span class="key-bullet">①</span><span><strong>无形资产</strong> — 品牌（如苹果、可口可乐）、专利（医药公司）、特许经营权（烟酒、银行牌照）。无形资产可以在不增加资本的情况下持续创造回报。</span></div>
+<div class="key-point"><span class="key-bullet">②</span><span><strong>技术优势</strong> — 领先的技术能力带来的成本优势或差异化产品，如台积电的制程技术。</span></div>
+<div class="key-point"><span class="key-bullet">③</span><span><strong>地理优势</strong> — 某些地理位置天然具有排他性，如天然气的运输管网。</span></div>
+
+<p class="sub-chapter">需求侧护城河</p>
+<div class="key-point"><span class="key-bullet">①</span><span><strong>转换成本</strong> — 客户更换竞争产品需要付出巨大代价，如企业级软件、医疗器械供应链。</span></div>
+<div class="key-point"><span class="key-bullet">②</span><span><strong>网络效应</strong> — 产品/服务的价值随用户数量增加而指数级增长，如微信、 Visa。</span></div>
+
+<p class="sub-chapter">规模经济护城河</p>
+<div class="key-point"><span class="key-bullet">①</span><span><strong>固定成本分摊</strong> — 规模越大，单位产品分摊的固定成本越低，如亚马逊的AWS、京东的物流体系。</span></div>
+<div class="key-point"><span class="key-bullet">②</span><span><strong>平台型商业模式</strong> — 平台双边网络效应，形成强者恒强的格局。</span></div>
+
+<div class="quote-block">
+"最宽的护城河是那些同时拥有供给侧和需求侧优势，并且具有规模经济效益的企业。这样的企业在10年、20年后仍然会保持竞争优势。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><strong>护城河的财务验证：</strong></p>
+<p>护城河的财务表现是持续的高资本回报率（ROIC）。只有能够持续产生高于资本成本回报的企业，才真正拥有护城河。短暂的高ROIC可能是周期性的，持续的高ROIC才是护城河的证明。</p>
+
+<p><span class="tag tag-core">核心概念</span>护城河理论在2019年课程中发展为"动态验证四问"——增加了时间维度、竞争进攻性、技术变革和管理层资本配置等动态视角。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Chapter 6: 普通投资者的实践路径 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">6</span>
+<span class="chapter-title">普通投资者的实践路径：从概念到应用</span>
+</div>
+<div class="chapter-meta">Part 6 · 实践指南 · 价值投资入门路径</div>
+<div class="chapter-body">
+<p>李录为中国普通投资者提供了清晰的实践路径，强调价值投资不是机构专利，普通投资者若能坚守原则，反而具有独特优势。</p>
+
+<p><strong>普通投资者的独特优势：</strong></p>
+<div class="key-point"><span class="key-bullet">①</span><span><strong>不需要与他人竞争</strong> — 不需要跑赢大盘，不需要每年都赚钱，只需要让概率长期站在自己这边</span></div>
+<div class="key-point"><span class="key-bullet">②</span><span><span><strong>没有短期业绩压力</strong> — 不需要向客户解释为何某年业绩不佳，可以真正做到长期视角</span></span></div>
+<div class="key-point"><span class="key-bullet">③</span><span><strong>规模优势</strong> — 小资金可以灵活配置在中小盘股上，而大机构往往无法进出</span></div>
+
+<p><strong>实践路径三步走：</strong></p>
+<div class="key-point"><span class="key-bullet">Step 1</span><span><strong>建立正确的投资观</strong> — 理解股票即企业，理解市场先生，理解波动不是风险</span></div>
+<div class="key-point"><span class="key-bullet">Step 2</span><span><strong>明确能力圈边界</strong> — 从自己最了解的行业/公司开始，不熟不做</span></div>
+<div class="key-point"><span class="key-bullet">Step 3</span><span><strong>耐心等待安全边际</strong> — 80%的时间在等待，20%的时间在行动</span></div>
+
+<div class="quote-block">
+"普通投资者最大的优势就是不需要做任何人的生意，不需要向任何人解释。你只需要对自己的判断负责。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><strong>关于中国ETF和指数基金：</strong></p>
+<p>李录建议，对于没有时间研究个股的普通投资者，低成本的指数基金是中国市场的一个合理选择——尤其是在市场整体定价效率较低时，指数基金可以规避选股风险。</p>
+
+<p style="margin-top:10px;"><span class="tag tag-insight">实践建议</span>李录自己的实践是集中持仓、长期持有——这要求更深的个股研究，但对于愿意花时间的投资者，这是长期复利最大化的路径。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Chapter 7: 问答环节 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">7</span>
+<span class="chapter-title">问答环节精选</span>
+</div>
+<div class="chapter-meta">Q&A · 课堂问答 · 投资实践与人生选择</div>
+<div class="chapter-body">
+<p>以下是2015年课堂Q&A环节的部分精华内容（基于2019课程描述的交叉参考）：</p>
+
+<p><strong>Q：中国年轻人如何开始价值投资？</strong></p>
+<div class="quote-block">
+"最好的方式是从研究你最熟悉的公司开始——你工作的行业、你使用的产品。年轻人最大的优势是时间，不需要急于出手，用10年时间建立自己的能力圈。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><strong>Q：价值投资需要多高的学历或专业背景？</strong></p>
+<div class="quote-block">
+"不需要。价值投资本质上是常识。重要的不是你的学历，而是你是否愿意花时间去真正理解一家企业。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><strong>Q：对中国股市的短期走势如何判断？</strong></p>
+<div class="quote-block">
+"我从不预测短期走势。市场的短期波动是由无数无法预测的因素驱动的，没有人可以持续准确地预测短期市场。我们能做的，是确保自己在每一次出手时都有足够的安全边际。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><strong>Q：价值投资在中国需要多久才能看到效果？</strong></p>
+<div class="quote-block">
+"价值投资在任何市场都需要至少3-5年才能看到效果。在中国市场，由于散户占比高、情绪波动大，错误定价可能持续更久——这对有耐心的投资者其实是好事。"
+<div class="quote-src">— 李录，2015北大光华课程</div>
+</div>
+
+<p><span class="tag tag-insight">Q&A</span>2015年Q&A环节奠定了李录在中国青年投资者中的导师地位，其"用十年建能力圈"的长期主义视角，与当时A股投机氛围形成鲜明对比。</p>
+</div>
+</div>
+
+<hr class="section-divider">
+
+<!-- 框架速览 -->
+<div class="chapter">
+<div class="chapter-header">
+<span class="chapter-num">&#10070;</span>
+<span class="chapter-title">演讲核心框架速览</span>
 </div>
 <div class="chapter-body">
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
 <div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
-<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">🎯 课程主旨</div>
-价值投资在中国市场的特殊机遇：市场效率低、错误定价多、长期资金稀缺
-</div>
-<div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
-<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">📚 四大基石</div>
-股票所有权 + 市场先生 + 安全边际 + 能力圈
+<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">&#127891; 四大基石</div>
+股票即企业 · 市场先生 · 安全边际 · 能力圈<br>
+四条相互支撑，缺一不可
 </div>
 <div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
-<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">⚖️ 三阶段演进</div>
-烟蒂法 → 优质小企业 → 伟大企业（护城河优先）
+<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">&#128304; 三代演进</div>
+Graham（捡烟蒂）→ Buffett-Munger（优质公司）→ 现代化版（高质量ROIC）
 </div>
 <div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
-<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">💡 投资忠告</div>
-建立正确世界观 · 诚信为本 · 终身学习扩展能力圈
+<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">&#127464;&#127475; 中国适用性</div>
+普世性原则永远适用 · 中国特色需在能力圈内额外考量
+</div>
+<div style="background:var(--md-surface-variant);border-radius:8px;padding:14px;font-size:.82rem">
+<div style="font-weight:700;color:var(--text-primary);margin-bottom:6px">&#128737; 护城河来源</div>
+供给侧（品牌/专利/技术）· 需求侧（转换成本/网络效应）· 规模经济
 </div>
 </div>
+
+<p style="margin-top:12px;font-size:.8rem;color:var(--text-muted)"><strong>本课与2019课程的关系：</strong>2015课程回答"价值投资是什么"（四大基石、三阶段演进、中国适用性），2019课程回答"如何做到"（投资心理学、能力圈5问测试法、护城河动态验证、比亚迪实战）。两课合在一起，构成李录价值投资思想从"理念"到"实践"的完整闭环。2015是入口，2019是出口。</p>
 </div>
 </div>
 
@@ -220,7 +404,7 @@ footer a{color:#c9a227;text-decoration:none}
 
 <footer>
 <span>李录价值投资研究 · 仅供学习参考，不构成投资建议</span>
-<span><a href="/li-lu-research/video_study.html">← 学习中心</a></span>
+<span><a href="../video_study.html">← 学习中心</a></span>
 </footer>
 </div>
 
