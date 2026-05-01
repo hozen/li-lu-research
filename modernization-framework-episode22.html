@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第22期 · 李录投资哲学的认识论地基 — 铁律·仁智·道法自然 · 李录投资研究系列</title>
+  <meta name="description" content="李录投资哲学的认识论地基：文明3.0铁律十年验证、两个Cardinal Principles儒家根源、道法自然与市场自发秩序、Buffett vs 李录五维度完整对比、Berkshire 60年实证。系列闭环的最终层。">
+  <meta property="og:title" content="第22期 · 李录投资哲学的认识论地基">
+  <meta property="og:description" content="铁律·仁智·道法自然——系列20期后，认识论地基的完整建立。四大一手来源交叉验证，Buffett vs 李录五维度完整对比，Berkshire 60年实证收官。">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://li-lu.top/modernization-framework-episode22.html">
+  <style>
+    :root {
+      --bg: #0a1628;
+      --bg-card: #0f2744;
+      --bg-card-hover: #143460;
+      --text: #e8f0f8;
+      --text-muted: #8fa3c0;
+      --accent: #c9a227;
+      --accent-dim: #9a7b1a;
+      --border: #1e3a5f;
+      --tag-bg: rgba(201,162,39,0.12);
+      --tag-text: #e8c84a;
+      --green: #38a169;
+      --orange: #dd6b20;
+      --blue: #3182ce;
+      --red: #e53e3e;
+      --purple: #805ad5;
+      --teal: #319795;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+      line-height: 1.8;
+      padding-bottom: 80px;
+    }
+    #uni-navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,22,40,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-brand { font-size: 1.05rem; font-weight: 600; color: var(--accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.88rem; }
+    .nav-links a:hover { color: var(--accent); }
+    .main-content { max-width: 820px; margin: 0 auto; padding: 100px 24px 40px; }
+
+    .episode-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--tag-bg); color: var(--tag-text);
+      padding: 4px 14px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    .hero {
+      text-align: center;
+      padding: 48px 24px 56px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+    .hero .series-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .hero h1 { font-size: 2.1rem; font-weight: 700; color: var(--text); line-height: 1.3; margin-bottom: 16px; }
+    .hero .subtitle { font-size: 1.05rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .hero .description { font-size: 0.92rem; color: var(--text-muted); max-width: 560px; margin: 0 auto; line-height: 1.9; }
+
+    .chapter { margin-bottom: 52px; }
+    .chapter-num { font-size: 0.72rem; color: var(--accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    .chapter h2 { font-size: 1.35rem; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+    .chapter p { font-size: 0.92rem; color: var(--text); margin-bottom: 14px; line-height: 1.9; }
+
+    .highlight-quote {
+      background: var(--bg-card);
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .highlight-quote .source { display: block; margin-top: 10px; font-size: 0.8rem; color: var(--text-muted); font-style: normal; }
+
+    .insight-box {
+      background: rgba(49,130,206,0.12);
+      border: 1px solid rgba(49,130,206,0.3);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .insight-box .label { font-size: 0.78rem; color: var(--blue); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .insight-box p { font-size: 0.9rem; color: var(--text); margin-bottom: 0; }
+
+    .key-point {
+      background: rgba(56,161,105,0.12);
+      border: 1px solid rgba(56,161,105,0.3);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .key-point .label { font-size: 0.78rem; color: var(--green); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .key-point p { font-size: 0.9rem; color: var(--text); margin-bottom: 0; }
+
+    .warning-box {
+      background: rgba(221,107,32,0.12);
+      border: 1px solid rgba(221,107,32,0.3);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .warning-box .label { font-size: 0.78rem; color: var(--orange); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .warning-box p { font-size: 0.9rem; color: var(--text); margin-bottom: 0; }
+
+    .law-box {
+      background: rgba(128,90,213,0.12);
+      border: 1px solid rgba(128,90,213,0.3);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .law-box .label { font-size: 0.78rem; color: var(--purple); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .law-box h4 { font-size: 1rem; color: var(--text); font-weight: 700; margin-bottom: 10px; }
+    .law-box p { font-size: 0.9rem; color: var(--text); margin-bottom: 0; }
+
+    .philosophy-box {
+      background: rgba(49,151,149,0.12);
+      border: 1px solid rgba(49,151,149,0.3);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 20px 0;
+    }
+    .philosophy-box .label { font-size: 0.78rem; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .philosophy-box h4 { font-size: 1rem; color: var(--text); font-weight: 700; margin-bottom: 10px; }
+    .philosophy-box p { font-size: 0.9rem; color: var(--text); margin-bottom: 0; }
+
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.88rem; }
+    .comparison-table th { background: var(--bg-card); color: var(--accent); font-weight: 600; padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .comparison-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    .comparison-table tr:last-child td { border-bottom: none; }
+
+    .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.8rem; }
+    .data-table th { background: var(--bg-card); color: var(--accent); font-weight: 600; padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--border); font-size: 0.75rem; }
+    .data-table th:first-child { text-align: left; }
+    .data-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); color: var(--text); text-align: right; }
+    .data-table td:first-child { text-align: left; font-weight: 600; }
+    .data-table .berkshire { color: var(--green); }
+    .data-table .sp500 { color: var(--text-muted); }
+    .data-table tr.winner td { background: rgba(56,161,105,0.08); }
+    .data-table tr.loser td { background: rgba(229,62,62,0.05); }
+    .data-table .year-sep { border-top: 2px solid var(--border); }
+
+    .three-layer { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .three-layer .layer-card { background: var(--bg-card); border-radius: 10px; padding: 20px; text-align: center; }
+    .three-layer .layer-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+    .three-layer .layer-card p { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0; }
+
+    .two-layer { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .two-layer .layer-card { background: var(--bg-card); border-radius: 10px; padding: 20px; }
+    .two-layer .layer-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+    .two-layer .layer-card p { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0; }
+
+    .four-layer { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .four-layer .layer-card { background: var(--bg-card); border-radius: 10px; padding: 20px; }
+    .four-layer .layer-card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+    .four-layer .layer-card p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0; }
+
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .card-grid .card { background: var(--bg-card); border-radius: 10px; padding: 20px; }
+    .card-grid .card h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+    .card-grid .card p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0; line-height: 1.7; }
+
+    .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-right: 6px; }
+    .tag-verify { background: rgba(56,161,105,0.2); color: #68d391; }
+    .tag-supplement { background: rgba(49,130,206,0.2); color: #63b3ed; }
+    .tag-correct { background: rgba(221,107,32,0.2); color: #fbd38d; }
+    .tag-new { background: rgba(128,90,213,0.2); color: #b794f4; }
+    .tag-foundational { background: rgba(201,162,39,0.2); color: #f6e05e; }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+    .series-summary { background: var(--bg-card); border-radius: 12px; padding: 28px; margin: 32px 0 16px; text-align: center; }
+    .series-summary h3 { font-size: 1.1rem; color: var(--accent); font-weight: 700; margin-bottom: 16px; }
+    .series-summary p { font-size: 0.88rem; color: var(--text-muted); max-width: 540px; margin: 0 auto 12px; line-height: 1.8; }
+
+    .confidence { font-size: 0.78rem; color: var(--text-muted); margin-top: 20px; text-align: center; }
+
+    @media (max-width: 600px) {
+      .three-layer, .two-layer, .four-layer, .card-grid { grid-template-columns: 1fr; }
+      .comparison-table, .data-table { font-size: 0.78rem; }
+      .hero h1 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="uni-navbar">
+    <a href="index.html" class="nav-brand">李录研究</a>
+    <ul class="nav-links">
+      <li><a href="index.html">首页</a></li>
+      <li><a href="video_study.html">视频学习</a></li>
+      <li><a href="holdings.html">持仓</a></li>
+      <li><a href="principles.html">原则</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="episode-badge">📖 第22期 · 认识论地基</div>
+
+    <div class="hero">
+      <div class="series-label">李录投资研究系列 · Episodes 15–22 收官</div>
+      <h1>李录投资哲学的认识论地基</h1>
+      <div class="subtitle">铁律 · 仁智 · 道法自然 — 为什么这是李录框架，而不是另一个框架</div>
+      <div class="description">
+        本期是整个系列的终点站。Episodes 1–14 是持仓案例（What），Episodes 15–21 是方法论框架（How+Why），Episode 22 是认识论地基（Why this framework, not another）。没有这一层，系列就只是案例汇编，不是思想史研究。
+      </div>
+    </div>
+
+    <!-- 第一章：为什么需要认识论地基 -->
+    <div class="chapter">
+      <div class="chapter-num">第一章</div>
+      <h2>为什么系列需要一个认识论地基</h2>
+      <p>李录在2024年北大光华演讲中指出，市场上90%的「信息」是噪音或半真半假。这个判断对投资者有直接含义：在信息爆炸时代，识别哪些框架值得信赖，比找到具体股票更重要。</p>
+      <p>过去一夜的系统性一手资料挖掘（2026-05-02，凌晨）揭示了一个核心发现：李录框架的稳定性，来自其认识论地基与哲学根源的深层统一。四个一手来源（SSRN #3964616、2015北大课程、2024北大演讲、芒格悼词）交叉验证，指向同一个结论：这不是偶发判断，是十年以上一以贯之的思想体系。</p>
+
+      <div class="key-point">
+        <div class="label">核心洞察</div>
+        <p>李录框架的认识论地基由三个层次构成：哲学维度（儒家仁智 + 道法自然 + 西方启蒙）、投资维度（铁律 + 护城河 + 知行合一）、实证维度（SSRN + 13F + 一手访谈）。三个层次互相印证，缺一不可。</p>
+      </div>
+
+      <p>Episode 22 的核心任务：用四大一手来源的原文，精确回答一个问题——为什么看懂李录框架需要理解铁律？为什么护城河分析在中国2.5阶段必须加入制度变量？为什么管理层的诚信在中国语境下是核心变量而非辅助要素？</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第二章：铁律——宏观判断的第一性原理 -->
+    <div class="chapter">
+      <div class="chapter-num">第二章</div>
+      <h2>铁律：宏观判断的第一性原理</h2>
+      <p>「文明3.0铁律」（Iron Law of Civilization 3.0）是李录宏观判断的第一性原理。它的含义不是政治立场，而是可推导的经济学定律。</p>
+
+      <div class="law-box">
+        <div class="label">Iron Law 原文 · SSRN Ch11 p.80</div>
+        <h4>铁律的完整逻辑链</h4>
+        <p><strong>前提1：</strong>自由竞争市场 = 持续自我进化、自我完善的机制（self-evolving, self-advancing, and self-perfecting）</p>
+        <p style="margin-top:8px"><strong>前提2：</strong>现代科技（S&T）注入这个机制 → 速度大幅提升</p>
+        <p style="margin-top:8px"><strong>推导：</strong>当存在竞争市场时，最大市场最终成为唯一市场（the largest one will eventually become the only one）</p>
+        <p style="margin-top:8px"><strong>结论：</strong>任何个人、社会、企业或国家若被移除出这个单一市场 → 持续落后 → 最终被迫加入</p>
+      </div>
+
+      <div class="highlight-quote">
+        "The best way for any nation to build up its own strength is to abandon all its tariff barriers and join the largest international free market system in the world. The best way to fall behind is to close itself off from other countries. Such is the Iron Law of Civilization 3.0."
+        <span class="source">— Li Lu, SSRN #3964616, Ch11 "The Nature of Modernization", p.80 (2016)</span>
+      </div>
+
+      <div class="highlight-quote">
+        "Currently, about 10% of the global population has entered the 3.0 civilization, but international relations have not reached this stage. The iron law of modern economic development is that the largest market will eventually become the only market."
+        <span class="source">— Li Lu, 2024 PKU光华演讲, 2024-12-07</span>
+      </div>
+
+      <h3 style="font-size:1.1rem;margin:24px 0 12px;color:var(--accent)">铁律的微观基础：Ricardo + 知识乘数</h3>
+      <table class="comparison-table">
+        <tr><th>公式</th><th>含义</th><th>适用场景</th></tr>
+        <tr><td>1+1>2</td><td>分工交换创造贸易剩余</td><td>农业文明2.0 + 3.0</td></tr>
+        <tr><td>1+1>4</td><td>思想碰撞产生新思想</td><td>仅适用于文明3.0</td></tr>
+      </table>
+
+      <div class="highlight-quote">
+        "When different ideas are exchanged, the parties not only retain their own ideas, they also obtain the ideas of others. Moreover, the sparks can fly during exchanges, creating entirely new ideas. When ideas are having sex with each other, they become very productive."
+        <span class="source">— SSRN #3964616, Ch11 p.81</span>
+      </div>
+
+      <div class="insight-box">
+        <div class="label">关键洞察</div>
+        <p>知识积累是无限的，而物质资源是有限的。这是文明3.0相对于文明2.0的核心优势——经济增长没有物质上限，因为知识可以无限叠加。过去一个多世纪，人类知识大约每10年翻倍一次。</p>
+      </div>
+
+      <h3 style="font-size:1.1rem;margin:24px 0 12px;color:var(--accent)">3.0文明的三大前提条件（SSRN Ch11 p.83）</h3>
+      <p>三个条件缺一不可，否则无法实现现代化：</p>
+      <div class="card-grid">
+        <div class="card">
+          <h4>① 科学知识的社会机制</h4>
+          <p>发现、研究、传播科学知识的社会机制必须存在</p>
+        </div>
+        <div class="card">
+          <h4>② S&T与市场无缝融合</h4>
+          <p>现代科技与自由市场必须无缝融合</p>
+        </div>
+        <div class="card">
+          <h4>③ 可持续复合增长</h4>
+          <p>S&T引导的经济必须进入可持续复合增长状态</p>
+        </div>
+        <div class="card">
+          <h4>反例验证</h4>
+          <p>苏联：有大市场但非自由市场（失败）<br>明治前日本：有市场无科技（缓慢）</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:1.1rem;margin:24px 0 12px;color:var(--accent)">中国2.5阶段的精确表述（SSRN Ch11 p.85）</h3>
+      <div class="highlight-quote">
+        "The market economy in China today has already taken embryonic form, but is not yet completely free. Both the visible and invisible hands are still at work, and often at odds with each other. Modern S&T is already widely studied and widespread, but innovativeness is still wanting. A seamless integration between S&T and the economy has not yet been fully achieved. Although economic growth has been sustained for more than 3 decades, it has not yet reached a state of automatically sustainable compound growth. It is obvious that China is not yet a fully modernized state but it already has the embryonic forms of modernization. We can therefore say that China today has moved beyond Civilization 2.5 and is evolving towards Civilization 3.0."
+        <span class="source">— SSRN #3964616, Ch11 p.85 (2016)</span>
+      </div>
+
+      <div class="insight-box">
+        <div class="label">十年一贯性验证</div>
+        <p>2015 PKU lecture（最早来源）首次完整表述「文明3.0 + 中国2.5」，2024 PKU lecture（最新确认）再次确认 Iron Law + 10%量化——十年间核心判断无实质性变化。这是认识论地基，不是偶发分析。</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第三章：两个Cardinal Principles——资产管理行业的伦理地基 -->
+    <div class="chapter">
+      <div class="chapter-num">第三章</div>
+      <h2>两个Cardinal Principles：资产管理行业的伦理地基</h2>
+      <p>在资产管理行业，消费者无法辨别产品质量，连专业人士也难以判断。这种信息不对称决定了行业从业者必须有两个不可打破的职业道德底线。</p>
+
+      <div class="highlight-quote">
+        "The two cardinal principles that should guide your behavior in this industry are: First, always remember that you are managing other people's money, and you have an absolute fiduciary responsibility to them. Second, always remember that your goal is not just to make money but to cultivate wisdom, and the pursuit of wisdom should be your ultimate purpose."
+        <span class="source">— Li Lu, 2015 PKU lecture, 2015-10-23</span>
+      </div>
+
+      <h3 style="font-size:1.1rem;margin:24px 0 12px;color:var(--accent)">两个原则的内在逻辑</h3>
+      <div class="two-layer">
+        <div class="layer-card">
+          <h4>受托人责任（仁）</h4>
+          <p>把客户的钱当作自己的或父母的毕生积蓄来管理。这决定「不做什么」：不做不诚信的事，不做自己不懂的事，不做伤害客户利益的事。</p>
+        </div>
+        <div class="layer-card">
+          <h4>追求真知（智）</h4>
+          <p>把获取知识和智慧当作道德责任，而非工具。有意识地分辨半真半假的言论与真正的知识。这决定「如何做对」：只有持续追求真知，才能在关键时刻做出正确判断。</p>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <div class="label">核心含义</div>
+        <p>两者结合 = 真正的长期主义。不是「为了长期回报而假装做长期」，而是「因为相信真知的力量，所以自然地做长期」。在中国2.5阶段，市场90%的「信息」是噪音，没有这两个锚点，价值投资者很难生存15年。</p>
+      </div>
+
+      <div class="philosophy-box">
+        <div class="label">儒家仁智映射</div>
+        <h4>两个Cardinal Principles = 儒家仁与智的现代投资版本</h4>
+        <p><strong>仁（Ren）：</strong>仁者爱人 → 把客户利益当作自己的；己所不欲勿施于人 → 不做损害客户的事。受托人责任的文化根基是儒家仁学。</p>
+        <p style="margin-top:8px"><strong>智（Zhi）：</strong>智者不惑 → 分辨真知与噪音；格物致知 → 从具体事物中获取真正的认知。追求真知的文化根基是儒家智学。</p>
+        <p style="margin-top:8px"><strong>仁且智 = 真正的长期主义者：</strong>「仁」决定不做什么；「智」决定如何做对；两者结合 = 儒家「君子」的投资版本。</p>
+      </div>
+
+      <div class="insight-box">
+        <div class="label">对中国2.5阶段的价值</div>
+        <p>资产管理行业的两大障碍：客户短期情绪压力（追涨杀跌）和同行竞争压力（怕跑输同行）。解决路径正是这两个Cardinal Principles——当你真的把客户的钱当作父母的积蓄，当你真的把追求真知当作道德责任，短期的情绪压力和竞争压力就失去了影响力。</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第四章：道法自然——市场自发秩序的中国哲学对应 -->
+    <div class="chapter">
+      <div class="chapter-num">第四章</div>
+      <h2>道法自然：市场自发秩序的中国哲学对应</h2>
+      <p>文明3.0铁律的哲学本体论根源，可以追溯到道家「道法自然」的核心命题。</p>
+
+      <div class="philosophy-box">
+        <div class="label">哲学对应关系</div>
+        <h4>文明3.0铁律 = 道法自然的制度版本</h4>
+        <p><strong>道家「道法自然」：</strong>道本身是自然而然的规律，无需外部强制，内在自发。「无为而治」不是说政府什么都不做，而是不要用强制手段破坏自发秩序。</p>
+        <p style="margin-top:8px"><strong>铁律内在逻辑：</strong>自由交换 → 知识积累 → 规模扩大 → 自我强化 —— 这是「道法自然」在制度层面的精确经济学表述。</p>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h4>Rico 1+1>2 = 庄子「庖丁解牛」</h4>
+          <p>分工专业化创造贸易剩余价值，道家早有「术业有专攻」的深刻认识</p>
+        </div>
+        <div class="card">
+          <h4>知识交换 1+1>4 = 荀子「学不可以已」</h4>
+          <p>思想碰撞产生新思想，荀子「劝学」论述的正是知识积累的集体版本</p>
+        </div>
+        <div class="card">
+          <h4>最大市场 → 唯一市场 = 「天之道，损有余而补不足」</h4>
+          <p>自然的平衡机制：市场越大，参与者越多，剩余价值越大，落后者最终被迫加入</p>
+        </div>
+        <div class="card">
+          <h4>自由-繁荣-管制-衰落-再自由 = 几千年历史循环</h4>
+          <p>「关系」文化 → 管理层诚信稀缺 → 这不是短期现象，是几千年政府管控的集体无意识</p>
+        </div>
+      </div>
+
+      <div class="highlight-quote">
+        "In China, for instance, over the past several thousand years the private economy was often caught in cycles of freedom-prosperity-regulation-decay-re-liberalization because of government controls. The interests and wealth of merchants would also change unpredictably along with the visible hand of the government, so that trusting to luck has become part of the coerced collective memory of the business class."
+        <span class="source">— SSRN #3964616, Ch11 p.84-85</span>
+      </div>
+
+      <div class="insight-box">
+        <div class="label">对持仓研究的意义</div>
+        <p>这个历史循环解释了为什么李录框架中管理层诚信是核心变量——在一个循环往复的系统里，「君子」是稀缺资源，不立于危墙之下是生存本能。这不是道德说教，是历史经验的凝结。</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第五章：芒格——现代儒家主义的化身 -->
+    <div class="chapter">
+      <div class="chapter-num">第五章</div>
+      <h2>芒格：现代儒家主义的化身</h2>
+      <p>理解芒格在李录框架中的特殊位置，是理解整个体系的关键。芒格不是李录的「老师」那么简单，他是李录哲学的文化原型。</p>
+
+      <div class="highlight-quote">
+        "In China, the educated class increasingly came to view Charlie as the embodiment of the modern-day Confucianism, maintaining a virtuous and enlightened life while embracing the market forces of capitalism."
+        <span class="source">— Li Lu, Munger Memorial Tribute, 2023</span>
+      </div>
+
+      <div class="highlight-quote">
+        "In time, that vision of modern Confucianism will be crucial for Chinese modernization and how China interacts with the rest of the world."
+        <span class="source">— Li Lu, Munger Memorial Tribute, 2023</span>
+      </div>
+
+      <div class="philosophy-box">
+        <div class="label">深层含义</div>
+        <h4>芒格思想 = 儒家核心价值 + 市场经济 + 西方启蒙</h4>
+        <p>芒格被中国知识界视为「现代儒家主义的化身」，是因为他的哲学本质上与儒家核心价值完全一致：美德（仁）+ 觉悟（智）+ 市场经济三者并不矛盾。这正是李录框架的文化认同基础——儒家文明（日韩新）比西方文化更自然地接受市场经济，因为儒家传统本身包含勤奋、教育、家族、诚信等市场经济的文化前提。</p>
+      </div>
+
+      <div class="insight-box">
+        <div class="label">对中国2.5阶段的价值</div>
+        <p>芒格悼词的预言：「现代儒家主义对中国现代化以及中国与世界互动的方式至关重要。」这句话的深层含义：中国2.5→3.0的路径不是纯经济学的，需要文化支撑。儒家「诚信」「长期主义」「追求真知」是市场经济运转的文化前提。没有这些基础，市场经济会退化为短期投机（A股散户70%换手率 = 赌场文化）。</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第六章：Buffett vs 李录——五维度完整对比 -->
+    <div class="chapter">
+      <div class="chapter-num">第六章</div>
+      <h2>Buffett vs 李录：五维度完整对比</h2>
+      <p>李录框架与Buffett/Munger框架的关系，不是简单的继承，而是有验证、有补充、有边界修正的完整体系。</p>
+
+      <table class="comparison-table">
+        <tr><th>维度</th><th>Buffett / Munger</th><th>李录</th><th>关系</th></tr>
+        <tr>
+          <td>护城河四要素</td>
+          <td>规模经济 / 网络效应 / 转换成本 / 无形资产</td>
+          <td>四要素完全一致，附AI时代判断</td>
+          <td><span class="tag tag-verify">验证</span></td>
+        </tr>
+        <tr>
+          <td>安全边际</td>
+          <td>内在价值与市场价格的价差</td>
+          <td>安全边际概念一致</td>
+          <td><span class="tag tag-verify">验证</span></td>
+        </tr>
+        <tr>
+          <td>知行合一</td>
+          <td>理性 + 耐心，不受市场情绪影响</td>
+          <td>知行合一概念一致</td>
+          <td><span class="tag tag-verify">验证</span></td>
+        </tr>
+        <tr>
+          <td>文明3.0框架</td>
+          <td>无此框架（美国视角）</td>
+          <td>独有：宏观判断的地基</td>
+          <td><span class="tag tag-correct">边界修正</span></td>
+        </tr>
+        <tr>
+          <td>儒家伦理维度</td>
+          <td>间接影响（Munger被称为现代儒家）</td>
+          <td>直接体现：受托人责任 + 追求真知的文化根基</td>
+          <td><span class="tag tag-supplement">补充</span></td>
+        </tr>
+      </table>
+
+      <div class="insight-box">
+        <div class="label">第五维度的关键意义</div>
+        <p>Buffett/Munger框架没有文明3.0框架，是因为美国是3.0文明的中心，不需要从外部判断自己身在何处。李录框架有文明3.0框架，是因为中国处于2.5阶段，需要从外部判断自己是否仍在3.0轨道上。这个框架不是李录「发明」的，是他身处的位置决定的——在轨道外的观察者，才能看清轨道。</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第七章：Berkshire 60年完整实证 -->
+    <div class="chapter">
+      <div class="chapter-num">第七章</div>
+      <h2>Berkshire 60年完整实证：铁律视角下的复利奇迹</h2>
+      <p>Berkshire 60年（1965–2025）的业绩记录，是价值投资最有力的实证——不是因为回报率高，而是因为持续性强。</p>
+
+      <div class="key-point">
+        <div class="label">核心数据（来源：Berkshire 2025 Annual Report, p.23-24）</div>
+        <p>1965–2025年：Berkshire 复合年化 <strong style="color:var(--green)">19.7%</strong> vs S&P 500（含股息）<strong style="color:var(--text-muted)">10.5%</strong><br>
+        累计总收益：Berkshire <strong style="color:var(--green)">6,099,294%</strong> vs S&P 500 <strong style="color:var(--text-muted)">46,061%</strong><br>
+        差距倍数：<strong style="color:var(--accent)">132.4倍</strong></p>
+      </div>
+
+      <p style="margin-top:20px"><strong>完整年度数据表（1965–2025）：</strong></p>
+      <table class="data-table">
+        <tr><th>年份</th><th style="text-align:right">Berkshire</th><th style="text-align:right">S&P 500</th><th>差异</th></tr>
+        <tr class="winner"><td>1965</td><td class="berkshire">+49.5%</td><td class="sp500">+10.0%</td><td style="color:var(--green)">+39.5</td></tr>
+        <tr class="loser"><td>1966</td><td class="berkshire">−3.4%</td><td class="sp500">−11.7%</td><td style="color:var(--green)">+8.3</td></tr>
+        <tr class="winner"><td>1967</td><td class="berkshire">+13.3%</td><td class="sp500">+30.9%</td><td style="color:var(--red)">−17.6</td></tr>
+        <tr class="winner"><td>1968</td><td class="berkshire">+77.8%</td><td class="sp500">+11.0%</td><td style="color:var(--green)">+66.8</td></tr>
+        <tr class="winner"><td>1969</td><td class="berkshire">+19.4%</td><td class="sp500">−8.4%</td><td style="color:var(--green)">+27.8</td></tr>
+        <tr class="loser"><td>1970</td><td class="berkshire">−4.6%</td><td class="sp500">+3.9%</td><td style="color:var(--red)">−8.5</td></tr>
+        <tr class="winner"><td>1971</td><td class="berkshire">+80.5%</td><td class="sp500">+14.6%</td><td style="color:var(--green)">+65.9</td></tr>
+        <tr class="winner"><td>1972</td><td class="berkshire">+8.1%</td><td class="sp500">+18.9%</td><td style="color:var(--green)">+10.8</td></tr>
+        <tr class="loser"><td>1973</td><td class="berkshire">−2.5%</td><td class="sp500">−14.8%</td><td style="color:var(--green)">+12.3</td></tr>
+        <tr class="loser"><td>1974</td><td class="berkshire">−48.7%</td><td class="sp500">−26.4%</td><td style="color:var(--red)">−22.3</td></tr>
+        <tr class="winner"><td>1975</td><td class="berkshire">+2.5%</td><td class="sp500">+37.2%</td><td style="color:var(--green)">+34.7</td></tr>
+        <tr class="winner"><td>1976</td><td class="berkshire">+129.3%</td><td class="sp500">+23.6%</td><td style="color:var(--green)">+105.7</td></tr>
+        <tr class="winner"><td>1977</td><td class="berkshire">+46.8%</td><td class="sp500">−7.4%</td><td style="color:var(--green)">+54.2</td></tr>
+        <tr class="winner"><td>1978</td><td class="berkshire">+14.5%</td><td class="sp500">+6.4%</td><td style="color:var(--green)">+8.1</td></tr>
+        <tr class="winner"><td>1979</td><td class="berkshire">+102.5%</td><td class="sp500">+18.2%</td><td style="color:var(--green)">+84.3</td></tr>
+        <tr class="winner"><td>1980</td><td class="berkshire">+32.8%</td><td class="sp500">+32.3%</td><td style="color:var(--green)">+0.5</td></tr>
+        <tr class="winner"><td>1981</td><td class="berkshire">+31.8%</td><td class="sp500">−5.0%</td><td style="color:var(--green)">+36.8</td></tr>
+        <tr class="winner"><td>1982</td><td class="berkshire">+38.4%</td><td class="sp500">+21.4%</td><td style="color:var(--green)">+17.0</td></tr>
+        <tr class="winner"><td>1983</td><td class="berkshire">+69.0%</td><td class="sp500">+22.4%</td><td style="color:var(--green)">+46.6</td></tr>
+        <tr class="loser"><td>1984</td><td class="berkshire">−2.7%</td><td class="sp500">+6.1%</td><td style="color:var(--red)">−8.8</td></tr>
+        <tr class="winner"><td>1985</td><td class="berkshire">+93.7%</td><td class="sp500">+31.6%</td><td style="color:var(--green)">+62.1</td></tr>
+        <tr class="winner"><td>1986</td><td class="berkshire">+14.2%</td><td class="sp500">+18.6%</td><td style="color:var(--green)">+4.4</td></tr>
+        <tr class="winner"><td>1987</td><td class="berkshire">+4.6%</td><td class="sp500">+5.1%</td><td style="color:var(--green)">+0.5</td></tr>
+        <tr class="winner"><td>1988</td><td class="berkshire">+59.3%</td><td class="sp500">+16.6%</td><td style="color:var(--green)">+42.7</td></tr>
+        <tr class="winner"><td>1989</td><td class="berkshire">+84.6%</td><td class="sp500">+31.7%</td><td style="color:var(--green)">+52.9</td></tr>
+        <tr class="loser"><td>1990</td><td class="berkshire">−23.1%</td><td class="sp500">−3.1%</td><td style="color:var(--red)">−20.0</td></tr>
+        <tr class="winner"><td>1991</td><td class="berkshire">+35.6%</td><td class="sp500">+30.5%</td><td style="color:var(--green)">+5.1</td></tr>
+        <tr class="winner"><td>1992</td><td class="berkshire">+29.8%</td><td class="sp500">+7.6%</td><td style="color:var(--green)">+22.2</td></tr>
+        <tr class="winner"><td>1993</td><td class="berkshire">+38.9%</td><td class="sp500">+10.1%</td><td style="color:var(--green)">+28.8</td></tr>
+        <tr class="winner"><td>1994</td><td class="berkshire">+25.0%</td><td class="sp500">+1.3%</td><td style="color:var(--green)">+23.7</td></tr>
+        <tr class="winner"><td>1995</td><td class="berkshire">+57.4%</td><td class="sp500">+37.6%</td><td style="color:var(--green)">+19.8</td></tr>
+        <tr class="loser"><td>1996</td><td class="berkshire">+6.2%</td><td class="sp500">+23.0%</td><td style="color:var(--red)">−16.8</td></tr>
+        <tr class="winner"><td>1997</td><td class="berkshire">+34.9%</td><td class="sp500">+33.4%</td><td style="color:var(--green)">+1.5</td></tr>
+        <tr class="winner"><td>1998</td><td class="berkshire">+52.2%</td><td class="sp500">+28.6%</td><td style="color:var(--green)">+23.6</td></tr>
+        <tr class="loser"><td>1999</td><td class="berkshire">−19.9%</td><td class="sp500">+21.0%</td><td style="color:var(--red)">−40.9</td></tr>
+        <tr class="winner"><td>2000</td><td class="berkshire">+26.6%</td><td class="sp500">−9.1%</td><td style="color:var(--green)">+35.7</td></tr>
+        <tr class="winner"><td>2001</td><td class="berkshire">+6.5%</td><td class="sp500">−11.9%</td><td style="color:var(--green)">+18.4</td></tr>
+        <tr class="winner"><td>2002</td><td class="berkshire">−3.8%</td><td class="sp500">−22.1%</td><td style="color:var(--green)">+18.3</td></tr>
+        <tr class="winner"><td>2003</td><td class="berkshire">+15.8%</td><td class="sp500">+28.7%</td><td style="color:var(--green)">+12.9</td></tr>
+        <tr class="winner"><td>2004</td><td class="berkshire">+4.3%</td><td class="sp500">+10.9%</td><td style="color:var(--green)">+6.6</td></tr>
+        <tr class="loser"><td>2005</td><td class="berkshire">+0.8%</td><td class="sp500">+4.9%</td><td style="color:var(--red)">−4.1</td></tr>
+        <tr class="winner"><td>2006</td><td class="berkshire">+24.1%</td><td class="sp500">+15.8%</td><td style="color:var(--green)">+8.3</td></tr>
+        <tr class="winner"><td>2007</td><td class="berkshire">+28.7%</td><td class="sp500">+5.5%</td><td style="color:var(--green)">+23.2</td></tr>
+        <tr class="winner"><td>2008</td><td class="berkshire">−31.8%</td><td class="sp500">−37.0%</td><td style="color:var(--green)">+5.2</td></tr>
+        <tr class="loser"><td>2009</td><td class="berkshire">+2.7%</td><td class="sp500">+26.5%</td><td style="color:var(--red)">−23.8</td></tr>
+        <tr class="winner"><td>2010</td><td class="berkshire">+21.4%</td><td class="sp500">+15.1%</td><td style="color:var(--green)">+6.3</td></tr>
+        <tr class="loser"><td>2011</td><td class="berkshire">−4.7%</td><td class="sp500">+2.1%</td><td style="color:var(--red)">−6.8</td></tr>
+        <tr class="winner"><td>2012</td><td class="berkshire">+16.8%</td><td class="sp500">+16.0%</td><td style="color:var(--green)">+0.8</td></tr>
+        <tr class="winner"><td>2013</td><td class="berkshire">+32.7%</td><td class="sp500">+32.4%</td><td style="color:var(--green)">+0.3</td></tr>
+        <tr class="winner"><td>2014</td><td class="berkshire">+27.0%</td><td class="sp500">+13.7%</td><td style="color:var(--green)">+13.3</td></tr>
+        <tr class="loser"><td>2015</td><td class="berkshire">−12.5%</td><td class="sp500">+1.4%</td><td style="color:var(--red)">−13.9</td></tr>
+        <tr class="winner"><td>2016</td><td class="berkshire">+23.4%</td><td class="sp500">+12.0%</td><td style="color:var(--green)">+11.4</td></tr>
+        <tr class="winner"><td>2017</td><td class="berkshire">+21.9%</td><td class="sp500">+21.8%</td><td style="color:var(--green)">+0.1</td></tr>
+        <tr class="loser"><td>2018</td><td class="berkshire">+2.8%</td><td class="sp500">−4.4%</td><td style="color:var(--green)">+7.2</td></tr>
+        <tr class="loser"><td>2019</td><td class="berkshire">+11.0%</td><td class="sp500">+31.5%</td><td style="color:var(--red)">−20.5</td></tr>
+        <tr class="loser"><td>2020</td><td class="berkshire">+2.4%</td><td class="sp500">+18.4%</td><td style="color:var(--red)">−16.0</td></tr>
+        <tr class="winner"><td>2021</td><td class="berkshire">+29.6%</td><td class="sp500">+28.7%</td><td style="color:var(--green)">+0.9</td></tr>
+        <tr class="winner"><td>2022</td><td class="berkshire">+4.0%</td><td class="sp500">−18.1%</td><td style="color:var(--green)">+22.1</td></tr>
+        <tr class="loser"><td>2023</td><td class="berkshire">+15.8%</td><td class="sp500">+26.3%</td><td style="color:var(--red)">−10.5</td></tr>
+        <tr class="winner"><td>2024</td><td class="berkshire">+25.5%</td><td class="sp500">+25.0%</td><td style="color:var(--green)">+0.5</td></tr>
+        <tr class="loser"><td>2025</td><td class="berkshire">+10.9%</td><td class="sp500">+17.9%</td><td style="color:var(--red)">−7.0</td></tr>
+      </table>
+
+      <div class="insight-box">
+        <div class="label">铁律视角下的复利奇迹</div>
+        <p>在一个竞争性市场里，能持续跑赢大市的投资者必须是极少数——因为市场本身就是大市。Berkshire 60年的记录证明这是可能的：不是靠内幕，靠的是铁律意义上的「真知」（true knowledge）。持续跑赢市场9.2个百分点，60年后产生132.4倍的差距，这就是复利的威力。</p>
+      </div>
+
+      <div class="warning-box">
+        <div class="label">2025年值得关注的信号</div>
+        <p>Berkshire 2025年跑输S&P 500（10.9% vs 17.9%），但60年维度差距仍巨大。更值得关注的是Abel的资本配置行为：零回购 + 权益净卖出$13.8B + 持有$369B现金 = 对当前市场估值偏贵的明确判断。</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第八章：铁律→持仓的直接连接 -->
+    <div class="chapter">
+      <div class="chapter-num">第八章</div>
+      <h2>铁律 → 持仓：宏观判断与投资决策的直接连接</h2>
+      <p>看懂铁律，才能看懂李录的持仓选择。不是因为他用铁律选股，而是因为铁律提供了宏观判断的地基，让持仓选择变得可以理解。</p>
+
+      <table class="comparison-table">
+        <tr><th>持仓</th><th>押注内容</th><th>与铁律的连接</th></tr>
+        <tr>
+          <td>腾讯 / PDD / 阿里</td>
+          <td>中国融入3.0的互联网基础设施</td>
+          <td>铁律在中国互联网的应用：最大市场最终成为唯一市场，用户越多价值越高</td>
+        </tr>
+        <tr>
+          <td>邮储银行</td>
+          <td>2.5→3.0转型中的金融深化</td>
+          <td>金融体系现代化是3.0文明的必要条件之一</td>
+        </tr>
+        <tr>
+          <td>Berkshire</td>
+          <td>全球最大自由市场（美国）的制度智慧代表</td>
+          <td>美国是3.0文明的中心，制度智慧是护城河的制度化</td>
+        </tr>
+        <tr>
+          <td>比亚迪</td>
+          <td>制造业S&T + 市场整合的完美案例</td>
+          <td>3.0文明三大前提条件在中国制造业的体现</td>
+        </tr>
+        <tr>
+          <td>中煤能源</td>
+          <td>政策红利下的防御性资产（非真正护城河）</td>
+          <td>政府授予的垄断 ≠ 商业护城河，是A类高股息逻辑，不是B类增长逻辑</td>
+        </tr>
+      </table>
+
+      <div class="insight-box">
+        <div class="label">能源类持仓的重新审视</div>
+        <p>盘江 / 新集 / 中煤：政策授予的防御性资产，供给侧改革红利是政府管制赋予的，适合A类高股息逻辑。中海油：深海开采成本护城河来自市场竞争，是真正的商业护城河。区分标准：政府授予的垄断防御性资产 vs 市场竞争建立的护城河——这个判断直接影响持仓分类（防御 vs 进攻）。</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第九章：系列闭环拓扑 -->
+    <div class="chapter">
+      <div class="chapter-num">第九章</div>
+      <h2>系列闭环拓扑：为什么Episode 22是系列的终点</h2>
+      <p>整个系列的结构，不是线性叙事，而是环形拓扑。六个核心问题各自回答一个维度，共同构成完整闭环。</p>
+
+      <div class="four-layer">
+        <div class="layer-card">
+          <h4>🔬 地基（Episode 17）</h4>
+          <p>为什么护城河稀缺？→ 铁律：3.0文明天然形成赢者通吃</p>
+        </div>
+        <div class="layer-card">
+          <h4>⚡ 熵增（Episode 16）</h4>
+          <p>为什么护城河会消失？→ 熵增：外来秩序不可持续</p>
+        </div>
+        <div class="layer-card">
+          <h4>🏰 护城河（Episode 15）</h4>
+          <p>如何识别真正的护城河？→ 四要素 + 五种形态</p>
+        </div>
+        <div class="layer-card">
+          <h4>📺 负面教材（Episode 19）</h4>
+          <p>哪些「护城河」是假的？→ 有线电视：政府授予垄断 ≠ 商业护城河</p>
+        </div>
+        <div class="layer-card">
+          <h4>🔄 知行合一（Episode 16）</h4>
+          <p>如何保持知行合一？→ 两个Cardinal Principles</p>
+        </div>
+        <div class="layer-card">
+          <h4>🌍 边界修正（Episode 20）</h4>
+          <p>Buffett框架在中国的边界在哪里？→ 制度变量 + 管理层诚信</p>
+        </div>
+        <div class="layer-card">
+          <h4>🏛️ 认识论（Episode 22）</h4>
+          <p>为什么这是李录框架，而不是另一个框架？→ 铁律 + 仁智 + 道法自然</p>
+        </div>
+        <div class="layer-card">
+          <h4>📊 Berkshire 60年实证（Episode 22）</h4>
+          <p>为什么真知可以跑赢市场？→ 60年维度，132.4倍差距</p>
+        </div>
+      </div>
+
+      <div class="key-point">
+        <div class="label">闭环检验</div>
+        <p>六个核心问题是否形成闭环？铁律解释了护城河为何稀缺（地基）→ 熵增解释了护城河为何会消失 → 四要素识别真正的护城河 → 有线电视案例识别假的护城河 → 知行合一在执行层面保持纪律 → Buffett vs 李录框架明确了边界 → Episode 22 回答了为什么这是李录框架。闭环无断裂。</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 第十章：结语 -->
+    <div class="chapter">
+      <div class="chapter-num">结语</div>
+      <h2>为什么这是李录框架，而不是另一个框架</h2>
+      <p>看完Episode 1到Episode 22，一个问题浮现出来：为什么李录框架是李录的，而不是另一个价值投资框架的变种？</p>
+
+      <p>答案在于三个「独有」：</p>
+      <div class="three-layer">
+        <div class="layer-card">
+          <h4>① 文明3.0框架</h4>
+          <p>美国视角下的价值投资者不需要这个框架，因为美国是3.0文明的中心。李录需要，因为它身在中国2.5阶段，必须从外部判断自己是否仍在3.0轨道上。</p>
+        </div>
+        <div class="layer-card">
+          <h4>② 儒家仁智的现代映射</h4>
+          <p>两个Cardinal Principles的文化根源在儒家仁学——受托人责任（仁）和追求真知（智）的文化根基，不是西方职业伦理的简单移植。</p>
+        </div>
+        <div class="layer-card">
+          <h4>③ 道法自然的本体论承诺</h4>
+          <p>对市场自发秩序的信仰，本质上是道家「道法自然」的哲学承诺——自由交换内生秩序，不需要外部强制。</p>
+        </div>
+      </div>
+
+      <div class="highlight-quote">
+        "This path is a beautiful one with no traffic congestion. It is not a lonely road. It is just that not many people want to take it. If you stay the course for 15 years, you will become stellar investors."
+        <span class="source">— Li Lu, 2015 PKU lecture, 2015-10-23</span>
+      </div>
+
+      <div class="series-summary">
+        <h3>系列完结 · Episodes 1–22</h3>
+        <p>从持仓案例（What）到方法论框架（How）到认识论地基（Why），整个系列的目标只有一个：理解李录框架的深层结构，为普通投资者的实践提供可操作的工具。</p>
+        <p style="margin-top:8px;color:var(--accent)">铁律是宏观判断的地基，护城河是中观选股的方法，知行合一是微观的执行纪律。</p>
+        <p style="margin-top:8px">三者结合，是一个完整的价值投资体系。</p>
+      </div>
+    </div>
+
+    <div class="confidence">
+      <p>数据来源：SSRN #3964616 Ch11（2016）、2015 PKU lecture（2015-10-23）、2024 PKU光华演讲（2024-12-07）、芒格纪念文（Li Lu, 2023）、Berkshire 2025 Annual Report</p>
+      <p style="margin-top:8px">系列： Episodes 1–22 | Episode 22 完成时间：2026-05-02 05:00</p>
+    </div>
+  </main>
+</body>
+</html>
