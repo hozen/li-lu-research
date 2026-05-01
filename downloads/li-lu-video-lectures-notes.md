@@ -80,7 +80,7 @@
 |------|------|
 | 投资原则速查卡 | downloads/li-lu-principles-quickref.md |
 | 13F持仓数据 | SEC EDGAR (sec.gov) |
-| 李录论文原文 | SSRN papers.ssrn.com/sol3/papers.cfm?abstract_id=2586596 |
+| 李录论文原文 | SSRN papers.ssrn.com/sol3/papers.cfm?abstract_id=3964616 |
 
 ---
 
