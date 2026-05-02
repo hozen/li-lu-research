@@ -791,3 +791,35 @@ faq.html        ← FAQ（新创建）
 - ✅ 正文文字对比度约10:1，远超4.5:1标准。
 - ✅ 金色强调（#c9a227 on #1a365d）对比度约5.2:1，满足AA标准。
 - ✅ 主要链接（#64b5f6 on #0a1628）对比度约6.5:1，满足AA标准。
+
+---
+
+## Episode 内容修正记录（2026-05-02）
+
+### Episode 19 有线电视/熵增来源标注修正 — **P3**
+
+**问题发现时间**：2026-05-02 10:10（李录主会话系统性学习发现）
+
+**文件**：`li-lu-research/collab-sister/done/modernization-framework-episode19.html`
+
+**修正内容**：Episode 19 HTML 文件中三处来源标注错误：
+
+| 位置 | 当前错误标注 | 正确来源 |
+|------|------------|---------|
+| 有线电视 quote (pos ~12231) | `专著 Ch13（SSRN #3964616《现代化、价值投资与中国》）` | `2024 北大光华演讲《全球价值投资与我们的时代》` |
+| 熵增理论 quote (pos ~17561) | `SSRN #3964616 专著 Ch13` | `Ian Morris《Why the West Rules for Now》(2010) & 《The Measure of Civilization》(2013)，引用于 SSRN Ch1` |
+| Footer 来源说明 (pos ~18858) | `SSRN #3964616《现代化、价值投资与中国》专著 Ch13` | 分开标注：Morris/有线电视/文化分析各自来源 |
+
+**背景说明**：
+- SSRN 全文共 15 章节（不是 10 章也不是 13 章）
+- SSRN Ch13 = "China in the coming decades — Culture"（中国文化章节），不包含有线电视案例或熵增理论
+- 有线电视（TCI）投资案例来自李录在 2024 PKU lecture 的亲身叙述
+- 熵增理论来自 Ian Morris 2010/2013 著作，被 SSRN Ch1 引用，SSRN Ch2/Ch3 包含具体分析
+- Episode 19 内容本身正确，仅来源标注错误
+
+**修正操作**：✅ 已完成（2026-05-02 10:20）
+1. 有线电视案例来源 → `— 2024 北大光华管理学院演讲《全球价值投资与我们的时代》，TCI（Tele-Communications Inc.）投资案例，李录亲身经历`
+2. 熵增理论来源 → `— Ian Morris《Why the West Rules for Now》(2010) &《The Measure of Civilization》(2013)，引用于 SSRN Ch1，Ian Morris 能量获取/熵增框架`
+3. Footer 来源说明 → 分项标注：Morris 熵增/Ch1-Ch3 / TCI 案例 2024北大 / SSRN Ch13 中国文化章节（非本篇来源）
+
+**Git commit**：`a33af59`（本地保存，待网络恢复后推送 origin/dev-clean）
