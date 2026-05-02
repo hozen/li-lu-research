@@ -281,4 +281,85 @@ China 2.5（特殊情境）
 
 ---
 
-_Last updated: 2026-05-02 16:15_
+## 七、PCA 第五章原文深度精读（2026-05-02 空窗期学习）
+
+> 来源：Charlie Munger, "The Psychology of Human Misjudgment", 1995 Harvard Law School 演讲原文（Poor Charlie's Almanack 第五章来源）
+> 获取来源：ritholtz.com 完整文字记录
+
+### 7.1 最重要的新认知：激励过敏的实际机制
+
+**Munger 原文核心观点**："One of my favorite cases about the power of incentives is the Federal Express case. The heart and soul of the integrity of the system is that all the packages have to be shifted rapidly in one central location each night. And Federal Express had one hell of a time getting the thing to work. And they tried moral suasion, they tried everything in the world, and finally somebody got the happy thought that they were paying the night shift by the hour, and that maybe if they paid them by the shift, the system would work better. And lo and behold, that solution worked."
+
+**投资含义**：
+- 改变结果的不是道德说教，而是激励结构
+- Xerox 案例：销售佣金制度让旧机器比新机器卖得更好（Joe Wilson 回归后发现）
+- **关键：对激励的反应程度往往超出预期，即使是最懂激励的人也会低估其力量**
+
+**China 2.5 操作化**：
+- 政府补贴行业 = 激励结构扭曲 → 投资者追逐补贴而非护城河
+- 管理层薪酬与短期利润挂钩 → 忽略长期护城河建设
+- 国有银行给国企贷款 = 激励扭曲 → 看不见真实信用风险
+
+### 7.2 简单心理否认（Simple Psychological Denial）
+
+**Munger 原文**："A friend of our family had a super-athlete, super-student son who flew off a carrier in the north Atlantic and never came back, and his mother, who was a very sane woman, just never believed that he was dead. And, of course, if you turn on the television, you find the mothers of the most obvious criminals that man could ever diagnose, and they all think their sons are innocent. That's simple psychological denial. The reality is too painful to bear, so you just distort it until it's bearable."
+
+**投资含义**：
+- 下跌时合理化持仓："这只是波动，不是永久损失"
+- 持仓已经变坏，但自我归因让判断失真
+- China 2.5 特有版本："政府不会让 X 公司倒闭"（否认制度现实）
+
+### 7.3 承诺与一致性倾向（Consistency and Commitment Tendency）
+
+**Munger 原文**："What I'm saying here is that the human mind is a lot like the human egg, and the human egg has a shut-off device. When one sperm gets in, it shuts down so the next one can't get in. The human mind has a big tendency of the same sort."
+
+**投资含义**：
+- 公开承诺会强化自我认同（社交媒体上的"我是价值投资者"）
+- 越难获得的结论越难改变（"有脚的投资"说服力极强）
+- 中国洗脑系统：用微小承诺逐步建立，然后慢慢扩大
+
+### 7.4 巴甫洛夫联想（ Pavlovian Association）
+
+**Munger 原文**："Practically, I'd say 3/4 of advertising works on pure Pavlov. Think how association, pure association, works. Take Coca-Cola company... They want to be associated with every wonderful image, heroics in the Olympics, wonderful music, you name it."
+
+**波斯信使综合征（Persian Messenger Syndrome）**："Bill Paley in his last 20 years. He didn't hear one damn thing he didn't want to hear. People knew that it was bad for the messenger to bring Bill Paley things he didn't want to hear. That means that the leader gets in a cocoon of unreality."
+
+**投资含义**：
+- 高管层听不进坏消息 → 企业预警信号被压制 → 投资失败
+- 分析师给出"买入"评级以维持与上市公司关系 → 信息失真
+- China 2.5：权钱文化中，汇报好消息是晋升路径，坏消息被系统压制
+
+### 7.5 互惠倾向（Reciprocation Tendency）
+
+**Munger 原文**（Cialdini 实验）："One in six actually agreed to take juveniles to the zoo. And after he'd accumulated a statistical output he went around on the same campus and he asked other people... would you devote two afternoons a week... and there he got 100% of the people to say no. But after he'd made the first request, he backed off a little, and he said, 'Would you at least take them to the zoo one afternoon?' He raised the compliance rate from a third to a half. He got three times the success by just going through the little ask-for-a-lot-and-back-off."
+
+**投资含义**：
+- 券商研报"首次覆盖"→"强烈推荐"：小请求后的大升级
+- 投资顾问：先给免费建议，再推销收费服务
+- 逆向：在别人"报价"之前先给出自己的条件
+
+### 7.6 波斯信使综合征 × China 2.5 管理层
+
+**China 2.5 特有的信使压制机制**：
+- 地方政府 GDP 竞赛：坏数据不上报 → 宏观判断系统性失真
+- 国企管理层：晋升与利润挂钩 → 坏账被掩盖
+- 民营企业：创始人与投资者之间的信息不对称
+
+**操作化**：
+- 关注竞争对手或供应商对这家公司的评价（外部视角）
+- 管理层在公开场合的回答是否回避关键问题
+- 财报中"无法解释"的会计变更
+
+### 7.7 认知偏见的物理学隐喻
+
+**Munger 原文（关于 Planck 和物理学家的故事）**：
+"According to Max Planck, the really innovative, important new physics was never really accepted by the old guard. Instead, a new guard came along that was less brain-blocked by its previous conclusions."
+
+**投资含义**：
+- 护城河框架一旦建立，新信息会被旧框架吸收/扭曲
+- Morris 框架/China 2.5 框架本身也有"锤子综合征"风险
+- 定期"清零"思维：用新框架重新审视旧持仓
+
+---
+
+_Last updated: 2026-05-02 16:15 + 深度原文补充_
