@@ -2,7 +2,8 @@
 
 **研究主题：李录价值投资决策框架深度研究**
 **初稿日期：2026年4月5日**
-**最后更新：2026年5月2日（补充附录A/B/C：Iron Law框架/Buffett对比/熵增闭环；新增附录D：中国2.5阶段×熵增框架；重大升级：第2节能力圈框架全面重写（引入证伪标准+10-20年自由现金流标准））**
+**最后更新：2026年5月3日（新增：Deutsch-Popper认识论哲学基础层，护城河=持续运行Popper循环的知识创造机制；补充附录A/B/C：Iron Law框架/Buffett对比/熵增闭环；新增附录D：中国2.5阶段×熵增框架）**
+**关联文档：Deutsch-Popper-Epistemology-Investment-Application.md（哲学基础层）**
 **研究来源：Himalaya Capital官网、Poor Charlie's Almanack、公开访谈及演讲资料**
 
 ---
@@ -735,10 +736,13 @@ Morris × Iron Law 闭环：
 
 ## 参考文献
 
-1. Himalaya Capital官网 (www.himcap.com) — 李录投资哲学核心阐述
-2. Poor Charlie's Almanack， 第三版，2009年，第61页 — 李录关于"致命一击"的经典论述
-3. Bruce Greenwald， "Value Investing: A Guide to Equity Management" — 护城河理论学术框架
-4. Himalaya Capital — 投资原则声明
+1. David Deutsch, *The Beginning of Infinity*, 2011 — Deutsch-Popper认识论基础
+2. Karl Popper, *The Logic of Scientific Discovery*, 1934 — 证伪主义哲学基础
+3. Himalaya Capital官网 (www.himcap.com) — 李录投资哲学核心阐述
+4. Poor Charlie's Almanack， 第三版，2009年，第61页 — 李录关于"致命一击"的经典论述
+5. Bruce Greenwald， "Value Investing: A Guide to Equity Management" — 护城河理论学术框架
+6. Himalaya Capital — 投资原则声明
+7. Ian Morris, *Why the West Rules — For Now*, 2010 — 历史尺度验证框架
 
 ---
 
