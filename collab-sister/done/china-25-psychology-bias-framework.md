@@ -559,4 +559,89 @@ _Last updated: 2026-05-02 16:15 + 深度原文补充_
 
 ---
 
-_Last updated: 2026-05-02T21:10_
+## 十二、芒格伦理学操作化 × 法身不腐（2026-05-02 22:10 空窗期精读）
+
+> 来源：li-lu-research/downloads/himcap/Remember-my-teacher-Charlie-Munger-CN.md（李录2023年亲笔悼念文，精读五个发现整合）
+
+### 12.1 芒格伦理学操作化的精确版本（核心发现）
+
+**李录原文（2023年悼念文，英文原文）**：
+> "He insisted on making money in the most morally sound way, entering transactions only when, if positions were reversed, he would comfortably take the other side."
+
+这是芒格「德行赚钱」的精确操作化版本——不是模糊的「道德」，而是一个具体的交易检验：
+
+> **操作化问题**：如果把自己放到交易的对方，你仍然能舒服地接受这笔交易吗？
+
+这是七维框架在伦理维度的精确操作化工具，与任何财务分析都不同层次。
+
+### 12.2 与七维框架能力圈检验的关系
+
+芒格伦理检验 × 七维框架三层嵌套：
+
+| 层次 | 检验内容 | 典型问题 |
+|------|---------|---------|
+| 财务层 | 10-20年FCF可预测？ | 我能预测这家公司10年的自由现金流吗？ |
+| 能力圈层 | 信息边界/认知边界 | 我的分析是独立判断还是依赖他人？ |
+| **伦理层（新增）** | **换位检验** | **如果对方是我，我会接受这笔交易吗？** |
+
+三层全部通过 → 完整的能力圈+伦理双验证。
+
+**China 2.5 操作化含义**：
+- D类持仓（国企/政策相关）= 激励过敏+权威偏见，往往在换位后让你不安
+- 「政府授予型护城河」= 如果政府取消授权，你仍然觉得这笔交易合理吗？
+- 这与 China 2.5 三问-Q2（管理层是否走诚信路径）形成深层呼应
+
+### 12.3 现代儒家芒格（最重要的跨文化发现）
+
+**李录原文（2023年悼念文）**：
+> "In China, the educated class increasingly came to view Charlie as the embodiment of the modern-day Confucianism, maintaining a virtuous and enlightened life while embracing the market forces of capitalism."
+
+> "In time, that vision of modern Confucianism will be crucial for Chinese modernization and how China interacts with the rest of the world."
+
+**战略含义**：
+- 中国受教育阶层将芒格视为「现代儒家思想的化身」——以德行修为为根基，同时拥抱资本主义市场力量
+- 诚信 + 市场力量 + 终身学习 = 现代儒家 × 资本主义
+- 这个判断有深远含义：在 China 2.5 阶段，李录/芒格所代表的投资哲学是中国现代化的精神伴侣
+
+### 12.4 法身不腐 = Morris 信息能力无上限的精神版本
+
+**李录原文（2023年悼念文）**：
+> "For a moment, I was reminded of the Living Buddhas I once saw in the Buddhist temples of Thailand. In the Buddhist tradition, the bodies of truly enlightened monks, through life-long self-cultivation, can remain incorrupt, without any traces of mummification after death."
+
+李录在芒格身上看到了「法身不腐」——这不是字面意思，而是精神遗产的隐喻：
+
+> **真正智慧者的影响力不会随肉体消亡而衰减。**
+
+**与 Morris 框架的关联**：
+- Morris 信息能力无上限 = 物理世界的无限积累
+- 法身不腐 = 精神/智慧层面的无限传承
+- 两者都是「无物理上限」的表述，跨越了物质和精神两个维度
+
+### 12.5 李录与芒格合作的精确时间线
+
+**李录原文（2023年悼念文）**：
+> "In that very room, exactly 20 years ago, also on a post-Thanksgiving weekend afternoon, following the introduction by our mutual friend Ron Olson, Charlie and I first struck up a deep conversation which ran for several hours."
+
+- **时间**：2003年感恩节后周末（11月最后一个周末）
+- **中间人**：Ron Olson（共同朋友）
+- **首次长谈**：持续数小时
+- **之后**：投资伙伴关系延续20年（2003-2023）
+- **地点**：伯克希尔·哈撒韦办公室
+
+### 12.6 资本主义美德最终位置的完整答案
+
+**李录原文（2023年悼念文）**：
+> "He sought worldly wisdom through life-long learning. He guided life with rationality devoid of mental deficiencies such as envy, resentment and self-pity."
+
+芒格用他漫长的一生回答了「资本主义中美德/道德责任/求真精神/公共服务应处于何位」这个问题：
+
+> **它们不是资本主义的对立面，而是资本主义最高形式的支撑。**
+
+**cbond 操作化含义**：
+- 选择持仓时，问：这个管理层是否在走芒格式的「德行赚钱」路径？
+- Pony Ma（腾讯）= 现代儒家诚信路径的代表
+- 国企高管激励扭曲 = 诚实守信的制度性障碍
+
+---
+
+_Last updated: 2026-05-02T22:10_
