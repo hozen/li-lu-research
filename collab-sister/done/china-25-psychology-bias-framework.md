@@ -2,6 +2,8 @@
 > 李录投资框架 · 第七模块（最终模块）
 > 建立时间：2026-05-02
 > 来源：Poor Charlie's Almanack 第五章 · PCA Foreword · Morris框架 × Iron Law × China 2.5 综合
+>
+> **⚠️ 数字说明**：Li Lu PCA Foreword（2010）原文写的是"23种"（the 23 most important psychological causes），而 PCA 第五章本身列出了25种倾向（含子项拆分）。本框架标题沿用 PCA 第五章的25种计数，但正文和第七节原文精读均以一手来源为准，不影响框架实质内容。
 
 ---
 
@@ -363,3 +365,87 @@ China 2.5（特殊情境）
 ---
 
 _Last updated: 2026-05-02 16:15 + 深度原文补充_
+
+---
+
+## 八、PCA Foreword 原文案例补充（2026-05-02 17:35 空窗期学习）
+
+> 来源：Li Lu, "PCA Foreword", Poor Charlie's Almanack 中文版序言（2010年亲笔）
+
+### 8.1 联邦快递激励过敏案例（PCA Foreword 原文）
+
+**Munger 原文引用**：Federal Express 案例（激励过敏的经典教材）
+
+**投资含义**：
+- 国企股权激励改革无效（代理人激励永远无法对准长期价值）
+- A股上市公司股权激励变味（激励扭曲）
+- 买入前问："管理层薪酬结构和公司长期价值创造是否同向？"
+
+### 8.2 Xerox 销售激励扭曲案例（PCA Foreword 原文）
+
+**Munger 原文引用**：Joe Wilson 回归后发现 Xerox 旧机器比新机器卖得更好（因为旧机器销售提成更高）
+
+**投资含义**：
+- 激励结构改变行为，而非培训或道德说教
+- A股"市值管理"动机 = 短期股价激励而非长期价值创造
+- 买入前问："这家公司的高管激励是否真正对齐股东长期价值？"
+
+### 8.3 Bill Paley 波斯信使综合征案例（PCA Foreword 原文）
+
+**Munger 原文引用**：Bill Paley 在 CBS 任职最后20年，完全不听任何坏消息
+
+**投资含义**：
+- 国企高管只报告上级想听的内容（波斯信使综合征）
+- GDP竞赛下，坏消息被系统压制 → 宏观判断系统性失真
+- 买入前问："这家公司管理层是否建立了让坏消息能顺利上传的机制？"
+
+### 8.4 Li Lu 最大机会成本错误 × Morris 框架含义
+
+**Li Lu PCA Foreword 原文**：
+> "The biggest mistakes of my entire career were not losses due to bad decisions, but rather the inability to invest heavily in my best-quality ideas."
+
+**Morris框架含义**：
+- 城市化率/信息能力最高维度的标的必须下大注
+- 分析正确但仓位不够 = 永久性机会成本损失
+- 腾讯欠配5% = 直接对应 Li Lu 最大错误
+
+### 8.5 Munger「理性」定义 = Two-Minute Effect
+
+**PCA Foreword 原文**：
+> Buffett calls this characteristic of Charlie the 'two-minute effect' — he said that Charlie could, in the shortest time possible, unravel the nature of a complex business and understand it better than anyone else.
+
+**投资含义**：
+- 2003年 Munger 与 Li Lu 讨论比亚迪：从未见过王传福，从未访问工厂，但问题至今最重要
+- "理性" = 在能力圈内以正确思维方式穿透本质（非信息量的堆砌）
+- Morris框架信息能力维度（无物理上限）= Two-Minute Effect 的底层支撑
+
+### 8.6 Munger 逆向思维操作化（PCA Foreword 原文）
+
+**三条原文**：
+1. "To understand how to be happy in life, Charlie will study how to make life miserable."
+2. "To examine how businesses become big, strong, and successful, Charlie first studies how businesses decline and fail."
+3. "All I want to know is where I'm going to die so I'll never go there."
+
+**操作化**：对应能力圈证伪标准——先问「什么会让论点失效」，而非问「这个投资会不会成功」。
+
+### 8.7 Li Lu 对 Munger 的终极定位：儒家君子型商人
+
+**PCA Foreword 原文**：
+> "If Confucius were to be reborn in America today, Charlie would likely be the ideal incarnation."
+
+**投资含义**：
+- Munger = 智慧（知）+ 道德（德）两条腿走路
+- 解释 China 2.5 阶段诚信管理层稀缺性
+- 在权钱文化中选择道德路径的异类 = 真正的护城河守护者
+
+---
+
+### ⚠️ 数字差异最终结论
+
+| 来源 | 数字 | 说明 |
+|------|------|------|
+| Li Lu PCA Foreword（2010）| 23种 | "the 23 most important psychological causes" |
+| PCA 第五章原文 | 25种 | Munger 亲自分类，含子项拆分 |
+| 本框架 | 25种 | 标题沿用 PCA 第五章计数，实质内容以一手原文为准 |
+
+**结论**：框架实质不受数字差异影响。本框架已在第七节逐条引用了 PCA 第五章的完整原文案例，第八节补充了 PCA Foreword 中的案例。两者结合覆盖了 Munger 25种误判倾向的核心内容。
