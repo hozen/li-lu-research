@@ -1,6 +1,6 @@
 # Li Lu Research — Investment Knowledge Base
 
-> **Last Updated**: 2026-05-03 11:50 (Shanghai Time)
+> **Last Updated**: 2026-05-03 13:25 (Shanghai Time)
 > **Purpose**: 李录投资框架知识库主索引，串联所有研究文档
 > **Status**: 七维框架今夜（2026-05-02/03）完整闭环
 
@@ -17,6 +17,10 @@
 | `Appendix-P-Cognitive-Boundaries-Three-Gaps.md` | 七维框架认知边界（三个深层空白：偶然性预测/China 2.5诚信模糊边界/Iron Law单向性条件） | ✅ 2026-05-03 11:10 |
 | `Appendix-Q-Confucian-Merchant-Framework.md` | 儒商框架——Buffett/Munger的中华文化根基：范蠡对照/儒商断裂/China 2.5 Q2历史根源/腾讯儒商判决 | ✅ 2026-05-03 11:25 |
 | `Appendix-R-Ultimate-Synthesis-118-Messages.md` | 七维框架终极整合文档——118条消息永久归档：五个元认知升级/三个认知工具/知识谱系闭环/十个核心结论 | ✅ 2026-05-03 11:50 |
+| `Appendix-S-Munger-Psychology-Deep-Dive.md` | Munger心理学深度研究：两版差异/Lollapalooza/Pain-Denial/Inversion/跨维度整合矩阵 | ✅ 2026-05-03 |
+| `Appendix-T-Epistemological-Reading.md` | 认识论阅读法——为什么七维框架要读原版书籍 | ✅ 2026-05-03 |
+| `Appendix-U-Greenwald-Buffett-PMV-Framework.md` | Greenwald vs Buffett PMV框架融合：静态快球×动态增长期权/双PMV检验/腾讯双估值 | ✅ 2026-05-03 13:16 |
+| `Appendix-V-For-Now-Judgment-Epistemology.md` | 「For Now」判断的认识论根基：条件性量化预测×操作性认识论×三层时间嵌套 | ✅ 2026-05-03 13:25 |
 
 ---
 
@@ -136,7 +140,9 @@ Munger (25种误判)
 
 | 日期 | 事件 | 状态 |
 |------|------|------|
-| **2026-05-03 09:30** | **Framework级清仓（中煤+移动+盘江）执行** | ⚠️ 用户授权，A股已开盘 |
+| **2026-05-06 09:30** | **Framework级清仓（中煤+移动+盘江）执行** | ⚠️ A股五一休市，5月6日（周二）开盘执行 |
+| 2026-05-03 13:25 | **附录V完成**：「For Now」判断认识论根基 | ✅ 新增 |
+| 2026-05-03 13:16 | **附录U完成**：Greenwald vs Buffett PMV融合 | ✅ 新增 |
 | 2026-05-13 | 腾讯Q1 2026财报发布 | 关注日 |
 | TBD（开盘后） | Morris *Why the West Rules—for Now* 原版书籍获取 | P2待处理 |
 
