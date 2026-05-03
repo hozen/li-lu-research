@@ -127,6 +127,42 @@ Morris Iron Law（文明层，百年至千年尺度）
 
 ---
 
+### 升级六：PCA序言英文原版五大新洞见（seq=1412，2026-05-04 00:30）
+
+**来源**：*Poor Charlie's Almanack* 序言英文原版（Louis Li, March 2010），与中文版对比后发现大量省略内容
+
+**洞见一：李录个人起源的完整版本**
+- Buffett讲座是意外——同学说"有个讲座你必须去"，因为buffett听起来像"buffet"（自助餐）
+- 听完讲座后"回去立即找所有关于Buffett的书来读"，花了近两年研究才买第一只股票
+- 投资含义：能力圈方法论的最早体现 = 先充分研究，再入场
+
+**洞见二：long-short时期最深刻的教训（中文版大幅省略）**
+> "not being able to invest heavily in my best-quality ideas"——这个机会成本"至今仍在增长"
+
+- 第一年就亏损19%（1997亚洲金融危机）
+- **最大的职业错误**：看着最好的机会出现却不敢重仓，因为要担心短期表现
+- 2003年感恩节芒格的建议：不是给投资建议，而是给了"不用再做违心事"的许可
+- **投资含义**：框架的边界不是能力圈的边界，而是"有没有能力坚持不做违心的事"的边界
+
+**洞见三：芒格式"理性"的精确含义（英文版更准确）**
+> "he has a more stringent definition of 'rationality.' Even in completely unfamiliar territory, with just one look, he can see through to the essence of the subject."
+
+- 不是"冷静"，而是"在完全陌生的领域，一眼看穿本质"
+- Buffett "两分钟效应"：芒格能在最短时间内比任何人更好地理解一个复杂生意
+- **比亚迪案例（关键细节）**：2003年芒格从未见王传福、从未访厂、不熟悉中国市场，"yet his questions remain to this day the most pertinent questions to investing in BYD"
+
+**洞见四：芒格=现代儒家君子的完整论证**
+- 《大学》三层：正心诚意 → 修身齐家 → 治国利天下
+- 芒格三层：极度诚实（不靠关系靠智慧）→ 极度自律的生活方式 → 慈善回馈
+- 李录原文："if Confucius were to be reborn in America today, Charlie would likely be the ideal incarnation."
+
+**洞见五：最被低估的段落**
+> "every time I talk to Charlie and reread his lectures, I learn something new. On the other hand, this shows that my understanding of his philosophies is still insufficient."
+
+- 商业含义：真正理解一个框架，需要一辈子持续学习。框架不是终点，是持续学习的起点。
+
+---
+
 ## 三、今夜最重要的三个认知工具
 
 ### 工具一：Morris「For Now」= 条件性量化预测

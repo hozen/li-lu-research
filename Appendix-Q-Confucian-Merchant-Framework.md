@@ -150,6 +150,45 @@ PCA序言（seq=1263）定义的「融入社会」三维度：
 
 ---
 
+## Q.6 附录R的核心结论
+
+**结论六**：芒格 = 现代儒家君子，PCA序言英文原版的完整论证（附录Q新增，2026-05-04）
+
+> **来源**：*Poor Charlie's Almanack* 序言英文原版（Louis Li, March 2010, himcap.com）
+
+### Q.6.1 《大学》三层 vs 芒格三层（精确对应）
+
+**《大学》三层**（来自《礼记·大学》）：
+1. **正心诚意**（self-cultivation）：动机纯粹，依靠智慧而非关系
+2. **修身齐家**（personal life cultivated）：一辈子保持极度自律的生活方式
+3. **治国利天下**（government orderly → world peace）：慈善回馈，服务社会
+
+**芒格三层对应**（PCA Foreword英文原版）：
+1. **正心诚意**：极度诚实，100%依靠智慧而非关系——「His success came from investing, which came from self-cultivation and learning」
+2. **修身齐家**：住老房子/坐经济舱中间座位/提前45分钟到会/为太太破费用私人飞机——日常生活即是修行
+3. **治国利天下**：捐$60M给斯坦福（因为太太是校友）/ 40年服务慈善医院 / 捐赠哈佛-西湖科学中心
+
+**李录的最终判断**（英文原版原文）：
+> "I sincerely hope that Chinese readers will be interested in Charlie and this book... if Confucius were to be reborn in America today, Charlie would likely be the ideal incarnation."
+
+### Q.6.2 芒格机场故事的儒商解读
+
+**英文原版机场故事**：芒格过了安检后反复触发金属探测器，错过航班，没有烦恼，拿出书阅读。问：为什么有私人飞机还坐商业航班？
+
+**三个理由**（英文原版原文）：
+1. "First, it is a waste of fuel for me to fly in my private jet."
+2. "Secondly, I feel safer flying in a commercial aircraft."
+3. **"I want to live an engaged life. I don't want to be isolated."**
+
+**儒商解读**：
+- 第一个理由 = 「格物致知」：坐经济舱，才能接触真实的人，感知真实的世界
+- 第二个理由 = 「仁者爱人」：对生命的敬畏是儒商的底色
+- 第三个理由 = 「修身齐家治国平天下」：只有在普通人中间，才能真正理解社会，才能服务社会
+
+**投资含义**：芒格选择「engaged life」而非「isolated wealth」，与儒商「德本财末」完全一致——财富是修身的副产品，不是目标。
+
+---
+
 ## Q.7 待研究空白
 
 - **空白一**：子贡（端木赐）的商业实践有无系统记录？他是儒商的最早典范，可能比范蠡更适合做历史对照
