@@ -141,6 +141,59 @@
 
 ---
 
+## Munger 1995 四个独有概念（2005年PCA修订版删除）
+
+**来源**：1995年 USC 原始演讲记录，2005年 PCA 修订版删除了以下四个重要概念
+
+### 概念一：Man-with-a-Hammer Syndrome（锤子人综合征）
+> "To the man with a hammer, every problem tends to look pretty much like a nail."
+
+**含义**：当只有一种分析工具时，会把所有问题强行塑造成该工具能处理的样子
+
+**框架含义**：
+- 七维框架本身也可能变成「锤子」——每月自问：「有什么是这个框架无法处理的？」
+- 中煤/移动/盘江 为什么在框架建立前持有？——当初只有「低估值+高股息」单一锤子
+- cbond D类46%持仓 = 单一框架的 Lollapalooza
+
+### 概念二：Persian Messenger Syndrome（波斯信使综合征）
+> "The Persians really did kill the messenger who brought the bad news."
+
+**含义**：机构内谁传递坏消息谁被边缘化 → 决策层活在不真实的世界里
+
+**框架含义**：
+| 公司类型 | Persian Messenger程度 | 信息质量 |
+|--------|------------------|--------|
+| 腾讯（Pony Ma直接接触用户）| 低 | 高质量 |
+| 中煤/移动/盘江（国企层层汇报）| 高 | 系统性扭曲 |
+
+- China 2.5 Q2 的制度根源：国企激励结构 = Persian Messenger 制度化
+- **「不明白的不投」** = 对 Persian Messenger 制度最清醒的应对
+
+### 概念三：Open-Outcry Auction Lollapalooza（竞价拍卖五重偏差叠加）
+> "The open-outcry auction is just made to turn the brain into mush"
+
+**五种偏差现场叠加**：
+1. Social Proof（社会认同）：别人在出价，一定有原因
+2. Reciprocation（互惠）：出价者之间无意识互惠行为
+3. Depryal Superreaction（剥夺感）：错过这次=永久损失感
+4. Contrast-Misreaction（对比误导）：看着别人出价，自己的基准被扭曲
+5. Doubt-Avoidance（怀疑规避）：不快速决策会错过
+
+**框架含义**：
+- Framework级清仓选择「开盘后尽快执行」而非「开盘瞬间竞价」
+- 根本逻辑：竞价时不知道对手方为何出价 → 价格是噪音而非信号 → 不参与
+
+### 概念四：Chinese Brainwashing System（微小承诺累积成大转变）
+> "They maneuvered people into making tiny little commitments and declarations, and then they'd slowly build."
+
+**含义**：微小公开承诺会自我强化，最终导致与初始立场完全相反的行为
+
+**框架含义**：
+- 每次「小幅加仓」都是微小承诺 → 最终积累成 46% 集中持仓
+- Morris「误差边际与证伪」可消解 Pain-Denial：知道「我可能错」，就不会强迫自己「找到答案」
+
+---
+
 ##Morris Iron Law「For Now」速记
 
 - **For Now** = Morris基于SDI的条件性预测，不是谦虚
