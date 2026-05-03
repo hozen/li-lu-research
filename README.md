@@ -1,6 +1,6 @@
 # Li Lu Research — Investment Knowledge Base
 
-> **Last Updated**: 2026-05-03 08:00 (Shanghai Time)
+> **Last Updated**: 2026-05-03 09:23 (Shanghai Time)
 > **Purpose**: 李录投资框架知识库主索引，串联所有研究文档
 > **Status**: 七维框架今夜（2026-05-02/03）完整闭环
 
@@ -33,7 +33,7 @@
 | `Morris-Why-West-Rules-Deep-Research.md` | *Why the West Rules—for Now* 全书研究（Ch1-Ch14） | 社会发展指数（SDI）量化框架；生物学统一性=Morris对种族主义的根本反驳 |
 | `morris-ch15-ch21-original-research.md` | Morris Ch15-Ch21原版研究 | "For Now"=SDI条件性预测 / 轴心时代是社会发展的附产品 / 工业革命在英国=大西洋强迫竞争 |
 | `Morris-Ch21-Conclusion-Definitive-Synthesis.md` | Morris Ch21+Conclusion终极综合 | 冰期-间冰期地质周期→农业文明11500年hard ceiling；Iron Law「spiral out of control」精确操作化；1776 vs 1492最终判决 |
-| `morris-framework-self-reference-and-iron-law-synthesis.md` | Morris自我参照悖论 + Iron Law三层验证 | SDI自我参照问题；Iron Law三层命运（转型利基/被新技术吸收/崩溃）；Morris误差边际与证伪 |
+| `Morris-Ch21-Conclusion-Definitive-Synthesis.md` | Morris Ch21+Conclusion终极综合（**已整合**：Morris自我指涉悖论 + Iron Law双层辨析 + 三个深层认知）| 冰期-间冰期地质周期；Iron Law「spiral out of control」；Morris自我指涉悖论；Iron Law双层嵌套关系（Morris层+公司层）；Buffett框架地质时间锚定 |
 
 **核心判决**：
 - Buffett框架只在**Civilization 3.0（1776-2100年）**有效
@@ -132,7 +132,7 @@ Munger (25种误判)
 
 | 日期 | 事件 | 状态 |
 |------|------|------|
-| **2026-05-03 09:30** | **Framework级清仓（中煤+移动+盘江）执行** | ⚠️ 用户授权，约85分钟后 |
+| **2026-05-03 09:30** | **Framework级清仓（中煤+移动+盘江）执行** | ⚠️ 用户授权，A股已开盘 |
 | 2026-05-13 | 腾讯Q1 2026财报发布 | 关注日 |
 | TBD（开盘后） | Morris *Why the West Rules—for Now* 原版书籍获取 | P2待处理 |
 
