@@ -9,12 +9,12 @@
 
 | 文件名 | 主题 | 字符数 | 状态 |
 |--------|------|--------|------|
-| Appendix-M-Constructor-Theory-Moat-Essence.md | Constructor Theory 护城河本质：严格不可逆性 | 11,201 | ✅ |
+| Appendix-M-Constructor-Theory-Moat-Essence.md | Constructor Theory 护城河本质：严格不可逆性 + 芒格两分钟效应案例（V1.1）| 11,201+ | ✅ |
 | Appendix-N-Buffett-Framework-Temporal-Consistency.md | Buffett框架时间一致性：60年不变的人性第一原理 | 16,562 | ✅ |
 | Appendix-O-Meta-Cognitive-Integration.md | 元认知整合：三个深层空白体系 | 17,292 | ✅ |
 | Appendix-P-Cognitive-Boundaries-Three-Gaps.md | 认知边界三层空白（偶然性/China2.5/Iron Law单向） | 16,489 | ✅ |
-| Appendix-Q-Confucian-Merchant-Framework.md | 儒商框架：China 2.5制度诚信历史根源 | 9,611 | ✅ |
-| Appendix-R-Ultimate-Synthesis-118-Messages.md | 终极综合：118条消息昨夜完整闭环 | 11,897 | ✅ |
+| Appendix-Q-Confucian-Merchant-Framework.md | 儒商框架：China 2.5制度诚信历史根源 + 芒格=现代儒家君子完整论证（V1.1）| 9,611+ | ✅ |
+| Appendix-R-Ultimate-Synthesis-118-Messages.md | 终极综合：118条消息完整闭环 + PCA序言英文原版五大新洞见（V1.1）| 11,897+ | ✅ |
 | Appendix-S-Constructor-China25-Integration.md | Constructor × China 2.5 三问整合矩阵 | 7,204 | ✅ |
 | Appendix-S-Munger-Psychology-Deep-Dive.md | Munger心理学深度研究：Lollapalooza效应 | 21,220 | ✅ |
 | Appendix-T-Epistemological-Reading.md | 认识论阅读方法论：三层标注系统 | 8,301 | ✅ |
