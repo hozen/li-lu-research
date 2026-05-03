@@ -2,7 +2,7 @@
 
 **研究主题：李录价值投资决策框架深度研究**
 **初稿日期：2026年4月5日**
-**最后更新：2026年5月3日（附录O：框架自我修正机制——三个元认知洞见终极整合：Morris自我指涉悖论/Iron Law双层嵌套/Constructor Theory三层不可逆性；附录P：七维框架认知边界——三个深层空白的系统性研究：偶然性预测/China 2.5诚信模糊边界/Iron Law单向性条件）**
+**最后更新：2026年5月3日（附录O：框架自我修正机制——三个元认知洞见终极整合：Morris自我指涉悖论/Iron Law双层嵌套/Constructor Theory三层不可逆性；附录P：七维框架认知边界——三个深层空白的系统性研究：偶然性预测/China 2.5诚信模糊边界/Iron Law单向性条件；附录Q：儒商框架——Buffett/Munger的中华文化根基：士人精神/范蠡/儒商断裂/China 2.5 Q2历史根源）**
 **关联文档：Deutsch-Popper-Epistemology-Investment-Application.md（哲学基础层）**
 **研究来源：Himalaya Capital官网、Poor Charlie's Almanack、公开访谈及演讲资料**
 
