@@ -24,8 +24,9 @@
 | Appendix-X-Buffett-不明白的不投-China-25-Operation.md | Buffett「不明白的不投」China 2.5操作化 | 5,895 | ✅ |
 | Appendix-AA-Munger-1995-Original-Speech-Textual-Analysis.md | Munger 1995原版演讲五种认知工具 | 18,644 | ✅ |
 | Appendix-AB-Morris-Why-West-Rules-For-Now-Framework.md | Morris「为什么西方统治——暂时」框架完整解析 | 13,806 | ✅ |
+| Appendix-AG-Buffett-1991-Florida-Lecture-Epistemology.md | Buffett 1991佛罗里达演讲：「智力护城河」× 三层认识论结构 | 4,255 | ✅ |
 
-**合计**：15个附录文件，约 186,000 字符（~186KB）
+**合计**：16个附录文件，约 190,000 字符（~190KB）
 
 ---
 
@@ -65,6 +66,7 @@ Greenwald (护城河学术化)
 Buffett (60年实战)
   └→ Appendix-N (Buffett框架时间一致性)
   └→ Appendix-X (Buffett「不明白的不投」China 2.5操作化)
+  └→ Appendix-AG (1991佛罗里达演讲：智力护城河×三层认识论)
         ↓
 Munger (25种误判)
   └→ Appendix-S-Munger (Munger心理学深度研究)
@@ -91,7 +93,7 @@ Munger (25种误判)
 | ~13:00 | Appendix-R | 终极综合：118条消息完整闭环 |
 | 13:00-15:00 | Appendix-S/T/U/V | Constructor×China2.5 + 认识论 + Greenwald融合 + Morris「For Now」|
 | ~15:00 | Appendix-W/X | Lollapalooza诊断 + Buffett「不明白的不投」操作化 |
-| ~15:55 | Appendix-AA/AB | Munger 1995原版 + Morris框架 |
+| ~19:30 | Appendix-AG | Buffett 1991佛罗里达演讲：「智力护城河」溯源 + 三层认识论结构 |
 
 ---
 
@@ -161,6 +163,11 @@ Munger (25种误判)
 - Iron Law三层命运：转型利基 / 被新技术吸收 / 螺旋失控崩溃
 - 「For Now」= 条件性预测，七维框架可证伪性基础
 
+### AG · Buffett 1991佛罗里达演讲
+- 「智力护城河」：比经济护城河更重要的概念——无法理解的公司无投资价值
+- 三层认识论：本体论承认 → 认识论操作化 → 行动禁令
+- Morris「For Now」× Buffett「不明白不投」互补：战略层 vs 操作层
+
 ---
 
 ## 六、GitHub提交记录（今夜新增附录）
@@ -180,6 +187,7 @@ Munger (25种误判)
 | `dfdd40b` | Appendix W | ✅ |
 | `9379245` | Appendix X | ✅ |
 | `621fa2e` | Appendix AA/AB/X重建 | ✅ |
+| 本次 | Appendix AG（Buffett 1991溯源）| ✅ |
 
 ---
 
