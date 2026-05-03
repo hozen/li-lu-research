@@ -1,6 +1,6 @@
 # Li Lu Research — Investment Knowledge Base
 
-> **Last Updated**: 2026-05-03 10:55 (Shanghai Time)
+> **Last Updated**: 2026-05-03 11:10 (Shanghai Time)
 > **Purpose**: 李录投资框架知识库主索引，串联所有研究文档
 > **Status**: 七维框架今夜（2026-05-02/03）完整闭环
 
@@ -14,6 +14,7 @@
 | `li_lu_investment_framework.md` | 七维框架全文（认识论→历史科学→护城河→投资操作→心理误判→China 2.5→附录H/I/J） | ✅ |
 | `Appendix-K-China-25-Integrity-Operationalization.md` | China 2.5 Q2「诚信假设」操作化定义（Munger「融入社会」原则） | ✅ 2026-05-03 08:00 |
 | `Appendix-O-Meta-Cognitive-Integration.md` | 框架自我修正机制（元认知终极整合：Morris自我指涉悖论/Iron Law双层嵌套/Constructor Theory三层不可逆性） | ✅ 2026-05-03 10:55 |
+| `Appendix-P-Cognitive-Boundaries-Three-Gaps.md` | 七维框架认知边界（三个深层空白：偶然性预测/China 2.5诚信模糊边界/Iron Law单向性条件） | ✅ 2026-05-03 11:10 |
 
 ---
 
