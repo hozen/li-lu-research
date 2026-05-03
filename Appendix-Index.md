@@ -24,9 +24,10 @@
 | Appendix-X-Buffett-不明白的不投-China-25-Operation.md | Buffett「不明白的不投」China 2.5操作化 | 5,895 | ✅ |
 | Appendix-AA-Munger-1995-Original-Speech-Textual-Analysis.md | Munger 1995原版演讲五种认知工具 | 18,644 | ✅ |
 | Appendix-AB-Morris-Why-West-Rules-For-Now-Framework.md | Morris「为什么西方统治——暂时」框架完整解析 | 13,806 | ✅ |
+| Appendix-AH-LiLu-2015-Peking-University-Lecture.md | 李录2015年北大演讲：China 2.5概念源头 × 3.0铁律 × 两条伦理红线 | 4,258 | ✅ |
 | Appendix-AG-Buffett-1991-Florida-Lecture-Epistemology.md | Buffett 1991佛罗里达演讲：「智力护城河」× 三层认识论结构 | 4,255 | ✅ |
 
-**合计**：16个附录文件，约 190,000 字符（~190KB）
+**合计**：17个附录文件，约 195,000 字符（~195KB）
 
 ---
 
