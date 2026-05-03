@@ -1,8 +1,8 @@
 # Li Lu Research — Investment Knowledge Base
 
-> **Last Updated**: 2026-05-03 13:25 (Shanghai Time)
+> **Last Updated**: 2026-05-03 20:45 (Shanghai Time)
 > **Purpose**: 李录投资框架知识库主索引，串联所有研究文档
-> **Status**: 七维框架今夜（2026-05-02/03）完整闭环
+> **Status**: 七维框架今夜（2026-05-02/03）完整闭环 + 17个附录全部完成（约195KB）
 
 ---
 
@@ -12,6 +12,7 @@
 | 文件 | 内容 | 状态 |
 |------|------|------|
 | `li_lu_investment_framework.md` | 七维框架全文（认识论→历史科学→护城河→投资操作→心理误判→China 2.5→附录H/I/J） | ✅ |
+| `Appendix-AH-LiLu-2015-Peking-University-Lecture.md` | **★李录2015年北大演讲**：China 2.5概念第一次完整表述（最权威源头）+ 3.0铁律三层结构 + 两条伦理红线（受托责任是先天DNA）| ✅ 2026-05-03 20:15 |
 | `Appendix-K-China-25-Integrity-Operationalization.md` | China 2.5 Q2「诚信假设」操作化定义（Munger「融入社会」原则） | ✅ 2026-05-03 08:00 |
 | `Appendix-O-Meta-Cognitive-Integration.md` | 框架自我修正机制（元认知终极整合：Morris自我指涉悖论/Iron Law双层嵌套/Constructor Theory三层不可逆性） | ✅ 2026-05-03 10:55 |
 | `Appendix-P-Cognitive-Boundaries-Three-Gaps.md` | 七维框架认知边界（三个深层空白：偶然性预测/China 2.5诚信模糊边界/Iron Law单向性条件） | ✅ 2026-05-03 11:10 |
@@ -21,6 +22,10 @@
 | `Appendix-T-Epistemological-Reading.md` | 认识论阅读法——为什么七维框架要读原版书籍 | ✅ 2026-05-03 |
 | `Appendix-U-Greenwald-Buffett-PMV-Framework.md` | Greenwald vs Buffett PMV框架融合：静态快球×动态增长期权/双PMV检验/腾讯双估值 | ✅ 2026-05-03 13:16 |
 | `Appendix-V-For-Now-Judgment-Epistemology.md` | 「For Now」判断的认识论根基：条件性量化预测×操作性认识论×三层时间嵌套 | ✅ 2026-05-03 13:25 |
+| `Appendix-AG-Buffett-1991-Florida-Lecture-Epistemology.md` | **★Buffett 1991佛罗里达演讲**：「智力护城河」× 三层认识论结构（Buffett原文最权威来源） | ✅ 2026-05-03 19:10 |
+| `Appendix-X-Buffett-不明白的不投-China-25-Operation.md` | Buffett「不明白的不投」China 2.5操作化：Q1/Q2/Q3三层过滤系统（能力圈/诚信假设/价值来源） | ✅ 2026-05-03 15:40 |
+| `Appendix-AA-Munger-1995-Original-Speech-Textual-Analysis.md` | **★Munger 1995哈佛演讲原文**：七种关键认知升级（激励扭曲/锤子综合症/鸡蛋隐喻/Pavlovian定价/洗脑系统）| ✅ 2026-05-03 19:25 |
+| `Appendix-AB-Morris-Why-West-Rules-For-Now-Framework.md` | Morris SDI四维度原始测量 × Iron Law「spiral out of control」× AI时代脆弱性矩阵 | ✅ 2026-05-03 19:36 |
 
 ---
 
@@ -40,8 +45,8 @@
 |------|---------|---------|
 | `Morris-Why-West-Rules-Deep-Research.md` | *Why the West Rules—for Now* 全书研究（Ch1-Ch14） | 社会发展指数（SDI）量化框架；生物学统一性=Morris对种族主义的根本反驳 |
 | `morris-ch15-ch21-original-research.md` | Morris Ch15-Ch21原版研究 | "For Now"=SDI条件性预测 / 轴心时代是社会发展的附产品 / 工业革命在英国=大西洋强迫竞争 |
-| `Morris-Ch21-Conclusion-Definitive-Synthesis.md` | Morris Ch21+Conclusion终极综合 | 冰期-间冰期地质周期→农业文明11500年hard ceiling；Iron Law「spiral out of control」精确操作化；1776 vs 1492最终判决 |
 | `Morris-Ch21-Conclusion-Definitive-Synthesis.md` | Morris Ch21+Conclusion终极综合（**已整合**：Morris自我指涉悖论 + Iron Law双层辨析 + 三个深层认知）| 冰期-间冰期地质周期；Iron Law「spiral out of control」；Morris自我指涉悖论；Iron Law双层嵌套关系（Morris层+公司层）；Buffett框架地质时间锚定 |
+| `Appendix-AB-Morris-Why-West-Rules-For-Now-Framework.md` | **★Morris SDI四维度原始测量**：能量获取/组织能力/信息技术/战争能力；Iron Law「spiral out of control」× AI时代脆弱性矩阵；Morris/李录/Buffett三个「For Now」层次比较 | ✅ 2026-05-03 |
 
 **核心判决**：
 - Buffett框架只在**Civilization 3.0（1776-2100年）**有效
@@ -65,8 +70,11 @@
 | 文件 | 核心内容 | 关键结论 |
 |------|---------|---------|
 | `li_lu_investment_framework.md` | Buffett六十年实战智慧 | 护城河积累=时间的朋友；能力圈=不投什么；地质时间边界设定 |
+| `Appendix-AG-Buffett-1991-Florida-Lecture-Epistemology.md` | **★Buffett 1991佛罗里达演讲**：「智力护城河」× 三层认识论结构（Buffett原文最权威来源） | ✅ 2026-05-03 |
+| `Appendix-X-Buffett-不明白的不投-China-25-Operation.md` | Buffett「不明白的不投」China 2.5操作化：Q1/Q2/Q3三层过滤系统 | ✅ 2026-05-03 |
+| `Appendix-AA-Munger-1995-Original-Speech-Textual-Analysis.md` | **★Munger 1995哈佛演讲原文**：七种关键认知升级 | ✅ 2026-05-03 |
 | `li_lu_investment_framework.md` 附录 | Munger 25种误判完整清单 | Lollapalooza=多重误判共振产生非线性后果；Munger Inversion=防守机制核心工具 |
-| `cbond/cbond-entropy-flywheel-diagnosis.md` 第九节 | D类持仓46% Lollapalooza诊断 | 五重共振：Incentive-caused + Consistency/commitment + Social proof + Depryal + Doubt-avoidance |
+| `cbond/cbond-entropy-flywheel-diagnosis.md` 第九节 | D类持仓46% Lollapalooza诊断（协作目录保留） | 五重共振：Incentive-caused + Consistency/commitment + Social proof + Depryal + Doubt-avoidance |
 
 **核心判决**：
 - cbond D类持仓46%=五重Lollapalooza共振，不是单一错误
@@ -80,6 +88,7 @@
 | 文件 | 核心内容 | 关键结论 |
 |------|---------|---------|
 | `li_lu_investment_framework.md` | China 2.5三问框架 | Q1市场准入✅ / Q2诚信假设⚠️（需操作化）/ Q3护城河转化 |
+| `Appendix-AH-LiLu-2015-Peking-University-Lecture.md` | **★李录2015年北大演讲**：China 2.5概念最早完整表述 + 3.0铁律 + 两条伦理红线（最权威源头） | ✅ 2026-05-03 |
 | `Appendix-K-China-25-Integrity-Operationalization.md` | Q2诚信操作化定义 | Munger「融入社会」=诚信行为标准（信息获取/时间分配/激励结构）；腾讯✅/中煤/移动/盘江❌全部命中 |
 
 **核心判决**：
@@ -92,7 +101,7 @@
 
 | 文件 | 内容 | 更新时间 |
 |------|------|---------|
-| `cbond/cbond-entropy-flywheel-diagnosis.md` | cbond持仓熵减闭环诊断（九节完整版） | 2026-05-03 07:45 |
+| `cbond/cbond-entropy-flywheel-diagnosis.md` | cbond持仓熵减闭环诊断（九节完整版，协作目录保留） | 2026-05-03 07:45 |
 | `downloads/tencent-q1-2026-pre-earnings-seven-dimension-analysis.md` | 腾讯Q1 2026财报预判（十一节完整版） | 2026-05-03 07:40 |
 | `li-lu-research/downloads/pca-chinese-edition-foreword-study.md` | PCA中文版序言研究 | 2026-05-03 04:20 |
 | `li-lu-research/downloads/deutsch-ch4-ch6-ai-constructor-theory-synthesis.md` | Deutsch Ch4-Ch6 AI与Constructor Theory | 2026-05-03 04:10 |
@@ -140,9 +149,10 @@ Munger (25种误判)
 
 | 日期 | 事件 | 状态 |
 |------|------|------|
-| **2026-05-06 09:30** | **Framework级清仓（中煤+移动+盘江）执行** | ⚠️ A股五一休市，5月6日（周二）开盘执行 |
-| 2026-05-03 13:25 | **附录V完成**：「For Now」判断认识论根基 | ✅ 新增 |
-| 2026-05-03 13:16 | **附录U完成**：Greenwald vs Buffett PMV融合 | ✅ 新增 |
+| **2026-05-06 09:30** | **Framework级清仓（中煤+移动+盘江）执行** | ⚠️ A股五一休市，5月6日（周二）开盘执行，用户授权 |
+| **2026-05-03 20:45** | **附录AG/AH/X/AA/AB完成**：Buffett 1991 + 李录2015北大 + 不明白操作化 + Munger原文 + Morris Iron Law × AI | ✅ 今夜新增5个附录 |
+| 2026-05-03 13:25 | **附录V完成**：「For Now」判断认识论根基 | ✅ |
+| 2026-05-03 13:16 | **附录U完成**：Greenwald vs Buffett PMV融合 | ✅ |
 | 2026-05-13 | 腾讯Q1 2026财报发布 | 关注日 |
 | TBD（开盘后） | Morris *Why the West Rules—for Now* 原版书籍获取 | P2待处理 |
 
