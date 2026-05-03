@@ -907,6 +907,34 @@ Morris × Iron Law 闭环：
 7. Ian Morris, *Why the West Rules — For Now*, 2010 — 历史尺度验证框架
 8. Ian Morris, *The Measure of Civilization*, 2013 — SDI量化方法论全文（Morris Appendix，pzacad.pitzer.edu/~lyamane/ianmorris.pdf）
 9. Charlie Munger, "24 Cognitive Biases – Human Misjudgement", Harvard Law School, 1995 — ritholtz.com原版演讲文本
+10. Charlie Munger, "The Psychology of Human Misjudgment", 1995 Harvard Law — Munger「融入社会」原则诚信操作化定义来源
+
+---
+
+## 附录K：China 2.5三问Q2「诚信假设」操作化定义
+> 2026年5月3日凌晨，识别出China 2.5三问Q2（管理层诚信）是整个框架最脆弱的环节——没有精确的操作化定义和证伪条件。Morris第12章「误差边际与证伪」要求所有结论都有明确的推翻条件。
+
+**K.1 为什么「诚信」是框架最脆弱的地方**
+- Q1市场准入（客观数据✅）/ Q3护城河转化（ROIC/现金流✅）/ Q2管理层诚信（❌主观性强）
+- cbond D类持仓46%的教训：Doubt-avoidance=不愿意承认管理层不诚信，自我说服「短期困难」
+- Q2依赖主观判断，容易受到Pavlovian Association/Social Proof/Incentive-Caused Bias的影响
+
+**K.2 Munger「融入社会」原则 = 诚信的操作化定义**
+- 三个可观察维度：信息获取（主动接触普通人vs只听汇报）/ 时间分配（尊重vs浪费普通人时间）/ 激励结构（与股东一致vs与规模扩张一致）
+- 腾讯（Pony Ma）：微信本身就是融入社会工具、直接接触10亿用户、长期持股利益与股东一致 ✅
+- 中煤/移动/盘江：国企激励与政府绑定、不直接面对产品/用户、薪酬与股价关联弱 ❌
+
+**K.3 诚信假设的精确证伪条件**
+- 绝对证伪（立即止损）：FD原话被证实 / 实质性财务造假 / 核心业务系统性欺诈
+- 相对证伪（显著降仓）：承诺vs交付连续3年偏差>30% / 关联交易异常 / 高管频繁离职 / 激励结构扭曲
+- 警惕信号（需要更多观察）：股价下跌时负面新闻增多 / 分析师下调 / 宏观负面
+
+**K.4 每日诚信监控清单**
+- 每周必查：关联交易披露 / 高管变动公告 / 股权激励方案
+- 每月审查：承诺兑现率 / 分析师下调频率 / 内部人买卖
+- 季度评估：承诺vs交付偏差 / 激励结构变化 / 「融入社会」三维度行为评估
+
+**战略价值**：附录K填补了七维框架最深的裂缝——China 2.5 Q2从此有了可观察的行为标准和精确的证伪条件，不再依赖主观「感觉管理层可信」。
 
 ---
 
