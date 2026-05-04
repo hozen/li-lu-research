@@ -1,0 +1,160 @@
+{
+  "source": "SEC EDGAR 13F filings via edgar.sec.gov",
+  "q3_filing": "https://www.sec.gov/Archives/edgar/data/1709323/000204358525000015/",
+  "q4_filing": "https://www.sec.gov/Archives/edgar/data/1709323/000204358526000012/",
+  "total_value": {
+    "q3": 3230264839,
+    "q4": 3568876223,
+    "growth": 10.48
+  },
+  "q3_holdings": [
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc-CL A",
+      "value": 618276230,
+      "shares": 2543300,
+      "weight": 19.14
+    },
+    {
+      "ticker": "PDD",
+      "name": "PDD Holdings",
+      "value": 609039360,
+      "shares": 4608000,
+      "weight": 18.85
+    },
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc-CL C",
+      "value": 597014115,
+      "shares": 2451300,
+      "weight": 18.48
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America",
+      "value": 538155255,
+      "shares": 10431387,
+      "weight": 16.66
+    },
+    {
+      "ticker": "BRK.B",
+      "name": "Berkshire Hathaway B",
+      "value": 451334332,
+      "shares": 897749,
+      "weight": 13.97
+    },
+    {
+      "ticker": "EWBC",
+      "name": "East West Bancorp",
+      "value": 295542564,
+      "shares": 2776351,
+      "weight": 9.15
+    },
+    {
+      "ticker": "OXY",
+      "name": "Occidental Petroleum",
+      "value": 69292125,
+      "shares": 1466500,
+      "weight": 2.15
+    },
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc",
+      "value": 28162078,
+      "shares": 110600,
+      "weight": 0.87
+    },
+    {
+      "ticker": "SABL",
+      "name": "Sable Offshore Corp",
+      "value": 23448780,
+      "shares": 1343000,
+      "weight": 0.73
+    }
+  ],
+  "q4_holdings": [
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc-CL A",
+      "value": 796052900,
+      "shares": 2543300,
+      "weight": 22.31
+    },
+    {
+      "ticker": "GOOG",
+      "name": "Alphabet Inc-CL C",
+      "value": 769217940,
+      "shares": 2451300,
+      "weight": 21.55
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America",
+      "value": 573726285,
+      "shares": 10431387,
+      "weight": 16.08
+    },
+    {
+      "ticker": "PDD",
+      "name": "PDD Holdings",
+      "value": 522501120,
+      "shares": 4608000,
+      "weight": 14.64
+    },
+    {
+      "ticker": "BRK.B",
+      "name": "Berkshire Hathaway B",
+      "value": 451253535,
+      "shares": 897749,
+      "weight": 12.64
+    },
+    {
+      "ticker": "EWBC",
+      "name": "East West Bancorp",
+      "value": 312034089,
+      "shares": 2776351,
+      "weight": 8.74
+    },
+    {
+      "ticker": "OXY",
+      "name": "Occidental Petroleum",
+      "value": 60302480,
+      "shares": 1466500,
+      "weight": 1.69
+    },
+    {
+      "ticker": "CROX",
+      "name": "Crocs Inc",
+      "value": 53720158,
+      "shares": 628159,
+      "weight": 1.51
+    },
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc",
+      "value": 30067716,
+      "shares": 110600,
+      "weight": 0.84
+    }
+  ],
+  "changes": {
+    "new_in_q4": [
+      "CROX"
+    ],
+    "removed_in_q4": [
+      "SABL"
+    ]
+  },
+  "key_findings": [
+    "Alphabet combined: \\,215M (37.6%) -> \\,565M (43.9%), +28.8% value increase",
+    "PDD: shares unchanged (4.608M) but value dropped from \\ -> \\ (-14.2%), weight 18.9% -> 14.6%",
+    "Sable Offshore (SABL): REMOVED (was \\.4M / 0.73% in Q3)",
+    "CROX: NEW position \\.7M (1.50%)",
+    "EWBC: \\ -> \\ (+5.6%), weight 9.15% -> 8.74%",
+    "BAC: \\ -> \\ (+6.6%), weight 16.66% -> 16.08%",
+    "BRK.B: \\ -> \\ (+0.0%), weight 13.97% -> 12.64%",
+    "OXY: \\.3M -> \\.3M (-13.0%), weight 2.15% -> 1.69%",
+    "AAPL: \\.2M -> \\.1M (+6.7%), weight 0.87% -> 0.84%",
+    "Portfolio total grew +10.5% from Q3 to Q4"
+  ]
+}
