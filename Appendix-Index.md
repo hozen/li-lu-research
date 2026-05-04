@@ -193,3 +193,38 @@ Munger (25种误判)
 ---
 
 *本文档为 li-lu-research 附录体系的完整索引，可作为快速定位和交叉引用的参考地图。*
+
+---
+
+## 七、2026-05-04 附录系统整理（V1.1更新）
+
+> 2026-05-04 窗口期发现附录文件编码问题，执行系统性修复。
+
+### 修复内容
+
+| 操作 | 文件 | 说明 | 状态 |
+|------|------|------|------|
+| 重建 | Appendix-X | 原文件混合GBK/UTF-8编码损坏，内容从Buffett 1991+China 2.5框架重建，写为干净UTF-8 | ✅ |
+| 重命名 | Appendix-Y | 原Appendix-S-Munger重命名为Appendix-Y（解决双S文件命名冲突）| ✅ |
+| 更新 | Appendix-Index | 本文档V1.1更新：附录总数17→18，新增重建/重命名记录 | ✅ |
+
+### 附录文件清单（V1.1，共18个）
+
+| 编号 | 文件名 | 主题 |
+|------|--------|------|
+| M | Appendix-M | Constructor Theory 护城河本质 |
+| O | Appendix-O | 元认知整合 |
+| P | Appendix-P | 认知边界三层空白 |
+| Q | Appendix-Q | 儒商框架 |
+| R | Appendix-R | 终极综合118条 |
+| S | Appendix-S | Constructor×China 2.5整合 |
+| T | Appendix-T | 认识论阅读方法论 |
+| U | Appendix-U | Greenwald vs Buffett PMV |
+| V | Appendix-V | Morris「For Now」认识论 |
+| W | Appendix-W | Munger Lollapalooza |
+| X | Appendix-X | Buffett「不明白的不投」China 2.5操作化（重建版）|
+| Y | Appendix-Y | Munger心理学深度研究 |
+| AA | Appendix-AA | Munger 1995原版演讲 |
+| AB | Appendix-AB | Morris Why West Rules框架 |
+| AG | Appendix-AG | Buffett 1991佛罗里达演讲 |
+| AH | Appendix-AH | 李录2015北大演讲 |
