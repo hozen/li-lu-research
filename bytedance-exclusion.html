@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>字节跳动持仓研究：李录投资案例第14期 — 置信度Tier 4（无法核实）</title>
+<meta name="description" content="深度调查李录是否持有字节跳动：13F披露、HKEx披露、网络公开资料三重核查均无实锤，置信度Tier 4，建议从持仓研究中排除。">
+<meta property="og:title" content="字节跳动持仓研究 — 李录投资案例第14期">
+<meta property="og:description" content="13F+HKEx+网络公开资料三重核查，无任何实锤证据，置信度Tier 4。">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:#c9a227;text-decoration:none;font-size:.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,.1);transition:all .2s}
+.back-link:hover{background:rgba(201,162,39,.2)}
+h1{font-size:2rem;color:#1a365d;margin-bottom:12px;line-height:1.3}
+.subtitle{color:#4a5568;font-size:1rem;margin-bottom:30px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:.82rem;color:#4a5568}
+.exclusion-banner{background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;padding:38px 42px;border-radius:16px;margin-bottom:48px;font-size:1.05rem;line-height:1.9}
+.exclusion-banner h2{color:#ffd6d6;margin-bottom:16px;font-size:1.35rem}
+.exclusion-banner p{margin-bottom:14px}
+.exclusion-banner .big-num{font-size:2.4rem;font-weight:800;color:#fff;display:block;margin-bottom:6px}
+.exclusion-banner .tier-badge{display:inline-block;font-size:.78rem;padding:4px 10px;border-radius:8px;margin-top:10px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff}
+.toc{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:12px;padding:25px 30px;margin-bottom:40px}
+.toc h3{color:#1a365d;margin-bottom:12px;font-size:1rem}
+.toc ol{margin-left:20px;color:#555}
+.toc li{margin-bottom:6px;font-size:.9rem}
+.section{margin-bottom:55px}
+h2{font-size:1.35rem;color:#1a365d;margin-bottom:20px;padding-bottom:10px;border-bottom:3px solid #c9a227;display:inline-block}
+h3{font-size:1.1rem;color:#1a365d;margin:30px 0 12px}
+p{color:#333;margin-bottom:14px;line-height:1.8}
+.quote-box{background:#faf8f0;border-left:5px solid #c9a227;padding:22px 28px;margin:28px 0;border-radius:0 10px 10px 0;font-style:italic;color:#444;line-height:1.8}
+.quote-box cite{display:block;margin-top:10px;font-size:.85rem;color:#888;font-style:normal}
+.quote-box.synthesis{background:#f0f4f8;border-left-color:#4a5568;font-style:normal}
+.quote-box.synthesis cite{color:#4a5568}
+.verdict-table{width:100%;border-collapse:collapse;margin:28px 0;font-size:.9rem}
+.verdict-table th{background:#1a365d;color:#fff;padding:12px 18px;text-align:left;font-size:.85rem}
+.verdict-table td{padding:12px 18px;border-bottom:1px solid #e0e0e0;color:#444}
+.verdict-table tr:nth-child(even){background:#f8f9fa}
+.verdict-table .pass{color:#276749;background:#f0f9f4;font-weight:600}
+.verdict-table .fail{color:#c0392b;background:#fdf2f2;font-weight:600}
+.verdict-table .unknown{color:#7d6608;background:#fefde6}
+.data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem}
+.data-table th{background:#1a365d;color:#fff;padding:11px 16px;text-align:left;font-size:.85rem}
+.data-table td{padding:11px 16px;border-bottom:1px solid #e0e0e0;color:#444}
+.data-table tr:nth-child(even){background:#f8f9fa}
+.conf-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.88rem}
+.conf-table th{background:#1a365d;color:#fff;padding:11px 16px;text-align:left}
+.conf-table td{padding:11px 16px;border-bottom:1px solid #e0e0e0;color:#444}
+.conf-table tr:nth-child(even){background:#f8f9fa}
+.conf-table .tier1{background:#f0f9f4;color:#276749;font-weight:600}
+.conf-table .tier2{background:#e8f5e9;color:#2e7d32;font-weight:600}
+.conf-table .tier3{background:#fff8e1;color:#f57f17;font-weight:600}
+.conf-table .tier4{background:#fdf2f2;color:#c0392b;font-weight:600}
+.lesson-card{background:#f8f9fa;border-radius:12px;padding:25px;margin-bottom:18px;border-left:4px solid #c9a227}
+.lesson-card h4{color:#1a365d;margin-bottom:10px;font-size:1rem}
+.lesson-card p{color:#555;margin-bottom:8px;font-size:.9rem;line-height:1.7}
+.lesson-card .conf-tag{display:inline-block;font-size:.75rem;padding:3px 9px;border-radius:6px;margin-right:8px;color:#fff;background:#4a5568}
+.reason-box{background:#fff8f0;border:1px solid #f0c040;border-radius:12px;padding:25px;margin:28px 0}
+.reason-box h4{color:#c0392b;margin-bottom:14px;font-size:1rem}
+.reason-box p{color:#555;margin-bottom:10px;font-size:.9rem;line-height:1.7}
+.reason-box p:last-child{margin-bottom:0}
+@media(max-width:768px){.page{padding:90px 20px 40px}.back-link{margin-bottom:20px}h1{font-size:1.6rem}h2{font-size:1.15rem}.meta{flex-direction:column}.verdict-table,.data-table,.conf-table{font-size:.8rem}}
+</style>
+</head>
+<body>
+<div id="uni-navbar"></div>
+<div class="page">
+<a class="back-link" href="index.html">← 返回首页</a>
+
+<h1>字节跳动持仓研究</h1>
+<p class="subtitle">李录投资案例第14期 · 置信度：Tier 4（无法核实）· 研究完成：2026-05-01</p>
+<div class="meta">
+<span class="meta-item">📋 研究完成：2026-05-01</span>
+<span class="meta-item">⛔ 置信度：Tier 4（无法核实）</span>
+<span class="meta-item">🔍 核查路径：13F + HKEx + 网络公开资料</span>
+</div>
+
+<div class="exclusion-banner">
+<h2>研究结论：建议从持仓研究中排除</h2>
+<p>经过 <strong>13F 披露</strong>（SEC EDGAR）、<strong>HKEx 披露</strong>（港交所权益披露）、<strong>网络公开资料</strong>（雪球/格隆汇/证券时报等）三重核查，<strong>无任何可信证据</strong>支持李录持有字节跳动。</p>
+<p>字节跳动为私人公司，未在美股或港股上市，不在 13F 和 HKEx 披露范围内。现有「李录投资字节跳动」说法均为网络推断，无独立来源印证。</p>
+<span class="tier-badge">⛔ Tier 4 · 无法核实 · 建议排除</span>
+</div>
+
+<div class="toc">
+<h3>目录</h3>
+<ol>
+<li><a href="#s1">13F 披露核查</a></li>
+<li><a href="#s2">HKEx 披露核查</a></li>
+<li><a href="#s3">非上市股权持有路径分析</a></li>
+<li><a href="#s4">字节跳动融资历史与已知投资者</a></li>
+<li><a href="#s5">网络声称核查</a></li>
+<li><a href="#s6">为何字节跳动可能不在李录能力圈内</a></li>
+<li><a href="#s7">置信度分级标准</a></li>
+<li><a href="#s8">结论与建议</a></li>
+</ol>
+</div>
+
+<div class="section" id="s1">
+<h2>一、13F 披露核查</h2>
+<p>13F 报告是美国SEC要求机构投资经理每季度提交的持仓披露，只覆盖<strong>美股上市证券</strong>。喜马拉雅资本的13F持仓（2025 Q4，截至2025-12-31）如下：</p>
+
+<table class="data-table">
+<thead>
+<tr><th>标的</th><th>Ticker</th><th>市值</th><th>占比</th></tr>
+</thead>
+<tbody>
+<tr><td>Alphabet</td><td>GOOGL/GOOG</td><td>$1,565M</td><td>43.86%</td></tr>
+<tr><td>Bank of America</td><td>BAC</td><td>$574M</td><td>16.08%</td></tr>
+<tr><td>PDD Holdings</td><td>PDD</td><td>~$280M</td><td>~7.8%</td></tr>
+<tr><td>East West Bancorp</td><td>EWBC</td><td>$312M</td><td>8.73%</td></tr>
+<tr><td>Berkshire Hathaway</td><td>BRK.B</td><td>~$120M</td><td>~3.4%</td></tr>
+<tr><td>Occidental Petroleum</td><td>OXY</td><td>$60M</td><td>1.68%</td></tr>
+<tr><td>Apple</td><td>AAPL</td><td>~$50M</td><td>~1.4%</td></tr>
+<tr><td>Crocs</td><td>CROX</td><td>~$20M</td><td>~0.56%</td></tr>
+</tbody>
+</table>
+
+<p><strong>关键发现</strong>：字节跳动（ByteDance）为<strong>私人公司</strong>，未在美股上市，<strong>不在13F持仓中</strong>。13F仅覆盖美股上市证券，不能作为李录持有非上市股权的证据。</p>
+</div>
+
+<div class="section" id="s2">
+<h2>二、HKEx 披露核查</h2>
+<p>香港联交所披露易（www.hkexnews.hk）要求主要股东披露权益变动。喜马拉雅资本在港股有两条<strong>已确认</strong>的持仓记录：</p>
+
+<table class="data-table">
+<thead>
+<tr><th>公司</th><th>代码</th><th>首次披露</th><th>状态</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>比亚迪</td>
+<td>1211.HK</td>
+<td>2021-07（首次披露7.03%）</td>
+<td class="pass">✅ 持续持有（2026年4月对话确认）</td>
+</tr>
+<tr>
+<td>邮储银行</td>
+<td>1658.HK</td>
+<td>2020-12（首次披露5.06%）</td>
+<td class="pass">✅ 持续持有（H股）</td>
+</tr>
+<tr>
+<td>字节跳动</td>
+<td>—</td>
+<td>从未上市</td>
+<td class="fail">❌ 无HKEx披露记录</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>关键发现</strong>：字节跳动从未在港交所上市，<strong>无HKEx披露记录</strong>。比亚迪和邮储银行均有完整的HKEx权益披露路径确认，构成李录港股持仓的实锤证据。</p>
+</div>
+
+<div class="section" id="s3">
+<h2>三、非上市股权持有路径分析</h2>
+<p>李录持有非上市股票有两条<strong>已知</strong>路径，但均无法解释字节跳动持仓：</p>
+
+<div class="reason-box">
+<h4>路径A：HB Islands（离岸基金结构）</h4>
+<p>《文明、现代化、价值投资与中国》记录李录持有 HB Islands Fund，该基金投资于非上市股票，投资范围包括「亚洲非上市高成长公司」。</p>
+<p>但此路径投资的是<strong>特定的历史时期</strong>（2000年代初期），字节跳动成立于2012年，时间上不符。</p>
+</div>
+
+<div class="reason-box">
+<h4>路径B：Himalaya Capital 直接投资</h4>
+<p>喜马拉雅资本官网明确表示：「primarily focus on publicly traded companies」（主要投资于公开交易公司）。</p>
+<p>虽然不排除持有少量非上市股权，但官网表述与字节跳动持仓推断矛盾。</p>
+</div>
+</div>
+
+<div class="section" id="s4">
+<h2>四、字节跳动融资历史与已知投资者</h2>
+<p>字节跳动主要融资历史及已知的中国/华人背景早期投资者：</p>
+
+<table class="data-table">
+<thead>
+<tr><th>轮次</th><th>年份</th><th>主要投资者</th></tr>
+</thead>
+<tbody>
+<tr><td>天使轮</td><td>2012</td><td>张一鸣个人 + 创始团队</td></tr>
+<tr><td>A轮</td><td>2012</td><td>海纳亚洲（SIG）</td></tr>
+<tr><td>B轮</td><td>2013</td><td>DST Global（Yuri Milner）</td></tr>
+<tr><td>C轮</td><td>2014</td><td>红杉资本中国、Sinovation Ventures</td></tr>
+<tr><td>D轮</td><td>2017</td><td>软银愿景基金</td></tr>
+<tr><td>Pre-IPO</td><td>2020</td><td>科威特投资局（KIA）、GIC等</td></tr>
+</tbody>
+</table>
+
+<p><strong>已知的中国背景早期投资者</strong>：段永平（OPPO/vivo创始人，据报道参与过字节跳动早期融资，未证实）、沈南鹏（红杉中国，主导C轮）、张磊（高瓴资本，据报道参与，未证实）。</p>
+
+<p><strong>结论</strong>：无公开证据显示李录参与了字节跳动的任何一轮融资。</p>
+</div>
+
+<div class="section" id="s5">
+<h2>五、网络声称核查</h2>
+<p>使用以下关键词检索（2026-05-01）：</p>
+<ul style="color:#444;margin-bottom:20px;line-height:1.8">
+<li>"Li Lu ByteDance investment early funding"</li>
+<li>"李录 字节跳动 投资"</li>
+<li>"Himalaya Capital ByteDance"</li>
+<li>"雪球 李录 字节跳动"</li>
+</ul>
+
+<div class="lesson-card">
+<p><span class="conf-tag">核查结果</span><strong>无任何可信来源支持李录持有字节跳动</strong></p>
+<p>• 证券时报（2021）：列举李录持仓（邮储银行、比亚迪），无字节跳动</p>
+<p>• 雪球持仓跟踪系列（2025 Q4）：无字节跳动</p>
+<p>• 格隆汇/理杏仁：仅有已确认持仓分析，无字节跳动</p>
+<p>• Motley Fool（2026-03）："Li Lu Has 75% of Himalaya Capital's U.S. Stock Portfolio Invested in Just 3 Stocks"，无字节跳动</p>
+</div>
+</div>
+
+<div class="section" id="s6">
+<h2>六、为何字节跳动可能不在李录能力圈内</h2>
+<p>从李录投资框架分析，字节跳动有几个不符合其能力圈标准的特征：</p>
+
+<div class="lesson-card">
+<h4>1. 科技/算法公司超出传统能力圈</h4>
+<p>字节跳动是科技/算法公司，属于李录明确表示不擅长的领域。李录在多次访谈中提到不投科技公司——直到COVID后开始建仓Alphabet，是因为Alphabet已从科技公司演化为「有护城河的互联网平台」，符合其能力圈定义。</p>
+</div>
+
+<div class="lesson-card">
+<h4>2. 私人公司缺乏公开研究路径</h4>
+<p>字节跳动是私人公司，李录主要通过公开市场买入。即使早期有投资机会（私募轮次），李录的公开持仓路径中也从未出现。</p>
+</div>
+
+<div class="lesson-card">
+<h4>3. TikTok 监管风险与「可预测10年自由现金流」不符</h4>
+<p>TikTok在美国的监管风险（2020-2024）持续存在。张一鸣面临的地缘政治压力（被迫出售美国业务）属于「无法量化」的尾部风险，与李录「可预测10年自由现金流」的能力圈核心标准相悖。</p>
+</div>
+</div>
+
+<div class="section" id="s7">
+<h2>七、置信度分级标准</h2>
+<p>参照 china-hk-holdings-research.html 的置信度分级体系：</p>
+
+<table class="conf-table">
+<thead>
+<tr><th>等级</th><th>说明</th><th>适用情况</th></tr>
+</thead>
+<tbody>
+<tr class="tier1">
+<td>Tier 1</td>
+<td>HKEx披露实锤 或 李录公开确认</td>
+<td>比亚迪（HKEx）、邮储银行（HKEx）、Alphabet/BRK.B等美股（13F）</td>
+</tr>
+<tr class="tier2">
+<td>Tier 2</td>
+<td>多个独立来源交叉印证</td>
+<td>暂无</td>
+</tr>
+<tr class="tier3">
+<td>Tier 3</td>
+<td>单个可信来源</td>
+<td>暂无</td>
+</tr>
+<tr class="tier4">
+<td>Tier 4</td>
+<td>推断，无公开证据</td>
+<td>字节跳动持仓、贵州茅台（历史持仓已确认，当前是否持有Tier 4）</td>
+</tr>
+</tbody>
+</table>
+
+<p>本研究结论为<strong>Tier 4（无法核实）</strong>，建议从李录持仓研究中排除。</p>
+</div>
+
+<div class="section" id="s8">
+<h2>八、结论与建议</h2>
+
+<div class="exclusion-banner" style="margin-top:0">
+<h2>最终结论：Tier 4 — 建议排除</h2>
+<p>李录投资字节跳动：<strong>无任何公开证据，置信度Tier 4（无法核实）</strong>。</p>
+<span class="tier-badge">⛔ 建议从持仓研究中排除</span>
+</div>
+
+<div class="lesson-card">
+<h4>建议处理方式</h4>
+<p>1. <strong>从持仓页面移除字节跳动</strong>，不作为李录持仓案例</p>
+<p>2. 如未来出现可信来源（HKEx披露、李录访谈明确确认），可重新评估</p>
+<p>3. 本页面作为「持仓排除研究」保留，供读者参考判断逻辑</p>
+<p>4. 此结论适用于李录持仓研究系列的「置信度说明」模块</p>
+</div>
+
+<div class="lesson-card" style="border-left-color:#4a5568">
+<h4>相关确认持仓（对比参考）</h4>
+<p>以下持仓有<strong>实锤证据</strong>（Tier 1），可与字节跳动研究形成对比：</p>
+<p>• <strong>比亚迪</strong>（1211.HK）：HKEx披露，2021年7月首次披露7.03%，2026年4月李录对话确认仍持有 ✅</p>
+<p>• <strong>邮储银行</strong>（1658.HK）：HKEx披露，2020年12月首次披露5.06%，持续持有 ✅</p>
+<p>• <strong>Alphabet</strong>（GOOGL/GOOG）：13F披露，2020 Q2首次建仓，43.86%为最大持仓 ✅</p>
+</div>
+
+<div class="quote-box synthesis">
+<p>「持仓研究的核心原则：有实锤说实锤，无实锤说无锤。把推断当事实是研究的大忌。」</p>
+<cite>— 李录持仓研究方法论</cite>
+</div>
+
+</div>
+
+<p style="color:#888;font-size:.82rem;margin-top:40px;padding-top:20px;border-top:1px solid #e0e0e0">
+数据来源：SEC EDGAR 13F filings · HKEx披露易（www.hkexnews.hk）· 喜马拉雅资本官网（himcap.com）· 证券时报/雪球/格隆汇/理杏仁等投资社区 · 研究完成：2026-05-01 · 置信度：Tier 4（无法核实）
+</p>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>护城河框架专题 — 李录投资方法论核心 · 系列第15期</title>
+<meta name="description" content="李录护城河框架专题：四问框架、四要素、五种形态、AI时代判断。系统解析如何判断护城河，建立「授人以渔」的分析框架。系列第15期。">
+<meta property="og:title" content="护城河框架专题 — 李录投资方法论核心">
+<meta property="og:description" content="四问框架 + 四要素 + 五种形态 + AI时代判断，系统解析李录如何判断护城河。">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://li-lu.top/moat-framework.html">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:var(--gold)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:var(--gold)}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+#themeBtn{background:rgba(255,255,255,.1);border:none;border-radius:6px;padding:8px 10px;cursor:pointer;color:rgba(255,255,255,.7);font-size:.85rem}
+#themeBtn:hover{background:rgba(201,162,39,.2);color:var(--gold)}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-body{padding-top:64px}
+.main-content{max-width:900px;margin:0 auto;padding:0 16px 64px;background:var(--surface);min-height:calc(100vh - 64px)}
+.back-bar{padding:12px 16px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;background:#f7fafc}
+.back-bar a{color:var(--gold);font-size:.85rem;font-weight:500}
+.page-header{padding:36px 16px 24px;border-bottom:2px solid var(--gold);margin-bottom:8px}
+.series-badge{display:inline-block;background:var(--navy);color:var(--gold);font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:12px;letter-spacing:.05em}
+.page-title{font-size:1.9rem;font-weight:800;color:var(--navy);line-height:1.25}
+.page-meta{color:var(--text-muted);font-size:.85rem;margin-top:8px}
+.hero-quote{background:linear-gradient(135deg,#fef9e7,#fff8e1);border-left:4px solid var(--gold);margin:24px 0;padding:20px 24px;border-radius:0 12px 12px 0;font-style:italic;color:var(--text)}
+.hero-quote source{color:var(--text-muted);font-size:.82rem;font-style:normal;display:block;margin-top:8px}
+.section{padding:8px 0 32px}
+h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+h3{font-size:.95rem;font-weight:700;color:var(--navy);margin:20px 0 10px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.card{background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px}
+.card h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.card p{font-size:.83rem;color:var(--text-muted);line-height:1.6}
+.card.highlight{background:linear-gradient(135deg,#fff9e6,#fffdf5);border-color:#f0d080}
+blockquote{background:#f7fafc;border-left:3px solid var(--gold);margin:12px 0;padding:12px 18px;color:var(--text-muted);font-size:.88rem;border-radius:0 8px 8px 0}
+blockquote strong{color:var(--navy)}
+.moat-four-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.moat-four-item{background:var(--navy);color:#fff;border-radius:12px;padding:18px 20px}
+.moat-four-item h4{color:var(--gold);font-size:.85rem;font-weight:700;margin-bottom:8px}
+.moat-four-item p{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.6}
+.funnel{background:#f7fafc;border-radius:12px;padding:20px;margin-top:16px;font-family:monospace;font-size:.82rem;line-height:1.9;color:var(--text)}
+.funnel-step{background:var(--navy);color:var(--gold);padding:2px 8px;border-radius:4px;margin-right:6px}
+.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:16px}
+.case-card{background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px}
+.case-card h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.case-card .ticker{color:var(--text-muted);font-size:.75rem;font-weight:600}
+.case-card p{font-size:.82rem;color:var(--text-muted);line-height:1.6;margin-top:4px}
+.misstep{background:#fff5f5;border:1px solid #fed7d7;border-radius:10px;padding:12px 16px;margin-top:10px}
+.misstep h4{color:#c53030;font-size:.85rem;font-weight:700;margin-bottom:6px}
+.misstep p{font-size:.82rem;color:#742a2a;line-height:1.6}
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:14px}
+.ai-card{background:#f7fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px}
+.ai-card h4{font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.ai-card p{font-size:.78rem;color:var(--text-muted);line-height:1.5}
+.ai-card.steady{background:#e6fffa;border-color:#b2f5ea}
+.ai-card.risky{background:#fff5f5;border-color:#fed7d7}
+.rel-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:.84rem}
+.rel-table th{background:var(--navy);color:var(--gold);padding:9px 14px;text-align:left;font-weight:600;border-radius:8px 8px 0 0}
+.rel-table td{padding:8px 14px;border-bottom:1px solid #e2e8f0;vertical-align:top}
+.rel-table tr:last-child td{border-bottom:none}
+.rel-table tr:nth-child(even){background:#f7fafc}
+.badge-green{background:#c6f6d5;color:#22543d;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700}
+.badge-warn{background:#fefcbf;color:#744210;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700}
+.footer{padding:32px 16px;text-align:center;color:var(--text-muted);font-size:.8rem;border-top:1px solid #e2e8f0;margin-top:24px}
+.footer a{color:var(--gold)}
+</style>
+</head>
+<body>
+<nav id="uni-navbar">
+  <div class="uni-brand">李录研究 <span>·</span> Li Lu</div>
+  <div class="uni-links">
+    <a class="uni-link" href="index.html">首页</a>
+    <a class="uni-link" href="about.html">关于</a>
+    <a class="uni-link" href="principles.html">原则</a>
+    <a class="uni-link" href="holdings.html">持仓</a>
+    <a class="uni-link" href="video_study.html">视频</a>
+  </div>
+  <button id="uni-hamburger" onclick="toggleDrawer()" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </button>
+  <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+</nav>
+<div id="uni-overlay" onclick="toggleDrawer()"></div>
+<div id="uni-drawer">
+  <div id="uni-drawer-header">
+    <div class="uni-drawer-brand">李录研究 <span>·</span></div>
+    <button id="uni-drawer-close" onclick="toggleDrawer()">✕</button>
+  </div>
+  <a class="uni-link active" href="moat-framework.html">护城河框架</a>
+  <a class="uni-link" href="investment-framework.html">投资框架</a>
+  <a class="uni-link" href="index.html">首页</a>
+  <a class="uni-link" href="about.html">关于</a>
+  <a class="uni-link" href="principles.html">原则</a>
+  <a class="uni-link" href="holdings.html">持仓</a>
+  <a class="uni-link" href="video_study.html">视频学习</a>
+</div>
+
+<div id="uni-body">
+<div class="main-content">
+
+<div class="back-bar">
+  <a href="index.html">← 首页</a>
+  <span style="color:#c0c0c0;font-size:.8rem">|</span>
+  <a href="principles.html">原则</a>
+</div>
+
+<div class="page-header">
+  <div class="series-badge">系列第15期 · 授人以渔</div>
+  <h1 class="page-title">护城河框架专题</h1>
+  <div class="page-meta">李录投资方法论核心 · 四问框架 + 四要素 + 五种形态 + AI时代判断</div>
+</div>
+
+<div class="hero-quote">
+  "一个好的生意，今天看起来很好，10年以后还会不会在？这是我对护城河最根本的判断标准。"
+  <source>— 李录，北大光华课程（2015，综合整理非逐字引语）</source>
+</div>
+
+<!-- ========== 一、护城河四问框架 ========== -->
+<div class="section">
+  <h2>一、护城河四问框架（2015北大课程）</h2>
+  <p style="font-size:.88rem;color:var(--text-muted);margin-bottom:16px">李录在2015年北大课程中首次系统阐述护城河分析框架，核心四问构成投资决策的起点：</p>
+  <div class="moat-four-grid">
+    <div class="moat-four-item">
+      <h4>① 这个生意10年后还在吗？</h4>
+      <p>问的是持久性，不是短期竞争力。时间是护城河的唯一真正检验。</p>
+    </div>
+    <div class="moat-four-item">
+      <h4>② 竞争优势来源是什么？</h4>
+      <p>成本优势？品牌溢价？网络效应？转换成本？竞争优势必须是竞争对手难以复制的。</p>
+    </div>
+    <div class="moat-four-item">
+      <h4>③ 管理层的品格与能力？</h4>
+      <p>管理层是否把股东利益放在心上？资本配置能力如何？是否诚信？</p>
+    </div>
+    <div class="moat-four-item">
+      <h4>④ 价格是否低于内在价值？</h4>
+      <p>安全边际是最后的防线。再好的护城河也要有好价格。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 二、四要素 ========== -->
+<div class="section">
+  <h2>二、护城河四要素（2019/2024课程综合）</h2>
+  <div class="card-grid">
+    <div class="card highlight">
+      <h4>⏱️ 要素一：规模经济</h4>
+      <p>成本优势来自规模。典型案例：Amazon的物流成本结构、比亚迪的电池成本。判断标准：规模扩大后，成本是否持续下降？</p>
+    </div>
+    <div class="card highlight">
+      <h4>🕐 要素二：持续时间</h4>
+      <p>护城河必须经受时间考验。"一个生意今天看起来很好，但10年后呢？"短暂的竞争优势不是护城河。</p>
+      <p style="margin-top:6px;color:var(--gold);font-size:.78rem;font-weight:600">⸝ 时间是对护城河的唯一检验</p>
+    </div>
+    <div class="card">
+      <h4>🧭 要素三：管理层品质</h4>
+      <p>资本配置能力：把钱用在创造最大价值的地方。股东利益导向：是否以股东长期利益行事。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">最高形式："A seamless web of deserved trust" — Charlie Munger</p>
+    </div>
+    <div class="card">
+      <h4>🏛️ 要素四：企业文化</h4>
+      <p>企业文化是内在驱动力，是护城河的"软"层面。好的文化让护城河自我强化；不好的文化会侵蚀最好的护城河。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 三、五种形态 ========== -->
+<div class="section">
+  <h2>三、护城河五种具体形态</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4>🏷️ 品牌护城河</h4>
+      <p>消费者愿意为品牌支付溢价。典型：Apple品牌溢价、贵州茅台地理不可复制性。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">关键问题：竞争对手要花多少钱才能复制这个品牌？</p>
+    </div>
+    <div class="card">
+      <h4>🌐 网络效应护城河</h4>
+      <p>用户越多产品越有价值，形成正向循环。典型：Alphabet搜索数据飞轮、腾讯社交网络。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">关键问题：网络是否具有双向锁定？</p>
+    </div>
+    <div class="card">
+      <h4>🔒 转换成本护城河</h4>
+      <p>客户更换供应商的成本极高。典型：Oracle/SAP企业软件、银行存贷款客户。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">关键问题：客户离开有多难？</p>
+    </div>
+    <div class="card">
+      <h4>💰 成本优势护城河</h4>
+      <p>低成本结构让竞争对手难以竞争。典型：比亚迪垂直整合电池成本、BRK特种保险浮存金。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">关键问题：竞争对手怎样才能达到这个成本结构？</p>
+    </div>
+    <div class="card">
+      <h4>📦 规模经济护城河</h4>
+      <p>规模越大，单位成本越低。典型：UPS/联邦快递物流网络、Crocs模具成本优势。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">关键问题：竞争对手要达到同等规模需要多少投入？</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 四、AI时代 ========== -->
+<div class="section">
+  <h2>四、AI时代的护城河（2024北大课程）</h2>
+  <blockquote>
+    <strong>李录2024年北大课程核心判断：</strong> "AI是真正的技术革命，但最终赢家仍需满足护城河四要素。技术本身不等于护城河。"
+    <p style="margin-top:8px;font-size:.8rem">来源：2024年12月北大光华课程（综合整理非逐字引语）</p>
+  </blockquote>
+  <p style="font-size:.88rem;color:var(--text-muted);margin:16px 0 14px">AI是工具，不是护城河本身。用AI提升效率是每个公司都能做到的，不构成持久竞争优势。护城河仍然来自：规模经济、网络效应、转换成本、品牌。</p>
+  <div class="ai-grid">
+    <div class="ai-card steady">
+      <h4>✅ 品牌护城河</h4>
+      <p>相对稳固，消费者心智难以改变，AI难以复制</p>
+    </div>
+    <div class="ai-card risky">
+      <h4>⚠️ 网络效应</h4>
+      <p>可能受AI社区打破，新社交产品有机会</p>
+    </div>
+    <div class="ai-card risky">
+      <h4>⚠️ 成本优势</h4>
+      <p>可能被AI工具民主化削弱</p>
+    </div>
+    <div class="ai-card steady">
+      <h4>✅ 转换成本</h4>
+      <p>相对稳固，企业换系统成本高</p>
+    </div>
+  </div>
+  <p style="font-size:.82rem;color:var(--text-muted);margin-top:14px"><strong style="color:var(--navy)">核心问题：</strong>谁能用AI巩固现有的护城河？AI时代的护城河判断框架 = 现有护城河类型 + AI对它的影响。</p>
+</div>
+
+<!-- ========== 五、决策流程 ========== -->
+<div class="section">
+  <h2>五、护城河分析决策流程（知行合一）</h2>
+  <div class="funnel">
+    <div><span class="funnel-step">第一步</span>行业与生意模式 → 能力圈内的大市场好生意</div>
+    <div><span class="funnel-step">第二步</span>护城河分析 → 成本 / 品牌 / 网络 / 转换成本 + 四问</div>
+    <div><span class="funnel-step">第三步</span>管理层品格 → 诚信 + 能力 + 股东利益导向</div>
+    <div><span class="funnel-step">第四步</span>内在价值 → DCF估算，与安全边际对比</div>
+    <div><span class="funnel-step">第五步</span>仓位管理 → 确定性决定仓位</div>
+    <div><span class="funnel-step">第六步</span>持续跟踪 → 逻辑变则卖出，逻辑不变则持有</div>
+  </div>
+</div>
+
+<!-- ========== 六、能力圈关系 ========== -->
+<div class="section">
+  <h2>六、护城河与能力圈的关系</h2>
+  <p style="font-size:.88rem;color:var(--text-muted);margin-bottom:16px">能力圈是护城河的前提：不理解一个生意的护城河，就无法判断其价值。护城河分析必须在能力圈内进行。</p>
+  <div class="card highlight">
+    <p style="font-size:.88rem;line-height:1.7"><strong style="color:var(--navy)">"不懂不投"</strong> = 不懂护城河不投。能力圈判断标准（李录，2019北大，综合整理非逐字引语）</p>
+    <ul style="margin-top:10px;font-size:.84rem;color:var(--text-muted);padding-left:20px">
+      <li>能预测5-10年后企业自由现金流</li>
+      <li>不懂不做，知道自己边界比扩大边界更重要</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========== 七、案例分析 ========== -->
+<div class="section">
+  <h2>七、李录案例中的护城河分析</h2>
+  <div class="case-grid">
+    <div class="case-card">
+      <h4>Alphabet <span class="ticker">GOOGL / GOOG</span></h4>
+      <p>搜索惯性 + 数据飞轮 + 广告网络效应。COVID建仓逻辑：护城河在危机中得到强化，恐慌中看到持久竞争优势。</p>
+    </div>
+    <div class="case-card">
+      <h4>比亚迪 <span class="ticker">1211.HK</span></h4>
+      <p>电池技术（早期护城河来源）+ 王传福垂直整合能力（管理层+文化）+ 电动化趋势确认（行业护城河）。</p>
+    </div>
+    <div class="case-card">
+      <h4>邮储银行 <span class="ticker">1658.HK</span></h4>
+      <p>邮政下沉网络（规模经济+地理不可复制）+ 零售银行转型潜力（品牌+转换成本）。国有体制风险为管理层不确定性。</p>
+    </div>
+    <div class="case-card">
+      <h4>贵州茅台 <span class="ticker">600519.SH</span></h4>
+      <p>地理不可复制性（赤水河）+ 时间壁垒（5年酿造周期）+ 品牌溢价。卖出逻辑：护城河受到侵蚀（销售问题、管理层变动）。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 八、常见误判 ========== -->
+<div class="section">
+  <h2>八、常见护城河误判</h2>
+  <div class="misstep">
+    <h4>❌ 误判1：技术 = 护城河</h4>
+    <p>很多技术公司有技术创新，但没有护城河。技术可以被复制，护城河不能。</p>
+  </div>
+  <div class="misstep">
+    <h4>❌ 误判2：市场份额 = 护城河</h4>
+    <p>大不等于有护城河。护城河必须有竞争对手难以复制的基础。</p>
+  </div>
+  <div class="misstep">
+    <h4>❌ 误判3：高利润 = 护城河</h4>
+    <p>高利润会吸引竞争对手进入，关键是利润的持久性。</p>
+  </div>
+  <div class="misstep">
+    <h4>❌ 误判4：增长 = 护城河</h4>
+    <p>增长不等于护城河。增长可能是护城河的结果，但增长本身不是护城河。</p>
+  </div>
+</div>
+
+<!-- ========== 九、对普通投资者启示 ========== -->
+<div class="section">
+  <h2>九、对普通投资者的启示</h2>
+  <table class="rel-table">
+    <thead>
+      <tr>
+        <th>护城河类型</th>
+        <th>普通投资者判断方法</th>
+        <th>置信度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>品牌</td>
+        <td>问：竞争对手花多少钱才能复制？消费者是否愿意为此多付钱？</td>
+        <td><span class="badge-green">高</span></td>
+      </tr>
+      <tr>
+        <td>网络效应</td>
+        <td>问：产品离开这个网络还有价值吗？用户离开有多难？</td>
+        <td><span class="badge-green">高</span></td>
+      </tr>
+      <tr>
+        <td>转换成本</td>
+        <td>问：换掉这个产品/服务，实际损失什么？</td>
+        <td><span class="badge-green">高</span></td>
+      </tr>
+      <tr>
+        <td>成本优势</td>
+        <td>问：竞争对手的成本结构差多少？规模差距多大？</td>
+        <td><span class="badge-warn">中</span></td>
+      </tr>
+      <tr>
+        <td>规模经济</td>
+        <td>问：规模扩大1倍，成本下降多少？新进入者要投入多少才能追平？</td>
+        <td><span class="badge-warn">中</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="margin-top:16px;font-size:.84rem;color:var(--text-muted)"><strong style="color:var(--navy)">最重要的一句话：</strong>时间是对护城河的唯一检验。问自己：这个公司10年后是否还拥有同样的竞争优势？</p>
+</div>
+
+<!-- ========== 底部导航 ========== -->
+<div class="section" style="padding-bottom:16px">
+  <h2>系列进度</h2>
+  <div style="background:#f7fafc;border-radius:12px;padding:16px 20px;font-size:.84rem;color:var(--text-muted)">
+    <div style="margin-bottom:8px"><strong style="color:var(--navy)">已完成：</strong>第01-14期（Alphabet/PDD/邮储/BAC/比亚迪/BRK/EWBC/OXY/Crocs/Apple + 投资框架概述 + PSBC进阶 + 字节跳动调研）</div>
+    <div><strong style="color:var(--gold)">当前：</strong>第15期 — 护城河框架专题（本文）</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>数据来源：北大光华课程（2015/2019/2024公开演讲），部分引语为综合整理非逐字引语</p>
+  <p>页面更新：2026-05-01 · <a href="index.html">返回首页</a></p>
+</div>
+
+</div><!-- end main-content -->
+</div><!-- end uni-body -->
+
+<script src="js/main.js"></script>
+<script>
+if(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches)document.body.classList.add('dark-mode');
+</script>
+</body>
+</html>
