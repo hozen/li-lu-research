@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>实战整合 — 李录投资框架决策链 · 系列第18期</title>
+<meta name="description" content="李录投资框架实战整合： Episodes 15-17 三集闭环收官，从认识论到每日决策，三条实践路径完整呈现。系列第18期（收官之作）。">
+<meta property="og:title" content="实战整合 — 李录投资框架决策链 · 系列第18期">
+<meta property="og:description" content="从文明3.0地基到护城河方法论，李录投资框架的完整决策链。">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://li-lu.top/modernization-framework-episode18.html">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:var(--gold)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:var(--gold)}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+#themeBtn{background:rgba(255,255,255,.1);border:none;border-radius:6px;padding:8px 10px;cursor:pointer;color:rgba(255,255,255,.7);font-size:.85rem}
+#themeBtn:hover{background:rgba(201,162,39,.2);color:var(--gold)}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-body{padding-top:64px}
+.main-content{max-width:900px;margin:0 auto;padding:0 16px 64px;background:var(--surface);min-height:calc(100vh - 64px)}
+.back-bar{padding:12px 16px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;background:#f7fafc}
+.back-bar a{color:var(--gold);font-size:.85rem;font-weight:500}
+.page-header{padding:36px 16px 24px;border-bottom:2px solid var(--gold);margin-bottom:8px}
+.series-badge{display:inline-block;background:var(--navy);color:var(--gold);font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:12px;letter-spacing:.05em}
+.page-title{font-size:1.9rem;font-weight:800;color:var(--navy);line-height:1.25}
+.page-meta{color:var(--text-muted);font-size:.85rem;margin-top:8px}
+.hero-quote{background:linear-gradient(135deg,#fef9e7,#fff8e1);border-left:4px solid var(--gold);margin:24px 0;padding:20px 24px;border-radius:0 12px 12px 0;font-style:italic;color:var(--text)}
+.hero-quote source{color:var(--text-muted);font-size:.82rem;font-style:normal;display:block;margin-top:8px}
+.section{padding:8px 0 32px}
+h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+h3{font-size:1rem;font-weight:700;color:var(--navy);margin:20px 0 12px}
+h4{font-size:.92rem;font-weight:600;color:var(--text);margin:16px 0 8px}
+p{margin:10px 0;line-height:1.75}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:16px 0}
+.card{background:var(--surface);border:1px solid #e2e8f0;border-radius:12px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.card.gold{background:var(--gold-light);border-color:var(--gold)}
+.card.navy{background:var(--navy);color:#f5f5f5}
+.card.navy h3,.card.navy h4{color:var(--gold)}
+.card.navy p{color:rgba(245,245,245,.85)}
+.card-label{font-size:.72rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.card h3{font-size:1.05rem;margin:8px 0}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem;overflow-x:auto;display:block}
+thead tr{background:var(--navy);color:#fff}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid #e2e8f0}
+th{font-weight:600;font-size:.8rem;letter-spacing:.04em}
+tbody tr:nth-child(even){background:#f7fafc}
+tbody tr:hover{background:#fef9e7}
+.step{display:flex;gap:16px;margin:20px 0;padding:20px;background:linear-gradient(135deg,#f7fafc,#fff);border-radius:12px;border:1px solid #e2e8f0}
+.step-num{flex-shrink:0;width:40px;height:40px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem}
+.step-content h4{margin-top:0}
+.highlight-box{background:linear-gradient(135deg,#0a1628,#1a365d);color:#f5f5f5;padding:24px;border-radius:12px;margin:20px 0}
+.highlight-box h3{color:var(--gold);margin-top:0}
+.highlight-box p{color:rgba(245,245,245,.88)}
+.path-card{display:flex;gap:16px;padding:20px;border:1px solid #e2e8f0;border-radius:12px;margin:16px 0;background:#fff}
+.path-card .path-icon{font-size:2rem;line-height:1}
+.path-card h3{margin:4px 0 8px}
+.path-tag{display:inline-block;background:var(--navy);color:var(--gold);font-size:.68rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-bottom:8px}
+.confidence{display:flex;gap:8px;margin:8px 0;flex-wrap:wrap}
+.confidence span{display:inline-block;font-size:.75rem;font-weight:600;padding:3px 10px;border-radius:20px}
+.confidence .high{background:#c6f6d5;color:#276749}
+.confidence .med{background:#fefcbf;color:#744210}
+.confidence .low{background:#fed7d7;color:#742a2a}
+blockquote{background:#f7fafc;border-left:4px solid var(--blue);margin:16px 0;padding:16px 20px;border-radius:0 8px 8px 0;color:var(--text)}
+blockquote cite{display:block;font-size:.82rem;color:var(--text-muted);margin-top:8px;font-style:normal}
+.citation{margin:24px 0;padding:20px;background:#f7fafc;border-radius:8px;font-size:.88rem}
+.citation .src{color:var(--gold);font-weight:600;margin-bottom:6px}
+.closing-quote{background:linear-gradient(135deg,var(--navy),#1a365d);color:#f5f5f5;padding:32px;border-radius:12px;margin:32px 0;text-align:center}
+.closing-quote p{font-size:1.05rem;line-height:1.8;font-style:italic;margin:0}
+.closing-quote cite{display:block;margin-top:16px;color:var(--gold);font-style:normal;font-size:.88rem}
+.footer{padding:24px 16px;border-top:1px solid #e2e8f0;color:var(--text-muted);font-size:.8rem;background:#f7fafc;margin-top:16px}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px}
+.footer-links a{color:var(--gold);font-weight:500}
+.note-box{background:#ebf8ff;border:1px solid var(--blue);border-radius:8px;padding:16px;margin:16px 0;font-size:.88rem}
+.note-box strong{color:var(--blue)}
+.pro-tip{background:#f0fff4;border:1px solid var(--green);border-radius:8px;padding:16px;margin:16px 0;font-size:.88rem}
+.pro-tip strong{color:var(--green)}
+</style>
+</head>
+<body>
+<nav id="uni-navbar">
+<div class="uni-brand">李录<span>研究</span></div>
+<div class="uni-links">
+<a href="index.html" class="uni-link">首页</a>
+<a href="video_study.html" class="uni-link">视频</a>
+<a href="principles.html" class="uni-link">原则</a>
+<a href="holdings.html" class="uni-link">持仓</a>
+<a href="about.html" class="uni-link">关于</a>
+</div>
+<button id="uni-hamburger" aria-label="菜单"><span></span><span></span><span></span></button>
+<button id="themeBtn">🌙</button>
+</nav>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header"><div class="uni-drawer-brand">李录<span>研究</span></div><button id="uni-drawer-close">✕</button></div>
+<a href="index.html" class="uni-link">首页</a>
+<a href="video_study.html" class="uni-link">视频</a>
+<a href="principles.html" class="uni-link">原则</a>
+<a href="holdings.html" class="uni-link">持仓</a>
+<a href="about.html" class="uni-link">关于</a>
+</div>
+
+<div id="uni-body">
+<div class="main-content">
+<div class="back-bar">
+<a href="index.html">← 首页</a>
+</div>
+
+<header class="page-header">
+<div class="series-badge">系列第18期 · 收官之作</div>
+<h1 class="page-title">实战整合：李录投资框架决策链</h1>
+<p class="page-meta">从认识论到每日决策 · Episodes 15-17 三集闭环收官 · 2026-05-02</p>
+</header>
+
+<div class="hero-quote">
+「这就是价值投资的基本知识框架。它的逻辑简单明了，理解起来一点也不难。而且，据我所知，这是唯一一种能为投资者提供长期优异风险调整回报的投资方式。」
+<source>— 李录，SSRN #3964616《Practice of Value Investing》序言原文</source>
+</div>
+
+<section class="section">
+<h2>一、三集闭环：重新理解 Episodes 15-17 的关系</h2>
+<p>很多人读完 Episodes 15-17，会觉得它们是三篇独立的好文章。但它们实际上是一个建筑的三层。</p>
+
+<table>
+<thead>
+<tr><th>层级</th><th>Episode</th><th>回答的问题</th><th>对投资者的意义</th></tr>
+</thead>
+<tbody>
+<tr><td>地基</td><td>Ep 17（文明3.0）</td><td>「为什么框架是这样的？」</td><td>选股前先选时代</td></tr>
+<tr><td>认识论</td><td>Ep 16（知行合一）</td><td>「为什么要做价值投资？」</td><td>理解 ~95% 失败率的根源</td></tr>
+<tr><td>方法论</td><td>Ep 15（护城河）</td><td>「如何具体分析一个生意？」</td><td>四问 + 四要素 + 五种形态</td></tr>
+</tbody>
+</table>
+
+<div class="highlight-box">
+<h3>三层合一，才是李录框架</h3>
+<p>缺少地基，只学会了招式；缺少认识论，坚持不下去；缺少方法论，看不到具体机会。三个层次缺一不可。</p>
+</div>
+</section>
+
+<section class="section">
+<h2>二、时代判断优先：为什么框架要先于标的</h2>
+
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>普通投资者</h4>
+<p>看到一只股票 → 第一反应是「要不要买」→ 从标的开始思考</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>李录</h4>
+<p>看到一只股票 → 第一反应是「这个时代适合投这家公司吗」→ 从时代判断开始</p>
+</div>
+</div>
+
+<h3>案例：为什么 2020 年 COVID 恐慌时重仓 Alphabet？</h3>
+
+<div class="cards">
+<div class="card gold">
+<div class="card-label">文明3.0 视角</div>
+<h3>铁律验证</h3>
+<p>Alphabet 满足文明3.0铁律：全球自由市场、无地理边界、可累积技术进步</p>
+</div>
+<div class="card gold">
+<div class="card-label">熵增视角</div>
+<h3>短期冲击</h3>
+<p>COVID 是短期熵增冲击，不改变 Alphabet 的长期护城河</p>
+</div>
+<div class="card gold">
+<div class="card-label">安全边际</div>
+<h3>极端定价</h3>
+<p>市场恐慌 = 极端定价 = 安全边际最大 = 买入时机</p>
+</div>
+</div>
+
+<div class="note-box">
+<strong>关键洞察：</strong>从纯财务分析看，2020 年 Alphabet PE ~27 倍，不算极端便宜。但时代判断（3.0铁律 + 熵增视角）先于财务分析，是李录择股的核心逻辑顺序。
+</div>
+</section>
+
+<section class="section">
+<h2>三、中国 2.5 阶段的投资含义</h2>
+<p>2.5 阶段 = 转型期 = 高不确定性 = <strong>高机会密度</strong>。李录在 2.5 阶段寻找的，是「3.0 种子」——符合文明3.0铁律的公司，即使它们今天还处于 2.5 阶段。</p>
+
+<h3>什么样的公司是「3.0 种子」？</h3>
+<div class="cards">
+<div class="card">
+<div class="card-label">条件一</div>
+<h3>参与全球市场</h3>
+<p>出口竞争力强，不依赖国内保护政策</p>
+</div>
+<div class="card">
+<div class="card-label">条件二</div>
+<h3>技术/品牌可累积</h3>
+<p>不是靠资源或关系，是靠能力</p>
+</div>
+<div class="card">
+<div class="card-label">条件三</div>
+<h3>治理结构透明</h3>
+<p>股东利益优先于政治目标</p>
+</div>
+<div class="card">
+<div class="card-label">条件四</div>
+<h3>受托人精神</h3>
+<p>把股东当合伙人而非提款机</p>
+</div>
+</div>
+
+<h3>比亚迪为什么是典型的 2.5→3.0 投资？</h3>
+<div class="cards">
+<div class="card">
+<h3>全球竞争</h3>
+<p>电动车出口全球，不依赖国内保护</p>
+</div>
+<div class="card">
+<h3>技术可累积</h3>
+<p>电池、电机、电控全栈自研</p>
+</div>
+<div class="card">
+<h3>治理</h3>
+<p>王传福把个人财富和公司深度绑定</p>
+</div>
+<div class="card">
+<h3>逆向时机</h3>
+<p>2010 年代所有人看空时重仓</p>
+</div>
+</div>
+
+<h3>邮储银行为什么是 2.5→3.0 的特殊案例？</h3>
+<div class="cards">
+<div class="card">
+<h3>港股上市</h3>
+<p>符合 3.0 铁律的资本市场</p>
+</div>
+<div class="card">
+<h3>下沉市场</h3>
+<p>农村网点覆盖中国 2.5 阶段的下沉市场</p>
+</div>
+<div class="card">
+<h3>治理改善</h3>
+<p>国有银行中治理改善空间最大</p>
+</div>
+<div class="card">
+<h3>安全边际</h3>
+<p>2020 COVID 冲击下的极端悲观定价</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>四、李录决策六步骤：完整链条</h2>
+<p>这是 Episodes 15-16 中决策流程的整合版本，添加了「时代判断」作为第一步。</p>
+
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-content">
+<h4>时代判断</h4>
+<p>当前处于什么文明阶段？这个阶段的主要矛盾是什么？<br><em>→ 2.5 阶段的核心变量：政策与制度的拉锯</em></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-content">
+<h4>能力圈筛选</h4>
+<p>这个生意我是否真的理解？10 年后它还会不会在？<br><em>→ 能预测 5-10 年自由现金流，不懂不做</em></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-content">
+<h4>护城河识别（四问框架）</h4>
+<p>需求持续增长？竞争者无法复制？持续多久？价格有安全边际？<br><em>→ Episode 15 核心：四问 + 四要素 + 五种形态</em></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-content">
+<h4>管理层评估</h4>
+<p>德才兼备？<br><em>→ 「德」在 2.5 阶段尤其稀缺（Episode 17 Ch13 赌性文化分析）</em></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-content">
+<h4>安全边际等待</h4>
+<p>等待市场先生情绪极端时的定价<br><em>→ COVID 恐慌 / 行业危机 / 市场偏见，三大典型时机</em></p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">6</div>
+<div class="step-content">
+<h4>长期持有 + 动态跟踪</h4>
+<p>持有信号：护城河未被侵蚀 + 管理层保持诚信 + 估值未极端化<br><em>→ Episode 16 知行合一的闭环</em></p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>五、与巴菲特/芒格的差异：三个独特之处</h2>
+
+<div class="cards">
+<div class="card navy">
+<div class="card-label">差异一</div>
+<h3>中国视角</h3>
+<p>巴菲特主要投资美国，芒格晚年才开始投资中国。李录的核心能力圈是中美两个市场，尤其对中国 2.5 阶段有深刻理解。</p>
+</div>
+<div class="card navy">
+<div class="card-label">差异二</div>
+<h3>文明框架</h3>
+<p>大多数价值投资者用财务模型分析公司。李录在财务模型之前，先问：这个公司是否符合文明3.0铁律？这让他能预判系统性趋势。</p>
+</div>
+<div class="card navy">
+<div class="card-label">差异三</div>
+<h3>制度护城河思维</h3>
+<p>巴菲特说「护城河是我的城堡」。李录加了一层：在 2.5 阶段的国家，制度变量本身就是护城河或护城河的侵蚀者。</p>
+</div>
+</div>
+
+<h3>制度护城河思维的具体案例</h3>
+<div class="cards">
+<div class="card">
+<h3 style="color:var(--red)">教培整治</h3>
+<p>制度风险瞬间摧毁一个好行业（好未来/新东方）</p>
+</div>
+<div class="card">
+<h3 style="color:var(--green)">新能源补贴</h3>
+<p>制度红利瞬间创造一个好行业（宁德时代/比亚迪）</p>
+</div>
+<div class="card">
+<h3 style="color:var(--orange)">互联网监管</h3>
+<p>制度风险压制了整个中概股板块（2021-2022）</p>
+</div>
+</div>
+<div class="pro-tip"><strong>实战含义：</strong>选择「制度韧性」强的公司——即使政策变化，护城河仍然有效的公司。</div>
+</section>
+
+<section class="section">
+<h2>六、普通投资者的三条行动路径</h2>
+
+<div class="path-card">
+<div class="path-icon">📚</div>
+<div>
+<span class="path-tag">路径一：学</span>
+<h3>系统学习，建立自己的框架</h3>
+<p><strong>适合：</strong>有时间投入学习、有兴趣深入理解投资的人</p>
+<p><strong>路径：</strong>Episodes 15-18（方法论+认识论+地基）→ Episodes 1-14（具体案例）→ SSRN #3964616 原文（完整论证）</p>
+<p><strong>判断标准：</strong>能用自己的话解释「为什么李录投比亚迪而不是其他电动车公司」</p>
+</div>
+</div>
+
+<div class="path-card">
+<div class="path-icon">🎯</div>
+<div>
+<span class="path-tag">路径二：仿</span>
+<h3>复制框架，选定标的长期持有</h3>
+<p><strong>适合：</strong>没有时间深入研究，但认同价值投资理念的人</p>
+<p><strong>路径：</strong>选定李录持有的主要标的（Alphabet/Apple/邮储/比亚迪）→ 用 Episode 15 四问框架验证护城河 → 等待市场恐慌时买入 → 持有至少 5-10 年</p>
+<p><strong>判断标准：</strong>在市场恐慌时（股价下跌 30%+）不恐慌抛售，反而加仓</p>
+</div>
+</div>
+
+<div class="path-card">
+<div class="path-icon">🏛️</div>
+<div>
+<span class="path-tag">路径三：跟</span>
+<h3>跟随专业管理人的基金</h3>
+<p><strong>适合：</strong>没有时间、兴趣或能力自主投资的人</p>
+<p><strong>路径：</strong>喜马拉雅资本（李录自己的基金）→ 芒格书院（受李录影响的价值投资平台）→ 其他符合李录框架的基金（用 Episode 15 评估）</p>
+<p><strong>判断标准：</strong>至少经历一个完整市场周期（5-7年）后再评估业绩</p>
+</div>
+</div>
+</section>
+
+<section class="section">
+<h2>七、系列阅读路径：取决于你是谁</h2>
+
+<table>
+<thead>
+<tr><th>人群</th><th>建议顺序</th><th>理由</th></tr>
+</thead>
+<tbody>
+<tr><td>刚接触价值投资</td><td>Ep 15 → 16 → 1 → 13 → 17</td><td>从实用工具开始，在案例中理解框架</td></tr>
+<tr><td>有经验不了解李录</td><td>Ep 11 → 15 → 16 → 17 → 18</td><td>先理解整体框架，再深入每个模块</td></tr>
+<tr><td>李录长期跟随者</td><td>Ep 17 → 18 → 12 → 14 → 7/8</td><td>从最深层的逻辑重新审视，验证框架有效性</td></tr>
+<tr><td>只关心中国市场</td><td>Ep 17 Ch12-13 → 13 → 12 → 15 → 18</td><td>先理解为什么找「3.0种子」，再看具体案例</td></tr>
+</tbody>
+</table>
+</section>
+
+<section class="section">
+<h2>八、系列未完成的议题</h2>
+
+<div class="cards">
+<div class="card">
+<div class="card-label">⚠️ 待核实</div>
+<h3>能力圈原话字幕核实</h3>
+<p>Episode 15 中「能预测 5-10 年后企业自由现金流，不懂不做」的原始字幕来源尚未完全核实。字幕文件在整理中被清理，需要通过其他渠道重新获取。</p>
+</div>
+<div class="card">
+<div class="card-label">⚠️ 待核实</div>
+<h3>荒岛测试最早出处</h3>
+<p>概念承袭自 Buffett（1977年致股东信）和 Munger（1986年哈佛演讲）。李录首次系统阐述场合待查。</p>
+</div>
+<div class="card">
+<div class="card-label">⚠️ 待补充</div>
+<h3>有线电视公司早期案例</h3>
+<p>专著原文包含李录早期投资有线电视公司的完整案例，网络版无此内容。这对理解其框架形成至关重要。</p>
+</div>
+</div>
+
+<h3>Episode 19 方向建议</h3>
+<ul>
+<li>李录投资框架在 A 股的具体应用（如何筛选 A 股「3.0 种子」）</li>
+<li>中美博弈下的全球资产配置策略</li>
+<li>李录的下一代布局（接班人/传承问题）</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>九、系列 Episodes 1-18 总览</h2>
+<table>
+<thead>
+<tr><th>期数</th><th>主题</th><th>定位</th></tr>
+</thead>
+<tbody>
+<tr><td>Ep 01</td><td>Alphabet</td><td>案例：时代判断 + 护城河 + 安全边际综合应用</td></tr>
+<tr><td>Ep 02</td><td>PDD</td><td>案例：2.5→3.0 转型的「3.0 种子」</td></tr>
+<tr><td>Ep 03</td><td>邮储银行</td><td>案例：香港资本市场价值 + 2.5 阶段治理改善</td></tr>
+<tr><td>Ep 04-10</td><td>持仓案例</td><td>案例：护城河 + 知行合一的实战验证</td></tr>
+<tr><td>Ep 11</td><td>投资框架概述</td><td>整体：李录框架的第一层抽象</td></tr>
+<tr><td>Ep 12</td><td>邮储进阶</td><td>案例：深度分析一个 2.5→3.0 转型标的</td></tr>
+<tr><td>Ep 13</td><td>比亚迪</td><td>案例：最经典的 2.5→3.0 转型投资</td></tr>
+<tr><td>Ep 14</td><td>字节跳动排除</td><td>方法论：不符合能力圈标的的判断标准</td></tr>
+<tr><td>Ep 15</td><td>护城河框架</td><td>方法论：四问 + 四要素 + 五种形态</td></tr>
+<tr><td>Ep 16</td><td>价值投资实践指南</td><td>认识论：熵增 + 知行合一四大障碍</td></tr>
+<tr><td>Ep 17</td><td>文明3.0框架</td><td>地基：整个系列的理论基础</td></tr>
+<tr><td><strong>Ep 18</strong></td><td><strong>实战整合（本文）</strong></td><td><strong>收官：从认识论到每日决策</strong></td></tr>
+</tbody>
+</table>
+</section>
+
+<div class="closing-quote">
+<p>「This is value investing's basic intellectual framework. Its logic is simple and clear, and it's not hard at all to understand. Moreover, this is the only investment style I know which can deliver superior risk-adjusted returns to investors over the long-term.」</p>
+<cite>— 李录，SSRN #3964616《A Discussion of Modernization》序言</cite>
+</div>
+
+<footer class="footer">
+<div>数据来源：SSRN #3964616 原文 · 北大光华课程字幕（2015/2019/2024）· Himalaya Capital 公开资料</div>
+<div class="footer-links">
+<a href="moat-framework.html">Episode 15 · 护城河框架</a>
+<a href="practice-of-value-investing.html">Episode 16 · 价值投资实践指南</a>
+<a href="modernization-framework-episode17.html">Episode 17 · 文明3.0框架</a>
+</div>
+<div style="margin-top:12px">页面更新：2026-05-02 | 李录投资研究系列 · Episode 18</div>
+</footer>
+</div>
+</div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

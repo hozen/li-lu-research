@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第21期 · 普通投资者行动路径 — 李录投资研究系列</title>
+  <meta name="description" content="系列收官之作：把李录框架落地为可操作的三条行动路径，配合四问框架自诊断和季度复盘检查清单。">
+  <style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:var(--gold)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;pointer-events:none;transition:opacity .3s}
+#uni-overlay.active{opacity:1;pointer-events:auto}
+#uni-drawer{position:fixed;top:0;right:-280px;width:280px;height:100%;background:var(--navy);z-index:10001;transition:right .3s;padding:24px 16px;overflow-y:auto}
+#uni-drawer.active{right:0}
+#uni-drawer-title{color:#f5f5f5;font-size:1rem;font-weight:600;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1)}
+#uni-drawer a{display:block;color:rgba(255,255,255,.75);padding:10px 12px;border-radius:6px;font-size:.9rem}
+#uni-drawer a:hover{color:var(--gold);background:rgba(201,162,39,.1)}
+#uni-drawer a.active{color:var(--gold)}
+#uni-drawer-close{position:absolute;top:12px;right:12px;background:none;border:none;color:rgba(255,255,255,.6);font-size:1.5rem;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px}
+#uni-drawer-close:hover{color:#fff;background:rgba(255,255,255,.1)}
+#uni-theme-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);padding:6px 12px;border-radius:6px;cursor:pointer;font-size:.8rem}
+#uni-theme-btn:hover{background:rgba(255,255,255,.15);color:#fff}
+.main-content{padding-top:84px}
+.hero{background:linear-gradient(135deg,#0a1628 0%,#1a365d 100%);color:#fff;padding:72px 24px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a227' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+.hero-badge{display:inline-block;background:rgba(201,162,39,.15);color:var(--gold);border:1px solid rgba(201,162,39,.3);padding:4px 14px;border-radius:20px;font-size:.78rem;font-weight:600;letter-spacing:.05em;margin-bottom:16px}
+.hero h1{font-size:2.2rem;font-weight:700;margin-bottom:12px;line-height:1.3}
+.hero-sub{color:rgba(255,255,255,.75);font-size:1.05rem;max-width:600px;margin:0 auto 20px}
+.hero-meta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:.82rem;color:rgba(255,255,255,.5)}
+.hero-cta{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#0a1628;padding:12px 24px;border-radius:8px;font-weight:600;margin-top:8px;transition:background .2s}
+.hero-cta:hover{background:#e0b830}
+.container{max-width:860px;margin:0 auto;padding:40px 24px}
+.toc{background:var(--surface);border-radius:12px;padding:28px 32px;margin-bottom:32px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.toc h2{font-size:1.1rem;color:var(--navy);margin-bottom:16px;font-weight:700}
+.toc ol{counter-reset:toc;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.toc li{counter-increment:toc;padding:8px 12px;border-radius:6px;font-size:.88rem;color:var(--text-muted);cursor:default;transition:background .15s}
+.toc li:hover{background:#f1f5f9;color:var(--text)}
+.toc li::before{content:counter(toc)'.';color:var(--gold);font-weight:600;margin-right:8px}
+.section{margin-bottom:40px}
+.intro-box{background:linear-gradient(135deg,#fff8e7,#fff);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:24px 28px;margin-bottom:32px;font-size:.95rem;line-height:1.8}
+.intro-box p+.p{margin-top:12px}
+.tag{font-size:.7rem;background:var(--gold);color:#0a1628;padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:.04em;margin-right:4px;vertical-align:middle}
+.tag-ai{font-size:.7rem;background:#e53e3e;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;margin-left:6px}
+.tag-beta{font-size:.7rem;background:#805ad5;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;margin-left:6px}
+.tag-confirmed{font-size:.7rem;background:#38a169;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;margin-left:6px}
+h2{font-size:1.35rem;font-weight:700;color:var(--navy);margin:36px 0 16px;padding-bottom:10px;border-bottom:2px solid #e8eef5;display:flex;align-items:center;gap:8px}
+h3{font-size:1.08rem;font-weight:700;color:var(--navy);margin:24px 0 10px}
+.lesson{margin:16px 0}
+.lesson-header{display:flex;align-items:flex-start;gap:10px;background:#f8f9fc;padding:16px 20px;border-radius:10px;border:1px solid #e8eef5}
+.lesson-icon{flex-shrink:0;width:40px;height:40px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.lesson-body{flex:1}
+.lesson-title{font-weight:700;font-size:.95rem;color:var(--navy);margin-bottom:4px}
+.lesson-sub{font-size:.82rem;color:var(--text-muted)}
+.lesson-body blockquote{margin:12px 0 0;padding:12px 16px;background:#fff;border-radius:8px;border-left:3px solid var(--gold);font-size:.88rem;color:var(--text)}
+.quote{margin:20px 0;padding:20px 24px;background:#fff;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.07);position:relative}
+.quote::before{content:'"';position:absolute;top:-8px;left:16px;font-size:4rem;color:var(--gold);opacity:.2;font-family:Georgia,serif;line-height:1}
+.quote-text{font-size:1rem;font-style:italic;color:var(--text);margin-bottom:8px;line-height:1.7}
+.quote-source{font-size:.8rem;color:var(--text-muted)}
+.quote-source::before{content:'— '}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:16px 0}
+.card{background:var(--surface);border-radius:12px;padding:22px;box-shadow:0 1px 4px rgba(0,0,0,.07);border:1px solid #e8eef5;transition:box-shadow .2s}
+.card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.card h3{font-size:1rem;margin:0 0 8px;display:flex;align-items:center;gap:8px}
+.card .card-icon{font-size:1.4rem}
+.card p{font-size:.88rem;color:var(--text-muted);line-height:1.7}
+.card .card-tag{display:inline-block;padding:3px 10px;border-radius:12px;font-size:.72rem;font-weight:700;margin-top:8px}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem}
+thead th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:.8rem}
+tbody td{padding:10px 14px;border-bottom:1px solid #e8eef5;vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#f8f9fc}
+.td-highlight{background:#fff8e7;font-weight:600;color:var(--navy)}
+.checklist{list-style:none;margin:12px 0}
+.checklist li{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:.9rem}
+.checklist li:last-child{border-bottom:none}
+.check{width:20px;height:20px;border:2px solid #cbd5e0;border-radius:4px;flex-shrink:0;margin-top:2px}
+.check-done{background:var(--green);border-color:var(--green);position:relative}
+.check-done::after{content:'✓';color:#fff;font-size:.75rem;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.path-card{background:linear-gradient(135deg,#f8f9fc,#fff);border-radius:14px;padding:28px;border:1px solid #e2e8f0;margin:20px 0}
+.path-card h3{font-size:1.2rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.path-card p{font-size:.9rem;color:var(--text-muted);line-height:1.75;margin-bottom:12px}
+.path-card .path-example{background:#fff;border-radius:8px;padding:14px 16px;font-size:.85rem;border-left:3px solid var(--gold);margin-top:12px}
+.path-card .path-example strong{color:var(--navy)}
+.warning-box{background:#fff5f5;border:1px solid #fed7d7;border-radius:10px;padding:20px 24px;margin:16px 0}
+.warning-box h3{color:var(--red);font-size:1rem;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.warning-box ul{margin:0;padding-left:20px;font-size:.88rem;color:#c53030;line-height:2}
+.info-box{background:#ebf8ff;border:1px solid #bee3f8;border-radius:10px;padding:20px 24px;margin:16px 0}
+.info-box h3{color:#2b6cb0;font-size:1rem;margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.info-box ul{margin:0;padding-left:20px;font-size:.88rem;color:#2c5282;line-height:2}
+.summary-box{background:linear-gradient(135deg,#0a1628,#1a365d);color:#fff;border-radius:14px;padding:32px;margin:32px 0;text-align:center}
+.summary-box h2{color:#fff;border-bottom-color:rgba(255,255,255,.15);font-size:1.3rem;margin-bottom:20px}
+.summary-box p{color:rgba(255,255,255,.8);font-size:.95rem;line-height:1.8;max-width:640px;margin:0 auto}
+.next-box{background:var(--surface);border-radius:12px;padding:28px;margin-top:32px;border:1px solid #e8eef5}
+.next-box h3{font-size:1.05rem;color:var(--navy);margin:0 0 12px;font-weight:700}
+.next-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:16px}
+.next-link{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#f8f9fc;border-radius:8px;font-size:.88rem;color:var(--text);transition:all .15s;font-weight:500}
+.next-link:hover{background:#e8f4fd;color:var(--blue);transform:translateX(2px)}
+.next-link::before{content:'→';color:var(--gold);font-weight:700}
+.footer{padding:32px 24px;text-align:center;font-size:.8rem;color:var(--text-muted);border-top:1px solid #e2e8f0;margin-top:40px}
+.footer a{color:var(--gold)}
+@media(max-width:768px){
+.hero{padding:48px 20px}
+.hero h1{font-size:1.65rem}
+.toc ol{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr}
+table{font-size:.8rem}
+}
+body.dark-mode{background:#0a1628;color:#e2e8f0}
+body.dark-mode .toc,body.dark-mode .card,body.dark-mode .next-box,body.dark-mode .quote,body.dark-mode .path-card{background:#122035;color:#e2e8f0;border-color:rgba(255,255,255,.08)}
+body.dark-mode h2,body.dark-mode h3,body.dark-mode .card h3,body.dark-mode .lesson-title,body.dark-mode .td-highlight{color:#f5f5f5}
+body.dark-mode .toc li:hover,body.dark-mode tbody tr:hover{background:rgba(255,255,255,.04)}
+body.dark-mode .lesson-header{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.06)}
+body.dark-mode .intro-box{background:rgba(201,162,39,.08);border-color:var(--gold)}
+body.dark-mode .next-link{background:rgba(255,255,255,.04);color:#e2e8f0}
+body.dark-mode .next-link:hover{background:rgba(49,130,206,.15);color:#90cdf4}
+body.dark-mode thead th{background:#1a365d}
+body.dark-mode tbody td{border-color:rgba(255,255,255,.06)}
+body.dark-mode .footer{border-color:rgba(255,255,255,.08)}
+</style>
+</head>
+<body>
+<nav id="uni-navbar">
+  <div class="uni-brand">李录投资研究 <span>· 系列笔记</span></div>
+  <div class="uni-links">
+    <a href="index.html">首页</a>
+    <a href="video_study.html">视频学习</a>
+    <a href="principles.html">投资原则</a>
+    <a href="modernization-framework-episode20.html" class="active">系列正文</a>
+    <a href="timeline.html">时间线</a>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <button id="uni-theme-btn" title="切换主题">🌙</button>
+    <button id="uni-hamburger" aria-label="菜单">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+  <div id="uni-drawer-close">×</div>
+  <div id="uni-drawer-title">导航</div>
+  <a href="index.html">研究首页</a>
+  <a href="video_study.html">视频学习</a>
+  <a href="principles.html">投资原则</a>
+  <a href="holdings.html">持仓数据</a>
+  <a href="bookshelf.html">推荐书单</a>
+  <a href="faq.html">常见问题</a>
+  <a href="timeline.html">活动时间线</a>
+  <a href="downloads.html">下载资源</a>
+  <a href="#" id="uni-drawer-theme-btn" style="margin-top:16px;border-top:1px solid rgba(255,255,255,.1);padding-top:16px">🌙 切换主题</a>
+</div>
+
+<main class="main-content">
+  <section class="hero">
+    <div class="hero-badge">系列第21期 · 收官实践篇</div>
+    <h1>普通投资者行动路径</h1>
+    <p class="hero-sub">把 Episodes 15-20 的完整框架，转化为可操作的诊断工具与三条行动路径</p>
+    <div class="hero-meta">
+      <span>📅 2026-05-02</span>
+      <span>⏱ 预计阅读 18 分钟</span>
+      <span>🎯 适用：所有投资者</span>
+    </div>
+    <a href="modernization-framework-episode20.html" class="hero-cta">← 回到 Episode 20</a>
+  </section>
+
+  <div class="container">
+    <nav class="toc">
+      <h2>📋 本期目录</h2>
+      <ol>
+        <li>为什么这是系列最后一篇「实战篇」</li>
+        <li>四问框架自诊断（持仓检查清单）</li>
+        <li>路径一：学 — 建立自己的框架</li>
+        <li>路径二：仿 — 复制经过验证的持仓</li>
+        <li>路径三：跟 — 理解背后的逻辑</li>
+        <li>季度复盘检查清单</li>
+        <li>危险信号：什么时候应该卖出</li>
+        <li>系列完整闭环视图</li>
+      </ol>
+    </nav>
+
+    <div class="intro-box">
+      <p>前 20 期（Episodes 1-20）完成了李录投资框架的完整知识体系建设：</p>
+      <p style="margin-top:10px">护城河识别（Ep15）→ 熵增机制（Ep16）→ 文明3.0地基（Ep17）→ 知行合一（Ep18）→ 反面教材（Ep19）→ Buffett对比（Ep20）。</p>
+      <p style="margin-top:10px"><strong>这一期的问题是：知道之后，怎么做？</strong></p>
+      <p style="margin-top:10px">本期的目标不是传授新知识，而是把框架落地为三个可操作的行动路径，配合四问框架自诊断和季度复盘工具，让普通投资者在实践中真正用起来。</p>
+    </div>
+
+    <!-- 第一节：为什么 -->
+    <div class="section">
+      <h2>一、为什么这是系列最后一篇「实战篇」</h2>
+
+      <div class="quote">
+        <p class="quote-text">「一个普通投资者，不需要成为李录，也不需要读完全部20期内容。只需要理解几个核心原则，然后用一生去执行。」</p>
+        <p class="quote-source">综合整理自 Episodes 15-20 系列核心观点</p>
+      </div>
+
+      <p style="font-size:.93rem;margin:16px 0;color:var(--text-muted);line-height:1.8">Episodes 15-20 解决的是「认知」问题——为什么护城河稀缺、为什么知行合一困难、为什么文明3.0框架重要。这些是理解层面的事情。</p>
+      <p style="font-size:.93rem;margin-bottom:16px;color:var(--text-muted);line-height:1.8">但知道 ≠ 做到。Series 15-20 的读者调查发现，最大的问题不是「不理解」，而是「不知道从何开始」。</p>
+
+      <div class="info-box">
+        <h3>💡 读者常见困惑</h3>
+        <ul>
+          <li>「我已经理解护城河四要素了，但我现在的持仓到底有没有护城河？」</li>
+          <li>「李录的持仓我能跟吗？买入时机和仓位怎么把握？」</li>
+          <li>「季度结束了，我要不要调整持仓？依据什么判断？」</li>
+          <li>「我发现自己持有一只股票很久了，但从来没认真审视过它的护城河」</li>
+        </ul>
+      </div>
+
+      <p style="font-size:.93rem;margin-top:20px;color:var(--text-muted);line-height:1.8">本期针对这四个困惑，提供对应的工具：四问框架自诊断（对应第一个困惑）、三条行动路径（对应第二/三个困惑）、季度复盘检查清单（对应第三个困惑）、危险信号清单（对应第四个困惑）。</p>
+    </div>
+
+    <!-- 第二节：四问框架自诊断 -->
+    <div class="section">
+      <h2>二、四问框架自诊断（持仓检查清单）</h2>
+
+      <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:20px">来源：Episode 15 护城河框架的四问框架。对每一只持仓，依次问自己这四个问题。任何一个回答「否」，就值得认真思考。</p>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon">①</div>
+          <div class="lesson-body">
+            <div class="lesson-title">第一问：这个公司赚钱的逻辑是什么？</div>
+            <div class="lesson-sub">能用自己的话解释清楚这家公司的商业模式</div>
+            <blockquote>
+              <strong>诊断标准：</strong>用一句话说清楚这家公司怎么赚钱（卖给谁 / 收多少钱 / 为什么客户愿意付钱）。如果说不清楚，可能还没有真正理解这家公司的护城河来源。
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon">②</div>
+          <div class="lesson-body">
+            <div class="lesson-title">第二问：这个护城河是市场建立的，还是政府授予的？</div>
+            <div class="lesson-sub">护城河的来源决定了它的持久性</div>
+            <blockquote>
+              <strong>诊断标准：</strong>如果是政府管制/行业准入/政策补贴赋予的竞争优势，需要额外关注制度风险。参考 Episode 19 的有线电视公司案例——政府授予的垄断不是真正的护城河。<br><br>
+              <strong>分类：</strong>
+              <br>✅ 真正的商业护城河：规模经济（市场形成）/ 网络效应 / 转换成本 / 无形资产（品牌/专利）
+              <br>⚠️ 政府授予的垄断：行业牌照 / 地域专营权 / 供给侧改革配额 / 税收优惠
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon">③</div>
+          <div class="lesson-body">
+            <div class="lesson-title">第三问：这个公司在我自己的能力圈内吗？</div>
+            <div class="lesson-sub">不懂不做，是投资的第一原则</div>
+            <blockquote>
+              <strong>诊断标准：</strong>能够预测这家公司5-10年后的自由现金流吗？如果不能，需要谨慎评估是否在自己能力圈内。参考 Episode 19 的荒岛测试——如果你被困在荒岛上10年，你还愿意持有这只股票吗？
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon">④</div>
+          <div class="lesson-body">
+            <div class="lesson-title">第四问：当前价格有没有安全边际？</div>
+            <div class="lesson-sub">好的公司 + 合理价格 > 普通公司 + 便宜价格</div>
+            <blockquote>
+              <strong>诊断标准：</strong>当前估值是否在极端悲观情景下仍有合理回报？Episode 18 提到的「李录决策六步骤」，第一步就是时代判断——先判断宏观环境，再选择标的。安全边际不只是一个数字，而是对公司未来现金流的信心折扣。
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-top:20px">
+        <h3>📊 持仓自诊断表</h3>
+        <p style="font-size:.85rem;margin-bottom:12px;color:#2c5282">对每只持仓，逐一填写以下四列。标记 ❌ 的项目需要立即处理。</p>
+        <table>
+          <thead>
+            <tr><th>持仓标的</th><th>①赚钱逻辑清晰吗？</th><th>②商业护城河（非政府）？</th><th>③能力圈内？</th><th>④有安全边际？</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>示例：邮储银行</td><td class="td-highlight">✅ 零售银行下沉网络</td><td>⚠️ 牌照+政策（国有大行）</td><td class="td-highlight">✅ 银行商业模式熟</td><td>⚠️ 取决于买入价</td></tr>
+            <tr><td>示例：比亚迪</td><td class="td-highlight">✅ 新能源汽车销售</td><td class="td-highlight">✅ 技术+品牌+成本</td><td class="td-highlight">✅ 20年跟踪</td><td>⚠️ 取决于买入价</td></tr>
+            <tr><td>你的持仓1</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>你的持仓2</td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>你的持仓3</td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 第三节：三条路径 -->
+    <div class="section">
+      <h2>三、三条行动路径</h2>
+
+      <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:24px">来源：Episode 18 三集闭环中的「普通投资者三条路径」。根据自身情况选择最适合自己的路径，三条路径不是互斥的，可以同时采用。</p>
+
+      <div class="path-card">
+        <h3><span style="font-size:1.5rem">📖</span> 路径一：学 — 建立自己的框架</h3>
+        <p>适用于：有时间、有兴趣，愿意系统学习的投资者。</p>
+        <p>核心逻辑：从 Episodes 1-20 中建立完整的价值投资框架，然后独立做投资决策。这是 Buffett 的路径——「我有自己的框架，不需要依赖任何人」。</p>
+
+        <div style="margin:16px 0">
+          <h3 style="font-size:.95rem">推荐学习顺序</h3>
+          <table>
+            <thead><tr><th>阶段</th><th>内容</th><th>核心问题</th></tr></thead>
+            <tbody>
+              <tr><td>第一阶段</td><td>Episodes 15-17</td><td>护城河是什么、文明3.0框架、熵增机制</td></tr>
+              <tr><td>第二阶段</td><td>Episodes 1-14 案例</td><td>用真实案例验证框架（Alphabet/比亚迪/邮储）</td></tr>
+              <tr><td>第三阶段</td><td>Episodes 18-20</td><td>知行合一、失败案例、Buffett对比</td></tr>
+              <tr><td>实践阶段</td><td>四问框架自诊断</td><td>用自己持仓验证学习成果</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="path-example">
+          <strong>实际案例：</strong>李录本人走的就是「学」的路径。1997年有线电视公司亏损后，他系统梳理 Buffett/Munger 框架，结合中国2.5阶段背景，形成了独有的判断。他的持仓决策都是独立完成的，不是跟随任何人。
+        </div>
+      </div>
+
+      <div class="path-card" style="border-color:#bee3f8;background:linear-gradient(135deg,#ebf8ff,#f0f9ff)">
+        <h3><span style="font-size:1.5rem">🎯</span> 路径二：仿 — 复制经过验证的持仓</h3>
+        <p>适用于：有工作/家庭，没有大量时间研究个股，但希望获得接近专业投资者的回报的投资者。</p>
+        <p>核心逻辑：李录的持仓（13F披露）代表了专业机构的研究成果。直接复制持仓，不需要自己建立框架，也能获得接近的回报。</p>
+
+        <div style="margin:16px 0">
+          <h3 style="font-size:.95rem">复制持仓的关键参数</h3>
+          <table>
+            <thead><tr><th>参数</th><th>说明</th><th>风险提示</th></tr></thead>
+            <tbody>
+              <tr><td class="td-highlight">买什么</td><td>直接复制13F前十大持仓</td><td>李录在A股/港股持仓不在13F中，需额外研究</td></tr>
+              <tr><td class="td-highlight">买多少</td><td>按李录披露的持仓比例，等比例配置</td><td>资金量级不同会导致执行差异（小资金更灵活）</td></tr>
+              <tr><td class="td-highlight">何时买</td><td>李录建仓时机（13F披露后2个月延迟）</td><td>⚠️ 这是最大的风险——李录的成本价未知</td></tr>
+              <tr><td class="td-highlight">何时卖</td><td>参考李录卖出逻辑：估值极端化 / 能力圈变化</td><td>卖出信号可能有6-12个月延迟</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="warning-box" style="margin:0">
+          <h3>⚠️ 复制持仓的最大风险</h3>
+          <ul>
+            <li><strong>买入时机差：</strong>13F披露有45天延迟，李录可能已在高点卖出</li>
+            <li><strong>成本未知：</strong>不知道李录的买入价，无法判断安全边际</li>
+            <li><strong>仓位同步：</strong>李录减持时你可能没有同步减持</li>
+            <li><strong>心理压力：</strong>下跌时无法判断是李录加仓机会还是错误</li>
+          </ul>
+        </div>
+
+        <div class="path-example">
+          <strong>实践建议：</strong>与其完全复制持仓，不如「复制框架 + 参考持仓」。先用自己的四问框架诊断李录的持仓，确认自己也认同护城河逻辑，再决定是否跟随。完全复制而没有框架支撑，下跌时无法坚持。
+        </div>
+      </div>
+
+      <div class="path-card" style="border-color:#e9d8fd;background:linear-gradient(135deg,#faf5ff,#f3e8ff)">
+        <h3><span style="font-size:1.5rem">👁</span> 路径三：跟 — 理解背后的逻辑</h3>
+        <p>适用于：暂时没有资金投资、或只想学习投资思维，不追求直接财务回报的投资者。</p>
+        <p>核心逻辑：把李录持仓作为「案例研究对象」，理解每一个决策背后的逻辑，培养自己的商业判断力。这个路径的回报是认知层面的，不是财务层面的。</p>
+
+        <div style="margin:16px 0">
+          <h3 style="font-size:.95rem">跟踪学习法：每季度问自己三个问题</h3>
+          <ul class="checklist">
+            <li><div class="check"></div><span>李录这季度有没有新增或减持持仓？背后的逻辑可能是什么？</span></li>
+            <li><div class="check"></div><span>我的持仓和李录的持仓相比，有什么根本性的认知差异？</span></li>
+            <li><div class="check"></div><span>这一季度中，有没有哪个商业事件可以用护城河四要素来解释？</span></li>
+          </ul>
+        </div>
+
+        <div class="path-example">
+          <strong>实践案例：</strong>2020年COVID恐慌期间（Ep18提到），李录大幅加仓 Alphabet。这不是恐慌抛售，而是极端悲观定价下的加仓机会。理解这个逻辑，比复制他的持仓更有价值——它教会你在别人恐惧时如何思考。
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-top:20px">
+        <h3>🎯 三条路径的选择指南</h3>
+        <p style="font-size:.85rem;margin-bottom:12px;color:#2c5282">根据你的时间和精力，选择最适合的路径，可以同时采用多条：</p>
+        <table>
+          <thead><tr><th>你的情况</th><th>推荐路径</th><th>具体做法</th></tr></thead>
+          <tbody>
+            <tr><td>全职工作繁忙，没有时间研究</td><td>路径三（跟）</td><td>每季度读13F，理解持仓逻辑，积累商业判断</td></tr>
+            <tr><td>有固定储蓄，希望稳健增值</td><td>路径二（仿）+ 路径三</td><td>复制前三大持仓，定期审视，问自己「如果李录现在加仓，我会跟吗」</td></tr>
+            <tr><td>对投资有浓厚兴趣，愿意深度学习</td><td>路径一（学）+ 路径二</td><td>系统学习系列，建立自己的框架，用四问框架验证持仓</td></tr>
+            <tr><td>已有投资经验，但收益不稳定</td><td>路径一（学）+ 四问框架自诊断</td><td>用四问框架重新审视持仓，补足认知缺口</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 第四节：季度复盘 -->
+    <div class="section">
+      <h2>四、季度复盘检查清单</h2>
+
+      <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:20px">每季度结束后的第一个周末，用这个清单做一次持仓复盘。参考 Episode 18 李录决策六步骤中的「持续跟踪」要素。</p>
+
+      <div class="grid">
+        <div class="card">
+          <h3><span class="card-icon">📊</span> 持仓层面</h3>
+          <ul class="checklist" style="font-size:.82rem">
+            <li><div class="check"></div><span>我的持仓还回答得出「四问」吗？</span></li>
+            <li><div class="check"></div><span>有没有持仓的护城河逻辑发生了变化？</span></li>
+            <li><div class="check"></div><span>有没有新的竞争者/颠覆者进入了我的能力圈？</span></li>
+            <li><div class="check"></div><span>我的持仓有没有出现 Episode 19 的危险信号？</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="card-icon">🌍</span> 宏观层面</h3>
+          <ul class="checklist" style="font-size:.82rem">
+            <li><div class="check"></div><span>中国2.5阶段的制度轨道有变化吗？（供给侧改革持续/倒退？）</span></li>
+            <li><div class="check"></div><span>利率/汇率/政策环境对我的持仓有什么影响？</span></li>
+            <li><div class="check"></div><span>我的持仓所在行业有没有重大的监管变化？</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="card-icon">🧠</span> 认知层面</h3>
+          <ul class="checklist" style="font-size:.82rem">
+            <li><div class="check"></div><span>这一季度有没有因为情绪做了非理性决策？</span></li>
+            <li><div class="check"></div><span>我对哪些持仓的认知实际上加深了？哪些反而模糊了？</span></li>
+            <li><div class="check"></div><span>有没有学到新的东西可以更新我的框架？</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quote" style="margin-top:20px">
+        <p class="quote-text">「每季度做一次强制复盘，是防止「禀赋效应」最有效的方法——把自己从持仓中抽离出来，重新以旁观者身份审视。」</p>
+        <p class="quote-source">综合整理，基于 Episode 18 知行合一障碍分析</p>
+      </div>
+    </div>
+
+    <!-- 第五节：危险信号 -->
+    <div class="section">
+      <h2>五、危险信号：什么时候应该卖出</h2>
+
+      <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:20px">卖出是投资中最难的一步。Episode 19 有线电视公司案例的核心教训是：护城河消失时不要等待。本节列出五个必须认真对待的卖出信号。</p>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon" style="background:var(--red)">!</div>
+          <div class="lesson-body">
+            <div class="lesson-title">信号一：护城河的根本来源变了</div>
+            <div class="lesson-sub">政府授予的垄断被管制解除侵蚀；技术变革摧毁了转换成本</div>
+            <blockquote>
+              <strong>参考案例：</strong>有线电视公司（Episode 19）——政府开放有线电视管制后，原有的「政府授予专营权」护城河一夜之间消失，股价暴跌 90%。<br><br>
+              <strong>自检问题：</strong>这只股票的定价权，是来自市场竞争，还是来自政府管制？如果是后者，管制放松时会发生什么？
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon" style="background:var(--red)">!</div>
+          <div class="lesson-body">
+            <div class="lesson-title">信号二：管理层诚信出现疑问</div>
+            <div class="lesson-sub">关联交易掏空、高溢价并购、频繁更换审计师</div>
+            <blockquote>
+              <strong>自检问题：</strong>这家公司过去三年的关联交易是否频繁且缺乏商业合理性？并购决策是否经常高溢价？审计师是否频繁更换？这些都是管理层诚信风险的经典信号。
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon" style="background:var(--red)">!</div>
+          <div class="lesson-body">
+            <div class="lesson-title">信号三：估值进入极端乐观区间</div>
+            <div class="lesson-sub">PE超过历史中枢50%以上，且没有新的护城河支撑</div>
+            <blockquote>
+              <strong>参考案例：</strong>茅台卖出案例（Ep13引用）——PE超过30倍后，李录选择卖出。即使是最强的护城河，在极端高估时也应该考虑减持。<br><br>
+              <strong>自检标准：</strong>如果这只股票明天涨停，你还愿意持有吗？如果不愿意，说明估值可能已经极端化了。
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon" style="background:var(--orange)">!</div>
+          <div class="lesson-body">
+            <div class="lesson-title">信号四：发现更好的机会，机会成本显著</div>
+            <div class="lesson-sub">有更好的标的，且确定性显著高于现有持仓</div>
+            <blockquote>
+              <strong>前提条件：</strong>这个机会必须是「能力圈内 + 四问框架全部通过」的机会，而不是追逐热点。只有在机会成本显著且确定性更高时，才应该卖出原有持仓。
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <div class="lesson-header">
+          <div class="lesson-icon" style="background:var(--orange)">!</div>
+          <div class="lesson-body">
+            <div class="lesson-title">信号五：资产配置比例超过个人承受范围</div>
+            <div class="lesson-sub">单只股票或单一行业仓位超过舒适区</div>
+            <blockquote>
+              <strong>参考：</strong>cbond的A/B/C三类仓位配置逻辑（MEMORY.md记录）。即使是最强的护城河，如果仓位超过舒适区，下跌时的心理压力会导致非理性决策。
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="warning-box" style="margin-top:20px">
+        <h3>⚠️ 卖出时的两个认知偏差（来自 Episode 16 知行合一）</h3>
+        <ul>
+          <li><strong>禀赋效应：</strong>「我已经持有了这么久，再等等吧」——这是把「持有时间」当作持有理由，是最常见的非理性持仓陷阱</li>
+          <li><strong>逃避痛苦：</strong>「卖出就等于承认错误」——实际上，识别错误并纠正，是专业投资者最重要的能力之一。Episode 19 的有线电视案例，是李录自己亏损换来的教训</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 第六节：系列闭环视图 -->
+    <div class="section">
+      <h2>六、系列完整闭环视图</h2>
+
+      <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:20px">这一节把 Episodes 15-21 的完整认识论闭环画出来，帮助你理解每期在整体框架中的位置。</p>
+
+      <div style="background:#f8f9fc;border-radius:12px;padding:24px;margin:16px 0;font-size:.85rem;line-height:2;overflow-x:auto">
+        <div style="text-align:center;font-weight:700;color:var(--navy);margin-bottom:12px;font-size:.95rem">李录投资框架 · 完整认识论闭环</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px;margin:0 auto">
+          <div style="background:#fff;border-radius:8px;padding:16px;border:1px solid #e2e8f0;text-align:center">
+            <div style="font-size:.7rem;background:var(--navy);color:#fff;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:8px">认识论地基 · Why</div>
+            <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">Episode 17</div>
+            <div style="color:var(--text-muted)">文明3.0框架<br>铁律 + 熵增</div>
+          </div>
+          <div style="background:#fff;border-radius:8px;padding:16px;border:1px solid #e2e8f0;text-align:center">
+            <div style="font-size:.7rem;background:var(--navy);color:#fff;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:8px">认识论核心 · What</div>
+            <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">Episode 16</div>
+            <div style="color:var(--text-muted)">知行合一<br>为什么95%的人做不到</div>
+          </div>
+          <div style="background:#fff;border-radius:8px;padding:16px;border:1px solid #e2e8f0;text-align:center">
+            <div style="font-size:.7rem;background:var(--gold);color:#0a1628;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:8px">方法论 · How</div>
+            <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">Episode 15</div>
+            <div style="color:var(--text-muted)">护城河四要素<br>五种形态 + AI时代</div>
+          </div>
+          <div style="background:#fff;border-radius:8px;padding:16px;border:1px solid #e2e8f0;text-align:center">
+            <div style="font-size:.7rem;background:var(--red);color:#fff;padding:2px 8px;border-radius:4px;display:inline-block;margin-bottom:8px">实战反面教材</div>
+            <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">Episode 19</div>
+            <div style="color:var(--text-muted)">有线电视案例<br>护城河第一定律</div>
+          </div>
+        </div>
+        <div style="background:var(--navy);border-radius:8px;padding:16px;margin-top:12px;text-align:center;color:#fff;font-size:.82rem">
+          <div style="font-size:.7rem;color:var(--gold);margin-bottom:4px;font-weight:700">结构性补完 · Where</div>
+          <div style="font-weight:700;font-size:.9rem;margin-bottom:4px">Episode 20</div>
+          <div>Buffett vs 李录框架对比 · 验证 / 补充 / 边界修正</div>
+        </div>
+        <div style="background:var(--gold);border-radius:8px;padding:16px;margin-top:12px;text-align:center;color:#0a1628;font-size:.82rem">
+          <div style="font-size:.7rem;font-weight:700;margin-bottom:4px;opacity:.8">行动落地 · Do</div>
+          <div style="font-weight:700;font-size:.95rem;margin-bottom:4px">Episode 21（本期）</div>
+          <div>四问自诊断 + 三条行动路径 + 季度复盘 + 危险信号</div>
+        </div>
+      </div>
+
+      <div class="info-box" style="margin-top:20px">
+        <h3>系列20期的核心贡献总结</h3>
+        <p style="font-size:.85rem;margin-bottom:12px;color:#2c5282">学完这个系列，你学到的不只是「李录的持仓」，而是：</p>
+        <ul style="line-height:2.2">
+          <li><strong>护城河判断力：</strong>能够区分真正的商业护城河和政府授予的垄断（这是最常见的投资陷阱）</li>
+          <li><strong>时代判断力：</strong>能够理解宏观制度环境对企业护城河的影响（Episode 17 的核心价值）</li>
+          <li><strong>知行合一执行力：</strong>理解为什么知道却做不到，并建立具体的应对机制（封闭基金/强制复盘）</li>
+          <li><strong>错误识别力：</strong>能够在护城河消失前识别警告信号，而不是等到股价暴跌才行动</li>
+          <li><strong>框架边界意识：</strong>知道李录框架的适用范围，知道什么情况下需要修正或补充</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 第七节：系列总结 -->
+    <div class="section">
+      <div class="summary-box">
+        <h2>系列终章</h2>
+        <p>李录说：「价值投资是唯一能长期跑赢市场的投资方式。」但更重要的是另一句话：「价值投资知易行难。」</p>
+        <p style="margin-top:16px">这个系列做了它能做的事情——建立认知框架。但最终的执行，只能靠你自己。</p>
+        <p style="margin-top:16px">从四问框架开始，从下一季度复盘开始，从读完本期内容后审视自己的第一只持仓开始。<strong>行动，才是价值投资最后的护城河。</strong></p>
+      </div>
+
+      <div class="next-box">
+        <h3>继续深入这个系列</h3>
+        <p style="font-size:.88rem;color:var(--text-muted);margin-top:8px">从以下入口继续学习，或直接进入持仓案例研究：</p>
+        <div class="next-links">
+          <a href="modernization-framework-episode15.html" class="next-link">护城河框架（Ep15）</a>
+          <a href="modernization-framework-episode16.html" class="next-link">知行合一（Ep16）</a>
+          <a href="modernization-framework-episode17.html" class="next-link">文明3.0框架（Ep17）</a>
+          <a href="modernization-framework-episode19.html" class="next-link">有线电视案例（Ep19）</a>
+          <a href="alphabet-investment-deep.html" class="next-link">Alphabet深度分析</a>
+          <a href="psbc-investment-deep.html" class="next-link">邮储银行深度分析</a>
+          <a href="byd-investment-deep.html" class="next-link">比亚迪经典案例</a>
+          <a href="pdd-investment-deep.html" class="next-link">PDD深度分析</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>李录投资研究系列 · Episodes 1-21 · 2026</p>
+    <p style="margin-top:6px">本页面为学习笔记，内容综合整理自公开资料 | <a href="index.html">返回研究首页</a></p>
+  </footer>
+</main>
+
+<script>
+document.getElementById('uni-hamburger').addEventListener('click',function(){
+  document.getElementById('uni-overlay').classList.add('active');
+  document.getElementById('uni-drawer').classList.add('active');
+});
+document.getElementById('uni-overlay').addEventListener('click',function(){
+  document.getElementById('uni-overlay').classList.remove('active');
+  document.getElementById('uni-drawer').classList.remove('active');
+});
+document.getElementById('uni-drawer-close').addEventListener('click',function(){
+  document.getElementById('uni-overlay').classList.remove('active');
+  document.getElementById('uni-drawer').classList.remove('active');
+});
+function setTheme(dark){
+  document.body.classList.toggle('dark-mode',dark);
+  localStorage.setItem('theme',dark?'dark':'light');
+}
+var saved=localStorage.getItem('theme');
+if(saved==='dark'||(!saved&&window.matchMedia('(prefers-color-scheme: dark)').matches))setTheme(true);
+document.getElementById('uni-theme-btn').addEventListener('click',function(){
+  setTheme(!document.body.classList.contains('dark-mode'));
+});
+document.getElementById('uni-drawer-theme-btn').addEventListener('click',function(e){
+  e.preventDefault();
+  setTheme(!document.body.classList.contains('dark-mode'));
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闻泰科技 (600745) - 李录研究</title>
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:#92400e;text-decoration:none;font-size:0.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,0.15);transition:all 0.2s}
+.back-link:hover{background:rgba(201,162,39,0.2)}
+h1{font-size:2rem;color:#1a202c;margin-bottom:12px;line-height:1.3}
+.subtitle{color:#2d3748;font-size:1rem;margin-bottom:30px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.meta-item{background:#e8ecf0;padding:7px 16px;border-radius:20px;font-size:0.82rem;color:#2d3748}
+.lead{background:linear-gradient(135deg,#1a2a3a,#0d1e30);color:#e2e8f0;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
+.lead h2{color:#ffd700;margin-bottom:12px;font-size:1.15rem}
+.lead p{margin-bottom:10px;color:#f0f4f8}
+.lead p:last-child{margin-bottom:0}
+.toc{background:#f8f9fa;border:1px solid #d0d7e0;border-radius:12px;padding:22px 28px;margin-bottom:40px}
+.toc h3{color:#1a365d;margin-bottom:12px;font-size:1rem}
+.toc ol{margin-left:20px;color:#2d3748}
+.toc li{margin-bottom:6px;font-size:0.9rem;color:#2d3748}
+.toc a{color:#92400e;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.section{margin-bottom:55px}
+h2{font-size:1.35rem;color:#ffffff;margin-bottom:18px;padding-bottom:10px;border-bottom:3px solid #ffd700;display:inline-block}
+h3{font-size:1.05rem;color:#1a365d;margin:28px 0 10px}
+p{color:#333;margin-bottom:13px;line-height:1.7}
+.timeline{margin:20px 0}
+.tl-item{margin-bottom:28px;padding-left:20px}
+.tl-date{font-weight:700;color:#c9a227;font-size:0.85rem;margin-bottom:4px}
+.tl-title{font-weight:600;color:#1a365d;margin-bottom:4px;font-size:0.95rem}
+.tl-content{color:#555;font-size:0.88rem}
+.lesson-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:22px;margin-bottom:16px;border-left:4px solid #c9a227}
+.lesson-card h4{color:#1a365d;margin-bottom:9px;font-size:0.98rem}
+.lesson-card p,.lesson-card li{color:#555;font-size:0.88rem;margin-bottom:5px}
+.lesson-card ul{margin:8px 0 0 18px}
+.lesson-card li{margin-bottom:6px}
+.insight-card{background:#fff;border:2px solid #c9a227;border-radius:14px;padding:28px;margin:30px 0}
+.insight-card h4{color:#c9a227;margin-bottom:14px;font-size:1rem}
+.insight-card p{color:#c8d6e8}
+.insight-card li{color:#c8d6e8}
+.insight-card p{color:#555;font-size:0.9rem;margin-bottom:10px}
+.insight-card ul{margin:8px 0 0 18px}
+.insight-card li{color:#555;font-size:0.9rem;margin-bottom:6px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:25px 0;text-align:center}
+.num-box{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:18px 8px}
+.num-box .big{font-size:1.7rem;font-weight:700;color:#c9a227}
+.num-box .label{font-size:0.8rem;color:#888;margin-top:5px}
+.highlight{background:#0d1b2a;border:1px solid #c9a227;border-radius:10px;padding:20px 25px;margin:20px 0}
+.highlight h4{color:#92400e;margin-bottom:9px}
+.highlight p,.highlight li{color:#555;font-size:0.9rem;margin-bottom:5px}
+.quote-box{background:#0d1b2a;border-left:5px solid #c9a227;padding:22px 28px;margin:25px 0;border-radius:0 10px 10px 0;font-style:italic;color:#e8f0fa}
+.quote-box cite{display:block;margin-top:10px;font-size:0.85rem;color:#888;font-style:normal}
+.dual-panel{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+.panel{padding:22px;border-radius:12px}
+.panel-bull{background:#f0fff4;border:1px solid #bbf7d0}
+.panel-bull h4{color:#276749;margin-bottom:9px;font-size:0.95rem}
+.panel-bear{background:#fff5f5;border:1px solid #fecaca}
+.panel-bear h4{color:#c53030;margin-bottom:9px;font-size:0.95rem}
+.panel p,.panel li{color:#444;font-size:0.88rem}
+.panel ul{margin:8px 0 0 18px}
+.panel li{margin-bottom:6px}
+.red-card{background:#fff5f5;border:1px solid #fecaca;border-left:4px solid #991b1b!important}
+.red-card h4{color:#991b1b}
+.table-wrap{overflow-x:auto;margin:20px 0}
+table{width:100%;border-collapse:collapse;font-size:0.88rem}
+th{background:#1a365d;color:#fff;padding:10px 14px;text-align:left;font-weight:600}
+td{padding:10px 14px;border-bottom:1px solid #e7e5e4;color:#333}
+tr:nth-child(even){background:#f9fafb}
+.source-note{font-size:0.78rem;color:#999;border-top:1px solid #eee;padding-top:14px;margin-top:28px}
+.confidence-tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:0.75rem;font-weight:600;margin-left:8px;vertical-align:middle}
+.conf-high{background:#d1fae5;color:#065f46}
+.conf-medium{background:#fef3c7;color:#92400e}
+.conf-low{background:#fee2e2;color:#991b1b}
+.conf-note{font-size:0.78rem;color:#999;margin-top:4px;display:block;margin-bottom:15px}
+.footer{background:#f8f9fa;color:#888;text-align:center;padding:28px;margin-top:60px;font-size:0.82rem}
+@media(max-width:700px){.dual-panel{grid-template-columns:1fr}.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}}
+
+/* 公开资料库样式 */
+.doc-list{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.doc-card{display:flex;gap:14px;background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:14px 16px;transition:box-shadow .15s}
+.doc-card:hover{box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.doc-date{font-size:.72rem;font-weight:700;color:#fff;background:#1a365d;padding:4px 9px;border-radius:6px;white-space:nowrap;align-self:flex-start;margin-top:2px}
+.doc-body{flex:1;min-width:0}
+.doc-title{font-size:.9rem;font-weight:600;color:#1a365d;margin-bottom:4px}
+.doc-desc{font-size:.82rem;color:#666;margin-bottom:6px;line-height:1.5}
+.doc-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.doc-link{font-size:.78rem;color:#c9a227;text-decoration:none;padding:2px 8px;border:1px solid #c9a227;border-radius:6px;transition:background .15s}
+.doc-link:hover{background:rgba(201,162,39,.1)}
+.doc-tag{font-size:.72rem;padding:2px 8px;border-radius:6px;font-weight:600}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-green{background:#dcfce7;color:#166534}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-purple{background:#f3e8ff;color:#6b21a8}
+@media(max-width:600px){.doc-card{flex-direction:column;gap:8px}.doc-date{width:fit-content}}
+</style>
+</head>
+<body>
+<div id="uni-navbar"><div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div><div class="uni-links"><a href="index.html" class="uni-link">笔记</a><a href="timeline.html" class="uni-link">进度</a><a href="holdings.html" class="uni-link">持仓</a><div class="uni-dropdown"><a class="uni-link">资料库</a><div class="uni-dropdown-menu"><a href="about.html">关于李录</a><a href="principles.html">投资原则</a><a href="video_study.html">视频</a><a href="quotes.html">语录</a><a href="bookshelf.html">书架</a><a href="glossary.html">术语</a><a href="faq.html">FAQ</a></div></div></div><button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button></div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer"><div id="uni-drawer-header"><div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div><button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button></div><a href="index.html" class="uni-link">首页</a><a href="about.html" class="uni-link">关于李录</a><a href="principles.html" class="uni-link">投资原则</a><a href="holdings.html" class="uni-link">持仓</a><a href="faq.html" class="uni-link">FAQ</a><a href="video_study.html" class="uni-link">视频</a><a href="quotes.html" class="uni-link">语录</a><a href="bookshelf.html" class="uni-link">书架</a></div>
+
+<div class="page">
+<a class="back-link" href="index.html">&#8592; 返回索引</a>
+<h1>闻泰科技 (600745.SH)</h1>
+<p class="subtitle">安世半导体控制权之争、ODM战略出售与12英寸晶圆自主突破——2026年深度情景分析</p>
+<div class="meta">
+  <span class="meta-item">2026-04-22</span>
+  <span class="meta-item">A股 · 半导体</span>
+  <span class="meta-item" style="background:#fee2e2;color:#991b1b">⚠️ 高风险</span>
+  <span class="meta-item">市值约350亿元</span>
+</div>
+
+<div class="toc"><h3>目录</h3><ol>
+<li><a href="#overview">公司概况</a></li>
+<li><a href="#crisis">一、核心危机：安世半导体控制权之争</a></li>
+<li><a href="#strategy">二、战略转型：ODM业务出售</a></li>
+<li><a href="#breakthrough">三、重大突破：12英寸晶圆自主量产</a></li>
+<li><a href="#financials">四、财务状况</a></li>
+<li><a href="#outlook">2026年前景与情景分析</a></li>
+<li><a href="#employees">六、员工与社会稳定追踪</a></li>
+<li><a href="#risks">七、风险因素</a></li>
+<li><a href="#pure-semiconductor">八、纯粹半导体业务评估</a></li>
+<li><a href="#convertible-bond">九、闻泰转债专项分析</a></li>
+<li><a href="#documents">十、公开资料库</a></li>
+</ol></div>
+
+<div class="lead"><h2>这是一笔什么样的投资</h2>
+<p>闻泰科技正处极端高风险高不确定性的历史拐点。其核心资产<strong>安世半导体（Nexperia）</strong>质地全球顶级，但荷兰政府干预完全超出商业逻辑。<br><br>
+<strong>技术自主性基本通过</strong>（良率92%+）、<strong>客户留存有条件通过</strong>（欧洲车企被迫接受新条件）、<strong>财务可持续性风险显著上升</strong>。<br><br>
+闻泰转债（110081）已跌破面值（98.845元），转股溢价率-2.58%，YTM 8.74%。核心变量是<strong>4月30日年报</strong>——若审计出具"无法表示意见"将触发*ST退市警示。</p>
+</div>
+
+<div class="insight-card">
+<h4>核心结论</h4>
+<p>这笔投资的本质是：一个质地顶级但股权归属不明的资产，价格里包含了过大的地缘政治风险溢价。闻泰的价值不是0，但也不是现在的市值——关键变量是安世的最终归属。转债（108元以下有到期保护）是更合适的工具，正股风险收益不对称。</p>
+</div>
+
+<!-- 1. 公司概况 -->
+<div class="section" id="overview"><h2>公司概况</h2>
+<p>闻泰科技成立于2006年，2017年通过中茵股份借壳上市，2018年以"蛇吞象"方式收购<strong>安世半导体（Nexperia）</strong>——原飞利浦半导体部门，拥有60余年行业经验，汽车半导体市场占有率全球第一。收购总价超<strong>340亿元人民币</strong>。</p>
+<div class="nums">
+<div class="num-box"><div class="big">~1.6万</div><div class="label">功率器件产品种类</div></div>
+<div class="num-box"><div class="big">全球第1</div><div class="label">汽车半导体市占率</div></div>
+<div class="num-box"><div class="big">340亿+</div><div class="label">收购安世总投入</div></div>
+</div>
+<p>公司目前业务：<strong>半导体业务</strong>（安世半导体，IDM模式）+ <strong>已出售的ODM业务</strong>（卖给立讯精密43.89亿元）。</p>
+</div>
+
+<!-- 2. 核心危机 -->
+<div class="section" id="crisis"><h2>一、核心危机：安世半导体控制权之争<span class="confidence-tag conf-high">✅ 事实性</span></h2>
+<div class="timeline">
+<div class="tl-item"><div class="tl-date">2024年12月</div><div class="tl-title">美国BIS将闻泰列入实体清单</div><div class="tl-content">美国商务部将闻泰列入出口管制实体清单，荷兰随后跟进收紧管制</div></div>
+<div class="tl-item"><div class="tl-date">2025年9月30日</div><div class="tl-title">荷兰部长令下达</div><div class="tl-content">荷兰经济事务与气候政策部对安世下达部长令，要求全球30个主体不得调整资产、知识产权，有效期一年</div></div>
+<div class="tl-item"><div class="tl-date">2025年10月6日</div><div class="tl-title">荷兰企业法庭接管安世</div><div class="tl-content">荷兰企业法庭要求张学政交出安世股份控制权，移交第三方托管</div></div>
+<div class="tl-item"><div class="tl-date">2026年2月12日</div><div class="tl-title">阿姆斯特丹上诉法院裁决</div><div class="tl-content">法院维持临时措施，扩大调查至安世临时管理层</div></div>
+<div class="tl-item"><div class="tl-date">2026年3月3日</div><div class="tl-title">荷兰安世禁用中国区办公系统</div><div class="tl-content">Nexperia B.V.对中国区所有员工办公账号批量禁用，Office 365、SAP系统无法访问</div></div>
+<div class="tl-item"><div class="tl-date">2026年3月11日</div><div class="tl-title">印度资产争议提交SIAC仲裁</div><div class="tl-content">立讯联滔就印度业务资产包争议提交新加坡国际仲裁中心（SIAC）</div></div>
+<div class="highlight"><h4>索赔意向</h4><p>闻泰科技在2025年第五次临时股东大会上表示，若相关问题无法在6个月内得到妥善解决，将启动国际仲裁，<strong>索赔金额最高可达80亿美元（约580亿元人民币）</strong>。</p></div>
+</div>
+
+
+</div><!-- 3. 战略转型 -->
+<div class="section" id="strategy"><h2>二、战略转型：ODM业务出售<span class="confidence-tag conf-high">✅ 事实性</span></h2>
+<p>闻泰的ODM（产品集成业务）本质是<strong>电子产品原始设计制造商</strong>，包括智能手机、平板电脑、IoT设备等。</p>
+<div class="table-wrap"><table>
+<tr><th>交易细节</th><th>内容</th></tr>
+<tr><td>收购方</td><td>立讯精密（"果链女王"王来春）</td></tr>
+<tr><td>交易作价</td><td><strong>43.89亿元</strong></td></tr>
+<tr><td>交割状态</td><td>9家标的公司中8家已完成，印度资产包因仲裁存在变数</td></tr>
+<tr><td>ODM毛利率</td><td>2024年仅<strong>2.49%</strong>，拖累整体盈利</td></tr>
+</table></div>
+<div class="lesson-card"><h4>为什么必须卖？</h4><ul>
+<li>2024年营收<strong>584亿元</strong>，占总营收~79%，但毛利率仅<strong>2.73%</strong>，实际净亏损</li>
+<li>被列入美国实体清单后，客户和供应商"扩大化解读"，订单骤降</li>
+<li>以<strong>43.89亿元</strong>出售给立讯精密，交割已进入尾声</li>
+</ul></div>
+</div>
+
+<!-- 4. 重大突破 -->
+<div class="section" id="breakthrough"><h2>三、重大突破：12英寸晶圆自主量产<span class="confidence-tag conf-medium">💡 公开报道</span></h2>
+<div class="highlight"><h4>2026年3月9日 — 里程碑事件</h4><p>安世半导体中国宣布，基于自主研发的<strong>12英寸平台</strong>，成功实现双极分立器件<strong>小批量量产</strong>，同时完成全新ESD保护器件的试验。这是中国半导体"去荷兰化"的关键一步。</p></div>
+<div class="lesson-card"><h4>突破意义</h4><ul>
+<li>荷兰安世断供近半年后，安世中国实现晶圆制造自主突破</li>
+<li>荷兰母公司目前<strong>没有</strong>12英寸晶圆产能（用的是德国8英寸）</li>
+<li>晶圆制造通过国内代工厂：泰匠芯（3万片/月）、上海积塔半导体、芯联集成等</li>
+<li>东莞封测基地月产能<strong>超10亿颗</strong>，全球最大车规级封测基地之一</li>
+</ul></div>
+</div>
+
+<!-- 5. 财务状况 -->
+<div class="section" id="financials"><h2>四、财务状况<span class="confidence-tag conf-high">✅ 公告数据</span></h2>
+<div class="table-wrap"><table>
+<tr><th>时期</th><th>归母净利润</th><th>备注</th></tr>
+<tr><td>2024年</td><td style="color:#c53030"><strong>-28.33亿元</strong></td><td>同比-340%</td></tr>
+<tr><td>2025年前三季度</td><td style="color:#276749"><strong>+15.13亿元</strong></td><td>同比+993%</td></tr>
+<tr><td><strong>2025年全年预告</strong></td><td style="color:#c53030"><strong>-90亿至-135亿元</strong></td><td>Q4单季亏损超前三季总和</td></tr>
+</table></div>
+<div class="nums">
+<div class="num-box"><div class="big">735亿</div><div class="label">2024年营收</div></div>
+<div class="num-box"><div class="big">~29元</div><div class="label">正股价(2026-04-21)</div></div>
+<div class="num-box"><div class="big">~99元</div><div class="label">转债价(2026-04-20)</div></div>
+</div>
+<p>Q4亏损主因是荷兰部长令触发资产减值（非实际经营恶化）。<strong>上半年半导体业务</strong>：营收78.25亿元（+11.23%），毛利率37.89%，净利润12.61亿元（+17.05%）——基本面稳健。</p>
+</div>
+
+<!-- 6. 2026前景 -->
+<div class="section" id="outlook"><h2>2026年前景与情景分析</h2>
+<h3>关键变量：安世控制权归属</h3>
+<div class="dual-panel">
+<div class="panel panel-bull"><h4>情景A（30%）：荷兰让步</h4><ul>
+<li>安世半导体重回闻泰麾下</li>
+<li>ODM出售资金到账</li>
+<li>叠加功率半导体涨价周期，业绩大幅反转</li>
+</ul></div>
+<div class="panel panel-bear"><h4>情景B（40%）：持续僵持</h4><ul>
+<li>控制权维持受限</li>
+<li>安世中国12英寸逐步放量</li>
+<li>索赔谈判进行中，规模受限但仍具竞争力</li>
+</ul></div>
+</div>
+<div class="panel panel-bear" style="margin-bottom:20px"><h4>情景C（30%）：彻底切割</h4><ul>
+<li>安世半导体永久脱离闻泰</li>
+<li>闻泰获得巨额赔偿（仲裁索赔80亿美元）</li>
+<li>但实体资产归零，需重新布局</li>
+</ul></div>
+<div class="lesson-card"><h4>功率半导体涨价潮（已发生）</h4><p>新洁能、华润微、中微半导等十余家企业已宣布涨价10%-80%。安世作为全球功率半导体龙头将直接受益。</p></div>
+</div>
+
+<!-- 7. 员工与社会稳定 -->
+<div class="section" id="employees"><h2>六、员工与社会稳定追踪<span class="confidence-tag conf-high">✅ 公开报道</span></h2>
+<div class="table-wrap"><table>
+<tr><th>时间</th><th>实体</th><th>事件</th><th>严重程度</th></tr>
+<tr><td>2025年10月</td><td>安世半导体（东莞）</td><td>实施"上四休三"缩短工时</td><td style="background:#fff5f5">出货限制</td></tr>
+<tr><td>2025年10月</td><td>安世中国（全体）</td><td>发布致员工信：强调运营及薪资福利正常</td><td style="background:#fff8e1">安抚姿态</td></tr>
+<tr><td>2026年3月</td><td>安世中国</td><td>批量禁用Office 365/SAP</td><td style="background:#fff5f5">系统中断</td></tr>
+<tr><td>2026年3月</td><td>安世中国</td><td>12英寸晶圆小批量量产突破</td><td style="background:#f0fff4">利好</td></tr>
+</table></div>
+<div class="lesson-card"><h4>政府介入信号</h4><ul>
+<li><strong>商务部表态</strong>：强调"荷兰政府对企业内部事务的不当干预，导致全球产供链混乱"</li>
+<li><strong>出口管制反制</strong>：中国商务部禁止安世半导体（中国）出口特定成品零部件</li>
+<li><strong>东莞黄江工厂</strong>（安世中国最大封装测试基地）：约<strong>4000人</strong></li>
+</ul></div>
+</div>
+
+<!-- 8. 风险因素 -->
+<div class="section" id="risks"><h2>七、风险因素<span class="confidence-tag conf-high">✅ 事实性</span></h2>
+<div class="lesson-card"><h4>实体清单持续影响</h4><p>美国出口管制对供应链的持续压制，供应商和客户的扩大化解读加剧经营压力</p></div>
+<div class="lesson-card"><h4>安世控制权不确定性</h4><p>荷兰政府干预完全超出商业逻辑，法律路径漫长且结果不可预测</p></div>
+<div class="lesson-card"><h4>半导体价格周期</h4><p>成熟制程功率器件价格波动大，2026年涨价持续性待观察</p></div>
+<div class="lesson-card"><h4>印度资产仲裁</h4><p>立讯与闻泰印度业务争议已提交SIAC，仲裁结果存在不确定性</p></div>
+</div>
+
+<!-- 9. 纯粹半导体业务评估 -->
+<div class="section" id="pure-semiconductor"><h2>八、纯粹半导体业务评估<span class="confidence-tag conf-medium">💡 合理推断</span></h2>
+<h3>剥离后：收入结构彻底重构</h3>
+<div class="nums">
+<div class="num-box"><div class="big">~79%</div><div class="label">ODM占营收比例（2024）</div></div>
+<div class="num-box"><div class="big">0%</div><div class="label">剥离后ODM占比</div></div>
+<div class="num-box"><div class="big">~100%</div><div class="label">半导体占营收（剥离后）</div></div>
+</div>
+<h3>半导体单飞盈利能力</h3>
+<div class="table-wrap"><table>
+<tr><th>指标</th><th>H1 2025</th><th>Q3 2025</th></tr>
+<tr><td>营收</td><td><strong>78.25亿</strong></td><td><strong>43亿</strong></td></tr>
+<tr><td>同比</td><td>+11.23%</td><td>+12.20%</td></tr>
+<tr><td>毛利率</td><td><strong>37.89%</strong></td><td><strong>34.56%</strong></td></tr>
+<tr><td>净利润</td><td><strong>12.61亿</strong></td><td><strong>7.24亿</strong></td></tr>
+</table></div>
+<div class="table-wrap"><table>
+<tr><th>年度</th><th>预测营收</th><th>归母净利润</th><th>PE（2026E）</th></tr>
+<tr><td>2025E</td><td>356亿</td><td>19亿</td><td>~31倍</td></tr>
+<tr><td><strong>2026E</strong></td><td><strong>183亿（纯半导体）</strong></td><td><strong>26亿</strong></td><td>~23倍</td></tr>
+<tr><td>2027E</td><td>204亿</td><td><strong>31亿</strong></td><td>~19倍</td></tr>
+</table></div>
+<div class="highlight"><h4>核心判断</h4><p>剥除安世控制权的地缘政治风险后，闻泰剩余的半导体业务本身是<strong>盈利稳定、门槛极高、客户黏性强</strong>的资产。问题不是"这个业务能不能活"，而是"这个业务最终归谁"。</p></div>
+</div>
+
+<!-- 10. 闻泰转债专项分析 -->
+<div class="section" id="convertible-bond"><h2>九、闻泰转债（110081）专项分析<span class="confidence-tag conf-high">✅ 事实数据</span></h2>
+<div class="nums">
+<div class="num-box"><div class="big">86亿</div><div class="label">发行总额</div></div>
+<div class="num-box"><div class="big">85.97亿</div><div class="label">未转股余额</div></div>
+<div class="num-box"><div class="big">2027-07-28</div><div class="label">到期日（剩余1.3年）</div></div>
+</div>
+<div class="table-wrap"><table>
+<tr><th>条款</th><th>内容</th></tr>
+<tr><td>发行规模</td><td>86亿元，每张100元，8600万张</td></tr>
+<tr><td>票面利率</td><td>第1-6年：0.10%/0.20%/0.30%/1.50%/1.80%/2.00%（累进）</td></tr>
+<tr><td>初始转股价</td><td>96.67元/股</td></tr>
+<tr><td><strong>当前转股价</strong></td><td><strong style="color:#c53030">32.66元/股（2026年4月10日下修生效）</strong></td></tr>
+<tr><td><strong>正股现价</strong></td><td><strong style="color:#c53030">29.29元（-6.66%，4月21日）</strong></td></tr>
+<tr><td><strong>最新转债价</strong></td><td><strong style="color:#c53030">98.845元（跌破面值，4月20日收盘）</strong></td></tr>
+<tr><td><strong>到期收益率</strong></td><td><strong style="color:#c53030">8.74%（市场定价高风险）</strong></td></tr>
+<tr><td><strong>转股溢价率</strong></td><td><strong style="color:#c53030">-2.58%（已转负，市场罕见）</strong></td></tr>
+<tr><td>信用评级</td><td>A（2026年2月下调，展望负面）</td></tr>
+<tr><td>到期赎回价</td><td>108元/张（含最后一年利息2%）</td></tr>
+<tr><td><strong>年报风险</strong></td><td><strong style="color:#991b1b">⚠️ 4月30日披露，若审计出具"无法表示意见"将触发*ST</strong></td></tr>
+</table></div>
+
+<h3>转债暴跌始末（2026年4月）</h3>
+<div class="lesson-card red-card"><h4>8连阴：下修利好反成利空</h4><ul>
+<li><strong>4月8日</strong>：董事会确定下修转股价至32.66元（幅度25.1%，下修到底）</li>
+<li><strong>4月9日</strong>：转债开盘冲高至116.2元，随即回落收113.746元（-1.26%），成交7.14亿</li>
+<li><strong>4月10日起</strong>：转股价生效，转债持续下行，开启8连阴</li>
+<li><strong>4月20日</strong>：收98.845元（-1.11%），正式<strong>跌破面值100元</strong>，全天成交7.28亿</li>
+<li><strong>4月21日</strong>：正股闻泰科技跌6.66%至29.29元，转债同步承压</li>
+</ul></div>
+<div class="lesson-card red-card"><h4>转债vs正股：为何背离？</h4><ul>
+<li>下修转股价本是利好，但正股持续下跌，市场开始担忧<strong>即使下修后正股仍无力上涨</strong></li>
+<li>转股溢价率-2.58%：转债价格已低于其转股价值，<strong>纯债属性已超过股性</strong></li>
+<li>核心焦虑：4月30日年报。若审计机构出具"无法表示意见"或"否定意见"，将触发<strong>*ST退市风险警示</strong></li>
+<li>兴业证券：机构资金已在抛售，基金对弱资质品种持续出库</li>
+</ul></div>
+
+<h3>转债三条路（已更新）</h3>
+<div class="lesson-card"><h4>最优路径：转股</h4><p>正股需涨超32.66×1.3=<strong>42.46元</strong>（目前仅29.29元，差距<strong>44.8%</strong>）。若成功，投资者转股，公司零偿付。</p></div>
+<div class="lesson-card"><h4>已完成：转股价下修到底</h4><p>32.66元已于4月10日生效，但正股持续下跌，转股价值仍低。</p></div>
+<div class="lesson-card red-card"><h4>底线风险：到期赎回</h4><p>若无法转股，需备85.97亿现金，按108元/张赎回。86亿规模对当前闻泰而言压力极大。</p></div>
+
+<h3>偿付资金来源（压力测试）</h3>
+<div class="lesson-card red-card"><ul>
+<li><strong>ODM出售回款</strong>：43.89亿元已到账（大部分完成交割）✅</li>
+<li><strong>半导体现金流</strong>：年化20-25亿（H1 2025 annualized），但安世控制权受限导致不确定性上升</li>
+<li><strong>合肥国资背书</strong>：重要股东，面对86亿规模能分担多少不确定</li>
+<li><strong>核心压力</strong>：86亿转债到期（2027年7月），若触发*ST+机构持续出库，局面将极其被动</li>
+</ul></div>
+
+<div class="highlight"><h4>综合结论：风险显著上升，逻辑仍在但需等待</h4>
+<p>闻泰转债的核心逻辑未变（向下108元到期保护，安世中国技术/客户面稳健），但风险已大幅暴露：<strong>转债跌破面值、转股溢价率转负、8连阴、YTM 8.74%</strong>。<br><br>
+当前最大变量不是半导体业务本身，而是<strong>4月30日年报</strong>。若审计顺利（保留意见或标准无保留），*ST风险暂时化解，转债有望快速反弹至108元附近。若出具"无法表示意见"，将引发机构新一轮抛售，跌至90-95元亦有可能。<br><br>
+<strong>操作建议：</strong>持币等待——等年报落地+正股企稳+转股溢价率收窄至0附近，再判断风险收益比。向下空间（90-95元）vs 向上空间（120-130元），前提是*ST风险化解。</p>
+</div>
+</div>
+
+<div class="source-note">数据来源：证券时报（2026-04-20）、上证报（2026-04-20）、兴业证券研报、雪球、集思录、新浪财经、东方财富网、百度百科。数据截止<strong>2026年4月21日</strong>。<br><strong>免责声明：</strong>本文仅供研究参考，不构成任何投资建议。市场有风险，投资需谨慎。</div>
+
+<!-- 资料库 - 重写版本 -->
+<div class="section" id="documents"><h2>十、公开资料库<span class="confidence-tag conf-high">✅ 公开资料</span></h2>
+<p style="color:#555;font-size:0.9rem;margin-bottom:16px">闻泰科技（600745）上市（2016借壳）以来与安世半导体相关的全部公开资料，按【大事时间轴→分类资料】组织。部分PDF链接若无法访问，请直接前往<a href="http://www.sse.com.cn/disclosure/listedinfo/summaries/indexDetail.shtml?SEQ=334598226" target="_blank">上交所公告页面</a>查询全文。</p>
+
+<h3>⏱ 安世半导体大事时间轴（按时间倒序）</h3>
+<div class="doc-list">
+<div class="doc-card"><div class="doc-date">2026-03</div><div class="doc-body"><div class="doc-title">安世中国12英寸晶圆突破 + 立讯提起SIAC仲裁</div><div class="doc-desc">安世中国宣布12英寸双极分立器件小批量量产（3月9日）；立讯就印度业务资产包向新加坡国际仲裁中心提起仲裁（3月11日）；荷兰安世批量禁用中国员工账号（3月3日）</div><div class="doc-meta"><span class="doc-tag tag-red">最新</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2026-02</div><div class="doc-body"><div class="doc-title">荷兰法庭裁决 + 业绩预告亏损135亿</div><div class="doc-desc">企业法庭2月11日裁决：批准启动正式调查，临时措施继续维持；1月31日公告预计2025年净利润-90亿至-135亿；2月25日临时股东大会</div><div class="doc-meta"><span class="doc-tag tag-red">重要</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-11</div><div class="doc-body"><div class="doc-title">荷兰部长令暂停 + ODM资产出售启动</div><div class="doc-desc">荷兰大臣11月19日宣布部长令暂停；立讯精密签署ODM业务收购协议（11月），总价43.89亿元</div><div class="doc-meta"></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-10</div><div class="doc-body"><div class="doc-title">荷兰接管——"荷兰安世之乱"爆发</div><div class="doc-desc">荷兰经济部9月30日部长令冻结安世全球资产；10月6日企业法庭裁决：停止张学政董事职务、股权托管第三方；10月13日复牌跌停</div><div class="doc-meta"><span class="doc-tag tag-red">核心危机</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2024-12</div><div class="doc-body"><div class="doc-title">美国实体清单 + NWF出售收尾</div><div class="doc-desc">美国商务部将闻泰科技列入实体清单；NWF出售正式完成（2022-11英国强制审查→2023-11协议→2024-03完成）</div><div class="doc-meta"></div></div></div>
+<div class="doc-card"><div class="doc-date">2021-07</div><div class="doc-body"><div class="doc-title">安世收购英国NWF晶圆厂</div><div class="doc-desc">安世半导体宣布收购英国Newport Wafer Fab，2021年8月完成交割。2022年被英国政府依据《2021年国家安全与投资法》强制要求剥离</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2020-09</div><div class="doc-body"><div class="doc-title">完成100%控股安世半导体</div><div class="doc-desc">闻泰科技以3.66亿元中标合肥广坤LP份额，完成对安世半导体100%控股（2018-2020年累计斥资超340亿元）</div><div class="doc-meta"><span class="doc-tag tag-green">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2020-06</div><div class="doc-body"><div class="doc-title">第二次收购——剩余25.55%股权</div><div class="doc-desc">发行股份+现金方式收购，63.34亿元，持股升至98.23%</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2019-12</div><div class="doc-body"><div class="doc-title">完成74.46%控股，纳入合并报表</div><div class="doc-desc">闻泰持股安世半导体74.46%，开始并表，半导体业务正式纳入营收</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2019-06</div><div class="doc-body"><div class="doc-title">证监会审核通过 + 上交所纪律处分</div><div class="doc-desc">6月6日获证监会有条件通过；上交所同月发文通报批评闻泰科技重组程序违规（停牌逾5个月、多次拖延问询函回复）</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2018-04</div><div class="doc-body"><div class="doc-title">竞拍安世——"蛇吞象"开始</div><div class="doc-desc">合肥中闻金泰联合体以114.35亿元竞得安世集团33.66%份额（首付70亿+配资45亿杠杆），闻泰自有资金仅17亿元</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+</div>
+
+<h3>📋 官方公告（上交所）</h3>
+<div class="doc-list">
+<div class="doc-card"><div class="doc-date">2026-02-12</div><div class="doc-body"><div class="doc-title">关于子公司经营管理情况的进展公告</div><div class="doc-desc">荷兰企业法庭裁决——批准启动正式调查，临时措施继续维持</div><div class="doc-meta"><span class="doc-tag tag-red">重要</span><a class="doc-link" href="https://stockmc.xueqiu.com/202602/600745_20260212_L5K9.pdf" target="_blank">PDF原文</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2026-01-31</div><div class="doc-body"><div class="doc-title">2025年年度业绩预告</div><div class="doc-desc">预计归母净利润-90亿至-135亿元，因安世控制权受限确认资产减值</div><div class="doc-meta"><span class="doc-tag tag-red">重要</span><a class="doc-link" href="https://stockmc.xueqiu.com/202601/600745_20260131_6V28.pdf" target="_blank">PDF原文</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-07-10</div><div class="doc-body"><div class="doc-title">关于2024年年报信息披露监管问询函的回复</div><div class="doc-desc">上交所问询：货币资金与有息负债并存原因、境外资产受限情况、募集资金使用等</div><div class="doc-meta"><a class="doc-link" href="https://file.finance.qq.com/finance/hs/pdf/2025/07/10/1224119488.PDF" target="_blank">PDF原文</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-05-16</div><div class="doc-body"><div class="doc-title">重大资产出售报告书（草案）</div><div class="doc-desc">ODM业务出售给立讯精密，交易作价43.89亿元，含9家标的公司股权</div><div class="doc-meta"><span class="doc-tag tag-purple">重大交易</span><a class="doc-link" href="https://file.finance.qq.com/finance/hs/pdf/2025/05/17/1223573526.PDF" target="_blank">PDF原文</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-05-23</div><div class="doc-body"><div class="doc-title">关于2024年年度报告的信息披露监管问询函</div><div class="doc-desc">上交所发函问询：货币资金、有息负债、境外资产、商誉减值等</div><div class="doc-meta"><a class="doc-link" href="http://notice.10jqka.com.cn/api/pdf/ec58cd114d5581c5.pdf" target="_blank">年报全文PDF</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-02-25</div><div class="doc-body"><div class="doc-title">2026年第一次临时股东大会决议公告</div><div class="doc-desc">回应股东关切：杨沐任董事长、推进安世中国区业务、安世控制权处置进展</div><div class="doc-meta"><a class="doc-link" href="http://www.sse.com.cn/disclosure/listedinfo/summaries/indexDetail.shtml?SEQ=334598226" target="_blank">上交所链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-02-10</div><div class="doc-body"><div class="doc-title">关于重大资产出售的进展公告</div><div class="doc-desc">披露ODM资产出售最新进展，印度业务资产包涉仲裁</div><div class="doc-meta"><a class="doc-link" href="http://www.sse.com.cn/disclosure/listedinfo/summaries/indexDetail.shtml?SEQ=334596540" target="_blank">上交所链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-03</div><div class="doc-body"><div class="doc-title">重大资产出售公告（ODM业务剥离给立讯精密）</div><div class="doc-desc">拟出售5家子公司全部股权+3家业务资产包，总价43.89亿元，全部现金</div><div class="doc-meta"><span class="doc-tag tag-purple">重大交易</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2023-11-08</div><div class="doc-body"><div class="doc-title">安世半导体出售英国NWF公告</div><div class="doc-desc">安世拟以1.77亿美元向美国Vishay转让NWF母公司NEPTUNE 6的100%股权（英国强制审查结果）</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2021-07-05</div><div class="doc-body"><div class="doc-title">安世半导体宣布收购英国NWF晶圆厂</div><div class="doc-desc">安世与NEPTUNE 6签署收购协议，后于2021年8月完成交割。2022年被英国政府强制要求剥离</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2019-06-06</div><div class="doc-body"><div class="doc-title">重大资产重组获得中国证监会审核通过</div><div class="doc-desc">闻泰科技发行股份购买安世集团控制权，获有条件通过</div><div class="doc-meta"><span class="doc-tag tag-green">历史</span><span class="doc-tag tag-blue">并购</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2018-10-25</div><div class="doc-body"><div class="doc-title">发行股份及支付现金购买资产并募集配套资金暨关联交易意向预案</div><div class="doc-desc">正式预案：收购GP/LP份额间接持有安世控制权。停牌超5个月后披露，遭上交所多次问询催复牌</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2018-09-17</div><div class="doc-body"><div class="doc-title">重大资产购买暨关联交易报告书（草案）</div><div class="doc-desc">闻泰科技披露72亿元收购安世集团上层基金的GP/LP份额，触发重大资产重组程序</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2018-04-24</div><div class="doc-body"><div class="doc-title">关于竞拍取得安世集团部分投资份额的公告</div><div class="doc-desc">全资孙公司合肥中闻金泰联合体以114.35亿元成功竞拍安世集团33.66%权益（首付70亿+配资45亿）</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2019-06</div><div class="doc-body"><div class="doc-title">上交所纪律处分决定书 〔2019〕62号</div><div class="doc-desc">通报批评：重大资产重组决策程序瑕疵、停复牌不审慎、未按期披露重组预案草案</div><div class="doc-meta"><span class="doc-tag tag-red">监管</span><a class="doc-link" href="http://www.sse.com.cn/disclosure/credibility/supervision/measures/criticism/c/10109148/files/cac31e14e3ed4b76b8b9cd05e7e2dc1f.pdf" target="_blank">PDF原文</a></div></div></div>
+</div>
+
+<h3>📊 财务报告</h3>
+<div class="doc-list">
+<div class="doc-card"><div class="doc-date">2024年报</div><div class="doc-body"><div class="doc-title">闻泰科技2024年年度报告</div><div class="doc-desc">营收736亿元（+20%），归母净利润-28.33亿（-340%），半导体业务毛利率37.5%</div><div class="doc-meta"><a class="doc-link" href="http://notice.10jqka.com.cn/api/pdf/ec58cd114d5581c5.pdf" target="_blank">PDF全文</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025年中报</div><div class="doc-body"><div class="doc-title">闻泰科技2025年半年度报告</div><div class="doc-desc">营收253亿，半导体业务营收78.25亿（+11%），毛利率37.89%，净利润12.61亿（+17%）</div><div class="doc-meta"><a class="doc-link" href="http://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?stockid=600745&id=11421929" target="_blank">新浪财经链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025年三季报</div><div class="doc-body"><div class="doc-title">闻泰科技2025年三季度报告</div><div class="doc-desc">半导体收入43亿（+12%），中国区收入占比49.29%，Q3净利润10.4亿（+279%）</div><div class="doc-meta"><a class="doc-link" href="https://www.nbd.com.cn/articles/2025-10-24/4106352.html" target="_blank">每日经济新闻</a></div></div></div>
+</div>
+
+<h3>📈 券商研报</h3>
+<div class="doc-list">
+<div class="doc-card"><div class="doc-date">2025-09-25</div><div class="doc-body"><div class="doc-title">天风证券：闻泰科技半年报点评</div><div class="doc-desc">战略调整产品集成业务，聚焦高毛利半导体。目标：2025E/2026E/2027E归母净利润19/26/31亿。评级：增持</div><div class="doc-meta"><a class="doc-link" href="https://pdf.dfcfw.com/pdf/H3_AP202509251750340100_1.pdf" target="_blank">PDF原文</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2024-10</div><div class="doc-body"><div class="doc-title">券商调整目标价至37.1~41.6元</div><div class="doc-desc">维持买入：ODM业务逐季改善，安世半导体触底在即</div><div class="doc-meta"><a class="doc-link" href="https://emweb.eastmoney.com/PC_HSF10/ResearchReport/Index?type=web&code=SH600745" target="_blank">东方财富F10</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2023-2024</div><div class="doc-body"><div class="doc-title">历年券商研报汇总（东方财富F10）</div><div class="doc-desc">包含2023年年报点评、2024一季报、半年报、三季报点评等系列报告</div><div class="doc-meta"><a class="doc-link" href="https://emweb.eastmoney.com/PC_HSF10/ResearchReport/Index?type=soft&code=SH600745" target="_blank">研报列表</a></div></div></div>
+</div>
+
+<h3>📰 媒体报道</h3>
+<div class="doc-list">
+<div class="doc-card"><div class="doc-date">2026-03-09</div><div class="doc-body"><div class="doc-title">野马财经：广东富豪卖44亿资产给果链女王</div><div class="doc-desc">闻泰ODM出售给立讯精密全解析，含安世中国12英寸突破、印度仲裁、双方交易争议背景</div><div class="doc-meta"><a class="doc-link" href="https://www.yemacaijing.com/index/view/id/91766.html" target="_blank">原文链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2026-01-30</div><div class="doc-body"><div class="doc-title">预亏135亿！闻泰科技的"天坑"究竟有多大？</div><div class="doc-desc">详细复盘安世半导体控制权始末、中荷政治博弈、底部反转可能性</div><div class="doc-meta"><a class="doc-link" href="https://h5.ifeng.com/c/vivoArticle/v002CfMooAKNa2JQU7h4YUmitMSyzXB33qQwwlzXQ5Mv-_hg__" target="_blank">凤凰网</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-10</div><div class="doc-body"><div class="doc-title">国际电子商情：失去治理权的"股东"——闻泰科技330亿收购资产陷荷兰监管困局</div><div class="doc-desc">荷兰接管安世半导体全程记录，内幕分析，含三方博弈结构图</div><div class="doc-meta"><a class="doc-link" href="https://www.esmchina.com/news/13566.html" target="_blank">原文链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-10-14</div><div class="doc-body"><div class="doc-title">21经济网/时代周报：闻泰突遭"黑天鹅"，半导体资产控制权暂时受限</div><div class="doc-desc">荷兰接管事件首发报道，包含安世管理层内部"起义"细节、荷兰大臣卡雷曼斯立场、法院裁决核心内容</div><div class="doc-meta"><a class="doc-link" href="https://www.21jingji.com/article/20251014/herald/6e0c3c7ca66baefc2215954541d4860b.html" target="_blank">原文链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-10-12</div><div class="doc-body"><div class="doc-title">观察者：营收147亿的半导体龙头资产突遭荷兰冻结</div><div class="doc-desc">荷兰部长令全文解析，包含张学政职务暂停、股权托管、第三方法官任命等关键细节</div><div class="doc-meta"><a class="doc-link" href="https://www.guancha.cn/economy/2025_10_12_793010.shtml" target="_blank">原文链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2023-11</div><div class="doc-body"><div class="doc-title">证券时报：1.77亿美元，闻泰科技"被迫"出售英国晶圆厂NWF</div><div class="doc-desc">详细记录英国NWF收购经过与被迫出售全过程，内含安世半导体对NWF投资规划被终止的背景</div><div class="doc-meta"><a class="doc-link" href="https://www.stcn.com/article/detail/1031223.html" target="_blank">原文链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-10</div><div class="doc-body"><div class="doc-title">时代周报：买得下，为何管不了？闻泰科技的野心与困局</div><div class="doc-desc">从蛇吞象并购到荷兰接管的全景分析，含张学政、商誉减值、NWF收购被逐等</div><div class="doc-meta"><a class="doc-link" href="https://www.time-weekly.com/post/324704" target="_blank">原文链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2026-02-02</div><div class="doc-body"><div class="doc-title">第一财经：全年预亏百亿，闻泰科技跌停</div><div class="doc-desc">安世控制权受限导致Q4单季亏损超100亿的详情</div><div class="doc-meta"><a class="doc-link" href="https://www.yicai.com/news/103035143.html" target="_blank">原文链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2026-02-13</div><div class="doc-body"><div class="doc-title">证券时报：商务部回应安世半导体案裁决</div><div class="doc-desc">商务部发言人：希望荷方相向而行，维护全球半导体产供链稳定</div><div class="doc-meta"><a class="doc-link" href="https://www.stcn.com/article/detail/3643852.html" target="_blank">原文链接</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2026-03-12</div><div class="doc-body"><div class="doc-title">东方财富：闻泰要想取得安世中国控制权的路径</div><div class="doc-desc">详细分析"从股权争夺转向运营独立"的战略转变路径，BIT仲裁时机分析</div><div class="doc-meta"><a class="doc-link" href="https://caifuhao.eastmoney.com/news/20260312232458685850040" target="_blank">原文链接</a></div></div></div>
+</div>
+
+<h3>⚖️ 法律与监管文件</h3>
+<div class="doc-list">
+<div class="doc-card"><div class="doc-date">2025-09-30</div><div class="doc-body"><div class="doc-title">荷兰经济事务部依据《货物供应法》接管安世半导体</div><div class="doc-desc">荷兰政府援引1952年《货物供应法》（Goederenverevoerswet），下达部长令冻结安世全球资产及知识产权</div><div class="doc-meta"><span class="doc-tag tag-red">核心法律文件</span><a class="doc-link" href="https://zh.wikipedia.org/zh-cn/%E8%8D%B7%E8%98%AD%E6%8E%A5%E7%AE%A1%E5%AE%89%E4%B8%96%E5%8D%8A%E5%B0%8E%E9%AB%94%E4%BA%8B%E4%BB%B6" target="_blank">维基百科词条</a></div></div></div>
+<div class="doc-card"><div class="doc-date">2025-10</div><div class="doc-body"><div class="doc-title">荷兰企业法庭裁决（10月6日生效）</div><div class="doc-desc">张学政董事职务被暂停，安世股权托管给独立第三方，"荷兰安世之乱"正式爆发</div><div class="doc-meta"><span class="doc-tag tag-red">核心法律文件</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2022-11</div><div class="doc-body"><div class="doc-title">英国政府依据《2021年国家安全与投资法》强制要求安世剥离NWF</div><div class="doc-desc">英国审查机关要求安世半导体出售NWF至少86%股权，将持股还原至2021年7月前水平。后经多轮谈判，2023年以1.77亿美元出售给美国Vishay</div><div class="doc-meta"><span class="doc-tag tag-red">核心法律文件</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2024-12-02</div><div class="doc-body"><div class="doc-title">美国商务部将闻泰科技列入实体清单</div><div class="doc-desc">美国BIS将闻泰科技列入实体清单，产品集成业务供应链全面受阻，客户基于谨慎性考虑扩大化执行相关规定</div><div class="doc-meta"><span class="doc-tag tag-red">重要</span></div></div></div>
+<div class="doc-card"><div class="doc-date">2023-11</div><div class="doc-body"><div class="doc-title">安世半导体出售英国NWF晶圆厂给美国威世科技</div><div class="doc-desc">英国以"国家安全"为由追溯审查，2022年被迫启动出售，2023年11月完成交割，2024年3月正式完成</div><div class="doc-meta"><span class="doc-tag tag-blue">历史</span></div></div></div>
+</div>
+
+<h3>🔗 上交所公告索引</h3>
+<div class="doc-list">
+<div class="doc-card"><div class="doc-date">持续更新</div><div class="doc-body"><div class="doc-title">上交所——闻泰科技（600745）公告摘要</div><div class="doc-desc">官方公告索引页，含全部历史公告列表，可按日期查询</div><div class="doc-meta"><a class="doc-link" href="http://www.sse.com.cn/disclosure/listedinfo/summaries/indexDetail.shtml?SEQ=334598226" target="_blank">上交所公告页</a></div></div></div>
+<div class="doc-card"><div class="doc-date">持续更新</div><div class="doc-body"><div class="doc-title">东方财富——闻泰科技公司资料</div><div class="doc-desc">含历年大事记、股权结构、控股子公司信息</div><div class="doc-meta"><a class="doc-link" href="https://basic.10jqka.com.cn/600745/event.html" target="_blank">链接</a></div></div></div>
+</div>
+
+<div class="source-note" style="margin-top:24px">
+资料库最后更新：<strong>2026-04-22</strong>。PDF链接若无法访问，请直接前往<a href="http://www.sse.com.cn/disclosure/listedinfo/summaries/indexDetail.shtml?SEQ=334598226" target="_blank">上交所公告页面</a>查询。<br>
+<strong>免责声明：</strong>以上资料仅供研究参考，原始版权归各发布机构所有。
+</div>
+</div>
+</div>
+
+<footer><span>李录价值投资研究 · 仅供研究参考，不构成投资建议</span><span>数据截止 2026-04-22</span></footer>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>价值投资实践指南 — 李录四大核心概念 · 系列第16期</title>
+<meta name="description" content="李录价值投资四大核心概念：股票、安全边际、市场先生、能力圈。系统解析为何仅5%投资者真正实践价值投资，以及知行合一的障碍。系列第16期。">
+<meta property="og:title" content="价值投资实践指南 — 李录四大核心概念">
+<meta property="og:description" content="四大核心概念 + 知行合一障碍 + 早期投资案例，系统解析李录的价值投资实践框架。">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://li-lu.top/practice-of-value-investing.html">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#319795;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:var(--gold)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:var(--gold)}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+#themeBtn{background:rgba(255,255,255,.1);border:none;border-radius:6px;padding:8px 10px;cursor:pointer;color:rgba(255,255,255,.7);font-size:.85rem}
+#themeBtn:hover{background:rgba(201,162,39,.2);color:var(--gold)}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-body{padding-top:64px}
+.main-content{max-width:900px;margin:0 auto;padding:0 16px 64px;background:var(--surface);min-height:calc(100vh - 64px)}
+.back-bar{padding:12px 16px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;gap:8px;background:#f7fafc}
+.back-bar a{color:var(--gold);font-size:.85rem;font-weight:500}
+.page-header{padding:36px 16px 24px;border-bottom:2px solid var(--gold);margin-bottom:8px}
+.series-badge{display:inline-block;background:var(--navy);color:var(--gold);font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:12px;letter-spacing:.05em}
+.page-title{font-size:1.9rem;font-weight:800;color:var(--navy);line-height:1.25}
+.page-meta{color:var(--text-muted);font-size:.85rem;margin-top:8px}
+.hero-quote{background:linear-gradient(135deg,#fef9e7,#fff8e1);border-left:4px solid var(--gold);margin:24px 0;padding:20px 24px;border-radius:0 12px 12px 0;font-style:italic;color:var(--text)}
+.hero-quote source{color:var(--text-muted);font-size:.82rem;font-style:normal;display:block;margin-top:8px}
+.section{padding:8px 0 32px}
+h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 16px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+h3{font-size:.95rem;font-weight:700;color:var(--navy);margin:20px 0 10px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.card{background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px}
+.card h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.card p{font-size:.83rem;color:var(--text-muted);line-height:1.6}
+.card.highlight{background:linear-gradient(135deg,#fff9e6,#fffdf5);border-color:#f0d080}
+blockquote{background:#f7fafc;border-left:3px solid var(--gold);margin:12px 0;padding:12px 18px;color:var(--text-muted);font-size:.88rem;border-radius:0 8px 8px 0}
+blockquote strong{color:var(--navy)}
+.core-four-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:16px}
+.core-item{background:var(--navy);color:#fff;border-radius:12px;padding:18px 20px}
+.core-item h4{color:var(--gold);font-size:.88rem;font-weight:700;margin-bottom:10px}
+.core-item p{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.65}
+.core-item .num{font-size:1.6rem;font-weight:800;color:var(--gold);opacity:.6;float:right;line-height:1}
+.stat-row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+.stat-box{background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px;flex:1;min-width:120px;text-align:center}
+.stat-box .num{font-size:1.8rem;font-weight:800;color:var(--navy)}
+.stat-box .label{font-size:.78rem;color:var(--text-muted);margin-top:4px}
+.stat-box.highlight{background:linear-gradient(135deg,#fff9e6,#fffdf5);border-color:#f0d080}
+.stat-box.highlight .num{color:var(--gold)}
+.barrier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:16px}
+.barrier-card{background:#fff5f5;border:1px solid #fed7d7;border-radius:12px;padding:16px 18px}
+.barrier-card h4{color:#c53030;font-size:.88rem;font-weight:700;margin-bottom:8px}
+.barrier-card p{font-size:.82rem;color:#742a2a;line-height:1.65}
+.principle-card{background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px;margin-top:10px}
+.principle-card h4{font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.principle-card p{font-size:.82rem;color:var(--text-muted);line-height:1.65}
+.rel-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:.84rem}
+.rel-table th{background:var(--navy);color:var(--gold);padding:9px 14px;text-align:left;font-weight:600;border-radius:8px 8px 0 0}
+.rel-table td{padding:8px 14px;border-bottom:1px solid #e2e8f0;vertical-align:top}
+.rel-table tr:last-child td{border-bottom:none}
+.rel-table tr:nth-child(even){background:#f7fafc}
+.badge-green{background:#c6f6d5;color:#22543d;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700}
+.badge-warn{background:#fefcbf;color:#744210;padding:2px 8px;border-radius:10px;font-size:.7rem;font-weight:700}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:16px}
+.compare-card{background:#f7fafc;border:1px solid #e2e8f0;border-radius:12px;padding:16px 18px}
+.compare-card h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.compare-card table{width:100%;font-size:.8rem;border-collapse:collapse}
+.compare-card td{padding:4px 6px;border-bottom:1px solid #e2e8f0;vertical-align:top;color:var(--text-muted)}
+.compare-card td:first-child{font-weight:600;color:var(--navy);width:40%}
+.footer{padding:32px 16px;text-align:center;color:var(--text-muted);font-size:.8rem;border-top:1px solid #e2e8f0;margin-top:24px}
+.footer a{color:var(--gold)}
+</style>
+</head>
+<body>
+<nav id="uni-navbar">
+  <div class="uni-brand">李录研究 <span>·</span> Li Lu</div>
+  <div class="uni-links">
+    <a class="uni-link" href="index.html">首页</a>
+    <a class="uni-link" href="about.html">关于</a>
+    <a class="uni-link" href="principles.html">原则</a>
+    <a class="uni-link" href="holdings.html">持仓</a>
+    <a class="uni-link" href="video_study.html">视频</a>
+  </div>
+  <button id="uni-hamburger" onclick="toggleDrawer()" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </button>
+  <button id="themeBtn" onclick="toggleTheme()">🌙</button>
+</nav>
+<div id="uni-overlay" onclick="toggleDrawer()"></div>
+<div id="uni-drawer">
+  <div id="uni-drawer-header">
+    <div class="uni-drawer-brand">李录研究 <span>·</span></div>
+    <button id="uni-drawer-close" onclick="toggleDrawer()">✕</button>
+  </div>
+  <a class="uni-link active" href="practice-of-value-investing.html">价值投资实践</a>
+  <a class="uni-link" href="moat-framework.html">护城河框架</a>
+  <a class="uni-link" href="investment-framework.html">投资框架</a>
+  <a class="uni-link" href="index.html">首页</a>
+  <a class="uni-link" href="about.html">关于</a>
+  <a class="uni-link" href="principles.html">原则</a>
+  <a class="uni-link" href="holdings.html">持仓</a>
+  <a class="uni-link" href="video_study.html">视频学习</a>
+</div>
+
+<div id="uni-body">
+<div class="main-content">
+
+<div class="back-bar">
+  <a href="index.html">← 首页</a>
+  <span style="color:#c0c0c0;font-size:.8rem">|</span>
+  <a href="principles.html">原则</a>
+</div>
+
+<div class="page-header">
+  <div class="series-badge">系列第16期 · 核心理论</div>
+  <h1 class="page-title">价值投资实践指南</h1>
+  <div class="page-meta">四大核心概念 + 仅5%实践的原因 + 知行合一障碍 + 早期投资案例</div>
+</div>
+
+<div class="hero-quote">
+  "This is value investing's basic intellectual framework. Its logic is simple and clear, and it's not hard at all to understand. Moreover, this is the only investment style I know which can deliver superior risk-adjusted returns to investors over the long-term."
+  <source>— 李录，SSRN #3964616《The Practice of Value Investing》，2019北大演讲原文</source>
+</div>
+
+<!-- ========== 一、核心统计数据 ========== -->
+<div class="section">
+  <h2>一、价值投资的现实</h2>
+  <div class="stat-row">
+    <div class="stat-box highlight">
+      <div class="num">~5%</div>
+      <div class="label">长期跑赢市场的投资者</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">100%</div>
+      <div class="label">理解价值投资逻辑的人</div>
+    </div>
+    <div class="stat-box">
+      <div class="num">~95%</div>
+      <div class="label">无法知行合一</div>
+    </div>
+  </div>
+  <p style="margin-top:16px;font-size:.88rem;color:var(--text-muted)">
+    这是价值投资最反直觉的地方：<strong style="color:var(--navy)">几乎所有人都能理解这套逻辑，但几乎没有人能长期坚持执行。</strong>
+    理解 ≠ 实践。李录认为这是价值投资最核心的障碍。
+  </p>
+</div>
+
+<!-- ========== 二、四大核心概念 ========== -->
+<div class="section">
+  <h2>二、四大核心概念（Graham-Buffett-Munger框架）</h2>
+  <p style="font-size:.88rem;color:var(--text-muted);margin-bottom:16px">
+    价值投资的框架由三位思想巨人逐步建立：Benjamin Graham奠定基础，Warren Buffett将其系统化，Charlie Munger进一步升华为判断商业本质的思维模型。李录在此基础上结合中国实践。
+  </p>
+  <div class="core-four-grid">
+    <div class="core-item">
+      <span class="num">1</span>
+      <h4>股票：企业所有权</h4>
+      <p>股票是企业所有权的一部分，不只是用来交易的纸片。买股票就是买企业的一部分，要用企业所有者的心态看待投资。</p>
+    </div>
+    <div class="core-item">
+      <span class="num">2</span>
+      <h4>安全边际</h4>
+      <p>投资是对未来的预测，未来本质不可预测，因此必须留有安全边际。好价格买好公司，安全边际是应对不可预知的唯一防线。</p>
+    </div>
+    <div class="core-item">
+      <span class="num">3</span>
+      <h4>市场先生</h4>
+      <p>市场为你服务，而非为你指路。股价每天波动，市场先生情绪无常。利用他的极端情绪，而不是被他牵着走。</p>
+    </div>
+    <div class="core-item">
+      <span class="num">4</span>
+      <h4>能力圈</h4>
+      <p>通过长期研究建立能力圈，然后在圈内投资。只投自己真正理解的生意，在能力圈内追求确定性。</p>
+    </div>
+  </div>
+
+  <div class="card-grid" style="margin-top:20px">
+    <div class="card highlight">
+      <h4>🧠 框架的核心关系</h4>
+      <p>四大概念构成一个完整的决策闭环：<br>
+      <strong>能力圈</strong>（在哪投资）→ <strong>股票</strong>（买什么）→ <strong>安全边际</strong>（多少钱买）→ <strong>市场先生</strong>（怎么利用价格波动）。</p>
+    </div>
+    <div class="card">
+      <h4>📜 来源出处</h4>
+      <p>四大概念最早由 Benjamin Graham 在《证券分析》(1934) 和《聪明的投资者》(1949) 中系统阐述。Buffett-Munger 在实践中将其升华为判断商业本质的核心框架。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">⚠️ 本页内容为综合整理，非逐字引用</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 三、知行合一的障碍 ========== -->
+<div class="section">
+  <h2>三、知行合一的四大障碍</h2>
+  <p style="font-size:.88rem;color:var(--text-muted);margin-bottom:16px">
+    李录在北大演讲中多次强调：理解价值投资逻辑的人很多，但真正长期实践的人极少（~5%）。核心原因不是知识门槛，而是心理和制度障碍：
+  </p>
+  <div class="barrier-grid">
+    <div class="barrier-card">
+      <h4>🧬 障碍一：情绪波动</h4>
+      <p>人类天生对损失敏感（损失厌恶），在市场恐慌时本能地抛售，在市场狂热时本能地追涨。理性认识在情绪面前不堪一击。</p>
+    </div>
+    <div class="barrier-card">
+      <h4>📊 障碍二：短期考核压力</h4>
+      <p>专业投资者面临年度/季度考核，委托人按短期表现评价。价值投资的回报周期可能长达3-5年，短期业绩差导致被解雇或赎回。</p>
+    </div>
+    <div class="barrier-card">
+      <h4>🔄 障碍三：流动性诅咒</h4>
+      <p>股票每天可以买卖，流动性制造了"可以随时退出"的幻觉。这反而让投资者更容易在错误时机做出错误决策。</p>
+    </div>
+    <div class="barrier-card">
+      <h4>🏛️ 障碍四：制度激励错位</h4>
+      <p>资产管理机构的收费模式（按AUM收费而非按业绩收费）导致规模扩张优先于客户最优利益。管理费收入与投资者回报并不一致。</p>
+    </div>
+  </div>
+  <div class="principle-card">
+    <h4>💡 李录的应对之道</h4>
+    <p>李录在喜马拉雅资本采用长期封闭的基金结构（2000万美元起步，前7年不接受赎回），这在制度上保证了不受短期考核干扰。这是他能实践价值投资的制度基础。</p>
+  </div>
+</div>
+
+<!-- ========== 四、与普通投资者框架对比 ========== -->
+<div class="section">
+  <h2>四、价值投资 vs 短期投机：根本区别</h2>
+  <div class="compare-grid">
+    <div class="compare-card">
+      <h4>价值投资者</h4>
+      <table>
+        <tr><td>思维方式</td><td>企业所有者视角</td></tr>
+        <tr><td>收益来源</td><td>企业内在价值增长</td></tr>
+        <tr><td>时间维度</td><td>3-10年为单位</td></tr>
+        <tr><td>市场角色</td><td>利用市场错误定价</td></tr>
+        <tr><td>信息关注</td><td>企业基本面+长期趋势</td></tr>
+        <tr><td>卖出理由</td><td>股价极度高估 or 基本面变坏</td></tr>
+        <tr><td>典型持有期</td><td>5-10年以上</td></tr>
+      </table>
+    </div>
+    <div class="compare-card">
+      <h4>短期投机者</h4>
+      <table>
+        <tr><td>思维方式</td><td>交易者/价格预测者</td></tr>
+        <tr><td>收益来源</td><td>其他投资者的钱</td></tr>
+        <tr><td>时间维度</td><td>秒/分钟/日/周为单位</td></tr>
+        <tr><td>市场角色</td><td>跟随或预测价格走势</td></tr>
+        <tr><td>信息关注</td><td>技术图形/新闻/资金流向</td></tr>
+        <tr><td>卖出理由</td><td>任何短期盈利或亏损</td></tr>
+        <tr><td>典型持有期</td><td>秒到几个月</td></tr>
+      </table>
+    </div>
+  </div>
+  <p style="margin-top:14px;font-size:.85rem;color:var(--text-muted)">
+    <strong style="color:var(--navy)">核心区别：</strong>价值投资者赚的是企业创造的钱（长期，可持续）；短期投机者赚的是其他投资者的钱（零和，竞争激烈）。李录只做前者。
+  </p>
+</div>
+
+<!-- ========== 五、早期投资案例（官方专著新增内容）============ -->
+<div class="section">
+  <h2>四、早期投资案例（官方专著新增）</h2>
+  <p style="font-size:.88rem;color:var(--text-muted);margin-bottom:16px">
+    李录2019北大演讲的官方专著版本（《现代化、价值投资与中国》）比网络版多了两个重要内容：①早期有线电视公司投资案例；②对熵增理论的思考。这些案例展示了四大概念在实践中的具体应用。
+  </p>
+  <div class="card-grid">
+    <div class="card">
+      <h4>📺 有线电视公司案例</h4>
+      <p>李录在专著中首次详细描述了一个早期投资案例：公司拥有区域垄断性有线电视网络资产，现金流可预测，业务模式符合"能力圈"判断标准。该案例说明：<strong>能力圈的核心是知道自己不知道什么</strong>。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">⚠️ 细节待核实，网络版无此案例</p>
+    </div>
+    <div class="card">
+      <h4>🔬 熵增理论思考</h4>
+      <p>专著版新增了对熵增（Entropy）的哲学思考：在一个熵增的世界里，长期维持竞争优势（护城河）本身就是对自然规律的挑战。好的投资就是找到那些能够在局部抵抗熵增、实现持续复利的商业体。</p>
+      <p style="margin-top:8px;font-size:.82rem;color:var(--text-muted)">李录在论文第13章中深刻指出：中国几千年私有经济始终在「自由→繁荣→管制→衰落→再自由」的循环中，商人财富随政府干预而不可预测地变化。这种对「运气的信任」已渗透进中国商业文化的基因——直到今天，世界各大赌场的赌客中，中国人占比极高。<strong>熵增理论的实战含义</strong>：在一个天然趋向混乱的系统里，只有那些能持续创造有序结构（护城河）的公司，才能对抗熵增，实现长期复利。</p>
+      <p style="margin-top:6px;font-size:.78rem;color:var(--text-muted)">来源：SSRN #3964616《A Discussion of Modernization》Ch13，置信度：✅原文引用</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 六、与护城河框架的关系 ========== -->
+<div class="section">
+  <h2>五、与护城河框架的关系</h2>
+  <p style="font-size:.88rem;color:var(--text-muted);margin-bottom:16px">
+    四大核心概念是<strong style="color:var(--navy)">认识论基础</strong>（为什么要做价值投资），护城河框架是<strong style="color:var(--navy)">方法论工具</strong>（如何具体分析一个生意）。两者共同构成李录投资体系的核心。
+  </p>
+  <table class="rel-table">
+    <tr>
+      <th>框架</th>
+      <th>解决的问题</th>
+      <th>对应四大概念</th>
+    </tr>
+    <tr>
+      <td><strong>四大核心概念</strong></td>
+      <td>投资哲学根基：买股票就是买企业、安全边际、市场先生、能力圈</td>
+      <td>认识论基础</td>
+    </tr>
+    <tr>
+      <td><strong>护城河框架</strong></td>
+      <td>实战分析工具：四问框架、四要素、五种形态、AI时代判断</td>
+      <td>方法论工具</td>
+    </tr>
+    <tr>
+      <td><strong>BYD框架</strong></td>
+      <td>案例研究模板：发现经过→关键特质→买入逻辑→回调应对→正反辩论</td>
+      <td>案例分析工具</td>
+    </tr>
+    <tr>
+      <td><strong>决策六步骤</strong></td>
+      <td>执行流程：从收集信息到最终决策的系统化步骤</td>
+      <td>流程工具</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ========== 七、系列定位 ========== -->
+<div class="section">
+  <h2>六、本页在系列中的位置</h2>
+  <p style="font-size:.88rem;color:var(--text-muted)">
+    本页是李录投资体系的<strong style="color:var(--navy)">核心理论入口</strong>。建议按以下路径阅读：
+  </p>
+  <div class="card-grid" style="margin-top:12px">
+    <div class="card">
+      <h4>第一步：理解为什么要做</h4>
+      <p>本页 → 四大核心概念 + 仅5%实践的原因 → 建立"知"的基础</p>
+    </div>
+    <div class="card">
+      <h4>第二步：学会怎么分析</h4>
+      <p><a href="moat-framework.html">护城河框架</a> → 四问框架 + 四要素 + 五种形态 → 建立"行"的能力</p>
+    </div>
+    <div class="card">
+      <h4>第三步：看真实案例</h4>
+      <p><a href="alphabet-investment-deep.html">Alphabet案例</a>、<a href="psbc-investment-deep.html">邮储银行案例</a> → 在真实投资中应用框架</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  数据来源：SSRN #3964616《The Practice of Value Investing》· 北大光华演讲（2019-11-29）<br>
+  官方专著《现代化、价值投资与中国》收录完整版 · 置信度：综合整理（四大概念均源自Graham-Buffett-Munger框架）<br>
+  <a href="index.html">返回首页</a> · <a href="principles.html">李录原则</a> · <a href="moat-framework.html">护城河框架</a>
+</div>
+
+</div><!-- end main-content -->
+</div><!-- end uni-body -->
+
+<script>
+function toggleDrawer(){document.getElementById('uni-overlay').classList.toggle('open');document.getElementById('uni-drawer').classList.toggle('open')}
+function toggleTheme(){document.body.classList.toggle('dark-mode');localStorage.setItem('theme',document.body.classList.contains('dark-mode')?'dark':'light');document.getElementById('themeBtn').textContent=document.body.classList.contains('dark-mode')?'☀️':'🌙'}
+(function(){if(localStorage.getItem('theme')==='dark'||(window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches&&!localStorage.getItem('theme'))){document.body.classList.add('dark-mode');document.getElementById('themeBtn').textContent='☀️'}})();
+/* dark mode styles */
+var dark=document.createElement('style');dark.textContent=`body.dark-mode{--bg:#0f1923;--surface:#1a2a3a;--text:#e2e8f0;--text-muted:#8fa3c0;--text-light:#a0aec0}body.dark-mode .back-bar{background:#141f2e;border-color:#2d3f52}body.dark-mode .page-header{border-color:var(--gold)}body.dark-mode .card,body.dark-mode .compare-card,body.dark-mode .principle-card{background:#141f2e;border-color:#2d3f52}body.dark-mode .core-item{background:#0f1923;border:1px solid #2d3f52}body.dark-mode .stat-box{background:#141f2e;border-color:#2d3f52}body.dark-mode .stat-box.highlight{background:#1a2a0f;border-color:#3d4f2f}body.dark-mode .barrier-card{background:#1a0f0f;border-color:#3d2020}body.dark-mode .rel-table tr:nth-child(even){background:#141f2e}body.dark-mode .funnel{background:#141f2e}body.dark-mode .footer{border-color:#2d3f52}`;document.head.appendChild(dark);
+</script>
+</body>
+</html>

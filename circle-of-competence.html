@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>能力圈：李录划定投资边界的框架 - 李录研究</title>
+<meta name="description" content="什么是能力圈？Bruce Greenwald的学术定义是什么？李录的三大能力圈（科技、金融、中国）如何划定？北大2019课程中的5-10年现金流预测标准是什么？本文深度拆解。">
+<meta property="og:title" content="能力圈：李录划定投资边界的框架">
+<meta property="og:description" content="Greenwald学术框架 × 李录实践智慧：如何识别、评估并坚守你的能力圈">
+<meta property="og:type" content="article">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.page{padding:110px 60px 60px;max-width:860px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent-gold,#c9a227);text-decoration:none;font-size:0.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,0.1);transition:all 0.2s}
+.back-link:hover{background:rgba(201,162,39,0.2)}
+h1{font-size:2rem;color:var(--primary-blue,#1a365d);margin-bottom:12px;line-height:1.3}
+.subtitle{color:var(--text-muted,#4a5568);font-size:1rem;margin-bottom:30px;line-height:1.6}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:0.82rem;color:var(--text-muted,#4a5568)}
+.lead{background:linear-gradient(135deg,#f8f9fa,#e2e8f0);color:#1a202c;padding:35px 40px;border-radius:16px;margin-bottom:45px;font-size:1.05rem;line-height:1.9}
+.lead h2{color:#c9a227;margin-bottom:15px;font-size:1.3rem}
+.lead p{margin-bottom:12px}
+.toc{background:#f8f9fa;border:1px solid #e0e0e0;border-radius:12px;padding:25px 30px;margin-bottom:40px}
+.toc h3{color:var(--primary-blue,#1a365d);margin-bottom:12px;font-size:1rem}
+.toc ol{margin-left:20px;color:#555}
+.toc li{margin-bottom:6px;font-size:0.9rem}
+.toc li a{color:var(--accent-gold,#c9a227);text-decoration:none}
+.toc li a:hover{text-decoration:underline}
+.section{margin-bottom:55px}
+h2{font-size:1.35rem;color:var(--primary-blue,#1a365d);margin-bottom:18px;padding-bottom:10px;border-bottom:3px solid #c9a227;display:inline-block}
+h3{font-size:1.1rem;color:var(--primary-blue,#1a365d);margin:30px 0 12px}
+p{color:#333;margin-bottom:14px;line-height:1.8}
+.quote-box{background:#faf8f0;border-left:5px solid #c9a227;padding:22px 28px;margin:25px 0;border-radius:0 10px 10px 0;font-style:italic;color:#555;line-height:1.8}
+.quote-box cite{display:block;margin-top:10px;font-size:0.85rem;color:#888;font-style:normal}
+.insight-card{background:#fff;border:2px solid #c9a227;border-radius:14px;padding:28px;margin:30px 0}
+.insight-card h4{color:#c9a227;margin-bottom:14px;font-size:1rem}
+.lesson-card{background:#f8f9fa;border-radius:12px;padding:25px;margin-bottom:18px;border-left:4px solid #c9a227}
+.lesson-card h4{color:var(--primary-blue,#1a365d);margin-bottom:10px;font-size:1rem}
+.lesson-card p{color:#555;font-size:0.9rem;margin-bottom:8px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:25px 0;text-align:center}
+.num-box{background:#f8f9fa;border-radius:10px;padding:20px 10px}
+.num-box .big{font-size:1.8rem;font-weight:700;color:#c9a227}
+.num-box .label{font-size:0.8rem;color:#888;margin-top:5px}
+.highlight{background:linear-gradient(135deg,#fff8e1,#fff);border:1px solid #ffe082;border-radius:10px;padding:20px 25px;margin:20px 0}
+.highlight h4{color:#b8860b;margin-bottom:10px}
+.source-note{font-size:0.78rem;color:#999;border-top:1px solid #eee;padding-top:15px;margin-top:30px}
+.related-section{margin-top:55px;padding-top:35px;border-top:1px solid #e0e0e0}
+.related-section h3{color:var(--primary-blue,#1a365d);margin-bottom:18px;font-size:1rem}
+.rel-links{display:flex;flex-wrap:wrap;gap:10px}
+.rel-link{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;background:#f8f9fa;border:1px solid #e0e0e0;border-radius:8px;font-size:0.85rem;color:var(--text-muted,#4a5568);text-decoration:none;transition:all 0.2s}
+.rel-link:hover{background:#fff8e1;border-color:#c9a227;color:#b8860b}
+.rel-link .rel-icon{font-size:1.1rem}
+/* Two-column layout */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:25px 0}
+@media(max-width:680px){.two-col{grid-template-columns:1fr}}
+.col-card{background:#f8f9fa;border-radius:12px;padding:22px;border:1px solid #e0e0e0}
+.col-card h4{font-size:0.95rem;color:var(--primary-blue,#1a365d);margin-bottom:10px}
+.col-card p{font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0}
+/* Five questions */
+.question-list{list-style:none;margin:20px 0;padding:0;counter-reset:q}
+.question-list li{counter-increment:q;display:flex;gap:14px;margin-bottom:18px;padding:16px 20px;background:#f8f9fa;border-radius:10px;border:1px solid #e0e0e0}
+.question-list li::before{content:counter(q);flex-shrink:0;width:28px;height:28px;background:#c9a227;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem}
+.question-list .q-text{font-size:0.9rem;color:#333;line-height:1.7}
+.question-list .q-text strong{color:var(--primary-blue,#1a365d)}
+/* Three circles */
+.three-circles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:25px 0}
+@media(max-width:680px){.three-circles{grid-template-columns:1fr}}
+.circle-card{background:#f8f9fa;border-radius:12px;padding:22px;text-align:center;border:2px solid transparent;transition:all 0.2s}
+.circle-card:hover{border-color:#c9a227;transform:translateY(-2px)}
+.circle-icon{font-size:2.2rem;margin-bottom:12px}
+.circle-name{font-size:1rem;font-weight:700;color:var(--primary-blue,#1a365d);margin-bottom:6px}
+.circle-desc{font-size:0.82rem;color:#666;line-height:1.65}
+.circle-card.tech{border-top:3px solid #3182ce}
+.circle-card.finance{border-top:3px solid #38a169}
+.circle-card.china{border-top:3px solid #e53e3e}
+/* vs card */
+.vs-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;margin:25px 0;align-items:stretch}
+.vs-left,.vs-right{background:#f8f9fa;border-radius:12px;padding:22px;border:1px solid #e0e0e0}
+.vs-center{display:flex;align-items:center;padding:0 14px;font-size:0.85rem;font-weight:700;color:#c9a227}
+.vs-left h4{color:#3182ce;margin-bottom:10px;font-size:0.95rem}
+.vs-right h4{color:#e53e3e;margin-bottom:10px;font-size:0.95rem}
+.vs-left p,.vs-right p{font-size:0.88rem;color:#555;line-height:1.7;margin-bottom:0}
+@media(max-width:600px){.vs-grid{grid-template-columns:1fr}.vs-center{padding:8px 0;justify-content:center}}
+.footer{background:#f8f9fa;color:#888;text-align:center;padding:30px;margin-top:60px;font-size:0.85rem}
+@media(max-width:700px){.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}.lead{padding:25px 22px}.three-circles{grid-template-columns:1fr}}
+</style>
+<script src="js/main.js" defer></script>
+<script>
+document.getElementById("uniHamBtn").onclick=function(){
+document.getElementById("uni-overlay").classList.add("open");document.getElementById("uni-drawer").classList.add("open")};
+document.getElementById("uniOverlay").onclick=function(){
+document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+document.getElementById("uniDrawerClose").onclick=function(){
+document.getElementById("uni-overlay").classList.remove("open");document.getElementById("uni-drawer").classList.remove("open")};
+</script>
+</head>
+<body>
+<div id="uni-navbar">
+<div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
+<div class="uni-links">
+    <a href="index.html" class="uni-link">笔记</a>
+    <a href="timeline.html" class="uni-link">进度</a>
+    <a href="holdings.html" class="uni-link">持仓</a>
+    <div class="uni-dropdown">
+      <a class="uni-link">资料库</a>
+      <div class="uni-dropdown-menu">
+        <a href="about.html">关于李录</a>
+        <a href="principles.html">投资原则</a>
+        <a href="video_study.html">视频</a>
+        <a href="quotes.html">语录</a>
+        <a href="bookshelf.html">书架</a>
+        <a href="glossary.html">术语</a>
+        <a href="faq.html">FAQ</a>
+        <a href="timeline.html">时间线</a>
+      </div>
+    </div>
+  </div>
+  <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
+</div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer">
+<div id="uni-drawer-header">
+<div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+<button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
+</div>
+<a href="/li-lu-research/index.html" class="uni-link">首页</a>
+<a href="/li-lu-research/index.html#about" class="uni-link">关于</a>
+<a href="/li-lu-research/index.html#holdings" class="uni-link">持仓</a>
+<a href="/li-lu-research/index.html#principles" class="uni-link">投资原则</a>
+<a href="/li-lu-research/index.html#study-notes" class="uni-link">研究笔记</a>
+<a href="/li-lu-research/quotes.html" class="uni-link">语录</a>
+<a href="/li-lu-research/bookshelf.html" class="uni-link">书架</a>
+<a href="/li-lu-research/index.html#faq" class="uni-link">FAQ</a>
+<div class="uni-drawer-theme">
+</div>
+</div>
+
+<div class="page">
+<a href="index.html" class="back-link">&#8592; 返回笔记</a>
+
+<h1>能力圈：投资中最重要的边界</h1>
+<p class="subtitle">不懂不碰，是价值投资的第一原则。但什么是"懂"？如何判断自己真的在能力圈内？Bruce Greenwald的学术框架与李录的二十年实践，给你一套可操作的判断标准。</p>
+
+<div class="meta">
+<span class="meta-item">📅 首次发布：2026-04-24</span>
+<span class="meta-item">📚 投资框架专题</span>
+<span class="meta-item">🎓 Bruce Greenwald × 李录</span>
+<span class="meta-item">⏱️ 阅读约需12分钟</span>
+</div>
+
+<div class="toc">
+<h3>本文结构</h3>
+<ol>
+<li><a href="#what-is">什么是能力圈：Greenwald定义 vs 通俗理解</a></li>
+<li><a href="#li-lu-circles">李录的三大能力圈：科技、金融、中国</a></li>
+<li><a href="#test">如何在能力圈内：北大2019课程的5问测试</a></li>
+<li><a href="#mistakes">能力圈 vs 舒适区：三个常见误区</a></li>
+<li><a href="#punchcard">巴菲特的打孔卡：一生只打20个孔</a></li>
+<li><a href="#related">相关阅读</a></li>
+</ol>
+</div>
+
+<div class="lead">
+<h2>为什么能力圈是投资的第一原则</h2>
+<p>价值投资的四条基本原则——股票是企业所有权、市场先生、安全边际、能力圈——几乎每本入门书都会提到。但实践中，真正阻碍投资者赚钱的，往往不是不懂安全边际，而是 <strong>错误地以为自己懂了</strong>。</p>
+<p>李录在北大2019课程中直言："<em>能力圈是价值投资的核心门槛。不懂不碰，不是保守，是纪律。</em>" 芒格则更直接："<em>知道自己不知道什么，比知道自己知道什么更重要。</em>"</p>
+</div>
+
+<!-- 一、什么是能力圈 -->
+<div class="section" id="what-is">
+<h2>一、什么是能力圈：学术定义 vs 通俗理解</h2>
+
+<p>能力圈（Circle of Competence）概念由沃伦·巴菲特在1996年首次系统阐述，但使其理论化、学术化的是哥伦比亚大学商学院教授 <strong>Bruce Greenwald</strong>——李录的导师。</p>
+
+<div class="two-col">
+<div class="col-card">
+<h4>🔬 Greenwald学术定义</h4>
+<p>能力圈的本质是 <strong>信息优势</strong>：投资者在某个领域拥有比市场更准确、更深入的认知，这种认知必须能够转化为对未来现金流的可靠预测。无法预测5-10年现金流的领域，就是能力圈之外。</p>
+</div>
+<div class="col-card">
+<h4>💬 通俗理解</h4>
+<p>"懂"不是指你知道这家公司的产品或技术，而是你能用一句话说清楚它的竞争优势来源，并且能大致估算出未来5-10年的自由现金流折现值。说不清楚 = 不懂 = 不碰。</p>
+</div>
+</div>
+
+<div class="quote-box">
+"Knowing your circle of competence is a matter of being clear where the boundaries are. The key is not how many companies you know, but knowing precisely where you don't know anything."
+<cite>— Warren Buffett, 1996 Letter to Shareholders</cite>
+</div>
+
+<h3>Greenwald的四步能力圈判断</h3>
+<p>Greenwald认为，能力圈的核心是可预测性（Predictability）。他提出四个层次的认知检验：</p>
+<div class="lesson-card">
+<h4>第一层：供给侧优势</h4>
+<p>这家公司是否有专有技术、地理位置优势、政府许可或特殊牌照，使其在供给端拥有竞争对手无法复制的优势？</p>
+</div>
+<div class="lesson-card">
+<h4>第二层：需求侧优势</h4>
+<p>客户是否因为品牌、转换成本或习惯性购买，持续选择这家公司的产品或服务，而不是轻易转向竞争对手？</p>
+</div>
+<div class="lesson-card">
+<h4>第三层：规模经济优势</h4>
+<p>随着规模增长，公司的单位成本是否显著下降？网络效应是否使大公司越来越强？</p>
+</div>
+<div class="lesson-card">
+<h4>第四层：信任护城河</h4>
+<p>李录在Greenwald框架基础上增加了最重要的维度：这家公司是否由诚信可靠的人运营？这是civilization的最高形式——"无缝的信任网络"。</p>
+</div>
+
+<p>通过这四个层次的检验，你才能判断自己是否真的在能力圈内。</p>
+</div>
+
+<!-- 二、李录的三大能力圈 -->
+<div class="section" id="li-lu-circles">
+<h2>二、李录的三大能力圈：科技、金融与中国</h2>
+
+<p>李录的能力圈，是他区别于大多数美国本土价值投资者的关键。他的投资范围高度集中于三个领域，每一个都有深刻的认知基础：</p>
+
+<div class="three-circles">
+<div class="circle-card tech">
+<div class="circle-icon">💻</div>
+<div class="circle-name">科技</div>
+<div class="circle-desc">互联网平台公司、网络效应、用户粘性。李录深度理解平台经济的逻辑，这是他最早的能力圈之一。代表投资：百度（早期）。</div>
+</div>
+<div class="circle-card finance">
+<div class="circle-icon">🏦</div>
+<div class="circle-name">金融</div>
+<div class="circle-desc">受Greenwald影响，李录对金融机构的估值和分析有独到见解。善于识别具有可持续竞争优势的金融机构。代表投资：Bank of America、PSBC。</div>
+</div>
+<div class="circle-card china">
+<div class="circle-icon">🇨🇳</div>
+<div class="circle-name">中国</div>
+<div class="circle-desc">深度理解中国市场，能够评估中国企业的公司治理风险、政治风险和会计准则差异。这是李录最独特的优势——华人投资者的本土洞察。代表投资：比亚迪、茅台。</div>
+</div>
+</div>
+
+<div class="insight-card">
+<h4>为什么李录的能力圈如此聚焦？</h4>
+<p>李录曾在演讲中解释："我花了很多年才明白，投资成功不是因为你知道很多，而是因为你知道自己的边界在哪里。在边界内投资，你会获得真正的优势；在边界外投资，你只是在赌博。"</p>
+<p>他明确表示，在自己的能力圈之外，他会选择直接说"不知道"，而不是假装理解。这也是他从不投资医药股的原因——即使医药行业看起来很诱人，他也清楚自己无法预测药品审批流程和政策风险。</p>
+</div>
+
+<div class="quote-box">
+"We aim to achieve superior returns by being long-term owners of high quality companies with substantial 'economic moat', great growth potential, and run by trustworthy people."
+<cite>— Himalaya Capital 官网</cite>
+</div>
+</div>
+
+<!-- 三、如何判断自己在能力圈内 -->
+<div class="section" id="test">
+<h2>三、北大2019课程：5问测试法</h2>
+
+<p>李录在北大2019年课程（知行合一与投资实践）中，首次系统阐述了他的能力圈判断标准。其核心是：<strong>你能否对未来5-10年的自由现金流做出可靠的预测？</strong></p>
+
+<p>如果不能，这个投资机会就不在能力圈内。以下五个问题，是判断的具体工具：</p>
+
+<ul class="question-list">
+<li class="q-item">
+<div class="q-text"><strong>问题1：你能用一句话说清楚这家公司凭什么赚钱吗？</strong><br>这家公司拥有什么可持续的竞争优势（护城河）？是供给侧、需求侧、规模经济，还是信任？如果无法简洁地表述，说明理解不够深入。</div>
+</li>
+<li class="q-item">
+<div class="q-text"><strong>问题2：你能大致预测这家公司5年后的自由现金流吗？</strong><br>不是精确数字，而是量级估算。如果连5年后公司还能不能维持当前盈利能力都不确定，这就是危险信号。</div>
+</li>
+<li class="q-item">
+<div class="q-text"><strong>问题3：这家公司的竞争优势在5年后还会存在吗？</strong><br>市场竞争格局会怎么演变？技术变革会不会颠覆这家公司的护城河？这是判断护城河可持续性的核心问题。</div>
+</li>
+<li class="q-item">
+<div class="q-text"><strong>问题4：管理层的诚信和能力是否值得信赖？</strong><br>李录最强调"信任护城河"——即使商业模式再好，如果管理层不可靠，也不在能力圈内。</div>
+</li>
+<li class="q-item">
+<div class="q-text"><strong>问题5：如果市场关闭5年，你还愿意持有这家公司吗？</strong><br>这是巴菲特的经典测试。如果答案是否定的，说明你买入的理由更多是价格投机，而非价值投资。</div>
+</li>
+</ul>
+
+<div class="highlight">
+<h4>📌 关键判断标准（Greenwald框架）</h4>
+<p>以上五个问题的本质，是检验你对这家公司未来现金流的预测能力。李录的投资框架要求：<strong>必须能对一家公司5-10年的现金流做出合理估算</strong>，才能将其纳入能力圈。如果任何一个问题让你感到不确定或模糊，这个投资机会就不属于你的能力圈。</p>
+</div>
+
+<h3>能力圈是动态的，不是静态的</h3>
+<p>李录强调，能力圈会随着认知的积累而扩展。2008年投资比亚迪时，他花了数年时间研究电动汽车行业，与王传福多次深入交流，最终才形成真正的能力圈边界。</p>
+<p>反过来，能力圈也会收缩——当一家公司进入你不熟悉的业务领域时，原本在能力圈内的投资可能变得不再熟悉。比亚迪从电池扩展到汽车时，李录做了大量额外研究来确认认知边界。</p>
+</div>
+
+<!-- 四、能力圈 vs 舒适区 -->
+<div class="section" id="mistakes">
+<h2>四、能力圈 vs 舒适区：三个常见误区</h2>
+
+<div class="vs-grid">
+<div class="vs-left">
+<h4>❌ 误区一：把"感兴趣"当"懂"</h4>
+<p>很多投资者以为关注科技新闻就懂科技股，聊过几个互联网产品就理解平台公司。但真正的能力圈需要深入的行业研究和长期的跟踪积累，兴趣只是入口，不是护城河。</p>
+</div>
+<div class="vs-center">VS</div>
+<div class="vs-right">
+<h4>✅ 正确理解：懂 = 能预测现金流</h4>
+<p>兴趣和熟悉是两回事。能力圈的判断标准是：你能否对该公司5-10年的自由现金流做出可靠预测？如果答案模糊，就不在能力圈内。</p>
+</div>
+</div>
+
+<div class="lesson-card">
+<h4>误区二：把"曾经赚过钱"当"能力圈"</h4>
+<p>在一个上涨的市场中赚钱，并不意味着你懂那家公司。很多人在牛市中买了科技股赚了钱，就以为自己懂科技股——但实际上只是享受了Beta，真正的Alpha（超额收益能力）从未验证过。</p>
+</div>
+
+<div class="lesson-card">
+<h4>误区三：能力圈太宽 = 没有能力圈</h4>
+<p>声称自己"什么都能投"的人，实际上没有真正的能力圈。巴菲特和李录的能力圈都是高度聚焦的。李录说过："我了解的行业很少，但这让我在这些行业里拥有真正的优势。"</p>
+</div>
+
+<div class="nums">
+<div class="num-box">
+<div class="big">3</div>
+<div class="label">李录核心能力圈数量</div>
+</div>
+<div class="num-box">
+<div class="big">5-10年</div>
+<div class="label">现金流预测时间跨度</div>
+</div>
+<div class="num-box">
+<div class="big">20</div>
+<div class="label">巴菲特一生打孔数量</div>
+</div>
+</div>
+</div>
+
+<!-- 五、巴菲特打孔卡 -->
+<div class="section" id="punchcard">
+<h2>五、巴菲特的打孔卡：一生只打20个孔</h2>
+
+<p>巴菲特最著名的类比之一，是将投资决策比作一张 <strong>只有20个孔的打孔卡</strong>：</p>
+
+<div class="quote-box">
+"Imagine you have a card with 20 punch holes. Each time you make an investment decision, you use up a hole. For the rest of your life, you can only make 20 investments. Would you take the 21st investment seriously? Would you even take the 5th seriously? You would be much more selective. And the quality of your decisions would improve dramatically."
+<cite>— Warren Buffett，Poor Charlie's Almanack，2009年</cite>
+</div>
+
+<h3>打孔卡类比的深层含义</h3>
+
+<div class="insight-card">
+<h4>⏳ 时间是稀缺的</h4>
+<p>一生中真正的高质量投资机会是有限的。巴菲特用这个类比说明：投资者应该极度珍惜每一次投资决策的机会，而不是频繁交易。把20个孔打完的人，一定是在等待真正致命一击的机会。</p>
+</div>
+
+<div class="insight-card">
+<h4>🎯 集中投资的力量</h4>
+<p>当你知道自己只有20次机会时，你会：① 只在真正有把握的时候出手；② 重仓出击你所知道的东西；③ 忽略短期波动，专注于长期价值。打孔卡类比是理解李录高集中持仓策略的一把钥匙。</p>
+</div>
+
+<div class="insight-card">
+<h4>🔄 与能力圈的内在联系</h4>
+<p>打孔卡和能力圈是一枚硬币的两面：正是因为你只在能力圈内投资，你就大幅减少了投资机会的数量；正是因为你极度珍惜每一次机会，你就更有动力在出手前把投资标的彻底研究清楚。李录的"致命一击"哲学，正是这两大原则的完美结合。</p>
+</div>
+
+<p>李录在2019北大课程中也提到："我每次重仓出手，都是因为这个机会真的在我的能力圈内，而且有足够的安全边际。如果没有同时满足这两个条件，我不会出手。"</p>
+</div>
+
+<!-- 六、相关链接 -->
+<div class="related-section" id="related">
+<h3>相关阅读</h3>
+<div class="rel-links">
+<a href="byd-investment-deep.html" class="rel-link"><span class="rel-icon">🚗</span> 比亚迪案例 · 能力圈实战</a>
+<a href="li_lu_investment_framework.html" class="rel-link"><span class="rel-icon">📐</span> 李录投资决策框架全文</a>
+<a href="principles.html" class="rel-link"><span class="rel-icon">📋</span> 投资原则清单</a>
+<a href="glossary.html" class="rel-link"><span class="rel-icon">📖</span> 术语表（护城河/安全边际）</a>
+<a href="video_study.html" class="rel-link"><span class="rel-icon">🎬</span> 李录北大课程视频</a>
+<a href="pku-speeches-overview.html" class="rel-link"><span class="rel-icon">🎓</span> 北大课程三部曲概览</a>
+</div>
+</div>
+
+<div class="source-note">
+<strong>参考来源：</strong> Himalaya Capital官网 · Bruce Greenwald "Value Investing" · Poor Charlie's Almanack（第三版，2009年）· 李录北大光华管理学院《价值投资》课程笔记（2015/2019/2024）· li_lu_investment_framework.md
+</div>
+
+</div>
+
+<div class="footer">
+<p>本文为李录研究站内专题，遵循李录研究内容规范。相关内容已归档至 <a href="index.html">主笔记</a>。</p>
+</div>
+
+</div>
+</body>
+</html>

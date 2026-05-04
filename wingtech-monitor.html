@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闻泰转债追踪 — 110081 监测面板 - 李录研究</title>
+<meta name="description" content="闻泰转债(110081)追踪面板：招聘数据、债价动态、关键事件周度监控。持仓周期3个月（2026-04-20至2026-07-20）。">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+.page{padding:110px 60px 60px;max-width:900px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:#c9a227;text-decoration:none;font-size:0.9rem;margin-bottom:30px;padding:8px 16px;border-radius:8px;background:rgba(201,162,39,0.1)}
+h1{font-size:1.9rem;color:#1a365d;margin-bottom:12px}
+.subtitle{color:#4a5568;font-size:1rem;margin-bottom:30px}
+.meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:35px}
+.meta-item{background:#f0f4f8;padding:7px 16px;border-radius:20px;font-size:0.82rem;color:#4a5568}
+.status-active{background:#f0fff4;border:1px solid #bbf7d0;color:#276749}
+.section{margin-bottom:48px}
+h2{font-size:1.25rem;color:#1a365d;margin-bottom:16px;padding-bottom:8px;border-bottom:3px solid #c9a227;display:inline-block}
+h3{font-size:1.05rem;color:#1a365d;margin:24px 0 10px}
+p{color:#333;margin-bottom:12px;line-height:1.7}
+.tl-item{margin-bottom:20px;padding-left:22px;position:relative}
+.tl-item::before{content:'';position:absolute;left:0;top:9px;width:9px;height:9px;background:#c9a227;border-radius:50\%;border:2px solid #fff;box-shadow:0 0 0 2px #c9a227}
+.tl-date{font-weight:700;color:#c9a227;font-size:0.8rem;margin-bottom:2px}
+.tl-title{font-weight:600;color:#1a365d;font-size:0.95rem}
+.tl-content{color:#666;font-size:0.85rem;margin-top:2px}
+table{width:100%;border-collapse:collapse;font-size:0.88rem;margin:16px 0}
+th{background:#1a365d;color:#fff;padding:10px 14px;text-align:left}
+td{padding:10px 14px;border-bottom:1px solid #e7e5e4;color:#333}
+tr:nth-child(even){background:#f9fafb}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:20px 0;text-align:center}
+.num-box{background:#fff;border:1px solid #e8e8e8;border-radius:10px;padding:16px 8px}
+.num-box .big{font-size:1.6rem;font-weight:700;color:#c9a227}
+.num-box .label{font-size:0.75rem;color:#888;margin-top:3px}
+.lesson-card{background:#fff;border:1px solid #e8e8e8;border-radius:12px;padding:20px;margin-bottom:14px;border-left:4px solid #c9a227}
+.lesson-card h4{color:#1a365d;margin-bottom:8px;font-size:0.98rem}
+.lesson-card p,.lesson-card li{color:#555;font-size:0.88rem;margin-bottom:4px}
+.lesson-card ul{margin:6px 0 0 18px}
+.highlight{background:#fffef5;border:1px solid #f0e5a0;border-radius:10px;padding:16px 20px;margin:16px 0}
+.highlight h4{color:#92400e;margin-bottom:8px}
+.highlight p,.highlight li{color:#555;font-size:0.88rem;margin-bottom:4px}
+.signal{font-size:0.82rem;padding:4px 10px;border-radius:12px;display:inline-block}
+.signal-bull{background:#f0fff4;color:#276749}
+.signal-bear{background:#fff5f5;color:#c53030}
+.signal-neutral{background:#fff8e1;color:#92400e}
+.source-note{font-size:0.78rem;color:#999;border-top:1px solid #eee;padding-top:12px;margin-top:24px}
+.footer{background:#f8f9fa;color:#888;text-align:center;padding:28px;margin-top:60px;font-size:0.82rem}
+@media(max-width:700px){.nums{grid-template-columns:1fr 1fr}.page{padding:92px 20px 40px}}
+</style>
+<script src="js/main.js" defer></script>
+</head>
+<body>
+<div id="uni-navbar"><div style="display:flex;align-items:center;gap:8px"><a href="/li-lu-research/index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div><div class="uni-links"><a href="index.html" class="uni-link">笔记</a><a href="timeline.html" class="uni-link">进度</a><a href="holdings.html" class="uni-link">持仓</a><div class="uni-dropdown"><a class="uni-link">资料库</a><div class="uni-dropdown-menu"><a href="about.html">关于李录</a><a href="principles.html">投资原则</a><a href="video_study.html">视频</a><a href="quotes.html">语录</a><a href="bookshelf.html">书架</a><a href="glossary.html">术语</a><a href="faq.html">FAQ</a></div></div></div><button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button></div>
+<div id="uni-overlay"></div>
+<div id="uni-drawer"><div id="uni-drawer-header"><div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div><button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button></div><a href="index.html" class="uni-link">笔记</a><a href="timeline.html" class="uni-link">进度</a><a href="holdings.html" class="uni-link">持仓</a><a href="about.html" class="uni-link">关于李录</a><a href="principles.html" class="uni-link">投资原则</a><a href="video_study.html" class="uni-link">视频</a><a href="quotes.html" class="uni-link">语录</a><a href="bookshelf.html" class="uni-link">书架</a></div>
+
+<div class="page">
+<a class="back-link" href="wingtech-analysis.html">&#8592; 回到闻泰分析</a>
+
+<h1>闻泰转债追踪面板</h1>
+<p class="subtitle">110081 · 闻泰科技可转换债券 · 持仓监测周期：2026-04-20 至 2026-07-20（3个月）</p>
+
+<div class="meta">
+  <span class="meta-item">&#128197; 首次建仓：2026-04-20</span>
+  <span class="meta-item status-active">&#9679; 持仓中</span>
+  <span class="meta-item">&#128200; 初始成本：~108-114元</span>
+  <span class="meta-item">&#128176; 目标：转股或到期赎回</span>
+  <span class="meta-item">&#128200; 下次更新：每周</span>
+</div>
+
+<div class="nums">
+  <div class="num-box"><div class="big" id="bond-price">--</div><div class="label">转债价格（元）</div></div>
+  <div class="num-box"><div class="big" id="stock-price">--</div><div class="label">正股价格（元）</div></div>
+  <div class="num-box"><div class="big" id="job-count">33</div><div class="label">LinkedIn职位数</div></div>
+  <div class="num-box"><div class="big">~65%</div><div class="label">情景A/B概率</div></div>
+</div>
+
+<div class="section">
+  <h2>转债核心条款</h2>
+  <table>
+    <tr><th>项目</th><th>数据</th><th>备注</th></tr>
+    <tr><td>转债代码</td><td>110081</td><td>上交所可转债</td></tr>
+    <tr><td>发行规模</td><td>86亿元</td><td>每张100元，共8600万张</td></tr>
+    <tr><td>未转股余额</td><td>85.97亿元</td><td>占发行总额99.97%</td></tr>
+    <tr><td>到期日</td><td>2027-07-28</td><td>剩余约15个月</td></tr>
+    <tr><td>当前转股价</td><td>32.66元/股</td><td>2026年4月10日向下修正生效（原43.60元）</td></tr>
+    <tr><td>正股现价</td><td>约31元（2026-04）</td><td>跌破转股价</td></tr>
+    <tr><td>信用评级</td><td>A（展望负面）</td><td>2026年2月下调</td></tr>
+    <tr><td>到期赎回价</td><td>108元/张</td><td>含最后一年利息</td></tr>
+    <tr><td>转债价格区间</td><td>105-114元</td><td>2026年3-4月</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>关键指标追踪</h2>
+  <h3>招聘数据（Leading Indicator）</h3>
+  <table>
+    <tr><th>日期</th><th>LinkedIn职位数</th><th>变化</th><th>信号</th></tr>
+    <tr id="job-row-baseline"><td>2026-04-20</td><td>33个（Nexperia中国）</td><td>基线</td><td><span class="signal signal-neutral">观察中</span></td></tr>
+    <tr><td>2026-04-21</td><td>33个（Nexperia中国）</td><td>±0（持平）</td><td><span class="signal signal-neutral">持平</span></td></tr>
+  </table>
+  <div class="lesson-card"><h4>追踪说明</h4><ul>
+    <li>职位数持续增加 → 国内业务扩张，利好</li>
+    <li>职位数持续减少 → 业务收缩，利空</li>
+    <li>Foundry/晶圆代工厂运营经理大量出现 → 临港产能扩张，利好</li>
+    <li>封测工程师职位停止 → 东莞工厂问题，利空</li>
+    <li>应用工程师（上海）大批招聘 → 国内客户增长，利好</li>
+  </ul></div>
+</div>
+
+<div class="section">
+  <h2>债价与估值追踪</h2>
+  <table>
+    <tr><th>日期</th><th>转债价格</th><th>正股价格</th><th>转股溢价率</th><th>YTM</th></tr>
+    <tr><td>2026-04-20</td><td>~108-114元（估计）</td><td>~31元</td><td>~40%+</td><td>~3-4%</td></tr>
+    <tr><td>2026-04-21</td><td>~99.96元（4月17日收盘）</td><td>~31.18元（4月17日）</td><td>+4.70%</td><td>~7.74%</td></tr>
+  </table>
+  <div class="highlight"><h4>债价心理关口</h4><ul>
+    <li><strong>105元以下</strong>：市场担忧加剧，可能反映情景C（35%概率）风险</li>
+    <li><strong>108-115元</strong>：当前合理区间，到期保护+转股预期</li>
+    <li><strong>115元以上</strong>：正股上涨预期强烈，转股概率上升</li>
+  </ul></div>
+</div>
+
+<div class="section">
+  <h2>事件时间线</h2>
+  <div class="tl-item"><div class="tl-date">2026-04-20</div><div class="tl-title">建仓买入闻泰转债</div><div class="tl-content">用户首次买入110081，持有周期3个月（至2026-07-20）</div></div>
+  <div class="tl-item"><div class="tl-date">2025-10-01</div><div class="tl-title">荷兰政府接管安世半导体</div><div class="tl-content">荷兰经济部援引《货物可用性法案》对安世实施全球运营冻结</div></div>
+  <div class="tl-item"><div class="tl-date">2025-10-26</div><div class="tl-title">荷兰安世断供东莞工厂</div><div class="tl-content">荷兰安世单方面停止向东莞ATGD封装测试工厂供应晶圆</div></div>
+  <div class="tl-item"><div class="tl-date">2026-03-03</div><div class="tl-title">中国区办公系统禁用</div><div class="tl-content">荷兰安世禁用中国区Office 365/SAP，部分生产流程中断</div></div>
+  <div class="tl-item"><div class="tl-date">2026-03-09</div><div class="tl-title">12英寸晶圆小批量量产</div><div class="tl-content">安世中国宣布自主12英寸平台突破，良率92%+</div></div>
+  <div class="tl-item"><div class="tl-date">2026-03-11</div><div class="tl-title">印度资产仲裁提交</div><div class="tl-content">立讯联滔就印度业务资产包向SIAC提请仲裁</div></div>
+  <div class="tl-item"><div class="tl-date">2026-04-待定</div><div class="tl-title">转股价下修决议</div><div class="tl-content">董事会2026年3月提议下修转股价，股东大会决议时间待定</div></div>
+</div>
+
+<div class="section">
+  <h2>情景跟踪</h2>
+  <div class="highlight"><h4>情景概率（2026-04-20）</h4><ul>
+    <li><strong>情景A（30%）：荷兰让步</strong> — 安世半导体重回闻泰麾下，ODM资金到账，功率半导体涨价周期叠加</li>
+    <li><strong>情景B（35%）：持续僵持</strong> — 控制权受限，安世中国12英寸逐步放量，索赔谈判进行</li>
+    <li><strong>情景C（35%）：彻底切割</strong> — 安世永久脱离闻泰，获得80亿美元赔偿，实体资产归零</li>
+  </ul></div>
+  <table>
+    <tr><th>情景</th><th>转债结果</th><th>概率</th></tr>
+    <tr><td>A（荷兰让步）</td><td>正股大涨，转股成功，130元+</td><td>30%</td></tr>
+    <tr><td>B（持续僵持）</td><td>债价区间震荡，108-120元</td><td>35%</td></tr>
+    <tr><td>C（彻底切割）</td><td>债价跌至95-100元，违约风险</td><td>35%</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>本周要闻摘要</h2>
+  <div class="lesson-card"><h4>2026-04-21 更新</h4><ul>
+    <li>LinkedIn安世中国职位数33个（持平上周），未见明显增减信号</li>
+    <li>转股价下修正式生效：4月10日起转股价由43.60元下调至32.66元/股，4月9日停止转股一天</li>
+    <li>转债价格跌破面值：4月17日收于99.96元（-4.13%），已连续8个交易日下跌，YTM跳升至7.74%，信用风险溢价扩大</li>
+    <li>正股600745约31.18元，低于新转股价32.66元，转股价值约95元，转股溢价率+4.7%</li>
+    <li>闻泰科技持续推进重大资产出售；BIT仲裁自4月15日起可启动，中荷谈判僵局未解</li>
+  </ul></div>
+  <div class="lesson-card"><h4>2026-04-20 更新</h4><ul>
+    <li>LinkedIn安世中国33个职位开放，晶圆代工厂运营经理（Foundry Operation Manager）为新增岗位</li>
+    <li>上海研发中心应用工程师在招，国内客户（比亚迪+30%）驱动本地化服务需求</li>
+    <li>东莞黄江封装测试基地仍在运营，"上四休三"缩短工时政策延续</li>
+    <li>闻泰转债约108-114元，接近面值，YTM 3-4%，市场定价"能还钱"而非"正股涨"</li>
+    <li>转股价下修董事会已提议，股东大会时间待定（关键催化剂）</li>
+  </ul></div>
+</div>
+
+<div class="section">
+  <h2>止损与止盈规则</h2>
+  <table>
+    <tr><th>条件</th><th>触发线</th><th>操作</th></tr>
+    <tr><td>止损线</td><td>转债价格跌破102元</td><td>考虑减仓50%</td></tr>
+    <tr><td>止损线</td><td>转债价格跌破100元</td><td>考虑清仓</td></tr>
+    <tr><td>利好兑现</td><td>正股涨超43.6元（转股价）</td><td>持有，观察溢价率</td></tr>
+    <tr><td>止盈</td><td>转债价格超过125元</td><td>考虑分批减仓</td></tr>
+    <tr><td>到期前</td><td>2027-07前3个月</td><td>无论如何债价贴近108元到期赎回价则持有到期</td></tr>
+  </table>
+  <div class="highlight"><h4>核心理由</h4><p>转债的特质是：向下有到期赎回保护（108元），向上弹性来自正股上涨带动的转股预期。在3个月建仓期内，核心观察点是<strong>转股价下修决议</strong>和<strong>招聘数据趋势</strong>，而非短期债价波动。</p></div>
+</div>
+
+<div class="source-note">
+  数据来源：LinkedIn、猎聘、BOSS直聘、东方财富、新浪财经。数据截止2026-04-21。<br>
+  <strong>免责声明：</strong>本文仅供研究参考，不构成任何投资建议。转债交易有风险，请谨慎决策。
+</div>
+</div>
+<footer><span>李录价值投资研究 · 仅供研究参考，不构成投资建议</span><span>每周六更新</span></footer>
+</body></html>
