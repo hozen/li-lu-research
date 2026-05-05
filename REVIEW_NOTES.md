@@ -1,7 +1,18 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-22 09:02
-> Last Audit: 2026-04-22 09:02 (origin/master 与 origin/dev 完全同步，均已更新至 `659a919`；已从 origin/dev/master 中移除所有 wingtech-analysis 内容，Li Lu 站点保持纯净)
+> Last Updated by Agent: 2026-05-05 09:20
+> Last Audit: 2026-05-05 09:20 (origin/master 与 origin/dev 完全同步至 `7cbf80b`；Episode 22 索引页补全)
+
+---
+
+## 待执行任务（REVIEW_NOTES）
+
+- **2026-05-05 P2-1: 核心资料静态页面叙事化重构** [待用户填充内容]
+  - 任务来源：巴菲特直接指令（2026-05-05）
+  - 核心资料（about.html/quotes.html/glossary.html/faq.html/timeline.html）→ 整理成专题文章格式（有故事性叙事），减少重复内容
+  - 书架(bookshelf.html)和下载资源(downloads.html) → 保持不变
+  - 文件位置：hozen/li-lu-research repo
+  - 注意：这是内容创作任务，需要用户提供具体叙事内容，不是纯代码修改
 
 ---
 
