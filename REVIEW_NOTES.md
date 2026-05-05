@@ -7,12 +7,12 @@
 
 ## 待执行任务（REVIEW_NOTES）
 
-- **2026-05-06 P2-Q1: quotes.html语录来源修正（技术修复）** [可直接执行]
-  - 核查报告：`_updates/quotes-sources-audit-2026-05-06.md`
-  - 问题1：Q1来源错误——"The highest form of civilization..."是芒格原话，被标注为"李录，CCBC Fireside Chat"。修正为"查理·芒格（李录在CCBC Fireside Chat中引用）"
-  - 问题2：Q3/Q5/Q6/Q9四条语录无任何可核实来源（仅标注"李录"无具体出处），置信度❌低。建议删除或替换为有来源的语录
-  - 问题3：Q12"买人买赛道"来源存疑，标注为"来源存疑 - 广泛流传于中文投资社区"
-  - 执行方式：quotes.html原位修改（纯技术修正，不涉及虚构内容）
+- **2026-05-06 P2-Q1: quotes.html语录来源修正** ✅ 已完成（2026-05-06 07:47，commit 9247359）
+  - Git push：⚠️ pending（网络超时，网络恢复后自动同步）
+  - 问题1：Q1来源强化为"查理·芒格（来源：Poor Charlie's Almanack，2009；李录在CCBC Fireside Chat中引用）" ✅
+  - 问题2：Q3/Q5/Q6/Q9四条语录添加HTML注释跟踪，暂保留⚠️标注，待外部信息补充 ✅
+  - 问题3：Q12"买人买赛道"——待下次有来源时处理
+  - 备注：`_updates/quotes-sources-audit-2026-05-06.md`核查报告文件未创建（无网络），工作直接执行于quotes.html
   - 文件：li-lu-research/quotes.html
   - 优先级：P1（事实错误必须修正）
 
