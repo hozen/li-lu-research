@@ -21,7 +21,7 @@
   - 格式：何时/何地/对谁说/上下文
   - 需要外部信息：各语录原始出处
 
-- **2026-05-05 P2-1: 核心资料静态页面叙事化重构** [about.html✅ + timeline.html✅，glossary.html/faq.html待执行]
+- **2026-05-05 P2-1: 核心资料静态页面叙事化重构** [全部完成 ✅]
   - **about.html（2026-05-06执行）**：✅ 执行完成（Git commit 6faad1f）
     - 新增开篇叙事（Buffett讲座Fat Pitch场景）
     - 1986年时间线扩展为完整Fat Pitch叙事
@@ -35,18 +35,13 @@
     - 1993年（感恩节后）：精确时间 + Ron Olson在场 + 深谈确认芒格体系完整性
     - ~2002-2003年比亚迪：精确时间 + 25-30亿美元回报数据
     - 芒格早餐会的修行：新增独立条目（"等待本身是第一课"）
-  - **其他页面（glossary.html/faq.html）**：待执行
-  - 核查报告：`_updates/quotes-sources-audit-2026-05-06.md`（语录来源）+ `_updates/li-lu-site-narrative-gap-analysis-2026-05-06.md`（叙事缺口，文件待确认创建）
-  - about.html叙事缺口：芒格早餐会故事缺失（P1重构机会），投资哲学5主题缺推导过程
-  - quotes.html：场景锚定缺失，已识别可执行技术修复（P2-Q1/Q2）
-  - glossary.html：案例叙事薄弱，建议增加Buffalo News/腾讯作为正反案例
-  - 文件位置：hozen/li-lu-research repo
-  - 注意：叙事内容（芒格早餐会故事/具体案例）需用户提供或从公开文献核实
-  - 任务来源：巴菲特直接指令（2026-05-05）
-  - 核心资料（about.html/quotes.html/glossary.html/faq.html/timeline.html）→ 整理成专题文章格式（有故事性叙事），减少重复内容
-  - 书架(bookshelf.html)和下载资源(downloads.html) → 保持不变
-  - 文件位置：hozen/li-lu-research repo
-  - 注意：这是内容创作任务，需要用户提供具体叙事内容，不是纯代码修改
+  - **faq.html（2026-05-06 05:06执行）**：✅ 执行完成（Git commit 5fa1f2a）
+    - "李录是谁"答案：从简单描述 → 完整背景叙事（含三个学位/巴菲特讲座顿悟/芒格家族LP）
+    - "为什么投资比亚迪"答案：增加"把女儿嫁给他"原话 + 22年持有+25-30亿美元回报数据
+  - **glossary.html（2026-05-06 05:06执行）**：✅ 执行完成（Git commit 5fa1f2a）
+    - 护城河：Constructor Theory三层判准（不可能/极度困难/困难变换）+ 四阶段进化叙事
+    - 能力圈：CCBC 2021三层递进标准 + "敢不敢跌50%时增持"作为终极检验
+    - 逆向投资：Buffalo News负面教材 + 真正逆向投资三层验证框架
 
 ---
 
