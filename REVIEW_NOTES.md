@@ -7,7 +7,27 @@
 
 ## 待执行任务（REVIEW_NOTES）
 
-- **2026-05-05 P2-1: 核心资料静态页面叙事化重构** [待用户填充内容]
+- **2026-05-06 P2-Q1: quotes.html语录来源修正（技术修复）** [可直接执行]
+  - 核查报告：`_updates/quotes-sources-audit-2026-05-06.md`
+  - 问题1：Q1来源错误——"The highest form of civilization..."是芒格原话，被标注为"李录，CCBC Fireside Chat"。修正为"查理·芒格（李录在CCBC Fireside Chat中引用）"
+  - 问题2：Q3/Q5/Q6/Q9四条语录无任何可核实来源（仅标注"李录"无具体出处），置信度❌低。建议删除或替换为有来源的语录
+  - 问题3：Q12"买人买赛道"来源存疑，标注为"来源存疑 - 广泛流传于中文投资社区"
+  - 执行方式：quotes.html原位修改（纯技术修正，不涉及虚构内容）
+  - 文件：li-lu-research/quotes.html
+  - 优先级：P1（事实错误必须修正）
+
+- **2026-05-06 P2-Q2: quotes.html场景锚定补充** [P2，待有来源的语录替换完成后执行]
+  - 为所有⚠️中置信度语录（Q2/Q8/Q10/Q11/Q13/Q14）补充来源场景卡
+  - 格式：何时/何地/对谁说/上下文
+  - 需要外部信息：各语录原始出处
+
+- **2026-05-05 P2-1: 核心资料静态页面叙事化重构** [部分可执行，叙事内容待用户提供]
+  - 核查报告：`_updates/quotes-sources-audit-2026-05-06.md`（语录来源）+ `_updates/li-lu-site-narrative-gap-analysis-2026-05-06.md`（叙事缺口，文件待确认创建）
+  - about.html叙事缺口：芒格早餐会故事缺失（P1重构机会），投资哲学5主题缺推导过程
+  - quotes.html：场景锚定缺失，已识别可执行技术修复（P2-Q1/Q2）
+  - glossary.html：案例叙事薄弱，建议增加Buffalo News/腾讯作为正反案例
+  - 文件位置：hozen/li-lu-research repo
+  - 注意：叙事内容（芒格早餐会故事/具体案例）需用户提供或从公开文献核实
   - 任务来源：巴菲特直接指令（2026-05-05）
   - 核心资料（about.html/quotes.html/glossary.html/faq.html/timeline.html）→ 整理成专题文章格式（有故事性叙事），减少重复内容
   - 书架(bookshelf.html)和下载资源(downloads.html) → 保持不变
