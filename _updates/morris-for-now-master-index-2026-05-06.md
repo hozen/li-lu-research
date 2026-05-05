@@ -1,5 +1,6 @@
 # Morris「For Now」窗口期学习成果总索引
 > 创建时间：2026-05-06 05:35（窗口期第5天凌晨 · 距腾讯Q1 5.1天）
+> 更新时间：2026-05-06 06:15（补充遗漏文档：三大哲学根基 + Master Package + Owner Mentality终整合）
 > 目的：整理窗口期第3-5天全部学习成果，建立有序知识体系
 
 ---
@@ -13,14 +14,17 @@
 | Morris「For Now」操作手册 | `morris-for-now-operational-quick-ref-2026-05-06.md` | 01:07 | F1/F2/F3量化标准 + 16种决策矩阵 |
 | Morris「For Now」主参考 | `morris-for-now-master-reference-2026-05-06.md` | 00:38 | 窗口期框架完整体系 |
 | Morris「For Now」认识论最深层 | `morris-for-now-epistemology-deepest-layer-2026-05-06.md` | 03:27 | 认知偏差制度性对冲原理 |
+| Morris「For Now」三大哲学根基整合 | `morris-for-now-three-philosophical-foundations-2026-05-06.md` | 06:09 | Popper证伪主义 × Owner Mentality × Constructor护城河判准 × 腾讯Q1执行检查清单 |
+| Morris「For Now」窗口期学习成果总索引 | `morris-for-now-master-index-2026-05-06.md` | 05:38 | 本文档（17份核心文档地图 + 核心洞见精华 + 执行检查清单）|
 
 ### 腾讯Q1备战包
 
 | 文档 | 路径 | 创建时间 | 核心贡献 |
 |------|------|---------|---------|
+| 腾讯Q1 Morris「For Now」完整备战包 | `tencent-q1-2026-morris-for-now-master-package-2026-05-05.md` | 5/5 18:34 | Master Package核心文件（F1/F2/F3 + China 2.5 + Owner Mentality + 决策矩阵） |
 | 腾讯Q1 earnings season决策手册 | `tencent-q1-2026-earning-season-decision-manual-2026-05-06.md` | 00:07 | 财报发布日行动手册 |
 | 腾讯Q1 countdown tracker | `tencent-q1-2026-countdown-tracker-2026-05-06.md` | 00:16 | 倒计时 + 关键日期清单 |
-| 腾讯Q1 Morris「For Now」× Owner Mentality | `tencent-q1-for-now-owner-mentality-synthesis-2026-05-06.md` | 05:27 | F1/F2/F3 = Owner检验标准，终极整合 |
+| 腾讯Q1 Morris「For Now」× Owner Mentality | `tencent-q1-for-now-owner-mentality-synthesis-2026-05-06.md` | 05:27 | F1/F2/F3 = Owner检验标准，终极整合（PDD预检 + 决策记录模板） |
 
 ### Buffett组合管理
 
