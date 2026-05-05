@@ -21,7 +21,7 @@
   - 格式：何时/何地/对谁说/上下文
   - 需要外部信息：各语录原始出处
 
-- **2026-05-05 P2-1: 核心资料静态页面叙事化重构** [about.html已执行，其他页面待执行]
+- **2026-05-05 P2-1: 核心资料静态页面叙事化重构** [about.html✅ + timeline.html✅，glossary.html/faq.html待执行]
   - **about.html（2026-05-06执行）**：✅ 执行完成（Git commit 6faad1f）
     - 新增开篇叙事（Buffett讲座Fat Pitch场景）
     - 1986年时间线扩展为完整Fat Pitch叙事
@@ -29,7 +29,13 @@
     - ~2002年比亚迪"研究驱动"叙事强化
     - 2008年补充芒格原话
     - 新增独立板块：芒格早餐会的修行（最重要叙事重构）
-  - **其他页面（glossary.html/quotes.html/faq.html/timeline.html）**：待执行
+  - **timeline.html（2026-05-06执行）**：✅ 执行完成（Git commit 2a7de8a）
+    - 1986年哥大巴菲特讲座：新增"Buffett怎么拼写"场景 + Fat Pitch顿悟 + 两年研究才出手
+    - 1991-1993年：新增三学位条目（JD+MBA+MA，哥大历史上几乎绝无仅有）
+    - 1993年（感恩节后）：精确时间 + Ron Olson在场 + 深谈确认芒格体系完整性
+    - ~2002-2003年比亚迪：精确时间 + 25-30亿美元回报数据
+    - 芒格早餐会的修行：新增独立条目（"等待本身是第一课"）
+  - **其他页面（glossary.html/faq.html）**：待执行
   - 核查报告：`_updates/quotes-sources-audit-2026-05-06.md`（语录来源）+ `_updates/li-lu-site-narrative-gap-analysis-2026-05-06.md`（叙事缺口，文件待确认创建）
   - about.html叙事缺口：芒格早餐会故事缺失（P1重构机会），投资哲学5主题缺推导过程
   - quotes.html：场景锚定缺失，已识别可执行技术修复（P2-Q1/Q2）
