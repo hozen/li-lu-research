@@ -4,26 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>投资框架概述 — 李录价值投资研究</title>
-<meta name="description" content="李录投资框架：Greenwald学术派与芒格实践派的融合。护城河、内在价值、安全边际三大核心，决策流程图与能力圈划分。">
+<meta name="description" content="李录投资框架：CCBC 2021亲口陈述 × Morris「For Now」季度检验 × Constructor Theory护城河判准 × Buffett安全边际，四层闭环。">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --gold:#c9a227;
-  --gold-light:#fef9e7;
-  --navy:#0a1628;
-  --blue:#3182ce;
-  --green:#38a169;
-  --red:#e53e3e;
-  --purple:#805ad5;
-  --orange:#dd6b20;
-  --teal:#319795;
-  --bg:#f7f8fa;
-  --surface:#fff;
-  --text:#1a202c;
-  --text-muted:#4a5568;
-  --text-light:#718096;
-  --border:#e2e8f0;
-}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096;--border:#e2e8f0;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
 a{color:var(--gold);text-decoration:none}
 #uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
@@ -35,6 +19,7 @@ a{color:var(--gold);text-decoration:none}
 #uni-navbar .uni-link.active{color:var(--gold)}
 #uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
 #uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
 #uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
 #uni-overlay.open{opacity:1;visibility:visible}
 #uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
@@ -46,7 +31,6 @@ a{color:var(--gold);text-decoration:none}
 #uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
 #uni-drawer-brand span{color:var(--gold)}
 #uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
-@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
 #uni-body{padding-top:64px}
 .main-content{max-width:860px;margin:0 auto;padding:0 16px 64px;background:var(--surface);min-height:calc(100vh - 64px)}
 .back-bar{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;background:#f7fafc}
@@ -59,126 +43,69 @@ a{color:var(--gold);text-decoration:none}
 .tag-blue{background:#dbeafe;color:#1e40af}
 .tag-green{background:#dcfce7;color:#166534}
 .tag-purple{background:#f3e8ff;color:#6b21a8}
-.intro-box{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#f5f5f5;border-radius:16px;padding:28px 24px;margin:24px 0 8px;font-size:.97rem;line-height:1.8}
-.intro-box strong{color:var(--gold)}
-.intro-box p{margin-bottom:12px}
-.intro-box p:last-child{margin-bottom:0}
 .section{padding:0 0 40px}
 h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
 h3{font-size:1rem;font-weight:700;color:var(--navy);margin:24px 0 10px}
+h4{font-size:.9rem;font-weight:700;color:var(--navy);margin:16px 0 8px}
 p{color:var(--text-muted);margin-bottom:14px;font-size:.95rem}
-blockquote{
-  background:#f7fafc;
-  border-left:4px solid var(--gold);
-  padding:14px 18px;
-  margin:16px 0;
-  border-radius:0 8px 8px 0;
-  font-size:.93rem;
-  color:var(--text-muted);
-  font-style:italic;
-}
+blockquote{background:#f7fafc;border-left:4px solid var(--gold);padding:14px 18px;margin:16px 0;border-radius:0 8px 8px 0;font-size:.93rem;color:var(--text-muted);font-style:italic}
 blockquote cite{display:block;text-align:right;font-size:.82rem;color:var(--text-light);font-style:normal;margin-top:6px}
+.four-layer-box{background:linear-gradient(135deg,#0a1628 0%,#1a2744 100%);color:#f5f5f5;border-radius:16px;padding:28px 24px;margin:24px 0 8px;font-size:.92rem;line-height:1.8}
+.four-layer-box strong{color:var(--gold)}
+.four-layer-box .layer{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid rgba(201,162,39,.2)}
+.four-layer-box .layer:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.four-layer-box .layer-num{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-block;margin-right:8px}
+.four-layer-box .layer-1 .layer-num{background:#c9a227;color:#0a1628}
+.four-layer-box .layer-2 .layer-num{background:#3182ce;color:#fff}
+.four-layer-box .layer-3 .layer-num{background:#38a169;color:#fff}
+.four-layer-box .layer-4 .layer-num{background:#805ad5;color:#fff}
+.ccbc-box{background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 100%);border:1px solid #fcd34d;border-radius:12px;padding:20px;margin:16px 0}
+.ccbc-box .ccbc-quote{font-size:.93rem;color:#78350f;font-style:italic;margin-bottom:12px;line-height:1.7}
+.ccbc-box .ccbc-source{font-size:.8rem;color:#92400e;font-weight:600}
 .comp-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9rem}
 .comp-table th{background:var(--navy);color:#f5f5f5;padding:10px 14px;text-align:left;font-weight:600;font-size:.85rem}
 .comp-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
 .comp-table tr:nth-child(even) td{background:#f7fafc}
 .comp-table td:first-child{font-weight:500;color:var(--text)}
-.flow-chart{
-  background:#f7fafc;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:24px;
-  margin:16px 0;
-}
+.flow-chart{background:#f7fafc;border:1px solid var(--border);border-radius:12px;padding:24px;margin:16px 0}
 .flow-step{display:flex;align-items:flex-start;gap:16px;padding:12px 0;border-bottom:1px dashed var(--border)}
 .flow-step:last-child{border-bottom:none}
-.step-num{
-  min-width:32px;height:32px;
-  background:var(--navy);color:var(--gold);
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.82rem;font-weight:700;
-  flex-shrink:0;
-}
-.step-content{}
+.step-num{min-width:32px;height:32px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700;flex-shrink:0}
 .step-title{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:4px}
 .step-desc{font-size:.85rem;color:var(--text-muted)}
 .moat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:16px 0}
-.moat-card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:18px 16px;
-  position:relative;
-  overflow:hidden;
-}
-.moat-card::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:3px;
-}
+.moat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 16px;position:relative;overflow:hidden}
+.moat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
 .moat-card.supply::before{background:var(--blue)}
 .moat-card.demand::before{background:var(--green)}
 .moat-card.scale::before{background:var(--orange)}
 .moat-card.trust::before{background:var(--gold)}
 .moat-card h4{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:6px}
 .moat-card p{font-size:.82rem;color:var(--text-muted);margin:0;line-height:1.6}
-.signal-list{list-style:none;margin:12px 0}
-.signal-list li{
-  padding:10px 14px;
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  margin-bottom:8px;
-  font-size:.9rem;
-  color:var(--text-muted);
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-}
-.signal-list li::before{content:'→';color:var(--gold);font-weight:700;flex-shrink:0}
-.signal-list li strong{color:var(--text);font-weight:600}
-.risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
-.risk-card{
-  background:#fff5f5;
-  border:1px solid #fed7d7;
-  border-radius:10px;
-  padding:14px;
-}
-.risk-card h5{font-size:.85rem;font-weight:700;color:#c53030;margin-bottom:6px}
-.risk-card p{font-size:.82rem;color:#c53030;margin:0;opacity:.8}
-.alert-box{
-  background:#fffbeb;
-  border:1px solid #fcd34d;
-  border-radius:10px;
-  padding:16px;
-  margin:16px 0;
-  font-size:.88rem;
-  color:#92400e;
-}
+.decision-matrix{width:100%;border-collapse:collapse;margin:16px 0;font-size:.85rem}
+.decision-matrix th{background:var(--navy);color:#f5f5f5;padding:8px 10px;text-align:center;font-weight:600;font-size:.8rem}
+.decision-matrix td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:center;vertical-align:middle}
+.decision-matrix td:first-child{text-align:left;font-weight:500;color:var(--text)}
+.decision-matrix .green-cell{background:#dcfce7;color:#166534;font-weight:700}
+.decision-matrix .yellow-cell{background:#fef9c8;color:#854d0e;font-weight:700}
+.decision-matrix .red-cell{background:#fee2e2;color:#991b1b;font-weight:700}
+.decision-matrix .triple-cell{background:#7f1d1d;color:#fff;font-weight:700;font-size:.8rem}
+.alert-box{background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:16px;margin:16px 0;font-size:.88rem;color:#92400e}
 .alert-box strong{display:block;margin-bottom:4px}
+.epistemology-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:20px;margin:16px 0}
+.epistemology-box h4{color:#166534;margin-top:0}
+.insight-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:12px}
+.insight-card .insight-title{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.insight-card .insight-text{font-size:.82rem;color:var(--text-muted);margin:0;line-height:1.6}
+.discoveries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:16px 0}
+.discovery-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
+.discovery-card .discovery-num{font-size:.7rem;font-weight:700;background:var(--gold-light);color:#92400e;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:8px}
+.discovery-card h4{font-size:.85rem;font-weight:700;color:var(--navy);margin:8px 0 6px}
+.discovery-card p{font-size:.8rem;color:var(--text-muted);margin:0;line-height:1.6}
 .related-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.related-links a{
-  background:var(--surface);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:8px 14px;
-  font-size:.83rem;
-  color:var(--text-muted);
-  display:flex;
-  align-items:center;
-  gap:6px;
-}
+.related-links a{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:.83rem;color:var(--text-muted);display:flex;align-items:center;gap:6px}
 .related-links a:hover{border-color:var(--gold);color:var(--gold)}
-.footer-note{
-  text-align:center;
-  padding:24px 16px;
-  font-size:.8rem;
-  color:var(--text-light);
-  border-top:1px solid var(--border);
-  margin-top:16px;
-}
+.footer-note{text-align:center;padding:24px 16px;font-size:.8rem;color:var(--text-light);border-top:1px solid var(--border);margin-top:16px}
 </style>
 </head>
 <body>
@@ -192,9 +119,7 @@ blockquote cite{display:block;text-align:right;font-size:.82rem;color:var(--text
     <a class="uni-link" href="video_study.html">视频</a>
     <a class="uni-link" href="bookshelf.html">书架</a>
   </div>
-  <button id="uni-hamburger" onclick="toggleDrawer()" aria-label="菜单">
-    <span></span><span></span><span></span>
-  </button>
+  <button id="uni-hamburger" onclick="toggleDrawer()" aria-label="菜单"><span></span><span></span><span></span></button>
 </nav>
 <div id="uni-overlay" onclick="toggleDrawer()"></div>
 <div id="uni-drawer">
@@ -213,85 +138,288 @@ blockquote cite{display:block;text-align:right;font-size:.82rem;color:var(--text
 </div>
 <div id="uni-body">
 <div class="main-content">
-<div class="back-bar">
-  <a href="index.html">← 索引</a>
-</div>
+<div class="back-bar"><a href="index.html">← 索引</a></div>
 
 <div class="page-header">
-  <h1 class="page-title">李录投资框架概述</h1>
-  <p class="page-subtitle">Greenwald学术派与芒格实践派的融合。核心三角：护城河 → 内在价值 → 安全边际。</p>
+  <h1 class="page-title">李录投资框架</h1>
+  <p class="page-subtitle">四层独立传统汇聚：CCBC 2021亲口陈述 × Morris「For Now」× Constructor Theory × Buffett安全边际</p>
   <div class="tag-row">
-    <span class="tag">核心框架</span>
-    <span class="tag tag-blue">护城河</span>
-    <span class="tag tag-green">安全边际</span>
-    <span class="tag tag-purple">能力圈</span>
+    <span class="tag">四层闭环</span>
+    <span class="tag tag-blue">CCBC 2021</span>
+    <span class="tag tag-green">Morris「For Now」</span>
+    <span class="tag tag-purple">Constructor Theory</span>
   </div>
 </div>
 
-<div class="intro-box">
-  <p><strong>核心洞察：</strong>李录是哥伦比亚大学Bruce Greenwald教授的得意门生，将Greenwald的<strong>护城河理论系统化学术框架</strong>与巴菲特/芒格的<strong>实践智慧</strong>深度融合，形成独特投资体系。关键词：超长期持有、高置信度、集中持仓、等待"致命一击"。</p>
+<div class="ccbc-box" style="margin:0 0 24px">
+  <p class="ccbc-quote" style="margin-top:0">"假设你有个从未谋面的远房叔叔突然去世了，他把公司百分之百的股权转交到了你的手上——这就是你需要去研究的公司。一旦你认识到你对一个公司有着全部的股权，你的心态会完全不一样。"</p>
+  <div class="ccbc-source">— 李录，CCBC 2021 Part 1（7hcn.com完整转录）</div>
+</div>
+
+<div class="four-layer-box">
+  <div class="layer layer-1">
+    <span class="layer-num">第一层</span><strong>行动核心（CCBC 2021）</strong>：Owner Mentality + 跌50%增持检验。框架真正基石——李录亲口陈述，置信度最高。
+  </div>
+  <div class="layer layer-2">
+    <span class="layer-num">第二层</span><strong>季度检验（Morris「For Now」）</strong>：F1/F2/F3预先声明证伪条件，等待数据验证，未触发则继续持有。
+  </div>
+  <div class="layer layer-3">
+    <span class="layer-num">第三层</span><strong>历史语境（Morris SDI）</strong>：China 2.5历史定位——能量/信息技术已达标，社会组织维度落后导致ROIC持续承压。
+  </div>
+  <div class="layer layer-4">
+    <span class="layer-num">第四层</span><strong>哲学根基（Popper × Constructor）</strong>：证伪主义认识论 + 护城河"极度困难变换"本体判准，公共知识无需原典引用。
+  </div>
+</div>
+
+<div class="insight-card" style="background:#f0fdf4;border-color:#bbf7d0;margin-top:24px">
+  <div class="insight-title">窗口期最重要认知修正（2026年5月）</div>
+  <div class="insight-text">本框架的真正基石是<strong>CCBC 2021（李录亲口陈述）</strong>，而非Bruce Greenwald学术框架。Morris「For Now」与Morris SDI是China 2.5的历史语境层，不是框架基础。四层独立推导却在具体持仓决策上精确收敛——不是因为权威，而是因为四者都在测量同一个客观现实的不同维度。</div>
 </div>
 
 <div class="section">
-<h2>一、理论渊源：师承Greenwald，与巴菲特/芒格的异同</h2>
+<h2>一、四层闭环架构</h2>
 
-<h3>1.1 学术渊源</h3>
-<p>Bruce Greenwald是当代价值投资领域最具影响力的学者之一，其贡献在于将护城河理论系统化、学术化。李录将其学术框架与芒格的实践智慧深度融合，形成独特体系。</p>
+<div class="flow-chart">
+  <div class="flow-step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <div class="step-title">Constructor Theory → 护城河存在性判准</div>
+      <div class="step-desc">极度困难的变换 = 真护城河。微信10亿+关系图谱×数十年积累 = 极度困难变换</div>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <div class="step-title">Morris「For Now」 → 季度检验纪律</div>
+      <div class="step-desc">F1/F2/F3预先声明可证伪条件，等待财报数据验证，未触发则继续持有</div>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <div class="step-title">CCBC 2021 → 行动纪律（Owner Mentality）</div>
+      <div class="step-desc">跌50%增持检验 = "真正理解"的标准。护城河未证伪，则继续持有</div>
+    </div>
+  </div>
+  <div class="flow-step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <div class="step-title">Buffett MoS → 入场时机判准</div>
+      <div class="step-desc">当前价格是否提供足够安全边际？F1/F2/F3触发时是否伴随估值压缩？</div>
+    </div>
+  </div>
+</div>
 
 <blockquote>
-"We embrace the value investment principles of Benjamin Graham, Warren Buffett, and Charles Munger, and today primarily focus on publicly traded companies in Asia and North America."
-<cite>— Himalaya Capital官网 (himcap.com)</cite>
+"The highest form which civilization can reach is a seamless web of deserved trust. Not much procedure, just totally reliable people correctly trusting one another."
+<cite>— Charlie Munger（被李录多次引用，CCBC 2021）</cite>
 </blockquote>
+</div>
 
-<h3>1.2 与巴菲特/芒格的对照</h3>
+<div class="section">
+<h2>二、CCBC 2021三大核心陈述（框架地基）</h2>
+
+<div class="ccbc-box">
+  <p class="ccbc-quote" style="margin-top:0">"当价格下跌50%甚至60%时，我们会更大规模的增持。这样的举动，就是我们对一个公司是否足够了解的界定标准。"</p>
+  <div class="ccbc-source">— 李录，CCBC 2021 Part 2，Q2（跌50%增持检验 = 真正理解的标准）</div>
+</div>
+
+<div class="ccbc-box">
+  <p class="ccbc-quote" style="margin-top:0">"你要有一个能力圈，并且明白它的边界在哪。这不是谦虚，这是诚实。"</p>
+  <div class="ccbc-source">— 李录，CCBC 2021 Part 2，Q1（能力圈边界 = 诚实的界定）</div>
+</div>
+
 <table class="comp-table">
-  <tr><th>维度</th><th>巴菲特/芒格</th><th>李录</th></tr>
-  <tr><td>核心理念</td><td>内在价值、护城河、安全边际</td><td>高度一致，强调"经济护城河"</td></tr>
-  <tr><td>能力圈</td><td>保险、消费、金融</td><td>科技+金融+中国，亚洲+北美双轨</td></tr>
-  <tr><td>持仓集中度</td><td>高集中</td><td>高集中，等待"致命一击"</td></tr>
-  <tr><td>分析框架</td><td>定性为主</td><td>Greenwald学术框架+定性分析</td></tr>
-  <tr><td>地域偏好</td><td>美国为主</td><td>亚洲+北美双轨并行</td></tr>
+  <tr><th>陈述</th><th>核心含义</th><th>置信度</th></tr>
+  <tr><td>Owner Mentality（远房叔叔假设）</td><td>用100%所有权心态评估持仓，而非"炒股票"</td><td>最高</td></tr>
+  <tr><td>跌50%增持检验</td><td>真正理解 = 跌50%时敢增持；否则是假装理解</td><td>最高</td></tr>
+  <tr><td>能力圈边界</td><td>明白边界在哪里，不是谦虚，是诚实的界定</td><td>最高</td></tr>
+  <tr><td>China 2.5核心矛盾</td><td>工业化已完成，制度现代化尚未完成，时滞=核心风险</td><td>待核实</td></tr>
+</table>
+</div>
+
+<div class="section">
+<h2>三、Morris「For Now」China 2.5三句话版</h2>
+
+<div class="insight-card">
+  <div class="insight-title">第一句 — 结构性基础</div>
+  <div class="insight-text">Morris SDI证明China 2.5在能量获取和信息技术两个维度已达到西方水平（微信/阿里/字节）——这是中国数字经济护城河的<strong>结构性基础</strong>。</div>
+</div>
+
+<div class="insight-card">
+  <div class="insight-title">第二句 — 地理条件基础</div>
+  <div class="insight-text">Morris地理Possibilism证明中国海岸线+高人口密度+地理封闭提供了数字基础设施最优条件（郑和时刻→数字冰箱时刻）——这是护城河的<strong>地理条件基础</strong>。</div>
+</div>
+
+<div class="insight-card">
+  <div class="insight-title">第三句 — 组织层熵增根源</div>
+  <div class="insight-text">Morris Iron Law证明China 2.5社会组织维度（制度信任/法治/诚信）显著落后——这是ROIC持续承压的<strong>根本原因</strong>，也是F1/F2/F3必须持续监控的<strong>精确原因</strong>。</div>
+</div>
+
+<div class="alert-box">
+  <strong>三句话结论</strong>：中国数字经济有结构性护城河（能量+技术+地理），但社会组织维度落后导致护城河的ROI被系统性侵蚀——这是腾讯持仓的核心逻辑，也是Morris「For Now」必须在季度数据层面持续验证的原因。
+</div>
+</div>
+
+<div class="section">
+<h2>四、F1/F2/F3季度检验工具</h2>
+
+<table class="comp-table">
+  <tr><th>指标</th><th>Morris SDI对应</th><th>操作化定义</th><th>数据来源</th></tr>
+  <tr><td><strong>F1</strong> FBS Margin</td><td>Morris能量获取</td><td>FCF/Revenue + ARPU（广告生态能量转化效率）</td><td>季报/年报</td></tr>
+  <tr><td><strong>F2</strong> Network Density</td><td>Morris社会组织</td><td>MAU × Revenue per Interaction（协调能力触顶信号）</td><td>季报+估算</td></tr>
+  <tr><td><strong>F3</strong> Innovation Rate</td><td>Morris信息技术</td><td>R&D/Revenue + AI Revenue披露（数字经济信息传播速度）</td><td>季报/招股书</td></tr>
 </table>
 
-<blockquote>
-"In making investments, I have always believed that you must act with discipline whenever you see something you truly like. To explain this philosophy, Buffett/Munger likes to use a baseball analogy that I find particularly illuminating..."
-<cite>— 李录，Poor Charlie's Almanack 第三版，2009年，第61页</cite>
-</blockquote>
+<div class="epistemology-box">
+  <h4>Morris Iron Law两层精确区分（窗口期最重要概念精确化）</h4>
+  <ul style="font-size:.85rem;color:#166534;padding-left:20px;margin-bottom:12px">
+    <li><strong>文明层Iron Law</strong>：能量per capita先升后降，"失控螺旋"崩溃——农业文明上升-崩溃-重置循环（Morris原始语境）</li>
+    <li><strong>组织层Iron Law</strong>：干预叠加→ROIC系统性下降→护城河慢性侵蚀——<strong>不是崩溃</strong>，是慢性摩擦成本</li>
+  </ul>
+  <p style="font-size:.82rem;color:#166534;margin:0"><strong>China 2.5当前处境 = 组织层熵增 ≠ 文明崩溃</strong>。等待F1/F2/F3季度数据验证。</p>
+</div>
 </div>
 
 <div class="section">
-<h2>二、能力圈：明确划定的三大领域</h2>
-<p>李录的能力圈是区分他与大多数美国本土价值投资者的关键。他明确限定在三大核心领域：</p>
+<h2>五、阿里Q1五问触发矩阵</h2>
 
-<div class="card-grid" style="margin-top:16px">
-  <div class="lesson-card blue">
-    <h4>科技行业</h4>
-    <p>对互联网平台公司有深刻理解，重点关注网络效应、用户粘性和平台经济的可持续性。</p>
+<p>阿里Q1是China 2.5 Morris「For Now」晴雨表第一份。今夜/明晨发布后立即录入执行：</p>
+
+<table class="decision-matrix">
+  <tr>
+    <th style="width:18%">问题</th>
+    <th style="width:18%">核心指标</th>
+    <th class="green-cell" style="width:16%">继续持有</th>
+    <th class="yellow-cell" style="width:16%">关注</th>
+    <th class="red-cell" style="width:16%">警戒</th>
+    <th style="width:16%;background:#7f1d1d;color:#fff;font-weight:700;font-size:.78rem">卖出信号</th>
+  </tr>
+  <tr>
+    <td>Q1 竞争格局</td>
+    <td>GMV YoY</td>
+    <td class="green-cell">≥ 3%</td>
+    <td class="yellow-cell">0–3%</td>
+    <td class="red-cell">&lt; 0%</td>
+    <td rowspan="2" class="triple-cell">三触齐发<br>GMV&lt;0%<br>+监管负面<br>+云&lt;10%</td>
+  </tr>
+  <tr>
+    <td>Q2 阿里云AI</td>
+    <td>云增速 YoY</td>
+    <td class="green-cell">≥ 15%</td>
+    <td class="yellow-cell">5–15%</td>
+    <td class="red-cell">&lt; 5%</td>
+  </tr>
+  <tr>
+    <td>Q3 监管表态</td>
+    <td>整改完成状态</td>
+    <td class="green-cell">无新要求</td>
+    <td class="yellow-cell">软性要求</td>
+    <td class="red-cell">强制拆分</td>
+    <td rowspan="3" style="background:#f1f5f9;color:#64748b;font-size:.78rem">—</td>
+  </tr>
+  <tr>
+    <td>Q4 国际化</td>
+    <td>国际商业 YoY</td>
+    <td class="green-cell">≥ 25%</td>
+    <td class="yellow-cell">10–25%</td>
+    <td class="red-cell">&lt; 10%</td>
+  </tr>
+  <tr>
+    <td>Q5 股东回报</td>
+    <td>回购力度</td>
+    <td class="green-cell">≥ $3B/季</td>
+    <td class="yellow-cell">$2–3B</td>
+    <td class="red-cell">&lt; $2B或暂停</td>
+  </tr>
+</table>
+
+<div class="flow-chart">
+  <div class="flow-step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <div class="step-title">数据发布后30分钟内</div>
+      <div class="step-desc">录入五项实际数据，执行触发矩阵（财报 + 电话会）</div>
+    </div>
   </div>
-  <div class="lesson-card green">
-    <h4>金融行业</h4>
-    <p>受Greenwald影响，对金融机构的估值和分析有独到见解，善于识别具有可持续竞争优势的金融机构。</p>
+  <div class="flow-step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <div class="step-title">三触齐发 → 立即通知HoZen</div>
+      <div class="step-desc">GMV&lt;0% + 监管负面 + 云增速&lt;10% = Morris「For Now」China 2.5晴雨表第一份红牌</div>
+    </div>
   </div>
-  <div class="lesson-card" style="--gold:#c9a227">
-    <h4>中国相关投资</h4>
-    <p>作为华人投资者，具有天然的信息获取优势，深度理解中国市场特有的治理风险、政治风险和会计准则差异。</p>
+  <div class="flow-step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <div class="step-title">全绿 → 腾讯Q1权重提升</div>
+      <div class="step-desc">阿里Q1全绿 = China 2.5正向翻转第一验证，腾讯Q1继续持有概率大幅提升</div>
+    </div>
   </div>
 </div>
-
-<blockquote>
-"We aim to achieve superior returns by being long-term owners of high quality companies with substantial 'economic moat', great growth potential, and run by trustworthy people."
-<cite>— Himalaya Capital官网</cite>
-</blockquote>
 </div>
 
 <div class="section">
-<h2>三、护城河判断：Greenwald框架的四个层次</h2>
-<p>护城河的可持续性是李录决策框架的核心。他采用Greenwald的四层次框架：</p>
+<h2>六、Constructor Theory护城河判准</h2>
+
+<div class="moat-grid">
+  <div class="moat-card supply">
+    <h4>可概化Constructor</h4>
+    <p>资本/人才可以进入任何行业——不能构成真正的护城河</p>
+  </div>
+  <div class="moat-card demand">
+    <h4>极度困难变换 ✅</h4>
+    <p>微信10亿+关系图谱：数十年积累 × 高人口密度 × 无外国竞争 × 政府默许 = 乘法效应</p>
+  </div>
+  <div class="moat-card scale">
+    <h4>地理三层护城河</h4>
+    <p>①物理地理（高密度×封闭）②制度地理（防火墙）③内容护城河（视频号主动升级）</p>
+  </div>
+  <div class="moat-card trust">
+    <h4>地理反转三触发</h4>
+    <p>台湾海峡军事冲突 / 互联网物理脱钩 / 人口结构逆转——任一触发则地理意义改变</p>
+  </div>
+</div>
+
+<div class="alert-box">
+  <strong>精确修正</strong>：微信护城河是"极度困难的变换"（非"不可能变换"）——"极度困难"本身足以构成护城河，但不足以保证永久性。持续监控F1/F2/F3季度数据。
+</div>
+</div>
+
+<div class="section">
+<h2>七、窗口期核心发现索引（2026年5月）</h2>
+
+<div class="discoveries-grid">
+  <div class="discovery-card">
+    <div class="discovery-num">发现 1</div>
+    <h4>CCBC 2021是框架真正基石</h4>
+    <p>Bruce Greenwald是框架来源之一，但真正地基是李录亲口陈述。Morris「For Now」降级为China 2.5语境层。</p>
+  </div>
+  <div class="discovery-card">
+    <div class="discovery-num">发现 2</div>
+    <h4>四层独立传统精确收敛</h4>
+    <p>Popper / Buffett / Constructor三者独立推导，却在China 2.5 Q2持仓决策上精确收敛——因为测量同一客观现实。</p>
+  </div>
+  <div class="discovery-card">
+    <div class="discovery-num">发现 3</div>
+    <h4>Morris Iron Law两层区分</h4>
+    <p>文明层（农业崩溃）vs 组织层（干预熵增）——China 2.5当前是组织层熵增，不是文明崩溃。</p>
+  </div>
+  <div class="discovery-card">
+    <div class="discovery-num">发现 4</div>
+    <h4>Constructor Theory精确修正</h4>
+    <p>微信护城河 = 极度困难变换（之前过度表述为不可能变换）。表述更诚实更可检验。</p>
+  </div>
+</div>
+</div>
+
+<div class="section">
+<h2>八、能力圈与护城河四层次</h2>
 
 <div class="moat-grid">
   <div class="moat-card supply">
     <h4>供给侧护城河</h4>
-    <p>专有技术/专利、独特的地理位置或资源禀赋、政府许可或牌照。</p>
+    <p>专有技术/专利、独特地理位置、政府许可或牌照。</p>
   </div>
   <div class="moat-card demand">
     <h4>需求侧护城河</h4>
@@ -308,157 +436,35 @@ blockquote cite{display:block;text-align:right;font-size:.82rem;color:var(--text
 </div>
 
 <div class="alert-box">
-  <strong>核心判断三问</strong>
-  ① 这家公司五年后是否还能保持当前的竞争优势？<br>
-  ② 竞争对手需要多长时间才能复制这一优势？<br>
-  ③ 管理层的诚信度是否足以支撑护城河的持续扩张？
-</div>
-
-<blockquote>
-"The highest form which civilization can reach is a seamless web of deserved trust. Not much procedure, just totally reliable people correctly trusting one another."
-<cite>— Charlie Munger（被李录多次引用）</cite>
-</blockquote>
-</div>
-
-<div class="section">
-<h2>四、估值与安全边际</h2>
-
-<h3>4.1 定量标准（参考Greenwald框架）</h3>
-<table class="comp-table">
-  <tr><th>指标</th><th>说明</th></tr>
-  <tr><td>市盈率（PE）</td><td>通常要求显著低于行业平均，但无固定上限</td></tr>
-  <tr><td>市净率（PB）</td><td>重资产行业的重要参考</td></tr>
-  <tr><td>自由现金流折现（DCF）</td><td>作为内在价值的核心评估工具</td></tr>
-</table>
-
-<h3>4.2 定性安全边际</h3>
-<p>业务模式的简洁性和可预测性、管理层的诚信和理性、竞争优势的持久性。</p>
-
-<h3>4.3 估值方法组合</h3>
-<ul class="signal-list">
-  <li><strong>DCF</strong> — 内在价值的核心评估工具</li>
-  <li><strong>相对估值</strong> — PE、PB、EV/EBITDA等作为辅助参考</li>
-  <li><strong>清算价值</strong> — 极端情况下的安全底线</li>
-  <li><strong>成长率折算</strong> — 将成长性纳入折现模型</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>五、决策流程图</h2>
-
-<div class="flow-chart">
-  <div class="flow-step">
-    <div class="step-num">1</div>
-    <div class="step-content">
-      <div class="step-title">能力圈筛选</div>
-      <div class="step-desc">科技（平台公司、网络效应）｜金融（银行、保险）｜中国相关（消费、互联网）</div>
-    </div>
-  </div>
-  <div class="flow-step">
-    <div class="step-num">2</div>
-    <div class="step-content">
-      <div class="step-title">护城河评估（Greenwald框架）</div>
-      <div class="step-desc">供给侧 → 需求侧 → 规模经济 → <strong style="color:#c9a227">信任护城河 ★</strong></div>
-    </div>
-  </div>
-  <div class="flow-step">
-    <div class="step-num">3</div>
-    <div class="step-content">
-      <div class="step-title">估值与安全边际</div>
-      <div class="step-desc">DCF内在价值评估 → 相对估值（PE/PB）→ 价格低于内在价值</div>
-    </div>
-  </div>
-  <div class="flow-step">
-    <div class="step-num">4</div>
-    <div class="step-content">
-      <div class="step-title">买入决策</div>
-      <div class="step-desc"><strong>"致命一击"</strong> — 等待完美机会，重仓出击</div>
-    </div>
-  </div>
-  <div class="flow-step">
-    <div class="step-num">5</div>
-    <div class="step-content">
-      <div class="step-title">持有与监控</div>
-      <div class="step-desc">持续评估护城河变化，抗拒短期波动诱惑</div>
-    </div>
-  </div>
-  <div class="flow-step">
-    <div class="step-num">6</div>
-    <div class="step-content">
-      <div class="step-title">卖出决策</div>
-      <div class="step-desc">基本面恶化 ｜ 估值泡沫化 ｜ 发现更好机会</div>
-    </div>
-  </div>
+  <strong>核心判断三问</strong>：① 这家公司五年后是否还能保持当前的竞争优势？② 竞争对手需要多长时间才能复制这一优势？③ 管理层的诚信度是否足以支撑护城河的持续扩张？
 </div>
 </div>
 
 <div class="section">
-<h2>六、卖出决策：明确的卖出信号</h2>
-
-<ul class="signal-list">
-  <li><strong>基本面恶化</strong> — 护城河出现根本性侵蚀、管理层诚信受损、行业结构性变化不可逆</li>
-  <li><strong>估值极端泡沫化</strong> — 价格远超内在价值、市场过度乐观</li>
-  <li><strong>发现更好的机会</strong> — "致命一击"的机会出现、需要重新配置资本</li>
-  <li><strong>持仓超出能力圈</strong> — 公司业务扩张到无法理解的范围</li>
-</ul>
-
-<blockquote>
-"One common problem for investors is that they tend to swing too often. This is true for both individuals and for professional investors operating under institutional imperatives..."
-<cite>— 李录，Poor Charlie's Almanack</cite>
-</blockquote>
-
-<p>李录强调：卖出的频率应远低于买入。优质公司的卖出需要更严格的条件——<strong>用芒格的话说，好股票要"死拿着"。</strong></p>
-</div>
-
-<div class="section">
-<h2>七、中国市场：机会与风险并存</h2>
-
-<div class="risk-grid">
-  <div class="risk-card" style="background:#f0fdf4;border-color:#bbf7d0">
-    <h5 style="color:#166534">机会</h5>
-    <p>新兴市场快速增长提供超额收益机会；西方投资者理解不足造成定价偏差；本土投资者具有天然信息优势。</p>
-  </div>
-  <div class="risk-card">
-    <h5>地缘政治风险</h5>
-    <p>美中关系紧张带来的政策不确定性。</p>
-  </div>
-  <div class="risk-card">
-    <h5>公司治理风险</h5>
-    <p>关联交易、小股东保护不足。</p>
-  </div>
-  <div class="risk-card">
-    <h5>会计准则风险</h5>
-    <p>财务报告的透明度和可靠性。</p>
-  </div>
-</div>
-
-<p style="margin-top:16px">李录的中国策略：深度本土研究（语言文化优势）→ 治理结构筛选（管理层诚信优先）→ 分散化配置 → 超长期持有化解政策波动。</p>
-</div>
-
-<div class="section">
-<h2>八、相关阅读</h2>
+<h2>九、相关阅读</h2>
 <div class="related-links">
   <a href="principles.html">⚙️ 投资原则</a>
   <a href="glossary.html">📖 术语表</a>
   <a href="faq.html">❓ 常见问题</a>
   <a href="alphabet-investment-deep.html">🔵 Alphabet（第一大仓）</a>
   <a href="byd-investment-deep.html">🚗 比亚迪（成名之战）</a>
+  <a href="pdd-investment-deep.html">🛒 PDD（China 2.5案例）</a>
   <a href="video_study.html">🎬 视频学习</a>
 </div>
 </div>
 
-<div class="footer-note">
-  来源：Himalaya Capital官网、Poor Charlie's Almanack（第三版）、Bruce Greenwald《Value Investing》<br>
-  本页基于公开资料整理 · 不构成投资建议 · 最后更新：2026年4月
+<div class="<div class="footer-note">
+  本页基于CCBC 2021（7hcn.com转录）x Morris SDI（Ian Morris, 2010/2011）x Constructor Theory（Deutsch, 2011）整理<br>
+  置信度标注：CCBC 2021亲口陈述（最高）/ 受Morris启发（标注）/ 待核实（不作为决策依据）<br>
+  本页基于公开资料 · 不构成投资建议 · 最后更新：2026年5月
 </div>
 
-</div><!-- end main-content -->
-</div><!-- end uni-body -->
+</div></div></div>
 
 <script>
 function toggleDrawer(){
-  document.getElementById('uni-overlay').classList.toggle('open');
-  document.getElementById('uni-drawer').classList.toggle('open');
+  document.getElementById("uni-overlay").classList.toggle("open");
+  document.getElementById("uni-drawer").classList.toggle("open");
 }
 </script>
 </body>
