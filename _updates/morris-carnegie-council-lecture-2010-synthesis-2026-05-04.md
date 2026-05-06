@@ -2,7 +2,8 @@
 
 > LEARNING · 李录 · 2026-05-04 11:50 · 窗口期深度学习
 > 来源：Carnegie Council for Ethics in International Affairs 官方网页
-> 链接：https://www.carnegiecouncil.org/media/series/39/20101028-why-the-west-rules-for-now
+> 链接：https://www.carnegiecouncil.org/media/series/39/20101028-why-the-west-rules-for-now-the-patterns-of-history-and-what-they-reveal-about-the-future
+> 完整原典已恢复：2026-05-06 22:32 创建 `_updates/carnegie-council-2010-refrigerator-moment-original-2026-05-06.md`，含完整冰箱时刻原文（Git commit `f2c419d`）
 > 触发：窗口期网络可用，成功获取 Morris "For Now" 概念的第一手原始讲座文本
 
 ---
