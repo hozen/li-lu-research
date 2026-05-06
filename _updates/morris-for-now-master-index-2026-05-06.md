@@ -16,6 +16,8 @@
 | Morris「For Now」认识论最深层 | `morris-for-now-epistemology-deepest-layer-2026-05-06.md` | 03:27 | 认知偏差制度性对冲原理 |
 | Morris「For Now」三大哲学根基整合 | `morris-for-now-three-philosophical-foundations-2026-05-06.md` | 06:09 | Popper证伪主义 × Owner Mentality × Constructor护城河判准 × 腾讯Q1执行检查清单 |
 | Morris「For Now」终极整合 | `morris-for-now-ultimate-synthesis-2026-05-06.md` | ~09:14 | Morris Iron Law螺旋精确版 × 冰箱时刻终极版 × China 2.5三层脆弱性机制 |
+| PDD = Morris「反向历史」| `pdd-morris-inversion-china25-falsification-2026-05-06.md` | ~08:15 | PDD深层结构是China 2.5脆弱性的完美压力测试场；8倍PE=市场系统性定价某种程度的spiral |
+| China AI推理vs训练 | `china-ai-inference-vs-training-morris-ch11-2026-05-06.md` | - | Morris SDI信息技术维度的当代案例；AI推理成本下降→信息传播加速→SDI维度提升 |
 | Constructor Theory × 护城河判准框架 | `constructor-theory-moat-framework-2026-05-06.md` | 10:20 | 填补Morris「For Now」隐含断层：不可能变换=真护城河，三者闭环完整 |
 | Morris原典引用核查清单 | `morris-citation-audit-checklist-2026-05-06.md` | 10:20 | 识别框架对Morris的传声筒风险，置信度重新评估 |
 | Morris「For Now」窗口期学习成果总索引 | `morris-for-now-master-index-2026-05-06.md` | 05:38 | 本文档（17份核心文档地图 + 核心洞见精华 + 执行检查清单）|
@@ -117,7 +119,15 @@
 - 微信10亿+关系图谱 = 不可能变换（技术物理嵌入 + 商业回报绑定 + 数十年积累）= 真永久护城河
 - 干预风险：从"政府摧毁平台"重新定性为"干预叠加导致ROIC系统性下降"
 
-### 7. Morris引用置信度全面重新评估 ✅（新增 ⚠️）
+### 7. PDD = Morris「反向历史」China 2.5最佳预检指标 ✅（新增 ⭐）
+> "PDD的商业模式=China 2.5脆弱性的完美压力测试场。8倍前瞻PE=市场将约70%『永久性规模缩减』概率定价进PDD。"
+
+**三层递进检验**：
+- PDD → 阿里Q1（5月7-8日）→ 腾讯Q1（5月13日）
+- 三层递进检验China 2.5脆弱性的不同维度
+- PDD护城河最薄最先承压：竞争壁垒最薄 + 消费降级暴露最深
+
+### 8. Morris引用置信度全面重新评估 ✅（新增 ⚠️）
 **已识别的高风险漂移**：
 | 引用内容 | 原置信度 | 调整后 | 原因 |
 |---------|---------|--------|------|
