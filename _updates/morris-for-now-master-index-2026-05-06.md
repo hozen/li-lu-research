@@ -1,7 +1,7 @@
 # Morris「For Now」窗口期学习成果总索引
 > 创建时间：2026-05-06 05:35（窗口期第5天凌晨 · 距腾讯Q1 5.1天）
-> 更新时间：2026-05-06 06:15（补充遗漏文档：三大哲学根基 + Master Package + Owner Mentality终整合）
-> 目的：整理窗口期第3-5天全部学习成果，建立有序知识体系
+> 更新时间：2026-05-06 10:44（补充上午新增文档：Constructor Theory框架 + 引用核查清单 + Morris SDI终极整合）
+> 目的：整理窗口期第3-6天全部学习成果，建立有序知识体系
 
 ---
 
@@ -15,6 +15,9 @@
 | Morris「For Now」主参考 | `morris-for-now-master-reference-2026-05-06.md` | 00:38 | 窗口期框架完整体系 |
 | Morris「For Now」认识论最深层 | `morris-for-now-epistemology-deepest-layer-2026-05-06.md` | 03:27 | 认知偏差制度性对冲原理 |
 | Morris「For Now」三大哲学根基整合 | `morris-for-now-three-philosophical-foundations-2026-05-06.md` | 06:09 | Popper证伪主义 × Owner Mentality × Constructor护城河判准 × 腾讯Q1执行检查清单 |
+| Morris「For Now」终极整合 | `morris-for-now-ultimate-synthesis-2026-05-06.md` | ~09:14 | Morris Iron Law螺旋精确版 × 冰箱时刻终极版 × China 2.5三层脆弱性机制 |
+| Constructor Theory × 护城河判准框架 | `constructor-theory-moat-framework-2026-05-06.md` | 10:20 | 填补Morris「For Now」隐含断层：不可能变换=真护城河，三者闭环完整 |
+| Morris原典引用核查清单 | `morris-citation-audit-checklist-2026-05-06.md` | 10:20 | 识别框架对Morris的传声筒风险，置信度重新评估 |
 | Morris「For Now」窗口期学习成果总索引 | `morris-for-now-master-index-2026-05-06.md` | 05:38 | 本文档（17份核心文档地图 + 核心洞见精华 + 执行检查清单）|
 
 ### 腾讯Q1备战包
@@ -39,6 +42,7 @@
 |------|------|---------|---------|
 | Morris SDI top-10 insights | `morris-sdi-top-10-insights-synthesis-2026-05-06.md` | 01:38 | 38小时研究周期最终整合 |
 | Morris SDI China 2.5机制 | `morris-sdi-china-25-mechanism-deep-2026-05-06.md` | 00:27 | 中国2.5理论Morris SDI验证 |
+| Morris SDI终极整合 | `morris-sdi-for-now-ultimate-synthesis-2026-05-06.md` | ~09:24 | SDI四维度 × F1/F2/F3精确映射 × 投资框架完整系统整合 |
 | Buffett三次收购 × Morris铁律 | `buffett-three-acquisitions-morris-iron-law-2026-05-06.md` | 01:27 | GEICO/See's/Buffalo News × 制度修正机制 |
 
 ### Li Lu研究补充
@@ -53,7 +57,7 @@
 
 ---
 
-## 核心洞见精华（窗口期第5天凌晨版）
+## 核心洞见精华（窗口期第6天上午更新版）
 
 ### 1. Morris「For Now」认识论最深层 ✅
 > "Morris「For Now」不是投资框架，而是认知偏差的制度性对冲。"
@@ -99,6 +103,32 @@
 4. **三学位+入行路径确认**（CCBC 2021 Part 1, Q1）
 5. **两语录精确场景坐标**（CCBC 2021 Part 1 Q2 / Part 3 Q1）
 6. **护城河进化四阶段叙事**（CCBC 2021 Part 1, Q1）
+
+### 6. Constructor Theory × Morris「For Now」闭环 ✅（新增 ⭐）
+> "Morris『For Now』提供了认识论（承认预测不可靠）和行动纪律（等数据来了再说），但护城河『真/假』的判准从未被严格化。Constructor Theory精确填补了这个缺口。"
+
+**三者闭环**：
+- Constructor Theory → 护城河判准：不可能变换 = 真永久护城河
+- Morris「For Now」→ 行动纪律：预先声明可证伪条件 + 等数据验证
+- F1/F2/F3 → 数据工具：季度检验
+
+**对窗口期的直接影响**：
+- PDD 8倍PE = 市场系统性定价了某种程度的China 2.5脆弱性
+- 微信10亿+关系图谱 = 不可能变换（技术物理嵌入 + 商业回报绑定 + 数十年积累）= 真永久护城河
+- 干预风险：从"政府摧毁平台"重新定性为"干预叠加导致ROIC系统性下降"
+
+### 7. Morris引用置信度全面重新评估 ✅（新增 ⚠️）
+**已识别的高风险漂移**：
+| 引用内容 | 原置信度 | 调整后 | 原因 |
+|---------|---------|--------|------|
+| Morris「For Now」行动纪律 | 高 | 高 ✅ | 窗口期行动纪律与数据验证直接相关 |
+| Morris Iron Law基本含义 | 高 | 高 ✅ | Morris 2015 FF Ch21直接引用 |
+| Morris SDI四维度框架 | 高 | 高 ✅ | 2010 Science + 2015 FF多源互证 |
+| "冰箱时刻"三层扩展 | 高 | **中** | Morris Carnegie 2010原典未核实，标注为"扩展解读" |
+| SDI × F1/F2/F3映射 | 高 | **中** | 标注为"操作化假设" |
+| Morris「For Now」四哲学支柱 | 高 | **低** | 明确标注为"我们整合" |
+
+**下一步**：阿里Q1发布后尝试获取Morris原典PDF，按核查清单逐项核实
 
 ---
 
@@ -179,9 +209,11 @@
 
 ## 下一步：腾讯Q1（5月13日）倒计时
 
-- **当前：5月6日 05:35**（距腾讯Q1 5.1天）
-- Morris「For Now」窗口期：阿里Q1（5/7-8日）今日开始 → 腾讯Q1（5/13日）最高优先级
-- Owner Mentality × Morris「For Now」终极整合文档已就位 ✅
+- **当前：5月6日 10:44**（距腾讯Q1 6天，距阿里Q1 ~14小时）
+- Morris「For Now」窗口期：阿里Q1（5/7-8日）明日开始 → 腾讯Q1（5/13日）最高优先级
+- Constructor Theory框架已文档化，填补Morris「For Now」最后缺口 ✅
+- Morris引用核查清单已建立，传声筒风险已识别 ⚠️
 - 38小时 Morris SDI 研究周期全部成果：完成 ✅
+- Git状态：窗口期所有commits全部push完成 ✅
 
 *窗口期心态纪律：不焦虑 / 不预测 / 不行动 / 持续监控*
