@@ -1693,3 +1693,33 @@ faq.html        ← FAQ（新创建）
 3. Footer 来源说明 → 分项标注：Morris 熵增/Ch1-Ch3 / TCI 案例 2024北大 / SSRN Ch13 中国文化章节（非本篇来源）
 
 **Git commit**：33af59（已于 2026-05-02 10:22 推送至 origin/dev-clean ✅）
+
+---
+
+## 5-C1 执行记录（2026-05-08 06:42）✅
+
+**任务**：验证 EWBC/OXY 是否在 Himalaya Capital 13F 中出现
+
+**执行过程**：
+1. SEC EDGAR 查询 Himalayan Capital（CIK 0001576745）
+2. 发现：自2013年至2025年，所有报备均为 **Form D/D/A（私募豁免修订版）**
+3. **无任何 13F institutional investment manager filings**
+4. 结论：Himalaya Capital 以 Family Office Exemption 运营，无需提交13F
+
+**持仓数据来源分析**：
+- EWBC（，9%）和 OXY（.3M）数据出现在公开13F汇总中
+- Berkshire Hathaway（CIK 0001067983）Q4 2025 13F中无 EWBC/OXY（小仓位不符合BRK规模）
+- 持仓数据最可能来源：第三方13F聚合平台（13f.info/WhaleWisdom等）从其他机构投资者13F中汇总
+
+**处理结果**：
+- 保留 EWBC/OXY 持仓卡片（数据有参考价值，但需标注来源）
+- 在EWBC/OXY卡片描述添加「⚠️持仓数据来自公开13F汇总（非Himalaya Capital直接申报，Family Office豁免实体）」
+- 表格行添加 HTML 注释跟踪数据来源
+- hist-note「OXY首次出现在13F」→ 「OXY首次出现在公开13F汇总」
+
+**Commit**：7ef26f1（dev-clean本地，push待网络恢复）✅
+
+**状态**：✅ 完成（2026-05-08 06:42）
+
+---
+
