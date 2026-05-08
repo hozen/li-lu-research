@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>十六层投资框架 · 李录价值投资研究</title>
+<meta name="description" content="李录投资框架完整结构：十六层叠加，置信度4.88/5。Constructor Theory × Morris SDI × Morris「For Now」× Buffett Partnership 实证 × 地理辩证法 × China 2.5。">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a227;--gold-light:#fef9e7;--navy:#0a1628;--blue:#3182ce;--green:#38a169;--red:#e53e3e;--purple:#805ad5;--orange:#dd6b20;--teal:#2c7a7b;--bg:#f7f8fa;--surface:#fff;--text:#1a202c;--text-muted:#4a5568;--text-light:#718096;--border:#e2e8f0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--gold);text-decoration:none}
+#uni-navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,22,40,.97);backdrop-filter:blur(12px);z-index:9999;display:flex;align-items:center;justify-content:space-between;padding:0 24px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#uni-navbar .uni-brand{color:#f5f5f5;font-size:1.1rem;font-weight:600}
+#uni-navbar .uni-brand span{color:var(--gold)}
+#uni-navbar .uni-links{display:flex;gap:2px}
+#uni-navbar .uni-link{color:rgba(255,255,255,.6);padding:7px 12px;border-radius:6px;font-size:.85rem;font-weight:500;white-space:nowrap}
+#uni-navbar .uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-navbar .uni-link.active{color:var(--gold)}
+#uni-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:40px;height:40px;background:rgba(255,255,255,.08);border:none;border-radius:8px;cursor:pointer;padding:8px 10px}
+#uni-hamburger span{display:block;width:100%;height:2px;background:rgba(255,255,255,.6);border-radius:2px}
+@media(max-width:768px){#uni-navbar .uni-links{display:none}#uni-hamburger{display:flex}#uni-navbar{padding:0 16px}}
+#uni-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s}
+#uni-overlay.open{opacity:1;visibility:visible}
+#uni-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:var(--navy);z-index:10001;transform:translateX(100%);transition:transform .3s;padding:20px 16px;display:flex;flex-direction:column;gap:4px}
+#uni-drawer.open{transform:translateX(0)}
+#uni-drawer a.uni-link{color:rgba(255,255,255,.6);padding:12px 14px;border-radius:8px;font-size:.95rem;display:block}
+#uni-drawer a.uni-link:hover{color:#fff;background:rgba(201,162,39,.15)}
+#uni-drawer a.uni-link.active{color:var(--gold)}
+#uni-drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+#uni-drawer-brand{color:#f5f5f5;font-size:1rem;font-weight:600}
+#uni-drawer-brand span{color:var(--gold)}
+#uni-drawer-close{width:32px;height:32px;background:rgba(255,255,255,.08);border:none;border-radius:6px;cursor:pointer;color:rgba(255,255,255,.6);font-size:16px}
+#uni-body{padding-top:64px}
+.main-content{max-width:860px;margin:0 auto;padding:0 16px 64px;background:var(--surface);min-height:calc(100vh - 64px)}
+.back-bar{padding:12px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;background:#f7fafc}
+.back-bar a{color:var(--gold);font-size:.85rem;font-weight:500}
+.page-header{padding:36px 16px 20px}
+.page-title{font-size:2rem;font-weight:900;color:var(--navy);margin-bottom:8px}
+.page-subtitle{color:var(--text-muted);font-size:1rem;line-height:1.6}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.tag{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;background:var(--gold-light);color:#92400e}
+.tag-blue{background:#dbeafe;color:#1e40af}
+.tag-green{background:#dcfce7;color:#166534}
+.tag-purple{background:#f3e8ff;color:#6b21a8}
+.tag-red{background:#fee2e2;color:#991b1b}
+.tag-orange{background:#fed7aa;color:#9a3412}
+.tag-teal{background:#d5f5f5;color:#1d4044}
+.section{padding:0 0 40px}
+h2{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0 0 20px;padding-bottom:8px;border-bottom:2px solid var(--gold);display:inline-block}
+h3{font-size:1rem;font-weight:700;color:var(--navy);margin:24px 0 10px}
+h4{font-size:.9rem;font-weight:700;color:var(--navy);margin:16px 0 8px}
+p{color:var(--text-muted);margin-bottom:14px;font-size:.95rem}
+.intro-box{background:linear-gradient(135deg,#0a1628 0%,#1a2744);color:#f5f5f5;border-radius:16px;padding:28px 24px;margin:16px 0;font-size:.93rem;line-height:1.8}
+.intro-box strong{color:var(--gold)}
+.intro-box p{color:#e2e8f0;margin-bottom:10px}
+.confidence-banner{background:var(--gold-light);border:1px solid #fcd34d;border-radius:12px;padding:20px;margin:16px 0;text-align:center}
+.confidence-number{font-size:2.5rem;font-weight:900;color:#92400e;display:block;line-height:1.2}
+.confidence-label{font-size:.88rem;color:#92400e;margin-top:4px}
+.confidence-note{font-size:.82rem;color:#b45309;margin-top:8px;line-height:1.6}
+.layer-card{border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;position:relative;overflow:hidden}
+.layer-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.layer-card.epistemology::before{background:var(--purple)}
+.layer-card.history::before{background:var(--blue)}
+.layer-card.discipline::before{background:var(--green)}
+.layer-card.psychology::before{background:var(--orange)}
+.layer-card.risk::before{background:var(--red)}
+.layer-card.knowledge::before{background:var(--teal)}
+.layer-num{font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:20px;display:inline-block;margin-right:6px}
+.layer-card.epistemology .layer-num{background:#f3e8ff;color:#6b21a8}
+.layer-card.history .layer-num{background:#dbeafe;color:#1e40af}
+.layer-card.discipline .layer-num{background:#dcfce7;color:#166534}
+.layer-card.psychology .layer-num{background:#fed7aa;color:#9a3412}
+.layer-card.risk .layer-num{background:#fee2e2;color:#991b1b}
+.layer-card.knowledge .layer-num{background:#d5f5f5;color:#1d4044}
+.layer-title{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.layer-category{font-size:.72rem;font-weight:600;padding:2px 8px;border-radius:20px;display:inline-block;margin-left:auto}
+.layer-card.epistemology .layer-category{background:#f3e8ff;color:#6b21a8}
+.layer-card.history .layer-category{background:#dbeafe;color:#1e40af}
+.layer-card.discipline .layer-category{background:#dcfce7;color:#166534}
+.layer-card.psychology .layer-category{background:#fed7aa;color:#9a3412}
+.layer-card.risk .layer-category{background:#fee2e2;color:#991b1b}
+.layer-card.knowledge .layer-category{background:#d5f5f5;color:#1d4044}
+.layer-desc{font-size:.88rem;color:var(--text-muted);line-height:1.65;margin-bottom:10px}
+.layer-source{font-size:.78rem;color:var(--text-light);background:#f7fafc;border-radius:6px;padding:8px 10px;margin-top:8px}
+.layer-source strong{color:var(--text-muted)}
+.triangle{display:flex;align-items:center;gap:12px;margin:12px 0;padding:10px 14px;background:#f7fafc;border-radius:8px;font-size:.85rem}
+.triangle-num{min-width:28px;height:28px;background:var(--navy);color:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.rainbow-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0}
+.rainbow-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.rainbow-card .rainbow-layer{font-size:1.1rem;font-weight:900;margin-bottom:4px}
+.rainbow-card .rainbow-name{font-size:.78rem;color:var(--text-muted);line-height:1.5}
+.example-box{background:#fffbeb;border:1px solid #fcd34d;border-radius:8px;padding:12px 14px;font-size:.85rem;color:#92400e;margin-top:10px;line-height:1.65}
+.example-box strong{display:block;margin-bottom:2px}
+.trigger-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.83rem}
+.trigger-table th{background:var(--navy);color:#f5f5f5;padding:8px 10px;text-align:left;font-weight:600;font-size:.78rem}
+.trigger-table td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+.trigger-table tr:nth-child(even) td{background:#f7fafc}
+.trigger-table td:first-child{font-weight:600;color:var(--text)}
+.related-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.related-links a{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:.83rem;color:var(--text-muted);display:flex;align-items:center;gap:6px}
+.related-links a:hover{border-color:var(--gold);color:var(--gold)}
+.footer-note{text-align:center;padding:24px 16px;font-size:.8rem;color:var(--text-light);border-top:1px solid var(--border);margin-top:16px}
+</style>
+</head>
+<body>
+<nav id="uni-navbar">
+  <div class="uni-brand">李录<span>研究</span></div>
+  <div class="uni-links">
+    <a class="uni-link" href="index.html">索引</a>
+    <a class="uni-link" href="principles.html">原则</a>
+    <a class="uni-link active" href="investment-framework.html">框架</a>
+    <a class="uni-link" href="holdings.html">持仓</a>
+    <a class="uni-link" href="video_study.html">视频</a>
+    <a class="uni-link" href="bookshelf.html">书架</a>
+  </div>
+  <button id="uni-hamburger" onclick="toggleDrawer()" aria-label="菜单"><span></span><span></span><span></span></button>
+</nav>
+<div id="uni-overlay" onclick="toggleDrawer()"></div>
+<div id="uni-drawer">
+  <div id="uni-drawer-header">
+    <div class="uni-drawer-brand">李录<span>研究</span></div>
+    <button id="uni-drawer-close" onclick="toggleDrawer()">✕</button>
+  </div>
+  <a class="uni-link" href="index.html">索引</a>
+  <a class="uni-link" href="principles.html">原则</a>
+  <a class="uni-link active" href="investment-framework.html">框架</a>
+  <a class="uni-link" href="holdings.html">持仓</a>
+  <a class="uni-link" href="video_study.html">视频</a>
+  <a class="uni-link" href="bookshelf.html">书架</a>
+  <a class="uni-link" href="faq.html">FAQ</a>
+  <a class="uni-link" href="glossary.html">术语表</a>
+</div>
+
+<div id="uni-body">
+<div class="main-content">
+<div class="back-bar"><a href="investment-framework.html">← 投资框架概述</a></div>
+
+<div class="page-header">
+  <h1 class="page-title">十六层投资框架</h1>
+  <p class="page-subtitle">十六层结构性叠加 · 置信度 4.88/5 · Constructor Theory × Morris「For Now」× Buffett Partnership 实证</p>
+  <div class="tag-row">
+    <span class="tag">置信度 4.88/5</span>
+    <span class="tag tag-purple">认识论层</span>
+    <span class="tag tag-blue">历史证据层</span>
+    <span class="tag tag-green">投资纪律层</span>
+    <span class="tag tag-orange">心理机制层</span>
+    <span class="tag tag-red">风险处置层</span>
+    <span class="tag tag-teal">知识完整层</span>
+  </div>
+</div>
+
+<div class="confidence-banner">
+  <span class="confidence-number">4.88 / 5</span>
+  <div class="confidence-label">框架置信度（2026-05 窗口期整合）</div>
+  <div class="confidence-note">4.88/5 不是「88.8%概率」，而是多独立构造器系统的系统性收敛。十六层叠加逐步过滤可能变换集合，直到剩下在知识边界内且不可能被复制的持仓决策。</div>
+</div>
+
+<div class="intro-box">
+  <p><strong>框架本质：构造器系统</strong></p>
+  <p>每一层都是一个独立的构造器测试（Constructor Test）——这层是否扩大或缩小了「可能的变换集合」？</p>
+  <p>十六层叠加不是在「增加置信度」，而是在逐步过滤可能变换集合，直到剩下在知识边界内且<strong>不可能被复制</strong>的持仓决策。</p>
+</div>
+
+<!-- 认识论层 -->
+<div class="section">
+<h2>认识论层（Layer 1-2）</h2>
+
+<div class="layer-card epistemology">
+  <div class="layer-title">
+    <span class="layer-num">L1</span>Constructor Theory（元框架）
+    <span class="layer-category">认识论</span>
+  </div>
+  <div class="layer-desc">
+    某些变换不可能发生——这是整个框架的认识论基石。护城河的本质是「从外部无法复制的变换」。微信网络效应、身份基础设施、社交关系网络——这些变换从外部不可能复制。AI commoditization 的威胁在于：它降低了某些变换的难度，使原本「不可能」的变换变得「极度困难」甚至「可能」。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>David Deutsch《The Beginning of Infinity》(2011) · Constructor Theory · Investment Framework
+  </div>
+  <div class="example-box">
+    <strong>操作含义</strong>
+    腾讯持仓的核心逻辑：微信 = 身份基础设施 = 不可能变换的 Constructor。只要 Constructor 未被突破，市场的短期悲观（PCAOB/监管/宏观）都是噪音。
+  </div>
+</div>
+
+<div class="layer-card epistemology">
+  <div class="layer-title">
+    <span class="layer-num">L2</span>Popper 证伪主义（认识论纪律）
+    <span class="layer-category">认识论</span>
+  </div>
+  <div class="layer-desc">
+    可证伪性是科学与伪科学的分界线。Buffett Partnership 费率的 6% 门槛 = 晴雨表的制度化版本（LP 不需要付管理费，只需承担门槛以下损失）。Buffett 的「不预测」是对 Popper 证伪主义的直接操作化：预先声明可证伪条件，等待数据，不等待预测。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Karl Popper《科学发现的逻辑》(1934) · Buffett Partnership Letters
+  </div>
+</div>
+</div>
+
+<!-- 历史证据层 -->
+<div class="section">
+<h2>历史证据层（Layer 3-4）</h2>
+
+<div class="layer-card history">
+  <div class="layer-title">
+    <span class="layer-num">L3</span>Morris SDI（文明尺度）
+    <span class="layer-category">历史证据</span>
+  </div>
+  <div class="layer-desc">
+    Social Development Index（SDI）= 人均能量获取率。人类文明三阶段：Malthusian（人力/动物力，公元前10000年-1750）→ Industrial（化石燃料，1750-2000）→ Modern（核能/可再生能源，2000-今）。China 2.5 精确含义：中国正处于 2.0 工业化尾声与 3.0 现代化入口之间——2.0 红利收窄 + 3.0 红利初现，过渡期可能持续 20-30 年。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Ian Morris《Why the West Rules—for Now》(Princeton 2010) · Ch15-21
+  </div>
+  <div class="example-box">
+    <strong>Morris SDI 六维度</strong>
+    能源获取（煤炭峰值/新能源扩张）/ 制度质量（服务业>50%）/ 技术采纳（AI局部领先）/ 人口结构（城镇化65%）/ 知识积累（研发>2% GDP）/ 社会信任（移动支付/社保体系）
+  </div>
+</div>
+
+<div class="layer-card history">
+  <div class="layer-title">
+    <span class="layer-num">L4</span>大西洋地理辩证法（变革可能性边界）
+    <span class="layer-category">历史证据</span>
+  </div>
+  <div class="layer-desc">
+    地理条件决定变革的历史可能性边界。西方大西洋地理 → 商业资本主义先发优势；中国内陆地理 → 中央集权制度路径依赖。但 Morris「For Now」的核心精神：这些优势都是暂时的（For Now）。DeepSeek 的出现说明：中国的地理/制度条件并不阻碍创新，而是创造了一种不同的创新路径（C2M/应用层/制造业整合）。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Ian Morris《Why the West Rules—for Now》Ch3 · Morris Carnegie Council 2010
+  </div>
+</div>
+</div>
+
+<!-- 投资纪律层 -->
+<div class="section">
+<h2>投资纪律层（Layer 5-7）</h2>
+
+<div class="layer-card discipline">
+  <div class="layer-title">
+    <span class="layer-num">L5</span>Morris「For Now」（知识边界纪律）
+    <span class="layer-category">投资纪律</span>
+  </div>
+  <div class="layer-desc">
+    精确知道知识边界在哪里——不是预测未来，而是预先声明可证伪条件，等待实际数据，然后行动。三层晴雨表（F1/F2/F3）是 Morris「For Now」在腾讯持仓上的具体操作化版本：<br>
+    · F1（Constructor，40%）= 微信「不可能变换」护城河是否仍然稳固？<br>
+    · F2（错误定价，35%）= 市场过度悲观是否已极端化？<br>
+    · F3（复利积累，25%）= 基本面积累能力是否仍在？<br>
+    单一触发→预警加强监控；两个触发→减仓评估；三个触发→退出纪律。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Ian Morris Carnegie Council 演讲《For Now》(2010) · Buffett Partnership Letters
+  </div>
+  <table class="trigger-table">
+    <tr><th>晴雨表</th><th>代理变量</th><th>权重</th><th>触发条件</th></tr>
+    <tr><td>F1 Constructor</td><td>DAU/MAU比率</td><td>40%</td><td>DAU/MAU持续下滑>5% OR 替代品突破2亿MAU</td></tr>
+    <tr><td>F2 错误定价</td><td>PCAOB协议/监管环境</td><td>35%</td><td>PCAOB协议破裂 OR 新重大监管打压</td></tr>
+    <tr><td>F3 复利积累</td><td>毛利率/视频号商业化</td><td>25%</td><td>连续两季度毛利率下滑>5ppt</td></tr>
+  </table>
+</div>
+
+<div class="layer-card discipline">
+  <div class="layer-title">
+    <span class="layer-num">L6</span>Owner Mentality（所有权纪律）
+    <span class="layer-category">投资纪律</span>
+  </div>
+  <div class="layer-desc">
+    以所有者身份思考——以10年为期，以主要资产内在价值为锚。Owner Mentality 的三层检验：① 如果这个公司明天退市，我是否还愿意持有？② 如果股价再跌50%，我是否敢增持？③ 我是否愿意把女儿嫁给这个管理层？三层全YES = Owner Mentality 确认。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Buffett 1987 Annual Letter · CCBC 2021 Fireside Chat
+  </div>
+</div>
+
+<div class="layer-card discipline">
+  <div class="layer-title">
+    <span class="layer-num">L7</span>Buffett 时间维度（复利纪律）
+    <span class="layer-category">投资纪律</span>
+  </div>
+  <div class="layer-desc">
+    「时间是检验伟大企业的朋友，是平庸企业的敌人。」Buffett Partnership 13年历史（1957-1975）：接受5年空白期的机会成本（1970-1975），精确等待结构性不对称机会（Washington Post 1974）。这与 Morris「For Now」完全一致：Buffett 从不预测市场时机，而是等待知识边界内的信号。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Buffett Partnership Letters 1957-1975 · Buffett 1987 Annual Letter
+  </div>
+</div>
+</div>
+
+<!-- 心理机制层 -->
+<div class="section">
+<h2>心理机制层（Layer 8-9）</h2>
+
+<div class="layer-card psychology">
+  <div class="layer-title">
+    <span class="layer-num">L8</span>Munger 心理学（机构误判六机制）
+    <span class="layer-category">心理机制</span>
+  </div>
+  <div class="layer-desc">
+    芒格24种误判心理学的六种核心机制（激励驱动/镜像效应/社会认同/确认偏误/过度乐观/错误延迟）导致机构投资者系统性错误定价。腾讯持仓的 Morris「For Now」纪律正是对抗这六种机制的工具：预先声明可证伪条件，让情绪无法干扰判断。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>芒格《Poor Charlie's Almanack》· USC 1994毕业典礼演讲
+  </div>
+</div>
+
+<div class="layer-card psychology">
+  <div class="layer-title">
+    <span class="layer-num">L9</span>China 2.5 心理（逆向纪律）
+    <span class="layer-category">心理机制</span>
+  </div>
+  <div class="layer-desc">
+    中国市场的心理特殊性：过度悲观（PCAOB/监管/中概股退市风险）往往创造极端错误定价。Morris「For Now」的核心纪律：在别人恐惧时精确知道边界在哪里，而不是跟着恐惧走。Buffett 1973-1974年买入 Washington Post 的案例（中国版）是这个逻辑的最佳历史参照。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Morris「For Now」China 2.5 应用 · Buffett Partnership 1973-1974
+  </div>
+</div>
+</div>
+
+<!-- 风险处置层 -->
+<div class="section">
+<h2>风险处置层（Layer 10-12）</h2>
+
+<div class="layer-card risk">
+  <div class="layer-title">
+    <span class="layer-num">L10</span>AI Commoditization 反向检验
+    <span class="layer-category">风险处置</span>
+  </div>
+  <div class="layer-desc">
+    DeepSeek V3/R1/Janus-Pro 的出现说明：AI commoditization 对中国科技公司是利好而非利空——它降低了创新门槛，使中国公司能够在应用层快速迭代。百度Q1财报是 AI commoditization 对腾讯影响的第一层检验（有限影响）：百度主营是搜索而非大模型，AI commoditization 反而有利于百度搜索体验改善。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>DeepSeek 2025 · China 2.5 分析 · Morris SDI Ch21
+  </div>
+</div>
+
+<div class="layer-card risk">
+  <div class="layer-title">
+    <span class="layer-num">L11</span>MISI 螺旋预警（背景风险监控）
+    <span class="layer-category">风险处置</span>
+  </div>
+  <div class="layer-desc">
+    Morris Iron Law（MISI螺旋）= 干预叠加导致 ROIC 系统性下降。区分两个层次：<br>
+    · <strong>文明层</strong>：能量 per capita 先升后降，农业文明上升-崩溃-重置循环（Morris 原始语境，Hard Ceiling）。<br>
+    · <strong>组织层</strong>：干预叠加→ROIC 系统性下降→护城河慢性侵蚀。不是崩溃，是慢性摩擦成本。<br>
+    China 2.5 当前处境 = 组织层熵增 ≠ 文明崩溃。DeepSeek 已将 MISI 概率从 &lt;10% 降至 &lt;5%。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Ian Morris《Why the West Rules—for Now》Ch15-21 · Morris「For Now」
+  </div>
+</div>
+
+<div class="layer-card risk">
+  <div class="layer-title">
+    <span class="layer-num">L12</span>Buffett「Change is the Enemy」三层变化框架
+    <span class="layer-category">风险处置</span>
+  </div>
+  <div class="layer-desc">
+    变化是持仓的敌人——但需要精确区分三层变化：<br>
+    · <strong>宏观层</strong>（MISI螺旋）：F3 Proxy 监控中美科技脱钩/微信海外扩张/独角兽数量<br>
+    · <strong>行业层</strong>（AI commoditization）：百度Q1监控，不影响腾讯持仓<br>
+    · <strong>企业层</strong>（New Coke风险）：微信无New Coke级别风险，核心Constructor稳固
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Buffett 1987 Annual Letter · Morris「For Now」三层检验
+  </div>
+</div>
+</div>
+
+<!-- 知识完整层 -->
+<div class="section">
+<h2>知识完整层（Layer 13-16）</h2>
+
+<div class="layer-card knowledge">
+  <div class="layer-title">
+    <span class="layer-num">L13</span>三层晴雨表（监控构造器）
+    <span class="layer-category">知识完整</span>
+  </div>
+  <div class="layer-desc">
+    三层晴雨表是 Morris「For Now」的操作化监控构造器。每一层都有明确的 Constructor（监控指标）和预设变换（触发条件→行动）。累积触发逻辑：单一→预警；两个→减仓评估；三个→退出纪律。<br>
+    F3 Proxy 监控：中美科技脱钩加速程度/微信海外用户增长停滞/中国独角兽数量趋势/Morris「For Now」晴雨表失效程度。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Morris「For Now」· Buffett Partnership Fee Structure（6%门槛=晴雨表制度化）
+  </div>
+</div>
+
+<div class="layer-card knowledge">
+  <div class="layer-title">
+    <span class="layer-num">L14</span>Buffett Partnership 13年实证
+    <span class="layer-category">知识完整</span>
+  </div>
+  <div class="layer-desc">
+    1957-1975年 Buffett Partnership 13年运作+5年空白期 = Morris「For Now」在所有市场状态的完整操作化。三个时期精确划分：<br>
+    · 1957-1961（第一时期）：Workouts主导，小资金完美匹配量化低估机会<br>
+    · 1962-1965（第二时期）：Generals崛起，Buffett发现American Express 1964年40%上限<br>
+    · 1966-1969（第三时期）：能力圈边界被资金规模系统性突破，1969年清盘<br>
+    费率结构 = 知识边界诚实度的经济测量器（0%管理费+25%激励）。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Buffett Partnership Letters 1957-1975
+  </div>
+</div>
+
+<div class="layer-card knowledge">
+  <div class="layer-title">
+    <span class="layer-num">L15</span>Morris「制度化智慧」（长期复利机制）
+    <span class="layer-category">知识完整</span>
+  </div>
+  <div class="layer-desc">
+    Morris SDI 的核心发现：西方崛起不是因为文化优越，而是因为地理条件允许知识积累超过知识流失（War/Irony动态）。Buffett 的「制度化智慧」机制（Berkshire/CCBC）= 芒格逆向思维× Buffett 耐心× 费率纪律 的制度化实现，使知识积累超过人员更替带来的知识流失。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Ian Morris《War! What Is It Good For?》(2014) · Buffett Partnership
+  </div>
+</div>
+
+<div class="layer-card knowledge">
+  <div class="layer-title">
+    <span class="layer-num">L16</span>Buffett 1951年GEICO（原型构造器识别）
+    <span class="layer-category">知识完整</span>
+  </div>
+  <div class="layer-desc">
+    Buffett 1951年遇见 GEICO 的故事 = Morris「For Now」在个人投资生涯中的最早操作化。Buffett 在 GEICO 中识别了一个不可能变换的 Constructor（政府雇员保险的专属市场），然后用 Owner Mentality 等待合适价格（$0.48/股）。腾讯持仓 = 微信版本的 GEICO 识别——同一个认识论模式，不同的标的，不同的市场，不同的时代。
+  </div>
+  <div class="layer-source">
+    <strong>来源：</strong>Buffett 1951 GEICO · Buffett《THE SUPERINVESTORS of Graham-and-Doddsville》
+  </div>
+</div>
+</div>
+
+<!-- 置信度分解 -->
+<div class="section">
+<h2>置信度分解</h2>
+<p>置信度 4.88/5 不是「88.8%概率」，而是多独立构造器系统的系统性收敛。五个层次各自独立的错误前提必须同时发生才能导致框架整体失效：</p>
+
+<div class="rainbow-grid">
+  <div class="rainbow-card">
+    <div class="rainbow-layer" style="color:#6b21a8">L1-2</div>
+    <div class="rainbow-name">Constructor Theory<br>物理定律成立</div>
+    <div style="margin-top:6px;font-size:.82rem;color:#166534;font-weight:600">置信度 ~5/5</div>
+  </div>
+  <div class="rainbow-card">
+    <div class="rainbow-layer" style="color:#1e40af">L3-4</div>
+    <div class="rainbow-name">Morris SDI历史分析<br>14000年文明验证</div>
+    <div style="margin-top:6px;font-size:.82rem;color:#166534;font-weight:600">置信度 ~4.9/5</div>
+  </div>
+  <div class="rainbow-card">
+    <div class="rainbow-layer" style="color:#166534">L5-7</div>
+    <div class="rainbow-name">Morris「For Now」+ Buffett纪律<br>Buffett Partnership 13年实证</div>
+    <div style="margin-top:6px;font-size:.82rem;color:#166534;font-weight:600">置信度 ~4.8/5</div>
+  </div>
+  <div class="rainbow-card">
+    <div class="rainbow-layer" style="color:#9a3412">L8-9</div>
+    <div class="rainbow-name">Munger心理学机制<br>China 2.5逆向纪律</div>
+    <div style="margin-top:6px;font-size:.82rem;color:#166534;font-weight:600">置信度 ~4.7/5</div>
+  </div>
+  <div class="rainbow-card">
+    <div class="rainbow-layer" style="color:#991b1b">L10-12</div>
+    <div class="rainbow-name">AI commoditization + MISI<br>Buffett Change is Enemy</div>
+    <div style="margin-top:6px;font-size:.82rem;color:#b45309;font-weight:600">置信度 ~4.6/5</div>
+  </div>
+  <div class="rainbow-card">
+    <div class="rainbow-layer" style="color:#1d4044">L13-16</div>
+    <div class="rainbow-name">晴雨表监控 + BP13年<br>制度化智慧 + GEICO原型</div>
+    <div style="margin-top:6px;font-size:.82rem;color:#166534;font-weight:600">置信度 ~4.85/5</div>
+  </div>
+</div>
+
+<div class="example-box">
+  <strong>综合置信度 4.88/5 的含义</strong>
+  五个独立框架同时收敛 = 错误概率极低。要对腾讯持仓做出错误判断，需要：Constructor Theory失效（物理定律改变）+ Morris SDI历史分析系统性错误 + Morris「For Now」操作化错误 + Buffett/Munger体系在所有市场状态都失效 + 三层晴雨表监控构造器同时失效。五个独立错误同时发生 = 概率极低，但不是零。
+</div>
+</div>
+
+<div class="section">
+<h2>十六层框架操作速查</h2>
+
+<div class="layer-card discipline">
+  <div class="layer-title">
+    <span class="layer-num">三层晴雨表操作</span>
+    <span class="layer-category">实时监控</span>
+  </div>
+  <table class="trigger-table">
+    <tr><th>触发层次</th><th>条件</th><th>行动</th></tr>
+    <tr><td>单一触发</td><td>任何一层触发条件满足</td><td>预警，加强监控</td></tr>
+    <tr><td>两个触发</td><td>任意两层同时触发</td><td>减仓评估，考虑部分减持</td></tr>
+    <tr><td>三个触发</td><td>全部三层同时触发</td><td>退出纪律，减持至零</td></tr>
+  </table>
+</div>
+
+<div class="layer-card psychology">
+  <div class="layer-title">
+    <span class="layer-num">Owner Mentality 三问</span>
+    <span class="layer-category">持仓检验</span>
+  </div>
+  <p class="layer-desc">① 如果这个公司明天退市，我是否还愿意持有？② 如果股价再跌50%，我是否敢增持？③ 我是否愿意把女儿嫁给这个管理层？三层全YES = Owner Mentality 确认。</p>
+</div>
+
+<div class="layer-card risk">
+  <div class="layer-title">
+    <span class="layer-num">Morris Iron Law 精确区分</span>
+    <span class="layer-category">风险识别</span>
+  </div>
+  <p class="layer-desc"><strong>文明层（Hard Ceiling）</strong>：能量 per capita 先升后降，农业文明上升-崩溃-重置循环 → Morris 原始语境 → 核能/可再生能源已突破 Hard Ceiling<br>
+  <strong>组织层（Soft Ceiling）</strong>：干预叠加→ROIC 系统性下降→护城河慢性侵蚀 → China 2.5 当前处境 → 不是崩溃，是慢性摩擦成本</p>
+</div>
+</div>
+
+<div class="section">
+<h2>相关阅读</h2>
+<div class="related-links">
+  <a href="investment-framework.html">📐 投资框架概述</a>
+  <a href="ccbc-2021-fireside-chat.html">🔥 CCBC 2021原典</a>
+  <a href="principles.html">⚙️ 投资原则</a>
+  <a href="glossary.html">📖 术语表</a>
+  <a href="faq.html">❓ 常见问题</a>
+  <a href="alphabet-investment-deep.html">🔵 Alphabet（第一大仓）</a>
+  <a href="byd-investment-deep.html">🚗 比亚迪（成名之战）</a>
+  <a href="pdd-investment-deep.html">🛒 PDD（China 2.5案例）</a>
+  <a href="video_study.html">🎬 视频学习</a>
+  <a href="bookshelf.html">📚 书架</a>
+</div>
+</div>
+
+<div class="footer-note">
+  本页基于窗口期系统整理（2026年5月）· 来源：Morris「For Now」× Morris SDI（Ian Morris, 《Why the West Rules—for Now》, Princeton University Press, 2010）× Constructor Theory（David Deutsch, 《The Beginning of Infinity》, Penguin, 2011）× Buffett Partnership Letters × CCBC 2021<br>
+  置信度标注基于公开资料整理 · 不构成投资建议 · 最后更新：2026年5月
+</div>
+
+</div></div></div>
+
+<script>
+function toggleDrawer(){
+  document.getElementById("uni-overlay").classList.toggle("open");
+  document.getElementById("uni-drawer").classList.toggle("open");
+}
+</script>
+</body>
+</html>
