@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morris SDI Fundamentals — Li Lu Research</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --bg: #0a1628;
+      --bg-card: #0f2040;
+      --bg-card2: #132744;
+      --text: #e8e0d0;
+      --muted: #8fa3c0;
+      --accent: #c9a227;
+      --accent2: #7ab8d4;
+      --border: #1e3a5f;
+      --danger: #e05555;
+      --success: #4caf7d;
+      --link: #7ab8d4;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter','Noto Serif SC',sans-serif; line-height: 1.75; }
+    .main-content { max-width: 900px; margin: 0 auto; padding: 80px 24px 120px; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg,#0a1628 0%,#1a3a5c 60%,#0d2240 100%); border-bottom: 1px solid var(--border); padding: 3rem 0 2.5rem; margin-bottom: 3rem; }
+    .hero .eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .hero h1 { font-family: 'Noto Serif SC',serif; font-size: clamp(1.6rem,4vw,2.4rem); font-weight: 700; line-height: 1.2; color: var(--text); margin-bottom: 0.75rem; }
+    .hero .subtitle { color: var(--muted); font-size: 0.95rem; max-width: 620px; }
+
+    /* Cards */
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; margin-bottom: 1.5rem; }
+    .card h2 { font-size: 1.15rem; font-weight: 600; color: var(--accent); margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.6rem; }
+    .card h3 { font-size: 1rem; font-weight: 600; color: var(--accent2); margin: 1.25rem 0 0.5rem; }
+    .card p { color: var(--text); margin-bottom: 0.75rem; }
+    .card ul { margin: 0.5rem 0 1rem 1.5rem; }
+    .card li { color: var(--text); margin-bottom: 0.4rem; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    th { background: var(--bg-card2); color: var(--accent); padding: 0.65rem 0.85rem; text-align: left; border-bottom: 2px solid var(--border); font-weight: 600; }
+    td { padding: 0.6rem 0.85rem; border-bottom: 1px solid var(--border); color: var(--text); }
+    tr:hover td { background: var(--bg-card2); }
+
+    /* Callouts */
+    .callout { border-left: 4px solid var(--accent); padding: 0.85rem 1.25rem; margin: 1.25rem 0; background: rgba(201,162,39,0.07); border-radius: 0 8px 8px 0; }
+    .callout.warning { border-left-color: var(--danger); background: rgba(224,85,85,0.07); }
+    .callout.info { border-left-color: var(--accent2); background: rgba(122,184,212,0.07); }
+    .callout p { margin: 0; color: var(--text); font-size: 0.92rem; }
+    .callout strong { color: var(--accent); }
+
+    /* Nav pills */
+    .nav-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 1.5rem 0; }
+    .pill { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; text-decoration: none; border: 1px solid var(--border); color: var(--muted); background: var(--bg-card); transition: all 0.2s; }
+    .pill:hover { border-color: var(--accent); color: var(--accent); background: rgba(201,162,39,0.08); }
+    .pill.active { border-color: var(--accent); color: var(--accent); background: rgba(201,162,39,0.12); }
+
+    /* Badge */
+    .badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; }
+    .badge-gold { background: rgba(201,162,39,0.2); color: var(--accent); }
+    .badge-blue { background: rgba(122,184,212,0.2); color: var(--accent2); }
+    .badge-green { background: rgba(76,175,125,0.2); color: var(--success); }
+
+    /* Footer nav */
+    .footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-nav a { color: var(--accent2); text-decoration: none; font-size: 0.9rem; }
+    .footer-nav a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) { table { font-size: 0.82rem; } th,td { padding: 0.5rem; } }
+  </style>
+</head>
+<body>
+  <nav id="uni-navbar"></nav>
+  <main class="main-content">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="eyebrow">Morris SDI · 基础知识</div>
+      <h1>Morris SDI 是什么？</h1>
+      <p class="subtitle">Ian Morris 著《The Measure of Civilization》核心框架：14000年人均能量获取率的历史测量，以及它如何成为李录投资框架的文明尺度基础。</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-pills">
+      <a href="morris-sdi-fundamentals.html" class="pill active">SDI 基础</a>
+      <a href="china25-framework.html" class="pill">China 2.5 框架</a>
+      <a href="china25-energy-paradox.html" class="pill">能量悖论</a>
+      <a href="china25-hard-ceiling.html" class="pill">Hard Ceiling</a>
+      <a href="morris-sdi-investment-integration.html" class="pill">投资整合</a>
+    </div>
+
+    <!-- Section 1: What is SDI -->
+    <div class="card">
+      <h2>一、SDI 的定义：人均能量获取率</h2>
+      <p>SDI（Sloan Digital Sky Survey Index 实际上来自 Ian Morris 的书名《The Measure of Civilization》——中译《文明的衡量》——但框架的实际名称源自社会科学中测量文明发展的核心变量：<strong>人均可用能量</strong>（Energy Available per Person）。</p>
+      <p>Morris 的核心命题：<strong>一个社会的能量获取能力，决定了它能做什么</strong>。这个变量比GDP或GDP per capita更能捕捉文明的真实能力，因为能量是所有经济活动的底层驱动力。</p>
+      
+      <h3>为什么用能量而非GDP？</h3>
+      <ul>
+        <li><strong>GDP是流量，能量是存量基础</strong>：GDP衡量一年产出，但工业产能（工厂/发电站/运输网络）是一个积累量，决定了GDP的上限</li>
+        <li><strong>能量具有可比性</strong>：1776年的英国和2020年的中国，用美元计价无法比较，但用能量获取（瓦特/人）可以</li>
+        <li><strong>能量不受汇率操纵影响</strong>：人民币汇率波动不影响中国真实工业产能的测量</li>
+      </ul>
+
+      <div class="callout info">
+        <p><strong>Morris 的方法论</strong>：不是预测未来，而是测量「现在在哪里」。就像温度计不是预测天气，而是告诉你现在有多热。Morris SDI 晴雨表回答同一个问题：在14000年人类文明的尺度上，我们现在处于什么位置？</p>
+      </div>
+    </div>
+
+    <!-- Section 2: Three Stages -->
+    <div class="card">
+      <h2>二、三阶段文明模型</h2>
+      <p>Morris 将14000年人类历史划分为三个截然不同的阶段：</p>
+
+      <table>
+        <thead>
+          <tr><th>阶段</th><th>时间跨度</th><th>能量来源</th><th>核心特征</th><th>SDI 范围</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-blue">SDI 1.0</span><br>Malthusian</td>
+            <td>公元前10000年<br>→ 1750年</td>
+            <td>人力 + 动物力<br>+ 初级农业</td>
+            <td>人均GDP几乎无增长<br>人口↑ 但生活水平停滞<br>马尔萨斯陷阱</td>
+            <td>0.1 → 0.3<br>（平坦期）</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-gold">SDI 2.0</span><br>Industrial</td>
+            <td>1750年 → 2000年</td>
+            <td>化石燃料<br>（煤/石油/天然气）</td>
+            <td>指数级经济增长<br>人均GDP大幅提升<br>工业革命</td>
+            <td>0.3 → 1.0+<br>（陡峭上升）</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-green">SDI 3.0</span><br>Modern</td>
+            <td>2000年 → 今</td>
+            <td>核能 + 可再生能源<br>+ 信息技术</td>
+            <td>稳态增长<br>AI与自动化<br>能源转型</td>
+            <td>1.0+ → ?<br>（Hard Ceiling出现）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>关键洞察：为什么1750年是分水岭？</h3>
+      <p>在1750年之前，人类在10000年里几乎没有生活水平的提升。考古学家测量的人均能量获取率，在公元前10000年至公元1750年之间几乎是一条平坦的直线。</p>
+      <p>然后，<strong>工业革命发生了</strong>。不是渐进变化，而是一个阶跃函数。蒸汽机→煤炭→化石燃料的能量密度远超人力/畜力，整个人类社会的能量获取能力开始指数级增长。</p>
+      <p>Morris 的核心发现：这个变化在1750年之前几乎不可能预测——就像我们现在无法预测下一次「工业革命」何时发生，以及它的Hard Ceiling在哪里。</p>
+
+      <div class="callout">
+        <p><strong>李录的核心引用</strong>：Morris SDI 回答了「我们从哪里来」的问题。它不是经济学，而是物理基础设施——有多少能量可以被人类社会获取并利用，决定了所有其他事情的上限。</p>
+      </div>
+    </div>
+
+    <!-- Section 3: What does China map to -->
+    <div class="card">
+      <h2>三、China 2.5 在 SDI 中的定位</h2>
+      <p>「China 2.5」是李录对当前中国所处文明阶段的精确描述：</p>
+
+      <table>
+        <thead>
+          <tr><th>维度</th><th>SDI 2.0 特征</th><th>SDI 3.0 特征</th><th>China 2.5 当前</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>能源获取</td><td>煤炭/石油高峰</td><td>可再生能源主导</td><td>煤炭达峰，光伏/风电快速扩张</td></tr>
+          <tr><td>产业结构</td><td>制造业占主导</td><td>服务业占主导</td><td>制造业峰值，服务业>50%</td></tr>
+          <tr><td>技术采纳</td><td>跟随阶段</td><td>前沿创新</td><td>AI/新能源局部领先</td></tr>
+          <tr><td>制度质量</td><td>工业化完成</td><td>服务业扩张</td><td>干预叠加，ROIC承压</td></tr>
+          <tr><td>人口结构</td><td>城镇化<50%</td><td>服务业就业>50%</td><td>城镇化65%，服务业扩张</td></tr>
+          <tr><td>知识积累</td><td>高等教育有限</td><td>研发>2% GDP</td><td>高等教育扩张，研发>2%</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout warning">
+        <p><strong>能量悖论（Energy-Income Paradox）</strong>：Morris SDI 测量的是能量获取（工业产能），而人均可支配收入测量的是居民实际拿到多少钱。中国两者的剪刀差，是「China 2.5」这个概念的核心张力来源。详见 <a href="china25-energy-paradox.html" style="color:var(--accent2)">能量悖论页面</a>。</p>
+      </div>
+    </div>
+
+    <!-- Section 4: Hard Ceiling -->
+    <div class="card">
+      <h2>四、Hard Ceiling：为什么文明会停滞？</h2>
+      <p>Morris Ch21 的核心命题：<strong>每个文明阶段都有一个 Hard Ceiling——当达到这个上限时，进步会停止，直到下一个范式突破</strong>。</p>
+
+      <h3>历史上两次 Hard Ceiling 转移</h3>
+      <table>
+        <thead>
+          <tr><th>Hard Ceiling</th><th>触发时间</th><th>表现</th><th>突破方式</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>农业文明 Hard Ceiling</td>
+            <td>公元前10000年 → 1750年</td>
+            <td>11500年生活水平几乎无增长<br>马尔萨斯陷阱</td>
+            <td>工业革命<br>化石燃料</td>
+          </tr>
+          <tr>
+            <td>工业文明 Hard Ceiling</td>
+            <td>2000年 → 今</td>
+            <td>化石燃料有限性<br>气候变化约束</td>
+            <td>AI时代待定<br>（算力+能源双约束）</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>AI时代的 Hard Ceiling（三层含义）</h3>
+      <ul>
+        <li><strong>第一层（芯片）</strong>：高端AI芯片获取受限（H100/H200出口管制），基础模型训练能力受到实质性约束</li>
+        <li><strong>第二层（DeepSeek效应）</strong>：算法效率优化可以部分绕过芯片Hard Ceiling，但不等于完全绕过</li>
+        <li><strong>第三层（能源）</strong>：AI数据中心耗电惊人；中国如果能在绿色能源制造上取得突破，可能率先绕过能源Hard Ceiling</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>对投资的意义</strong>：如果AI时代的Hard Ceiling最终是能源而非芯片，中国的绿色能源制造能力（光伏/风电/储能）就是真正的战略资产。这与直觉相悖——主流观点认为芯片是瓶颈，但Morris视角揭示了能源约束的更深层含义。</p>
+      </div>
+    </div>
+
+    <!-- Section 5: For Now -->
+    <div class="card">
+      <h2>五、Morris「For Now」：测量工具，非预测工具</h2>
+      <p>Morris 的「For Now」是他方法论的核心qualifier——意思不是「短期预测」，而是「在当前能量结构下，这个状态可能会持续，直到某个结构性变化打破它」。</p>
+
+      <h3>三个关键qualifier</h3>
+      <ul>
+        <li><strong>For Now ≠ 预测涨跌</strong>：是测量现在处于什么阶段，不是预测明天会发生什么</li>
+        <li><strong>For Now = 预先声明知识边界</strong>：我已经精确知道我的知识边界在哪里，现在在等数据验证我的理解是否正确</li>
+        <li><strong>For Now = 主动接受机会成本</strong>：Buffett 1970-1975年Nifty Fifty泡沫期完全置身事外，不是因为找不到机会，而是精确知道自己的能力圈边界在哪里</li>
+      </ul>
+
+      <div class="callout info">
+        <p><strong>Buffett 1970-1975 空白期</strong>：Nifty Fifty泡沫期（宝丽来100倍PE/麦当劳80倍PE），Buffett几乎完全空仓。他在信中写道：「市场正在做一些我不理解的事情。」——这不是谦虚，这是Morris「For Now」的终极操作化：精确知道边界在哪里，在边界外不行动。</p>
+      </div>
+
+      <p>详见：<a href="morris-sdi-investment-integration.html" style="color:var(--accent2)">Morris SDI 投资整合页面</a></p>
+    </div>
+
+    <!-- Section 6: Why this matters for China -->
+    <div class="card">
+      <h2>六、为什么 Morris SDI 对理解中国如此重要？</h2>
+      <p>Morris SDI 给了我们一个超越GDP的视角来看中国：</p>
+      <ul>
+        <li><strong>工业产能是真实的</strong>：即使GDP数据有水分，中国的发电量/钢铁产量/港口吞吐量是硬数据，证明SDI 2.0工业化已经完成</li>
+        <li><strong>消费/GDP偏低是结构性的</strong>：居民消费占GDP从50%降至38%，这是投资主导型增长模式的代价，不是失败</li>
+        <li><strong>AI转型是新的Hard Ceiling突破尝试</strong>：China 2.5能否向3.0迁移，取决于能否突破芯片+能源双重Hard Ceiling</li>
+        <li><strong>真实可寻址市场是3-5亿人</strong>：Morris能量悖论揭示，腾讯/阿里的真实用户是「有效消费者」，不是14亿总人口</li>
+      </ul>
+
+      <div class="callout">
+        <p><strong>Morris SDI × 李录投资决策</strong>：China 2.5框架的置信度来源，是Morris SDI（文明尺度14000年验证）+ Constructor Theory（物理学公理）+ Buffett Partnership 13年实证 + 三层晴雨表监控，四者独立收敛。详见 <a href="china25-framework.html" style="color:var(--accent2)">China 2.5 完全框架</a>。</p>
+      </div>
+    </div>
+
+    <!-- Footer Navigation -->
+    <div class="footer-nav">
+      <a href="china25-framework.html">← China 2.5 框架总纲</a>
+      <a href="china25-energy-paradox.html">能量悖论 →</a>
+    </div>
+
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
