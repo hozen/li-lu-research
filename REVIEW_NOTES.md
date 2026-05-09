@@ -7,6 +7,14 @@
 
 ## 已完成记录（2026-05-09）
 
+- **2026-05-09 窗口期第11天 Morris SDI基础知识公共页面** ✅ 已完成（2026-05-09 21:28，commit 0eee710）
+  - Git push：⚠️ pending（网络慢，下次自动同步）
+  - 创建 `morris-sdi-fundamentals.html`（~12KB，6个板块）：SDI定义/三阶段文明模型/China 2.5定位/Hard Ceiling/For Now/投资重要性
+  - china25-framework.html sub-nav新增 SDI基础 → + 投资整合 →
+  - morris-sdi-investment-integration.html nav-row新增 SDI Fundamentals（首位）
+  - 填补现有4张页面均依赖Morris SDI基础知识但无独立教学页面的知识缺口
+  - 文件：morris-sdi-fundamentals.html / china25-framework.html / morris-sdi-investment-integration.html
+
 - **2026-05-09 P0-1: 北大2024演讲「财富=购买力份额」FAQ补全** ✅ 已完成（2026-05-09 19:43，commit 26d9250）
   - Git push：⚠️ pending（网络超时，下次自动同步）
   - faq.html 新增「什么是『财富』？价值投资与财富是什么关系？」完整 FAQ 条目
