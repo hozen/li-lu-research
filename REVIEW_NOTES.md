@@ -1,7 +1,47 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-04-22 09:02
-> Last Audit: 2026-04-22 09:02 (origin/master 与 origin/dev 完全同步，均已更新至 `659a919`；已从 origin/dev/master 中移除所有 wingtech-analysis 内容，Li Lu 站点保持纯净)
+> Last Updated by Agent: 2026-05-05 09:20
+> Last Audit: 2026-05-05 09:20 (origin/master 与 origin/dev 完全同步至 `7cbf80b`；Episode 22 索引页补全)
+
+---
+
+## 待执行任务（REVIEW_NOTES）
+
+- **2026-05-06 P2-Q1: quotes.html语录来源修正** ✅ 已完成（2026-05-06 07:47，commit 9247359）
+  - Git push：⚠️ pending（网络超时，网络恢复后自动同步）
+  - 问题1：Q1来源强化为"查理·芒格（来源：Poor Charlie's Almanack，2009；李录在CCBC Fireside Chat中引用）" ✅
+  - 问题2：Q3/Q5/Q6/Q9四条语录添加HTML注释跟踪，暂保留⚠️标注，待外部信息补充 ✅
+  - 问题3：Q12"买人买赛道"——待下次有来源时处理
+  - 备注：`_updates/quotes-sources-audit-2026-05-06.md`核查报告文件未创建（无网络），工作直接执行于quotes.html
+  - 文件：li-lu-research/quotes.html
+  - 优先级：P1（事实错误必须修正）
+
+- **2026-05-06 P2-Q2: quotes.html场景锚定补充** [P2，待有来源的语录替换完成后执行]
+  - 为所有⚠️中置信度语录（Q2/Q8/Q10/Q11/Q13/Q14）补充来源场景卡
+  - 格式：何时/何地/对谁说/上下文
+  - 需要外部信息：各语录原始出处
+
+- **2026-05-05 P2-1: 核心资料静态页面叙事化重构** [全部完成 ✅]
+  - **about.html（2026-05-06执行）**：✅ 执行完成（Git commit 6faad1f）
+    - 新增开篇叙事（Buffett讲座Fat Pitch场景）
+    - 1986年时间线扩展为完整Fat Pitch叙事
+    - 1990年代→1993年精确年份 + 芒格深谈细节
+    - ~2002年比亚迪"研究驱动"叙事强化
+    - 2008年补充芒格原话
+    - 新增独立板块：芒格早餐会的修行（最重要叙事重构）
+  - **timeline.html（2026-05-06执行）**：✅ 执行完成（Git commit 2a7de8a）
+    - 1986年哥大巴菲特讲座：新增"Buffett怎么拼写"场景 + Fat Pitch顿悟 + 两年研究才出手
+    - 1991-1993年：新增三学位条目（JD+MBA+MA，哥大历史上几乎绝无仅有）
+    - 1993年（感恩节后）：精确时间 + Ron Olson在场 + 深谈确认芒格体系完整性
+    - ~2002-2003年比亚迪：精确时间 + 25-30亿美元回报数据
+    - 芒格早餐会的修行：新增独立条目（"等待本身是第一课"）
+  - **faq.html（2026-05-06 05:06执行）**：✅ 执行完成（Git commit 5fa1f2a）
+    - "李录是谁"答案：从简单描述 → 完整背景叙事（含三个学位/巴菲特讲座顿悟/芒格家族LP）
+    - "为什么投资比亚迪"答案：增加"把女儿嫁给他"原话 + 22年持有+25-30亿美元回报数据
+  - **glossary.html（2026-05-06 05:06执行）**：✅ 执行完成（Git commit 5fa1f2a）
+    - 护城河：Constructor Theory三层判准（不可能/极度困难/困难变换）+ 四阶段进化叙事
+    - 能力圈：CCBC 2021三层递进标准 + "敢不敢跌50%时增持"作为终极检验
+    - 逆向投资：Buffalo News负面教材 + 真正逆向投资三层验证框架
 
 ---
 
