@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buchanan 宪法经济学 · F2 晴雨表 50% 权重理论地基 · China 2.5</title>
+  <meta name="description" content="James Buchanan 1986年诺贝尔经济学奖：可持续制度质量需要正确的制度产生机制。改革开放=可持续制度产生机制=F2晴雨表最深护城河。">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --text: #1a202c;
+      --muted: #4a5568;
+      --accent: #9b2335;
+      --accent-light: #fdf2f4;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --highlight: #fff3cd;
+    }
+    body.dark-mode {
+      --bg: #0a1628;
+      --text: #dde6f0;
+      --muted: #8fa3c0;
+      --accent: #c9a227;
+      --accent-light: #1a2744;
+      --card: #0f2240;
+      --border: #1e3a5f;
+      --highlight: #3d2e00;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      padding-top: 70px;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--card) 0%, var(--accent-light) 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-block;
+      margin-top: 1.25rem;
+      padding: 0.35rem 1rem;
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+    }
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.25rem 0 0.5rem;
+      color: var(--text);
+    }
+    .card p, .card li {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+    }
+    .card ul { list-style: none; margin: 0.75rem 0; }
+    .card ul li {
+      padding-left: 1.25rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    .card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    /* Quote block */
+    .quote-block {
+      background: var(--highlight);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin: 1.25rem 0;
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .quote-source {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      font-style: normal;
+    }
+
+    /* Warning box */
+    .warning-box {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    body.dark-mode .warning-box {
+      background: #2d2000;
+      border-color: #5a4200;
+    }
+
+    /* Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+    .data-table th {
+      background: var(--accent-light);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .data-table td {
+      padding: 0.6rem 0.85rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td { background: var(--bg); }
+
+    /* Comparison grid */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .compare-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+    .compare-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .compare-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .compare-item a { color: var(--accent); }
+
+    /* Math block */
+    .math-block {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      white-space: pre;
+      color: var(--text);
+    }
+
+    /* Check marks */
+    .check-list { margin: 0.75rem 0; }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .check-item::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    /* Key insight box */
+    .key-insight {
+      background: var(--accent-light);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .key-insight h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .key-insight p {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .hero { padding: 2rem 1.5rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .card { padding: 1.25rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="uni-navbar"></nav>
+
+  <div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-eyebrow">China 2.5 认识论体系 · 第二层</div>
+    <h1>Buchanan 宪法经济学</h1>
+    <p class="hero-sub">James Buchanan 1986 年诺贝尔经济学奖核心洞见：可持续的制度质量需要正确的制度产生机制。改革开放 = 可持续的制度产生机制 = F2 晴雨表最深护城河。</p>
+    <div class="hero-tag">F2 晴雨表权重：Buchanan 层 50% · North 层 30% · Acemoglu 层 20%</div>
+  </div>
+
+  <!-- Section 1: Nobel Prize -->
+  <div class="card">
+    <h2>一、1986 年诺贝尔经济学奖："同意的计算"</h2>
+    <p>James Buchanan 与 Gordon Tullock 合著《同意的计算》（The Calculus of Consent, 1962），被誉为现代宪法经济学（Constitutional Economics）的奠基之作。1986 年 Buchanan 独享诺贝尔经济学奖，获奖理由：</p>
+    <div class="quote-block">
+      「将经济学的分析方法应用于政治决策的制度结构，从而将利己主义的个人与制度规则联系在一起。」
+      <div class="quote-source">— 诺贝尔经济学奖委员会，1986</div>
+    </div>
+
+    <h3>Buchanan 的核心命题</h3>
+    <p>政治经济学的基本问题不是「如何设计好制度」，而是「谁来设计制度，以及设计者的激励是什么」：</p>
+    <div class="check-list">
+      <div class="check-item">立宪时刻（Constitutional Moment）：在制定游戏规则之前，所有人都不知道自己在游戏中会处于什么位置，因此倾向于制定「公平」的规则</div>
+      <div class="check-item">同意的逻辑：只有经过一致同意（Unanimity）产生的规则，才具有持久的合法性</div>
+      <div class="check-item">规则层级（Rule Hierarchy）：元规则（立宪层）→ 操作规则（日常层）；高层规则的改变门槛远高于低层规则</div>
+    </div>
+
+    <h3>Buchanan vs North 的根本区别</h3>
+    <table class="data-table">
+      <tr>
+        <th>维度</th>
+        <th>Douglass North（1993诺奖）</th>
+        <th>James Buchanan（1986诺奖）</th>
+      </tr>
+      <tr>
+        <td><strong>研究对象</strong></td>
+        <td>制度质量：规则好不好、执行是否有效</td>
+        <td>制度产生机制：规则是怎么产生的、谁有权改变规则</td>
+      </tr>
+      <tr>
+        <td><strong>方法论</strong></td>
+        <td>经验归纳：从历史数据中识别制度与经济增长的相关性</td>
+        <td>规范分析：从个体理性选择推导出理想制度设计原则</td>
+      </tr>
+      <tr>
+        <td><strong>核心关切</strong></td>
+        <td>制度为什么重要（因果关系）</td>
+        <td>什么样的制度产生机制才能持续（可持续性）</td>
+      </tr>
+      <tr>
+        <td><strong>对 China 2.5 的含义</strong></td>
+        <td>F1 晴雨表（North 层，30%权重）：平台治理规则质量</td>
+        <td>F2 晴雨表（Buchanan 层，50%权重）：改革开放机制是否运作</td>
+      </tr>
+    </table>
+
+    <div class="key-insight">
+      <h4>核心洞见</h4>
+      <p>Buchanan 告诉我们：一个制度即使当前质量很高，如果产生这个制度的机制出了问题（权力集中、规则可被任意改变），高质量只是暂时的。反之，一个制度质量暂时不高，但如果产生机制健康（规则可预期、改变需共识），质量会逐步改善。</p>
+    </div>
+  </div>
+
+  <!-- Section 2: Institutional Production Mechanism -->
+  <div class="card">
+    <h2>二、制度质量 vs 制度产生机制</h2>
+
+    <h3>North 陷阱：只关注制度质量的危险性</h3>
+    <p>Douglass North 的制度经济学揭示了制度与经济增长的深层关系：好的制度（产权保护、合同执行、有限政府）→ 经济繁荣。但 North 的框架有一个关键盲点——它描述的是「当前制度质量」而非「制度质量的可持续性」。</p>
+
+    <div class="warning-box">
+      <strong>North 陷阱的典型案例：</strong>一个威权政权可以在某一时点建立高效的产权保护（制度质量高），但如果改变产权规则的力量不受约束（制度产生机制脆弱），这种高质量随时可能被逆转。外部投资者看到的是「当前规则」，而 Buchanan 告诉他们更应该关注「规则是否可以被单方面改变」。
+    </div>
+
+    <h3>Buchanan 的解决方案：制度产生机制</h3>
+    <p>Buchanan 宪法经济学的核心命题：</p>
+    <div class="quote-block">
+      「可持续的制度质量 = 好制度 × 可持续的制度产生机制」
+      <div class="quote-source">— Buchanan，宪法经济学第一定律</div>
+    </div>
+
+    <p>这个公式意味着：</p>
+    <div class="compare-grid">
+      <div class="compare-item">
+        <h4>制度质量高 × 产生机制健康</h4>
+        <p>最佳状态：高质量可持续，外部可预期。→ 晴雨表 F2 未触发，继续持有</p>
+      </div>
+      <div class="compare-item">
+        <h4>制度质量高 × 产生机制脆弱</h4>
+        <p>不稳定状态：当前好但随时可能变坏。→ F2 晴雨表警告态，增加监控频率</p>
+      </div>
+      <div class="compare-item">
+        <h4>制度质量低 × 产生机制健康</h4>
+        <p>改善中：当前差但正在变好。→ F2 晴雨表未触发，继续持有</p>
+      </div>
+      <div class="compare-item">
+        <h4>制度质量低 × 产生机制脆弱</h4>
+        <p>最差状态：差且不可逆。→ F2 晴雨表触发，立即减仓</p>
+      </div>
+    </div>
+
+    <h3>改革开放 = 可持续的制度产生机制</h3>
+    <p>将 Buchanan 宪法经济学应用于 China 2.5 分析：</p>
+    <div class="check-list">
+      <div class="check-item"><strong>改革开放的 Buchanan 含义</strong>：1978 年以来的改革开放不只是「好制度」（招商引资、市场经济、WTO 入世），更重要的是建立了一个「可持续的制度产生机制」——通过试点、总结、推广的渐进式改革路径，降低了制度变更的不可预期性</div>
+      <div class="check-item"><strong>改革与革命的区分</strong>：Buchanan 的立宪经济学明确区分「在既有规则框架内的改革」与「推翻既有规则的革命」。改革（Evolution within Rules）→ 制度产生机制保持健康；革命（Revolution）→ 制度产生机制断裂</div>
+      <div class="check-item"><strong>F2 晴雨表测量改革开放是否仍在运作</strong>：不是测量 GDP、不是测量某项具体政策，而是测量「制度产生机制是否仍在正常运作」——试点改革是否仍在推进、规则变更是否可预期、国际协议是否被执行</div>
+    </div>
+
+    <div class="key-insight">
+      <h4>F2 晴雨表 Buchanan 层的精确含义</h4>
+      <p>F2 晴雨表测量的是「改革开放这个制度产生机制是否仍在运作」，而非「当前制度质量高低」。改革开放的持续性 = 中国能否维持「可预期的规则变更机制」——这是 China 2.5 的最深护城河。</p>
+    </div>
+  </div>
+
+  <!-- Section 3: F2 Raincoat Buchanan Layer -->
+  <div class="card">
+    <h2>三、F2 晴雨表 Buchanan 层：50% 权重的操作化</h2>
+
+    <h3>F2 晴雨表三层结构</h3>
+    <table class="data-table">
+      <tr>
+        <th>层次</th>
+        <th>理论来源</th>
+        <th>权重</th>
+        <th>测量内容</th>
+        <th>晴雨表信号</th>
+      </tr>
+      <tr>
+        <td><strong>North 层</strong></td>
+        <td>Douglass North 1993 诺奖</td>
+        <td>30%</td>
+        <td>正式制度规则质量</td>
+        <td>PCAOB 审计进展 / 监管透明度</td>
+      </tr>
+      <tr>
+        <td><strong>Buchanan 层</strong></td>
+        <td>James Buchanan 1986 诺奖</td>
+        <td>50%</td>
+        <td>制度产生机制可持续性</td>
+        <td>改革开放是否仍在运作</td>
+      </tr>
+      <tr>
+        <td><strong>Acemoglu 层</strong></td>
+        <td>Daron Acemoglu 2024 诺奖</td>
+        <td>20%</td>
+        <td>精英联盟稳定性</td>
+        <td>美中关系 / 地缘政治信号</td>
+      </tr>
+    </table>
+
+    <h3>Buchanan 层触发条件的精确含义</h3>
+    <div class="math-block">F2 晴雨表触发条件（Buchanan 层）:
+  
+  [PCAOB 两年无进展]  OR  [美国国会通过中概股退市法案]
+  
+  = F2 触发
+  = 改革开放制度产生机制信号受损
+  = 减仓指征</div>
+
+    <p>注意：F2 晴雨表的触发条件（Buchanan 层）测量的是「制度产生机制的外部确认」——当外部监督机制（PCAOB）两年无进展，或外部制裁机制（退市法案）激活，这都意味着制度产生机制的外部约束条件出了问题。</p>
+
+    <h3>为什么 Buchanan 层占 50% 权重？</h3>
+    <p>Buchanan 的制度产生机制理论对 China 2.5 投资分析具有特殊重要性，因为：</p>
+    <div class="check-list">
+      <div class="check-item"><strong>可逆性识别</strong>：制度质量可以变好也可以变坏。Buchanan 层测量「产生机制是否健康」——健康时，坏制度可以修复；不健康时，好制度也会崩坏</div>
+      <div class="check-item"><strong>晴雨表功能</strong>：Buchanan 层是晴雨表体系的核心，因为它测量的是「中国能否持续产生好制度」，而非「当前有没有好制度」</div>
+      <div class="check-item"><strong>改革开放的深层含义</strong>：改革开放不只是政策选择，更是一套「可持续的制度产生机制」——试点→推广→反馈→调整的渐进路径，使规则变更可预期</div>
+      <div class="check-item"><strong>晴雨表心态的 Buchanan 表达</strong>：「我不知道当前制度质量高低，但我知道如果改革开放机制停止（F2 触发），我的投资前提就失效了」</div>
+    </div>
+  </div>
+
+  <!-- Section 4: Popper × Buchanan × Ostrom -->
+  <div class="card">
+    <h2>四、Popper × Buchanan × Ostrom：三重认识论共鸣</h2>
+
+    <h3>三个诺贝尔奖，三个维度，同一认识论纪律</h3>
+    <table class="data-table">
+      <tr>
+        <th>学者</th>
+        <th>诺贝尔年份</th>
+        <th>核心贡献</th>
+        <th>对 China 2.5 的认识论含义</th>
+      </tr>
+      <tr>
+        <td><strong>Karl Popper</strong></td>
+        <td>无诺奖<br><span style="font-size:0.78rem;color:var(--muted)">（哲学地位更高）</span></td>
+        <td>批判理性主义：可证伪性原则</td>
+        <td>预先声明晴雨表 F1/F2/F3 触发条件，使框架可被独立检验</td>
+      </tr>
+      <tr>
+        <td><strong>James Buchanan</strong></td>
+        <td>1986</td>
+        <td>宪法经济学：制度产生机制</td>
+        <td>可持续制度质量 = 好制度 × 健康的产生机制（F2 晴雨表最深护城河）</td>
+      </tr>
+      <tr>
+        <td><strong>Elinor Ostrom</strong></td>
+        <td>2009</td>
+        <td>共有资源治理：八原则</td>
+        <td>非正式制度内化：契约精神、信任半径、纠纷解决机制的微观基础</td>
+      </tr>
+    </table>
+
+    <h3>三重共鸣的精确含义</h3>
+    <p>Popper、Buchanan 和 Ostrom 三个看似不相关的学者，在认识论层面有一个深层共同点——他们都强调「可验证性」而非「权威性」：</p>
+    <div class="compare-grid">
+      <div class="compare-item">
+        <h4>Popper：理论的验证</h4>
+        <p>理论必须预先声明可证伪条件，且必须可以被独立检验。权威（无论多么有名）不能使一个不可证伪的理论变得科学。</p>
+      </div>
+      <div class="compare-item">
+        <h4>Buchanan：规则的验证</h4>
+        <p>制度规则必须可以被独立验证——不是「某权威说这是好规则」，而是「任何人按照这个规则都可以预测结果」。</p>
+      </div>
+      <div class="compare-item">
+        <h4>Ostrom：实践的验证</h4>
+        <p>治理规则的有效性必须可以在本地层面验证——不是「专家设计的规则」，而是「社区实际执行的规则」。</p>
+      </div>
+    </div>
+
+    <div class="key-insight">
+      <h4>China 2.5 的三重认识论保障</h4>
+      <p>China 2.5 晴雨表 F1/F2/F3 体系同时满足三重认识论纪律：Popper（晴雨表触发条件可证伪）+ Buchanan（F2 测量制度产生机制是否运作）+ Ostrom（非正式制度内化是否持续）。三个独立检验机制同时失效才会导致框架崩溃——这正是置信度 4.88/5 的认识论基础。</p>
+    </div>
+  </div>
+
+  <!-- Section 5: F2 Raincoat Mentality -->
+  <div class="card">
+    <h2>五、F2 晴雨表心态：Buchanan 版本的表达</h2>
+
+    <h3>Morris「For Now」的 Buchanan 版本</h3>
+    <p>Morris「For Now」晴雨表心态的精确表达：</p>
+    <div class="quote-block">
+      「我不知道中国当前的制度质量高低（North 层），我不知道改革开放是否能在未来十年持续（Buchanan 层），我也不知道精英联盟的稳定性如何变化（Acemoglu 层）。但我知道：如果 PCAOB 两年无进展或退市法案通过（F2 触发），我的投资前提就失效了。」
+      <div class="quote-source">— Morris「For Now」Buchanan 版本</div>
+    </div>
+
+    <h3>Buffett 1969 年清盘的 Buchanan 解读</h3>
+    <p>Buffett Partnership 1969 年清盘的精确含义（Buchanan 视角）：</p>
+    <div class="check-list">
+      <div class="check-item">Buffett 识别到「能力圈的生产机制」出了问题——当时的股票市场已经无法产生符合 Partnership 标准的好标的</div>
+      <div class="check-item">这不是「市场会跌」（宏观预测，违反 Popper 原则），而是「市场产生好标的的机制已经停止运作」</div>
+      <div class="check-item">Buffett 的退出不是因为悲观，而是因为精确识别了「制度产生机制」的边界</div>
+      <div class="check-item">这是 Morris「For Now」的最早历史原型——识别边界，而非预测崩盘</div>
+    </div>
+
+    <h3>晴雨表 F2 的三种等待状态</h3>
+    <table class="data-table">
+      <tr>
+        <th>状态</th>
+        <th>F2 信号</th>
+        <th>Buchanan 含义</th>
+        <th>操作</th>
+      </tr>
+      <tr>
+        <td><strong>稳定相</strong></td>
+        <td>F2 = 0（未触发）</td>
+        <td>改革开放机制仍在运作</td>
+        <td>继续持有，无需任何操作</td>
+      </tr>
+      <tr>
+        <td><strong>警告态</strong></td>
+        <td>F2 触发条件部分满足</td>
+        <td>制度产生机制出现局部问题</td>
+        <td>增加监控频率（季度→月度）</td>
+      </tr>
+      <tr>
+        <td><strong>变革相</strong></td>
+        <td>F2 = 1（完全触发）</td>
+        <td>制度产生机制受损或断裂</td>
+        <td>立即减仓（至少 50%）</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Section 6: 05-13 Window -->
+  <div class="card">
+    <h2>六、05-13 晴雨表窗口期：Buchanan 视角的检验</h2>
+    <p>2026 年 5 月 13 日 19:30，腾讯 Q4+Q1 财报 + 阿里 Q4+Q1 财报发布。F2 晴雨表 Buchanan 层在这次财报中的观察重点：</p>
+
+    <h3>Buchanan 层在 05-13 的具体观察</h3>
+    <div class="compare-grid">
+      <div class="compare-item">
+        <h4>监管信号（North 层）</h4>
+        <p>腾讯金融科技/平台监管态度是否有边际改善迹象；中概股审计监管是否有进展</p>
+      </div>
+      <div class="compare-item">
+        <h4>改革开放信号（Buchanan 层）</h4>
+        <p>财报中是否提及任何「制度改善」相关表述；管理层对监管环境的评估；国际业务拓展动向</p>
+      </div>
+      <div class="compare-item">
+        <h4>精英联盟信号（Acemoglu 层）</h4>
+        <p>美中元首通话/贸易谈判进展；地缘政治相关风险披露</p>
+      </div>
+    </div>
+
+    <h3>晴雨表心态的正确含义</h3>
+    <div class="warning-box">
+      <strong>不要预测，不要猜测。</strong> F2 晴雨表不是「预测改革开放会不会持续」——这是宏观预测，违反 Popper 原则。F2 晴雨表是「预先声明如果改革开放停止，我会怎么做」——这是预设规则，不是预测未来。
+    </div>
+
+    <h3>F2 晴雨表布尔决策逻辑</h3>
+    <div class="math-block">晴雨表 F1/F2/F3 布尔逻辑:
+
+  [F1=0 ∧ F2=0 ∧ F3=0] → 继续持有
+  [F1=1]                 → F1 触发 → 减仓
+  [F2=1]                 → F2 触发 → 减仓（晴雨表最高优先级）
+  [F3=1]                 → F3 警告态 → 增加监控
+  [F2=1 ∧ F3=1]         → F2+F3 双触发 → 立即减仓
+  [F1=1 ∧ F2=1 ∧ F3=1] → 三重触发 → 退出
+
+注意：晴雨表 F1/F2/F3 只有 0/1 两种状态。
+布尔逻辑，不存在概率加权。</div>
+
+    <p>F2 晴雨表触发（特别是 Buchanan 层）优先于 F1 和 F3，因为制度产生机制的断裂比平台替代或消费转型失败更为根本。这是 Buffett Partnership 1969 年清盘的历史教训——不是财务数据不好，而是「产生好标的的机制」已经停止运作。</p>
+  </div>
+
+  <!-- Navigation row -->
+  <div class="card">
+    <h2>继续阅读</h2>
+    <div class="compare-grid">
+      <div class="compare-item">
+        <h4>← 波普尔批判理性主义</h4>
+        <p><a href="popper-falsificationism.html">可证伪性原则 · China 2.5 认识论地基</a></p>
+      </div>
+      <div class="compare-item">
+        <h4>Morris「For Now」→</h4>
+        <p><a href="morris-for-now.html">五步操作化 · Buffett Partnership 历史原型</a></p>
+      </div>
+      <div class="compare-item">
+        <h4>China 2.5 总纲 →</h4>
+        <p><a href="china25-framework.html">能量悖论 × Hard Ceiling × 三层晴雨表</a></p>
+      </div>
+      <div class="compare-item">
+        <h4>相变点函数 →</h4>
+        <p><a href="phase-transition.html">λ = f(F3) · 稳定相与变革相</a></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    Buchanan 宪法经济学 · F2 晴雨表 50% 权重理论地基<br>
+    <a href="index.html">← 返回首页</a>
+  </p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">
+    来源：Buchanan《同意的计算》(1962) / 《立宪契约与自由》(1977) /
+    North《制度、制度变迁与经济绩效》(1990) /
+    Acemoglu《国家为什么会失败》(2012) / China 2.5 框架 (2026)
+  </p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Inject shared navbar
+  fetch('navbar.html')
+    .then(r => r.text())
+    .then(html => { document.getElementById('uni-navbar').outerHTML = html; });
+</script>
+
+</body>
+</html>
