@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李录价值投资研究 - 海报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+  background: #0a1628; 
+  font-family: 'Noto Serif SC', 'Inter', serif; 
+  width: 1080px; height: 1440px; 
+  overflow: hidden; 
+  position: relative;
+}
+.poster {
+  width: 1080px; height: 1440px;
+  background: linear-gradient(180deg, #0a1628 0%, #0d2240 50%, #0a1628 100%);
+  position: relative;
+  padding: 80px 72px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gold border frame */
+.poster::before {
+  content: '';
+  position: absolute;
+  inset: 32px;
+  border: 1.5px solid rgba(201,162,39,0.4);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Top section */
+.top-section {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.chinese-title {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 900;
+  font-size: 96px;
+  color: #c9a227;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 24px rgba(201,162,39,0.3);
+}
+
+.chinese-subtitle {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #8fa3c0;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+
+.url-line {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #c9a227;
+  letter-spacing: 0.08em;
+  margin-top: 12px;
+}
+
+/* Gold divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a227 20%, #c9a227 80%, transparent);
+  margin: 8px 0 48px;
+}
+
+.divider-thick {
+  width: 100%;
+  height: 2px;
+  background: #c9a227;
+  opacity: 0.6;
+  margin: 24px 0;
+}
+
+/* Center compass motif */
+.compass-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+.compass {
+  width: 180px; height: 180px;
+  position: relative;
+}
+.compass-ring {
+  width: 180px; height: 180px;
+  border: 2px solid rgba(201,162,39,0.5);
+  border-radius: 50%;
+  position: absolute;
+}
+.compass-ring.inner {
+  width: 140px; height: 140px;
+  top: 20px; left: 20px;
+  border-color: rgba(201,162,39,0.3);
+}
+.compass-ring.core {
+  width: 100px; height: 100px;
+  top: 40px; left: 40px;
+  background: rgba(201,162,39,0.08);
+  border-color: rgba(201,162,39,0.6);
+}
+.compass-cross-v {
+  position: absolute;
+  width: 2px; height: 160px;
+  background: linear-gradient(180deg, transparent, rgba(201,162,39,0.4) 30%, rgba(201,162,39,0.4) 70%, transparent);
+  top: 10px; left: 89px;
+}
+.compass-cross-h {
+  position: absolute;
+  width: 160px; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4) 30%, rgba(201,162,39,0.4) 70%, transparent);
+  top: 89px; left: 10px;
+}
+.compass-dot {
+  position: absolute;
+  width: 12px; height: 12px;
+  background: #c9a227;
+  border-radius: 50%;
+  top: 84px; left: 84px;
+  box-shadow: 0 0 20px rgba(201,162,39,0.6);
+}
+.compass-n { position: absolute; top: 4px; left: 80px; color: #c9a227; font-size: 14px; font-weight: 700; font-family: 'Inter', sans-serif; }
+.compass-s { position: absolute; bottom: 4px; left: 82px; color: rgba(201,162,39,0.5); font-size: 14px; font-weight: 700; font-family: 'Inter', sans-serif; }
+.compass-e { position: absolute; right: 6px; top: 84px; color: rgba(201,162,39,0.5); font-size: 14px; font-weight: 700; font-family: 'Inter', sans-serif; }
+.compass-w { position: absolute; left: 6px; top: 84px; color: rgba(201,162,39,0.5); font-size: 14px; font-weight: 700; font-family: 'Inter', sans-serif; }
+
+/* Content section */
+.content-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.content-heading {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 38px;
+  color: #c9a227;
+  text-align: center;
+  letter-spacing: 0.12em;
+  margin-bottom: 40px;
+}
+
+.content-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.content-bullet {
+  width: 8px; height: 8px;
+  background: #c9a227;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(201,162,39,0.5);
+}
+
+.content-text {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 26px;
+  font-weight: 400;
+  color: #e8e0d0;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+}
+
+/* Bottom disclaimer */
+.bottom-section {
+  margin-top: auto;
+  padding-top: 40px;
+}
+
+.disclaimer {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px;
+  color: rgba(143,163,192,0.6);
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+
+.bottom-url {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(201,162,39,0.7);
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+/* Background watermark */
+.bg-watermark {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.03;
+}
+.bg-watermark-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Playfair Display', serif;
+  font-size: 400px;
+  font-weight: 700;
+  color: #c9a227;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+</style>
+</head>
+<body>
+<div class="poster">
+  <!-- Watermark -->
+  <div class="bg-watermark">
+    <div class="bg-watermark-text">李录</div>
+  </div>
+
+  <!-- Top section -->
+  <div class="top-section">
+    <div class="chinese-title">李录研究</div>
+    <div class="chinese-subtitle">北大光华 · 哥大商学院 · 喜马拉雅资本</div>
+    <div class="url-line">oldmacdonald.xyz</div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Compass motif -->
+  <div class="compass-section">
+    <div class="compass">
+      <div class="compass-ring"></div>
+      <div class="compass-ring inner"></div>
+      <div class="compass-ring core"></div>
+      <div class="compass-cross-v"></div>
+      <div class="compass-cross-h"></div>
+      <div class="compass-dot"></div>
+      <div class="compass-n">N</div>
+      <div class="compass-s">S</div>
+      <div class="compass-e">E</div>
+      <div class="compass-w">W</div>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content-section">
+    <div class="content-heading">价值投资框架 · 完整系列</div>
+
+    <div class="content-item">
+      <div class="content-bullet"></div>
+      <div class="content-text">现代化框架17期连载 · 文明3.0到实战决策链</div>
+    </div>
+    <div class="content-item">
+      <div class="content-bullet"></div>
+      <div class="content-text">Morris SDI × Buffett × Munger 投资纪律体系</div>
+    </div>
+    <div class="content-item">
+      <div class="content-bullet"></div>
+      <div class="content-text">China 2.5 三层晴雨表分析 · 腾讯·阿里·拼多多案例</div>
+    </div>
+    <div class="content-item">
+      <div class="content-bullet"></div>
+      <div class="content-text">Bruce Greenwald 护城河五类框架 · 能力圈认识论</div>
+    </div>
+    <div class="content-item">
+      <div class="content-bullet"></div>
+      <div class="content-text">Morris「For Now」操作化 · 精确等待的纪律体系</div>
+    </div>
+  </div>
+
+  <div class="divider-thick"></div>
+
+  <!-- Bottom -->
+  <div class="bottom-section">
+    <div class="disclaimer">仅供研究参考，不构成投资建议</div>
+    <div class="bottom-url">oldmacdonald.xyz</div>
+  </div>
+</div>
+</body>
+</html>
