@@ -1,11 +1,36 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-05-05 09:20
-> Last Audit: 2026-05-05 09:20 (origin/master 与 origin/dev 完全同步至 `7cbf80b`；Episode 22 索引页补全)
+> Last Updated by Agent: 2026-05-10 14:29
+> Last Audit: 2026-05-10 14:29 (origin/dev 完全同步至 `d042221`；窗口期第13天认知突破封盘)
 
 ---
 
-## 已完成记录（2026-05-09）
+## 已完成记录（2026-05-10 · 窗口期第13天）
+
+- **2026-05-10 窗口期第13天 · China 2.5 框架认识论体系终极封盘** ✅ 已完成
+  - Git: commit ba141ac / 3e36a0e / aa56eb8 / d042221 → origin/dev-clean push成功
+  - **最重要的认知突破：相变点函数（Phase Transition Function）**
+    - 核心发现：Morris连续衰减函数 D(t)=D₀×e^(-λt) 中的衰减率λ不是内生固定的，而是晴雨表F3状态的外生函数
+    - λ = f(F3状态)：F3未触发 → λ≈0 → 稳定相 → T=∞ → 永久持有；F3触发 → λ>>0 → 变革相 → T=有限 → 框架更新或退出
+    - 晴雨表F1/F2/F3 = 相变点探测器（Phase Transition Point Detector）
+    - Buffett 1969年清盘 = 相变点触发历史原型（λ从≈0急剧增加到>>0）
+  - **Popper批判理性主义独立公共页面**（popper-falsificationism.html，~15KB，七板块）
+    - Popper可证伪性原则 / China 2.5三重晴雨表可证伪条件 / Popper×Morris×Buffett三角闭环 / Popper vs 贝叶斯五维度对比
+  - **相变点函数独立公共页面**（phase-transition.html，~14KB，七板块）
+    - Morris连续衰减×晴雨表整合 / 五层结构 / Buffett 1969历史原型 / 稳定相vs变革相
+  - **China 2.5公共页面体系7张独立页面全部就绪**：总纲/能量悖论/Hard Ceiling/Morris For Now/SDI投资整合/波普尔认识论/相变点函数
+  - **Morris SDI 21章 Ch17/Ch18 重构研究**（_updates/morris-ch17-profligate-world-reconstruction-2026-05-10.md / morris-ch18-forces-of-progress-2026-05-10.md）
+    - Ch17「挥霍的世界」：18世纪欧洲均势体系/Bismarck现实政治历史原型/F2晴雨表历史根源
+    - Ch18「进步的力量」：工业革命三重对齐机制（能源+制度+信息）/ Hard Ceiling突破历史原型
+    - Morris SDI 21章知识体系全部完成
+  - **Buchanan宪法经济学研究**（_updates/buchanan-constitutional-economics-f2-raincoat-2026-05-10.md）
+    - Buchanan vs North制度变迁深层张力（F2晴雨表Buchanan层=最深护城河）
+    - 改革开放=可持续的制度产生机制，F2晴雨表Buchanan层=测量这个机制是否运作
+  - **FINAL晴雨表操作手册（终极版）**：Popper/Morris/Buffett/Buchanan/Graham五大认识论体系整合为F1/F2/F3布尔决策函数
+  - **China 2.5框架认识论体系五层完整闭环**：哲学地基Popper / 制度经济学地基North×Buchanan×Ostrom / 数学整合相变点函数 / 安全性论证Graham×Buchanan双重安全边际 / 操作化晴雨表F1/F2/F3布尔决策
+  - 文件：popper-falsificationism.html / phase-transition.html / morris-for-now.html / china25-framework.html
+
+- **2026-05-09 窗口期第11天 Morris SDI基础知识公共页面** ✅ 已完成（2026-05-09 21:28，commit 0eee710）
 
 - **2026-05-09 窗口期第11天 Morris SDI基础知识公共页面** ✅ 已完成（2026-05-09 21:28，commit 0eee710）
   - Git push：⚠️ pending（网络慢，下次自动同步）
