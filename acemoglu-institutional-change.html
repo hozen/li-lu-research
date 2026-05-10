@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daron Acemoglu 与制度变迁动力学 — 李录研究站</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <style>
+        body { background: #f8f9fa; color: #1a202c; font-family: 'Noto Serif SC', serif; }
+        .hero { background: linear-gradient(135deg, #0a1628 0%, #1a2f4e 60%, #0a1628 100%); color: #f7fafc; padding: 80px 24px 60px; text-align: center; }
+        .hero-tag { background: rgba(201,162,39,0.15); border: 1px solid rgba(201,162,39,0.4); color: #c9a227; font-size: 0.75rem; letter-spacing: 0.15em; padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; }
+        .hero h1 { font-size: 2rem; font-weight: 700; margin-bottom: 12px; line-height: 1.3; }
+        .hero-sub { color: #94a3b8; font-size: 0.95rem; line-height: 1.7; max-width: 600px; margin: 0 auto 24px; }
+        .hero-meta { font-size: 0.8rem; color: #64748b; }
+        .hero-divider { width: 48px; height: 2px; background: #c9a227; margin: 20px auto; }
+        .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+        .card { background: #fff; border-radius: 12px; padding: 28px 32px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); border: 1px solid #e2e8f0; }
+        .card h2 { font-size: 1.2rem; color: #0a1628; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #c9a227; }
+        .card h3 { font-size: 1rem; color: #1e3a5f; margin: 18px 0 10px; }
+        .card p { font-size: 0.95rem; line-height: 1.85; color: #374151; margin-bottom: 12px; }
+        .card ul { margin: 8px 0 14px 20px; }
+        .card li { font-size: 0.93rem; line-height: 1.8; color: #374151; margin-bottom: 6px; }
+        .highlight-box { background: linear-gradient(135deg, #fefce8, #fef9c3); border-left: 4px solid #c9a227; border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 16px 0; }
+        .highlight-box p { margin: 0; font-size: 0.93rem; color: #451a03; }
+        .warning-box { background: #fff7ed; border-left: 4px solid #f97316; border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 14px 0; }
+        .warning-box p { margin: 0; font-size: 0.88rem; color: #7c2d12; }
+        .quote-block { background: #f8fafc; border-left: 4px solid #c9a227; padding: 18px 22px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .quote-block p { font-style: italic; color: #334155; margin-bottom: 6px; }
+        .quote-source { font-size: 0.82rem; color: #64748b; text-align: right; }
+        table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.9rem; }
+        th { background: #0a1628; color: #f7fafc; padding: 10px 14px; text-align: left; font-weight: 600; }
+        td { padding: 9px 14px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        tr:nth-child(even) td { background: #f8fafc; }
+        .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+        .tag { background: rgba(201,162,39,0.1); color: #92400e; border: 1px solid rgba(201,162,39,0.3); font-size: 0.75rem; padding: 3px 10px; border-radius: 12px; }
+        .confidence-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+        .confidence-bar { flex: 1; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+        .confidence-fill { height: 100%; background: linear-gradient(90deg, #c9a227, #e0b830); border-radius: 4px; }
+        .confidence-label { font-size: 0.8rem; color: #64748b; white-space: nowrap; }
+        .nav-row { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-top: 1px solid #e2e8f0; margin-top: 8px; }
+        .nav-btn { background: #0a1628; color: #c9a227; text-decoration: none; padding: 8px 18px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+        .nav-btn:hover { background: #1a2f4e; }
+        .nav-label { font-size: 0.8rem; color: #94a3b8; }
+        footer { text-align: center; padding: 24px; color: #94a3b8; font-size: 0.8rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.5rem; }
+            .container { padding: 24px 16px 60px; }
+            .card { padding: 20px 18px; }
+            table { font-size: 0.82rem; }
+            th, td { padding: 7px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav id="uni-navbar"></nav>
+
+<div class="hero">
+    <div class="hero-tag">F2 晴雨表理论地基 · 第三位诺奖得主</div>
+    <h1>Daron Acemoglu 与制度变迁动力学</h1>
+    <p class="hero-sub">2024年诺贝尔经济学奖获奖者 · 包容性制度 vs 汲取性制度 · China 2.5框架 F2 晴雨表第三层地基</p>
+    <div class="hero-divider"></div>
+    <p class="hero-meta">来源：Acemoglu & Robinson《为什么国家会失败》2012 · 《国家发展的权力与繁荣》2001 · 相关论文</p>
+</div>
+
+<div class="container">
+
+<!-- 开篇核心命题 -->
+<div class="card">
+    <h2>核心命题：制度决定贫富</h2>
+    <div class="highlight-box">
+        <p><strong>Acemoglu核心论点：</strong>国与国之间贫富不均的根本原因不是地理、文化或领导人素质，而是<strong>制度质量</strong>——尤其是政治权力的分布方式。包容性制度（Inclusive Institutions）创造普遍激励，推动创新与投资；汲取性制度（Extractive Institutions）将权力与资源集中于少数精英，抑制创造性破坏，最终导致停滞。</p>
+    </div>
+    <p>Acemoglu与James Robinson合著的《为什么国家会失败》（<em>Why Nations Fail</em>, 2012）是过去20年最具影响力的制度经济学著作之一。2024年，Acemoglu因"对制度如何形成及其对繁荣影响的研究"单独获得诺贝尔经济学奖。</p>
+    <p>在China 2.5框架中，Acemoglu的理论为<strong>F2晴雨表（制度质量晴雨表）提供政治经济学层（权重20%）的理论地基</strong>——与Douglass North（描述性/历史学）和James Buchanan（规范性/设计学）共同构成三重诺奖制度经济学基础。</p>
+    <div class="tag-row">
+        <span class="tag">包容性制度</span>
+        <span class="tag">汲取性制度</span>
+        <span class="tag">临界点</span>
+        <span class="tag">临界 juncture</span>
+        <span class="tag">贫困陷阱</span>
+        <span class="tag">制度漂移</span>
+    </div>
+</div>
+
+<!-- 三本核心著作 -->
+<div class="card">
+    <h2>三本核心著作</h2>
+
+    <h3>①《国家发展的权力与 Prosperity》（2001）</h3>
+    <p>Acemoglu与Robinson的早期核心著作，提出"制度是发展的根本原因"这一命题，反对当时主流的地理决定论和文化决定论。关键贡献：</p>
+    <ul>
+        <li>制度内生性：制度不是外生的，是政治博弈的结果</li>
+        <li>政治权力分布决定制度类型：权力集中→汲取性制度；权力分散→包容性制度</li>
+        <li>制度与发展的双向因果：穷国之所以穷，是因为制度差；而糟糕的制度又强化权力集中，形成贫困陷阱</li>
+    </ul>
+
+    <h3>②《为什么国家会失败》（2012）</h3>
+    <p>面向公众的扩展版，核心框架更加清晰，并增加了大量历史案例。Acemoglu将制度分为两种类型：</p>
+    <table>
+        <tr><th>维度</th><th>包容性制度（Inclusive）</th><th>汲取性制度（Extractive）</th></tr>
+        <tr><td><strong>政治权力</strong></td><td>广泛分布，多元制衡</td><td>集中于少数精英联盟</td></tr>
+        <tr><td><strong>经济激励</strong></td><td>普遍激励创新与投资</td><td>精英独占，抑制创造性破坏</td></tr>
+        <tr><td><strong>创造性破坏</strong></td><td>允许新进入者挑战现有者</td><td>阻止新进入者，保护现有者</td></tr>
+        <tr><td><strong>长期结果</strong></td><td>技术创新持续 → 持续增长</td><td>增长有限，最终停滞</td></tr>
+        <tr><td><strong>典型案例</strong></td><td>英国光荣革命后、美国</td><td>奥斯曼帝国、清朝、清末期</td></tr>
+    </table>
+
+    <h3>③《狭窄的走廊》（<em>Narrow Corridor</em>, 2019）</h3>
+    <p>Acemoglu 2019年新著，进一步深化了对国家-社会关系的分析：</p>
+    <ul>
+        <li>"狭窄的走廊"：从汲取性制度过渡到包容性制度极其困难——社会必须有足够的力量制衡国家，但国家的软弱同样会导致混乱</li>
+        <li>关键变量：社会与国家之间的权力博弈，决定了制度是在走廊中向左（无政府）还是向右（专制）偏移</li>
+        <li>历史教训：大萧条、新冠危机等外部冲击可能成为推动制度走出走廊的"临界点"（Critical Juncture）</li>
+    </ul>
+</div>
+
+<!-- 临界点理论 -->
+<div class="card">
+    <h2>临界点（Critical Junctures）与制度变迁</h2>
+    <p>Acemoglu最重要的分析工具之一是"临界点"（Critical Juncture）——历史中制度变迁的机会之窗。</p>
+
+    <div class="quote-block">
+        <p>制度变迁发生在临界点——当现有制度结构受到外部冲击而松动时，不同路径之间的选择变得可能。一旦某个方向被选定，路径依赖的力量会将其锁定长达数十年甚至数百年。</p>
+        <p class="quote-source">— Acemoglu & Robinson, <em>Why Nations Fail</em>, 2012</p>
+    </div>
+
+    <h3>临界点的三个特征</h3>
+    <ul>
+        <li><strong>不可预测性</strong>：冲击本身无法预测（黑死病、大瘟疫、战争失败、技术革命）</li>
+        <li><strong>路径分叉</strong>：冲击打破了现有均衡，开启了制度选择的窗口</li>
+        <li><strong>路径锁定</strong>：一旦选定路径，正反馈循环（规模收益递增）将其长期锁定</li>
+    </ul>
+
+    <h3>历史临界点案例</h3>
+    <table>
+        <tr><th>临界点</th><th>冲击类型</th><th>走向包容性</th><th>走向汲取性</th></tr>
+        <tr><td>黑死病（1347-1351）</td><td>瘟疫冲击</td><td>欧洲劳动力稀缺→封建制度瓦解→包容性萌芽</td><td>精英趁机强化控制（部分亚洲）</td></tr>
+        <tr><td>光荣革命（1688）</td><td>战争+宪政危机</td><td>王权受限→专利法+议会权力→英国工业革命</td><td>法国绝对君主→法国大革命爆发</td></tr>
+        <tr><td>明治维新（1868）</td><td>外部殖民压力</td><td>天皇主导现代化→快速工业化</td><td>部分亚洲国家未能抓住机会</td></tr>
+        <tr><td>改革开放（1978）</td><td>经济崩溃临界点</td><td>引入市场竞争→经济起飞</td><td>—</td></tr>
+    </table>
+
+    <div class="warning-box">
+        <p><strong>⚠️ 重要区分：</strong>Acemoglu的临界点理论与Morris SDI的"Hard Ceiling"概念有深层联系：两者都认为历史中存在使制度/文明发生转向的关键节点。但Acemoglu关注的是制度层面的临界点，而Morris关注的是技术/能量层面的天花板。China 2.5晴雨表F2同时测量两个层次。</p>
+    </div>
+</div>
+
+<!-- Acemoglu × China 2.5 -->
+<div class="card">
+    <h2>Acemoglu × China 2.5晴雨表</h2>
+
+    <h3>F2晴雨表三层结构中的Acemoglu层</h3>
+    <p>China 2.5的F2晴雨表（制度质量晴雨表）由三重诺奖制度经济学支撑：</p>
+    <table>
+        <tr><th>层次</th><th>诺奖得主</th><th>权重</th><th>测量什么</th><th>理论贡献</th></tr>
+        <tr><td>North层</td><td>Douglass North（1993）</td><td>30%</td><td>正式制度质量（法律/监管/产权保护）</td><td>制度是经济增长根本原因</td></tr>
+        <tr><td>Buchanan层</td><td>James Buchanan（1986）</td><td>50%</td><td>制度产生机制的可持续性</td><td>改革开放=可持续制度产生机制</td></tr>
+        <tr><td><strong>Acemoglu层</strong></td><td><strong>Daron Acemoglu（2024）</strong></td><td><strong>20%</strong></td><td><strong>精英联盟稳定性与权力分布</strong></td><td><strong>汲取性制度到包容性制度的转变条件</strong></td></tr>
+    </table>
+
+    <h3>Acemoglu层测量什么</h3>
+    <p>F2晴雨表Acemoglu层（20%）测量的是精英联盟的稳定性与权力分布变化：</p>
+    <ul>
+        <li><strong>精英联盟扩张信号</strong>（F2未触发）：更多群体被纳入经济激励体系→权力分布向包容性偏移</li>
+        <li><strong>精英联盟收缩信号</strong>（F2触发）：权力向少数群体集中，汲取性制度特征增强</li>
+        <li><strong>临界点出现信号</strong>（F2触发）：外部冲击导致制度结构松动，新的路径分叉出现</li>
+    </ul>
+
+    <h3>改革开放的Acemoglu解读</h3>
+    <div class="quote-block">
+        <p>改革开放本质上是一个临界点（Critical Juncture）后的制度选择：从汲取性制度转向更具包容性的制度结构。1978年之前的闭关锁国和计划经济，是典型的汲取性制度——权力高度集中，增长受限。改革引入市场竞争，实质上是将更多群体（农民、工人、企业家）纳入经济激励体系。</p>
+    </div>
+
+    <h3>三重诺奖 × Morris「For Now」深层握手</h3>
+    <p>Acemoglu × Buchanan × North三重诺奖制度经济学，与Morris「For Now」有深层认识论握手：</p>
+    <ul>
+        <li><strong>Acemoglu + Morris</strong>：两者都精确知道预测时机的不可能性——Acemoglu不知道临界点何时出现，Morris不知道Hard Ceiling何时突破</li>
+        <li><strong>Buchanan + Morris</strong>：两者都把认识论纪律转化为可执行规则——Buchanan通过一致同意规则设计制度，Morris通过晴雨表预设触发条件</li>
+        <li><strong>North + Morris</strong>：North知道路径依赖的强度，Morris知道长周期预测的局限，两者独立收敛于同一认识论纪律</li>
+    </ul>
+</div>
+
+<!-- Acemoglu × Morris "For Now" -->
+<div class="card">
+    <h2>Acemoglu × Morris「For Now」：预先声明制度变迁的边界</h2>
+    <p>Acemoglu对China 2.5框架有一个独特的认识论贡献：<strong>他精确知道制度变迁何时无法预测</strong>。</p>
+
+    <div class="quote-block">
+        <p>我们不知道什么样的外部冲击会成为下一个临界点。我们不知道精英联盟在什么条件下会选择妥协。我们唯一知道的是：制度变迁发生在临界点，而临界点本身是不可预测的。</p>
+        <p class="quote-source">— Acemoglu, Nobel Lecture, 2024</p>
+    </div>
+
+    <p>这个认识论立场与Morris「For Now」完全一致：</p>
+    <ul>
+        <li>Morris：我不知道Hard Ceiling何时突破，但我可以预先声明突破的条件</li>
+        <li>Acemoglu：我不知道下一个临界点何时出现，但我可以测量当前制度结构是否正在向汲取性或包容性偏移</li>
+    </ul>
+    <p><strong>China 2.5的含义：</strong>F2晴雨表Acemoglu层，不需要预测临界点何时出现，只需要预先声明：精英联盟是否正在收缩（汲取性增强）？如果是，F2触发；如果否，F2未触发。</p>
+
+    <div class="confidence-row">
+        <span class="confidence-label">Acemoglu × China 2.5置信度</span>
+        <div class="confidence-bar"><div class="confidence-fill" style="width:85%"></div></div>
+        <span class="confidence-label">★★★★☆</span>
+    </div>
+</div>
+
+<!-- Acemoglu与晴雨表心态 -->
+<div class="card">
+    <h2>晴雨表心态中的Acemoglu</h2>
+    <p>China 2.5晴雨表心态的六重独立构造器中，Acemoglu提供了<strong>政治经济学层</strong>的制度变迁纪律：</p>
+
+    <table>
+        <tr><th>构造器</th><th>层次</th><th>核心贡献</th></tr>
+        <tr><td>Popper</td><td>哲学认识论</td><td>预先声明可证伪条件</td></tr>
+        <tr><td>Morris「For Now」</td><td>投资纪律</td><td>预先声明晴雨表触发条件</td></tr>
+        <tr><td>Constructor Theory</td><td>物理学层</td><td>不可能变换的判准</td></tr>
+        <tr><td>Arthur</td><td>技术层</td><td>正反馈循环与锁定机制</td></tr>
+        <tr><td>Buchanan</td><td>制度设计层</td><td>可持续制度产生机制</td></tr>
+        <tr><td><strong>Acemoglu</strong></td><td><strong>政治经济学层</strong></td><td><strong>精英联盟稳定性与临界点条件</strong></td></tr>
+    </table>
+</div>
+
+<!-- 与Buchanan/North的分工 -->
+<div class="card">
+    <h2>三重诺奖制度经济学认识论分工</h2>
+    <p>理解Acemoglu与North、Buchanan的精确分工，是掌握F2晴雨表理论地基的关键：</p>
+
+    <table>
+        <tr><th>维度</th><th>North（1993）</th><th>Buchanan（1986）</th><th>Acemoglu（2024）</th></tr>
+        <tr><td><strong>核心问题</strong></td><td>制度为什么重要？</td><td>好制度如何产生？</td><td>制度为什么会变？</td></tr>
+        <tr><td><strong>方法论</strong></td><td>描述性/历史学</td><td>规范性/设计学</td><td>政治经济学/博弈论</td></tr>
+        <tr><td><strong>时间维度</strong></td><td>长周期（数百年）</td><td>制度设计即时</td><td>临界点跳跃（非线性）</td></tr>
+        <tr><td><strong>China含义</strong></td><td>改革开放制度质量</td><td>改革开放是否仍运作</td><td>精英联盟是否在扩展</td></tr>
+        <tr><td><strong>F2晴雨表权重</strong></td><td>30%</td><td>50%</td><td>20%</td></tr>
+        <tr><td><strong>可观测性</strong></td><td>高（法律/监管文本）</td><td>中（政策执行）</td><td>低（精英联盟内部）</td></tr>
+    </table>
+
+    <h3>为什么权重这样分配？</h3>
+    <ul>
+        <li><strong>Buchanan 50%</strong>：改革开放是否仍在运作，是China 2.5可持续性的最直接测量——政策是否仍在引入竞争？市场是否仍在扩大开放？</li>
+        <li><strong>North 30%</strong>：正式制度规则的质量变化高可观测（法律/监管/PCAOB等），可以作为F2晴雨表的主要观测层</li>
+        <li><strong>Acemoglu 20%</strong>：精英联盟稳定性较难直接观测，但作为F2晴雨表的方向性确认——如果Acemoglu层信号收缩，往往意味着更深层的制度变化</li>
+    </ul>
+</div>
+
+<!-- 附录：Acemoglu诺贝尔奖 -->
+<div class="card">
+    <h2>附录：2024年诺贝尔经济学奖</h2>
+    <table>
+        <tr><th>项目</th><th>内容</th></tr>
+        <tr><td><strong>获奖者</strong></td><td>Daron Acemoglu（麻省理工学院）</td></tr>
+        <tr><td><strong>获奖理由</strong></td><td>对制度如何形成及其对繁荣影响的研究</td></tr>
+        <tr><td><strong>关键论文</strong></td><td>"The Colonial Origins of Comparative Development"（2001，与Simon Johnson合著）——利用前殖民统治死亡率作为制度质量的工具变量，证明制度差异可以解释国家间人均收入差距的75%</td></tr>
+        <tr><td><strong>三本核心著作</strong></td><td>《国家发展的权力与 Prosperity》（2001）/ 《为什么国家会失败》（2012）/ 《狭窄的走廊》（2019）</td></tr>
+        <tr><td><strong>理论贡献</strong></td><td>制度内生性理论 / 包容性vs汲取性制度框架 / 临界点理论</td></tr>
+        <tr><td><strong>与China 2.5的关系</strong></td><td>F2晴雨表Acemoglu层（精英联盟稳定性，权重20%）的理论地基</td></tr>
+    </table>
+</div>
+
+<!-- 导航 -->
+<div class="nav-row">
+    <div>
+        <span class="nav-label">← 相关阅读</span><br>
+        <a href="buchanan-constitutional-economics.html" class="nav-btn">Buchanan 宪法经济学</a>
+    </div>
+    <div style="text-align:right">
+        <span class="nav-label">China 2.5 晴雨表 →</span><br>
+        <a href="china25-framework.html" class="nav-btn">China 2.5 总纲</a>
+    </div>
+</div>
+
+</div>
+
+<footer>
+    <p>李录研究站 · China 2.5 认识论体系 · F2晴雨表理论地基</p>
+    <p>三重诺奖制度经济学：North × Buchanan × Acemoglu</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+    fetch('nav.html').then(r=>r.text()).then(html=>document.getElementById('uni-navbar').outerHTML=html);
+</script>
+
+</body>
+</html>
