@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>相变点 · Phase Transition — Morris晴雨表数学 · Li Lu Research</title>
+  <meta name="description" content="Morris连续衰减函数与China 2.5晴雨表的深层整合：λ=f(F3)内生函数，晴雨表作为相变点探测器的完整数学框架。">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --bg: #0a1628;
+      --bg2: #0f2744;
+      --text: #e8dcc8;
+      --muted: #8fa3c0;
+      --accent: #c9a227;
+      --accent2: #4a9eff;
+      --border: #1e3a5f;
+      --card: #0d1f3c;
+      --green: #38b569;
+      --red: #e05353;
+      --orange: #f5a623;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Georgia', serif; line-height: 1.8; margin: 0; }
+    .phase-transition-hero { background: linear-gradient(135deg, #0a1628 0%, #0f2744 50%, #1a3a5c 100%); padding: 3rem 2rem 2rem; border-bottom: 1px solid var(--border); }
+    .phase-transition-hero h1 { font-size: 2rem; margin: 0 0 .5rem; color: var(--accent); letter-spacing: .05em; }
+    .phase-transition-hero .subtitle { color: var(--muted); font-size: 1.05rem; margin: 0; }
+    .phase-transition-hero .badge-row { margin-top: 1rem; display: flex; gap: .75rem; flex-wrap: wrap; }
+    .badge { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); padding: .2rem .75rem; border-radius: 20px; font-size: .8rem; font-family: monospace; }
+    .badge.highlight { border-color: var(--accent); color: var(--accent); }
+    .badge.green { border-color: var(--green); color: var(--green); }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 2rem 4rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; }
+    .card h2 { color: var(--accent); font-size: 1.15rem; margin: 0 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: .5rem; }
+    .card h3 { color: var(--accent2); font-size: 1rem; margin: 1.2rem 0 .5rem; }
+    .card p { margin: .6rem 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
+    th { background: var(--bg2); color: var(--accent); padding: .6rem .8rem; text-align: left; border: 1px solid var(--border); font-family: monospace; font-size: .8rem; }
+    td { padding: .6rem .8rem; border: 1px solid var(--border); vertical-align: top; }
+    tr:nth-child(even) td { background: rgba(15,39,68,.4); }
+    code { background: var(--bg2); padding: .15rem .4rem; border-radius: 3px; font-size: .85em; color: var(--accent2); font-family: 'Courier New', monospace; }
+    .formula-box { background: var(--bg2); border-left: 4px solid var(--accent); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; font-family: 'Courier New', monospace; font-size: 1rem; color: var(--accent2); line-height: 2; }
+    .warning-box { background: rgba(245,166,35,.08); border-left: 4px solid var(--orange); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    .insight-box { background: rgba(56,181,105,.08); border-left: 4px solid var(--green); padding: 1rem 1.2rem; margin: 1rem 0; border-radius: 0 6px 6px 0; }
+    .nav-row { background: var(--bg2); border-bottom: 1px solid var(--border); padding: .6rem 2rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; font-size: .82rem; }
+    .nav-row a { color: var(--muted); text-decoration: none; }
+    .nav-row a:hover { color: var(--accent); }
+    .nav-sep { color: var(--border); }
+    .current { color: var(--accent); font-weight: bold; }
+    .section-note { background: var(--bg2); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin: 1.5rem 0; }
+    .section-note strong { color: var(--accent); }
+    .trigger-card { display: flex; gap: 1rem; margin: .8rem 0; padding: .8rem; background: var(--bg2); border-radius: 6px; border: 1px solid var(--border); align-items: flex-start; }
+    .trigger-icon { font-size: 1.4rem; flex-shrink: 0; width: 2rem; text-align: center; }
+    .trigger-text { flex: 1; }
+    .trigger-text strong { color: var(--accent); }
+    .math { font-family: 'Courier New', monospace; color: var(--accent2); background: var(--bg2); padding: .1rem .35rem; border-radius: 3px; }
+    footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 2rem; border-top: 1px solid var(--border); margin-top: 3rem; }
+  </style>
+</head>
+<body>
+  <nav class="nav-row">
+    <a href="index.html">笔记</a><span class="nav-sep">›</span>
+    <a href="china25-framework.html">China 2.5总纲</a><span class="nav-sep">›</span>
+    <span class="current">相变点函数</span>
+    <span class="nav-sep">|</span>
+    <a href="popper-falsificationism.html">波普尔认识论</a><span class="nav-sep">›</span>
+    <a href="morris-for-now.html">Morris「For Now」</a><span class="nav-sep">›</span>
+    <a href="morris-sdi-investment-integration.html">SDI投资整合</a>
+  </nav>
+
+  <header class="phase-transition-hero">
+    <h1>相变点函数 · Phase Transition</h1>
+    <p class="subtitle">Morris连续衰减函数与China 2.5晴雨表的深层数学整合</p>
+    <div class="badge-row">
+      <span class="badge highlight">Morris 2010 × Morris「For Now」</span>
+      <span class="badge">λ = f(F3晴雨表)</span>
+      <span class="badge green">稳定相 ↔ 变革相</span>
+      <span class="badge">Buffett 1969原型</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 开篇 -->
+    <div class="card">
+      <h2>为什么需要「相变点」这个概念</h2>
+      <p>窗口期第13天上午的深度学习产生了一个核心发现：Morris《For Now》(2010)原版论文提出的<span class="math">D(t)=D₀×e<sup>−λt</sup></span>（认知衰减函数），与China 2.5的布尔晴雨表体系之间，存在一个深层数学整合。</p>
+      <p>这个整合的精确表述是：<strong>Morris的衰减率λ不是常数，而是晴雨表F3的内生函数</strong>——晴雨表F3的触发状态，直接决定了认知衰减的速度。</p>
+      <div class="formula-box">
+        λ = f(F3晴雨表状态)<br>
+        &nbsp;&nbsp;= 0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if F3未触发（Phase 2.5稳定期，现代化进行中）<br>
+        &nbsp;&nbsp;= 快速增加 if F3触发（Phase 3.0转型期，框架需更新）
+      </div>
+      <p>这意味着China 2.5晴雨表体系，不是对Morris「For Now」五步的简单补充，而是对Morris认知衰减函数本身的<span style="color:var(--green)">相变点探测器（Phase Transition Point Detector）</span>。</p>
+    </div>
+
+    <!-- 两种模型对比 -->
+    <div class="card">
+      <h2>Morris连续衰减 vs China 2.5布尔不变量：根本区别</h2>
+      <p>Morris 2010原版论文的核心主张是：预测有效性随时间尺度衰减。但China 2.5晴雨表体系是布尔逻辑（0/1），置信度不随时间线性衰减。这两种模型有无根本冲突？</p>
+      <table>
+        <tr><th>维度</th><th>Morris 2010连续衰减</th><th>China 2.5布尔不变量</th></tr>
+        <tr><td>置信度来源</td><td>时间函数（内生衰减）</td><td>独立证伪检验（外生触发）</td></tr>
+        <tr><td>置信度随时间</td><td>指数衰减</td><td>严格保持D₀不变</td></tr>
+        <tr><td>持有期</td><td>有限期（最终必然衰减）</td><td>无上限（晴雨表未触发则永久）</td></tr>
+        <tr><td>失效机制</td><td>渐变（随时间缓慢衰减）</td><td>突变（晴雨表触发时骤变）</td></tr>
+        <tr><td>框架性质</td><td>概率模型（连续置信度）</td><td>证伪模型（布尔检验）</td></tr>
+        <tr><td>持有期函数</td><td>T = 固定上限</td><td>T(F1,F2,F3) = ∞或有限</td></tr>
+      </table>
+      <div class="warning-box">
+        <strong>关键张力：</strong>如果Morris的衰减函数是内生的（随时间自动衰减），那么China 2.5的置信度4.88/5为什么可以「永久维持」？答案在于：晴雨表体系将Morris的内生衰减「外部化」了——衰减率λ不再由时间决定，而由F3晴雨表状态决定。
+      </div>
+    </div>
+
+    <!-- 相变点整合 -->
+    <div class="card">
+      <h2>整合命题：晴雨表 = 相变点探测器</h2>
+      <p>Morris连续衰减函数<span class="math">D(t)=D₀×e<sup>−λt</sup></span>与China 2.5布尔晴雨表，在最深层次上是<span style="color:var(--green)">互补而非冲突</span>的。它们描述的是同一现实的两个不同层次：</p>
+      <div class="trigger-card">
+        <div class="trigger-icon">🌡️</div>
+        <div class="trigger-text">
+          <strong>Morris衰减函数</strong>描述的是<strong>认知层</strong>——框架与不断变化现实之间的「认知距离」随时间的变化
+        </div>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon">🎯</div>
+        <div class="trigger-text">
+          <strong>China 2.5晴雨表</strong>描述的是<strong>操作层</strong>——框架与现实之间的「结构性断裂点」是否被触发
+        </div>
+      </div>
+
+      <h3>相变点（Phase Transition Point）的精确含义</h3>
+      <p>物理学中，「相变」指的是物质从一种相（固态/液态/气态）切换到另一种相的突变点。在China 2.5框架中：</p>
+      <table>
+        <tr><th>相（Phase）</th><th>晴雨表状态</th><th>Morris衰减率λ</th><th>置信度D(t)</th><th>持有期</th></tr>
+        <tr>
+          <td><strong style="color:var(--green)">稳定相（Phase 2.5）</strong></td>
+          <td>F1=F2=F3=0（均未触发）</td>
+          <td>λ ≈ 0</td>
+          <td>D(t) ≈ D₀（不变量）</td>
+          <td>T = ∞（永久持有）</td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--red)">变革相（Phase 3.0）</strong></td>
+          <td>∃ci: ci触发</td>
+          <td>λ >> 0</td>
+          <td>D(t)快速衰减</td>
+          <td>T = 有限（框架更新或退出）</td>
+        </tr>
+      </table>
+
+      <div class="insight-box">
+        <strong>核心洞察：</strong>China 2.5晴雨表F1/F2/F3 = Morris衰减函数的<strong>相变点探测器</strong>。晴雨表未触发时，系统处于稳定相（置信度不变量）；晴雨表触发时，系统从稳定相切换到变革相（置信度骤降）。这不是连续衰减，而是<strong>相变</strong>——从一种稳态到另一种稳态的突变切换。
+      </div>
+    </div>
+
+    <!-- 持有期函数 -->
+    <div class="card">
+      <h2>持有期T(F1, F2, F3)：精确操作定义</h2>
+      <p>China 2.5的持有期不是「无限」，也不是「固定期限」，而是晴雨表条件函数：</p>
+      <div class="formula-box">
+        T(F1, F2, F3) = {<br>
+        &nbsp;&nbsp;∞ &nbsp;&nbsp;if F1 = F2 = F3 = 0<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(稳定相，不变量，永久持有)<br>
+        &nbsp;&nbsp;有限 if ∃ci: ci触发<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(变革相，衰减期，按预设规则行动)<br>
+        }
+      </div>
+      <p>三层晴雨表触发的含义：</p>
+      <div class="trigger-card">
+        <div class="trigger-icon">🔴</div>
+        <div class="trigger-text">
+          <strong>F1触发</strong>（微信生态系统崩溃）→ 稳定相→变革相：持有期从无限变为有限
+        </div>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon">🔴</div>
+        <div class="trigger-text">
+          <strong>F2触发</strong>（制度改善停滞）→ 稳定相→变革相：制度产生机制健康度下降，持有期收缩
+        </div>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon">🔴</div>
+        <div class="trigger-text">
+          <strong>F3触发</strong>（悖论转型失败）→ 稳定相→变革相：现代化从Phase 2.5转向Phase 3.0，衰减率λ从≈0急剧变为>>0
+        </div>
+      </div>
+    </div>
+
+    <!-- Buffett 1969历史验证 -->
+    <div class="card">
+      <h2>Buffett 1969：相变点的历史原型</h2>
+      <p>Buffett Partnership 1969年清盘，是「发现相变点」的历史最佳案例：</p>
+      <table>
+        <tr><th>观察</th><th>相变点解读</th></tr>
+        <tr><td>越战升级/布雷顿森林体系崩溃</td><td>宏观制度环境从稳定相切换到变革相</td></tr>
+        <tr><td>利率飙升</td><td>金融资产定价逻辑发生结构性变化</td></tr>
+        <tr><td>「我知道没有足够好的标的」</td><td>Buffett第一人称声明：能力圈边界被触达 = 相变点到达</td></tr>
+        <tr><td>主动清盘，而非等待</td><td>λ从≈0急剧增加到>>0 → 持有期从无限变为有限 → 执行退出</td></tr>
+      </table>
+      <div class="insight-box">
+        <strong>重新解读：</strong>Buffett 1969清盘，不是因为「置信度随时间自然衰减」，而是因为「结构性相变点被触发」——λ从≈0急剧增加到>>0，市场从稳定相切换到变革相。这正是Morris连续衰减×晴雨表相变点函数的精确操作化案例。
+      </div>
+    </div>
+
+    <!-- Morris五步与相变点 -->
+    <div class="card">
+      <h2>Morris「For Now」五步 × 相变点函数</h2>
+      <p>Morris「For Now」五步操作化，完整对应相变点探测机制：</p>
+      <table>
+        <tr><th>步骤</th><th>Morris五步</th><th>相变点函数视角</th></tr>
+        <tr>
+          <td>第一步</td>
+          <td>预先声明知识边界（H）</td>
+          <td>声明：在稳定相（λ≈0）时置信度D₀成立</td>
+        </tr>
+        <tr>
+          <td>第二步</td>
+          <td>预设F1/F2/F3触发规则</td>
+          <td>预设相变点探测器：晴雨表触发 = 相变点到达</td>
+        </tr>
+        <tr>
+          <td>第三步</td>
+          <td>持续监控Ei是否满足ci</td>
+          <td>持续监测：当前处于稳定相还是变革相</td>
+        </tr>
+        <tr>
+          <td>第四步</td>
+          <td>等待数据验证</td>
+          <td>等待晴雨表信号：相变点是否被触发</td>
+        </tr>
+        <tr>
+          <td>第五步</td>
+          <td>按规则执行预设动作</td>
+          <td>相变点触发 → 从稳定相切换到变革相 → 执行A₁/A₂/A₃</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 05-13窗口期含义 -->
+    <div class="card">
+      <h2>05-13晴雨表窗口期的相变点含义</h2>
+      <p>2026年5月13日19:30腾讯+阿里财报发布，是China 2.5框架的首次完整相变点探测：</p>
+      <div class="formula-box">
+        05-13晴雨表窗口期 = 相变点探测器启动<br>
+        <br>
+        检查项：<br>
+        &nbsp;&nbsp;F1 = 0 or 1?（微信生态系统状态）<br>
+        &nbsp;&nbsp;F2 = 0 or 1?（制度改善信号）<br>
+        &nbsp;&nbsp;F3 = 0 or 1?（悖论转型验证）<br>
+        <br>
+        结果判断：<br>
+        &nbsp;&nbsp;[F1=0 ∧ F2=0 ∧ F3=0] → 稳定相 → T=∞ → 继续持有<br>
+        &nbsp;&nbsp;[∃ci: ci=1] → 变革相 → T=有限 → 按规则减仓
+      </div>
+      <div class="warning-box">
+        <strong>操作纪律：</strong>05-13不是「判断财报好坏」的时点，而是「判断当前处于哪个相」的时点。F1/F2/F3只有0/1两种状态，不存在概率加权。所有晴雨表均未触发 → 稳定相 → 持有期函数T=∞。
+      </div>
+    </div>
+
+    <!-- 置信度含义 -->
+    <div class="card">
+      <h2>China 2.5置信度4.88/5的相变点诠释</h2>
+      <p>置信度4.88/5在相变点框架下的精确含义：</p>
+      <div class="formula-box">
+        置信度4.88/5 = {<br>
+        &nbsp;&nbsp;"在晴雨表探测器下，当前处于稳定相的概率足够高"<br>
+        &nbsp;&nbsp;（晴雨表F1/F2/F3均未触发，即无证伪证据）<br>
+        &nbsp;&nbsp;<br>
+        &nbsp;&nbsp;不是："框架为真的客观概率"<br>
+        &nbsp;&nbsp;不是："持有者对框架的主观置信度"<br>
+        &nbsp;&nbsp;而是："晴雨表探测结果支持继续处于稳定相"（证伪失败）<br>
+        }
+      </div>
+      <p>四框架收敛的相变点含义：</p>
+      <div class="trigger-card">
+        <div class="trigger-icon">📐</div>
+        <div class="trigger-text">
+          <strong>Morris SDI</strong>（历史测量框架）→ 提供稳定相的判断基准
+        </div>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon">📐</div>
+        <div class="trigger-text">
+          <strong>Morris「For Now」</strong>（投资纪律）→ 提供相变点探测器的操作规则
+        </div>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon">📐</div>
+        <div class="trigger-text">
+          <strong>Buffett Partnership</strong>（历史原型）→ 提供相变点触发的历史验证案例（1969年）
+        </div>
+      </div>
+      <div class="trigger-card">
+        <div class="trigger-icon">📐</div>
+        <div class="trigger-text">
+          <strong>Constructor Theory</strong>（物理元层）→ 提供变换可能性判断的不可能条件
+        </div>
+      </div>
+    </div>
+
+    <!-- 导航 -->
+    <div class="section-note">
+      <p><strong>相关页面：</strong></p>
+      <ul style="margin:.5rem 0; padding-left:1.5rem;">
+        <li><a href="china25-framework.html">China 2.5总纲</a> — 三层晴雨表与置信度体系</li>
+        <li><a href="morris-for-now.html">Morris「For Now」</a> — 五步操作化完整指南</li>
+        <li><a href="popper-falsificationism.html">波普尔批判理性主义</a> — 证伪主义哲学地基</li>
+        <li><a href="morris-sdi-investment-integration.html">Morris SDI投资整合</a> — 历史测量框架与China 2.5的映射</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Li Lu Research · China 2.5 Framework · 相变点函数 v1.0 · 2026-05-10</p>
+    <p style="margin-top:.4rem; color:var(--border);">结构性先生 · 不焦虑/不预测/不行动</p>
+  </footer>
+</body>
+</html>
