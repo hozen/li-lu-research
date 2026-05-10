@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>波普尔批判理性主义 · China 2.5 认识论地基</title>
+  <meta name="description" content="卡尔·波普尔批判理性主义与投资决策：可证伪性原则如何成为 China 2.5 框架的认识论地基。">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --text: #1a202c;
+      --muted: #4a5568;
+      --accent: #9b2335;
+      --accent-light: #fdf2f4;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --highlight: #fff3cd;
+    }
+    body.dark-mode {
+      --bg: #0a1628;
+      --text: #dde6f0;
+      --muted: #8fa3c0;
+      --accent: #c9a227;
+      --accent-light: #1a2744;
+      --card: #0f2240;
+      --border: #1e3a5f;
+      --highlight: #3d2e00;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      padding-top: 70px;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, var(--card) 0%, var(--accent-light) 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-block;
+      margin-top: 1.25rem;
+      padding: 0.35rem 1rem;
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+    }
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.25rem 0 0.5rem;
+      color: var(--text);
+    }
+    .card p, .card li {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+    }
+    .card ul { list-style: none; margin: 0.75rem 0; }
+    .card ul li {
+      padding-left: 1.25rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    .card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    /* Quote block */
+    .quote-block {
+      background: var(--highlight);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin: 1.25rem 0;
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .quote-source {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+      font-style: normal;
+    }
+
+    /* Warning box */
+    .warning-box {
+      background: #fff8e1;
+      border: 1px solid #ffe082;
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    body.dark-mode .warning-box {
+      background: #2d2000;
+      border-color: #5a4200;
+    }
+
+    /* Table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+    }
+    .data-table th {
+      background: var(--accent-light);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .data-table td {
+      padding: 0.6rem 0.85rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td { background: var(--bg); }
+
+    /* Comparison grid */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    .compare-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+    .compare-item h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+    .compare-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Math block */
+    .math-block {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      overflow-x: auto;
+      white-space: pre;
+      color: var(--text);
+    }
+
+    /* Check marks */
+    .check-list { margin: 0.75rem 0; }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .check-item::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<nav id="uni-navbar"></nav>
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-eyebrow">认识论地基 · Epistemological Foundation</div>
+    <h1>波普尔批判理性主义</h1>
+    <p class="hero-sub">
+      卡尔·波普尔（1902–1994）的批判理性主义，是 China 2.5 框架的哲学地基。它解释了为什么 Morris「For Now」、Buffett Partnership 费率结构和晴雨表体系，三者独立收敛于相同的认识论纪律。
+    </p>
+    <span class="hero-tag">哲学来源 · 可证伪性原则 · 四重框架之一</span>
+  </div>
+
+  <!-- Section 1: Why Popper -->
+  <div class="card">
+    <h2>一、为什么投资者需要波普尔？</h2>
+    <p>价值投资的核心挑战不是「找到好公司」，而是「知道自己在什么时候犯错」。波普尔为这个问题提供了最精确的哲学答案。</p>
+
+    <h3>三种投资失败的根源</h3>
+    <ul>
+      <li><strong>预测失败</strong>：宏观预测、地缘政治预测、短期股价预测——这些本质上不可证伪，因此本质上不是知识</li>
+      <li><strong>框架失效</strong>：能力圈边界内，但框架本身的前提条件发生了变化</li>
+      <li><strong>行为偏差</strong>：知道应该做什么，但情绪驱动作出相反决策</li>
+    </ul>
+
+    <p>波普尔的批判理性主义同时解决这三个问题：</p>
+    <div class="check-list">
+      <div class="check-item">可证伪性原则自动排除不可证伪的预测（宏观/地缘政治/时机）——这些不是知识</div>
+      <div class="check-item">预先声明可证伪条件，使得框架失效可以被客观检测——框架在数据触发前始终成立</div>
+      <div class="check-item">预设触发规则，消除了情绪决策的空间——行为偏差的制度化解决方案</div>
+    </div>
+  </div>
+
+  <!-- Section 2: Core Principles -->
+  <div class="card">
+    <h2>二、批判理性主义核心原则</h2>
+
+    <h3>可证伪性原则（Falsifiability Criterion）</h3>
+    <div class="quote-block">
+      「一个理论如果是科学的，就必须能够被经验检验，并且有可能被证明是错的。」
+      <div class="quote-source">— 卡尔·波普尔《科学发现的逻辑》（1934）</div>
+    </div>
+    <p><strong>可证伪 ≠ 被证伪。</strong> China 2.5 框架至今未被证伪，但这不是问题——关键是它在原则上可以被证伪。</p>
+
+    <h3>China 2.5 框架的可证伪条件</h3>
+    <table class="data-table">
+      <tr>
+        <th>晴雨表</th>
+        <th>可证伪条件（预设触发规则）</th>
+        <th>证伪成功含义</th>
+      </tr>
+      <tr>
+        <td><strong>F1</strong></td>
+        <td>微信 DAU 较峰值下跌 ≥ 20% 且替代渗透率 > 30%</td>
+        <td>平台护城河的根本性断裂</td>
+      </tr>
+      <tr>
+        <td><strong>F2</strong></td>
+        <td>PCAOB 两年无进展 <strong>或</strong> 美国国会通过中概股退市法案</td>
+        <td>制度改善停滞或逆转</td>
+      </tr>
+      <tr>
+        <td><strong>F3</strong></td>
+        <td>阿里云增速 &lt; 5% <strong>且</strong> 腾讯广告/金融科技毛利率连续两季度下降</td>
+        <td>能量悖论转型路径受阻</td>
+      </tr>
+    </table>
+
+    <h3>证伪失败 ≠ 证实</h3>
+    <p>波普尔最深刻的洞察：<strong>证实在逻辑上不可能，但证伪在逻辑上可以一次完成。</strong></p>
+    <div class="quote-block">
+      「无论多少只白天鹅都不能证明'所有天鹅都是白的'，但一只黑天鹅就能证伪它。」
+      <div class="quote-source">— 波普尔，黑天鹅问题</div>
+    </div>
+    <p>应用到 China 2.5：无论多少次财报数据符合预期，都不能「证明」框架成立；但只要 F1/F2/F3 中任何一个触发，框架就需要修正或退出。</p>
+
+    <h3>批判理性主义三层结构</h3>
+    <div class="compare-grid">
+      <div class="compare-item">
+        <h4>第一层：猜测</h4>
+        <p>形成理论或假设（China 2.5 框架）</p>
+      </div>
+      <div class="compare-item">
+        <h4>第二层：反驳</h4>
+        <p>设计尽可能严格的检验（晴雨表 F1/F2/F3）</p>
+      </div>
+      <div class="compare-item">
+        <h4>第三层：淘汰</h4>
+        <p>如果检验失败，修正或放弃理论</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: Popper × Morris × Buffett -->
+  <div class="card">
+    <h2>三、三角闭环：波普尔 × Morris「For Now」× Buffett Partnership</h2>
+    <p>三个独立来源，在没有任何相互引用的情况下，收敛于完全相同的认识论纪律。这是多独立构造器系统（Multiple Independent Constructors）的最强证据。</p>
+
+    <h3>波普尔（1934）：哲学来源</h3>
+    <p>批判理性主义：科学知识通过证伪失败迭代，而非证实积累。</p>
+
+    <h3>Morris「For Now」（2010 论文）：操作化</h3>
+    <div class="math-block">五步操作化（Piecewise Decision Function）:
+D(E; θ) =
+  A₀  if ∀ci: ci 未触发     → 继续持有
+  A₁  if F1 触发            → 减仓
+  A₂  if F2 触发            → 减仓
+  A₃  if F3 触发            → 减仓
+  A₃  if ∀ci: 全部触发      → 退出</div>
+
+    <h3>Buffett Partnership 费率结构（1956–1969）：制度化</h3>
+    <table class="data-table">
+      <tr>
+        <th>Buffett Partnership 费率结构</th>
+        <th>波普尔/Morris 含义</th>
+      </tr>
+      <tr>
+        <td><strong>6% 门槛收益率</strong></td>
+        <td>预先声明知识边界（能力圈之外的收益不参与分成）</td>
+      </tr>
+      <tr>
+        <td><strong>25% 激励费</strong></td>
+        <td>利益与批判性检验绑定（LP 和 GP 对齐）</td>
+      </tr>
+      <tr>
+        <td><strong>无固定管理费</strong></td>
+        <td>承认错误的经济成本内部化（没有旱涝保收）</td>
+      </tr>
+      <tr>
+        <td><strong>LP 随时退出权</strong></td>
+        <td>同行评审制度化（LP 可以用脚投票）</td>
+      </tr>
+    </table>
+
+    <h3>三角闭环的数学统一性</h3>
+    <div class="quote-block">
+      三者共享的数学结构：<strong>布尔决策函数 + 预设触发条件 + 预先声明知识边界</strong>，而非概率优化。
+    </div>
+  </div>
+
+  <!-- Section 4: Popper vs Bayes -->
+  <div class="card">
+    <h2>四、波普尔 vs 贝叶斯：为什么 China 2.5 不是贝叶斯方法</h2>
+
+    <table class="data-table">
+      <tr>
+        <th>维度</th>
+        <th>波普尔/Morris「For Now」</th>
+        <th>贝叶斯方法</th>
+      </tr>
+      <tr>
+        <td>置信度来源</td>
+        <td>独立证伪检验（外生触发）</td>
+        <td>连续更新后验概率（内生计算）</td>
+      </tr>
+      <tr>
+        <td>置信度随时间</td>
+        <td>不变量（晴雨表未触发时不变）</td>
+        <td>连续变化（每次新数据都更新）</td>
+      </tr>
+      <tr>
+        <td>决策函数</td>
+        <td>布尔（0/1 触发）</td>
+        <td>概率加权（连续值）</td>
+      </tr>
+      <tr>
+        <td>预设检验条件</td>
+        <td>预先声明，不随数据修改</td>
+        <td>可以随新证据调整</td>
+      </tr>
+      <tr>
+        <td>过度拟合风险</td>
+        <td>无（预设条件无法事后修改）</td>
+        <td>存在（持续更新可能导致）</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <strong>重要区分：</strong>Morris「For Now」本质不是贝叶斯方法。原因一：不更新置信度，只执行预设规则；原因二：预设检验条件，拒绝数据挖掘；原因三：承认「零贝叶斯更新」的合理性（持续未触发 ≠ 越来越确定）。
+    </div>
+  </div>
+
+  <!-- Section 5: Phase Transition -->
+  <div class="card">
+    <h2>五、Morris 衰减函数 × 晴雨表 = 相变点探测器</h2>
+    <p>Morris「For Now」2010 论文原版提出：预测有效性随时间尺度衰减（内生衰减函数 D(t) = D₀ × e<sup>−λt</sup>）。China 2.5 晴雨表体系与此存在深层整合：</p>
+
+    <div class="math-block">整合命题：
+
+λ（衰减率）= f(F3 晴雨表状态)
+           = 0          if F3 未触发（Phase 2.5 稳定期）
+           = 快速增加   if F3 触发（Phase 3.0 转型期）
+
+持有期 T(F1, F2, F3) =
+  ∞   if F1=F2=F3=0（稳定相，置信度不变量）
+  有限  if ∃ci: ci 触发（变革相，框架修正或退出）</div>
+
+    <h3>晴雨表 = 相变点探测器（Phase Transition Point Detector）</h3>
+    <div class="compare-grid">
+      <div class="compare-item">
+        <h4>晴雨表未触发</h4>
+        <p>稳定相（Stable Phase）：λ ≈ 0，置信度不变量，无限持有期</p>
+      </div>
+      <div class="compare-item">
+        <h4>晴雨表触发</h4>
+        <p>变革相（Transformative Phase）：λ >> 0，置信度骤降，框架更新或退出</p>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      Buffett 1969 年清盘的本质：识别到 λ 正从 ≈0 急剧增加到 >>0（越战升级/布雷顿森林体系崩溃/利率飙升）。这不是「置信度随时间自然衰减」，而是「结构性相变点被触发，持有期从无限变为有限」。
+    </div>
+  </div>
+
+  <!-- Section 6: Popper's Epistemology -->
+  <div class="card">
+    <h2>六、波普尔认识论与 China 2.5 置信度</h2>
+
+    <h3>China 2.5 置信度 4.88/5 的精确含义</h3>
+    <p>置信度 4.88/5 不是概率陈述（贝叶斯后验概率），而是三层含义的复合：</p>
+
+    <table class="data-table">
+      <tr>
+        <th>层次</th>
+        <th>含义</th>
+        <th>数学性质</th>
+      </tr>
+      <tr>
+        <td>波普尔确认度</td>
+        <td>在足够多独立证伪尝试均失败后，框架的确认度为高</td>
+        <td>B(H, e) 确认度（非概率）</td>
+      </tr>
+      <tr>
+        <td>决策理论</td>
+        <td>EU（继续持有）> EU（放弃框架）</td>
+        <td>预期效用最大化陈述</td>
+      </tr>
+      <tr>
+        <td>Morris 操作化</td>
+        <td>晴雨表 F1/F2/F3 均未触发 → 继续持有</td>
+        <td>分段布尔决策函数</td>
+      </tr>
+    </table>
+
+    <div class="warning-box">
+      <strong>精确纠正：</strong>「证伪失败 → 置信度 +ε」是不精确的近似表述。波普尔的 B(H, e) 不是概率（不满足可列可加测度），不能说 4.88 + 0.01 = 4.89。正确表述：「证伪失败 → 确认度 B(H, e) 维持高位 → 继续坚持 H 是理性决策（预期效用最大化）」。
+    </div>
+
+    <h3>波普尔的「我知道我不知道」</h3>
+    <p>波普尔区分三类知识：</p>
+    <ul>
+      <li><strong>第一类</strong>：我知道我知道的</li>
+      <li><strong>第二类</strong>：我知道我不知道的（波普尔的认识论核心）</li>
+      <li><strong>第三类</strong>：我不知道我不知道的</li>
+    </ul>
+    <p>Buffett Partnership 1969 年清盘时说的「我知道没有足够好的标的」——这是第二类知识的完美操作化（第一人称确定声明）。China 2.5 的三重预先声明（不知道中国 AI 革命何时/不知道 F2 改善何时/不知道腾讯 AI 商业化何时规模化）同样如此。</p>
+  </div>
+
+  <!-- Section 7: 05-13 Window -->
+  <div class="card">
+    <h2>七、05-13 晴雨表窗口期：波普尔认识论的操作检验</h2>
+    <p>2026 年 5 月 13 日 19:30，腾讯 Q4+Q1 财报 + 阿里 Q4+Q1 财报发布，这是 China 2.5 框架的首次晴雨表完整检验。</p>
+
+    <h3>三重晴雨表的布尔逻辑</h3>
+    <div class="math-block">检验结果（05-13 19:30）:
+
+  [F1=0 ∧ F2=0 ∧ F3=0] → 继续持有（证伪失败）
+  [F1=1]                 → F1 触发（证伪成功）→ 减仓
+  [F2=1]                 → F2 触发（证伪成功）→ 减仓
+  [F3=1]                 → F3 触发（证伪成功）→ 减仓
+  [F1=1 ∧ F2=1 ∧ F3=1] → 三重触发 → 退出
+
+F1/F2/F3 = 0 表示未触发，= 1 表示触发。
+晴雨表只有 0/1 两种状态，不存在概率加权。</div>
+
+    <h3>波普尔视角下的晴雨表</h3>
+    <div class="check-list">
+      <div class="check-item">晴雨表是预设的严格检验，不是事后选择的数据</div>
+      <div class="check-item">F1/F2/F3 任一触发 = 证伪成功 = 框架修正或退出</div>
+      <div class="check-item">晴雨表未触发 = 证伪失败 = 确认度维持高位</div>
+      <div class="check-item">检验标准在数据发布前预先声明（避免后见之明偏差）</div>
+    </div>
+  </div>
+
+  <!-- Navigation row -->
+  <div class="card">
+    <h2>继续阅读</h2>
+    <div class="compare-grid">
+      <div class="compare-item">
+        <h4>← Morris「For Now」</h4>
+        <p><a href="morris-for-now.html">五步操作化与 Buffett Partnership 历史原型</a></p>
+      </div>
+      <div class="compare-item">
+        <h4>Morris SDI 投资整合 →</h4>
+        <p><a href="morris-sdi-investment-integration.html">文明测量框架与 China 2.5 的深层连接</a></p>
+      </div>
+      <div class="compare-item">
+        <h4>China 2.5 总纲 →</h4>
+        <p><a href="china25-framework.html">能量悖论 × Hard Ceiling × 三层晴雨表</a></p>
+      </div>
+      <div class="compare-item">
+        <h4> Constructor Theory →</h4>
+        <p><a href="glossary.html">查看术语表中的 Constructor Theory 词条</a></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>
+    波普尔批判理性主义 · China 2.5 认识论地基<br>
+    <a href="index.html">← 返回首页</a>
+  </p>
+  <p style="margin-top:0.5rem; font-size:0.75rem;">
+    来源：波普尔《科学发现的逻辑》(1934) / Morris「For Now」论文 (2010) /
+    Buffett Partnership Letters (1956–1969) / China 2.5 框架 (2026)
+  </p>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Inject shared navbar
+  fetch('navbar.html')
+    .then(r => r.text())
+    .then(html => { document.getElementById('uni-navbar').outerHTML = html; });
+</script>
+
+</body>
+</html>
