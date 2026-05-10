@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elinor Ostrom 制度经济学 · 共有资源治理八原则 · F2 晴雨表微观地基 · China 2.5</title>
+  <meta name="description" content="Elinor Ostrom 2009年诺贝尔经济学奖：挑战公地悲剧，证明共有资源可实现可持续自组织治理。Ostrom八原则=F2晴雨表的微观操作化工具，测量非正式制度内化程度。">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --text: #1a202c;
+      --muted: #4a5568;
+      --accent: #276749;
+      --accent-light: #f0fff4;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --highlight: #f0fff4;
+    }
+    body.dark-mode {
+      --bg: #0a1628;
+      --text: #dde6f0;
+      --muted: #8fa3c0;
+      --accent: #48bb78;
+      --accent-light: #1a2744;
+      --card: #0f2240;
+      --border: #1e3a5f;
+      --highlight: #1a2744;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      padding-top: 70px;
+    }
+    .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .hero {
+      background: linear-gradient(135deg, var(--card) 0%, var(--accent-light) 100%);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-block;
+      margin-top: 1.25rem;
+      padding: 0.35rem 1rem;
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+    }
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 1.25rem 0 0.5rem;
+      color: var(--text);
+    }
+    .card p, .card li {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      color: var(--muted);
+    }
+    .card ul { list-style: none; margin: 0.75rem 0; }
+    .card ul li {
+      padding-left: 1.25rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    .card ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .card ol {
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+    }
+    .card ol li {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: var(--muted);
+    }
+    .card table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    .card th {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.6rem 0.75rem;
+      text-align: left;
+      border: 1px solid var(--border);
+      font-weight: 600;
+    }
+    .card td {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      vertical-align: top;
+    }
+    .card strong {
+      color: var(--text);
+    }
+    .highlight-box {
+      background: var(--highlight);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .highlight-box p { margin-bottom: 0; }
+    .emphasis {
+      background: var(--accent-light);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .principle-item {
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+    .principle-item h4 {
+      font-size: 0.85rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+    .principle-item p {
+      font-size: 0.85rem;
+      margin-bottom: 0;
+    }
+
+    .nav-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+      border-top: 1px solid #e2e8f0;
+      margin-top: 8px;
+    }
+    .nav-label {
+      font-size: 0.75rem;
+      color: #718096;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .nav-btn {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 6px 14px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .nav-btn:hover { opacity: 0.85; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #718096;
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    footer a { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .principle-grid { grid-template-columns: 1fr; }
+      .hero { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav id="uni-navbar"></nav>
+
+  <div class="container">
+
+    <div class="hero">
+      <div class="hero-eyebrow">China 2.5 认识论体系 · 制度经济学五重奏</div>
+      <h1>Elinor Ostrom 制度经济学</h1>
+      <p class="hero-sub">2009年诺贝尔经济学奖：挑战「公地悲剧」，证明共有资源可以实现可持续自组织治理。Ostrom八原则是F2晴雨表的微观操作化工具——测量非正式制度内化程度，即社会层面的契约精神、信任半径与纠纷解决机制是否真正形成。</p>
+      <span class="hero-tag">第五位诺奖得主 · F2 晴雨表微观地基</span>
+    </div>
+
+    <!-- Ostrom Nobel Prize Overview -->
+    <div class="card">
+      <h2>Elinor Ostrom 与制度经济学第五重奏</h2>
+      <p><strong>Elinor Ostrom（1933-2012）</strong>是首位获得诺贝尔经济学奖的女性，其核心贡献是<strong>挑战「公地悲剧」（Tragedy of the Commons）</strong>——Hardin 1968年提出，共有资源必然因个体理性导致集体毁灭，需要政府或私有化才能解决。Ostrom用数十年实地研究证明：<span class="emphasis">公地悲剧非必然，共有资源可以在适当的治理规则下实现可持续自组织</span>。</p>
+
+      <table>
+        <tr><th>项目</th><th>内容</th></tr>
+        <tr><td><strong>奖项</strong></td><td>2009年诺贝尔经济学奖（与Oliver Williamson共同获奖）</td></tr>
+        <tr><td><strong>核心贡献</strong></td><td>证明共有资源治理可以有制度解决方案，打破「政府或私有化」二元对立</td></tr>
+        <tr><td><strong>研究方法</strong></td><td>数十年实地田野调查（全球渔场/灌溉系统/森林/牧场案例）</td></tr>
+        <tr><td><strong>关键著作</strong></td><td>《治理公共事物》(1990) / 《制度激励与可持续发展》(1999)</td></tr>
+        <tr><td><strong>与China 2.5的关系</strong></td><td>Ostrom八原则=F2晴雨表的微观操作化工具，测量非正式制度内化程度</td></tr>
+      </table>
+
+      <div class="highlight-box">
+        <p><strong>为什么Ostrom是第五重奏？</strong><br>
+        五位诺奖制度经济学家的认识论分工：<br>
+        <strong>North（1993）</strong>= 制度为何重要（描述性/历史学）<br>
+        <strong>Buchanan（1986）</strong>= 好制度如何产生（规范性/设计学）<br>
+        <strong>Ostrom（2009）</strong>= 非正式制度如何内化（实践学/治理学）<br>
+        <strong>Acemoglu（2024）</strong>= 制度为何会变（政治经济学/动力学）<br>
+        <strong>Williamson（2009）</strong>= 何时用市场vs层级（交易成本经济学）</p>
+      </div>
+    </div>
+
+    <!-- Eight Design Principles -->
+    <div class="card">
+      <h2>Ostrom 八条设计原则</h2>
+      <p>Ostrom通过全球数百个案例归纳出成功公共事物治理的八条设计原则。这八条不是法律条文，而是社会中实际运作的内化规则——是<strong>非正式制度质量</strong>的微观测量。</p>
+
+      <div class="principle-grid">
+        <div class="principle-item">
+          <h4>原则一：清晰边界</h4>
+          <p>资源边界和成员资格清晰定义。外部人明确知道哪些资源属于共有领域，谁有权使用。</p>
+        </div>
+        <div class="principle-item">
+          <h4>原则二：匹配性</h4>
+          <p>使用规则与当地条件匹配。规则与资源规模/成员能力/外部环境相适应，而非一刀切。</p>
+        </div>
+        <div class="principle-item">
+          <h4>原则三：集体选择</h4>
+          <p>大多数成员可以参与规则制定。规则不是外部强加，而是成员自主协商产生。</p>
+        </div>
+        <div class="principle-item">
+          <h4>原则四：监控</h4>
+          <p>有效监控机制存在。成员自己或选出的监控者定期检查资源状态和规则遵守情况。</p>
+        </div>
+        <div class="principle-item">
+          <h4>原则五：渐进制裁</h4>
+          <p>违规行为从轻到重渐进处理。先警告→再罚款→最后除名，给改正机会而非一刀切惩罚。</p>
+        </div>
+        <div class="principle-item">
+          <h4>原则六：低成本冲突解决</h4>
+          <p>纠纷解决机制 доступна且费用低。成员有快速、低成本的途径解决规则争议，无需诉诸外部法律系统。</p>
+        </div>
+        <div class="principle-item">
+          <h4>原则七：有限认可</h4>
+          <p>成员自发组织的权利得到外部权威有限认可。地方政府或更大社区承认共有治理组织的合法性。</p>
+        </div>
+        <div class="principle-item">
+          <h4>原则八：嵌套式组织</h4>
+          <p>治理结构嵌套于更大的多层组织系统中。局部规则嵌入区域/国家规则体系，相互协调而非冲突。</p>
+        </div>
+      </div>
+
+      <h3>Ostrom八原则的认识论含义</h3>
+      <p>Ostrom八原则是<strong>从实践中归纳认识论纪律</strong>的典型案例——不是理论推导，而是数十年实地观察成功治理系统后的归纳总结。这与Morris「For Now」的方法论完全一致：<span class="emphasis">都从实践中归纳规则，而非从理论推导规则</span>。两者均承认人类认知局限性，均强调「在约束条件下寻找可行方案」而非「寻找最优方案」。</p>
+    </div>
+
+    <!-- F2 Raincoat Ostrom Layer -->
+    <div class="card">
+      <h2>F2 晴雨表 Ostrom 层：非正式制度内化程度</h2>
+      <p>F2晴雨表测量改革开放是否持续运作，包含三个嵌套层次：</p>
+      <ul>
+        <li><strong>North层（30%权重）</strong>：正式制度规则质量（法律/监管/营商环境），高可观测性</li>
+        <li><strong>Buchanan层（50%权重）</strong>：制度产生机制是否持续运作（改革开放进程），中等可观测性</li>
+        <li><strong>Ostrom层（隐性）</strong>：非正式制度内化程度（八原则社会内化），低可观测性但理论关键</li>
+      </ul>
+
+      <div class="highlight-box">
+        <p><strong>Ostrom层的核心含义：</strong><br>
+        正式制度现代化 ≠ 非正式制度内化。<strong>法律可以在一夜之间改变，但Ostrom八原则的社会内化需要数十年。</strong>这就是为什么F2晴雨表Buchanan层（50%）测量的是「改革开放是否仍在运作」——即使正式制度规则改善，非正式制度的内化仍可能是瓶颈。</p>
+      </div>
+
+      <h3>Ostrom层 × F2晴雨表三层权重精确映射</h3>
+      <table>
+        <tr><th>Ostrom原则</th><th>映射层次</th><th>含义</th></tr>
+        <tr><td>原则七（有限认可）</td><td><strong>North层</strong></td><td>外部权威对自发组织的认可程度，映射正式制度对多元治理的包容度</td></tr>
+        <tr><td>原则三（集体选择）</td><td><strong>Buchanan层</strong></td><td>成员参与规则制定的能力，映射改革开放中公民/企业的参与权</td></tr>
+        <tr><td>原则一/二（边界+匹配性）</td><td><strong>Buchanan层</strong></td><td>规则与现实匹配，映射改革措施是否因地制宜而非一刀切</td></tr>
+        <tr><td>原则四/五（监控+渐进制裁）</td><td><strong>Buchanan层</strong></td><td>有效规则执行机制，映射执法一致性和规则可预期性</td></tr>
+        <tr><td>原则六（低成本冲突解决）</td><td><strong>Buchanan层</strong></td><td>纠纷解决机制，映射司法效率和法治可及性</td></tr>
+        <tr><td>原则八（嵌套式组织）</td><td><strong>Acemoglu层</strong></td><td>多层治理协调，映射中央-地方制度变迁的协调成本</td></tr>
+        <tr><td>原则一（清晰边界）</td><td><strong>Acemoglu层</strong></td><td>边界清晰是临界点出现后制度重组的基础</td></tr>
+      </table>
+    </div>
+
+    <!-- Ostrom × Complexity Economics -->
+    <div class="card">
+      <h2>Ostrom × Complexity Economics：复杂系统的自组织治理</h2>
+      <p>Arthur复杂度经济学与Ostrom治理原则的深层握手：<strong>正反馈循环可以产生锁定效应，也可以通过正确的治理规则引导正反馈方向。</strong></p>
+
+      <h3>Arthur正反馈循环 × Ostrom治理机制</h3>
+      <table>
+        <tr><th>Arthur正反馈机制</th><th>Ostrom治理回应</th><th>晴雨表含义</th></tr>
+        <tr><td>规模经济</td><td>原则一（清晰边界）：防止资源被过度提取</td><td>F2：Buchanan层规则制定</td></tr>
+        <tr><td>网络效应</td><td>原则八（嵌套式组织）：协调多层利益</td><td>F2：Acemoglu层临界点管理</td></tr>
+        <tr><td>信息溢出</td><td>原则四（监控）：信息透明防止机会主义</td><td>F2：Buchanan层执行机制</td></tr>
+        <tr><td>适应性预期</td><td>原则三（集体选择）：预期形成于参与过程</td><td>F2：Ostrom层社会共识</td></tr>
+      </table>
+
+      <div class="highlight-box">
+        <p><strong>核心洞见：</strong><br>
+        Arthur告诉我们正反馈循环会锁定次优均衡；Ostrom告诉我们如何通过正确的治理规则引导正反馈方向。<strong>Buchanan（程序合法性）× Ostrom（八原则治理）× Arthur（正反馈锁定）</strong>三者共同构成F2晴雨表的完整理论基础：<br>
+        · Buchanan测量制度产生过程是否合法 → <br>
+        · Ostrom测量规则是否在社会中真正内化 → <br>
+        · Arthur解释为什么正反馈会锁定次优均衡（晴雨表为何重要）</p>
+      </div>
+    </div>
+
+    <!-- Ostrom × Morris For Now × Buffett Partnership -->
+    <div class="card">
+      <h2>Ostrom × Morris「For Now」× Buffett Partnership：四角闭环</h2>
+      <p>Ostrom八原则 × Morris「For Now」 × Complexity Economics × Buffett Partnership构成China 2.5晴雨表的四角认识论闭环：</p>
+
+      <ul>
+        <li><strong>Arthur（诊断）</strong>：正反馈循环会锁定次优均衡（微信护城河=正反馈产物）</li>
+        <li><strong>Ostrom（治理）</strong>：正确的规则可以使正反馈导向可持续结果（改革开放八原则）</li>
+        <li><strong>Buchanan（程序）</strong>：合法程序产生近乎最优规则（改革开放=可持续制度产生机制）</li>
+        <li><strong>Morris「For Now」（纪律）</strong>：预先声明不知道晴雨表何时触发，只精确监控触发条件</li>
+      </ul>
+
+      <h3>Ostrom × Morris「For Now」深层同构</h3>
+      <p>Ostrom和Morris「For Now」均从<strong>数十年实践观察</strong>中归纳出认识论纪律：</p>
+      <ul>
+        <li>Ostrom：不知道最优治理方案是什么，只能从成功案例中归纳出八条必要条件</li>
+        <li>Morris「For Now」：不知道未来会怎样，只能预先声明触发条件并等待数据验证</li>
+        <li>两者共同立场：在根本性不确定性面前，正确的反应是「从实践中归纳可行规则」而非「从理论推导最优规则」</li>
+      </ul>
+
+      <p><strong>Buffett Partnership的Ostrom含义：</strong>BP费率结构（6%门槛/25%激励费/无固定管理费）= Ostrom八原则在GP/LP关系中的制度化。GP/LP之间的信任和规则遵循，不是靠法律合同完全约束，而是靠双方对规则的内在遵循——这是Ostrom治理原则在金融领域的精确体现。</p>
+    </div>
+
+    <!-- Reform and Opening-Up Ostrom Analysis -->
+    <div class="card">
+      <h2>改革开放的Ostrom八原则分析</h2>
+      <p>可以用Ostrom八原则评估中国改革开放在非正式制度内化层面的进展：</p>
+
+      <table>
+        <tr><th>Ostrom原则</th><th>改革开放对应进展</th><th>晴雨表含义</th></tr>
+        <tr><td>原则一（清晰边界）</td><td>产权界定逐步清晰（土地三权分置/民企产权保护强化）</td><td>North层改善 ✅ / Ostrom层部分进展</td></tr>
+        <tr><td>原则二（匹配性）</td><td>改革试点（自贸区/特区）= 规则与当地条件匹配的制度实验</td><td>Buchanan层改善 ✅</td></tr>
+        <tr><td>原则三（集体选择）</td><td>营商环境改善/企业参与政策制定渠道增加</td><td>Buchanan层部分改善 ⚠️</td></tr>
+        <tr><td>原则四（监控）</td><td>监管体系完善/大数据监控能力提升</td><td>North层改善 ✅</td></tr>
+        <tr><td>原则五（渐进制裁）</td><td>法治体系渐进完善/轻罪废除</td><td>Buchanan层部分改善 ⚠️</td></tr>
+        <tr><td>原则六（低成本冲突解决）</td><td>法院效率提升/仲裁机制发展/调解制度</td><td>Buchanan层部分改善 ⚠️</td></tr>
+        <tr><td>原则七（有限认可）</td><td>社会组织登记管理制度/行业协会</td><td>North层部分改善 ⚠️</td></tr>
+        <tr><td>原则八（嵌套式组织）</td><td>央地关系改革/放管服改革</td><td>Buchanan层部分改善 ⚠️</td></tr>
+      </table>
+
+      <div class="highlight-box">
+        <p><strong>F2晴雨表Ostrom层含义：</strong><br>
+        Ostrom八原则的社会内化需要数十年。改革开放正式制度规则改善（North层 ✅）先于非正式制度内化（Ostrom层 ⚠️）。<strong>Ostrom层的隐性瓶颈可能是China 2.5框架最重要的潜在风险</strong>——即使Buchanan层晴雨表未触发，正式制度的成果也可能因Ostrom层内化不足而无法巩固。</p>
+      </div>
+    </div>
+
+    <!-- Five Nobel Quintet -->
+    <div class="card">
+      <h2>制度经济学五重奏：五位诺奖得主的认识论分工</h2>
+      <p>North × Ostrom × Williamson × Buchanan × Acemoglu = 制度经济学五重奏完整理论体系，为F2晴雨表提供多层次理论地基：</p>
+
+      <table>
+        <tr><th>诺奖得主</th><th>核心问题</th><th>China 2.5定位</th><th>F2权重</th></tr>
+        <tr><td><strong>Douglass North（1993）</strong></td><td>制度为何重要？</td><td>North层：正式制度质量现状</td><td>30%</td></tr>
+        <tr><td><strong>James Buchanan（1986）</strong></td><td>好制度如何产生？</td><td>Buchanan层：制度产生机制是否运作</td><td>50%</td></tr>
+        <tr><td><strong>Elinor Ostrom（2009）</strong></td><td>非正式制度如何内化？</td><td>Ostrom层：八原则社会内化程度（隐性）</td><td>隐性</td></tr>
+        <tr><td><strong>Daron Acemoglu（2024）</strong></td><td>制度为何会变？</td><td>Acemoglu层：精英联盟/临界点动力学</td><td>20%</td></tr>
+        <tr><td><strong>Oliver Williamson（2009）</strong></td><td>何时用市场vs层级？</td><td>Williamson层：交易成本/治理结构选择</td><td>隐性</td></tr>
+      </table>
+
+      <p>五重奏×六构造器系统同时收敛：Popper（可证伪性）+ Morris「For Now」（预先声明知识边界）+ Constructor（关系图谱不可能变换）+ Arthur（正反馈锁定诊断）+ Buchanan×Ostrom（制度产生机制+规则内化）+ Acemoglu（制度变迁动力学）= China 2.5置信度4.88/5的认识论基础。</p>
+    </div>
+
+    <!-- Navigation row -->
+    <div class="nav-row">
+      <div>
+        <span class="nav-label">← 前一篇</span><br>
+        <a href="buchanan-constitutional-economics.html" class="nav-btn">Buchanan 宪法经济学</a>
+      </div>
+      <div>
+        <span class="nav-label">China 2.5 总纲 →</span><br>
+        <a href="china25-framework.html" class="nav-btn">China 2.5 总纲</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Elinor Ostrom 制度经济学 · 共有资源治理八原则 · F2 晴雨表微观地基<br>
+    <a href="index.html">← 返回首页</a></p>
+    <p style="margin-top:0.5rem; font-size:0.75rem;">
+      来源：Ostrom《治理公共事物》(1990) / 《制度激励与可持续发展》(1999) /
+      North《制度、制度变迁与经济绩效》(1990) /
+      Buchanan《同意的计算》(1962) / Acemoglu《国家为什么会失败》(2012) /
+      Williamson《资本主义经济制度》(1985) / China 2.5 框架 (2026)
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    fetch('nav.html').then(r => r.text()).then(html => {
+      document.getElementById('uni-navbar').outerHTML = html;
+    });
+  </script>
+
+</body>
+</html>
