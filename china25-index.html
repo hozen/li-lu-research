@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>China 2.5 晴雨表体系 — Li Lu Research</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --bg: #0a1628;
+      --bg-card: #0f2040;
+      --bg-card2: #132744;
+      --text: #e8e0d0;
+      --muted: #8fa3c0;
+      --accent: #c9a227;
+      --accent2: #7ab8d4;
+      --border: #1e3a5f;
+      --danger: #e05555;
+      --success: #4caf7d;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Noto Serif SC', sans-serif; line-height: 1.75; }
+    .main-content { max-width: 900px; margin: 0 auto; padding: 80px 24px 120px; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 60%, #0d2240 100%); border-bottom: 1px solid var(--border); padding: 3rem 0 2.5rem; margin-bottom: 3rem; }
+    .hero .eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .hero h1 { font-family: 'Noto Serif SC', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; }
+    .hero .subtitle { color: var(--muted); font-size: 0.95rem; max-width: 620px; }
+    .hero .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1rem; }
+    .badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
+    .badge-yellow { background: var(--accent); color: #0a1628; }
+    .badge-blue { background: var(--accent2); color: #0a1628; }
+    .badge-green { background: var(--success); color: #0a1628; }
+
+    /* Section */
+    h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    h2:first-of-type { margin-top: 0; }
+
+    /* Cards */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.2s; display: block; }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card .card-tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.5rem; }
+    .card .card-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .card .card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+    .card-blue .card-tag { color: var(--accent2); }
+    .card-green .card-tag { color: var(--success); }
+
+    /* Three gauges */
+    .gauges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 2rem; }
+    .gauge { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem 1.25rem; text-align: center; }
+    .gauge .label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.75rem; }
+    .gauge .name { font-size: 1.3rem; font-weight: 700; color: var(--accent); margin-bottom: 0.5rem; font-family: 'Noto Serif SC', serif; }
+    .gauge .desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .gauge .status { display: inline-block; margin-top: 0.75rem; padding: 3px 14px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; background: var(--success); color: #0a1628; }
+    .gauge .status.yellow { background: var(--accent); }
+    .gauge .status.blue { background: var(--accent2); }
+
+    /* Constructors */
+    .constructor-list { display: flex; flex-direction: column; gap: 10px; }
+    .constructor-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; display: flex; align-items: center; gap: 14px; }
+    .constructor-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #0a1628; font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .constructor-text { font-size: 0.88rem; }
+
+    /* Narrative block */
+    .narrative { background: var(--bg-card); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; font-size: 0.9rem; color: var(--text); line-height: 1.8; margin-bottom: 2rem; }
+
+    /* Footer nav */
+    .footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
+    .footer-nav a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .gauges { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-content">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="eyebrow">Research Framework · 版本 2.5</div>
+    <h1>Morris SDI × China 2.5<br>晴雨表投资体系</h1>
+    <p class="subtitle">七构造器 × 三层晴雨表 × 五诺奖制度经济学五重奏。一个在根本性不确定性面前，保持纪律而非预测的操作框架。</p>
+    <div class="badge-row">
+      <span class="badge badge-yellow">Morris「For Now」</span>
+      <span class="badge badge-blue">晴雨表心态</span>
+      <span class="badge badge-green">认识论闭环</span>
+    </div>
+  </div>
+
+  <!-- Core Narrative -->
+  <div class="narrative">
+    China 2.5 不是一个预测中国经济增长的框架。它是一个在「改革开放制度产生机制」方向是否逆转这个问题上，预先声明触发条件、精确测量、然后纪律性执行的操作手册。
+    <br><br>
+    Morris 在《Why the West Rules—for Now》中的「For Now」——预先声明触发条件取代预测时机，是这个框架的认识论核心。Buchanan 的程序合法性理论，解决了「在不知道结果最优的情况下如何做出合法决策」的问题，与 Morris 的纪律框架形成深层同构。
+  </div>
+
+  <!-- Three Gauges -->
+  <h2>三层晴雨表</h2>
+  <div class="gauges">
+    <div class="gauge">
+      <div class="label">F1 · 技术护城河</div>
+      <div class="name">微信生态</div>
+      <div class="desc">DAU −20% 且替代渗透率 &gt;30%，触发减仓信号</div>
+      <div class="status yellow">监控中</div>
+    </div>
+    <div class="gauge">
+      <div class="label">F2 · 制度产生机制</div>
+      <div class="name">改革开放</div>
+      <div class="desc">政策语言 × 关键人事 × 行动措施，三重信号精确测量</div>
+      <div class="status yellow">监控中</div>
+    </div>
+    <div class="gauge">
+      <div class="label">F3 · 能量获取</div>
+      <div class="name">悖论转型</div>
+      <div class="desc">3-5亿有效消费者购买力释放，能源消费/GDP比率下降</div>
+      <div class="status yellow">监控中</div>
+    </div>
+  </div>
+
+  <!-- Seven Constructors -->
+  <h2>七构造器（置信度 4.88/5）</h2>
+  <div class="constructor-list">
+    <div class="constructor-item">
+      <div class="constructor-num">1</div>
+      <div class="constructor-text">Morris「For Now」— 预先声明触发条件，纪律取代预测</div>
+    </div>
+    <div class="constructor-item">
+      <div class="constructor-num">2</div>
+      <div class="constructor-text">Arthur 正反馈锁定 × Complexity Economics — 芒格心理学的底层机制</div>
+    </div>
+    <div class="constructor-item">
+      <div class="constructor-num">3</div>
+      <div class="constructor-text">North 制度经济学 × Buchanan 程序合法性 — F2晴雨表的方法论基础</div>
+    </div>
+    <div class="constructor-item">
+      <div class="constructor-num">4</div>
+      <div class="constructor-text">Keynes 动物精神 × Knight 根本性不确定性 — F1/F2/F3 的认识论边界</div>
+    </div>
+    <div class="constructor-item">
+      <div class="constructor-num">5</div>
+      <div class="constructor-text">Popper 可证伪性 — 晴雨表三层可测量、可证伪的操作逻辑</div>
+    </div>
+    <div class="constructor-item">
+      <div class="constructor-num">6</div>
+      <div class="constructor-text">Buffett Partnership 费率结构 × Morris「For Now」— 持仓决策的纪律锚点</div>
+    </div>
+    <div class="constructor-item">
+      <div class="constructor-num">7</div>
+      <div class="constructor-text">Morris SDI 能量获取维度 × 工业革命历史模式 — F3的深层历史类比</div>
+    </div>
+  </div>
+
+  <!-- Framework Pages -->
+  <h2>核心框架页面</h2>
+  <div class="card-grid">
+    <a class="card" href="china25-framework.html">
+      <div class="card-tag">Framework Core</div>
+      <div class="card-title">Morris SDI × China 2.5 完全框架</div>
+      <div class="card-desc">七层认识论闭环、七构造器系统、Morris SDI 全部21章核心内容</div>
+    </a>
+    <a class="card" href="china25-hard-ceiling.html">
+      <div class="card-tag">Historical Parallel</div>
+      <div class="card-title">China 2.5 双重 Hard Ceiling</div>
+      <div class="card-desc">工业革命突破土地承载力天花板 vs 中国新能源 + DeepSeek 第二次Hard Ceiling突破</div>
+    </a>
+    <a class="card" href="china25-energy-paradox.html">
+      <div class="card-tag">Energy Paradox</div>
+      <div class="card-title">能量悖论：F3晴雨表深层机制</div>
+      <div class="card-desc">能源消费/GDP比率下降 = 经济转型成功的反向指标</div>
+    </a>
+    <a class="card" href="phase-transition.html">
+      <div class="card-tag">Phase Transition</div>
+      <div class="card-title">相变点：工业革命的启示</div>
+      <div class="card-desc">三元同时对齐（能量×制度×信息）→ 相变点触发</div>
+    </a>
+    <a class="card" href="morris-for-now.html">
+      <div class="card-tag">Morris「For Now」</div>
+      <div class="card-title">Morris「For Now」终极认识论</div>
+      <div class="card-desc">★★★★★ 框架核心：预先声明触发条件取代预测时机</div>
+    </a>
+    <a class="card card-blue" href="morris-sdi-investment-integration.html">
+      <div class="card-tag">Morris SDI</div>
+      <div class="card-title">Morris SDI × 投资整合</div>
+      <div class="card-desc">能量获取、社会组织、信息技术三维度的投资含义</div>
+    </a>
+  </div>
+
+  <!-- Institutional Economics -->
+  <h2>五诺奖制度经济学五重奏</h2>
+  <div class="card-grid">
+    <a class="card" href="buchanan-constitutional-economics.html">
+      <div class="card-tag">Buchanan · 1986</div>
+      <div class="card-title">Buchanan 程序合法性</div>
+      <div class="card-desc">「不知道结果最优，但知道程序是否合法」— F2晴雨表的Buchanan层</div>
+    </a>
+    <a class="card" href="acemoglu-institutional-change.html">
+      <div class="card-tag">Acemoglu · 2024</div>
+      <div class="card-title">Acemoglu 制度变迁</div>
+      <div class="card-desc">制度与经济结果的路径依赖，North框架的精确化</div>
+    </a>
+    <a class="card" href="ostrom-institutional-economics.html">
+      <div class="card-tag">Ostrom · 2009</div>
+      <div class="card-title">Ostrom 公共池塘资源</div>
+      <div class="card-desc">F2晴雨表的隐性层：非正式制度内化程度</div>
+    </a>
+  </div>
+
+  <!-- Epistemology -->
+  <h2>认识论基础</h2>
+  <div class="card-grid">
+    <a class="card card-green" href="popper-falsificationism.html">
+      <div class="card-tag">Popper</div>
+      <div class="card-title">批判理性主义 × 可证伪性</div>
+      <div class="card-desc">晴雨表三层的方法论合法性：可测量、可证伪</div>
+    </a>
+    <a class="card" href="moat-framework.html">
+      <div class="card-tag">护城河</div>
+      <div class="card-title">竞争优势框架</div>
+      <div class="card-desc">Buffett 护城河概念 × Morris SDI × China 2.5晴雨表</div>
+    </a>
+  </div>
+
+  <!-- Historical Roots -->
+  <h2>晴雨表心态历史根系</h2>
+  <div class="narrative">
+    <strong>Bismarck 1890</strong>（方向性识别，非事件性等待）→ <strong>Buffett 1969</strong>（晴雨表触发：能力圈边界收缩）→ <strong>Morris「For Now」</strong>（认识论形式化：条件纪律取代时机预测）。晴雨表心态不是预测下雨，而是预先校准测量工具，然后在雨开始时精确记录。
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-nav">
+    <a href="index.html">← 返回索引</a>
+    <a href="china25-framework.html">框架正文 →</a>
+  </div>
+
+</div>
+
+</body>
+</html>
