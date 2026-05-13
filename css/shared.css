@@ -654,3 +654,34 @@ body.dark-mode .quote-box { background: #0d1b2a !important; color: #e2e8f0 !impo
 body.dark-mode .back-link { background: rgba(201,162,39,0.15) !important; color: #ffd700 !important; }
 body.dark-mode td { color: #c8d6e8 !important; border-bottom-color: #2a3a4a !important; }
 body.dark-mode .doc-title { color: #e2e8f0 !important; }
+
+/* ── TTS 朗读按钮 ───────────────────────────────────────────── */
+.tts-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1.5px solid #c9a227;
+  background: rgba(201,162,39,0.12);
+  color: #c9a227;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: inherit;
+}
+.tts-btn:hover { background: rgba(201,162,39,0.25); transform: translateY(-1px); }
+.tts-btn:active { transform: translateY(0); }
+.tts-btn.tts-playing { background: rgba(201,162,39,0.25); border-color: #f0c040; color: #f0c040; }
+.tts-btn.tts-paused  { background: rgba(100,180,100,0.15); border-color: #6ab86a; color: #8fd88f; }
+.tts-btn.tts-done     { background: rgba(80,160,80,0.12); border-color: #6ab86a; color: #6ab86a; cursor: default; }
+
+body.dark-mode .tts-btn {
+  border-color: #c9a227;
+  background: rgba(201,162,39,0.15);
+  color: #c9a227;
+}
+body.dark-mode .tts-btn:hover { background: rgba(201,162,39,0.3); }
+body.dark-mode .tts-btn.tts-playing { background: rgba(201,162,39,0.3); border-color: #f0c040; color: #f0c040; }
