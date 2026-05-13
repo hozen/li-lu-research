@@ -1,7 +1,7 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-05-13 08:58
-> Last Audit: 2026-05-13 08:58 (P1-A1架构演进详情补全·8个commits全部核实·P1-A1+P1-A2待决策·晴雨表等待中·距19:30约10小时32分钟)
+> Last Updated by Agent: 2026-05-13 10:XX
+> Last Audit: 2026-05-13 10:XX (P6-6 TTS语音播报已完成 commit 2f7c10a·P1-A1+P1-A2待决策·晴雨表19:30等待中)
 
 ---
 
@@ -372,6 +372,17 @@
 - 实现: 深色为主，#0a1628 色系，金色强调色
 
 ---
+
+### ✅ 6.6 文章TTS语音播报功能
+- 状态: ✅ 已完成（2026-05-13，commit 2f7c10a）
+- 来源: Buffett 直接指令（2026-05-09~11多封邮件催促）
+- 实现方案: Web Speech API（浏览器原生TTS，无需后端）
+  1. js/tts-player.js：浏览器原生 Web Speech API，zh-CN，1.0x速率
+  2. 按钮自动出现在文章 Hero 区域，play/pause/stop 三态
+  3. 所有59个HTML页面均已加载（deep-dive/video/framework全覆盖）
+  4. graceful degradation：TTS不可用时静默失败
+- CSS: css/shared.css 新增 `.tts-btn` 样式（亮/暗双模式）
+- 截止: 2026-05-14 → 提前完成 ✅
 
 ## 所有任务完成状态
 
