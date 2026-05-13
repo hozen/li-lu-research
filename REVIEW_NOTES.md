@@ -1,7 +1,7 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-05-10 14:29
-> Last Audit: 2026-05-10 14:29 (origin/dev 完全同步至 `d042221`；窗口期第13天认知突破封盘)
+> Last Updated by Agent: 2026-05-13 08:58
+> Last Audit: 2026-05-13 08:58 (P1-A1架构演进详情补全·8个commits全部核实·P1-A1+P1-A2待决策·晴雨表等待中·距19:30约10小时32分钟)
 
 ---
 
@@ -51,6 +51,62 @@
 ---
 
 ## 待执行任务（REVIEW_NOTES）
+
+### 🔴 P1 · 架构演进决策（新增 · 2026-05-13 · 窗口期第16天）
+
+**P1-A1 · origin/dev架构演进详情（2026-05-13 08:58补全）** 🔴 **P1待决策**
+- 发现时间：2026-05-13 06:50（seq=2382 LEARNING）
+- 补全时间：2026-05-13 08:58（窗口期第16天上午，git log核实）
+- **8个commits全部发生在2026-05-10，集中在18:18-18:55（37分钟内），为单一工作会话完成**
+
+| Commit | 时间 | 变化 |
+|--------|------|------|
+| `3406131` | 18:18 | 核心资料简化为6项；episodes分组为「投资框架·连载」 |
+| `0f15345` | 18:29 | 新增Episode 16（Morris SDI + China 2.5整合）；index导航更新 |
+| `9001eb1` | 18:44 | 新增Episodes 11-15；Round 5静态页面内容合并入episodes叙事 |
+| `ee909f4` | 18:46 | **删除Episodes 11-14**；保留Episodes 15-22作为主要叙事 |
+| `8e05986` | 18:52 | **从导航移除timeline**（内容已在episodes中覆盖） |
+| `391f51e` | 18:55 | **从导航移除bookshelf和downloads** |
+| `15613f6` | ~17:xx | 新增window-period pages至index导航 |
+| `cb490be` | ~16:xx | 新增website promotional poster HTML |
+
+- **架构变化五项核心判断**：
+  1. **Navbar系统**：旧navbar/dropdown → 6个扁平sections（index.html现有结构）
+  2. **内容组织**：Round 5静态页面（about/principles/holdings/faq/glossary/quotes/bookshelf/timeline等）内容已合并入episodes叙事格式
+  3. **Episodes范围**：删除11-14，保留15-22，共8个episodes作为主要叙事
+  4. **导航移除项**：bookshelf、downloads、timeline三项从主导航消失
+  5. **新建项**：Morris SDI Ch16整合页面 + window-period独立页面群
+
+- **决策影响评估**：
+  - P2-1（研究笔记板块）：静态页面格式已并入episodes → 需确认是否在episodes内执行
+  - P2-3（活动时间线）：timeline.html导航移除 → 内容是否仍在timeline.html中可见？
+  - P3-1（我的投资框架）：静态页面格式 → 是否需要迁移至episodes？
+  - P4-1（原则映射）：静态页面格式 → 是否需要迁移至episodes？
+  - 独立页面（morris-for-now/popper-falsificationism/phase-transition/morris-sdi-fundamentals）：尚无导航入口（P2-A1）
+- **待决策问题**：
+  Q1：静态页面（about/principles/holdings/faq/timeline/bookshelf/downloads.html）是否仍需维护，还是完全由episodes接管？
+  Q2：如果维护，哪些内容任务（P2-1/P2-3/P3-1/P4-1）应该在静态页面执行？
+  Q3：P2-A1导航缺失问题是否在本次决策中一并处理？
+- 状态：**等待巴菲特/石磊决策（P1-A1+P1-A2需同步决策）**
+
+**P1-A2 · origin/master落后origin/dev 8个commits** 🔴 **P1待决策**
+- 发现时间：2026-05-13 06:50
+- 补全时间：2026-05-13 08:58（git log核实）
+- 现状：origin/master在`aa56eb8`（Morris For Now公共页面，2026-05-10白天），origin/dev在`391f51e`（导航移除bookshelf/downloads/timeline，2026-05-10 18:55）
+- 差距：8个commits全部在2026-05-10 16:00-18:55之间完成，未同步至origin/master
+- 影响：部署到生产环境会缺失全部episodes叙事内容（Episodes 11-22）+ 导航结构变化
+- **注意**：同步操作本身简单（`git push dev:master`），但需先完成P1-A1决策以确保同步内容是最终版本
+- 状态：**等待巴菲特/石磊决策（P1-A1决策后执行）**
+
+### 🟡 P2 · 导航链接缺口（新增 · 2026-05-13）
+
+**P2-A1 · Morris/Popper/Phase-Transition独立页面导航缺失** 🟡 P2可选改善
+- 现状：morris-for-now.html / popper-falsificationism.html / phase-transition.html在origin/dev存在，但index.html的6个section中无直接导航链接
+- 影响：深层用户可通过episode 16找到，但首页用户无法直接发现
+- 可选方案：在index.html的"投资框架·连载"section添加这3个独立页面的链接
+- 状态：P2可选改善，不紧急
+
+---
 
 - **2026-05-06 P2-Q1: quotes.html语录来源修正** ✅ 已完成（2026-05-06 07:47，commit 9247359）
   - Git push：⚠️ pending（网络超时，网络恢复后自动同步）
