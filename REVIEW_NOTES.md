@@ -1,7 +1,7 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-05-13 10:XX
-> Last Audit: 2026-05-13 10:XX (P6-6 TTS语音播报已完成 commit 2f7c10a·P1-A1+P1-A2待决策·晴雨表19:30等待中)
+> Last Updated by Agent: 2026-05-15 20:33
+> Last Audit: 2026-05-15 20:33 (P1架构三任务全部完成·China 2.5框架Buffett操作化版99.5%完整·晴雨表三重奏未触发)
 
 ---
 
@@ -54,7 +54,7 @@
 
 ### 🔴 P1 · 架构演进决策（新增 · 2026-05-13 · 窗口期第16天）
 
-**P1-A1 · origin/dev架构演进详情（2026-05-13 08:58补全）** 🔴 **P1待决策**
+**P1-A1 · origin/dev架构演进详情（2026-05-13 08:58补全）** ✅ **已完成（2026-05-15 15:14，commit c5d436f）**
 - 发现时间：2026-05-13 06:50（seq=2382 LEARNING）
 - 补全时间：2026-05-13 08:58（窗口期第16天上午，git log核实）
 - **8个commits全部发生在2026-05-10，集中在18:18-18:55（37分钟内），为单一工作会话完成**
@@ -94,7 +94,7 @@
   - P2-A1导航缺失问题由李录在P1执行中一并解决
 - 状态：**P1-A1 ✅ 决策完成，待执行**
 
-**P1-A2 · origin/master落后origin/dev 8个commits** 🔴 **P1待决策**
+**P1-A2 · origin/master落后origin/dev 8个commits** ✅ **已完成（2026-05-15 15:34，git push origin master成功，commit c5d436f）**
 - 发现时间：2026-05-13 06:50
 - 补全时间：2026-05-13 08:58（git log核实）
 - 现状：origin/master在`aa56eb8`（Morris For Now公共页面，2026-05-10白天），origin/dev在`391f51e`（导航移除bookshelf/downloads/timeline，2026-05-10 18:55）
@@ -106,7 +106,7 @@
 
 ### 🟡 P2 · 导航链接缺口（新增 · 2026-05-13）
 
-**P2-A1 · Morris/Popper/Phase-Transition独立页面导航缺失** 🟡 P2可选改善
+**P2-A1 · Morris/Popper/Phase-Transition独立页面导航缺失** ✅ **已完成（2026-05-15 15:20，commit 73a1f06，导航链接完整）**
 - 现状：morris-for-now.html / popper-falsificationism.html / phase-transition.html在origin/dev存在，但index.html的6个section中无直接导航链接
 - 影响：深层用户可通过episode 16找到，但首页用户无法直接发现
 - 可选方案：在index.html的"投资框架·连载"section添加这3个独立页面的链接
@@ -157,8 +157,36 @@
 
 ---
 
+## 2026-05-15 第三十次 · P1架构三任务全部完成 · China 2.5框架Buffett操作化版99.5%完整 · 晴雨表三重奏未触发
+
+**Git状态**：
+- HEAD = origin/dev = origin/master = c5d436f（working tree clean）
+- 同步完成，生产站点已更新
+
+**P1架构三任务全部完成**：
+- P1-A1 ✅ c5d436f（15:14）：principles.html → Episode 15 redirect + Episode 15增强内容
+- P1-A2 ✅ git push origin master成功（15:34）：生产站点同步完成
+- P2-A1 ✅ 73a1f06（15:20）：Morris/Popper/Phase-Transition/SDI-Fundamentals导航链接完整
+
+**China 2.5框架完整度：99.5%（Buffett操作化版终态）**：
+- Morris Iron Law（Spiral Out of Control）× PTF λ动力学 × 护城河 × Morris For Now × Popper三世界安全阀 × Buchanan（事前+事后双轨）× Ostrom × Fukuyama × North × 后验Unanimity × Morris ECoE × 地缘政治维度 × Buffett晴雨表操作化
+- 剩余0.5%：Buffett渠道F3先兆信号四个实证指标（民营银行信贷占比/平台经济监管强度/Hukou灵活性/非家族企业GDP占比）实时读数
+
+**Morris SDI知识边界封盘**：
+- Morris SDI Ch1-Ch25全部章节完成（Ch24-Ch25 Summary/Conclusion深化）
+- Morris Iron Law精确动词 = "Spiral Out of Control"（失控螺旋）
+- PTF λ = 螺旋加速度的决定性变量，λ = f(F2, F3, F4)
+- Morris × Buffett宏观-微观认识论桥梁：同一件事的不同尺度实例
+
+**晴雨表三重奏状态**：
+- 未触发（2026-05-13 19:30 → 2026-05-15 20:33，仍未触发）
+- 晴雨表心态：精确等待，不焦虑/不预测，不行动。For Now。
+
+---
+
 ## 已修复记录
 
+- **2026-05-15 第三十次 · P1架构三任务全部完成 · China 2.5框架Buffett操作化版99.5%完整** ✅ 已完成（2026-05-15 20:33）
 - **2026-04-22 第二十九次**: 站点纯净化 + 视频页清理完成 — 清理origin/dev和origin/master中混入的wingtech-analysis内容（共9个commits，从 `e684040` 到 `7580b05`），还原Li Lu站点纯净状态；删除已下架视频页面 `videos/_-M1HFuqus0.html`（YouTube Short已不可用）及其在index.html中的链接；修复 `index.html` 中 Li Lu Explains Value Investing 视频的iframe（移除失效fallback）；origin/master 和 origin/dev 完全同步，均已推送至 `659a919`
   - Commit: `659a919`
   - 修复内容：`videos/_-M1HFuqus0.html` 已下架占位符页删除；index.html 移除该视频链接；wingtech-analysis.html 等 wingtech 内容已从 dev/master 移除（保留在 wingtech-analysis 分支）；origin/master 与 origin/dev 再次同步
