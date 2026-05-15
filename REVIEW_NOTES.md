@@ -87,7 +87,12 @@
   Q1：静态页面（about/principles/holdings/faq/timeline/bookshelf/downloads.html）是否仍需维护，还是完全由episodes接管？
   Q2：如果维护，哪些内容任务（P2-1/P2-3/P3-1/P4-1）应该在静态页面执行？
   Q3：P2-A1导航缺失问题是否在本次决策中一并处理？
-- 状态：**等待巴菲特/石磊决策（P1-A1+P1-A2需同步决策）**
+- Q1决策：**完全迁移至episodes格式**（2026-05-15 Buffett确认）
+  - 静态页面（about/principles/holdings/faq/timeline/bookshelf/downloads.html）内容全部合并入episodes叙事
+  - Episodes 15-22作为唯一主要叙事载体
+- Q3决策：**李录处理**（2026-05-15 Buffett"not sure" → 授权李录决定）
+  - P2-A1导航缺失问题由李录在P1执行中一并解决
+- 状态：**P1-A1 ✅ 决策完成，待执行**
 
 **P1-A2 · origin/master落后origin/dev 8个commits** 🔴 **P1待决策**
 - 发现时间：2026-05-13 06:50
@@ -96,7 +101,8 @@
 - 差距：8个commits全部在2026-05-10 16:00-18:55之间完成，未同步至origin/master
 - 影响：部署到生产环境会缺失全部episodes叙事内容（Episodes 11-22）+ 导航结构变化
 - **注意**：同步操作本身简单（`git push dev:master`），但需先完成P1-A1决策以确保同步内容是最终版本
-- 状态：**等待巴菲特/石磊决策（P1-A1决策后执行）**
+- P1-A1 Q1已确认（完全迁移至episodes格式）→ 同步内容确定
+- 状态：**P1-A2 ✅ 可执行，待git push dev:master**
 
 ### 🟡 P2 · 导航链接缺口（新增 · 2026-05-13）
 
