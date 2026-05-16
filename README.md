@@ -74,10 +74,8 @@
 | `Appendix-X-Buffett-不明白的不投-China-25-Operation.md` | Buffett「不明白的不投」China 2.5操作化：Q1/Q2/Q3三层过滤系统 | ✅ 2026-05-03 |
 | `Appendix-AA-Munger-1995-Original-Speech-Textual-Analysis.md` | **★Munger 1995哈佛演讲原文**：七种关键认知升级 | ✅ 2026-05-03 |
 | `li_lu_investment_framework.md` 附录 | Munger 25种误判完整清单 | Lollapalooza=多重误判共振产生非线性后果；Munger Inversion=防守机制核心工具 |
-| `cbond/cbond-entropy-flywheel-diagnosis.md` 第九节 | D类持仓46% Lollapalooza诊断（协作目录保留） | 五重共振：Incentive-caused + Consistency/commitment + Social proof + Depryal + Doubt-avoidance |
 
 **核心判决**：
-- cbond D类持仓46%=五重Lollapalooza共振，不是单一错误
 - Framework级清仓（中煤+移动+盘江）=从Lollapalooza陷阱系统性撤出
 - 买入前5问+持仓评估4问+卖出调仓3问=日常防护机制
 
@@ -101,7 +99,6 @@
 
 | 文件 | 内容 | 更新时间 |
 |------|------|---------|
-| `cbond/cbond-entropy-flywheel-diagnosis.md` | cbond持仓熵减闭环诊断（九节完整版，协作目录保留） | 2026-05-03 07:45 |
 | `downloads/tencent-q1-2026-pre-earnings-seven-dimension-analysis.md` | 腾讯Q1 2026财报预判（十一节完整版） | 2026-05-03 07:40 |
 | `li-lu-research/downloads/pca-chinese-edition-foreword-study.md` | PCA中文版序言研究 | 2026-05-03 04:20 |
 | `li-lu-research/downloads/deutsch-ch4-ch6-ai-constructor-theory-synthesis.md` | Deutsch Ch4-Ch6 AI与Constructor Theory | 2026-05-03 04:10 |

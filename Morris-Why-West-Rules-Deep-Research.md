@@ -1,6 +1,5 @@
 # Morris *Why the West Rules* 深度精读：未覆盖区域研究
 > 研究时间：2026-05-03 02:20 AM | 子任务：Morris 深度研究
-> 关联文档：morris-ch5-7-deep-study.md / morris-methodology-investment-synthesis.md / morris-four-metrics-moat-framework.md / cbond-morris-matrices.md / modernization-framework-episode17-22
 
 ---
 
@@ -59,7 +58,6 @@ Conclusion（结论）—— Morris 对 Iron Law 的最终验证
 | **Ch2** | Morris 的四维"打分方法"的具体操作步骤 | 现有框架只引用了四维名称，未引用 Morris 原文的打分机制（0-100 分量表的具体逻辑）|
 | **Ch2** | Morris 如何将四维得分合成为"社会发展总指数" | 现有文档只给出四维并列，未说明合成方法（等权重？加权？）|
 | **Ch3** | Morris 对中国商/周/秦汉的具体量化判断 | 现有 China 讨论集中于宋/明清/现代，未覆盖先秦至汉的 Morris 数据 |
-| **Ch4** | Morris 的"幸运纬度带"（Lucky Latitudes）具体论证 | 仅在 cbond 矩阵中间接引用，未深入 Morris 原文 |
 | **Ch9** | Morris 对"Iron Law of History"的原始定义 | 现有文档引用了"当竞争市场存在时，最大那个将成为唯一幸存的那个"，但未引用原书第 9 章的完整定义语境 |
 | **Ch14** | Morris 对 20 世纪修正（福利国家/社会主义）的量化评估 | 现有文档提到但未引用具体数据 |
 | **Ch17-20** | Morris 对 2050/2100 年的具体预测数字 | 现有文档讨论了趋同预测，但未引用原文中 Morris 给出的具体年份和数值 |

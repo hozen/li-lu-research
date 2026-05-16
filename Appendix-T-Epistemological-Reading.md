@@ -134,7 +134,6 @@ Morris Iron Law（第三过滤器：长期熵减闭环）
 
 但当多种误判同时发生——Loss Aversion + Social Proof + Depryal + Doubt-avoidance + Incentive-caused——它们不是线性叠加，而是非线性共振。
 
-**cbond D类持仓46% = 五重误判同时发生**
 - 不是「一次错误决策」
 - 是「五个系统同时失灵」
 - 这就是为什么Framework级清仓的战略意义是「从系统性失灵中撤出」，而不是简单的「卖出三个股票」

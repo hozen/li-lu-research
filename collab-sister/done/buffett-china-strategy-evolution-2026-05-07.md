@@ -2,7 +2,6 @@
 
 > 生成时间：2026-05-07 09:15 | 李录研究
 > 目的：在 China 2.5 窗口期结构性时段，厘清 Buffett 中国战略的演变逻辑，建立历史坐标
-> 素材：li-lu-byd-2026-full.srt（BYD对话）/ Morris「For Now」框架 / Cbond Morris 诊断矩阵
 
 ---
 
@@ -219,5 +218,4 @@ Buffett 看到中国公司
 
 - 文档：buffett-china-strategy-evolution-2026-05-07.md
 - 状态：初稿完成，待审核
-- 关联素材：li-lu-byd-2026-full.srt / Morris「For Now」系列文档 / Cbond Morris 诊断矩阵
 - Git commit：待创建

@@ -8,7 +8,6 @@
 - `li_lu_investment_framework.md` 第4节（估值与安全边际）
 - `Appendix-M-Constructor-Theory-Moat-Essence.md`（护城河本质 = 知识创造机制）
 - `Appendix-R-Ultimate-Synthesis-118-Messages.md`（七维框架终极整合）
-- `li_lu_13f_analysis_2025q4.md`（cbond当前持仓状态）
 
 ---
 
@@ -191,7 +190,6 @@ Buffett内在价值 = EP × (1+g) / (WACC - g)
 
 ### 4.2 两种PMV的实践应用
 
-**cbond持仓操作的精确含义：**
 
 ```
 Framework级清仓后，新入资金配置到腾讯时：
@@ -226,12 +224,10 @@ Constructor Theory给出了答案：
 
 ---
 
-## 五、cbond持仓操作：从D类46%到A类20%的资本重配逻辑
 
 ### 5.1 当前状态
 
 根据MEMORY.md记录：
-- cbond D类持仓（中国神华/中煤能源/美的/中国移动等）：约46%
 - Framework级清仓目标（中煤+移动+盘江）：约34.5%
 
 **清仓后的资本释放路径：**
@@ -336,7 +332,6 @@ Constructor Theory给出了答案：
 
 3. **两种PMV之间的差距是Constructor机制的期权价值**：这个差距不是矛盾，而是互补——腾讯的护城河既是存量（Greenwald），又是流量（Buffett）
 
-4. **cbond清仓后重新配置到腾讯时，Greenwald PMV是第一步过滤**：低于HK$160的腾讯必须买；高于HK$160进入Buffett PMV判断
 
 5. **Buffett PMV对腾讯有效的前提是Constructor机制完好**：微信网络效应+FBS现金流+AI整合=Constructor机制三角
 
@@ -347,7 +342,6 @@ Constructor Theory给出了答案：
 ### 执行备忘录
 
 ```
-cbond Framework级清仓后（~34.5%仓位释放）：
 - 第一优先：等待腾讯Q1财报（2026-05-13）作为Constructor机制检验
 - 第二优先：使用双PMV检验决定买入价格区间
 - 第三优先：在Greenwald PMV（HK$160）以下果断买入，在HK$160-320之间等待财报催化

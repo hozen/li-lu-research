@@ -1,6 +1,5 @@
 # 附录W · Munger Lollapalooza效应深度研究
 > 研究时间：2026-05-03 14:00
-> 触发背景：cbond D类持仓46% = 五重Lollapalooza共振；妹妹正在精读Munger Psychology of Human Misjudgment原文
 
 ---
 
@@ -46,11 +45,8 @@ Munger在1995年讲座中首次提出Lollapalooza效应：
 - 产生明显的极端结果
 - 例：激励偏见 + 一致性偏见 + 社会认同 → 群体癫狂
 
-### 层次四：五重Lollapalooza（cbond D类持仓46%精确映射）
 
-| 心理倾向 | 在cbond D类持仓形成中的作用 | 来源 |
 |---------|------------------------|------|
-| Incentive-caused bias | 业绩提成结构激励 → 分散持仓（管理费最大化而非收益最大化） | cbond激励机制 |
 | Consistency/commitment | 已有持仓不愿认错 → 46%分散锁死不动 | 沉没成本心理 |
 | Social proof | 同行都在分散配置 → "大家都这样"合理化 | 行业共识 |
 | Depryal superreaction | 已经亏损死拿 → 回本前绝不卖出 | 损失厌恶 |
@@ -60,7 +56,6 @@ Munger在1995年讲座中首次提出Lollapalooza效应：
 ```
 Lollapalooza强度 = β₁×激励 × β₂×一致性 × β₃×社会认同 × β₄×剥夺敏感 × β₅×怀疑规避
 ```
-每重共振不是简单相加，而是乘法放大。这解释了为什么cbond D类持仓46%的分散问题无法通过单一改进措施解决——必须同时打破五重共振。
 
 ---
 
@@ -104,12 +99,9 @@ Munger认为文明本身就是一个大型Lollapalooza机器：
 
 ---
 
-## 五、cbond D类持仓46%的Lollapalooza判决
 
 ### 为什么Framework级清仓是唯一出路
 
-**从Lollapalooza视角看cbond D类持仓**：
-1. 五重心理倾向已经在cbond D类持仓上形成完整共振
 2. 任何单一干预（加仓/止损/换股）都会被其他四重倾向抵消
 3. 个人意志无法对抗结构性制度设计
 4. 清仓 = 从Lollapalooza机器中退出 = 唯一理性的结构性行动
@@ -119,7 +111,6 @@ Munger认为文明本身就是一个大型Lollapalooza机器：
 - 杠杆+模型+同行压力+激励结构+羊群 = 多重共振
 - 最终需要美联储干预救市
 
-cbond的D类持仓问题虽然规模小于LTCM，但机制完全相同。
 
 ---
 
@@ -144,7 +135,6 @@ Lollapalooza效应解释了为什么单一思维模型危险：
 ## 七、附录W的核心结论
 
 1. **Lollapalooza效应** = 多种心理倾向同向并发时的非线性乘法放大
-2. **cbond D类持仓46%** = 五重Lollapalooza共振的精确案例（激励+一致性+社会认同+剥夺敏感+怀疑规避）
 3. **Framework级清仓** = 从Lollapalooza机器中退出的唯一结构性出路（个人意志无法对抗五重共振）
 4. **China 2.5改革困难** = 制度层Lollapalooza（国企激励+路径依赖+社会规范+维稳压力+认知失调）
 5. **投资体系成熟度** = 能否识别并主动退出自己参与的Lollapalooza机器
@@ -161,4 +151,3 @@ Lollapalooza效应解释了为什么单一思维模型危险：
 
 ---
 
-*附录W完成。核心贡献：将cbond D类持仓46%的结构问题精确映射为五重Lollapalooza共振，为Framework级清仓提供了 Munger 心理学层面的最终判决。*

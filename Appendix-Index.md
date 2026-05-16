@@ -148,7 +148,6 @@ Munger (25种误判)
 
 ### W · Lollapalooza效应
 - 多重误判同向并发 → 极端非线性后果
-- cbond D类持仓46% = 五重共振（Incentive+Consistency+Social-proof+Depryal+Doubt-avoidance）
 
 ### X · Buffett「不明白的不投」China 2.5操作化
 - Q1能力圈过滤：政府授权护城河 = 无法建立智力护城河

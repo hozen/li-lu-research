@@ -189,7 +189,6 @@ Deutsch Constructor Theory的深层含义：
 - 非市场性护城河 = 条件依赖
 
 **管理层诚信** ⚠️
-- cbond D类持仓46% = 五重Lollapalooza共振，说明"诚信"判断在投资时没有被正确执行
 - 附录K的每日诚信监控清单 = 操作化工具，但无法消除根本的主观性
 
 **中煤的"Constructor性质"**：无
@@ -200,11 +199,9 @@ Deutsch Constructor Theory的深层含义：
 
 ---
 
-## 五、对cbond D类持仓46%的最终判决
 
 ### 5.1 Lollapalooza共振的不可逆性含义
 
-cbond D类持仓46%五重共振（Incentive + Consistency + Social proof + Depryal + Doubt-avoidance）：
 
 这五重共振的不可逆性：
 - **Incentive扭曲**：分析师的激励结构已经形成，无法改变

@@ -194,10 +194,8 @@ Morris Iron Law（文明层，百年至千年尺度）
 
 **中煤/移动/盘江当前状态**：已进入spiral第二阶段（收入无法覆盖成本上升）
 
-### 工具三：Munger Lollapalooza效应 = cbond D类持仓46%精确诊断
 
 **五重误判共振**：
-| 误判类型 | 具体表现 | cbond D类持仓中的作用 |
 |---------|---------|---------------------|
 | Incentive-caused bias | 分析师佣金激励过度乐观 | 推动建仓能源股 |
 | Consistency/commitment | 已有持仓死守不放 | 拒绝认错离场 |

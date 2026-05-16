@@ -119,7 +119,6 @@
 
 ---
 
-## cbond持仓：D类持仓五问（Lollapalooza预防）
 
 **买入前5问**：
 1. 激励结构是否扭曲？（Incentive-caused bias）
@@ -153,7 +152,6 @@
 **框架含义**：
 - 七维框架本身也可能变成「锤子」——每月自问：「有什么是这个框架无法处理的？」
 - 中煤/移动/盘江 为什么在框架建立前持有？——当初只有「低估值+高股息」单一锤子
-- cbond D类46%持仓 = 单一框架的 Lollapalooza
 
 ### 概念二：Persian Messenger Syndrome（波斯信使综合征）
 > "The Persians really did kill the messenger who brought the bad news."
