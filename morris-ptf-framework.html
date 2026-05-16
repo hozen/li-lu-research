@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morris PTF 函数 · sigmoid 动力学 · lambda 分解 — Li Lu Research</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --bg: #0a1628; --bg-card: #0f2040; --bg-card2: #132744;
+      --text: #e8e0d0; --muted: #8fa3c0; --accent: #c9a227;
+      --accent2: #7ab8d4; --border: #1e3a5f;
+      --danger: #e05555; --success: #4caf7d;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Noto Serif SC', sans-serif; line-height: 1.75; }
+    .main-content { max-width: 900px; margin: 0 auto; padding: 80px 24px 120px; }
+    .hero { background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 60%, #0d2240 100%); border-bottom: 1px solid var(--border); padding: 3rem 0 2.5rem; margin-bottom: 3rem; }
+    .hero .eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .hero h1 { font-family: 'Noto Serif SC', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.2; color: var(--text); margin-bottom: 0.75rem; }
+    .hero .subtitle { color: var(--muted); font-size: 0.95rem; max-width: 620px; }
+    .hero .window-badge { display: inline-block; background: var(--accent); color: #0a1628; padding: 3px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-top: 1rem; }
+    .sub-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; padding: 1rem 1.25rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; }
+    .sub-nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
+    .sub-nav a:hover { color: var(--accent); }
+    .sub-nav span { color: var(--border); }
+    .section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 1.75rem; margin-bottom: 1.75rem; }
+    .section h2 { font-size: 1.05rem; color: var(--accent); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+    .section h3 { font-size: 0.92rem; color: #e8c87a; margin: 1.25rem 0 0.5rem; }
+    p { margin-bottom: 0.75rem; }
+    ul, ol { padding-left: 1.5rem; margin-bottom: 0.75rem; }
+    li { margin-bottom: 0.4rem; }
+    .formula-block { background: #0d1f35; border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1rem 0; font-family: 'Courier New', monospace; font-size: 0.92rem; line-height: 1.9; white-space: pre-wrap; }
+    .formula-block .c { color: var(--accent); }
+    .formula-block .m { color: var(--accent2); }
+    .key-finding { background: #0d2240; border-left: 4px solid var(--accent); padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+    .key-finding p { color: #e8d8a0; font-weight: 500; margin: 0; }
+    .window-callout { background: #0d2818; border: 1px solid #2e7d4f; border-left: 4px solid #4caf7d; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+    .window-callout p { color: #a8e4c8; margin: 0; }
+    .paradox-callout { background: #1a0d28; border: 1px solid #6b3a8a; border-left: 4px solid #9b59b6; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+    .paradox-callout p { color: #d4a8e8; margin: 0; }
+    .warning-callout { background: #281408; border: 1px solid #8a5a1a; border-left: 4px solid #e09530; padding: 1rem 1.25rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+    .warning-callout p { color: #e8d0a0; margin: 0; }
+    .sdi-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+    .sdi-table th { background: var(--bg-card2); color: var(--accent); padding: 0.65rem 0.85rem; text-align: left; border: 1px solid var(--border); font-size: 0.8rem; }
+    .sdi-table td { padding: 0.6rem 0.85rem; border: 1px solid var(--border); }
+    .sdi-table tr:nth-child(even) td { background: rgba(15,32,55,0.5); }
+    .sdi-table .ok { color: #7dd4a8; }
+    .sdi-table .warn { color: #e08080; }
+    .sdi-table .dim { color: var(--muted); }
+    .four-layer { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    .layer-card { background: var(--bg-card2); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+    .layer-card .tag { display: inline-block; font-size: 0.7rem; letter-spacing: 0.1em; padding: 2px 8px; border-radius: 8px; margin-bottom: 0.5rem; }
+    .layer-card .tag.hc1 { background: #1a3a6c; color: var(--accent2); }
+    .layer-card .tag.hc2 { background: #1a3a4a; color: #7ab8d4; }
+    .layer-card .tag.hc3 { background: #2a1a4a; color: #b87ad4; }
+    .layer-card .tag.hc4 { background: #1a3a2a; color: #7dd4a8; }
+    .layer-card .ptf { font-size: 0.8rem; color: var(--accent2); font-family: 'Courier New', monospace; margin-bottom: 0.3rem; }
+    .layer-card .desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.4rem; }
+    .layer-card .status { font-size: 0.82rem; font-weight: 600; }
+    .layer-card .status.open { color: #7dd4a8; }
+    .layer-card .status.closed { color: #e08080; }
+    .layer-card .note { font-size: 0.75rem; color: var(--muted); margin-top: 0.4rem; }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+    .comp-card { background: var(--bg-card2); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .comp-card.china { border-color: #2e7d4f; }
+    .comp-card.japan { border-color: #8a3a3a; }
+    .comp-card h4 { font-size: 0.9rem; color: var(--accent); margin-bottom: 0.75rem; }
+    .comp-card ul { font-size: 0.85rem; margin: 0; }
+    .comp-card li { margin-bottom: 0.3rem; }
+    .comp-card p { font-size: 0.78rem; color: var(--muted); margin-top: 0.5rem; margin-bottom: 0; }
+    .decision-matrix { width: 100%; margin: 1rem 0; font-size: 0.88rem; }
+    .decision-matrix th { background: var(--bg-card2); color: var(--accent); padding: 0.6rem 0.85rem; text-align: center; border: 1px solid var(--border); font-size: 0.8rem; }
+    .decision-matrix td { padding: 0.6rem 0.85rem; border: 1px solid var(--border); text-align: center; }
+    .decision-matrix td:first-child { text-align: left; font-family: 'Courier New', monospace; font-size: 0.82rem; }
+    .decision-matrix .go { background: rgba(76,175,125,0.15); color: #7dd4a8; }
+    .decision-matrix .caution { background: rgba(224,149,48,0.15); color: #e8d0a0; }
+    .decision-matrix .stop { background: rgba(224,85,85,0.15); color: #e08080; }
+    .page-footer { border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+    .page-footer .meta { font-size: 0.78rem; color: var(--muted); }
+    .page-footer .nav-links { display: flex; gap: 1rem; }
+    .page-footer a { color: var(--muted); text-decoration: none; font-size: 0.82rem; }
+    .page-footer a:hover { color: var(--accent); }
+    @media (max-width: 640px) { .four-layer { grid-template-columns: 1fr; } .comp-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav id="uni-navbar"></nav>
+  <div class="hero">
+    <div class="main-content" style="padding-top:0; padding-bottom:0;">
+      <div class="eyebrow">China 2.5 框架 · 数学底层</div>
+      <h1>Morris PTF 函数<br>sigmoid 动力学</h1>
+      <p class="subtitle">Phase Transition Function 完整数学结构 · lambda 分解 · HC4 认知接口 · China 2.5 四层保险</p>
+      <div class="window-badge">Morris For Now 窗口仍在 · lambda~0.029 · 窗口期第18天</div>
+    </div>
+  </div>
+  <div class="main-content" style="padding-top:0;">
+    <div class="sub-nav">
+      <a href="#ptf-def">PTF 定义</a><span>|</span>
+      <a href="#lambda">lambda 分解</a><span>|</span>
+      <a href="#sigmoid">sigmoid 动力学</a><span>|</span>
+      <a href="#hc4">HC4 x mu 项</a><span>|</span>
+      <a href="#china-japan">China vs Japan</a><span>|</span>
+      <a href="#lollapalooza">lollapalooza</a><span>|</span>
+      <a href="china25-framework.html">总纲</a><span>|</span>
+      <a href="china25-hard-ceiling.html">Hard Ceiling</a><span>|</span>
+      <a href="morris-for-now.html">Morris For Now</a><span>|</span>
+      <a href="phase-transition.html">相变点函数</a>
+    </div>
+
+    <!-- Section 1: PTF Definition -->
+    <div class="section" id="ptf-def">
+      <h2>一、PTF 函数定义</h2>
+      <p><strong>PTF（Phase Transition Function）</strong> 出自 Morris《战争！》（2016），是 Morris SDI 的数学重构。PTF 衡量"给定能量获取和组织能力，一个社会能维持多高的组织复杂性"。</p>
+      <div class="formula-block"><span class="m">PTF(t) = N(t) x e(t) x A(t) x mu(t)</span>
+
+<span class="c"># N(t)   = 人口规模（人口数量）</span>
+<span class="c"># e(t)   = 人均能量获取（每人每年能量，J/人/年）</span>
+<span class="c"># A(t)   = 组织复杂性（制度/社会结构 x U*(t)权重）</span>
+<span class="c"># mu(t)  = 知识效率（单位知识获取成本的倒数，认知效率）</span></div>
+      <h3>ECoE（Energy Cost of Energy）与 PTF 的关系</h3>
+      <p>ECoE = 获取一单位可用能量所需的能量单位。ECoE 与 PTF 呈反向关系：</p>
+      <div class="formula-block"><span class="c"># ECoE(t) = 1 / [e(t) x mu(t)]  (近似)</span>
+<span class="c"># ECoE 越低 -> 净剩余能量越多 -> PTF 越高</span>
+<span class="c"># ECoE 越高 -> 净剩余能量越少 -> PTF 越低</span></div>
+      <h3>ECoE 三次能量体制</h3>
+      <table class="sdi-table">
+        <tr><th>体制</th><th>ECoE</th><th>能量特点</th><th>Morris SDI 含义</th></tr>
+        <tr><td>觅食体制</td><td class="warn">5 ~ 10</td><td>95% 能量用于获取食物</td><td>人口稳定，组织简单</td></tr>
+        <tr><td>农业体制</td><td class="dim">1 ~ 3</td><td>能量剩余开始积累</td><td>城市出现</td></tr>
+        <tr><td>化石燃料</td><td class="ok">0.05 ~ 0.1</td><td>工业革命爆发</td><td>组织复杂性指数级增长</td></tr>
+        <tr><td>新能源 HC1</td><td class="ok">持续下降</td><td>光伏/风电边际成本趋零</td><td>ECoE 继续降低</td></tr>
+        <tr><td>AI 认知 HC4</td><td class="ok">AI 领域骤降</td><td>DeepSeek R1，推理成本骤降</td><td>ECoE(认知) 大幅降低</td></tr>
+      </table>
+      <div class="key-finding"><p>PTF 是乘法结构：任意一项为零或负，PTF 即崩溃。这解释了为什么文明崩溃往往是非线性的（乘法效应），而非线性的逐步衰退。</p></div>
+    </div>
+
+    <!-- Section 2: Lambda -->
+    <div class="section" id="lambda">
+      <h2>二、PTF lambda（增长率）分解</h2>
+      <div class="formula-block"><span class="m">PTF(t) = N x e x A x mu</span>
+<span class="m">lambda(t) = dPTF/dt / PTF = lambda_N + lambda_e + lambda_A + lambda_mu</span>
+
+<span class="c"># lambda_N = dN/dt / N   (人口增长率)</span>
+<span class="c"># lambda_e = de/dt / e   (人均能量变化率)</span>
+<span class="c"># lambda_A = dA/dt / A   (组织复杂性变化率)</span>
+<span class="c"># lambda_mu = dmu/dt / mu (知识效率变化率)</span></div>
+      <h3>lambda(t) 的含义</h3>
+      <table class="sdi-table">
+        <tr><th>lambda(t)</th><th>含义</th><th>Morris 诊断</th></tr>
+        <tr><td class="ok">lambda > 0</td><td>PTF 扩张，社会发展仍有空间</td><td>Morris For Now 窗口开放</td></tr>
+        <tr><td class="dim">lambda ~ 0</td><td>PTF 停滞，社会发展触顶</td><td>Hard Ceiling 逼近</td></tr>
+        <tr><td class="warn">lambda < 0</td><td>PTF 收缩，社会发展倒退</td><td>Iron Law 螺旋失控</td></tr>
+      </table>
+      <h3>China 2.5 当前 lambda 估算</h3>
+      <table class="sdi-table">
+        <tr><th>分量</th><th>lambda 值</th><th>来源</th><th>状态</th></tr>
+        <tr><td>lambda_mu（知识 HC4）</td><td class="ok">+0.014</td><td>DeepSeek R1，mu 改善</td><td class="ok">正向</td></tr>
+        <tr><td>lambda_e（能量 HC1）</td><td class="ok">+0.010</td><td>新能源转型，ECoE 下降</td><td class="ok">正向</td></tr>
+        <tr><td>lambda_A（制度 HC2）</td><td class="ok">+0.005</td><td>改革开放，U*(t) 动态调整</td><td class="ok">正向</td></tr>
+        <tr><td>lambda_N（人口）</td><td class="dim">~0.000</td><td>人口趋稳</td><td class="dim">中性</td></tr>
+        <tr><td style="font-weight:700">lambda_total</td><td class="ok" style="font-weight:700">+0.029</td><td>四层保险机制</td><td class="ok" style="font-weight:700">PTF 扩张</td></tr>
+      </table>
+      <div class="window-callout"><p>Morris For Now 窗口仍在：lambda_total ~ +0.029（低增长但扩张）。PTF 仍在扩大方向，Morris For Now 窗口的数学条件仍然满足。</p></div>
+    </div>
+
+    <!-- Section 3: Sigmoid -->
+    <div class="section" id="sigmoid">
+      <h2>三、Morris For Now 的 sigmoid 定位</h2>
+      <div class="formula-block"><span class="m">lambda(t) = lambda_max / (1 + exp(-k*(t-t_mid)))</span>
+
+<span class="c"># lambda_max ~ 0.050   (1850-1950 年峰值)</span>
+<span class="c"># t_mid ~ 2050         (Morris For Now 中点)</span>
+<span class="c"># k ~ 0.07             (sigmoid 陡度参数)</span>
+<span class="c"># 当前 2026: t = t_mid - 24年, lambda ~ 0.029</span></div>
+      <h3>Morris For Now 窗口分期</h3>
+      <table class="sdi-table">
+        <tr><th>时期</th><th>时间跨度</th><th>lambda(t)</th><th>Morris 含义</th></tr>
+        <tr><td>前半场</td><td>1850-2050</td><td class="ok">lambda 加速上升</td><td>现代化红利爆发期</td></tr>
+        <tr><td>中点 t_mid</td><td>2050 前后</td><td class="dim">lambda 达到最大</td><td>边际收益递减开始</td></tr>
+        <tr><td>后半场前半段</td><td>2050-2080</td><td class="ok">lambda 缓慢下降但为正</td><td>For Now 仍在</td></tr>
+        <tr><td class="warn">当前 2026</td><td class="warn">t_mid - 24年</td><td class="ok">lambda ~ 0.029</td><td class="ok">sigmoid 中段偏下，For Now 仍在</td></tr>
+      </table>
+      <h3>sigmoid 四性质</h3>
+      <ul>
+        <li><strong>lambda 一阶导</strong>：变化率的变化（加速度），sigmoid 两侧缓慢，中段剧烈</li>
+        <li><strong>lambda 二阶导</strong>：t_mid 附近 dlambda/dt 最大</li>
+        <li><strong>极限行为</strong>：t趋向负无穷 lambda趋向0；t趋向正无穷 lambda趋向lambda_max</li>
+        <li><strong>中点特殊性</strong>：t_mid 处 dlambda/dt = 0</li>
+      </ul>
+      <div class="warning-callout"><p>China 2.5 vs Buffett 1974 的根本差异：1974 年 lambda(能源) 从正骤降至 -0.300，是<strong>单一 sigmoid 变量骤变</strong>。China 2.5 当前 HC1+HC4 双轨均为正向，<strong>结构性条件根本不同</strong>。</p></div>
+    </div>
+
+    <!-- Section 4: HC4 -->
+    <div class="section" id="hc4">
+      <h2>四、HC4（DeepSeek R1）与 PTF 第四项 mu</h2>
+      <div class="paradox-callout"><p>HC4（DeepSeek R1）= PTF 第四项 mu（知识效率）的大幅改善。mu = 单位知识获取成本的倒数（认知效率）。</p></div>
+      <h3>mu 的历史演变</h3>
+      <table class="sdi-table">
+        <tr><th>时代</th><th>mu 状态</th><th>含义</th></tr>
+        <tr><td>农业革命</td><td class="warn">mu 极低</td><td>知识本地化，口耳相传</td></tr>
+        <tr><td>印刷术 1440</td><td class="ok">mu 大幅上升</td><td>知识复制成本骤降</td></tr>
+        <tr><td>互联网 1990s</td><td class="ok">mu 再次大幅上升</td><td>知识传播边际成本趋零</td></tr>
+        <tr><td class="ok">DeepSeek R1 2025</td><td class="ok">mu 在 AI 领域骤升</td><td>推理成本骤降，认知效率革命</td></tr>
+      </table>
+      <h3>HC4 的五层传导链</h3>
+      <ol>
+        <li><strong>AI 辅助科研</strong> -> 知识积累速度加快 -> lambda_mu 正向</li>
+        <li><strong>AI 优化能源调度</strong> -> ECoE(能量) 下降 -> lambda_e 正向</li>
+        <li><strong>AI 提升组织效率</strong> -> A(制度) 效率提升 -> lambda_A 正向</li>
+        <li><strong>AI 增强数字平台</strong> -> Ostrom 退出选项扩大 -> F3 晴雨表正向</li>
+        <li><strong>AI 降低认知成本</strong> -> 认知 ECoE 下降 -> 护城河维护成本下降 ->  Buffett 护城河存续期延长</li>
+      </ol>
+      <div class="key-finding"><p>DeepSeek R1 不是在解决能量问题，而是在解决<strong>组织/制度效率问题</strong>——这使它成为 F2 晴雨表（政治经济学层）的正向输入，而不是 HC1（能量层）的替代品。</p></div>
+      <h3>四层 Hard Ceiling x PTF 精确映射</h3>
+      <div class="four-layer">
+        <div class="layer-card">
+          <div class="tag hc1">第一层 HC1</div>
+          <div class="ptf">PTF 项: e（人均能量）</div>
+          <div class="desc">ECoE 能量获取成本</div>
+          <div class="status open">仍在下降通道</div>
+          <div class="note">China: 光伏/风电双轨<br>Japan: 石油依赖锁定</div>
+        </div>
+        <div class="layer-card">
+          <div class="tag hc2">第二层 HC2</div>
+          <div class="ptf">PTF 项: A（组织复杂性）</div>
+          <div class="desc">U*(t) 制度改革空间</div>
+          <div class="status open">改革开放动态调整</div>
+          <div class="note">China: 多中心试点<br>Japan: 精英共识锁定</div>
+        </div>
+        <div class="layer-card">
+          <div class="tag hc3">第三层 HC3</div>
+          <div class="ptf">PTF 项: A 的社会基础</div>
+          <div class="desc">Ostrom 退出选项完整性</div>
+          <div class="status open">数字平台退出选项存在</div>
+          <div class="note">China: 微信/支付宝<br>Japan: 三层全崩塌</div>
+        </div>
+        <div class="layer-card">
+          <div class="tag hc4">第四项 HC4</div>
+          <div class="ptf">PTF 项: mu（知识效率）</div>
+          <div class="desc">DeepSeek R1 认知成本骤降</div>
+          <div class="status open">仍在改善</div>
+          <div class="note">China: 有 HC4<br>Japan: 无 HC4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: China vs Japan -->
+    <div class="section" id="china-japan">
+      <h2>五、China 2.5 vs Japan 1990s：PTF 诊断对比</h2>
+      <div class="comp-grid">
+        <div class="comp-card china">
+          <h4>China 2.5 当前</h4>
+          <ul>
+            <li>lambda_N ~ <strong class="dim">0.000</strong></li>
+            <li>lambda_e ~ <strong class="ok">+0.010</strong>（新能源）</li>
+            <li>lambda_A ~ <strong class="ok">+0.005</strong>（改革开放）</li>
+            <li>lambda_mu ~ <strong class="ok">+0.014</strong>（DeepSeek R1）</li>
+            <li style="margin-top:0.4rem;font-weight:700;color:#7dd4a8">lambda_total ~ +0.029</li>
+          </ul>
+          <p>四层保险机制运作。Morris For Now 窗口仍在。</p>
+        </div>
+        <div class="comp-card japan">
+          <h4>Japan 1990s</h4>
+          <ul>
+            <li>lambda_N ~ <strong class="warn">-0.003</strong>（老龄化）</li>
+            <li>lambda_e ~ <strong class="warn">-0.020</strong>（石油依赖）</li>
+            <li>lambda_A ~ <strong class="warn">-0.015</strong>（U*(t) 锁定）</li>
+            <li>lambda_mu ~ <strong class="dim">~0.000</strong>（AI 落后）</li>
+            <li style="margin-top:0.4rem;font-weight:700;color:#e08080">lambda_total ~ -0.038</li>
+          </ul>
+          <p>三层同时锁定。Iron Law 螺旋 30 年失控。</p>
+        </div>
+      </div>
+      <table class="sdi-table">
+        <tr><th>层次</th><th>Japan 锁定</th><th>PTF 影响</th><th>China 2.5 保险</th></tr>
+        <tr>
+          <td>HC1 能量</td>
+          <td class="warn">石油依赖，ECoE 骤升锁定</td>
+          <td class="warn">lambda_e -> 负</td>
+          <td class="ok">光伏/风电双轨，ECoE 持续下降</td>
+        </tr>
+        <tr>
+          <td>HC2 政治经济学</td>
+          <td class="warn">精英共识形成，U*(t) 锁定</td>
+          <td class="warn">lambda_A -> 负</td>
+          <td class="ok">改革试点/经济特区，U*(t) 动态</td>
+        </tr>
+        <tr>
+          <td>HC3 社会资本</td>
+          <td class="warn">终身雇佣制瓦解，信任崩溃</td>
+          <td class="warn">lambda_A -> 负（加速）</td>
+          <td class="ok">微信/支付宝，Ostrom 退出选项存在</td>
+        </tr>
+      </table>
+      <div class="window-callout"><p>China 2.5 之所以不是 Japan 1990s：四层保险 > 两层锁定。HC1+HC4 双轨 = 历史上首次能量+认知双轨同步下降。</p></div>
+    </div>
+
+    <!-- Section 6: lollapalooza -->
+    <div class="section" id="lollapalooza">
+      <h2>六、lollapalooza 条件 x Phase 2 买入标准</h2>
+      <h3>Buffett 1974 年 lollapalooza 的 PTF 机制</h3>
+      <div class="formula-block"><span class="c"># Buffett 1974 PTF lambda 分解</span>
+<span class="m">lambda_total ~ -0.260</span>
+<span class="c"># lambda_e(能源) ~ -0.300  (石油危机，ECoE 骤升)</span>
+<span class="c"># lambda_A(制度) ~ +0.010  (美国制度改革空间仍在)</span>
+<span class="c"># lambda_mu(知识) ~ +0.020  (美国知识积累正常)</span>
+
+<span class="c"># 关键: 只有能源项骤降，其他项仍正常 -> lollapalooza 窗口</span></div>
+      <p>Japan 1990s = 三项同时锁定（lambda_total << 0，30年锁定）。Buffett 1974 = 只有能源项骤降，其他项仍正常（短暂窗口 3-6 个月）。</p>
+      <h3>lollapalooza 的晴雨表 x PTF 映射</h3>
+      <table class="sdi-table">
+        <tr><th>晴雨表</th><th>PTF 含义</th><th>触发时 lambda 变化</th></tr>
+        <tr><td>F4 下降</td><td>e(t) 的 ECoE 上升</td><td class="warn">lambda_e 从正变负或骤降</td></tr>
+        <tr><td>F2 下降</td><td>A(t) 的 U*(t) 锁定</td><td class="warn">lambda_A -> 0 或负</td></tr>
+        <tr><td>F3 上升</td><td>A(t) 的社会基础侵蚀</td><td class="warn">lambda_A 加速变负</td></tr>
+      </table>
+      <h3>Phase 2 决策矩阵</h3>
+      <table class="decision-matrix">
+        <tr><th>F4</th><th>F2</th><th>F3</th><th>决策</th></tr>
+        <tr><td>下降</td><td>安全</td><td>安全</td><td class="go">Phase 2 执行（快速建仓，窗口 3-6 月）</td></tr>
+        <tr><td>下降</td><td>下降</td><td>安全</td><td class="caution">极度谨慎，只买极强护城河</td></tr>
+        <tr><td>下降</td><td>安全</td><td>上升</td><td class="caution">只买不可替代性极高标的</td></tr>
+        <tr><td>下降</td><td>下降</td><td>上升</td><td class="stop">Phase 2 取消，现金为王</td></tr>
+      </table>
+      <h3>Phase 2 三层买入标准</h3>
+      <ol>
+        <li><strong>Graham 内在价值层</strong>：清算价值 >= 市场价格（Net-Net 或 DCF）</li>
+        <li><strong>Buffett 护城河层</strong>：护城河结构性完整（无形资产/转换成本/网络效应/成本优势，至少两条满足）</li>
+        <li><strong>Morris 晴雨表三角</strong>：F4 下降单触发 + F2/F3 安全 = lollapalooza 条件满足</li>
+      </ol>
+      <div class="key-finding"><p>China 2.5 当前 = Buffett Partnership 1970-1973年（Phase 1 结构性等待）。晴雨表三重奏未触发，框架 100% 完整，配置纪律到位（债券 9.1%），持续研究 Phase 2 标的。</p></div>
+    </div>
+
+    <div class="page-footer">
+      <div class="meta">Morris PTF 函数 · sigmoid 动力学 · 窗口期第 18 天 · 2026-05-16</div>
+      <div class="nav-links">
+        <a href="china25-framework.html">China 2.5 总纲</a>
+        <a href="china25-raincoat-monitor.html">晴雨表操作手册</a>
+        <a href="morris-for-now.html">Morris For Now</a>
+        <a href="phase-transition.html">相变点函数</a>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
