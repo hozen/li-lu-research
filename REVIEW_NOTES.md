@@ -1,7 +1,49 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-05-15 20:33
-> Last Audit: 2026-05-15 20:33 (P1架构三任务全部完成·China 2.5框架Buffett操作化版99.5%完整·晴雨表三重奏未触发)
+> Last Updated by Agent: 2026-05-16 15:08
+> Last Audit: 2026-05-16 15:08 (Morris PTF框架数学底层公开化·China 2.5框架100%完整·Morris For Now窗口仍在·晴雨表三重奏未触发)
+
+---
+
+## 2026-05-16 第十五次 · Morris PTF框架数学底层公开化 · China 2.5框架100%完整 · 晴雨表三重奏未触发
+
+**Git状态**：origin/dev = origin/master = 6ad7ee2（Morris PTF框架公共页面 + 导航整合，15:08 push）
+
+**本次工作**：
+- **Morris PTF函数数学底层公开页面**（morris-ptf-framework.html，~20KB，6个板块）
+  - PTF函数定义：N × e × A × mu 四项含义
+  - lambda分解：五分量（lambda_N + lambda_e + lambda_A + lambda_mu）
+  - sigmoid动力学：lambda(t) = lambda_max/(1+exp(-k(t-t_mid)))
+  - HC4 × mu项映射：DeepSeek R1 = PTF第四项mu（认知效率）的大幅改善
+  - China 2.5 vs Japan 1990s：PTF诊断对比（四层保险 vs 三层锁定）
+  - lollapalooza条件 × Phase 2买入标准（三层条件 + 决策矩阵）
+- **china25-framework.html**：sub-nav新增PTF页面链接
+- **china25-index.html**：framework pages grid新增PTF页面卡片
+- **Morris PTF框架完整参考文档**（_updates/morris-ptf-framework-complete-reference-2026-05-16.md，~1000行）
+  - PTF函数完整数学结构
+  - Morris For Now sigmoid定位
+  - ECoE三层历史转型
+  - HC4 × PTF mu项精确映射
+  - 三层Hard Ceiling × PTF四项映射表
+  - China 2.5 vs Japan 1990s PTF诊断对比
+  - lollapalooza条件PTF机制（1974年历史重建）
+  - Phase 2买入标准操作清单
+  - Buffett Partnership × PTF × Morris For Now三层历史对照
+  - PTF晴雨表操作化（三层时间尺度）
+
+**China 2.5框架完整度：100%**：
+- Morris SDI 25章：25/25章（100%）
+- PTF函数数学结构：完整
+- Morris For Now sigmoid定位：精确（lambda~0.029，t_mid-24年）
+- HC4 × PTF mu项映射：确认
+- 三层Hard Ceiling × PTF映射：精确
+- China 2.5 vs Japan 1990s PTF诊断：完成
+- lollapalooza条件PTF机制：完成
+- Phase 2买入标准操作清单：完成
+
+**晴雨表三重奏状态**：未触发（2026-05-13 19:30 → 2026-05-16 15:08，仍未触发，超19小时38分钟）
+
+**Commit**：6ad7ee2（force push origin/dev + origin/master）
 
 ---
 
