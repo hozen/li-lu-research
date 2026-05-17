@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffett 债券建仓框架 · Li Lu Research</title>
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <style>
+        :root {
+            --bg-primary: #faf8f5;
+            --bg-secondary: #f0ebe3;
+            --text-primary: #1a1a1a;
+            --text-muted: #5c4f3d;
+            --accent-gold: #c9a227;
+            --accent-blue: #0a1628;
+            --border-color: #d4c5a9;
+            --card-bg: #ffffff;
+        }
+        body.dark-mode {
+            --bg-primary: #0a1628;
+            --bg-secondary: #0f1e38;
+            --text-primary: #e8e0d0;
+            --text-muted: #8fa3c0;
+            --border-color: #1e3454;
+            --card-bg: #0f1e38;
+        }
+        body { font-family: 'Noto Serif SC', 'Source Han Serif SC', Georgia, serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.8; margin: 0; }
+        .tts-btn { position: fixed; top: 90px; right: 24px; z-index: 200; }
+        @media (max-width: 768px) { .tts-btn { top: 76px; right: 16px; } }
+        .back-link { display: inline-block; margin: 32px 0 0 32px; color: var(--accent-gold); text-decoration: none; font-size: 0.9rem; }
+        .back-link:hover { text-decoration: underline; }
+        .hero { padding: 60px 32px 40px; max-width: 800px; margin: 0 auto; }
+        .hero-label { font-size: 0.75rem; letter-spacing: 0.15em; color: var(--accent-gold); text-transform: uppercase; margin-bottom: 12px; }
+        .hero h1 { font-size: 2rem; font-weight: 700; margin: 0 0 16px; color: var(--accent-blue); }
+        body.dark-mode .hero h1 { color: #e8e0d0; }
+        .hero-subtitle { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 32px; border-left: 3px solid var(--accent-gold); padding-left: 16px; }
+        .content { max-width: 800px; margin: 0 auto; padding: 0 32px 80px; }
+        h2 { font-size: 1.35rem; color: var(--accent-blue); border-bottom: 2px solid var(--accent-gold); padding-bottom: 8px; margin-top: 48px; }
+        body.dark-mode h2 { color: #e8e0d0; }
+        h3 { font-size: 1.1rem; color: var(--accent-blue); margin-top: 28px; }
+        body.dark-mode h3 { color: #d4c5a9; }
+        p { margin: 14px 0; }
+        .highlight-box { background: var(--bg-secondary); border-left: 4px solid var(--accent-gold); padding: 20px 24px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+        .warning-box { background: #fef3cd; border-left: 4px solid #c9a227; padding: 20px 24px; margin: 24px 0; border-radius: 0 6px 6px 0; }
+        body.dark-mode .warning-box { background: #2d2010; border-color: #c9a227; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+        th { background: var(--accent-blue); color: #fff; padding: 10px 14px; text-align: left; }
+        body.dark-mode th { background: #1e3454; }
+        td { padding: 10px 14px; border-bottom: 1px solid var(--border-color); }
+        tr:hover { background: var(--bg-secondary); }
+        .framework-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 24px; margin: 20px 0; }
+        .tag { display: inline-block; background: var(--accent-gold); color: #fff; font-size: 0.7rem; padding: 2px 8px; border-radius: 3px; margin-right: 6px; font-weight: 700; }
+        .nav-row { display: flex; flex-wrap: wrap; gap: 8px; padding: 16px 32px; background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); }
+        .nav-pill { color: var(--accent-gold); text-decoration: none; font-size: 0.8rem; padding: 4px 12px; border: 1px solid var(--accent-gold); border-radius: 20px; transition: all 0.2s; }
+        .nav-pill:hover { background: var(--accent-gold); color: #fff; }
+        body.dark-mode .nav-pill { color: var(--accent-gold); border-color: var(--accent-gold); }
+        body.dark-mode .nav-pill:hover { background: var(--accent-gold); color: #0a1628; }
+    </style>
+</head>
+<body>
+    <div id="uni-navbar"></div>
+    <button class="tts-btn" id="ttsBtn" title="朗读页面" onclick="window.ttsToggle && window.ttsToggle()">🔊 朗读</button>
+
+    <div class="nav-row">
+        <a href="china25-index.html" class="nav-pill">← China 2.5 总览</a>
+        <a href="china25-framework.html" class="nav-pill">投资框架</a>
+        <a href="buffett-partnership-historical-reference.html" class="nav-pill">BP历史原型</a>
+        <a href="morris-for-now.html" class="nav-pill">Morris For Now</a>
+        <a href="phase-transition.html" class="nav-pill">相变点函数</a>
+        <a href="morris-ptf-framework.html" class="nav-pill">PTF框架</a>
+    </div>
+
+    <a href="china25-index.html" class="back-link">← China 2.5 总览</a>
+
+    <div class="hero">
+        <div class="hero-label">China 2.5 投资纪律 · Reference Page</div>
+        <h1>Buffett 债券建仓框架</h1>
+        <p class="hero-subtitle">
+            Morris For Now × Buffett Indicator × 购买力纪律 —— 债券建仓不是预测市场，而是能量边际成本纪律的具体执行。
+        </p>
+    </div>
+
+    <div class="content">
+
+        <h2>一、核心问题：为什么要持有债券？</h2>
+
+        <p>China 2.5框架的核心不是"债券vs股票哪个更好"，而是<strong>在当前能量边际成本下，部署资本的代价是什么</strong>。</p>
+
+        <div class="highlight-box">
+            <strong>Morris For Now纪律的能量含义：</strong><br>
+            当能量获取边际成本 ≥ 历史均值1.5倍时，持有债券 = 保持能量储备，等待边际成本下降到合理区间再部署。<br><br>
+            <strong>Buffett Indicator ~180-190%</strong> = 当前能量边际成本 ≈ 历史均值的<strong>1.5倍</strong><br>
+            → For Now纪律：持有债券，不部署
+        </div>
+
+        <p>Buffett本人对债券建仓的逻辑有最清晰的表述（1966年信）：</p>
+        <blockquote style="border-left: 3px solid var(--accent-gold); padding-left: 16px; color: var(--text-muted); margin: 20px 0; font-style: italic;">
+            "If we are correct in our belief that generally quoted prices for securities are higher than their underlying values, then obviously we should be sellers rather than buyers of securities — yet our portfolio remains largely committed to equities. In fact, we are selling short listed securities while buying others, an operation which should theoretically provide great protection in a declining market... But I have a strong aversion to short selling."
+            <br>— Buffett Partnership Letter, 1966
+        </blockquote>
+
+        <p>1966年Buffett的困境正是今日China 2.5的镜像：市场高估，但做空成本高（"strong aversion"），所以选择<strong>持有债券等待</strong>而非做空。</p>
+
+        <h2>二、Buffett Indicator × 债券建仓三层逻辑</h2>
+
+        <div class="framework-card">
+            <span class="tag">Layer 1</span><strong>购买力保存</strong>
+            <p>当Buffett Indicator > 150%（高估区），持有现金/货币等价物的代价是购买力被通胀侵蚀。债券是在<strong>不放弃购买力</strong>的前提下等待机会的唯一手段。现金在通胀中是能量损耗；债券是能量储备。</p>
+        </div>
+
+        <div class="framework-card">
+            <span class="tag">Layer 2</span><strong>弹药储备</strong>
+            <p>Buffett Partnership原型（1967-1969）：清盘债券 → 1972年See's全额出击 → lollapalooza。债券是"买入期权"：当三重奏触发、市场崩溃时，手握债券的投资者拥有<strong>买入的权利</strong>，而不是被迫在底部割肉。</p>
+        </div>
+
+        <div class="framework-card">
+            <span class="tag">Layer 3</span><strong>能量介质选择</strong>
+            <p>持有债券而不是现金的根本原因：债券在通胀期仍然是有效的购买力存储介质。现金在持续通胀中会"蒸发"；债券在通胀结束时仍有可观的本金（虽然实际收益率可能为负）。</p>
+        </div>
+
+        <h2>三、Buffett Indicator量化纪律</h2>
+
+        <table>
+            <tr><th>Buffett Indicator区间</th><th>能量边际成本</th><th>Morris窗口状态</th><th>操作</th></tr>
+            <tr><td>&lt; 100%</td><td>历史均值以下</td><td>窗口关闭（Phase 2启动区）</td><td>全额股票，债券清零</td></tr>
+            <tr><td>100–130%</td><td>历史均值（0.8–1.1×）</td><td>窗口关闭边缘</td><td>逐步减持债券</td></tr>
+            <tr><td>130–150%</td><td>历史均值1.1–1.3×</td><td>窗口收窄</td><td>债券+股票平衡</td></tr>
+            <tr><td style="background:#fff3cd"><td style="background:#fff3cd"><strong>150–180%</strong></td><td style="background:#fff3cd"><strong>历史均值1.3–1.5×</strong></td><td style="background:#fff3cd"><strong>For Now（轻度）</strong></td><td style="background:#fff3cd"><strong>债券为主，等待</strong></td></tr>
+            <tr><td style="background:#fde8d8"><td style="background:#fde8d8"><strong>180–200%</strong></td><td style="background:#fde8d8"><strong>历史均值1.5–1.7×</strong></td><td style="background:#fde8d8"><strong>For Now（重度）</strong></td><td style="background:#fde8d8"><strong>债券建仓，5月19日第一优先</strong></td></tr>
+            <tr><td>&gt; 200%</td><td>&gt; 历史均值1.7×</td><td>极度高估</td><td>最高债券仓位，考虑对冲</td></tr>
+        </table>
+
+        <div class="warning-box">
+            <strong>⚠️ 关键触发信号：</strong>Buffett Indicator从高位下降≥30%（即从180-190%降至约130-140%）= 能量边际成本开始回归的量化信号 = <strong>Morris窗口三重奏触发第一条件（F4↓）被市场定价</strong>。
+        </div>
+
+        <h2>四、三重奏触发 × 债券转换节点</h2>
+
+        <p>债券建仓的目的是在三重奏触发后<strong>全额转换为股票</strong>（See's原型）：</p>
+
+        <table>
+            <tr><th>Phase</th><th>触发条件</th><th>Buffett Indicator</th><th>债券仓位</th></tr>
+            <tr><td>Morris For Now</td><td>边际成本 ≥ 历史均值1.5×</td><td>~180-190%</td><td>建仓至70-100%</td></tr>
+            <tr><td>三重奏触发</td><td>F4↓ + F2稳定 + F3稳定</td><td>开始下降</td><td>开始减持债券</td></tr>
+            <tr><td>See's路径</td><td>某标的合理价格出现</td><td>仍在高位</td><td>全额该标的（不等待三重奏）</td></tr>
+            <tr><td>lollapalooza路径</td><td>F4急剧恶化</td><td>快速下降</td><td>立即全额债券→股票</td></tr>
+            <tr><td>窗口关闭</td><td>边际成本降至足够低</td><td>~130-140%</td><td>债券清零，全额股票</td></tr>
+        </table>
+
+        <h2>五、历史原型：1966-1972 Buffett Partnership</h2>
+
+        <div class="highlight-box">
+            <strong>1966年（Buffett Indicator高位）</strong>：Burlington Northern泡沫 → Buffett Partnership <strong>清盘债券仓位</strong>（不是全部卖出，而是减少股票持仓同时持有现金/债券）。Buffett厌恶做空，所以选择等待而非对冲。<br><br>
+            <strong>1967年</strong>：市场持续高位 → 继续等待<br><br>
+            <strong>1969年</strong>：正式清盘1亿美元 → 返还LP资金<br><br>
+            <strong>1972年</strong>：See's出现合理价格 → Buffe
+
+ Buffett全额出击 → 巴菲特合伙企业最终解散后的第一个重大投资决策，这次出击在lollapalooza效应的作用下获得了巨大成功。
+        </div>
+
+        <p>China 2.5当前 = Buffett Partnership <strong>1966年</strong>（债券建仓已经开始，但三重奏尚未触发）。不是1969年（清盘），也不是1972年（See's出击）。</p>
+
+        <h2>六、Buffett Indicator的能量含义（精确版）</h2>
+
+        <p>Morris Ch19揭示了Buffett Indicator~180-190%的深层含义：</p>
+
+        <ul>
+            <li>市场高估的不是当前价值，而是对DeepSeek式mu改善的<strong>过度外推</strong>（将短期技术进步永久化）</li>
+            <li>mu改善（认知效率提升）不能消除Hard Ceiling，只是延缓HC到达时间</li>
+            <li>市场将"延缓"误认为"消除" = 系统性高估</li>
+            <li>Buffett Indicator~180-190% = 市场在对"mu改善将永久持续"下注</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>三层HC × Buffett Indicator整合：</strong><br>
+            HC1（外部能量）触发 → 投资框架终结，Buffett Indicator失效<br>
+            HC1未触发 → F3和mu是可控变量，Buffett Indicator有效<br>
+            当前HC1未触发 → Buffett Indicator纪律有效，债券建仓正确
+        </div>
+
+        <h2>七、Morris窗口 × 债券纪律精确映射</h2>
+
+        <table>
+            <tr><th>Morris窗口定义</th><th>量化标准</th><th>Buffett Indicator对应</th></tr>
+            <tr><td>For Now = 能量边际成本 ≥ 历史均值1.5×</td><td>Buffett Indicator ≥ 180%</td><td>债券建仓</td></tr>
+            <tr><td>三重奏触发 = 边际成本开始下降</td><td>BI下降 ≥ 10-15%</td><td>开始减持债券</td></tr>
+            <tr><td>窗口关闭 = 成本降至足够低，Phase 2启动</td><td>Buffett Indicator ~130-140%</td><td>债券清零</td></tr>
+            <tr><td>See's路径 = 某标的合理价格</td><td>Graham折扣 ≥ 25%</td><td>立即全额买入（不等待三重奏）</td></tr>
+        </table>
+
+        <h2>八、与持有现金的根本区别</h2>
+
+        <div class="framework-card">
+            <p><strong>现金的问题（Buffett 1966年观点）：</strong></p>
+            <ul>
+                <li>在持续通胀中，现金的实际购买力持续下降</li>
+                <li>持有现金=放弃购买力储备</li>
+                <li>债券至少在通胀结束时保留本金名义值</li>
+            </ul>
+            <p><strong>债券的核心优势：</strong></p>
+            <ul>
+                <li>保持流动性 + 购买力保存的双重功能</li>
+                <li>在市场崩溃时拥有"买入期权"（见1967-1972年Buffett Partnership原型）</li>
+                <li>不参与市场永久化赌注（mu改善是否真的永久？）</li>
+            </ul>
+        </div>
+
+        <h2>九、总结：债券建仓三层纪律</h2>
+
+        <div class="highlight-box">
+            <ol>
+                <li><strong>Buffett Indicator纪律</strong>：≥150%高估区开始建仓债券；≥180%全额债券建仓</li>
+                <li><strong>Morris窗口纪律</strong>：能量边际成本≥历史均值1.5× → For Now → 持有债券等待</li>
+                <li><strong>三重奏纪律</strong>：F4↓+F2稳定+F3稳定触发 → 债券→股票的转换开始；Buffett Indicator下降≥30% = 转换完成的量化确认</li>
+            </ol>
+        </div>
+
+        <p><strong>Buffett Indicator ~180-190% → 债券建仓5月19日第一优先（Buffett/李录决策范围）。</strong></p>
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        fetch('navbar.html').then(r => r.text()).then(html => {
+            document.getElementById('uni-navbar').innerHTML = html;
+        });
+        // TTS
+        let tts utterance = null;
+        window.ttsToggle = function() {
+            if (speechSynthesis.speaking) { speechSynthesis.cancel(); return; }
+            const text = document.querySelector('.content').innerText;
+            utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'zh-CN'; utterance.rate = 1.0;
+            utterance.onend = () => { document.getElementById('ttsBtn').textContent = '🔊 朗读'; };
+            speechSynthesis.speak(utterance);
+            document.getElementById('ttsBtn').textContent = '⏸ 暂停';
+        };
+        document.getElementById('ttsBtn').addEventListener('click', window.ttsToggle);
+    </script>
+</body>
+</html>
