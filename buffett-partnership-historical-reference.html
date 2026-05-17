@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buffett Partnership 历史原型 · China 2.5 晴雨表体系</title>
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --bg: #0a1628;
+      --bg-card: #0f2040;
+      --bg-card2: #132744;
+      --text: #e8e0d0;
+      --muted: #8fa3c0;
+      --accent: #c9a227;
+      --accent2: #7ab8d4;
+      --border: #1e3a5f;
+      --danger: #e05555;
+      --success: #4caf7d;
+    }
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', 'Noto Serif SC', sans-serif; line-height: 1.75; }
+    .main-content { max-width: 900px; margin: 0 auto; padding: 80px 24px 120px; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 60%, #0d2240 100%); border-bottom: 1px solid var(--border); padding: 3rem 0 2.5rem; margin-bottom: 3rem; }
+    .hero .eyebrow { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .hero h1 { font-family: 'Noto Serif SC', serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; }
+    .hero .subtitle { color: var(--muted); font-size: 0.95rem; max-width: 620px; }
+    .hero .badge-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 1rem; }
+    .badge { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
+    .badge-yellow { background: var(--accent); color: #0a1628; }
+    .badge-blue { background: var(--accent2); color: #0a1628; }
+    .badge-green { background: var(--success); color: #0a1628; }
+    .badge-red { background: var(--danger); color: #fff; }
+
+    /* Section */
+    h2 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin: 2.5rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    h2:first-of-type { margin-top: 0; }
+    h3 { font-family: 'Noto Serif SC', serif; font-size: 1.15rem; font-weight: 700; color: var(--accent); margin: 1.75rem 0 0.75rem; }
+    h4 { font-size: 0.85rem; font-weight: 600; color: var(--accent2); margin: 1.25rem 0 0.5rem; }
+
+    /* Table */
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.85rem; }
+    th { background: var(--bg-card2); color: var(--accent); font-weight: 600; text-align: left; padding: 8px 12px; border: 1px solid var(--border); }
+    td { padding: 7px 12px; border: 1px solid var(--border); background: var(--bg-card); vertical-align: top; }
+    tr:hover td { background: var(--bg-card2); }
+    td strong { color: var(--accent); }
+
+    /* Narrative block */
+    .narrative { background: var(--bg-card); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1.25rem 1.5rem; font-size: 0.9rem; color: var(--text); line-height: 1.8; margin: 1.5rem 0; }
+    .narrative p { margin-bottom: 0.75rem; }
+    .narrative p:last-child { margin-bottom: 0; }
+
+    /* Callout */
+    .callout { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .callout.danger { border-left: 3px solid var(--danger); }
+    .callout.success { border-left: 3px solid var(--success); }
+    .callout.blue { border-left: 3px solid var(--accent2); }
+    .callout .callout-title { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.75rem; }
+    .callout p { font-size: 0.88rem; margin-bottom: 0.5rem; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    /* Cards */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
+    .card h4 { margin-top: 0; color: var(--accent); font-size: 0.9rem; }
+    .card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-top: 0.5rem; }
+
+    /* Quote */
+    blockquote { border-left: 3px solid var(--accent); padding: 0.75rem 1.25rem; margin: 1.25rem 0; background: var(--bg-card); border-radius: 0 6px 6px 0; font-style: italic; color: var(--muted); font-size: 0.88rem; }
+
+    /* Timeline compact */
+    .timeline { display: flex; flex-direction: column; gap: 0; margin: 1rem 0; }
+    .timeline-item { display: flex; gap: 16px; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-year { width: 52px; flex-shrink: 0; font-size: 0.78rem; font-weight: 700; color: var(--accent); }
+    .timeline-text { font-size: 0.85rem; }
+
+    /* Comparison grid */
+    .compare-table { width: 100%; margin: 1rem 0; }
+    .compare-table td { font-size: 0.82rem; }
+    .compare-table td:first-child { color: var(--accent); font-weight: 600; width: 160px; }
+
+    /* Footer nav */
+    .footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-nav a { color: var(--muted); text-decoration: none; font-size: 0.85rem; }
+    .footer-nav a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      .card-grid { grid-template-columns: 1fr; }
+      table { font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="uni-navbar"></div>
+<script src="js/main.js" defer></script>
+
+<div class="main-content">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="eyebrow">China 2.5 晴雨表 · 历史原型</div>
+    <h1>Buffett Partnership<br>完整历史原型参照</h1>
+    <p class="subtitle">1957–1984 完整时间线 · 三大策略工具 · Phase 1→2 转型决策 · See's vs Washington Post 两种 Phase 2 策略 · 1962 年熊市纪律精确区分</p>
+    <div class="badge-row">
+      <span class="badge badge-yellow">Phase 1 原型</span>
+      <span class="badge badge-blue">历史参照系</span>
+      <span class="badge badge-green">China 2.5 定位</span>
+    </div>
+  </div>
+
+  <!-- Core Narrative -->
+  <div class="narrative">
+    <p><strong>Buffett Partnership Ltd.（1957–1969）是理解 China 2.5 当前位置的唯一完整历史原型。</strong>这个参照系的价值在于：它提供了唯一一个完整经历「Phase 1 积累 → For Now 等待 → Phase 2 出击 → Phase 3 持续」四阶段的真实案例。</p>
+    <p><strong>China 2.5 当前 = Buffett Partnership 1966 年。</strong>特征：Pipeline 已建立（31 只裁定完成），三重奏未触发（债券建仓进行中），不焦虑不预测。Buffett 1966 年做了两件事同时进行：① 减少股票仓位（债券建仓）② 继续研究 See's（Pipeline 建设）。</p>
+    <p><strong>最重要的警示：</strong>历史相位图是参照系，不是操作手册。Buffett Partnership 在美国 F2 稳定的环境中运作；China 2.5 在中国 F2 晴雨表「改革开放仍在运作但有摩擦」的环境中运作。两者本质不同。</p>
+  </div>
+
+  <!-- Phase Map -->
+  <h2>完整时间线 · 1957–1984</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">1950–56</div>
+      <div class="timeline-text"><strong>Buffett 学习期</strong> — Nebraska 本科毕业，拒绝纽约 MBA，回到奥马哈当股票推销员，同时在 Omaha 教 Graham 的《Principles of Investments》。回 Omaha 而非留在纽约，为后来 19 年搭档芒格埋下伏笔。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1957</div>
+      <div class="timeline-text"><strong>Phase 1 启动</strong> — Buffett 以 10.51 万美元创立合伙基金。芒格同年加入。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1957–66</div>
+      <div class="timeline-text"><strong>Phase 1 积累期</strong> — 年化回报 23.6%（Dow 同期约 7.1%），超额 16.5 个百分点。规模从 $300,000 → $44,000,000（145 倍）。策略：Cigar-Butt + Generals + Workouts + Controls 四工具并行。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1962</div>
+      <div class="timeline-text"><strong>熊市验证年</strong> — Dow -8.7%，BPL +13.9%（超额 +22.6 个百分点）。使用的是 Cigar-Butt（有形资产清算底线），<strong>≠ 越跌越买腾讯的理由。</strong>参见「1962 年警示」章节。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1966</div>
+      <div class="timeline-text"><strong>Phase 1 末期 · For Now 开始</strong> — Burlington Industries IPO 泡沫，F4 信号失真，开始减少股票仓位。Buffett 备忘录：「衡量标准不是市场，是当前的投资环境是否提供了足够的机会。」</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1967–71</div>
+      <div class="timeline-text"><strong>For Now 等待期</strong> — 清盘合伙基金，持有国债等待。这不是消极等待，而是主动 Pipeline 建设：See's 和 Washington Post 研究多年，1972–1974 年集中兑现。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1969</div>
+      <div class="timeline-text"><strong>正式清盘</strong> — 返还所有外部 LP 资金（约 1 亿美元）。清盘理由：规模太大 + 机会质量下降（不是看空市场）。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1972</div>
+      <div class="timeline-text"><strong>Phase 2 · See's Candies 收购</strong> — 以约 $3,000 万收购（3.75 倍账面），Buffett 认为「合理价格」。See's 护城河：人情网络（加州送礼文化，50 年提价验证）。50 年后累计为 Buffett 贡献超 $20 亿利润。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1974</div>
+      <div class="timeline-text"><strong>Phase 2 · Washington Post lollapalooza 触发</strong> — 能源危机 + 经济衰退 = F4 触发，市值 $0.82 亿，Graham 内在价值 $4 亿 +（4.8 倍安全边际），Buffett 大量买入 $1,000 万，最终回报超 $1 亿。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1974–84</div>
+      <div class="timeline-text"><strong>Phase 2 执行期</strong> — See's/WP/BN + Berkshire 整合。规模 $100M → $2.8B（28 倍）。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">1985 至今</div>
+      <div class="timeline-text"><strong>Phase 3 · 成熟期</strong> — Berkshire 内生增长，Buffett Partnership 历史任务完成。</div>
+    </div>
+  </div>
+
+  <!-- Three Strategy Tools -->
+  <h2>三大策略工具 · 1957–1966 Phase 1</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Cigar-Butt</h4>
+      <p>用 Graham 清算价值折扣买「垃圾公司」。越跌越买，因为有形资产底线支撑。「用 50 美分买一美元。」代表案例：Dempster Mills（最终失败）。</p>
+    </div>
+    <div class="card">
+      <h4>Generals</h4>
+      <p>合理价格买优质公司（被动少数股权）。机会涌现 ↔ F4↑（价格回归正常）；机会枯竭 ↔ F4↓（信号失真）。</p>
+    </div>
+    <div class="card">
+      <h4>Workouts</h4>
+      <p>套利交易（并购/清盘/要约收购事件驱动）。催化剂来自企业层面，基本独立于宏观晴雨表。Buffett 1967–1969 年 F4 失真时增加比重。</p>
+    </div>
+    <div class="card">
+      <h4>Controls</h4>
+      <p>控股型（主动管理，推动清算或重组）。持有 Controls = 对特定制度环境的长期信任。F2 晴雨表强 = 护城河成立；F2 晴雨表弱 = 制度基础动摇。</p>
+    </div>
+  </div>
+
+  <!-- Two Phase 2 Strategies -->
+  <h2>两种 Phase 2 策略 · See's vs Washington Post</h2>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1rem;">这是最重要的投资认知之一。See's 和 WP 用了完全不同的 Phase 2 策略，不能混用同一逻辑。</p>
+
+  <table>
+    <tr>
+      <th>维度</th>
+      <th>See's Candies（1972）</th>
+      <th>Washington Post（1974）</th>
+    </tr>
+    <tr>
+      <td>买入价格</td>
+      <td>合理价格（无 Graham 折扣）</td>
+      <td>深度折扣（约 80% 内在价值）</td>
+    </tr>
+    <tr>
+      <td>护城河类型</td>
+      <td>情感护城河（人情网络）</td>
+      <td>制度信任护城河（政治关系网）</td>
+    </tr>
+    <tr>
+      <td>F4 触发</td>
+      <td>无（正常市场买入）</td>
+      <td>是（1974 lollapalooza 触发）</td>
+    </tr>
+    <tr>
+      <td>安全边际来源</td>
+      <td>护城河耐久性（50 年验证）</td>
+      <td>极端价格折扣（Graham 三层）</td>
+    </tr>
+    <tr>
+      <td>回报</td>
+      <td>50 倍（$3,000 万→$20 亿+，50 年）</td>
+      <td>100 倍 +（$1,000 万→$1 亿+，1974–2014）</td>
+    </tr>
+    <tr>
+      <td>核心纪律</td>
+      <td>有护城河 + 合理价格 = 可以买</td>
+      <td>lollapalooza + 深度折扣 = 必须买</td>
+    </tr>
+    <tr>
+      <td>China 2.5 同构</td>
+      <td>腾讯 8.5、五粮液 7.5</td>
+      <td>阿里 7、等待 lollapalooza</td>
+    </tr>
+  </table>
+
+  <h3>See's 模板核心机制</h3>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1rem;">See's 护城河三层不可逆性：① 礼物已送出，情感已传递（接受者无法退回礼品的情感价值）② 50 年情感记忆库存（自我强化）③ 代际传递（家庭/文化仪式中代代相传）。这三个特性使 See's 在 50 年内持续提价而未失去客户——人情网络型护城河的终极测试标准。</p>
+
+  <h3>Washington Post lollapalooza 机制</h3>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1rem;">1974 年通胀 + 失业率组合 = F4（HC1）触发，能源危机 + 经济衰退 = 系统性错杀。Buffett 在别人恐慌时大量买入，不是因为「捡便宜」，而是因为「护城河完整 + 系统性错杀 + Pipeline 已准备好」。</p>
+
+  <!-- China 2.5 Mapping -->
+  <h2>China 2.5 vs Buffett Partnership 精确映射</h2>
+  <table>
+    <tr>
+      <th>维度</th>
+      <th>Buffett Partnership</th>
+      <th>China 2.5 当前</th>
+    </tr>
+    <tr>
+      <td>阶段定位</td>
+      <td>1957–1966 Phase 1（积累期）</td>
+      <td>Phase 1.5（积累期末尾）</td>
+    </tr>
+    <tr>
+      <td>晴雨表状态</td>
+      <td>1966 年 F4 信号失真</td>
+      <td>F4 高估，三重奏未触发</td>
+    </tr>
+    <tr>
+      <td>For Now 纪律</td>
+      <td>「机会不够好」</td>
+      <td>「三重奏未触发」</td>
+    </tr>
+    <tr>
+      <td>F2 晴雨表</td>
+      <td>美国制度黄金期（稳定）</td>
+      <td>改革开放仍在运作（有摩擦）</td>
+    </tr>
+    <tr>
+      <td>F3 晴雨表</td>
+      <td>社会组织稳定（民权运动前）</td>
+      <td>F3LI ~4.5–5.5/10（中性偏弱）</td>
+    </tr>
+    <tr>
+      <td>Pipeline</td>
+      <td>See's/WP 研究多年（1969–1972 执行）</td>
+      <td>腾讯 8.5/五粮液 7.5 等（等待三重奏）</td>
+    </tr>
+    <tr>
+      <td>债券建仓</td>
+      <td>1967 年清盘后持有国债</td>
+      <td>Buffett Indicator ~180–190%，债券建仓进行中</td>
+    </tr>
+    <tr>
+      <td>规模</td>
+      <td>$44M（Phase 1 末）</td>
+      <td>待定（Phase 1 末期）</td>
+    </tr>
+    <tr>
+      <td>退出触发</td>
+      <td>1966：F4 信号失真 + 规模太大</td>
+      <td>三重奏触发 + F3LI≥6.0/10</td>
+    </tr>
+  </table>
+
+  <!-- 1962 Warning -->
+  <h2>1962 年熊市警示 · 最常见的框架误用</h2>
+  <div class="callout danger">
+    <div class="callout-title">⚠ 最重要警示：腾讯 ≠ Cigar-Butt</div>
+    <p>Buffett Partnership 1962 年熊市是最常被误用的历史案例。Buffett 1962 年用的是 Cigar-Butt 策略，核心是有形资产清算价值支撑（净资产 >> 市值），「可以越跌越买」是因为清算价值底线在。</p>
+    <p><strong>腾讯没有清算价值底线。</strong>如果腾讯越跌越买，可能抄到半山腰或接飞刀。Morris For Now 的含义：不卖 ≠ 越跌越买；是「持有 + 等待三重奏触发」。</p>
+  </div>
+
+  <table>
+    <tr>
+      <th></th>
+      <th>Cigar-Butt（Graham）</th>
+      <th>情感护城河（See's）</th>
+      <th>制度信任护城河（WP）</th>
+    </tr>
+    <tr>
+      <td>代表标的</td>
+      <td>Dempster Mills</td>
+      <td>See's / 腾讯 8.5</td>
+      <td>Washington Post / 阿里 7</td>
+    </tr>
+    <tr>
+      <td>安全边际</td>
+      <td>清算价值折扣（越跌越买）</td>
+      <td>护城河耐久性 + 合理价格</td>
+      <td>lollapalooza + 深度折扣</td>
+    </tr>
+    <tr>
+      <td>China 2.5 对应</td>
+      <td>⚠️ 排除（无清算价值底线）</td>
+      <td>腾讯 8.5 > 五粮液 7.5</td>
+      <td>阿里 7（等待 lollapalooza）</td>
+    </tr>
+  </table>
+
+  <!-- Morris For Now -->
+  <h2>Morris For Now 纪律精确版</h2>
+  <div class="narrative">
+    <p><strong>For Now 纪律 = sigmoid 函数的精确执行区间，有数学边界，不是模糊等待。</strong></p>
+    <p>lambda(t) = lambda_max / (1 + exp(-k(t - t_mid)))，当前 lambda ~0.029–0.031（sigmoid 中段偏右）。For Now 窗口仍在 = sigmoid 右侧区间 = Morris 纪律仍在有效执行期。</p>
+    <p><strong>For Now 的精确含义（比「等待」更具体）：</strong></p>
+    <p>① 标的仍然有效（腾讯/五粮液的护城河没有消失）② 价格不够好（Graham 折扣不足 + lollapalooza 条件未触发）③ 储备弹药（债券）是最优选择（不持有零回报现金）④ 随时准备窗口关闭时全额出击。</p>
+  </div>
+
+  <h3>Buffett 1966 年给 China 2.5 的最终启示</h3>
+  <blockquote>
+    Buffett 1966 年做了两件事同时进行：① 减少股票仓位（债券建仓）② 继续研究 See's（Pipeline 建设）。这两件事同时进行，不是先等再研究，而是边等边研究。China 2.5 当前也是如此——债券建仓框架已记录，Pipeline 研究的下一步是 F3LI 四指标的实证数据核实。
+  </blockquote>
+
+  <!-- Phase 2 Trigger -->
+  <h2>Phase 2 窗口三层触发条件现状</h2>
+  <table>
+    <tr>
+      <th>条件</th>
+      <th>触发标准</th>
+      <th>当前状态</th>
+    </tr>
+    <tr>
+      <td>条件 1：Morris 三重奏</td>
+      <td>F4↓ + F2 稳定 + F3 稳定</td>
+      <td><span style="color:var(--danger)">F4 仍在高位 ❌</span></td>
+    </tr>
+    <tr>
+      <td>条件 2：Graham 折扣</td>
+      <td>内在价值折扣 ≥ 25%</td>
+      <td><span style="color:var(--muted)">See's 评分需与折扣联动</span></td>
+    </tr>
+    <tr>
+      <td>条件 3：Morris 窗口</td>
+      <td>lambda 接近 0</td>
+      <td><span style="color:var(--accent)">lambda ~0.029（右侧区间）</span></td>
+    </tr>
+  </table>
+
+  <h3>三层条件的关系（非 AND，而是优先级递进）</h3>
+  <div class="card-grid">
+    <div class="card">
+      <h4>正常路径</h4>
+      <p>三重奏触发（F4↓）→ 启动 Graham 折扣评估 → 满足折扣条件 → 买入</p>
+    </div>
+    <div class="card">
+      <h4>See's 路径（特殊）</h4>
+      <p>强护城河（≥8.0）+ 合理价格（非极端折扣）→ 可提前启动买入。代表：腾讯 8.5、五粮液 7.5</p>
+    </div>
+    <div class="card">
+      <h4>WP 路径（极端）</h4>
+      <p>lollapalooza 触发 → Graham 折扣 ≥40% → 必须立即买入。代表：阿里 7（等待 lollapalooza）</p>
+    </div>
+  </div>
+
+  <!-- Buffett Partnership Insight -->
+  <h2>历史相位图的认知价值与局限</h2>
+  <div class="callout blue">
+    <div class="callout-title">认知价值（为什么有用）</div>
+    <p>提供了唯一一个完整经历四阶段的真实案例：时间参照（1966 年等了多久？1969–1972 年等了多久？）+ 策略参照（See's 和 WP 的具体操作）+ 情绪参照（Buffett 如何处理「机会不够好」的焦虑）。</p>
+  </div>
+  <div class="callout danger">
+    <div class="callout-title">认知局限（必须警惕）</div>
+    <p>① <strong>制度背景不同</strong>：Buffett 在美国 F2 稳定环境中；China 2.5 在 F2「改革开放有摩擦」环境中。② <strong>规模差异</strong>：BPL 1969 年 $1 亿；China 2.5 潜在规模可能影响市场本身。③ <strong>护城河类型差异</strong>：See's 是消费品情感护城河；腾讯是数字基础设施护城河。④ <strong>F4 风险不对称</strong>：Buffett 面对越南战争+水门；China 2.5 面对中美超级大国博弈风险。</p>
+  </div>
+
+  <div class="callout success">
+    <div class="callout-title">✓ 结论</div>
+    <p>历史相位图是参照系，不是操作手册。China 2.5 需要建立自己的操作纪律，而不是简单复制 Buffett Partnership 的时间表。</p>
+  </div>
+
+  <!-- Footer nav -->
+  <div class="footer-nav">
+    <a href="china25-index.html">← China 2.5 总览</a>
+    <a href="china25-framework.html">China 2.5 框架正文 →</a>
+  </div>
+
+</div>
+
+<script src="js/tts-player.js" defer></script>
+</body>
+</html>
