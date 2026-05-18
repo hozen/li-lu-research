@@ -8,84 +8,65 @@
 <style>
 .main-content{padding-top:64px;max-width:960px;margin:0 auto;padding:84px 24px 60px}
 .back-bar{display:flex;align-items:center;gap:12px;padding:12px 0;margin-bottom:24px}
-.back-bar a{color:#c9a227;text-decoration:none;font-size:.9rem;display:flex;align-items:center;gap:6px}
+.back-bar a{color:#c9a227;text-decoration:none;font-size:.9rem}
 .back-bar a:hover{text-decoration:underline}
 .page-title{font-size:2rem;font-weight:700;color:#0a1628;margin-bottom:8px}
 .page-subtitle{color:#4a5568;font-size:1rem;margin-bottom:32px}
-.toc-card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;padding:20px 24px;margin-bottom:40px}
-.toc-card h2{font-size:1.1rem;color:#0a1628;margin-bottom:12px}
-.toc-list{list-style:none;display:flex;flex-direction:column;gap:6px}
-.toc-list li{display:flex;align-items:baseline;gap:8px}
-.toc-list .toc-time{color:#c9a227;font-size:.8rem;font-weight:600;min-width:44px}
-.toc-list .toc-label{color:#374151;font-size:.9rem}
-.toc-list .toc-label:hover{color:#0a1628}
-.toc-list .toc-speaker{color:#9ca3af;font-size:.8rem;margin-left:auto}
-.section-sep{border:none;border-top:1px dashed #e5e7eb;margin:16px 0}
-.video-section{margin-bottom:40px}
+.part-header{display:flex;align-items:center;gap:12px;margin:40px 0 16px}
+.part-header:first-of-type{margin-top:0}
+.part-num{background:#0a1628;color:#c9a227;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:.05em}
+.part-title{font-size:1.1rem;font-weight:700;color:#0a1628}
 .video-card{border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;display:flex;gap:0;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.video-card+.video-card{margin-top:16px}
-.video-thumb{width:160px;min-height:120px;background:linear-gradient(135deg,#0a1628,#1e3a6e);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.video-thumb .play-icon{font-size:2.5rem;color:#c9a227;opacity:.9}
-.video-body{padding:16px;flex:1}
-.video-body h3{font-size:1rem;color:#0a1628;margin-bottom:6px}
-.video-body p{font-size:.85rem;color:#4a5568;margin-bottom:8px}
-.video-body .meta{display:flex;gap:12px;font-size:.8rem;color:#9ca3af}
-.video-body .meta span{display:flex;align-items:center;gap:4px}
-.video-body a{color:#c9a227;text-decoration:none;font-size:.85rem;font-weight:600}
+.video-card+.video-card{margin-top:12px}
+.video-card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.video-thumb{width:120px;background:linear-gradient(135deg,#0a1628,#1e3a6e);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.video-thumb .play-icon{font-size:2rem;color:#c9a227;opacity:.9}
+.video-body{padding:14px 18px;flex:1}
+.video-body h3{font-size:.95rem;color:#0a1628;margin-bottom:5px;font-weight:600}
+.video-body p{font-size:.82rem;color:#4a5568;margin-bottom:8px;line-height:1.5}
+.video-body .meta{display:flex;gap:10px;font-size:.78rem;color:#9ca3af;margin-bottom:8px;flex-wrap:wrap}
+.video-body .meta span{display:inline-flex;align-items:center;gap:3px}
+.video-body a{color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600}
 .video-body a:hover{text-decoration:underline}
-@media(max-width:600px){.video-card{flex-direction:column}.video-thumb{width:100%;min-height:80px}.page-title{font-size:1.5rem}}
-footer{padding:16px 24px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;display:flex;justify-content:space-between}
-footer a{color:#c9a227;text-decoration:none}
-@media(prefers-color-scheme:dark){
-body{background:#ffffff;color:#2d3748}
-#uni-navbar{background:rgba(10,22,40,.99)}
-#uni-drawer{background:rgba(10,22,40,.99)}
-.back-bar a{color:#c9a227}
-.page-title{color:#2d3748}
-.page-subtitle{color:#8fa3c0}
-.toc-card{background:#0d1b2a;border-color:#333}
-.toc-list .toc-label{color:#c8d6e8}
-.toc-list .toc-time{color:#c9a227}
-.video-card{background:#0d1b2a;border-color:#333}
-.video-body h3{color:#2d3748}
-.video-body p{color:#8fa3c0}
-footer{background:#0d1b2a;color:#888;border-color:#333}
-}</style>
+.tag{font-size:.7rem;font-weight:600;padding:2px 7px;border-radius:4px;display:inline-block}
+.tag-youtube{background:#ff0000;color:#fff}
+.tag-bilibili{background:#00A3E0;color:#fff}
+.tag-green{background:#dcfce7;color:#166534}
+.tag-purple{background:#f3e8ff;color:#6b21a8}
+.featured{background:linear-gradient(135deg,#0a1628,#1e3a6e);border-radius:12px;padding:24px;margin-bottom:40px;color:#1a202c}
+.featured h2{font-size:1.2rem;color:#c9a227;margin-bottom:8px}
+.featured p{font-size:.85rem;color:#c8d6e8;margin-bottom:16px;line-height:1.6}
+.featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.featured-item{background:rgba(255,255,255,.08);border-radius:8px;padding:14px}
+.featured-item h4{font-size:.8rem;color:#c9a227;font-weight:700;margin-bottom:4px}
+.featured-item h3{font-size:.88rem;color:#1a202c;font-weight:700;margin-bottom:5px}
+.featured-item p{font-size:.75rem;color:#9ca3af;line-height:1.5;margin-bottom:10px}
+.featured-item a{display:inline-block;background:#c9a227;color:#0a1628;font-size:.72rem;font-weight:700;padding:5px 10px;border-radius:5px;text-decoration:none}
+@media(max-width:700px){.featured-grid{grid-template-columns:1fr}.video-card{flex-direction:column}.video-thumb{width:100%;min-height:80px}}
+footer{padding:16px 24px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:.75rem;color:#6b7280;text-align:center}
+</style>
 </head>
 <body>
 <div id="uni-navbar">
-  <div style="display:flex;align-items:center;gap:8px">
-    <a href="index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a>
-  </div>
+  <div style="display:flex;align-items:center;gap:8px"><a href="index.html" class="uni-brand" style="font-size:1.2rem"><span>&#10070;</span> 李录研究</a></div>
   <div class="uni-links">
     <a href="index.html" class="uni-link">笔记</a>
     <a href="timeline.html" class="uni-link">进度</a>
     <a href="holdings.html" class="uni-link">持仓</a>
-    <div class="uni-dropdown">
-      <a class="uni-link">资料库</a>
-      <div class="uni-dropdown-menu">
-        <a href="about.html">关于李录</a>
-        <a href="principles.html">投资原则</a>
-        <a href="video_study.html">视频</a>
-        <a href="quotes.html">语录</a>
-        <a href="bookshelf.html">书架</a>
-        <a href="glossary.html">术语</a>
-        <a href="faq.html">FAQ</a>
-        <a href="timeline.html">时间线</a>
-      </div>
-    </div>
+    <div class="uni-dropdown"><a class="uni-link">资料库</a><div class="uni-dropdown-menu">
+      <a href="about.html">关于李录</a><a href="principles.html">投资原则</a>
+      <a href="video_study.html" style="color:#c9a227">视频</a>
+      <a href="quotes.html">语录</a><a href="bookshelf.html">书架</a>
+      <a href="glossary.html">术语</a><a href="faq.html">FAQ</a>
+      <a href="timeline.html">时间线</a>
+    </div></div>
   </div>
-  <button id="uniThemeBtn" style="background:none;border:none;cursor:pointer;font-size:.82rem;color:var(--text-muted,#4a5568);padding:4px 8px;margin-left:4px;border-radius:6px;">暗色</button>
   <button class="uni-hamburger" id="uniHamBtn"><span></span><span></span><span></span></button>
 </div>
 <div id="uni-overlay"></div>
 <div id="uni-drawer">
-  <div id="uni-drawer-header">
-    <div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <button id="uniDrawerThemeBtn" style="background:none;border:1px solid #d1d5db;border-radius:6px;cursor:pointer;font-size:.78rem;color:#4a5568;padding:4px 10px;">暗色</button>
-      <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
-    </div>
+  <div id="uni-drawer-header"><div class="uni-drawer-brand"><span>&#10070;</span> 李录研究</div>
+    <button class="uni-drawer-close" id="uniDrawerClose">&#x2715;</button>
   </div>
   <a href="index.html" class="uni-link">首页</a>
   <a href="about.html" class="uni-link">关于李录</a>
@@ -93,426 +74,256 @@ footer{background:#0d1b2a;color:#888;border-color:#333}
   <a href="holdings.html" class="uni-link">持仓</a>
   <a href="faq.html" class="uni-link">FAQ</a>
   <a href="timeline.html" class="uni-link">时间线</a>
-  <a href="video_study.html" class="uni-link">视频</a>
+  <a href="video_study.html" class="uni-link" style="color:#c9a227">视频</a>
   <a href="quotes.html" class="uni-link">语录</a>
   <a href="bookshelf.html" class="uni-link">书架</a>
 </div>
 
 <div class="main-content">
-  <div class="back-bar">
-    <a href="index.html#videos">&#8592; 返回首页视频区</a>
-  </div>
+<div class="back-bar">
+<a href="index.html">&#8592; 返回首页</a>
+</div>
 
-  <h1 class="page-title">&#127916; 视频学习中心</h1>
-  <p class="page-subtitle">李录公开演讲、访谈与课程精选，附分段时间戳导航</p>
+<h1 class="page-title">&#127916; 视频学习中心</h1>
+<p class="page-subtitle">李录本人演讲与第三方精选，按时间倒序</p>
 
-  <!-- 北大三次演讲全集 -->
-  <div style="background:linear-gradient(135deg,#0a1628,#1e3a6e);border-radius:12px;padding:20px 24px;margin-bottom:32px;color:#1a202c;">
-    <div style="font-size:.75rem;color:#c9a227;font-weight:700;letter-spacing:1px;margin-bottom:8px;">&#127891; 北大《价值投资》课程系列 · 十年三次</div>
-    <h2 style="font-size:1.2rem;color:#1a202c;margin-bottom:6px;">李录三次北大演讲全集</h2>
-    <p style="font-size:.85rem;color:#c8d6e8;margin-bottom:16px;">2015→2019→2024，十年三次，登堂入室，构成其价值投资思想从引入、实践到体系化的完整演进。</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
-      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:14px;">
-        <div style="font-size:.7rem;color:#c9a227;font-weight:700;margin-bottom:4px;">第一次 · 2015年</div>
-        <div style="font-size:.9rem;color:#1a202c;font-weight:700;margin-bottom:4px;">价值投资在中国的展望</div>
-        <div style="font-size:.75rem;color:#9ca3af;line-height:1.6;margin-bottom:10px;">首次北大授课，阐述价值投资在中国的适用性与前景，开启中国价值投资教育先河</div>
-        <a href="videos/BV1Cm4y1r76v.html" style="display:inline-block;background:#c9a227;color:#0a1628;font-size:.78rem;font-weight:700;padding:6px 12px;border-radius:6px;text-decoration:none;">&#9654; 观看笔记</a>
-        <a href="https://www.bilibili.com/video/BV1LpP6zeEXP/" target="_blank" style="display:inline-block;background:#00A3E0;color:#1a202c;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#9654; B站</a>
-      </div>
-      <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:14px;">
-        <div style="font-size:.7rem;color:#c9a227;font-weight:700;margin-bottom:4px;">第二次 · 2019年</div>
-        <div style="font-size:.9rem;color:#1a202c;font-weight:700;margin-bottom:4px;">价值投资在实践中的知行合一</div>
-        <div style="font-size:.75rem;color:#9ca3af;line-height:1.6;margin-bottom:10px;">五年后重归，聚焦实践：股市/能力圈/投资人品性/财富管理</div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;">
-          <a href="https://www.youtube.com/watch?v=kqjKbPxbsac" target="_blank" style="display:inline-block;background:#c9a227;color:#0a1628;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#9654; YouTube</a>
-          <a href="https://www.bilibili.com/video/BV1C64y1X7ma/" target="_blank" style="display:inline-block;background:#00A3E0;color:#1a202c;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#9654; B站（最高清）</a>
-          <a href="https://www.bilibili.com/video/BV11GoWBDEew/" target="_blank" style="display:inline-block;background:#00A3E0;color:#1a202c;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#9654; B站（精校版）</a>
-          <a href="https://www.bilibili.com/video/BV13j2YYNENn/" target="_blank" style="display:inline-block;background:#00A3E0;color:#1a202c;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#9654; B站（8K播完整版）</a>
-        </div>
-      </div>
-      <div style="background:rgba(201,162,39,0.15);border-radius:8px;padding:14px;border:1px solid rgba(201,162,39,0.4);">
-        <div style="font-size:.7rem;color:#c9a227;font-weight:700;margin-bottom:4px;">&#11088; 第三次 · 2024年</div>
-        <div style="font-size:.9rem;color:#1a202c;font-weight:700;margin-bottom:4px;">全球价值投资与时代</div>
-        <div style="font-size:.75rem;color:#9ca3af;line-height:1.6;margin-bottom:10px;">最完整演讲（约3小时/3万字）：时代困惑/中等收入陷阱/中国式现代化/投资人应对策略</div>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;">
-          <a href="https://www.youtube.com/watch?v=8jJA4vHWvLc" target="_blank" style="display:inline-block;background:#c9a227;color:#0a1628;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#9654; YouTube</a>
-          <a href="https://www.bilibili.com/video/BV1MCQFByEfk/" target="_blank" style="display:inline-block;background:#00A3E0;color:#1a202c;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#9654; B站（芒格书院授权版）</a>
-          <a href="https://www.bilibili.com/video/BV1mnDsBkEWv/" target="_blank" style="display:inline-block;background:#00A3E0;color:#1a202c;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#9654; B站（4小时超长版）</a>
-          <a href="downloads/pku_2024_speech.pdf" download style="display:inline-block;background:#16A34A;color:#1a202c;font-size:.75rem;font-weight:700;padding:5px 10px;border-radius:6px;text-decoration:none;">&#128196; PDF全文</a>
-        </div>
-      </div>
-    </div>
-    <p style="font-size:.75rem;color:#9ca3af;margin-top:12px;">&#9432; 三次演讲均已收入《文明、现代化、价值投资与中国》增订本 · B站有多个版本可选（最推荐芒格书院授权BV1MCQFByEfk）</p>
-  </div>
+<!-- Featured: 北大系列 -->
+<div class="featured">
+<h2>&#127891; 北大《价值投资》课程系列 · 十年三次</h2>
+<p>2015 → 2019 → 2024，十年三次，登堂入室，构成李录价值投资思想从引入、实践到体系化的完整演进。</p>
+<div class="featured-grid">
+<div class="featured-item">
+<h4>第一次 · 2015年</h4>
+<h3>价值投资在中国的展望</h3>
+<p>首次北大授课，开启中国价值投资教育先河</p>
+<a href="videos/BV1Cm4y1r76v.html">&#9654; 观看笔记</a>
+</div>
+<div class="featured-item">
+<h4>第二次 · 2019年</h4>
+<h3>价值投资在实践中的知行合一</h3>
+<p>聚焦实践：股市/能力圈/投资人品性/财富管理</p>
+<a href="https://www.bilibili.com/video/BV1C64y1X7ma/" target="_blank">&#9654; B站最高清</a>
+</div>
+<div class="featured-item" style="background:rgba(201,162,39,.15);border:1px solid rgba(201,162,39,.4)">
+<h4>&#11088; 第三次 · 2024年</h4>
+<h3>全球价值投资与时代</h3>
+<p>最完整演讲（约3小时/3万字），李录体系化总结</p>
+<a href="https://www.bilibili.com/video/BV1MCQFByEfk/" target="_blank">&#9654; 芒格书院授权版</a>
+</div>
+</div>
+</div>
 
-  <!-- 2024 PKU Talk Featured Deep Dive -->
-  <div class="video-section" style="margin-bottom:32px;">
-    <div style="background:linear-gradient(135deg,#001A3A,#003087);border-radius:12px;padding:20px 24px;margin-bottom:16px;color:#1a202c;">
-      <div style="font-size:.75rem;color:#c9a227;font-weight:700;letter-spacing:1px;margin-bottom:6px;">&#128218; 演讲全文 · 分段笔记</div>
-      <h2 style="font-size:1.3rem;color:#1a202c;margin-bottom:8px;">全球价值投资与时代 · 深度学习导航</h2>
-      <p style="font-size:.88rem;color:#c8d6e8;margin-bottom:4px;">李录 · 北京大学光华管理学院 · 2024年12月7日 · 约3小时 · ~3万字</p>
-      <p style="font-size:.82rem;color:#9ca3af;margin-bottom:14px;">&#127468;&#127463; 已获授权转载 · 原始来源：Himalaya Capital / 芒格书院</p>
-      <a href="https://www.youtube.com/watch?v=8jJA4vHWvLc" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#c9a227;color:#0a1628;font-weight:700;font-size:.88rem;padding:10px 20px;border-radius:8px;text-decoration:none;">&#9654; YouTube</a>
-      <a href="https://www.bilibili.com/video/BV1MCQFByEfk/" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#00A3E0;color:#fff;font-weight:700;font-size:.88rem;padding:10px 20px;border-radius:8px;text-decoration:none;">&#9654; B站（芒格书院授权）</a>
-    </div>
+<!-- Part 1: 李录本人 -->
+<div class="part-header">
+<span class="part-num">PART 1</span>
+<span class="part-title">李录本人演讲·访谈</span>
+</div>
 
-    <!-- 2024 PKU B站版本 -->
-    <div style="background:rgba(0,163,224,.08);border:1px solid rgba(0,163,224,.25);border-radius:8px;padding:12px 16px;margin-bottom:16px;">
-      <p style="font-size:.8rem;color:#4a5568;margin-bottom:8px;">&#127466;&#127482; <b>B站版本推荐（国内可直接播放）：</b></p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <a href="https://www.bilibili.com/video/BV1MCQFByEfk/" target="_blank" style="color:#00A3E0;font-size:.8rem;font-weight:600;">芒格书院授权版（3小时）BV1MCQFByEfk</a>
-        <a href="https://www.bilibili.com/video/BV1mnDsBkEWv/" target="_blank" style="color:#00A3E0;font-size:.8rem;font-weight:600;">超长版 4小时 BV1mnDsBkEWv</a>
-        <a href="https://www.bilibili.com/video/BV13gdgBQEY9/" target="_blank" style="color:#00A3E0;font-size:.8rem;font-weight:600;">中文语音版 BV13gdgBQEY9</a>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>全球价值投资与时代 · 北大光华（2024）</h3>
+<p>最完整演讲全文分段导航 · 时代困惑/中等收入陷阱/中国式现代化/投资人应对策略 · 约3小时</p>
+<div class="meta">
+<span>&#9202; 2024年12月</span>
+<span>北京大学光华管理学院</span>
+<span>&#127463;&#127465; 已授权转载</span>
+</div>
+<a href="videos/8jJA4vHWvLc.html">&#9654; 分段学习导航</a>
+</div>
+</div>
 
-  <!-- CCVideo (Main CCBC Master Class) -->
-  <div class="video-section">
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>哥大CCBC：中国价值投资大师课</h3>
-        <p>Bruce Greenwald × 李录 · 哥伦比亚大学第13届中美商业大会 · 全程对话翻译 + 分段笔记</p>
-        <div class="meta">
-          <span>&#9202; 85分钟</span>
-          <span>&#127916; 17个段落</span>
-          <span>&#127463;&#127465; 中英双语</span>
-        </div>
-        <a href="videos/-gfRCGZ0zf4.html">进入视频 &#8594;</a>
-      </div>
-    </div>
-  </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>哥大CCBC：中国价值投资大师课 × Bruce Greenwald</h3>
+<p>哥伦比亚大学第13届中美商业大会 · Bruce Greenwald × 李录全程对话 · 85分钟 · 17个段落</p>
+<div class="meta">
+<span>&#9202; 约85分钟</span>
+<span>&#127463;&#127465; 中英双语</span>
+</div>
+<a href="videos/-gfRCGZ0zf4.html">&#9654; 分段学习导航</a>
+</div>
+</div>
 
-  <!-- CCVideo TOC -->
-  <div class="toc-card">
-    <h2>&#128337; 分段时间戳</h2>
-    <ul class="toc-list">
-      <li><span class="toc-time">02:24</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=144">开场介绍</a><span class="toc-speaker">Host</span></li>
-      <li><span class="toc-time">04:37</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=277">Q1: 投资哲学演变</a><span class="toc-speaker">Bruce</span></li>
-      <li><span class="toc-time">08:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=480">从Graham到芒格：哲学进化</a><span class="toc-speaker">Li Lu</span></li>
-      <li><span class="toc-time">12:30</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=750">Q2: 什么是伟大企业？</a><span class="toc-speaker">Bruce</span></li>
-      <li><span class="toc-time">12:42</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=762">ROIC与护城河：伟大企业标准</a><span class="toc-speaker">Li Lu</span></li>
-      <li><span class="toc-time">15:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=900">信任护城河：最核心的要素</a><span class="toc-speaker">Li Lu</span></li>
-      <hr class="section-sep">
-      <li><span class="toc-time">19:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=1140">constant change：护城河的持续挑战</a><span class="toc-speaker">Li Lu</span></li>
-      <li><span class="toc-time">21:51</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=1311">Q3: 投资方法的差异</a><span class="toc-speaker">Bruce</span></li>
-      <li><span class="toc-time">26:30</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=1590">从小企业到伟大企业：选股进化</a><span class="toc-speaker">Li Lu</span></li>
-      <li><span class="toc-time">33:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=1980">安全边际与DCF估值</a><span class="toc-speaker">Li Lu</span></li>
-      <li><span class="toc-time">38:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=2280">Q4: 通才还是专才？</a><span class="toc-speaker">Bruce</span></li>
-      <li><span class="toc-time">44:49</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=2689">中国：全球最活跃消费市场</a><span class="toc-speaker">Li Lu</span></li>
-      <hr class="section-sep">
-      <li><span class="toc-time">50:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=3000">中国各行业投资机会</a><span class="toc-speaker">Li Lu</span></li>
-      <li><span class="toc-time">55:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=3300">Q5: 服务经济与人才</a><span class="toc-speaker">Bruce</span></li>
-      <li><span class="toc-time">62:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=3720">Q6: 投资失误与教训</a><span class="toc-speaker">Bruce</span></li>
-      <li><span class="toc-time">62:01</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=3721">失误与对中国青年的建议</a><span class="toc-speaker">Li Lu</span></li>
-      <li><span class="toc-time">85:00</span><a class="toc-label" href="videos/-gfRCGZ0zf4.html#t=5100">Asian-American的桥梁角色</a><span class="toc-speaker">Li Lu</span></li>
-    </ul>
-  </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>Li Lu at Columbia Business School（2006）</h3>
+<p>早期珍贵演讲 · 哥伦比亚大学 · ~90分钟</p>
+<div class="meta">
+<span>&#9202; 2006年</span>
+<span>哥伦比亚大学</span>
+</div>
+<a href="videos/O5xkgJaDwg0.html">&#9654; 观看笔记</a>
+</div>
+</div>
 
-  <!-- Other Videos -->
-  <div class="video-section">
-    <h2 style="font-size:1.1rem;color:#0a1628;margin-bottom:16px;">&#127744; 最新收录</h2>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>价值投资在实践中的知行合一 · 北大光华（2019）</h3>
+<p>五年后重归北大，聚焦实践：股市/能力圈/投资人品性/财富管理</p>
+<div class="meta">
+<span>&#9202; 2019年</span>
+<span>北京大学光华管理学院</span>
+</div>
+<a href="videos/kqjKbPxbsac.html">&#9654; 观看笔记</a>
+</div>
+</div>
 
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>李录在北大的演讲完整视频（2026）</h3>
-        <p>财金大咖录 · 2026年4月15日 · ~78分钟 · 价值投资与全球宏观</p>
-        <div class="meta"><span>&#9202; ~78min</span><span>&#127916; B站</span><span>&#128065; 21,476播放</span></div>
-        <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;">
-          <a href="videos/BV1DhQjBoE2K.html">观看笔记 &#8594;</a>
-          <a href="https://www.bilibili.com/video/BV1DhQjBoE2K/" target="_blank" style="color:#00A3E0;font-size:.82rem;">&#9654; B站原站</a>
-        </div>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>Li Lu on 2021 Investing, Value, China &amp; More</h3>
+<p>2021年访谈 · 哥伦比亚商学院</p>
+<div class="meta">
+<span>&#9202; 2021年</span>
+<span>CBS</span>
+</div>
+<a href="videos/LWikhUVneYI.html">&#9654; 观看笔记</a>
+</div>
+</div>
 
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>北大光华价值投资课程第一课（2015）</h3>
-        <p>价值投资在中国的展望 · 四大基石 · 三阶段演进 · 北大光华管理学院</p>
-        <div class="meta"><span>&#9202; ~2–3h</span><span>&#127891; 2015年</span><span>&#127909; 价值投资是什么</span></div>
-        <a href="videos/BV1Cm4y1r76v.html">观看笔记 &#8594;</a>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>Investing in China: Unique Challenges &amp; Opportunities（2021）</h3>
+<p>2021年CBS访谈 · 中国市场机会与挑战</p>
+<div class="meta">
+<span>&#9202; 2021年</span>
+<span>CBS</span>
+</div>
+<a href="videos/YaCRr0DIfuE.html">&#9654; 观看笔记</a>
+</div>
+</div>
 
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>CCBC Fireside Chat: 中国市场机会</h3>
-        <p>We Study Billionaires 访谈 · 喜马拉雅资本 · ~2小时</p>
-        <div class="meta"><span>&#127916; YouTube</span><span>&#127916; B站</span></div>
-        <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;">
-          <a href="videos/b2yxBBMIEz0.html">观看笔记 &#8594;</a>
-          <a href="https://www.bilibili.com/video/BV1SB4y1w7rR/" target="_blank" style="color:#00A3E0;font-size:.82rem;">&#9654; B站（13届哥大中美商业论坛）</a>
-        </div>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>价值投资在中国展望 · 北大光华第一课（2015）</h3>
+<p>首次北大授课，阐述价值投资在中国的适用性与前景</p>
+<div class="meta">
+<span>&#9202; 2015年</span>
+<span>北京大学光华管理学院</span>
+</div>
+<a href="videos/BV1Cm4y1r76v.html">&#9654; 观看笔记</a>
+</div>
+</div>
 
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>The Chinese Warren Buffett: Li Lu</h3>
-        <p>We Study Billionaires 人物专题 · 李录投资生涯</p>
-        <div class="meta"><span>&#127916; YouTube</span></div>
-        <a href="videos/KAoC8pErmb0.html">观看视频 &#8594;</a>
-      </div>
-    </div>
+<!-- Part 2: 第三方制作 -->
+<div class="part-header">
+<span class="part-num">PART 2</span>
+<span class="part-title">第三方制作（关于李录/价值投资）</span>
+</div>
 
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>北大价值投资课程十周年演讲</h3>
-        <p>李录 · 北京大学价值投资课程</p>
-        <div class="meta"><span>&#127916; YouTube</span></div>
-        <a href="videos/LWikhUVneYI.html">观看视频 &#8594;</a>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>巴菲特1998年佛罗里达大学演讲（全程82分钟）</h3>
+<p>被李录/段永平誉为"巴菲特一生最经典演讲" · 1998年10月15日</p>
+<div class="meta">
+<span>&#9202; 82分钟</span>
+<span>&#128505; 34万播放</span>
+</div>
+<a href="https://www.bilibili.com/video/BV1uv411t7ao/" target="_blank">&#9654; B站BV1uv411t7ao</a>
+</div>
+</div>
 
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>北大演讲：我对价值投资的理解</h3>
-        <p>李录 · 北京大学 · 3小时+ · Bilibili</p>
-        <div class="meta"><span>&#127916; Bilibili</span></div>
-        <a href="https://www.bilibili.com/video/BV19QzcYeEWW/" target="_blank">前往 Bilibili &#8599;</a>
-      </div>
-    </div>
-  </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>李录 × 李黔：比亚迪投资逻辑（2026年最新访谈）</h3>
+<p>2026年4月4日 · 持有比亚迪23年 · 芒格真传 · 跨越周期的重仓投资</p>
+<div class="meta">
+<span>&#9202; 2026年4月</span>
+<span>&#128505; 26,612播放</span>
+</div>
+<a href="https://www.bilibili.com/video/BV1QqDNBFERS/" target="_blank">&#9654; B站BV1QqDNBFERS</a>
+</div>
+</div>
 
-  <!-- Newly Discovered Videos -->
-  <div class="video-section">
-    <h2 style="font-size:1.1rem;color:#0a1628;margin-bottom:16px;">&#128247; 新发现视频 <span style="font-size:.75rem;font-weight:400;color:#9ca3af;margin-left:8px;">2026年5月补充</span></h2>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>红周刊独家专访李录 · 上集 — 李录眼中的芒格</h3>
+<p>《红周刊》· 李录与芒格合作15年亲述 · 芒格为何选择李录衣钵传承</p>
+<div class="meta">
+<span>&#9202; 32分钟</span>
+<span>&#128505; 21,294播放</span>
+</div>
+<a href="https://www.bilibili.com/video/BV15g4y1q7cy/" target="_blank">&#9654; B站BV15g4y1q7cy</a>
+</div>
+</div>
 
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>《红周刊》独家专访李录 · 上集 — 李录眼中的芒格</h3>
-        <p>《红周刊》 · 李录与芒格合作15年亲述 · 芒格为何选择李录衣钵传承 · 中国价值投资未来</p>
-        <div class="meta">
-          <span>&#9202; 32分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 21294播放</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV15g4y1q7cy/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站BV15g4y1q7cy</a>
-        </div>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>红周刊对话芒格 × 李录 — A股、个人投资者与人生意义</h3>
+<p>《红周刊》· 芒格与李录对话 · 谈A股投资陷阱、个人投资者策略、人生意义</p>
+<div class="meta">
+<span>&#9202; 59分钟</span>
+</div>
+<a href="https://www.bilibili.com/video/BV14AcVeGEgy/" target="_blank">&#9654; B站BV14AcVeGEgy</a>
+</div>
+</div>
 
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>红周刊对话芒格 × 李录 — A股、个人投资者与人生意义</h3>
-        <p>《红周刊》 · 芒格与李录对话 · 谈A股投资陷阱、个人投资者策略、人生意义</p>
-        <div class="meta">
-          <span>&#9202; 59分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 707播放</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV14AcVeGEgy/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站BV14AcVeGEgy</a>
-        </div>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>红周刊对话李录（2018年）· 英文字幕版</h3>
+<p>《红周刊》· 2018年6月 · 有英文字幕</p>
+<div class="meta">
+<span>&#9202; 42分钟</span>
+<span>&#127760; 有英文字幕</span>
+</div>
+<a href="https://www.bilibili.com/video/BV15Be1z9Evc/" target="_blank">&#9654; B站BV15Be1z9Evc</a>
+</div>
+</div>
 
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>红周刊对话李录（2018年）· 英文字幕版</h3>
-        <p>《红周刊》 · 2018年6月 · A Discussion with Li Lu · <b style="color:#c9a227;">有英文字幕</b></p>
-        <div class="meta">
-          <span>&#9202; 42分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#c9a227;color:#0a1628;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#127760; 英文字幕</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV15Be1z9Evc/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站BV15Be1z9Evc</a>
-        </div>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>The Chinese Warren Buffett: Li Lu · We Study Billionaires</h3>
+<p>We Study Billionaires 人物专题 · 介绍李录投资生涯</p>
+<div class="meta">
+<span>&#9202; ~15分钟</span>
+</div>
+<a href="videos/KAoC8pErmb0.html">&#9654; 观看笔记</a>
+</div>
+</div>
 
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>段永平 &amp; 李录：股票投资想赚钱不用投太多股票</h3>
-        <p>段永平与李录对话 · 股票投资不需要搞懂很多公司，关键是你搞懂的事情是对的</p>
-        <div class="meta">
-          <span>&#9202; 1分41秒</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 15792播放</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1so4y1N7bL/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站BV1so4y1N7bL</a>
-        </div>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>段永平 &amp; 李录：股票投资想赚钱不用投太多股票</h3>
+<p>段永平与李录对话 · 股票投资不需要搞懂很多公司，关键是你搞懂的事情是对的</p>
+<div class="meta">
+<span>&#9202; 1分41秒</span>
+<span>&#128505; 15,792播放</span>
+</div>
+<a href="https://www.bilibili.com/video/BV1so4y1N7bL/" target="_blank">&#9654; B站BV1so4y1N7bL</a>
+</div>
+</div>
 
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>巴菲特1998年佛罗里达大学演讲（82分钟全程）</h3>
-        <p>沃伦·巴菲特1998年10月15日 · 佛罗里达大学商学院 · 被李录/段永平誉为"巴菲特一生最经典演讲"</p>
-        <div class="meta">
-          <span>&#9202; 82分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 341384播放</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1uv411t7ao/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站BV1uv411t7ao（34万播）</a>
-          <a href="https://www.bilibili.com/video/BV1TpdGBHExD/" target="_blank" style="color:#00A3E0;text-decoration:none;font-size:.82rem;font-weight:600;">中英双版BV1TpdGBHExD</a>
-        </div>
-      </div>
-    </div>
+<div class="video-card">
+<div class="video-thumb"><span class="play-icon">&#9658;</span></div>
+<div class="video-body">
+<h3>CCBC Fireside Chat: Value Investing in China · Li Lu</h3>
+<p>哥大中美商业论坛 · 喜马拉雅资本</p>
+<div class="meta">
+<span>&#9202; ~15分钟</span>
+</div>
+<a href="videos/b2yxBBMIEz0.html">&#9654; 观看笔记</a>
+</div>
+</div>
 
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>李录 × 李黔：比亚迪投资逻辑（2026年最新访谈）</h3>
-        <p>2026年4月4日最新访谈 · 持有比亚迪23年 · 芒格真传 · 跨越周期的重仓投资</p>
-        <div class="meta">
-          <span>&#9202; 58分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 26612播放</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1QqDNBFERS/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站BV1QqDNBFERS</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>中国"巴菲特"李录 — 最精彩访谈</h3>
-        <p>李录深刻讲解价值投资 · 谈中国市场与长期主义</p>
-        <div class="meta">
-          <span>&#9202; 46分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 27655播放</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1yvBMYvEgq/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站BV1yvBMYvEgq</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>北京大学《价值投资课程》完整版（超长合集）</h3>
-        <p>北京大学光华管理学院 · 价值投资课程完整版 · 必看推荐</p>
-        <div class="meta">
-          <span>&#9202; 789分钟（13小时）</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 78213播放</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1iChgzQEP4/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站BV1iChgzQEP4</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Whisper AI Transcribed Videos -->
-  <div class="video-section">
-    <h2 style="font-size:1.1rem;color:#0a1628;margin-bottom:16px;">&#127917; Whisper AI 转写视频 <span style="font-size:.75rem;font-weight:400;color:#9ca3af;margin-left:8px;">本地 Whisper Medium 转写 · SRT字幕文件</span></h2>
-
-    <div class="video-card">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>&#128994; 李录 × 李黔：比亚迪投资逻辑（2026完整版）</h3>
-        <p>李录 × 李黔 · 2026年对话 · 首次详细拆解比亚迪投资逻辑 · 58分钟 → 转写26分钟</p>
-        <div class="meta">
-          <span>&#9202; ~26分钟（转写后）</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 已转写</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1ZF93B8E95/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; 前往B站观看</a>
-          <a href="transcripts/li-lu-byd-2026-full.srt" download style="color:#16A34A;text-decoration:none;font-size:.82rem;font-weight:600;">&#128196; 下载SRT字幕</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>&#128994; 李录哥大演讲全纪录（2006年）</h3>
-        <p>哥伦比亚大学 · 2006年 · 早期珍贵演讲 · 全程转写</p>
-        <div class="meta">
-          <span>&#9202; ~90分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 已转写</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1ProjYuEvn/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站（135K播·最高清）</a>
-          <a href="https://www.bilibili.com/video/BV1f5411j7ud/" target="_blank" style="color:#00A3E0;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站（Greenwald对话版）</a>
-          <a href="https://www.bilibili.com/video/BV1fXJczeE4g/" target="_blank" style="color:#00A3E0;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; B站（中英字幕完整版）</a>
-          <a href="transcripts/BV1ProjYuEvn_full.srt" download style="color:#16A34A;text-decoration:none;font-size:.82rem;font-weight:600;">&#128196; 下载SRT字幕</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>&#128994; 李录 × 李黔：比亚迪投资逻辑（声音清晰版）</h3>
-        <p>李录 × 李黔 · 58分钟 · 声音清晰版完整转写</p>
-        <div class="meta">
-          <span>&#9202; ~58分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 已转写</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1QqDNBFERS/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; 前往B站观看</a>
-          <a href="transcripts/BV1QqDNBFERS_full.srt" download style="color:#16A34A;text-decoration:none;font-size:.82rem;font-weight:600;">&#128196; 下载SRT字幕</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>《有请》专访第一部分</h3>
-        <p>李录 · 《有请》访谈Part1 · ~40分钟</p>
-        <div class="meta">
-          <span>&#9202; ~40分钟</span>
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 已转写</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1amDaBMEMb/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; 前往B站观看</a>
-          <a href="transcripts/BV1amDaBMEMb_full.srt" download style="color:#16A34A;text-decoration:none;font-size:.82rem;font-weight:600;">&#128196; 下载SRT字幕</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="video-card" style="margin-top:12px;">
-      <div class="video-thumb"><span class="play-icon">&#9658;</span></div>
-      <div class="video-body">
-        <h3>比亚迪相关访谈（另一版本）</h3>
-        <p>关于巴菲特入股比亚迪后的影响 · 另一版本完整转写</p>
-        <div class="meta">
-          <span>&#127916; Bilibili</span>
-          <span style="background:#16A34A;color:#fff;padding:1px 6px;border-radius:4px;font-size:.7rem;font-weight:700;">&#10003; 已转写</span>
-        </div>
-        <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
-          <a href="https://www.bilibili.com/video/BV1dUSXBPEQk/" target="_blank" style="color:#c9a227;text-decoration:none;font-size:.82rem;font-weight:600;">&#9654; 前往B站观看</a>
-          <a href="transcripts/BV1dUSXBPEQk_full.srt" download style="color:#16A34A;text-decoration:none;font-size:.82rem;font-weight:600;">&#128196; 下载SRT字幕</a>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 </div>
 
 <footer>
-  <span>仅供学习参考 · 不构成投资建议</span>
-  <span style="color:#ef4444">数据截止: 2025 Q4 13F (2026-02-17披露)</span>
+<a href="index.html">&#8592; 返回首页</a>
+<span style="margin-left:auto">仅供学习参考 · 不构成投资建议</span>
 </footer>
-
-<script src="js/main.js" defer></script>
-  <script src="js/tts-player.js" defer></script>
 </body>
 </html>
