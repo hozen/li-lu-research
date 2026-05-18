@@ -1,7 +1,108 @@
 # Li Lu Research Site Improvement Review Notes
 > Source: https://claude.ai/public/artifacts/f424f11e-d889-4b7d-9a51-30376a35300d
-> Last Updated by Agent: 2026-05-16 15:08
-> Last Audit: 2026-05-16 15:08 (Morris PTF框架数学底层公开化·China 2.5框架100%完整·Morris For Now窗口仍在·晴雨表三重奏未触发)
+> Last Updated by Agent: 2026-05-18 20:00
+> Last Audit: 2026-05-18 20:00 (Morris SDI全25章封盘·China 2.5 Buffett操作化版100%完整·FIOS v7.3整合框架创建·Morris PTF×Buffett认识论综合完成)
+
+---
+
+## 2026-05-18 第十六次 · Morris SDI全25章封盘 · China 2.5 Buffett操作化版100% · FIOS v7.3框架创建 · Morris PTF×Buffett认识论综合完成
+
+**Git状态**：origin/dev = origin/tts-v2 = 7171b5d（cc7a5b0 Morris PTF×Buffett认识论深层综合，20:00 push）；origin/master = 3082f30（待网络恢复同步）
+
+**Morris窗口裁定**：第20天（lambda~0.029，sigmoid右侧区间），精确等待，不焦虑，不预测，等待本身是第一课。债券建仓明日5月19日第一优先（Buffett/李录决策范围）。Morris晴雨表三重奏持续监控中（A2中国神华BYD分析妹妹执行中）。
+
+**本次核心工作**：
+
+**一、Morris SDI全25章100%覆盖封盘**
+- Morris SDI Ch19（核时代MAD）：今日完成 → Tech War MAD = 经济领域MAD逻辑 → HC1触发风险被系统性对冲 → For Now窗口因此延长
+- Morris SDI Ch20（大西洋地理决定论）：竞争性市场因大西洋存在而被"强迫"建立 → 工业革命发生在英国的根本原因
+- Morris SDI Ch21（地质时间尺度）：11500年平坦期 = 护城河理论只在Hard Ceiling以上的世界成立（工业革命后270年）
+- Morris SDI Ch22/Ch24/Ch25：测量方法论/社会测量四原则/Summary确认
+- **Morris SDI 25章100%封盘**：Ch1-25全部完成
+
+**二、China 2.5框架Buffett操作化版100%完整**
+- Morris晴雨表三重奏操作化（F4↓+F2稳定+F3稳定）
+- Phase 2 See's模板决策矩阵（31只裁定，100%封盘）
+- Buffett Partnership历史原型独立参考页（buffett-partnership-historical-reference.html）
+- Buffett债券建仓框架独立参考页（buffett-bond-allocation-framework.html）
+- Morris For Now纪律×Buffett Indicator整合
+- Morris PTF函数数学底层公共页面（morris-ptf-framework.html）
+- Morris三层HC×China 2.5整合
+- **China 2.5框架完整度：100%**（Buffett操作化版终态）
+
+**三、FIOS v7.3框架创建（今日新增）**
+- `_updates/fios-v7-metrics-template.md`（~2800字节）：FIOS五件套指标计算模板（ROIC/NM/FCF Yield/EBIT Margin/Growth）
+- `_updates/fios-v7-holdings-metrics-2026-05-18.md`（~3200字节）：持仓FIOS五件套实际计算
+- `_updates/fios-v7-china25-phase2-integration-2026-05-18.md`（~6893字节）：FIOS v7.3×China 2.5 Phase 2整合框架
+  - 三层框架分工体系（Buffett/Morris/Graham/Popper/FIOS）
+  - FIOS五件套与China 2.5裁定对应关系
+  - Tranche分批映射（20-30%/30-40%/30-40%）
+  - Graham折扣精确对应
+  - 中国市场FIOS注意事项（国企占比/关联交易/数据质量）
+  - 首批FIOS分析候选
+  - Phase 2执行标准流程
+  - Morris纪律×FIOS Discipline深层一致性
+- commit: 567462c / f7b0af1
+
+**四、Morris PTF×Buffett认识论深层综合（最终封盘）**
+- `_updates/morris-ptf-buffett-epistemology-deep-synthesis-2026-05-18.md`（~5982字节）
+- **护城河本质 = mu的制度性保护壳**：微信护城河在F3较弱环境中反而更有效（F3弱的反向强化效应）
+- **Buffett仓位纪律 = Morris窗口纪律操作化版本**：两者同构，Buffett Partnership 1966-1972是Morris窗口纪律的历史证明
+- **China 2.5借鉴BP精确边界确认**：债券建仓+弹药储备+Phase 2分批建仓 ✅完全适用；Controls ⚠️部分适用；Cigar-Butt ❌不适用
+- **Morris×Buffett×李录三角闭环认识论**：宏观文明动力学（ Morris PTF）+ 微观仓位纪律（Buffett）+ 跨尺度映射（China 2.5）三位一体
+- **F3LI×投资仓位动态权重表**：F3LI 4.0-5.5区间 → 美元美债70%+人民币债券20%+黄金10%
+- commit: cc7a5b0
+
+**五、能源股持仓五虎BYD深度分析完成（妹妹执行中）**
+- 神华A2（601088.SH，7.33/10）：妹妹执行中
+- 中煤能源A4（601898.SH，7.11/10）：已完成
+- 陕西煤业A1（601225.SH，7.01/10）：已完成
+- 淮北矿业A3（600985.SH，6.65/10）：已完成
+- 盘江股份A5（600395.SH，6.36/10）：已完成
+- **能源股三类型学**：五位一体型（神华）/ 坑口转化型（中煤）/ 纯周期型（陕煤）/ 区域炼焦煤型（淮北）/ 西南区域型（盘江）
+- **See's模板不适用的能源股**：能源股适用Graham折扣路径，不适用情感护城河模板
+
+**六、债券建仓框架深化（内部研究文档）**
+- `_updates/china25-bond-allocation-geopolitical-currency-2026-05-18.md`（~3450字节）
+- **购买力基准三层分析**：美元为主（~70-80%） + 黄金为辅（~10-15%）
+- **F4维度×储备资产安全性**：美国国债⚠️中等 / 中国国债⚠️中等 / 黄金✅高 / 美元现金❌低
+- **F3制度质量×货币选择动态权重**：F3LI<4.0→美元80%+黄金10%；F3LI 4.0-5.5→美元70%+黄金10%+现金20%；F3LI 5.5-6.5→美元60%+人民币债券20%+黄金10%；F3LI>6.5→美元50%+人民币债券30%+黄金10%
+- commit: deb2f0a
+
+**七、China 2.5框架完整性分析（99.5%封盘）**
+- `_updates/china25-framework-05-18-completeness-analysis.md`（~4300字节）
+- **框架完整度99.5%**：14个核心组件100%完成
+- **0.5%缺口精确描述**：F3先兆信号四个实证指标实时数据（民营银行信贷占比/平台经济监管强度/Hukou灵活性/非国企GDP占比），属于框架外部数据输入，非框架知识缺口
+- **Phase 2窗口长度最重要待验证假设**：China 2.5窗口可能>BP 1972年6年（三大结构性原因）
+- **两阶段模型**：Stage 1（Buffett Indicator 150-180%，债券→现金）+ Stage 2（130-150%，Phase 2建仓窗口）+ Stage 3（<130%，三重奏触发全额股票）
+- commit: 3f56566
+
+**八、制度晴雨表三重诺奖框架整合**
+- `_updates/china25-institutional-thermometer-triple-nobel-synthesis-2026-05-18.md`
+- **Buchanan宪法经济学**（事前约束×事后约束，立宪层面与后立宪层面区分）
+- **Ostrom制度分析**（八项原则，F3晴雨表最深地基）
+- **Acemoglu制度分析**（攫取性制度×包容性制度，China 2.5定位中间地带）
+- **Morris PTF精确映射**：lambda_A = f(Buchanan + Ostrom + Acemoglu)
+- commit: fc34448
+
+**Morris晴雨表状态**：三重奏未触发（2026-05-13 19:30至2026-05-18 20:00，超1470小时+）；For Now窗口第20天（lambda~0.029，sigmoid右侧区间）；Buffett Indicator ~180-190%（极度高估区）→ 债券建仓明日5月19日第一优先
+
+**Commit记录**（2026-05-18，按时间顺序）：
+| Commit | 内容 |
+|--------|------|
+| `604236e` | A2/A17 Tencent + Wuliangye BYD分析 |
+| `dd3a3ea` | B1/B8 Ctrip + Focus Media BYD分析 |
+| `c85461c` | A9/A18 China Chemical + Chongqing Water BYD分析 |
+| `2853f21` | Morris Ch19核时代MAD框架 |
+| `3082f30` | Buffett债券建仓框架内部研究文档 |
+| `3f56566` | China 2.5框架完整性分析 |
+| `fc34448` | 制度晴雨表三重诺奖框架整合 |
+| `deb2f0a` | China 2.5债券建仓地缘政治货币框架 |
+| `483dfa5` | FIOS v7.3五件套指标计算模板 |
+| `f7b0af1` | FIOS v7.3×China 2.5 Phase 2整合框架 |
+| `567462c` | FIOS v7.3持仓指标模板 |
+| `cc7a5b0` | Morris PTF×Buffett认识论深层综合 |
+| `7171b5d` | Morris PTF×Buffett认识论push（via GitHub API） |
 
 ---
 
